@@ -6,107 +6,6 @@ log-level: info
 external-controller: :9090
 proxies:
   - {name: Shadowsocks, server: 127.0.0.1, port: 1080, type: socks5, udp: true}
-  - {name: "|266.48Mb", server: 18.219.164.184, port: 443, type: ss, cipher: aes-256-cfb, password: amazonskr05, udp: true}
-  - {name: "|937.19Mb", server: 193.29.139.147, port: 8080, type: ss, cipher: chacha20-ietf-poly1305, password: k1dBOmOB4oqi7Ump37a1bQ, udp: true}
-  - {name: Relay_ |145.63Mb, server: autodiscover.fuzzyaytor.cyou, port: 42982, type: ss, cipher: chacha20-ietf-poly1305, password: yTEXWB6XBHyv9SfQJzCSRWCnRYutFdUXg1wbcbutxPwZE6Uxcurka3GkoatgEdX483XZSHeJp3jXcTShLCRM8rPgMF3vYNfS, udp: true}
-  - {name: "|118.85Mb", server: 64.176.73.160, port: 8388, type: ss, cipher: chacha20-ietf-poly1305, password: VJtsgllDDJfNmaTe, udp: true}
-  - {name: "|968.06Mb", server: 82.38.31.218, port: 8080, type: ss, cipher: chacha20-ietf-poly1305, password: k1dBOmOB4oqi7Ump37a1bQ, udp: true}
-  - {name: Relay_ |156.79Mb, server: fancy-skink.rooster465.autos, port: 443, type: trojan, password: ND91608427, sni: fancy-skink.rooster465.autos, skip-cert-verify: true, udp: true}
-  - {name: "|26.60Mb", server: 13.208.169.24, port: 12308, type: trojan, password: a703fe02-9bdf-4124-a812-0284d0acdf36, sni: jp03.ulifeai.com, skip-cert-verify: true, udp: true}
-  - {name: Relay_ |27.36Mb, server: natural-collie.rooster465.autos, port: 443, type: trojan, password: ND91608427, sni: natural-collie.rooster465.autos, skip-cert-verify: true, udp: true}
-  - {name: Relay_ |26.24Mb, server: ace-starling.rooster465.autos, port: 443, type: trojan, password: ND91608427, sni: ace-starling.rooster465.autos, skip-cert-verify: true, udp: true}
-  - {name: Relay_ |24.41Mb, server: upright-hamster.rooster465.autos, port: 443, type: trojan, password: ND91608427, sni: upright-hamster.rooster465.autos, skip-cert-verify: true, udp: true}
-  - {name: Relay_ |26.50Mb, server: fleet-bonefish.rooster465.autos, port: 443, type: trojan, password: ND91608427, sni: fleet-bonefish.rooster465.autos, skip-cert-verify: true, udp: true}
-  - {name: Relay_ |27.60Mb, server: pet-ghost.rooster465.autos, port: 443, type: trojan, password: ND91608427, sni: pet-ghost.rooster465.autos, skip-cert-verify: true, udp: true}
-  - {name: Relay_ | 2.11Mb, server: 168.100.9.178, port: 2053, type: trojan, password: humanity, sni: www.calmlunch.com, skip-cert-verify: true, network: ws, ws-opts: {path: /assignment, headers: {Host: www.calmlunch.com}}, udp: true}
-  - {name: Relay_ |83.83Mb, server: upright-impala.rooster465.autos, port: 443, type: trojan, password: ND91608427, sni: upright-impala.rooster465.autos, skip-cert-verify: true, udp: true}
-  - {name: Relay_ |82.91Mb, server: tough-robin.rooster465.autos, port: 443, type: trojan, password: ND91608427, sni: tough-robin.rooster465.autos, skip-cert-verify: true, udp: true}
-  - {name: Pool_ |301.71Mb, server: 193.148.19.213, port: 52794, type: trojan, password: 2eutknankxtbgkwcajzt, sni: 193.148.19.213, skip-cert-verify: true, udp: true}
-  - {name: "|15.48Mb", server: 139.59.238.97, port: 50573, type: trojan, password: pvZE3UfT0ziK1omVLlsjINBqeqqwab1M, skip-cert-verify: true, udp: true}
-  - {name: Relay_ |80.06Mb, server: casual-bee.rooster465.autos, port: 443, type: trojan, password: ND91608427, sni: casual-bee.rooster465.autos, skip-cert-verify: true, udp: true}
-  - {name: 🇺🇸 United States_None_ss_101, server: 63.180.254.10, port: 443, type: ss, cipher: aes-256-cfb, password: amazonskr05, udp: true}
-  - {name: 🇭🇰 Hong Kong_Tuen Mun_vmess_102, server: v10.hdacd.com, port: 30807, type: vmess, uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484, alterId: 2, cipher: auto, tls: false, skip-cert-verify: false, udp: true}
-  - {name: 🇭🇰 Hong Kong_None_trojan_103, server: 16.162.100.124, port: 11231, type: trojan, password: 6ec301428255a78a1d826988d86cc87e, sni: www.nintendogames.net, skip-cert-verify: true, udp: true}
-  - {name: 🇭🇰 Hong Kong_None_trojan_104, server: 18.162.244.203, port: 11035, type: trojan, password: BxceQaOe, sni: t.me%2Fripaojiedian, skip-cert-verify: true, udp: true}
-  - {name: 🇭🇰 Hong Kong_None_trojan_105, server: 18.162.120.218, port: 11035, type: trojan, password: BxceQaOe, sni: t.me%2Fripaojiedian, skip-cert-verify: true, udp: true}
-  - {name: 🇭🇰 Hong Kong_None_trojan_106, server: 16.162.100.124, port: 4099, type: trojan, password: BxceQaOe, sni: t.me%252Fripaojiedian, skip-cert-verify: true, udp: true}
-  - {name: 🇭🇰 Hong Kong_None_trojan_107, server: 16.162.192.182, port: 44229, type: trojan, password: 6ec301428255a78a1d826988d86cc87e, sni: www.nintendogames.net, skip-cert-verify: true, udp: true}
-  - {name: 🇭🇰 Hong Kong_None_trojan_108, server: 16.162.192.182, port: 18286, type: trojan, password: 6ec301428255a78a1d826988d86cc87e, sni: www.nintendogames.net, skip-cert-verify: true, udp: true}
-  - {name: 🇭🇰 Hong Kong_None_trojan_109, server: 16.162.100.124, port: 32434, type: trojan, password: 6ec301428255a78a1d826988d86cc87e, sni: www.nintendogames.net, skip-cert-verify: true, udp: true}
-  - {name: 🇭🇰 Hong Kong_None_trojan_1010, server: 16.162.192.182, port: 45744, type: trojan, password: 6ec301428255a78a1d826988d86cc87e, sni: www.nintendogames.net, skip-cert-verify: true, udp: true}
-  - {name: 🇭🇰 Hong Kong_None_trojan_1011, server: 18.163.126.92, port: 26704, type: trojan, password: BxceQaOe, sni: t.me%252Fripaojiedian, skip-cert-verify: true, udp: true}
-  - {name: 🇵🇱 Poland_None_trojan_1012, server: 95.40.14.234, port: 28051, type: trojan, password: 6ec301428255a78a1d826988d86cc87e, sni: www.nintendogames.net, skip-cert-verify: true, udp: true}
-  - {name: 🇭🇰 Hong Kong_None_trojan_1013, server: 16.162.100.124, port: 10418, type: trojan, password: 6ec301428255a78a1d826988d86cc87e, sni: www.nintendogames.net, skip-cert-verify: true, udp: true}
-  - {name: 🇭🇰 Hong Kong_None_trojan_1014, server: 16.162.100.124, port: 28051, type: trojan, password: BxceQaOe, sni: t.me%2Fripaojiedian, skip-cert-verify: true, udp: true}
-  - {name: 🇭🇰 Hong Kong_Tuen Mun_vmess_1015, server: v10.hdacd.com, port: 30807, type: vmess, uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484, alterId: 2, cipher: auto, tls: false, udp: true}
-  - {name: 🇭🇰 Hong Kong_None_trojan_1016, server: 16.162.3.11, port: 27161, type: trojan, password: BxceQaOe, sni: t.me/ripaojiedian, skip-cert-verify: true, udp: true}
-  - {name: 🇭🇰 Hong Kong_None_trojan_1017, server: 16.162.3.11, port: 27161, type: trojan, password: BxceQaOe, sni: t.me%2Fripaojiedian, skip-cert-verify: true, udp: true}
-  - {name: 🇯🇵 Japan_Tokyo_trojan_1018, server: t11.qifei.app, port: 55682, type: trojan, password: 7d8e6db4-96cc-4710-afc0-619edde2d7a1, sni: t11.qifei.app, skip-cert-verify: true, udp: true}
-  - {name: Unknown_vmess_111, server: 127.0.0.53, port: 80, type: vmess, uuid: 88888888-8888-8888-8888-888888888888, alterId: 0, cipher: auto, tls: false, udp: true}
-  - {name: Unknown_vmess_112, server: 127.0.0.53, port: 81, type: vmess, uuid: 88888888-8888-8888-8888-888888888888, alterId: 0, cipher: auto, tls: false, udp: true}
-  - {name: Unknown_vmess_113, server: 127.0.0.53, port: 82, type: vmess, uuid: 88888888-8888-8888-8888-888888888888, alterId: 0, cipher: auto, tls: false, udp: true}
-  - {name: Unknown_vmess_114, server: 127.0.0.53, port: 83, type: vmess, uuid: 88888888-8888-8888-8888-888888888888, alterId: 0, cipher: auto, tls: false, udp: true}
-  - {name: Unknown_vmess_115, server: 127.0.0.53, port: 84, type: vmess, uuid: 88888888-8888-8888-8888-888888888888, alterId: 0, cipher: auto, tls: false, udp: true}
-  - {name: Unknown_vmess_116, server: 127.0.0.53, port: 85, type: vmess, uuid: 88888888-8888-8888-8888-888888888888, alterId: 0, cipher: auto, tls: false, udp: true}
-  - {name: Unknown_vmess_117, server: 127.0.0.53, port: 86, type: vmess, uuid: 88888888-8888-8888-8888-888888888888, alterId: 0, cipher: auto, tls: false, udp: true}
-  - {name: Unknown_vmess_118, server: 127.0.0.53, port: 87, type: vmess, uuid: 88888888-8888-8888-8888-888888888888, alterId: 0, cipher: auto, tls: false, udp: true}
-  - {name: Unknown_vmess_119, server: 127.0.0.53, port: 88, type: vmess, uuid: 88888888-8888-8888-8888-888888888888, alterId: 0, cipher: auto, tls: false, udp: true}
-  - {name: Unknown_vmess_1110, server: 127.0.0.53, port: 89, type: vmess, uuid: 88888888-8888-8888-8888-888888888888, alterId: 0, cipher: auto, tls: false, udp: true}
-  - {name: 🇺🇸 United States_None_ss_1111, server: 63.180.254.10, port: 443, type: ss, cipher: aes-256-cfb, password: amazonskr05, udp: true}
-  - {name: 🇭🇰 Hong Kong_Tuen Mun_vmess_1112, server: v10.hdacd.com, port: 30807, type: vmess, uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484, alterId: 2, cipher: auto, tls: false, skip-cert-verify: false, udp: true}
-  - {name: 🇭🇰 Hong Kong_None_trojan_1113, server: 16.162.100.124, port: 11231, type: trojan, password: 6ec301428255a78a1d826988d86cc87e, sni: www.nintendogames.net, skip-cert-verify: true, udp: true}
-  - {name: 🇭🇰 Hong Kong_None_trojan_1114, server: 18.162.244.203, port: 11035, type: trojan, password: BxceQaOe, sni: t.me%2Fripaojiedian, skip-cert-verify: true, udp: true}
-  - {name: 🇭🇰 Hong Kong_None_trojan_1115, server: 18.162.120.218, port: 11035, type: trojan, password: BxceQaOe, sni: t.me%2Fripaojiedian, skip-cert-verify: true, udp: true}
-  - {name: 🇭🇰 Hong Kong_None_trojan_1116, server: 16.162.100.124, port: 4099, type: trojan, password: BxceQaOe, sni: t.me%252Fripaojiedian, skip-cert-verify: true, udp: true}
-  - {name: 🇭🇰 Hong Kong_None_trojan_1117, server: 16.162.192.182, port: 44229, type: trojan, password: 6ec301428255a78a1d826988d86cc87e, sni: www.nintendogames.net, skip-cert-verify: true, udp: true}
-  - {name: 🇭🇰 Hong Kong_None_trojan_1118, server: 16.162.192.182, port: 18286, type: trojan, password: 6ec301428255a78a1d826988d86cc87e, sni: www.nintendogames.net, skip-cert-verify: true, udp: true}
-  - {name: 🇭🇰 Hong Kong_None_trojan_1119, server: 16.162.100.124, port: 32434, type: trojan, password: 6ec301428255a78a1d826988d86cc87e, sni: www.nintendogames.net, skip-cert-verify: true, udp: true}
-  - {name: 🇭🇰 Hong Kong_None_trojan_1120, server: 16.162.192.182, port: 45744, type: trojan, password: 6ec301428255a78a1d826988d86cc87e, sni: www.nintendogames.net, skip-cert-verify: true, udp: true}
-  - {name: 🇭🇰 Hong Kong_None_trojan_1121, server: 18.163.126.92, port: 26704, type: trojan, password: BxceQaOe, sni: t.me%252Fripaojiedian, skip-cert-verify: true, udp: true}
-  - {name: 🇵🇱 Poland_None_trojan_1122, server: 95.40.14.234, port: 28051, type: trojan, password: 6ec301428255a78a1d826988d86cc87e, sni: www.nintendogames.net, skip-cert-verify: true, udp: true}
-  - {name: 🇭🇰 Hong Kong_None_trojan_1123, server: 16.162.100.124, port: 10418, type: trojan, password: 6ec301428255a78a1d826988d86cc87e, sni: www.nintendogames.net, skip-cert-verify: true, udp: true}
-  - {name: 🇭🇰 Hong Kong_None_trojan_1124, server: 16.162.100.124, port: 28051, type: trojan, password: BxceQaOe, sni: t.me%2Fripaojiedian, skip-cert-verify: true, udp: true}
-  - {name: 🇭🇰 Hong Kong_Tuen Mun_vmess_1125, server: v10.hdacd.com, port: 30807, type: vmess, uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484, alterId: 2, cipher: auto, tls: false, udp: true}
-  - {name: None_None_trojan_1126, server: www.speedtest.org, port: 443, type: trojan, password: humanity, sni: www.ignitelimit.com, skip-cert-verify: false, network: ws, ws-opts: {path: /assignment, headers: {Host: www.ignitelimit.com}}, udp: true}
-  - {name: 🇯🇵 Japan_Tokyo_trojan_1127, server: v2jp.k1.ssnss.live, port: 44184, type: trojan, password: d050aca3-9df2-4461-90ec-92373c1d7636, skip-cert-verify: false, udp: true}
-  - {name: 🇭🇰 Hong Kong_None_trojan_1128, server: 16.162.3.11, port: 27161, type: trojan, password: BxceQaOe, sni: t.me/ripaojiedian, skip-cert-verify: true, udp: true}
-  - {name: 🇭🇰 Hong Kong_None_trojan_1129, server: 16.162.3.11, port: 27161, type: trojan, password: BxceQaOe, sni: t.me%2Fripaojiedian, skip-cert-verify: true, udp: true}
-  - {name: 🇯🇵 Japan_Tokyo_trojan_1130, server: t11.qifei.app, port: 55682, type: trojan, password: 7d8e6db4-96cc-4710-afc0-619edde2d7a1, sni: t11.qifei.app, skip-cert-verify: true, udp: true}
-  - {name: disney_netflix_US |266.48Mb, server: 18.219.164.184, port: 443, type: ss, cipher: aes-256-cfb, password: amazonskr05, udp: true}
-  - {name: netflix_NL |751.41Mb, server: 193.29.139.223, port: 8080, type: ss, cipher: chacha20-ietf-poly1305, password: k1dBOmOB4oqi7Ump37a1bQ, udp: true}
-  - {name: netflix_NL |782.20Mb, server: 82.38.31.36, port: 443, type: ss, cipher: chacha20-ietf-poly1305, password: oZIoA69Q8yhcQV8ka3Pa3A, udp: true}
-  - {name: netflix_NL |968.06Mb, server: 82.38.31.218, port: 8080, type: ss, cipher: chacha20-ietf-poly1305, password: k1dBOmOB4oqi7Ump37a1bQ, udp: true}
-  - {name: Relay_-🇹🇷TR_204 |246.96Mb, server: sub.almavpn.shop, port: 1080, type: ss, cipher: chacha20-ietf-poly1305, password: KxJVQc8ZjDgRNhFaesshNDEZqBexyyZv, udp: true}
-  - {name: netflix_JP |119.93Mb, server: 45.32.16.53, port: 8388, type: ss, cipher: chacha20-ietf-poly1305, password: uTBjZhDmOMwBVAJI, udp: true}
-  - {name: netflix_NL |937.19Mb, server: 193.29.139.147, port: 8080, type: ss, cipher: chacha20-ietf-poly1305, password: k1dBOmOB4oqi7Ump37a1bQ, udp: true}
-  - {name: netflix_PL |118.85Mb, server: 64.176.73.160, port: 8388, type: ss, cipher: chacha20-ietf-poly1305, password: VJtsgllDDJfNmaTe, udp: true}
-  - {name: disney_netflix_US |145.63Mb, server: autodiscover.fuzzyaytor.cyou, port: 42982, type: ss, cipher: chacha20-ietf-poly1305, password: yTEXWB6XBHyv9SfQJzCSRWCnRYutFdUXg1wbcbutxPwZE6Uxcurka3GkoatgEdX483XZSHeJp3jXcTShLCRM8rPgMF3vYNfS, udp: true}
-  - {name: Relay_-🇭🇰HK_209 |26.24Mb, server: ace-starling.rooster465.autos, port: 443, type: trojan, password: ND91608427, sni: ace-starling.rooster465.autos, skip-cert-verify: true, udp: true}
-  - {name: disney_KR, server: saving-octopus.rooster465.autos, port: 443, type: trojan, password: ND91608427, sni: saving-octopus.rooster465.autos, skip-cert-verify: true, udp: true}
-  - {name: disney_KR 2, server: 52.78.13.238, port: 443, type: trojan, password: ND91608427, sni: upward-puma.rooster465.autos, skip-cert-verify: true, udp: true}
-  - {name: Relay_-🇫🇷FR_212 |156.79Mb, server: fancy-skink.rooster465.autos, port: 443, type: trojan, password: ND91608427, sni: fancy-skink.rooster465.autos, skip-cert-verify: true, udp: true}
-  - {name: Relay_-🇭🇰HK_213 |24.41Mb, server: upright-hamster.rooster465.autos, port: 443, type: trojan, password: ND91608427, sni: upright-hamster.rooster465.autos, skip-cert-verify: true, udp: true}
-  - {name: Relay_-🇺🇸US_214 |26.50Mb, server: fleet-bonefish.rooster465.autos, port: 443, type: trojan, password: ND91608427, sni: fleet-bonefish.rooster465.autos, skip-cert-verify: true, udp: true}
-  - {name: Relay_-🇫🇷FR_215 | 2.11Mb, server: 168.100.9.178, port: 2053, type: trojan, password: humanity, sni: www.calmlunch.com, skip-cert-verify: true, network: ws, ws-opts: {path: /assignment, headers: {Host: www.calmlunch.com}}, udp: true}
-  - {name: Relay_-🇺🇸US_216 |27.60Mb, server: pet-ghost.rooster465.autos, port: 443, type: trojan, password: ND91608427, sni: pet-ghost.rooster465.autos, skip-cert-verify: true, udp: true}
-  - {name: Relay_-🇯🇵JP_217 |82.91Mb, server: tough-robin.rooster465.autos, port: 443, type: trojan, password: ND91608427, sni: tough-robin.rooster465.autos, skip-cert-verify: true, udp: true}
-  - {name: disney_KR 3, server: chief-bluegill.rooster465.autos, port: 443, type: trojan, password: ND91608427, sni: chief-bluegill.rooster465.autos, skip-cert-verify: true, udp: true}
-  - {name: Relay_-🇯🇵JP_219 |80.06Mb, server: casual-bee.rooster465.autos, port: 443, type: trojan, password: ND91608427, sni: casual-bee.rooster465.autos, skip-cert-verify: true, udp: true}
-  - {name: _220 |26.60Mb, server: 13.208.169.24, port: 12308, type: trojan, password: a703fe02-9bdf-4124-a812-0284d0acdf36, sni: jp03.ulifeai.com, skip-cert-verify: true, udp: true}
-  - {name: disney_KR 4, server: moved-meerkat.rooster465.autos, port: 443, type: trojan, password: ND91608427, sni: moved-meerkat.rooster465.autos, skip-cert-verify: true, udp: true}
-  - {name: Relay_-🇺🇸US_222 |27.36Mb, server: natural-collie.rooster465.autos, port: 443, type: trojan, password: ND91608427, sni: natural-collie.rooster465.autos, skip-cert-verify: true, udp: true}
-  - {name: disney_KR 5, server: definite-malamute.rooster465.autos, port: 443, type: trojan, password: ND91608427, sni: definite-malamute.rooster465.autos, skip-cert-verify: true, udp: true}
-  - {name: Relay_-🇯🇵JP_224 |83.83Mb, server: upright-impala.rooster465.autos, port: 443, type: trojan, password: ND91608427, sni: upright-impala.rooster465.autos, skip-cert-verify: true, udp: true}
-  - {name: Relay_-🇬🇧GB_225 |270.75Mb, server: relaxed-gull.rooster465.autos, port: 443, type: trojan, password: ND91608427, sni: relaxed-gull.rooster465.autos, skip-cert-verify: true, udp: true}
-  - {name: Relay_-🇬🇧GB_226 |267.10Mb, server: discrete-basilisk.rooster465.autos, port: 443, type: trojan, password: ND91608427, sni: discrete-basilisk.rooster465.autos, skip-cert-verify: true, udp: true}
-  - {name: disney_netflix_GB, server: 104.19.229.21, port: 443, type: trojan, password: MITIVPN, sni: d--AA-ia-MiTiVPN--MiTiVPN--MiTiVPN---MiTiVPN--MiTiVPN--MiTiVPN.mitiVpN.lIfeStyLe, skip-cert-verify: true, network: ws, ws-opts: {path: /---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/D-e2---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN, headers: {Host: d--AA-ia-MiTiVPN--MiTiVPN--MiTiVPN---MiTiVPN--MiTiVPN--MiTiVPN.mitiVpN.lIfeStyLe}}, udp: true}
-  - {name: netflix_ES |301.71Mb, server: 193.148.19.213, port: 52794, type: trojan, password: 2eutknankxtbgkwcajzt, sni: 193.148.19.213, skip-cert-verify: true, udp: true}
-  - {name: _229 |15.48Mb, server: 139.59.238.97, port: 50573, type: trojan, password: pvZE3UfT0ziK1omVLlsjINBqeqqwab1M, skip-cert-verify: true, udp: true}
-  - {name: disney_netflix_GB 2, server: 45.80.111.7, port: 443, type: trojan, password: MiTiVPN, sni: d-2-AA-ia-MiTiVPN--MiTiVPN--MiTiVPN---MiTiVPN--MiTiVPN--MiTiVPN.mitiVpN.lIfeStyLe, skip-cert-verify: true, network: ws, ws-opts: {path: /---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/D-e1@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN, headers: {Host: d-2-AA-ia-MiTiVPN--MiTiVPN--MiTiVPN---MiTiVPN--MiTiVPN--MiTiVPN.mitiVpN.lIfeStyLe}}, udp: true}
-  - {name: Relay_-🇧🇷BR_231 |34.75Mb, server: oplosgru-c.catcat321.com, port: 20004, type: trojan, password: ba07a8af-5544-48ac-ab62-3b6c00a44fa6, sni: hk.catxstar.com, skip-cert-verify: true, udp: true}
-  - {name: disney_netflix_GB 3, server: 104.17.148.22, port: 443, type: trojan, password: MiTiVPN, sni: gb-ss-MiTiVPN--MiTiVPN--MiTiVPN---MiTiVPN--MiTiVPN--MiTiVPN.mitiVpN.lIfeStyLe, skip-cert-verify: true, network: ws, ws-opts: {path: /---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/gb---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN, headers: {Host: gb-ss-MiTiVPN--MiTiVPN--MiTiVPN---MiTiVPN--MiTiVPN--MiTiVPN.mitiVpN.lIfeStyLe}}, udp: true}
-  - {name: disney_KR 6, server: upward-puma.rooster465.autos, port: 443, type: trojan, password: ND91608427, sni: upward-puma.rooster465.autos, skip-cert-verify: true, udp: true}
-  - {name: Pool_🇺🇸US_235 | 2.87Mb, server: 193.42.38.209, port: 1080, type: ss, cipher: chacha20-ietf-poly1305, password: XF0klw7870vXn3uQIxe19Q, udp: true}
   - {name: "🇮🇸 [免费机场TG@proxyshareCN] 冰岛01-标准", server: 260323.1.0.l3.unclemanco.com, port: 39186, type: ss, cipher: aes-128-gcm, password: "*&afaospcpZLjgj", plugin: obfs, plugin-opts: {mode: http, host: 246495634.download.windowsupdate.com}, udp: true}
   - {name: "[免费机场TG@proxyshareCN] 列支敦士登01-标准", server: 260323.1.0.l3.unclemanco.com, port: 39190, type: ss, cipher: aes-128-gcm, password: "fkkyc*&apZLj", plugin: obfs, plugin-opts: {mode: http, host: 246495634.download.windowsupdate.com}, udp: true}
   - {name: "🇲🇰 [免费机场TG@proxyshareCN] 北马其顿01-标准", server: 260323.1.0.l3.unclemanco.com, port: 39176, type: ss, cipher: aes-128-gcm, password: gergwasafs, plugin: obfs, plugin-opts: {mode: http, host: 246495634.download.windowsupdate.com}, udp: true}
@@ -262,14 +161,51 @@ proxies:
   - {name: 🇦🇱 Web 阿尔巴尼亚I-标准, server: 260323.1.0.l2.unclemanco.com, port: 39184, type: ss, cipher: aes-128-gcm, password: gftgfddafgdfs, plugin: obfs, plugin-opts: {mode: http, host: 246495634.download.windowsupdate.com}, udp: true}
   - {name: 🇭🇰 Web 香港I-标准, server: 260323.1.0.l2.unclemanco.com, port: 912, type: ss, cipher: aes-128-gcm, password: QHPy2u, plugin: obfs, plugin-opts: {mode: http, host: 246495634.download.windowsupdate.com}, udp: true}
   - {name: 🇭🇰 Web 香港II-标准, server: 260323.1.0.l2.unclemanco.com, port: 840, type: ss, cipher: aes-128-gcm, password: QHPy2u, plugin: obfs, plugin-opts: {mode: http, host: 246495634.download.windowsupdate.com}, udp: true}
-  - {name: netflix_JP |119.93Mb 2, server: 45.32.16.53, port: 8388, type: ss, cipher: chacha20-ietf-poly1305, password: uTBjZhDmOMwBVAJI, udp: true}
-  - {name: disney_KR 7, server: 52.78.13.238, port: 443, type: trojan, password: ND91608427, sni: upward-puma.rooster465.autos, skip-cert-verify: true, udp: true}
-  - {name: disney_KR 8, server: chief-bluegill.rooster465.autos, port: 443, type: trojan, password: ND91608427, sni: chief-bluegill.rooster465.autos, skip-cert-verify: true, udp: true}
-  - {name: disney_KR 9, server: moved-meerkat.rooster465.autos, port: 443, type: trojan, password: ND91608427, sni: moved-meerkat.rooster465.autos, skip-cert-verify: true, udp: true}
-  - {name: disney_KR 10, server: saving-octopus.rooster465.autos, port: 443, type: trojan, password: ND91608427, sni: saving-octopus.rooster465.autos, skip-cert-verify: true, udp: true}
-  - {name: disney_KR 11, server: definite-malamute.rooster465.autos, port: 443, type: trojan, password: ND91608427, sni: definite-malamute.rooster465.autos, skip-cert-verify: true, udp: true}
-  - {name: disney_KR 12, server: upward-puma.rooster465.autos, port: 443, type: trojan, password: ND91608427, sni: upward-puma.rooster465.autos, skip-cert-verify: true, udp: true}
-  - {name: disney_TW, server: 60.249.35.95, port: 2377, type: ss, cipher: chacha20-ietf-poly1305, password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv, plugin: obfs, plugin-opts: {mode: tls, host: 817aa69.default.nintendo.com:112719}, udp: true}
+  - {name: "|19.32Mb", server: 139.84.247.164, port: 8388, type: ss, cipher: chacha20-ietf-poly1305, password: tfAcRikawhNoZAhu, udp: true}
+  - {name: Relay_ | 6.88Mb, server: autodiscover.fuzzyaytor.cyou, port: 42982, type: ss, cipher: chacha20-ietf-poly1305, password: yTEXWB6XBHyv9SfQJzCSRWCnRYutFdUXg1wbcbutxPwZE6Uxcurka3GkoatgEdX483XZSHeJp3jXcTShLCRM8rPgMF3vYNfS, udp: true}
+  - {name: "|216.78Mb", server: 193.29.139.147, port: 8080, type: ss, cipher: chacha20-ietf-poly1305, password: k1dBOmOB4oqi7Ump37a1bQ, udp: true}
+  - {name: "|210.80Mb", server: 193.29.139.223, port: 8080, type: ss, cipher: chacha20-ietf-poly1305, password: k1dBOmOB4oqi7Ump37a1bQ, udp: true}
+  - {name: "| 7.30Mb", server: 64.176.73.160, port: 8388, type: ss, cipher: chacha20-ietf-poly1305, password: VJtsgllDDJfNmaTe, udp: true}
+  - {name: "|199.18Mb", server: 82.38.31.218, port: 8080, type: ss, cipher: chacha20-ietf-poly1305, password: k1dBOmOB4oqi7Ump37a1bQ, udp: true}
+  - {name: "|202.92Mb", server: 82.38.31.36, port: 443, type: ss, cipher: chacha20-ietf-poly1305, password: oZIoA69Q8yhcQV8ka3Pa3A, udp: true}
+  - {name: "|275.54Mb", server: 18.219.164.184, port: 443, type: ss, cipher: aes-256-cfb, password: amazonskr05, udp: true}
+  - {name: "|25.21Mb", server: 152.70.53.15, port: 45819, type: ss, cipher: chacha20-ietf-poly1305, password: YTEyZDI0OGQwM2ZmZjc4ZTg1ZTBiYTNlZTZkZjIxODM=, udp: true}
+  - {name: "|122.31Mb", server: 45.32.16.53, port: 8388, type: ss, cipher: chacha20-ietf-poly1305, password: uTBjZhDmOMwBVAJI, udp: true}
+  - {name: Relay_ |93.66Mb, server: ace-starling.rooster465.autos, port: 443, type: trojan, password: ND91608427, sni: ace-starling.rooster465.autos, skip-cert-verify: true, udp: true}
+  - {name: Relay_ | 8.26Mb, server: relaxed-gull.rooster465.autos, port: 443, type: trojan, password: ND91608427, sni: relaxed-gull.rooster465.autos, skip-cert-verify: true, udp: true}
+  - {name: "|59.72Mb", server: 13.208.169.24, port: 12308, type: trojan, password: a703fe02-9bdf-4124-a812-0284d0acdf36, sni: jp03.ulifeai.com, skip-cert-verify: true, udp: true}
+  - {name: Relay_ |145.18Mb, server: pet-ghost.rooster465.autos, port: 443, type: trojan, password: ND91608427, sni: pet-ghost.rooster465.autos, skip-cert-verify: true, udp: true}
+  - {name: Relay_ |83.33Mb, server: tough-robin.rooster465.autos, port: 443, type: trojan, password: ND91608427, sni: tough-robin.rooster465.autos, skip-cert-verify: true, udp: true}
+  - {name: _170, server: 52.78.13.238, port: 443, type: trojan, password: ND91608427, sni: upward-puma.rooster465.autos, skip-cert-verify: true, udp: true}
+  - {name: Relay_ |137.19Mb, server: natural-collie.rooster465.autos, port: 443, type: trojan, password: ND91608427, sni: natural-collie.rooster465.autos, skip-cert-verify: true, udp: true}
+  - {name: Relay_ |88.72Mb, server: upright-hamster.rooster465.autos, port: 443, type: trojan, password: ND91608427, sni: upright-hamster.rooster465.autos, skip-cert-verify: true, udp: true}
+  - {name: Relay_-🇰🇷KR_171, server: chief-bluegill.rooster465.autos, port: 443, type: trojan, password: ND91608427, sni: chief-bluegill.rooster465.autos, skip-cert-verify: true, udp: true}
+  - {name: Relay_ |146.02Mb, server: fleet-bonefish.rooster465.autos, port: 443, type: trojan, password: ND91608427, sni: fleet-bonefish.rooster465.autos, skip-cert-verify: true, udp: true}
+  - {name: Relay_ |83.71Mb, server: casual-bee.rooster465.autos, port: 443, type: trojan, password: ND91608427, sni: casual-bee.rooster465.autos, skip-cert-verify: true, udp: true}
+  - {name: Relay_-🇩🇪DE_183, server: 104.19.229.21, port: 443, type: trojan, password: MITIVPN, sni: d--AA-ia-MiTiVPN--MiTiVPN--MiTiVPN---MiTiVPN--MiTiVPN--MiTiVPN.mitiVpN.lIfeStyLe, skip-cert-verify: true, network: ws, ws-opts: {path: /---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/D-e2---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN, headers: {Host: d--AA-ia-MiTiVPN--MiTiVPN--MiTiVPN---MiTiVPN--MiTiVPN--MiTiVPN.mitiVpN.lIfeStyLe}}, udp: true}
+  - {name: Relay_-🇩🇪DE_179, server: 45.80.111.7, port: 443, type: trojan, password: MiTiVPN, sni: d-2-AA-ia-MiTiVPN--MiTiVPN--MiTiVPN---MiTiVPN--MiTiVPN--MiTiVPN.mitiVpN.lIfeStyLe, skip-cert-verify: true, network: ws, ws-opts: {path: /---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/D-e1@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN, headers: {Host: d-2-AA-ia-MiTiVPN--MiTiVPN--MiTiVPN---MiTiVPN--MiTiVPN--MiTiVPN.mitiVpN.lIfeStyLe}}, udp: true}
+  - {name: "|16.35Mb", server: 104.17.121.9, port: 443, type: trojan, password: humanity, sni: www.calmlunch.com, skip-cert-verify: true, network: ws, ws-opts: {path: /assignment, headers: {Host: www.calmlunch.com}}, udp: true}
+  - {name: Relay_-🇰🇷KR_174, server: definite-malamute.rooster465.autos, port: 443, type: trojan, password: ND91608427, sni: definite-malamute.rooster465.autos, skip-cert-verify: true, udp: true}
+  - {name: Relay_ |84.09Mb, server: upright-impala.rooster465.autos, port: 443, type: trojan, password: ND91608427, sni: upright-impala.rooster465.autos, skip-cert-verify: true, udp: true}
+  - {name: Relay_ |37.81Mb, server: fancy-skink.rooster465.autos, port: 443, type: trojan, password: ND91608427, sni: fancy-skink.rooster465.autos, skip-cert-verify: true, udp: true}
+  - {name: Relay_-🇰🇷KR_173, server: saving-octopus.rooster465.autos, port: 443, type: trojan, password: ND91608427, sni: saving-octopus.rooster465.autos, skip-cert-verify: true, udp: true}
+  - {name: Relay_ | 7.91Mb, server: discrete-basilisk.rooster465.autos, port: 443, type: trojan, password: ND91608427, sni: discrete-basilisk.rooster465.autos, skip-cert-verify: true, udp: true}
+  - {name: Relay_-🇩🇪DE_163, server: 104.17.148.22, port: 443, type: trojan, password: MiTiVPN, sni: gb-ss-MiTiVPN--MiTiVPN--MiTiVPN---MiTiVPN--MiTiVPN--MiTiVPN.mitiVpN.lIfeStyLe, skip-cert-verify: true, network: ws, ws-opts: {path: /---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/gb---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN, headers: {Host: gb-ss-MiTiVPN--MiTiVPN--MiTiVPN---MiTiVPN--MiTiVPN--MiTiVPN.mitiVpN.lIfeStyLe}}, udp: true}
+  - {name: Pool_ |10.65Mb, server: 193.148.19.213, port: 52794, type: trojan, password: 2eutknankxtbgkwcajzt, sni: 193.148.19.213, skip-cert-verify: true, udp: true}
+  - {name: "|53.09Mb", server: 104.16.71.213, port: 443, type: trojan, password: humanity, sni: www.calmlunch.com, skip-cert-verify: true, network: ws, ws-opts: {path: /assignment, headers: {Host: www.calmlunch.com}}, udp: true}
+  - {name: "|11.45Mb", server: 139.59.238.97, port: 50573, type: trojan, password: pvZE3UfT0ziK1omVLlsjINBqeqqwab1M, skip-cert-verify: true, udp: true}
+  - {name: "| 2.37Mb", server: 185.18.250.245, port: 443, type: trojan, password: humanity, sni: www.calmlunch.com, skip-cert-verify: true, network: ws, ws-opts: {path: /assignment, headers: {Host: www.calmlunch.com}}, udp: true}
+  - {name: Relay_ |23.45Mb, server: 45.80.111.7, port: 443, type: trojan, password: humanity, sni: www.calmlunch.com, skip-cert-verify: true, network: ws, ws-opts: {path: /assignment, headers: {Host: www.calmlunch.com}}, udp: true}
+  - {name: "|46.25Mb", server: 168.100.9.178, port: 2053, type: trojan, password: humanity, sni: www.calmlunch.com, skip-cert-verify: true, network: ws, ws-opts: {path: /assignment, headers: {Host: www.calmlunch.com}}, udp: true}
+  - {name: "|15.44Mb", server: 104.17.121.43, port: 443, type: trojan, password: humanity, sni: www.calmlunch.com, skip-cert-verify: true, network: ws, ws-opts: {path: /assignment, headers: {Host: www.calmlunch.com}}, udp: true}
+  - {name: Relay_-🇰🇷KR_161, server: moved-meerkat.rooster465.autos, port: 443, type: trojan, password: ND91608427, sni: moved-meerkat.rooster465.autos, skip-cert-verify: true, udp: true}
+  - {name: Relay_ |14.63Mb, server: 45.130.125.126, port: 443, type: trojan, password: humanity, sni: www.calmlunch.com, skip-cert-verify: true, network: ws, ws-opts: {path: /assignment, headers: {Host: www.calmlunch.com}}, udp: true}
+  - {name: "|32.14Mb", server: 104.18.32.47, port: 443, type: trojan, password: humanity, sni: www.calmlunch.com, skip-cert-verify: true, network: ws, ws-opts: {path: /assignment, headers: {Host: www.calmlunch.com}}, udp: true}
+  - {name: "|160.22Mb", server: 82.38.31.36, port: 8080, type: ss, cipher: chacha20-ietf-poly1305, password: oZIoA69Q8yhcQV8ka3Pa3A, udp: true}
+  - {name: "|10.31Mb", server: 103.149.182.79, port: 8388, type: ss, cipher: chacha20-ietf, password: asd123456, udp: true}
+  - {name: 🇰🇷 Relay_🇰🇷KR-🇰🇷KR_188, server: upward-puma.rooster465.autos, port: 443, type: trojan, password: ND91608427, sni: upward-puma.rooster465.autos, skip-cert-verify: true, udp: true}
+  - {name: "", server: 61.216.165.233, port: 2377, type: ss, cipher: chacha20-ietf-poly1305, password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv, plugin: obfs, plugin-opts: {mode: tls, host: (TG @WangCai2)aee97b7:155033}, udp: true}
+  - {name: Pool_ | 2.87Mb, server: 193.42.38.209, port: 1080, type: ss, cipher: chacha20-ietf-poly1305, password: XF0klw7870vXn3uQIxe19Q, udp: true}
   - {name: 🇩🇪 德国 - Frankfurt am Main - 1, server: 130.61.147.181, port: 59924, type: ss, cipher: chacha20-ietf-poly1305, password: OWVhYWM4OTFlNGFhNTFiNjY5NDNlODI3ZDE5Njc0ZmE=, udp: true}
   - {name: 🇫🇮 芬兰 - Helsinki - 1, server: autodiscover.fuzzyaytor.cyou, port: 42982, type: ss, cipher: chacha20-ietf-poly1305, password: yTEXWB6XBHyv9SfQJzCSRWCnRYutFdUXg1wbcbutxPwZE6Uxcurka3GkoatgEdX483XZSHeJp3jXcTShLCRM8rPgMF3vYNfS, udp: true}
   - {name: 🇰🇷 韩国 - Incheon - 1, server: 52.78.13.238, port: 443, type: trojan, password: ND91608427, sni: upward-puma.rooster465.autos, skip-cert-verify: true, udp: true}
@@ -282,6 +218,102 @@ proxies:
   - {name: 🇺🇸 美国 - Los Angeles - 1, server: 138.199.35.214, port: 9002, type: http, tls: true, skip-cert-verify: true, udp: true}
   - {name: 🇺🇸 美国 - Los Angeles - 2, server: 138.199.35.207, port: 9002, type: http, tls: true, skip-cert-verify: true, udp: true}
   - {name: 🇨🇳 中国 - Kwai Chung - 1, server: v9.hdacd.com, port: 30809, type: vmess, uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484, alterId: 2, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
+  - {name: Relay_-🇰🇷KR_171 2, server: chief-bluegill.rooster465.autos, port: 443, type: trojan, password: ND91608427, sni: chief-bluegill.rooster465.autos, skip-cert-verify: true, udp: true}
+  - {name: Relay_-🇰🇷KR_174 2, server: definite-malamute.rooster465.autos, port: 443, type: trojan, password: ND91608427, sni: definite-malamute.rooster465.autos, skip-cert-verify: true, udp: true}
+  - {name: Relay_-🇰🇷KR_173 2, server: saving-octopus.rooster465.autos, port: 443, type: trojan, password: ND91608427, sni: saving-octopus.rooster465.autos, skip-cert-verify: true, udp: true}
+  - {name: Relay_-🇰🇷KR_161 2, server: moved-meerkat.rooster465.autos, port: 443, type: trojan, password: ND91608427, sni: moved-meerkat.rooster465.autos, skip-cert-verify: true, udp: true}
+  - {name: 🇰🇷 Relay_🇰🇷KR-🇰🇷KR_188 2, server: upward-puma.rooster465.autos, port: 443, type: trojan, password: ND91608427, sni: upward-puma.rooster465.autos, skip-cert-verify: true, udp: true}
+  - {name: 🇺🇸 United States_None_ss_101, server: 63.180.254.10, port: 443, type: ss, cipher: aes-256-cfb, password: amazonskr05, udp: true}
+  - {name: 🇭🇰 Hong Kong_Tuen Mun_vmess_102, server: v10.hdacd.com, port: 30807, type: vmess, uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484, alterId: 2, cipher: auto, tls: false, skip-cert-verify: false, udp: true}
+  - {name: 🇭🇰 Hong Kong_None_trojan_103, server: 16.162.100.124, port: 11231, type: trojan, password: 6ec301428255a78a1d826988d86cc87e, sni: www.nintendogames.net, skip-cert-verify: true, udp: true}
+  - {name: 🇭🇰 Hong Kong_None_trojan_104, server: 18.162.244.203, port: 11035, type: trojan, password: BxceQaOe, sni: t.me%2Fripaojiedian, skip-cert-verify: true, udp: true}
+  - {name: 🇭🇰 Hong Kong_None_trojan_105, server: 18.162.120.218, port: 11035, type: trojan, password: BxceQaOe, sni: t.me%2Fripaojiedian, skip-cert-verify: true, udp: true}
+  - {name: 🇭🇰 Hong Kong_None_trojan_106, server: 16.162.100.124, port: 4099, type: trojan, password: BxceQaOe, sni: t.me%252Fripaojiedian, skip-cert-verify: true, udp: true}
+  - {name: 🇭🇰 Hong Kong_None_trojan_107, server: 16.162.192.182, port: 44229, type: trojan, password: 6ec301428255a78a1d826988d86cc87e, sni: www.nintendogames.net, skip-cert-verify: true, udp: true}
+  - {name: 🇭🇰 Hong Kong_None_trojan_108, server: 16.162.192.182, port: 18286, type: trojan, password: 6ec301428255a78a1d826988d86cc87e, sni: www.nintendogames.net, skip-cert-verify: true, udp: true}
+  - {name: 🇭🇰 Hong Kong_None_trojan_109, server: 16.162.100.124, port: 32434, type: trojan, password: 6ec301428255a78a1d826988d86cc87e, sni: www.nintendogames.net, skip-cert-verify: true, udp: true}
+  - {name: 🇭🇰 Hong Kong_None_trojan_1010, server: 16.162.192.182, port: 45744, type: trojan, password: 6ec301428255a78a1d826988d86cc87e, sni: www.nintendogames.net, skip-cert-verify: true, udp: true}
+  - {name: 🇭🇰 Hong Kong_None_trojan_1011, server: 18.163.126.92, port: 26704, type: trojan, password: BxceQaOe, sni: t.me%252Fripaojiedian, skip-cert-verify: true, udp: true}
+  - {name: 🇵🇱 Poland_None_trojan_1012, server: 95.40.14.234, port: 28051, type: trojan, password: 6ec301428255a78a1d826988d86cc87e, sni: www.nintendogames.net, skip-cert-verify: true, udp: true}
+  - {name: 🇭🇰 Hong Kong_None_trojan_1013, server: 16.162.100.124, port: 10418, type: trojan, password: 6ec301428255a78a1d826988d86cc87e, sni: www.nintendogames.net, skip-cert-verify: true, udp: true}
+  - {name: 🇭🇰 Hong Kong_None_trojan_1014, server: 16.162.100.124, port: 28051, type: trojan, password: BxceQaOe, sni: t.me%2Fripaojiedian, skip-cert-verify: true, udp: true}
+  - {name: 🇭🇰 Hong Kong_Tuen Mun_vmess_1015, server: v10.hdacd.com, port: 30807, type: vmess, uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484, alterId: 2, cipher: auto, tls: false, udp: true}
+  - {name: 🇭🇰 Hong Kong_None_trojan_1016, server: 16.162.3.11, port: 27161, type: trojan, password: BxceQaOe, sni: t.me/ripaojiedian, skip-cert-verify: true, udp: true}
+  - {name: 🇭🇰 Hong Kong_None_trojan_1017, server: 16.162.3.11, port: 27161, type: trojan, password: BxceQaOe, sni: t.me%2Fripaojiedian, skip-cert-verify: true, udp: true}
+  - {name: 🇯🇵 Japan_Tokyo_trojan_1018, server: t11.qifei.app, port: 55682, type: trojan, password: 7d8e6db4-96cc-4710-afc0-619edde2d7a1, sni: t11.qifei.app, skip-cert-verify: true, udp: true}
+  - {name: Unknown_vmess_111, server: 127.0.0.53, port: 80, type: vmess, uuid: 88888888-8888-8888-8888-888888888888, alterId: 0, cipher: auto, tls: false, udp: true}
+  - {name: Unknown_vmess_112, server: 127.0.0.53, port: 81, type: vmess, uuid: 88888888-8888-8888-8888-888888888888, alterId: 0, cipher: auto, tls: false, udp: true}
+  - {name: Unknown_vmess_113, server: 127.0.0.53, port: 82, type: vmess, uuid: 88888888-8888-8888-8888-888888888888, alterId: 0, cipher: auto, tls: false, udp: true}
+  - {name: Unknown_vmess_114, server: 127.0.0.53, port: 83, type: vmess, uuid: 88888888-8888-8888-8888-888888888888, alterId: 0, cipher: auto, tls: false, udp: true}
+  - {name: Unknown_vmess_115, server: 127.0.0.53, port: 84, type: vmess, uuid: 88888888-8888-8888-8888-888888888888, alterId: 0, cipher: auto, tls: false, udp: true}
+  - {name: Unknown_vmess_116, server: 127.0.0.53, port: 85, type: vmess, uuid: 88888888-8888-8888-8888-888888888888, alterId: 0, cipher: auto, tls: false, udp: true}
+  - {name: Unknown_vmess_117, server: 127.0.0.53, port: 86, type: vmess, uuid: 88888888-8888-8888-8888-888888888888, alterId: 0, cipher: auto, tls: false, udp: true}
+  - {name: Unknown_vmess_118, server: 127.0.0.53, port: 87, type: vmess, uuid: 88888888-8888-8888-8888-888888888888, alterId: 0, cipher: auto, tls: false, udp: true}
+  - {name: Unknown_vmess_119, server: 127.0.0.53, port: 88, type: vmess, uuid: 88888888-8888-8888-8888-888888888888, alterId: 0, cipher: auto, tls: false, udp: true}
+  - {name: Unknown_vmess_1110, server: 127.0.0.53, port: 89, type: vmess, uuid: 88888888-8888-8888-8888-888888888888, alterId: 0, cipher: auto, tls: false, udp: true}
+  - {name: 🇺🇸 United States_None_ss_1111, server: 63.180.254.10, port: 443, type: ss, cipher: aes-256-cfb, password: amazonskr05, udp: true}
+  - {name: 🇭🇰 Hong Kong_Tuen Mun_vmess_1112, server: v10.hdacd.com, port: 30807, type: vmess, uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484, alterId: 2, cipher: auto, tls: false, skip-cert-verify: false, udp: true}
+  - {name: 🇭🇰 Hong Kong_None_trojan_1113, server: 16.162.100.124, port: 11231, type: trojan, password: 6ec301428255a78a1d826988d86cc87e, sni: www.nintendogames.net, skip-cert-verify: true, udp: true}
+  - {name: 🇭🇰 Hong Kong_None_trojan_1114, server: 18.162.244.203, port: 11035, type: trojan, password: BxceQaOe, sni: t.me%2Fripaojiedian, skip-cert-verify: true, udp: true}
+  - {name: 🇭🇰 Hong Kong_None_trojan_1115, server: 18.162.120.218, port: 11035, type: trojan, password: BxceQaOe, sni: t.me%2Fripaojiedian, skip-cert-verify: true, udp: true}
+  - {name: 🇭🇰 Hong Kong_None_trojan_1116, server: 16.162.100.124, port: 4099, type: trojan, password: BxceQaOe, sni: t.me%252Fripaojiedian, skip-cert-verify: true, udp: true}
+  - {name: 🇭🇰 Hong Kong_None_trojan_1117, server: 16.162.192.182, port: 44229, type: trojan, password: 6ec301428255a78a1d826988d86cc87e, sni: www.nintendogames.net, skip-cert-verify: true, udp: true}
+  - {name: 🇭🇰 Hong Kong_None_trojan_1118, server: 16.162.192.182, port: 18286, type: trojan, password: 6ec301428255a78a1d826988d86cc87e, sni: www.nintendogames.net, skip-cert-verify: true, udp: true}
+  - {name: 🇭🇰 Hong Kong_None_trojan_1119, server: 16.162.100.124, port: 32434, type: trojan, password: 6ec301428255a78a1d826988d86cc87e, sni: www.nintendogames.net, skip-cert-verify: true, udp: true}
+  - {name: 🇭🇰 Hong Kong_None_trojan_1120, server: 16.162.192.182, port: 45744, type: trojan, password: 6ec301428255a78a1d826988d86cc87e, sni: www.nintendogames.net, skip-cert-verify: true, udp: true}
+  - {name: 🇭🇰 Hong Kong_None_trojan_1121, server: 18.163.126.92, port: 26704, type: trojan, password: BxceQaOe, sni: t.me%252Fripaojiedian, skip-cert-verify: true, udp: true}
+  - {name: 🇵🇱 Poland_None_trojan_1122, server: 95.40.14.234, port: 28051, type: trojan, password: 6ec301428255a78a1d826988d86cc87e, sni: www.nintendogames.net, skip-cert-verify: true, udp: true}
+  - {name: 🇭🇰 Hong Kong_None_trojan_1123, server: 16.162.100.124, port: 10418, type: trojan, password: 6ec301428255a78a1d826988d86cc87e, sni: www.nintendogames.net, skip-cert-verify: true, udp: true}
+  - {name: 🇭🇰 Hong Kong_None_trojan_1124, server: 16.162.100.124, port: 28051, type: trojan, password: BxceQaOe, sni: t.me%2Fripaojiedian, skip-cert-verify: true, udp: true}
+  - {name: 🇭🇰 Hong Kong_Tuen Mun_vmess_1125, server: v10.hdacd.com, port: 30807, type: vmess, uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484, alterId: 2, cipher: auto, tls: false, udp: true}
+  - {name: 🇭🇰 Hong Kong_None_trojan_1126, server: 16.162.3.11, port: 27161, type: trojan, password: BxceQaOe, sni: t.me/ripaojiedian, skip-cert-verify: true, udp: true}
+  - {name: 🇭🇰 Hong Kong_None_trojan_1127, server: 16.162.3.11, port: 27161, type: trojan, password: BxceQaOe, sni: t.me%2Fripaojiedian, skip-cert-verify: true, udp: true}
+  - {name: 🇯🇵 Japan_Tokyo_trojan_1128, server: t11.qifei.app, port: 55682, type: trojan, password: 7d8e6db4-96cc-4710-afc0-619edde2d7a1, sni: t11.qifei.app, skip-cert-verify: true, udp: true}
+  - {name: _161 |19.32Mb, server: 139.84.247.164, port: 8388, type: ss, cipher: chacha20-ietf-poly1305, password: tfAcRikawhNoZAhu, udp: true}
+  - {name: disney_netflix_US | 6.88Mb, server: autodiscover.fuzzyaytor.cyou, port: 42982, type: ss, cipher: chacha20-ietf-poly1305, password: yTEXWB6XBHyv9SfQJzCSRWCnRYutFdUXg1wbcbutxPwZE6Uxcurka3GkoatgEdX483XZSHeJp3jXcTShLCRM8rPgMF3vYNfS, udp: true}
+  - {name: disney_netflix_NL |216.78Mb, server: 193.29.139.147, port: 8080, type: ss, cipher: chacha20-ietf-poly1305, password: k1dBOmOB4oqi7Ump37a1bQ, udp: true}
+  - {name: disney_netflix_NL |210.80Mb, server: 193.29.139.223, port: 8080, type: ss, cipher: chacha20-ietf-poly1305, password: k1dBOmOB4oqi7Ump37a1bQ, udp: true}
+  - {name: netflix_PL | 7.30Mb, server: 64.176.73.160, port: 8388, type: ss, cipher: chacha20-ietf-poly1305, password: VJtsgllDDJfNmaTe, udp: true}
+  - {name: disney_netflix_NL |199.18Mb, server: 82.38.31.218, port: 8080, type: ss, cipher: chacha20-ietf-poly1305, password: k1dBOmOB4oqi7Ump37a1bQ, udp: true}
+  - {name: disney_netflix_NL |202.92Mb, server: 82.38.31.36, port: 443, type: ss, cipher: chacha20-ietf-poly1305, password: oZIoA69Q8yhcQV8ka3Pa3A, udp: true}
+  - {name: disney_netflix_US |275.54Mb, server: 18.219.164.184, port: 443, type: ss, cipher: aes-256-cfb, password: amazonskr05, udp: true}
+  - {name: disney_netflix_NL |25.21Mb, server: 152.70.53.15, port: 45819, type: ss, cipher: chacha20-ietf-poly1305, password: YTEyZDI0OGQwM2ZmZjc4ZTg1ZTBiYTNlZTZkZjIxODM=, udp: true}
+  - {name: netflix_JP |122.31Mb, server: 45.32.16.53, port: 8388, type: ss, cipher: chacha20-ietf-poly1305, password: uTBjZhDmOMwBVAJI, udp: true}
+  - {name: Relay_ |93.66Mb 2, server: ace-starling.rooster465.autos, port: 443, type: trojan, password: ND91608427, sni: ace-starling.rooster465.autos, skip-cert-verify: true, udp: true}
+  - {name: netflix_PL | 8.26Mb, server: relaxed-gull.rooster465.autos, port: 443, type: trojan, password: ND91608427, sni: relaxed-gull.rooster465.autos, skip-cert-verify: true, udp: true}
+  - {name: "|59.72Mb 2", server: 13.208.169.24, port: 12308, type: trojan, password: a703fe02-9bdf-4124-a812-0284d0acdf36, sni: jp03.ulifeai.com, skip-cert-verify: true, udp: true}
+  - {name: Relay_ |145.18Mb 2, server: pet-ghost.rooster465.autos, port: 443, type: trojan, password: ND91608427, sni: pet-ghost.rooster465.autos, skip-cert-verify: true, udp: true}
+  - {name: Relay_ |83.33Mb 2, server: tough-robin.rooster465.autos, port: 443, type: trojan, password: ND91608427, sni: tough-robin.rooster465.autos, skip-cert-verify: true, udp: true}
+  - {name: disney_KR, server: 52.78.13.238, port: 443, type: trojan, password: ND91608427, sni: upward-puma.rooster465.autos, skip-cert-verify: true, udp: true}
+  - {name: Relay_ |137.19Mb 2, server: natural-collie.rooster465.autos, port: 443, type: trojan, password: ND91608427, sni: natural-collie.rooster465.autos, skip-cert-verify: true, udp: true}
+  - {name: disney_netflix_HK |88.72Mb, server: upright-hamster.rooster465.autos, port: 443, type: trojan, password: ND91608427, sni: upright-hamster.rooster465.autos, skip-cert-verify: true, udp: true}
+  - {name: disney_KR 2, server: chief-bluegill.rooster465.autos, port: 443, type: trojan, password: ND91608427, sni: chief-bluegill.rooster465.autos, skip-cert-verify: true, udp: true}
+  - {name: Relay_ |146.02Mb 2, server: fleet-bonefish.rooster465.autos, port: 443, type: trojan, password: ND91608427, sni: fleet-bonefish.rooster465.autos, skip-cert-verify: true, udp: true}
+  - {name: Relay_ |83.71Mb 2, server: casual-bee.rooster465.autos, port: 443, type: trojan, password: ND91608427, sni: casual-bee.rooster465.autos, skip-cert-verify: true, udp: true}
+  - {name: disney_netflix_GB, server: 104.19.229.21, port: 443, type: trojan, password: MITIVPN, sni: d--AA-ia-MiTiVPN--MiTiVPN--MiTiVPN---MiTiVPN--MiTiVPN--MiTiVPN.mitiVpN.lIfeStyLe, skip-cert-verify: true, network: ws, ws-opts: {path: /---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/D-e2---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN, headers: {Host: d--AA-ia-MiTiVPN--MiTiVPN--MiTiVPN---MiTiVPN--MiTiVPN--MiTiVPN.mitiVpN.lIfeStyLe}}, udp: true}
+  - {name: disney_netflix_GB 2, server: 45.80.111.7, port: 443, type: trojan, password: MiTiVPN, sni: d-2-AA-ia-MiTiVPN--MiTiVPN--MiTiVPN---MiTiVPN--MiTiVPN--MiTiVPN.mitiVpN.lIfeStyLe, skip-cert-verify: true, network: ws, ws-opts: {path: /---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/D-e1@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN, headers: {Host: d-2-AA-ia-MiTiVPN--MiTiVPN--MiTiVPN---MiTiVPN--MiTiVPN--MiTiVPN.mitiVpN.lIfeStyLe}}, udp: true}
+  - {name: disney_netflix_FR |16.35Mb, server: 104.17.121.9, port: 443, type: trojan, password: humanity, sni: www.calmlunch.com, skip-cert-verify: true, network: ws, ws-opts: {path: /assignment, headers: {Host: www.calmlunch.com}}, udp: true}
+  - {name: disney_KR 3, server: definite-malamute.rooster465.autos, port: 443, type: trojan, password: ND91608427, sni: definite-malamute.rooster465.autos, skip-cert-verify: true, udp: true}
+  - {name: Relay_ |84.09Mb 2, server: upright-impala.rooster465.autos, port: 443, type: trojan, password: ND91608427, sni: upright-impala.rooster465.autos, skip-cert-verify: true, udp: true}
+  - {name: disney_netflix_FR |37.81Mb, server: fancy-skink.rooster465.autos, port: 443, type: trojan, password: ND91608427, sni: fancy-skink.rooster465.autos, skip-cert-verify: true, udp: true}
+  - {name: disney_KR 4, server: saving-octopus.rooster465.autos, port: 443, type: trojan, password: ND91608427, sni: saving-octopus.rooster465.autos, skip-cert-verify: true, udp: true}
+  - {name: netflix_PL | 7.91Mb, server: discrete-basilisk.rooster465.autos, port: 443, type: trojan, password: ND91608427, sni: discrete-basilisk.rooster465.autos, skip-cert-verify: true, udp: true}
+  - {name: disney_netflix_GB 3, server: 104.17.148.22, port: 443, type: trojan, password: MiTiVPN, sni: gb-ss-MiTiVPN--MiTiVPN--MiTiVPN---MiTiVPN--MiTiVPN--MiTiVPN.mitiVpN.lIfeStyLe, skip-cert-verify: true, network: ws, ws-opts: {path: /---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/gb---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN, headers: {Host: gb-ss-MiTiVPN--MiTiVPN--MiTiVPN---MiTiVPN--MiTiVPN--MiTiVPN.mitiVpN.lIfeStyLe}}, udp: true}
+  - {name: netflix_ES |10.65Mb, server: 193.148.19.213, port: 52794, type: trojan, password: 2eutknankxtbgkwcajzt, sni: 193.148.19.213, skip-cert-verify: true, udp: true}
+  - {name: disney_netflix_FR |53.09Mb, server: 104.16.71.213, port: 443, type: trojan, password: humanity, sni: www.calmlunch.com, skip-cert-verify: true, network: ws, ws-opts: {path: /assignment, headers: {Host: www.calmlunch.com}}, udp: true}
+  - {name: "|11.45Mb 2", server: 139.59.238.97, port: 50573, type: trojan, password: pvZE3UfT0ziK1omVLlsjINBqeqqwab1M, skip-cert-verify: true, udp: true}
+  - {name: disney_netflix_FR | 2.37Mb, server: 185.18.250.245, port: 443, type: trojan, password: humanity, sni: www.calmlunch.com, skip-cert-verify: true, network: ws, ws-opts: {path: /assignment, headers: {Host: www.calmlunch.com}}, udp: true}
+  - {name: disney_netflix_FR |23.45Mb, server: 45.80.111.7, port: 443, type: trojan, password: humanity, sni: www.calmlunch.com, skip-cert-verify: true, network: ws, ws-opts: {path: /assignment, headers: {Host: www.calmlunch.com}}, udp: true}
+  - {name: disney_netflix_FR |46.25Mb, server: 168.100.9.178, port: 2053, type: trojan, password: humanity, sni: www.calmlunch.com, skip-cert-verify: true, network: ws, ws-opts: {path: /assignment, headers: {Host: www.calmlunch.com}}, udp: true}
+  - {name: disney_netflix_FR |15.44Mb, server: 104.17.121.43, port: 443, type: trojan, password: humanity, sni: www.calmlunch.com, skip-cert-verify: true, network: ws, ws-opts: {path: /assignment, headers: {Host: www.calmlunch.com}}, udp: true}
+  - {name: disney_KR 5, server: moved-meerkat.rooster465.autos, port: 443, type: trojan, password: ND91608427, sni: moved-meerkat.rooster465.autos, skip-cert-verify: true, udp: true}
+  - {name: disney_netflix_FR |14.63Mb, server: 45.130.125.126, port: 443, type: trojan, password: humanity, sni: www.calmlunch.com, skip-cert-verify: true, network: ws, ws-opts: {path: /assignment, headers: {Host: www.calmlunch.com}}, udp: true}
+  - {name: disney_netflix_FR |32.14Mb, server: 104.18.32.47, port: 443, type: trojan, password: humanity, sni: www.calmlunch.com, skip-cert-verify: true, network: ws, ws-opts: {path: /assignment, headers: {Host: www.calmlunch.com}}, udp: true}
+  - {name: disney_netflix_NL |160.22Mb, server: 82.38.31.36, port: 8080, type: ss, cipher: chacha20-ietf-poly1305, password: oZIoA69Q8yhcQV8ka3Pa3A, udp: true}
+  - {name: disney_netflix_HK |10.31Mb, server: 103.149.182.79, port: 8388, type: ss, cipher: chacha20-ietf, password: asd123456, udp: true}
+  - {name: disney_KR 6, server: upward-puma.rooster465.autos, port: 443, type: trojan, password: ND91608427, sni: upward-puma.rooster465.autos, skip-cert-verify: true, udp: true}
+  - {name: disney_TW, server: 61.216.165.233, port: 2377, type: ss, cipher: chacha20-ietf-poly1305, password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv, plugin: obfs, plugin-opts: {mode: tls, host: (TG @WangCai2)aee97b7:155033}, udp: true}
+  - {name: Pool_ | 2.87Mb 2, server: 193.42.38.209, port: 1080, type: ss, cipher: chacha20-ietf-poly1305, password: XF0klw7870vXn3uQIxe19Q, udp: true}
 proxy-groups:
   - name: 🔰 节点选择
     type: select
@@ -289,107 +321,6 @@ proxy-groups:
       - ♻️ 自动选择
       - 🎯 全球直连
       - Shadowsocks
-      - "|266.48Mb"
-      - "|937.19Mb"
-      - Relay_ |145.63Mb
-      - "|118.85Mb"
-      - "|968.06Mb"
-      - Relay_ |156.79Mb
-      - "|26.60Mb"
-      - Relay_ |27.36Mb
-      - Relay_ |26.24Mb
-      - Relay_ |24.41Mb
-      - Relay_ |26.50Mb
-      - Relay_ |27.60Mb
-      - Relay_ | 2.11Mb
-      - Relay_ |83.83Mb
-      - Relay_ |82.91Mb
-      - Pool_ |301.71Mb
-      - "|15.48Mb"
-      - Relay_ |80.06Mb
-      - 🇺🇸 United States_None_ss_101
-      - 🇭🇰 Hong Kong_Tuen Mun_vmess_102
-      - 🇭🇰 Hong Kong_None_trojan_103
-      - 🇭🇰 Hong Kong_None_trojan_104
-      - 🇭🇰 Hong Kong_None_trojan_105
-      - 🇭🇰 Hong Kong_None_trojan_106
-      - 🇭🇰 Hong Kong_None_trojan_107
-      - 🇭🇰 Hong Kong_None_trojan_108
-      - 🇭🇰 Hong Kong_None_trojan_109
-      - 🇭🇰 Hong Kong_None_trojan_1010
-      - 🇭🇰 Hong Kong_None_trojan_1011
-      - 🇵🇱 Poland_None_trojan_1012
-      - 🇭🇰 Hong Kong_None_trojan_1013
-      - 🇭🇰 Hong Kong_None_trojan_1014
-      - 🇭🇰 Hong Kong_Tuen Mun_vmess_1015
-      - 🇭🇰 Hong Kong_None_trojan_1016
-      - 🇭🇰 Hong Kong_None_trojan_1017
-      - 🇯🇵 Japan_Tokyo_trojan_1018
-      - Unknown_vmess_111
-      - Unknown_vmess_112
-      - Unknown_vmess_113
-      - Unknown_vmess_114
-      - Unknown_vmess_115
-      - Unknown_vmess_116
-      - Unknown_vmess_117
-      - Unknown_vmess_118
-      - Unknown_vmess_119
-      - Unknown_vmess_1110
-      - 🇺🇸 United States_None_ss_1111
-      - 🇭🇰 Hong Kong_Tuen Mun_vmess_1112
-      - 🇭🇰 Hong Kong_None_trojan_1113
-      - 🇭🇰 Hong Kong_None_trojan_1114
-      - 🇭🇰 Hong Kong_None_trojan_1115
-      - 🇭🇰 Hong Kong_None_trojan_1116
-      - 🇭🇰 Hong Kong_None_trojan_1117
-      - 🇭🇰 Hong Kong_None_trojan_1118
-      - 🇭🇰 Hong Kong_None_trojan_1119
-      - 🇭🇰 Hong Kong_None_trojan_1120
-      - 🇭🇰 Hong Kong_None_trojan_1121
-      - 🇵🇱 Poland_None_trojan_1122
-      - 🇭🇰 Hong Kong_None_trojan_1123
-      - 🇭🇰 Hong Kong_None_trojan_1124
-      - 🇭🇰 Hong Kong_Tuen Mun_vmess_1125
-      - None_None_trojan_1126
-      - 🇯🇵 Japan_Tokyo_trojan_1127
-      - 🇭🇰 Hong Kong_None_trojan_1128
-      - 🇭🇰 Hong Kong_None_trojan_1129
-      - 🇯🇵 Japan_Tokyo_trojan_1130
-      - disney_netflix_US |266.48Mb
-      - netflix_NL |751.41Mb
-      - netflix_NL |782.20Mb
-      - netflix_NL |968.06Mb
-      - Relay_-🇹🇷TR_204 |246.96Mb
-      - netflix_JP |119.93Mb
-      - netflix_NL |937.19Mb
-      - netflix_PL |118.85Mb
-      - disney_netflix_US |145.63Mb
-      - Relay_-🇭🇰HK_209 |26.24Mb
-      - disney_KR
-      - disney_KR 2
-      - Relay_-🇫🇷FR_212 |156.79Mb
-      - Relay_-🇭🇰HK_213 |24.41Mb
-      - Relay_-🇺🇸US_214 |26.50Mb
-      - Relay_-🇫🇷FR_215 | 2.11Mb
-      - Relay_-🇺🇸US_216 |27.60Mb
-      - Relay_-🇯🇵JP_217 |82.91Mb
-      - disney_KR 3
-      - Relay_-🇯🇵JP_219 |80.06Mb
-      - _220 |26.60Mb
-      - disney_KR 4
-      - Relay_-🇺🇸US_222 |27.36Mb
-      - disney_KR 5
-      - Relay_-🇯🇵JP_224 |83.83Mb
-      - Relay_-🇬🇧GB_225 |270.75Mb
-      - Relay_-🇬🇧GB_226 |267.10Mb
-      - disney_netflix_GB
-      - netflix_ES |301.71Mb
-      - _229 |15.48Mb
-      - disney_netflix_GB 2
-      - Relay_-🇧🇷BR_231 |34.75Mb
-      - disney_netflix_GB 3
-      - disney_KR 6
-      - Pool_🇺🇸US_235 | 2.87Mb
       - 🇮🇸 [免费机场TG@proxyshareCN] 冰岛01-标准
       - "[免费机场TG@proxyshareCN] 列支敦士登01-标准"
       - 🇲🇰 [免费机场TG@proxyshareCN] 北马其顿01-标准
@@ -545,14 +476,51 @@ proxy-groups:
       - 🇦🇱 Web 阿尔巴尼亚I-标准
       - 🇭🇰 Web 香港I-标准
       - 🇭🇰 Web 香港II-标准
-      - netflix_JP |119.93Mb 2
-      - disney_KR 7
-      - disney_KR 8
-      - disney_KR 9
-      - disney_KR 10
-      - disney_KR 11
-      - disney_KR 12
-      - disney_TW
+      - "|19.32Mb"
+      - Relay_ | 6.88Mb
+      - "|216.78Mb"
+      - "|210.80Mb"
+      - "| 7.30Mb"
+      - "|199.18Mb"
+      - "|202.92Mb"
+      - "|275.54Mb"
+      - "|25.21Mb"
+      - "|122.31Mb"
+      - Relay_ |93.66Mb
+      - Relay_ | 8.26Mb
+      - "|59.72Mb"
+      - Relay_ |145.18Mb
+      - Relay_ |83.33Mb
+      - _170
+      - Relay_ |137.19Mb
+      - Relay_ |88.72Mb
+      - Relay_-🇰🇷KR_171
+      - Relay_ |146.02Mb
+      - Relay_ |83.71Mb
+      - Relay_-🇩🇪DE_183
+      - Relay_-🇩🇪DE_179
+      - "|16.35Mb"
+      - Relay_-🇰🇷KR_174
+      - Relay_ |84.09Mb
+      - Relay_ |37.81Mb
+      - Relay_-🇰🇷KR_173
+      - Relay_ | 7.91Mb
+      - Relay_-🇩🇪DE_163
+      - Pool_ |10.65Mb
+      - "|53.09Mb"
+      - "|11.45Mb"
+      - "| 2.37Mb"
+      - Relay_ |23.45Mb
+      - "|46.25Mb"
+      - "|15.44Mb"
+      - Relay_-🇰🇷KR_161
+      - Relay_ |14.63Mb
+      - "|32.14Mb"
+      - "|160.22Mb"
+      - "|10.31Mb"
+      - 🇰🇷 Relay_🇰🇷KR-🇰🇷KR_188
+      - ""
+      - Pool_ | 2.87Mb
       - 🇩🇪 德国 - Frankfurt am Main - 1
       - 🇫🇮 芬兰 - Helsinki - 1
       - 🇰🇷 韩国 - Incheon - 1
@@ -565,113 +533,108 @@ proxy-groups:
       - 🇺🇸 美国 - Los Angeles - 1
       - 🇺🇸 美国 - Los Angeles - 2
       - 🇨🇳 中国 - Kwai Chung - 1
+      - Relay_-🇰🇷KR_171 2
+      - Relay_-🇰🇷KR_174 2
+      - Relay_-🇰🇷KR_173 2
+      - Relay_-🇰🇷KR_161 2
+      - 🇰🇷 Relay_🇰🇷KR-🇰🇷KR_188 2
+      - 🇺🇸 United States_None_ss_101
+      - 🇭🇰 Hong Kong_Tuen Mun_vmess_102
+      - 🇭🇰 Hong Kong_None_trojan_103
+      - 🇭🇰 Hong Kong_None_trojan_104
+      - 🇭🇰 Hong Kong_None_trojan_105
+      - 🇭🇰 Hong Kong_None_trojan_106
+      - 🇭🇰 Hong Kong_None_trojan_107
+      - 🇭🇰 Hong Kong_None_trojan_108
+      - 🇭🇰 Hong Kong_None_trojan_109
+      - 🇭🇰 Hong Kong_None_trojan_1010
+      - 🇭🇰 Hong Kong_None_trojan_1011
+      - 🇵🇱 Poland_None_trojan_1012
+      - 🇭🇰 Hong Kong_None_trojan_1013
+      - 🇭🇰 Hong Kong_None_trojan_1014
+      - 🇭🇰 Hong Kong_Tuen Mun_vmess_1015
+      - 🇭🇰 Hong Kong_None_trojan_1016
+      - 🇭🇰 Hong Kong_None_trojan_1017
+      - 🇯🇵 Japan_Tokyo_trojan_1018
+      - Unknown_vmess_111
+      - Unknown_vmess_112
+      - Unknown_vmess_113
+      - Unknown_vmess_114
+      - Unknown_vmess_115
+      - Unknown_vmess_116
+      - Unknown_vmess_117
+      - Unknown_vmess_118
+      - Unknown_vmess_119
+      - Unknown_vmess_1110
+      - 🇺🇸 United States_None_ss_1111
+      - 🇭🇰 Hong Kong_Tuen Mun_vmess_1112
+      - 🇭🇰 Hong Kong_None_trojan_1113
+      - 🇭🇰 Hong Kong_None_trojan_1114
+      - 🇭🇰 Hong Kong_None_trojan_1115
+      - 🇭🇰 Hong Kong_None_trojan_1116
+      - 🇭🇰 Hong Kong_None_trojan_1117
+      - 🇭🇰 Hong Kong_None_trojan_1118
+      - 🇭🇰 Hong Kong_None_trojan_1119
+      - 🇭🇰 Hong Kong_None_trojan_1120
+      - 🇭🇰 Hong Kong_None_trojan_1121
+      - 🇵🇱 Poland_None_trojan_1122
+      - 🇭🇰 Hong Kong_None_trojan_1123
+      - 🇭🇰 Hong Kong_None_trojan_1124
+      - 🇭🇰 Hong Kong_Tuen Mun_vmess_1125
+      - 🇭🇰 Hong Kong_None_trojan_1126
+      - 🇭🇰 Hong Kong_None_trojan_1127
+      - 🇯🇵 Japan_Tokyo_trojan_1128
+      - _161 |19.32Mb
+      - disney_netflix_US | 6.88Mb
+      - disney_netflix_NL |216.78Mb
+      - disney_netflix_NL |210.80Mb
+      - netflix_PL | 7.30Mb
+      - disney_netflix_NL |199.18Mb
+      - disney_netflix_NL |202.92Mb
+      - disney_netflix_US |275.54Mb
+      - disney_netflix_NL |25.21Mb
+      - netflix_JP |122.31Mb
+      - Relay_ |93.66Mb 2
+      - netflix_PL | 8.26Mb
+      - "|59.72Mb 2"
+      - Relay_ |145.18Mb 2
+      - Relay_ |83.33Mb 2
+      - disney_KR
+      - Relay_ |137.19Mb 2
+      - disney_netflix_HK |88.72Mb
+      - disney_KR 2
+      - Relay_ |146.02Mb 2
+      - Relay_ |83.71Mb 2
+      - disney_netflix_GB
+      - disney_netflix_GB 2
+      - disney_netflix_FR |16.35Mb
+      - disney_KR 3
+      - Relay_ |84.09Mb 2
+      - disney_netflix_FR |37.81Mb
+      - disney_KR 4
+      - netflix_PL | 7.91Mb
+      - disney_netflix_GB 3
+      - netflix_ES |10.65Mb
+      - disney_netflix_FR |53.09Mb
+      - "|11.45Mb 2"
+      - disney_netflix_FR | 2.37Mb
+      - disney_netflix_FR |23.45Mb
+      - disney_netflix_FR |46.25Mb
+      - disney_netflix_FR |15.44Mb
+      - disney_KR 5
+      - disney_netflix_FR |14.63Mb
+      - disney_netflix_FR |32.14Mb
+      - disney_netflix_NL |160.22Mb
+      - disney_netflix_HK |10.31Mb
+      - disney_KR 6
+      - disney_TW
+      - Pool_ | 2.87Mb 2
   - name: ♻️ 自动选择
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 300
     proxies:
       - Shadowsocks
-      - "|266.48Mb"
-      - "|937.19Mb"
-      - Relay_ |145.63Mb
-      - "|118.85Mb"
-      - "|968.06Mb"
-      - Relay_ |156.79Mb
-      - "|26.60Mb"
-      - Relay_ |27.36Mb
-      - Relay_ |26.24Mb
-      - Relay_ |24.41Mb
-      - Relay_ |26.50Mb
-      - Relay_ |27.60Mb
-      - Relay_ | 2.11Mb
-      - Relay_ |83.83Mb
-      - Relay_ |82.91Mb
-      - Pool_ |301.71Mb
-      - "|15.48Mb"
-      - Relay_ |80.06Mb
-      - 🇺🇸 United States_None_ss_101
-      - 🇭🇰 Hong Kong_Tuen Mun_vmess_102
-      - 🇭🇰 Hong Kong_None_trojan_103
-      - 🇭🇰 Hong Kong_None_trojan_104
-      - 🇭🇰 Hong Kong_None_trojan_105
-      - 🇭🇰 Hong Kong_None_trojan_106
-      - 🇭🇰 Hong Kong_None_trojan_107
-      - 🇭🇰 Hong Kong_None_trojan_108
-      - 🇭🇰 Hong Kong_None_trojan_109
-      - 🇭🇰 Hong Kong_None_trojan_1010
-      - 🇭🇰 Hong Kong_None_trojan_1011
-      - 🇵🇱 Poland_None_trojan_1012
-      - 🇭🇰 Hong Kong_None_trojan_1013
-      - 🇭🇰 Hong Kong_None_trojan_1014
-      - 🇭🇰 Hong Kong_Tuen Mun_vmess_1015
-      - 🇭🇰 Hong Kong_None_trojan_1016
-      - 🇭🇰 Hong Kong_None_trojan_1017
-      - 🇯🇵 Japan_Tokyo_trojan_1018
-      - Unknown_vmess_111
-      - Unknown_vmess_112
-      - Unknown_vmess_113
-      - Unknown_vmess_114
-      - Unknown_vmess_115
-      - Unknown_vmess_116
-      - Unknown_vmess_117
-      - Unknown_vmess_118
-      - Unknown_vmess_119
-      - Unknown_vmess_1110
-      - 🇺🇸 United States_None_ss_1111
-      - 🇭🇰 Hong Kong_Tuen Mun_vmess_1112
-      - 🇭🇰 Hong Kong_None_trojan_1113
-      - 🇭🇰 Hong Kong_None_trojan_1114
-      - 🇭🇰 Hong Kong_None_trojan_1115
-      - 🇭🇰 Hong Kong_None_trojan_1116
-      - 🇭🇰 Hong Kong_None_trojan_1117
-      - 🇭🇰 Hong Kong_None_trojan_1118
-      - 🇭🇰 Hong Kong_None_trojan_1119
-      - 🇭🇰 Hong Kong_None_trojan_1120
-      - 🇭🇰 Hong Kong_None_trojan_1121
-      - 🇵🇱 Poland_None_trojan_1122
-      - 🇭🇰 Hong Kong_None_trojan_1123
-      - 🇭🇰 Hong Kong_None_trojan_1124
-      - 🇭🇰 Hong Kong_Tuen Mun_vmess_1125
-      - None_None_trojan_1126
-      - 🇯🇵 Japan_Tokyo_trojan_1127
-      - 🇭🇰 Hong Kong_None_trojan_1128
-      - 🇭🇰 Hong Kong_None_trojan_1129
-      - 🇯🇵 Japan_Tokyo_trojan_1130
-      - disney_netflix_US |266.48Mb
-      - netflix_NL |751.41Mb
-      - netflix_NL |782.20Mb
-      - netflix_NL |968.06Mb
-      - Relay_-🇹🇷TR_204 |246.96Mb
-      - netflix_JP |119.93Mb
-      - netflix_NL |937.19Mb
-      - netflix_PL |118.85Mb
-      - disney_netflix_US |145.63Mb
-      - Relay_-🇭🇰HK_209 |26.24Mb
-      - disney_KR
-      - disney_KR 2
-      - Relay_-🇫🇷FR_212 |156.79Mb
-      - Relay_-🇭🇰HK_213 |24.41Mb
-      - Relay_-🇺🇸US_214 |26.50Mb
-      - Relay_-🇫🇷FR_215 | 2.11Mb
-      - Relay_-🇺🇸US_216 |27.60Mb
-      - Relay_-🇯🇵JP_217 |82.91Mb
-      - disney_KR 3
-      - Relay_-🇯🇵JP_219 |80.06Mb
-      - _220 |26.60Mb
-      - disney_KR 4
-      - Relay_-🇺🇸US_222 |27.36Mb
-      - disney_KR 5
-      - Relay_-🇯🇵JP_224 |83.83Mb
-      - Relay_-🇬🇧GB_225 |270.75Mb
-      - Relay_-🇬🇧GB_226 |267.10Mb
-      - disney_netflix_GB
-      - netflix_ES |301.71Mb
-      - _229 |15.48Mb
-      - disney_netflix_GB 2
-      - Relay_-🇧🇷BR_231 |34.75Mb
-      - disney_netflix_GB 3
-      - disney_KR 6
-      - Pool_🇺🇸US_235 | 2.87Mb
       - 🇮🇸 [免费机场TG@proxyshareCN] 冰岛01-标准
       - "[免费机场TG@proxyshareCN] 列支敦士登01-标准"
       - 🇲🇰 [免费机场TG@proxyshareCN] 北马其顿01-标准
@@ -827,14 +790,51 @@ proxy-groups:
       - 🇦🇱 Web 阿尔巴尼亚I-标准
       - 🇭🇰 Web 香港I-标准
       - 🇭🇰 Web 香港II-标准
-      - netflix_JP |119.93Mb 2
-      - disney_KR 7
-      - disney_KR 8
-      - disney_KR 9
-      - disney_KR 10
-      - disney_KR 11
-      - disney_KR 12
-      - disney_TW
+      - "|19.32Mb"
+      - Relay_ | 6.88Mb
+      - "|216.78Mb"
+      - "|210.80Mb"
+      - "| 7.30Mb"
+      - "|199.18Mb"
+      - "|202.92Mb"
+      - "|275.54Mb"
+      - "|25.21Mb"
+      - "|122.31Mb"
+      - Relay_ |93.66Mb
+      - Relay_ | 8.26Mb
+      - "|59.72Mb"
+      - Relay_ |145.18Mb
+      - Relay_ |83.33Mb
+      - _170
+      - Relay_ |137.19Mb
+      - Relay_ |88.72Mb
+      - Relay_-🇰🇷KR_171
+      - Relay_ |146.02Mb
+      - Relay_ |83.71Mb
+      - Relay_-🇩🇪DE_183
+      - Relay_-🇩🇪DE_179
+      - "|16.35Mb"
+      - Relay_-🇰🇷KR_174
+      - Relay_ |84.09Mb
+      - Relay_ |37.81Mb
+      - Relay_-🇰🇷KR_173
+      - Relay_ | 7.91Mb
+      - Relay_-🇩🇪DE_163
+      - Pool_ |10.65Mb
+      - "|53.09Mb"
+      - "|11.45Mb"
+      - "| 2.37Mb"
+      - Relay_ |23.45Mb
+      - "|46.25Mb"
+      - "|15.44Mb"
+      - Relay_-🇰🇷KR_161
+      - Relay_ |14.63Mb
+      - "|32.14Mb"
+      - "|160.22Mb"
+      - "|10.31Mb"
+      - 🇰🇷 Relay_🇰🇷KR-🇰🇷KR_188
+      - ""
+      - Pool_ | 2.87Mb
       - 🇩🇪 德国 - Frankfurt am Main - 1
       - 🇫🇮 芬兰 - Helsinki - 1
       - 🇰🇷 韩国 - Incheon - 1
@@ -847,6 +847,102 @@ proxy-groups:
       - 🇺🇸 美国 - Los Angeles - 1
       - 🇺🇸 美国 - Los Angeles - 2
       - 🇨🇳 中国 - Kwai Chung - 1
+      - Relay_-🇰🇷KR_171 2
+      - Relay_-🇰🇷KR_174 2
+      - Relay_-🇰🇷KR_173 2
+      - Relay_-🇰🇷KR_161 2
+      - 🇰🇷 Relay_🇰🇷KR-🇰🇷KR_188 2
+      - 🇺🇸 United States_None_ss_101
+      - 🇭🇰 Hong Kong_Tuen Mun_vmess_102
+      - 🇭🇰 Hong Kong_None_trojan_103
+      - 🇭🇰 Hong Kong_None_trojan_104
+      - 🇭🇰 Hong Kong_None_trojan_105
+      - 🇭🇰 Hong Kong_None_trojan_106
+      - 🇭🇰 Hong Kong_None_trojan_107
+      - 🇭🇰 Hong Kong_None_trojan_108
+      - 🇭🇰 Hong Kong_None_trojan_109
+      - 🇭🇰 Hong Kong_None_trojan_1010
+      - 🇭🇰 Hong Kong_None_trojan_1011
+      - 🇵🇱 Poland_None_trojan_1012
+      - 🇭🇰 Hong Kong_None_trojan_1013
+      - 🇭🇰 Hong Kong_None_trojan_1014
+      - 🇭🇰 Hong Kong_Tuen Mun_vmess_1015
+      - 🇭🇰 Hong Kong_None_trojan_1016
+      - 🇭🇰 Hong Kong_None_trojan_1017
+      - 🇯🇵 Japan_Tokyo_trojan_1018
+      - Unknown_vmess_111
+      - Unknown_vmess_112
+      - Unknown_vmess_113
+      - Unknown_vmess_114
+      - Unknown_vmess_115
+      - Unknown_vmess_116
+      - Unknown_vmess_117
+      - Unknown_vmess_118
+      - Unknown_vmess_119
+      - Unknown_vmess_1110
+      - 🇺🇸 United States_None_ss_1111
+      - 🇭🇰 Hong Kong_Tuen Mun_vmess_1112
+      - 🇭🇰 Hong Kong_None_trojan_1113
+      - 🇭🇰 Hong Kong_None_trojan_1114
+      - 🇭🇰 Hong Kong_None_trojan_1115
+      - 🇭🇰 Hong Kong_None_trojan_1116
+      - 🇭🇰 Hong Kong_None_trojan_1117
+      - 🇭🇰 Hong Kong_None_trojan_1118
+      - 🇭🇰 Hong Kong_None_trojan_1119
+      - 🇭🇰 Hong Kong_None_trojan_1120
+      - 🇭🇰 Hong Kong_None_trojan_1121
+      - 🇵🇱 Poland_None_trojan_1122
+      - 🇭🇰 Hong Kong_None_trojan_1123
+      - 🇭🇰 Hong Kong_None_trojan_1124
+      - 🇭🇰 Hong Kong_Tuen Mun_vmess_1125
+      - 🇭🇰 Hong Kong_None_trojan_1126
+      - 🇭🇰 Hong Kong_None_trojan_1127
+      - 🇯🇵 Japan_Tokyo_trojan_1128
+      - _161 |19.32Mb
+      - disney_netflix_US | 6.88Mb
+      - disney_netflix_NL |216.78Mb
+      - disney_netflix_NL |210.80Mb
+      - netflix_PL | 7.30Mb
+      - disney_netflix_NL |199.18Mb
+      - disney_netflix_NL |202.92Mb
+      - disney_netflix_US |275.54Mb
+      - disney_netflix_NL |25.21Mb
+      - netflix_JP |122.31Mb
+      - Relay_ |93.66Mb 2
+      - netflix_PL | 8.26Mb
+      - "|59.72Mb 2"
+      - Relay_ |145.18Mb 2
+      - Relay_ |83.33Mb 2
+      - disney_KR
+      - Relay_ |137.19Mb 2
+      - disney_netflix_HK |88.72Mb
+      - disney_KR 2
+      - Relay_ |146.02Mb 2
+      - Relay_ |83.71Mb 2
+      - disney_netflix_GB
+      - disney_netflix_GB 2
+      - disney_netflix_FR |16.35Mb
+      - disney_KR 3
+      - Relay_ |84.09Mb 2
+      - disney_netflix_FR |37.81Mb
+      - disney_KR 4
+      - netflix_PL | 7.91Mb
+      - disney_netflix_GB 3
+      - netflix_ES |10.65Mb
+      - disney_netflix_FR |53.09Mb
+      - "|11.45Mb 2"
+      - disney_netflix_FR | 2.37Mb
+      - disney_netflix_FR |23.45Mb
+      - disney_netflix_FR |46.25Mb
+      - disney_netflix_FR |15.44Mb
+      - disney_KR 5
+      - disney_netflix_FR |14.63Mb
+      - disney_netflix_FR |32.14Mb
+      - disney_netflix_NL |160.22Mb
+      - disney_netflix_HK |10.31Mb
+      - disney_KR 6
+      - disney_TW
+      - Pool_ | 2.87Mb 2
   - name: 🎥 NETFLIX
     type: select
     proxies:
@@ -854,107 +950,6 @@ proxy-groups:
       - ♻️ 自动选择
       - 🎯 全球直连
       - Shadowsocks
-      - "|266.48Mb"
-      - "|937.19Mb"
-      - Relay_ |145.63Mb
-      - "|118.85Mb"
-      - "|968.06Mb"
-      - Relay_ |156.79Mb
-      - "|26.60Mb"
-      - Relay_ |27.36Mb
-      - Relay_ |26.24Mb
-      - Relay_ |24.41Mb
-      - Relay_ |26.50Mb
-      - Relay_ |27.60Mb
-      - Relay_ | 2.11Mb
-      - Relay_ |83.83Mb
-      - Relay_ |82.91Mb
-      - Pool_ |301.71Mb
-      - "|15.48Mb"
-      - Relay_ |80.06Mb
-      - 🇺🇸 United States_None_ss_101
-      - 🇭🇰 Hong Kong_Tuen Mun_vmess_102
-      - 🇭🇰 Hong Kong_None_trojan_103
-      - 🇭🇰 Hong Kong_None_trojan_104
-      - 🇭🇰 Hong Kong_None_trojan_105
-      - 🇭🇰 Hong Kong_None_trojan_106
-      - 🇭🇰 Hong Kong_None_trojan_107
-      - 🇭🇰 Hong Kong_None_trojan_108
-      - 🇭🇰 Hong Kong_None_trojan_109
-      - 🇭🇰 Hong Kong_None_trojan_1010
-      - 🇭🇰 Hong Kong_None_trojan_1011
-      - 🇵🇱 Poland_None_trojan_1012
-      - 🇭🇰 Hong Kong_None_trojan_1013
-      - 🇭🇰 Hong Kong_None_trojan_1014
-      - 🇭🇰 Hong Kong_Tuen Mun_vmess_1015
-      - 🇭🇰 Hong Kong_None_trojan_1016
-      - 🇭🇰 Hong Kong_None_trojan_1017
-      - 🇯🇵 Japan_Tokyo_trojan_1018
-      - Unknown_vmess_111
-      - Unknown_vmess_112
-      - Unknown_vmess_113
-      - Unknown_vmess_114
-      - Unknown_vmess_115
-      - Unknown_vmess_116
-      - Unknown_vmess_117
-      - Unknown_vmess_118
-      - Unknown_vmess_119
-      - Unknown_vmess_1110
-      - 🇺🇸 United States_None_ss_1111
-      - 🇭🇰 Hong Kong_Tuen Mun_vmess_1112
-      - 🇭🇰 Hong Kong_None_trojan_1113
-      - 🇭🇰 Hong Kong_None_trojan_1114
-      - 🇭🇰 Hong Kong_None_trojan_1115
-      - 🇭🇰 Hong Kong_None_trojan_1116
-      - 🇭🇰 Hong Kong_None_trojan_1117
-      - 🇭🇰 Hong Kong_None_trojan_1118
-      - 🇭🇰 Hong Kong_None_trojan_1119
-      - 🇭🇰 Hong Kong_None_trojan_1120
-      - 🇭🇰 Hong Kong_None_trojan_1121
-      - 🇵🇱 Poland_None_trojan_1122
-      - 🇭🇰 Hong Kong_None_trojan_1123
-      - 🇭🇰 Hong Kong_None_trojan_1124
-      - 🇭🇰 Hong Kong_Tuen Mun_vmess_1125
-      - None_None_trojan_1126
-      - 🇯🇵 Japan_Tokyo_trojan_1127
-      - 🇭🇰 Hong Kong_None_trojan_1128
-      - 🇭🇰 Hong Kong_None_trojan_1129
-      - 🇯🇵 Japan_Tokyo_trojan_1130
-      - disney_netflix_US |266.48Mb
-      - netflix_NL |751.41Mb
-      - netflix_NL |782.20Mb
-      - netflix_NL |968.06Mb
-      - Relay_-🇹🇷TR_204 |246.96Mb
-      - netflix_JP |119.93Mb
-      - netflix_NL |937.19Mb
-      - netflix_PL |118.85Mb
-      - disney_netflix_US |145.63Mb
-      - Relay_-🇭🇰HK_209 |26.24Mb
-      - disney_KR
-      - disney_KR 2
-      - Relay_-🇫🇷FR_212 |156.79Mb
-      - Relay_-🇭🇰HK_213 |24.41Mb
-      - Relay_-🇺🇸US_214 |26.50Mb
-      - Relay_-🇫🇷FR_215 | 2.11Mb
-      - Relay_-🇺🇸US_216 |27.60Mb
-      - Relay_-🇯🇵JP_217 |82.91Mb
-      - disney_KR 3
-      - Relay_-🇯🇵JP_219 |80.06Mb
-      - _220 |26.60Mb
-      - disney_KR 4
-      - Relay_-🇺🇸US_222 |27.36Mb
-      - disney_KR 5
-      - Relay_-🇯🇵JP_224 |83.83Mb
-      - Relay_-🇬🇧GB_225 |270.75Mb
-      - Relay_-🇬🇧GB_226 |267.10Mb
-      - disney_netflix_GB
-      - netflix_ES |301.71Mb
-      - _229 |15.48Mb
-      - disney_netflix_GB 2
-      - Relay_-🇧🇷BR_231 |34.75Mb
-      - disney_netflix_GB 3
-      - disney_KR 6
-      - Pool_🇺🇸US_235 | 2.87Mb
       - 🇮🇸 [免费机场TG@proxyshareCN] 冰岛01-标准
       - "[免费机场TG@proxyshareCN] 列支敦士登01-标准"
       - 🇲🇰 [免费机场TG@proxyshareCN] 北马其顿01-标准
@@ -1110,14 +1105,51 @@ proxy-groups:
       - 🇦🇱 Web 阿尔巴尼亚I-标准
       - 🇭🇰 Web 香港I-标准
       - 🇭🇰 Web 香港II-标准
-      - netflix_JP |119.93Mb 2
-      - disney_KR 7
-      - disney_KR 8
-      - disney_KR 9
-      - disney_KR 10
-      - disney_KR 11
-      - disney_KR 12
-      - disney_TW
+      - "|19.32Mb"
+      - Relay_ | 6.88Mb
+      - "|216.78Mb"
+      - "|210.80Mb"
+      - "| 7.30Mb"
+      - "|199.18Mb"
+      - "|202.92Mb"
+      - "|275.54Mb"
+      - "|25.21Mb"
+      - "|122.31Mb"
+      - Relay_ |93.66Mb
+      - Relay_ | 8.26Mb
+      - "|59.72Mb"
+      - Relay_ |145.18Mb
+      - Relay_ |83.33Mb
+      - _170
+      - Relay_ |137.19Mb
+      - Relay_ |88.72Mb
+      - Relay_-🇰🇷KR_171
+      - Relay_ |146.02Mb
+      - Relay_ |83.71Mb
+      - Relay_-🇩🇪DE_183
+      - Relay_-🇩🇪DE_179
+      - "|16.35Mb"
+      - Relay_-🇰🇷KR_174
+      - Relay_ |84.09Mb
+      - Relay_ |37.81Mb
+      - Relay_-🇰🇷KR_173
+      - Relay_ | 7.91Mb
+      - Relay_-🇩🇪DE_163
+      - Pool_ |10.65Mb
+      - "|53.09Mb"
+      - "|11.45Mb"
+      - "| 2.37Mb"
+      - Relay_ |23.45Mb
+      - "|46.25Mb"
+      - "|15.44Mb"
+      - Relay_-🇰🇷KR_161
+      - Relay_ |14.63Mb
+      - "|32.14Mb"
+      - "|160.22Mb"
+      - "|10.31Mb"
+      - 🇰🇷 Relay_🇰🇷KR-🇰🇷KR_188
+      - ""
+      - Pool_ | 2.87Mb
       - 🇩🇪 德国 - Frankfurt am Main - 1
       - 🇫🇮 芬兰 - Helsinki - 1
       - 🇰🇷 韩国 - Incheon - 1
@@ -1130,6 +1162,102 @@ proxy-groups:
       - 🇺🇸 美国 - Los Angeles - 1
       - 🇺🇸 美国 - Los Angeles - 2
       - 🇨🇳 中国 - Kwai Chung - 1
+      - Relay_-🇰🇷KR_171 2
+      - Relay_-🇰🇷KR_174 2
+      - Relay_-🇰🇷KR_173 2
+      - Relay_-🇰🇷KR_161 2
+      - 🇰🇷 Relay_🇰🇷KR-🇰🇷KR_188 2
+      - 🇺🇸 United States_None_ss_101
+      - 🇭🇰 Hong Kong_Tuen Mun_vmess_102
+      - 🇭🇰 Hong Kong_None_trojan_103
+      - 🇭🇰 Hong Kong_None_trojan_104
+      - 🇭🇰 Hong Kong_None_trojan_105
+      - 🇭🇰 Hong Kong_None_trojan_106
+      - 🇭🇰 Hong Kong_None_trojan_107
+      - 🇭🇰 Hong Kong_None_trojan_108
+      - 🇭🇰 Hong Kong_None_trojan_109
+      - 🇭🇰 Hong Kong_None_trojan_1010
+      - 🇭🇰 Hong Kong_None_trojan_1011
+      - 🇵🇱 Poland_None_trojan_1012
+      - 🇭🇰 Hong Kong_None_trojan_1013
+      - 🇭🇰 Hong Kong_None_trojan_1014
+      - 🇭🇰 Hong Kong_Tuen Mun_vmess_1015
+      - 🇭🇰 Hong Kong_None_trojan_1016
+      - 🇭🇰 Hong Kong_None_trojan_1017
+      - 🇯🇵 Japan_Tokyo_trojan_1018
+      - Unknown_vmess_111
+      - Unknown_vmess_112
+      - Unknown_vmess_113
+      - Unknown_vmess_114
+      - Unknown_vmess_115
+      - Unknown_vmess_116
+      - Unknown_vmess_117
+      - Unknown_vmess_118
+      - Unknown_vmess_119
+      - Unknown_vmess_1110
+      - 🇺🇸 United States_None_ss_1111
+      - 🇭🇰 Hong Kong_Tuen Mun_vmess_1112
+      - 🇭🇰 Hong Kong_None_trojan_1113
+      - 🇭🇰 Hong Kong_None_trojan_1114
+      - 🇭🇰 Hong Kong_None_trojan_1115
+      - 🇭🇰 Hong Kong_None_trojan_1116
+      - 🇭🇰 Hong Kong_None_trojan_1117
+      - 🇭🇰 Hong Kong_None_trojan_1118
+      - 🇭🇰 Hong Kong_None_trojan_1119
+      - 🇭🇰 Hong Kong_None_trojan_1120
+      - 🇭🇰 Hong Kong_None_trojan_1121
+      - 🇵🇱 Poland_None_trojan_1122
+      - 🇭🇰 Hong Kong_None_trojan_1123
+      - 🇭🇰 Hong Kong_None_trojan_1124
+      - 🇭🇰 Hong Kong_Tuen Mun_vmess_1125
+      - 🇭🇰 Hong Kong_None_trojan_1126
+      - 🇭🇰 Hong Kong_None_trojan_1127
+      - 🇯🇵 Japan_Tokyo_trojan_1128
+      - _161 |19.32Mb
+      - disney_netflix_US | 6.88Mb
+      - disney_netflix_NL |216.78Mb
+      - disney_netflix_NL |210.80Mb
+      - netflix_PL | 7.30Mb
+      - disney_netflix_NL |199.18Mb
+      - disney_netflix_NL |202.92Mb
+      - disney_netflix_US |275.54Mb
+      - disney_netflix_NL |25.21Mb
+      - netflix_JP |122.31Mb
+      - Relay_ |93.66Mb 2
+      - netflix_PL | 8.26Mb
+      - "|59.72Mb 2"
+      - Relay_ |145.18Mb 2
+      - Relay_ |83.33Mb 2
+      - disney_KR
+      - Relay_ |137.19Mb 2
+      - disney_netflix_HK |88.72Mb
+      - disney_KR 2
+      - Relay_ |146.02Mb 2
+      - Relay_ |83.71Mb 2
+      - disney_netflix_GB
+      - disney_netflix_GB 2
+      - disney_netflix_FR |16.35Mb
+      - disney_KR 3
+      - Relay_ |84.09Mb 2
+      - disney_netflix_FR |37.81Mb
+      - disney_KR 4
+      - netflix_PL | 7.91Mb
+      - disney_netflix_GB 3
+      - netflix_ES |10.65Mb
+      - disney_netflix_FR |53.09Mb
+      - "|11.45Mb 2"
+      - disney_netflix_FR | 2.37Mb
+      - disney_netflix_FR |23.45Mb
+      - disney_netflix_FR |46.25Mb
+      - disney_netflix_FR |15.44Mb
+      - disney_KR 5
+      - disney_netflix_FR |14.63Mb
+      - disney_netflix_FR |32.14Mb
+      - disney_netflix_NL |160.22Mb
+      - disney_netflix_HK |10.31Mb
+      - disney_KR 6
+      - disney_TW
+      - Pool_ | 2.87Mb 2
   - name: ⛔️ 广告拦截
     type: select
     proxies:
@@ -1149,107 +1277,6 @@ proxy-groups:
       - ♻️ 自动选择
       - 🎯 全球直连
       - Shadowsocks
-      - "|266.48Mb"
-      - "|937.19Mb"
-      - Relay_ |145.63Mb
-      - "|118.85Mb"
-      - "|968.06Mb"
-      - Relay_ |156.79Mb
-      - "|26.60Mb"
-      - Relay_ |27.36Mb
-      - Relay_ |26.24Mb
-      - Relay_ |24.41Mb
-      - Relay_ |26.50Mb
-      - Relay_ |27.60Mb
-      - Relay_ | 2.11Mb
-      - Relay_ |83.83Mb
-      - Relay_ |82.91Mb
-      - Pool_ |301.71Mb
-      - "|15.48Mb"
-      - Relay_ |80.06Mb
-      - 🇺🇸 United States_None_ss_101
-      - 🇭🇰 Hong Kong_Tuen Mun_vmess_102
-      - 🇭🇰 Hong Kong_None_trojan_103
-      - 🇭🇰 Hong Kong_None_trojan_104
-      - 🇭🇰 Hong Kong_None_trojan_105
-      - 🇭🇰 Hong Kong_None_trojan_106
-      - 🇭🇰 Hong Kong_None_trojan_107
-      - 🇭🇰 Hong Kong_None_trojan_108
-      - 🇭🇰 Hong Kong_None_trojan_109
-      - 🇭🇰 Hong Kong_None_trojan_1010
-      - 🇭🇰 Hong Kong_None_trojan_1011
-      - 🇵🇱 Poland_None_trojan_1012
-      - 🇭🇰 Hong Kong_None_trojan_1013
-      - 🇭🇰 Hong Kong_None_trojan_1014
-      - 🇭🇰 Hong Kong_Tuen Mun_vmess_1015
-      - 🇭🇰 Hong Kong_None_trojan_1016
-      - 🇭🇰 Hong Kong_None_trojan_1017
-      - 🇯🇵 Japan_Tokyo_trojan_1018
-      - Unknown_vmess_111
-      - Unknown_vmess_112
-      - Unknown_vmess_113
-      - Unknown_vmess_114
-      - Unknown_vmess_115
-      - Unknown_vmess_116
-      - Unknown_vmess_117
-      - Unknown_vmess_118
-      - Unknown_vmess_119
-      - Unknown_vmess_1110
-      - 🇺🇸 United States_None_ss_1111
-      - 🇭🇰 Hong Kong_Tuen Mun_vmess_1112
-      - 🇭🇰 Hong Kong_None_trojan_1113
-      - 🇭🇰 Hong Kong_None_trojan_1114
-      - 🇭🇰 Hong Kong_None_trojan_1115
-      - 🇭🇰 Hong Kong_None_trojan_1116
-      - 🇭🇰 Hong Kong_None_trojan_1117
-      - 🇭🇰 Hong Kong_None_trojan_1118
-      - 🇭🇰 Hong Kong_None_trojan_1119
-      - 🇭🇰 Hong Kong_None_trojan_1120
-      - 🇭🇰 Hong Kong_None_trojan_1121
-      - 🇵🇱 Poland_None_trojan_1122
-      - 🇭🇰 Hong Kong_None_trojan_1123
-      - 🇭🇰 Hong Kong_None_trojan_1124
-      - 🇭🇰 Hong Kong_Tuen Mun_vmess_1125
-      - None_None_trojan_1126
-      - 🇯🇵 Japan_Tokyo_trojan_1127
-      - 🇭🇰 Hong Kong_None_trojan_1128
-      - 🇭🇰 Hong Kong_None_trojan_1129
-      - 🇯🇵 Japan_Tokyo_trojan_1130
-      - disney_netflix_US |266.48Mb
-      - netflix_NL |751.41Mb
-      - netflix_NL |782.20Mb
-      - netflix_NL |968.06Mb
-      - Relay_-🇹🇷TR_204 |246.96Mb
-      - netflix_JP |119.93Mb
-      - netflix_NL |937.19Mb
-      - netflix_PL |118.85Mb
-      - disney_netflix_US |145.63Mb
-      - Relay_-🇭🇰HK_209 |26.24Mb
-      - disney_KR
-      - disney_KR 2
-      - Relay_-🇫🇷FR_212 |156.79Mb
-      - Relay_-🇭🇰HK_213 |24.41Mb
-      - Relay_-🇺🇸US_214 |26.50Mb
-      - Relay_-🇫🇷FR_215 | 2.11Mb
-      - Relay_-🇺🇸US_216 |27.60Mb
-      - Relay_-🇯🇵JP_217 |82.91Mb
-      - disney_KR 3
-      - Relay_-🇯🇵JP_219 |80.06Mb
-      - _220 |26.60Mb
-      - disney_KR 4
-      - Relay_-🇺🇸US_222 |27.36Mb
-      - disney_KR 5
-      - Relay_-🇯🇵JP_224 |83.83Mb
-      - Relay_-🇬🇧GB_225 |270.75Mb
-      - Relay_-🇬🇧GB_226 |267.10Mb
-      - disney_netflix_GB
-      - netflix_ES |301.71Mb
-      - _229 |15.48Mb
-      - disney_netflix_GB 2
-      - Relay_-🇧🇷BR_231 |34.75Mb
-      - disney_netflix_GB 3
-      - disney_KR 6
-      - Pool_🇺🇸US_235 | 2.87Mb
       - 🇮🇸 [免费机场TG@proxyshareCN] 冰岛01-标准
       - "[免费机场TG@proxyshareCN] 列支敦士登01-标准"
       - 🇲🇰 [免费机场TG@proxyshareCN] 北马其顿01-标准
@@ -1405,14 +1432,51 @@ proxy-groups:
       - 🇦🇱 Web 阿尔巴尼亚I-标准
       - 🇭🇰 Web 香港I-标准
       - 🇭🇰 Web 香港II-标准
-      - netflix_JP |119.93Mb 2
-      - disney_KR 7
-      - disney_KR 8
-      - disney_KR 9
-      - disney_KR 10
-      - disney_KR 11
-      - disney_KR 12
-      - disney_TW
+      - "|19.32Mb"
+      - Relay_ | 6.88Mb
+      - "|216.78Mb"
+      - "|210.80Mb"
+      - "| 7.30Mb"
+      - "|199.18Mb"
+      - "|202.92Mb"
+      - "|275.54Mb"
+      - "|25.21Mb"
+      - "|122.31Mb"
+      - Relay_ |93.66Mb
+      - Relay_ | 8.26Mb
+      - "|59.72Mb"
+      - Relay_ |145.18Mb
+      - Relay_ |83.33Mb
+      - _170
+      - Relay_ |137.19Mb
+      - Relay_ |88.72Mb
+      - Relay_-🇰🇷KR_171
+      - Relay_ |146.02Mb
+      - Relay_ |83.71Mb
+      - Relay_-🇩🇪DE_183
+      - Relay_-🇩🇪DE_179
+      - "|16.35Mb"
+      - Relay_-🇰🇷KR_174
+      - Relay_ |84.09Mb
+      - Relay_ |37.81Mb
+      - Relay_-🇰🇷KR_173
+      - Relay_ | 7.91Mb
+      - Relay_-🇩🇪DE_163
+      - Pool_ |10.65Mb
+      - "|53.09Mb"
+      - "|11.45Mb"
+      - "| 2.37Mb"
+      - Relay_ |23.45Mb
+      - "|46.25Mb"
+      - "|15.44Mb"
+      - Relay_-🇰🇷KR_161
+      - Relay_ |14.63Mb
+      - "|32.14Mb"
+      - "|160.22Mb"
+      - "|10.31Mb"
+      - 🇰🇷 Relay_🇰🇷KR-🇰🇷KR_188
+      - ""
+      - Pool_ | 2.87Mb
       - 🇩🇪 德国 - Frankfurt am Main - 1
       - 🇫🇮 芬兰 - Helsinki - 1
       - 🇰🇷 韩国 - Incheon - 1
@@ -1425,6 +1489,102 @@ proxy-groups:
       - 🇺🇸 美国 - Los Angeles - 1
       - 🇺🇸 美国 - Los Angeles - 2
       - 🇨🇳 中国 - Kwai Chung - 1
+      - Relay_-🇰🇷KR_171 2
+      - Relay_-🇰🇷KR_174 2
+      - Relay_-🇰🇷KR_173 2
+      - Relay_-🇰🇷KR_161 2
+      - 🇰🇷 Relay_🇰🇷KR-🇰🇷KR_188 2
+      - 🇺🇸 United States_None_ss_101
+      - 🇭🇰 Hong Kong_Tuen Mun_vmess_102
+      - 🇭🇰 Hong Kong_None_trojan_103
+      - 🇭🇰 Hong Kong_None_trojan_104
+      - 🇭🇰 Hong Kong_None_trojan_105
+      - 🇭🇰 Hong Kong_None_trojan_106
+      - 🇭🇰 Hong Kong_None_trojan_107
+      - 🇭🇰 Hong Kong_None_trojan_108
+      - 🇭🇰 Hong Kong_None_trojan_109
+      - 🇭🇰 Hong Kong_None_trojan_1010
+      - 🇭🇰 Hong Kong_None_trojan_1011
+      - 🇵🇱 Poland_None_trojan_1012
+      - 🇭🇰 Hong Kong_None_trojan_1013
+      - 🇭🇰 Hong Kong_None_trojan_1014
+      - 🇭🇰 Hong Kong_Tuen Mun_vmess_1015
+      - 🇭🇰 Hong Kong_None_trojan_1016
+      - 🇭🇰 Hong Kong_None_trojan_1017
+      - 🇯🇵 Japan_Tokyo_trojan_1018
+      - Unknown_vmess_111
+      - Unknown_vmess_112
+      - Unknown_vmess_113
+      - Unknown_vmess_114
+      - Unknown_vmess_115
+      - Unknown_vmess_116
+      - Unknown_vmess_117
+      - Unknown_vmess_118
+      - Unknown_vmess_119
+      - Unknown_vmess_1110
+      - 🇺🇸 United States_None_ss_1111
+      - 🇭🇰 Hong Kong_Tuen Mun_vmess_1112
+      - 🇭🇰 Hong Kong_None_trojan_1113
+      - 🇭🇰 Hong Kong_None_trojan_1114
+      - 🇭🇰 Hong Kong_None_trojan_1115
+      - 🇭🇰 Hong Kong_None_trojan_1116
+      - 🇭🇰 Hong Kong_None_trojan_1117
+      - 🇭🇰 Hong Kong_None_trojan_1118
+      - 🇭🇰 Hong Kong_None_trojan_1119
+      - 🇭🇰 Hong Kong_None_trojan_1120
+      - 🇭🇰 Hong Kong_None_trojan_1121
+      - 🇵🇱 Poland_None_trojan_1122
+      - 🇭🇰 Hong Kong_None_trojan_1123
+      - 🇭🇰 Hong Kong_None_trojan_1124
+      - 🇭🇰 Hong Kong_Tuen Mun_vmess_1125
+      - 🇭🇰 Hong Kong_None_trojan_1126
+      - 🇭🇰 Hong Kong_None_trojan_1127
+      - 🇯🇵 Japan_Tokyo_trojan_1128
+      - _161 |19.32Mb
+      - disney_netflix_US | 6.88Mb
+      - disney_netflix_NL |216.78Mb
+      - disney_netflix_NL |210.80Mb
+      - netflix_PL | 7.30Mb
+      - disney_netflix_NL |199.18Mb
+      - disney_netflix_NL |202.92Mb
+      - disney_netflix_US |275.54Mb
+      - disney_netflix_NL |25.21Mb
+      - netflix_JP |122.31Mb
+      - Relay_ |93.66Mb 2
+      - netflix_PL | 8.26Mb
+      - "|59.72Mb 2"
+      - Relay_ |145.18Mb 2
+      - Relay_ |83.33Mb 2
+      - disney_KR
+      - Relay_ |137.19Mb 2
+      - disney_netflix_HK |88.72Mb
+      - disney_KR 2
+      - Relay_ |146.02Mb 2
+      - Relay_ |83.71Mb 2
+      - disney_netflix_GB
+      - disney_netflix_GB 2
+      - disney_netflix_FR |16.35Mb
+      - disney_KR 3
+      - Relay_ |84.09Mb 2
+      - disney_netflix_FR |37.81Mb
+      - disney_KR 4
+      - netflix_PL | 7.91Mb
+      - disney_netflix_GB 3
+      - netflix_ES |10.65Mb
+      - disney_netflix_FR |53.09Mb
+      - "|11.45Mb 2"
+      - disney_netflix_FR | 2.37Mb
+      - disney_netflix_FR |23.45Mb
+      - disney_netflix_FR |46.25Mb
+      - disney_netflix_FR |15.44Mb
+      - disney_KR 5
+      - disney_netflix_FR |14.63Mb
+      - disney_netflix_FR |32.14Mb
+      - disney_netflix_NL |160.22Mb
+      - disney_netflix_HK |10.31Mb
+      - disney_KR 6
+      - disney_TW
+      - Pool_ | 2.87Mb 2
   - name: 🌏 国内媒体
     type: select
     proxies:
@@ -1464,107 +1624,6 @@ proxy-groups:
       - 🎯 全球直连
       - 🔰 节点选择
       - Shadowsocks
-      - "|266.48Mb"
-      - "|937.19Mb"
-      - Relay_ |145.63Mb
-      - "|118.85Mb"
-      - "|968.06Mb"
-      - Relay_ |156.79Mb
-      - "|26.60Mb"
-      - Relay_ |27.36Mb
-      - Relay_ |26.24Mb
-      - Relay_ |24.41Mb
-      - Relay_ |26.50Mb
-      - Relay_ |27.60Mb
-      - Relay_ | 2.11Mb
-      - Relay_ |83.83Mb
-      - Relay_ |82.91Mb
-      - Pool_ |301.71Mb
-      - "|15.48Mb"
-      - Relay_ |80.06Mb
-      - 🇺🇸 United States_None_ss_101
-      - 🇭🇰 Hong Kong_Tuen Mun_vmess_102
-      - 🇭🇰 Hong Kong_None_trojan_103
-      - 🇭🇰 Hong Kong_None_trojan_104
-      - 🇭🇰 Hong Kong_None_trojan_105
-      - 🇭🇰 Hong Kong_None_trojan_106
-      - 🇭🇰 Hong Kong_None_trojan_107
-      - 🇭🇰 Hong Kong_None_trojan_108
-      - 🇭🇰 Hong Kong_None_trojan_109
-      - 🇭🇰 Hong Kong_None_trojan_1010
-      - 🇭🇰 Hong Kong_None_trojan_1011
-      - 🇵🇱 Poland_None_trojan_1012
-      - 🇭🇰 Hong Kong_None_trojan_1013
-      - 🇭🇰 Hong Kong_None_trojan_1014
-      - 🇭🇰 Hong Kong_Tuen Mun_vmess_1015
-      - 🇭🇰 Hong Kong_None_trojan_1016
-      - 🇭🇰 Hong Kong_None_trojan_1017
-      - 🇯🇵 Japan_Tokyo_trojan_1018
-      - Unknown_vmess_111
-      - Unknown_vmess_112
-      - Unknown_vmess_113
-      - Unknown_vmess_114
-      - Unknown_vmess_115
-      - Unknown_vmess_116
-      - Unknown_vmess_117
-      - Unknown_vmess_118
-      - Unknown_vmess_119
-      - Unknown_vmess_1110
-      - 🇺🇸 United States_None_ss_1111
-      - 🇭🇰 Hong Kong_Tuen Mun_vmess_1112
-      - 🇭🇰 Hong Kong_None_trojan_1113
-      - 🇭🇰 Hong Kong_None_trojan_1114
-      - 🇭🇰 Hong Kong_None_trojan_1115
-      - 🇭🇰 Hong Kong_None_trojan_1116
-      - 🇭🇰 Hong Kong_None_trojan_1117
-      - 🇭🇰 Hong Kong_None_trojan_1118
-      - 🇭🇰 Hong Kong_None_trojan_1119
-      - 🇭🇰 Hong Kong_None_trojan_1120
-      - 🇭🇰 Hong Kong_None_trojan_1121
-      - 🇵🇱 Poland_None_trojan_1122
-      - 🇭🇰 Hong Kong_None_trojan_1123
-      - 🇭🇰 Hong Kong_None_trojan_1124
-      - 🇭🇰 Hong Kong_Tuen Mun_vmess_1125
-      - None_None_trojan_1126
-      - 🇯🇵 Japan_Tokyo_trojan_1127
-      - 🇭🇰 Hong Kong_None_trojan_1128
-      - 🇭🇰 Hong Kong_None_trojan_1129
-      - 🇯🇵 Japan_Tokyo_trojan_1130
-      - disney_netflix_US |266.48Mb
-      - netflix_NL |751.41Mb
-      - netflix_NL |782.20Mb
-      - netflix_NL |968.06Mb
-      - Relay_-🇹🇷TR_204 |246.96Mb
-      - netflix_JP |119.93Mb
-      - netflix_NL |937.19Mb
-      - netflix_PL |118.85Mb
-      - disney_netflix_US |145.63Mb
-      - Relay_-🇭🇰HK_209 |26.24Mb
-      - disney_KR
-      - disney_KR 2
-      - Relay_-🇫🇷FR_212 |156.79Mb
-      - Relay_-🇭🇰HK_213 |24.41Mb
-      - Relay_-🇺🇸US_214 |26.50Mb
-      - Relay_-🇫🇷FR_215 | 2.11Mb
-      - Relay_-🇺🇸US_216 |27.60Mb
-      - Relay_-🇯🇵JP_217 |82.91Mb
-      - disney_KR 3
-      - Relay_-🇯🇵JP_219 |80.06Mb
-      - _220 |26.60Mb
-      - disney_KR 4
-      - Relay_-🇺🇸US_222 |27.36Mb
-      - disney_KR 5
-      - Relay_-🇯🇵JP_224 |83.83Mb
-      - Relay_-🇬🇧GB_225 |270.75Mb
-      - Relay_-🇬🇧GB_226 |267.10Mb
-      - disney_netflix_GB
-      - netflix_ES |301.71Mb
-      - _229 |15.48Mb
-      - disney_netflix_GB 2
-      - Relay_-🇧🇷BR_231 |34.75Mb
-      - disney_netflix_GB 3
-      - disney_KR 6
-      - Pool_🇺🇸US_235 | 2.87Mb
       - 🇮🇸 [免费机场TG@proxyshareCN] 冰岛01-标准
       - "[免费机场TG@proxyshareCN] 列支敦士登01-标准"
       - 🇲🇰 [免费机场TG@proxyshareCN] 北马其顿01-标准
@@ -1720,14 +1779,51 @@ proxy-groups:
       - 🇦🇱 Web 阿尔巴尼亚I-标准
       - 🇭🇰 Web 香港I-标准
       - 🇭🇰 Web 香港II-标准
-      - netflix_JP |119.93Mb 2
-      - disney_KR 7
-      - disney_KR 8
-      - disney_KR 9
-      - disney_KR 10
-      - disney_KR 11
-      - disney_KR 12
-      - disney_TW
+      - "|19.32Mb"
+      - Relay_ | 6.88Mb
+      - "|216.78Mb"
+      - "|210.80Mb"
+      - "| 7.30Mb"
+      - "|199.18Mb"
+      - "|202.92Mb"
+      - "|275.54Mb"
+      - "|25.21Mb"
+      - "|122.31Mb"
+      - Relay_ |93.66Mb
+      - Relay_ | 8.26Mb
+      - "|59.72Mb"
+      - Relay_ |145.18Mb
+      - Relay_ |83.33Mb
+      - _170
+      - Relay_ |137.19Mb
+      - Relay_ |88.72Mb
+      - Relay_-🇰🇷KR_171
+      - Relay_ |146.02Mb
+      - Relay_ |83.71Mb
+      - Relay_-🇩🇪DE_183
+      - Relay_-🇩🇪DE_179
+      - "|16.35Mb"
+      - Relay_-🇰🇷KR_174
+      - Relay_ |84.09Mb
+      - Relay_ |37.81Mb
+      - Relay_-🇰🇷KR_173
+      - Relay_ | 7.91Mb
+      - Relay_-🇩🇪DE_163
+      - Pool_ |10.65Mb
+      - "|53.09Mb"
+      - "|11.45Mb"
+      - "| 2.37Mb"
+      - Relay_ |23.45Mb
+      - "|46.25Mb"
+      - "|15.44Mb"
+      - Relay_-🇰🇷KR_161
+      - Relay_ |14.63Mb
+      - "|32.14Mb"
+      - "|160.22Mb"
+      - "|10.31Mb"
+      - 🇰🇷 Relay_🇰🇷KR-🇰🇷KR_188
+      - ""
+      - Pool_ | 2.87Mb
       - 🇩🇪 德国 - Frankfurt am Main - 1
       - 🇫🇮 芬兰 - Helsinki - 1
       - 🇰🇷 韩国 - Incheon - 1
@@ -1740,113 +1836,108 @@ proxy-groups:
       - 🇺🇸 美国 - Los Angeles - 1
       - 🇺🇸 美国 - Los Angeles - 2
       - 🇨🇳 中国 - Kwai Chung - 1
+      - Relay_-🇰🇷KR_171 2
+      - Relay_-🇰🇷KR_174 2
+      - Relay_-🇰🇷KR_173 2
+      - Relay_-🇰🇷KR_161 2
+      - 🇰🇷 Relay_🇰🇷KR-🇰🇷KR_188 2
+      - 🇺🇸 United States_None_ss_101
+      - 🇭🇰 Hong Kong_Tuen Mun_vmess_102
+      - 🇭🇰 Hong Kong_None_trojan_103
+      - 🇭🇰 Hong Kong_None_trojan_104
+      - 🇭🇰 Hong Kong_None_trojan_105
+      - 🇭🇰 Hong Kong_None_trojan_106
+      - 🇭🇰 Hong Kong_None_trojan_107
+      - 🇭🇰 Hong Kong_None_trojan_108
+      - 🇭🇰 Hong Kong_None_trojan_109
+      - 🇭🇰 Hong Kong_None_trojan_1010
+      - 🇭🇰 Hong Kong_None_trojan_1011
+      - 🇵🇱 Poland_None_trojan_1012
+      - 🇭🇰 Hong Kong_None_trojan_1013
+      - 🇭🇰 Hong Kong_None_trojan_1014
+      - 🇭🇰 Hong Kong_Tuen Mun_vmess_1015
+      - 🇭🇰 Hong Kong_None_trojan_1016
+      - 🇭🇰 Hong Kong_None_trojan_1017
+      - 🇯🇵 Japan_Tokyo_trojan_1018
+      - Unknown_vmess_111
+      - Unknown_vmess_112
+      - Unknown_vmess_113
+      - Unknown_vmess_114
+      - Unknown_vmess_115
+      - Unknown_vmess_116
+      - Unknown_vmess_117
+      - Unknown_vmess_118
+      - Unknown_vmess_119
+      - Unknown_vmess_1110
+      - 🇺🇸 United States_None_ss_1111
+      - 🇭🇰 Hong Kong_Tuen Mun_vmess_1112
+      - 🇭🇰 Hong Kong_None_trojan_1113
+      - 🇭🇰 Hong Kong_None_trojan_1114
+      - 🇭🇰 Hong Kong_None_trojan_1115
+      - 🇭🇰 Hong Kong_None_trojan_1116
+      - 🇭🇰 Hong Kong_None_trojan_1117
+      - 🇭🇰 Hong Kong_None_trojan_1118
+      - 🇭🇰 Hong Kong_None_trojan_1119
+      - 🇭🇰 Hong Kong_None_trojan_1120
+      - 🇭🇰 Hong Kong_None_trojan_1121
+      - 🇵🇱 Poland_None_trojan_1122
+      - 🇭🇰 Hong Kong_None_trojan_1123
+      - 🇭🇰 Hong Kong_None_trojan_1124
+      - 🇭🇰 Hong Kong_Tuen Mun_vmess_1125
+      - 🇭🇰 Hong Kong_None_trojan_1126
+      - 🇭🇰 Hong Kong_None_trojan_1127
+      - 🇯🇵 Japan_Tokyo_trojan_1128
+      - _161 |19.32Mb
+      - disney_netflix_US | 6.88Mb
+      - disney_netflix_NL |216.78Mb
+      - disney_netflix_NL |210.80Mb
+      - netflix_PL | 7.30Mb
+      - disney_netflix_NL |199.18Mb
+      - disney_netflix_NL |202.92Mb
+      - disney_netflix_US |275.54Mb
+      - disney_netflix_NL |25.21Mb
+      - netflix_JP |122.31Mb
+      - Relay_ |93.66Mb 2
+      - netflix_PL | 8.26Mb
+      - "|59.72Mb 2"
+      - Relay_ |145.18Mb 2
+      - Relay_ |83.33Mb 2
+      - disney_KR
+      - Relay_ |137.19Mb 2
+      - disney_netflix_HK |88.72Mb
+      - disney_KR 2
+      - Relay_ |146.02Mb 2
+      - Relay_ |83.71Mb 2
+      - disney_netflix_GB
+      - disney_netflix_GB 2
+      - disney_netflix_FR |16.35Mb
+      - disney_KR 3
+      - Relay_ |84.09Mb 2
+      - disney_netflix_FR |37.81Mb
+      - disney_KR 4
+      - netflix_PL | 7.91Mb
+      - disney_netflix_GB 3
+      - netflix_ES |10.65Mb
+      - disney_netflix_FR |53.09Mb
+      - "|11.45Mb 2"
+      - disney_netflix_FR | 2.37Mb
+      - disney_netflix_FR |23.45Mb
+      - disney_netflix_FR |46.25Mb
+      - disney_netflix_FR |15.44Mb
+      - disney_KR 5
+      - disney_netflix_FR |14.63Mb
+      - disney_netflix_FR |32.14Mb
+      - disney_netflix_NL |160.22Mb
+      - disney_netflix_HK |10.31Mb
+      - disney_KR 6
+      - disney_TW
+      - Pool_ | 2.87Mb 2
   - name: 📲 电报信息
     type: select
     proxies:
       - 🔰 节点选择
       - 🎯 全球直连
       - Shadowsocks
-      - "|266.48Mb"
-      - "|937.19Mb"
-      - Relay_ |145.63Mb
-      - "|118.85Mb"
-      - "|968.06Mb"
-      - Relay_ |156.79Mb
-      - "|26.60Mb"
-      - Relay_ |27.36Mb
-      - Relay_ |26.24Mb
-      - Relay_ |24.41Mb
-      - Relay_ |26.50Mb
-      - Relay_ |27.60Mb
-      - Relay_ | 2.11Mb
-      - Relay_ |83.83Mb
-      - Relay_ |82.91Mb
-      - Pool_ |301.71Mb
-      - "|15.48Mb"
-      - Relay_ |80.06Mb
-      - 🇺🇸 United States_None_ss_101
-      - 🇭🇰 Hong Kong_Tuen Mun_vmess_102
-      - 🇭🇰 Hong Kong_None_trojan_103
-      - 🇭🇰 Hong Kong_None_trojan_104
-      - 🇭🇰 Hong Kong_None_trojan_105
-      - 🇭🇰 Hong Kong_None_trojan_106
-      - 🇭🇰 Hong Kong_None_trojan_107
-      - 🇭🇰 Hong Kong_None_trojan_108
-      - 🇭🇰 Hong Kong_None_trojan_109
-      - 🇭🇰 Hong Kong_None_trojan_1010
-      - 🇭🇰 Hong Kong_None_trojan_1011
-      - 🇵🇱 Poland_None_trojan_1012
-      - 🇭🇰 Hong Kong_None_trojan_1013
-      - 🇭🇰 Hong Kong_None_trojan_1014
-      - 🇭🇰 Hong Kong_Tuen Mun_vmess_1015
-      - 🇭🇰 Hong Kong_None_trojan_1016
-      - 🇭🇰 Hong Kong_None_trojan_1017
-      - 🇯🇵 Japan_Tokyo_trojan_1018
-      - Unknown_vmess_111
-      - Unknown_vmess_112
-      - Unknown_vmess_113
-      - Unknown_vmess_114
-      - Unknown_vmess_115
-      - Unknown_vmess_116
-      - Unknown_vmess_117
-      - Unknown_vmess_118
-      - Unknown_vmess_119
-      - Unknown_vmess_1110
-      - 🇺🇸 United States_None_ss_1111
-      - 🇭🇰 Hong Kong_Tuen Mun_vmess_1112
-      - 🇭🇰 Hong Kong_None_trojan_1113
-      - 🇭🇰 Hong Kong_None_trojan_1114
-      - 🇭🇰 Hong Kong_None_trojan_1115
-      - 🇭🇰 Hong Kong_None_trojan_1116
-      - 🇭🇰 Hong Kong_None_trojan_1117
-      - 🇭🇰 Hong Kong_None_trojan_1118
-      - 🇭🇰 Hong Kong_None_trojan_1119
-      - 🇭🇰 Hong Kong_None_trojan_1120
-      - 🇭🇰 Hong Kong_None_trojan_1121
-      - 🇵🇱 Poland_None_trojan_1122
-      - 🇭🇰 Hong Kong_None_trojan_1123
-      - 🇭🇰 Hong Kong_None_trojan_1124
-      - 🇭🇰 Hong Kong_Tuen Mun_vmess_1125
-      - None_None_trojan_1126
-      - 🇯🇵 Japan_Tokyo_trojan_1127
-      - 🇭🇰 Hong Kong_None_trojan_1128
-      - 🇭🇰 Hong Kong_None_trojan_1129
-      - 🇯🇵 Japan_Tokyo_trojan_1130
-      - disney_netflix_US |266.48Mb
-      - netflix_NL |751.41Mb
-      - netflix_NL |782.20Mb
-      - netflix_NL |968.06Mb
-      - Relay_-🇹🇷TR_204 |246.96Mb
-      - netflix_JP |119.93Mb
-      - netflix_NL |937.19Mb
-      - netflix_PL |118.85Mb
-      - disney_netflix_US |145.63Mb
-      - Relay_-🇭🇰HK_209 |26.24Mb
-      - disney_KR
-      - disney_KR 2
-      - Relay_-🇫🇷FR_212 |156.79Mb
-      - Relay_-🇭🇰HK_213 |24.41Mb
-      - Relay_-🇺🇸US_214 |26.50Mb
-      - Relay_-🇫🇷FR_215 | 2.11Mb
-      - Relay_-🇺🇸US_216 |27.60Mb
-      - Relay_-🇯🇵JP_217 |82.91Mb
-      - disney_KR 3
-      - Relay_-🇯🇵JP_219 |80.06Mb
-      - _220 |26.60Mb
-      - disney_KR 4
-      - Relay_-🇺🇸US_222 |27.36Mb
-      - disney_KR 5
-      - Relay_-🇯🇵JP_224 |83.83Mb
-      - Relay_-🇬🇧GB_225 |270.75Mb
-      - Relay_-🇬🇧GB_226 |267.10Mb
-      - disney_netflix_GB
-      - netflix_ES |301.71Mb
-      - _229 |15.48Mb
-      - disney_netflix_GB 2
-      - Relay_-🇧🇷BR_231 |34.75Mb
-      - disney_netflix_GB 3
-      - disney_KR 6
-      - Pool_🇺🇸US_235 | 2.87Mb
       - 🇮🇸 [免费机场TG@proxyshareCN] 冰岛01-标准
       - "[免费机场TG@proxyshareCN] 列支敦士登01-标准"
       - 🇲🇰 [免费机场TG@proxyshareCN] 北马其顿01-标准
@@ -2002,14 +2093,51 @@ proxy-groups:
       - 🇦🇱 Web 阿尔巴尼亚I-标准
       - 🇭🇰 Web 香港I-标准
       - 🇭🇰 Web 香港II-标准
-      - netflix_JP |119.93Mb 2
-      - disney_KR 7
-      - disney_KR 8
-      - disney_KR 9
-      - disney_KR 10
-      - disney_KR 11
-      - disney_KR 12
-      - disney_TW
+      - "|19.32Mb"
+      - Relay_ | 6.88Mb
+      - "|216.78Mb"
+      - "|210.80Mb"
+      - "| 7.30Mb"
+      - "|199.18Mb"
+      - "|202.92Mb"
+      - "|275.54Mb"
+      - "|25.21Mb"
+      - "|122.31Mb"
+      - Relay_ |93.66Mb
+      - Relay_ | 8.26Mb
+      - "|59.72Mb"
+      - Relay_ |145.18Mb
+      - Relay_ |83.33Mb
+      - _170
+      - Relay_ |137.19Mb
+      - Relay_ |88.72Mb
+      - Relay_-🇰🇷KR_171
+      - Relay_ |146.02Mb
+      - Relay_ |83.71Mb
+      - Relay_-🇩🇪DE_183
+      - Relay_-🇩🇪DE_179
+      - "|16.35Mb"
+      - Relay_-🇰🇷KR_174
+      - Relay_ |84.09Mb
+      - Relay_ |37.81Mb
+      - Relay_-🇰🇷KR_173
+      - Relay_ | 7.91Mb
+      - Relay_-🇩🇪DE_163
+      - Pool_ |10.65Mb
+      - "|53.09Mb"
+      - "|11.45Mb"
+      - "| 2.37Mb"
+      - Relay_ |23.45Mb
+      - "|46.25Mb"
+      - "|15.44Mb"
+      - Relay_-🇰🇷KR_161
+      - Relay_ |14.63Mb
+      - "|32.14Mb"
+      - "|160.22Mb"
+      - "|10.31Mb"
+      - 🇰🇷 Relay_🇰🇷KR-🇰🇷KR_188
+      - ""
+      - Pool_ | 2.87Mb
       - 🇩🇪 德国 - Frankfurt am Main - 1
       - 🇫🇮 芬兰 - Helsinki - 1
       - 🇰🇷 韩国 - Incheon - 1
@@ -2022,6 +2150,102 @@ proxy-groups:
       - 🇺🇸 美国 - Los Angeles - 1
       - 🇺🇸 美国 - Los Angeles - 2
       - 🇨🇳 中国 - Kwai Chung - 1
+      - Relay_-🇰🇷KR_171 2
+      - Relay_-🇰🇷KR_174 2
+      - Relay_-🇰🇷KR_173 2
+      - Relay_-🇰🇷KR_161 2
+      - 🇰🇷 Relay_🇰🇷KR-🇰🇷KR_188 2
+      - 🇺🇸 United States_None_ss_101
+      - 🇭🇰 Hong Kong_Tuen Mun_vmess_102
+      - 🇭🇰 Hong Kong_None_trojan_103
+      - 🇭🇰 Hong Kong_None_trojan_104
+      - 🇭🇰 Hong Kong_None_trojan_105
+      - 🇭🇰 Hong Kong_None_trojan_106
+      - 🇭🇰 Hong Kong_None_trojan_107
+      - 🇭🇰 Hong Kong_None_trojan_108
+      - 🇭🇰 Hong Kong_None_trojan_109
+      - 🇭🇰 Hong Kong_None_trojan_1010
+      - 🇭🇰 Hong Kong_None_trojan_1011
+      - 🇵🇱 Poland_None_trojan_1012
+      - 🇭🇰 Hong Kong_None_trojan_1013
+      - 🇭🇰 Hong Kong_None_trojan_1014
+      - 🇭🇰 Hong Kong_Tuen Mun_vmess_1015
+      - 🇭🇰 Hong Kong_None_trojan_1016
+      - 🇭🇰 Hong Kong_None_trojan_1017
+      - 🇯🇵 Japan_Tokyo_trojan_1018
+      - Unknown_vmess_111
+      - Unknown_vmess_112
+      - Unknown_vmess_113
+      - Unknown_vmess_114
+      - Unknown_vmess_115
+      - Unknown_vmess_116
+      - Unknown_vmess_117
+      - Unknown_vmess_118
+      - Unknown_vmess_119
+      - Unknown_vmess_1110
+      - 🇺🇸 United States_None_ss_1111
+      - 🇭🇰 Hong Kong_Tuen Mun_vmess_1112
+      - 🇭🇰 Hong Kong_None_trojan_1113
+      - 🇭🇰 Hong Kong_None_trojan_1114
+      - 🇭🇰 Hong Kong_None_trojan_1115
+      - 🇭🇰 Hong Kong_None_trojan_1116
+      - 🇭🇰 Hong Kong_None_trojan_1117
+      - 🇭🇰 Hong Kong_None_trojan_1118
+      - 🇭🇰 Hong Kong_None_trojan_1119
+      - 🇭🇰 Hong Kong_None_trojan_1120
+      - 🇭🇰 Hong Kong_None_trojan_1121
+      - 🇵🇱 Poland_None_trojan_1122
+      - 🇭🇰 Hong Kong_None_trojan_1123
+      - 🇭🇰 Hong Kong_None_trojan_1124
+      - 🇭🇰 Hong Kong_Tuen Mun_vmess_1125
+      - 🇭🇰 Hong Kong_None_trojan_1126
+      - 🇭🇰 Hong Kong_None_trojan_1127
+      - 🇯🇵 Japan_Tokyo_trojan_1128
+      - _161 |19.32Mb
+      - disney_netflix_US | 6.88Mb
+      - disney_netflix_NL |216.78Mb
+      - disney_netflix_NL |210.80Mb
+      - netflix_PL | 7.30Mb
+      - disney_netflix_NL |199.18Mb
+      - disney_netflix_NL |202.92Mb
+      - disney_netflix_US |275.54Mb
+      - disney_netflix_NL |25.21Mb
+      - netflix_JP |122.31Mb
+      - Relay_ |93.66Mb 2
+      - netflix_PL | 8.26Mb
+      - "|59.72Mb 2"
+      - Relay_ |145.18Mb 2
+      - Relay_ |83.33Mb 2
+      - disney_KR
+      - Relay_ |137.19Mb 2
+      - disney_netflix_HK |88.72Mb
+      - disney_KR 2
+      - Relay_ |146.02Mb 2
+      - Relay_ |83.71Mb 2
+      - disney_netflix_GB
+      - disney_netflix_GB 2
+      - disney_netflix_FR |16.35Mb
+      - disney_KR 3
+      - Relay_ |84.09Mb 2
+      - disney_netflix_FR |37.81Mb
+      - disney_KR 4
+      - netflix_PL | 7.91Mb
+      - disney_netflix_GB 3
+      - netflix_ES |10.65Mb
+      - disney_netflix_FR |53.09Mb
+      - "|11.45Mb 2"
+      - disney_netflix_FR | 2.37Mb
+      - disney_netflix_FR |23.45Mb
+      - disney_netflix_FR |46.25Mb
+      - disney_netflix_FR |15.44Mb
+      - disney_KR 5
+      - disney_netflix_FR |14.63Mb
+      - disney_netflix_FR |32.14Mb
+      - disney_netflix_NL |160.22Mb
+      - disney_netflix_HK |10.31Mb
+      - disney_KR 6
+      - disney_TW
+      - Pool_ | 2.87Mb 2
   - name: 🍎 苹果服务
     type: select
     proxies:
@@ -2029,107 +2253,6 @@ proxy-groups:
       - 🎯 全球直连
       - ♻️ 自动选择
       - Shadowsocks
-      - "|266.48Mb"
-      - "|937.19Mb"
-      - Relay_ |145.63Mb
-      - "|118.85Mb"
-      - "|968.06Mb"
-      - Relay_ |156.79Mb
-      - "|26.60Mb"
-      - Relay_ |27.36Mb
-      - Relay_ |26.24Mb
-      - Relay_ |24.41Mb
-      - Relay_ |26.50Mb
-      - Relay_ |27.60Mb
-      - Relay_ | 2.11Mb
-      - Relay_ |83.83Mb
-      - Relay_ |82.91Mb
-      - Pool_ |301.71Mb
-      - "|15.48Mb"
-      - Relay_ |80.06Mb
-      - 🇺🇸 United States_None_ss_101
-      - 🇭🇰 Hong Kong_Tuen Mun_vmess_102
-      - 🇭🇰 Hong Kong_None_trojan_103
-      - 🇭🇰 Hong Kong_None_trojan_104
-      - 🇭🇰 Hong Kong_None_trojan_105
-      - 🇭🇰 Hong Kong_None_trojan_106
-      - 🇭🇰 Hong Kong_None_trojan_107
-      - 🇭🇰 Hong Kong_None_trojan_108
-      - 🇭🇰 Hong Kong_None_trojan_109
-      - 🇭🇰 Hong Kong_None_trojan_1010
-      - 🇭🇰 Hong Kong_None_trojan_1011
-      - 🇵🇱 Poland_None_trojan_1012
-      - 🇭🇰 Hong Kong_None_trojan_1013
-      - 🇭🇰 Hong Kong_None_trojan_1014
-      - 🇭🇰 Hong Kong_Tuen Mun_vmess_1015
-      - 🇭🇰 Hong Kong_None_trojan_1016
-      - 🇭🇰 Hong Kong_None_trojan_1017
-      - 🇯🇵 Japan_Tokyo_trojan_1018
-      - Unknown_vmess_111
-      - Unknown_vmess_112
-      - Unknown_vmess_113
-      - Unknown_vmess_114
-      - Unknown_vmess_115
-      - Unknown_vmess_116
-      - Unknown_vmess_117
-      - Unknown_vmess_118
-      - Unknown_vmess_119
-      - Unknown_vmess_1110
-      - 🇺🇸 United States_None_ss_1111
-      - 🇭🇰 Hong Kong_Tuen Mun_vmess_1112
-      - 🇭🇰 Hong Kong_None_trojan_1113
-      - 🇭🇰 Hong Kong_None_trojan_1114
-      - 🇭🇰 Hong Kong_None_trojan_1115
-      - 🇭🇰 Hong Kong_None_trojan_1116
-      - 🇭🇰 Hong Kong_None_trojan_1117
-      - 🇭🇰 Hong Kong_None_trojan_1118
-      - 🇭🇰 Hong Kong_None_trojan_1119
-      - 🇭🇰 Hong Kong_None_trojan_1120
-      - 🇭🇰 Hong Kong_None_trojan_1121
-      - 🇵🇱 Poland_None_trojan_1122
-      - 🇭🇰 Hong Kong_None_trojan_1123
-      - 🇭🇰 Hong Kong_None_trojan_1124
-      - 🇭🇰 Hong Kong_Tuen Mun_vmess_1125
-      - None_None_trojan_1126
-      - 🇯🇵 Japan_Tokyo_trojan_1127
-      - 🇭🇰 Hong Kong_None_trojan_1128
-      - 🇭🇰 Hong Kong_None_trojan_1129
-      - 🇯🇵 Japan_Tokyo_trojan_1130
-      - disney_netflix_US |266.48Mb
-      - netflix_NL |751.41Mb
-      - netflix_NL |782.20Mb
-      - netflix_NL |968.06Mb
-      - Relay_-🇹🇷TR_204 |246.96Mb
-      - netflix_JP |119.93Mb
-      - netflix_NL |937.19Mb
-      - netflix_PL |118.85Mb
-      - disney_netflix_US |145.63Mb
-      - Relay_-🇭🇰HK_209 |26.24Mb
-      - disney_KR
-      - disney_KR 2
-      - Relay_-🇫🇷FR_212 |156.79Mb
-      - Relay_-🇭🇰HK_213 |24.41Mb
-      - Relay_-🇺🇸US_214 |26.50Mb
-      - Relay_-🇫🇷FR_215 | 2.11Mb
-      - Relay_-🇺🇸US_216 |27.60Mb
-      - Relay_-🇯🇵JP_217 |82.91Mb
-      - disney_KR 3
-      - Relay_-🇯🇵JP_219 |80.06Mb
-      - _220 |26.60Mb
-      - disney_KR 4
-      - Relay_-🇺🇸US_222 |27.36Mb
-      - disney_KR 5
-      - Relay_-🇯🇵JP_224 |83.83Mb
-      - Relay_-🇬🇧GB_225 |270.75Mb
-      - Relay_-🇬🇧GB_226 |267.10Mb
-      - disney_netflix_GB
-      - netflix_ES |301.71Mb
-      - _229 |15.48Mb
-      - disney_netflix_GB 2
-      - Relay_-🇧🇷BR_231 |34.75Mb
-      - disney_netflix_GB 3
-      - disney_KR 6
-      - Pool_🇺🇸US_235 | 2.87Mb
       - 🇮🇸 [免费机场TG@proxyshareCN] 冰岛01-标准
       - "[免费机场TG@proxyshareCN] 列支敦士登01-标准"
       - 🇲🇰 [免费机场TG@proxyshareCN] 北马其顿01-标准
@@ -2285,14 +2408,51 @@ proxy-groups:
       - 🇦🇱 Web 阿尔巴尼亚I-标准
       - 🇭🇰 Web 香港I-标准
       - 🇭🇰 Web 香港II-标准
-      - netflix_JP |119.93Mb 2
-      - disney_KR 7
-      - disney_KR 8
-      - disney_KR 9
-      - disney_KR 10
-      - disney_KR 11
-      - disney_KR 12
-      - disney_TW
+      - "|19.32Mb"
+      - Relay_ | 6.88Mb
+      - "|216.78Mb"
+      - "|210.80Mb"
+      - "| 7.30Mb"
+      - "|199.18Mb"
+      - "|202.92Mb"
+      - "|275.54Mb"
+      - "|25.21Mb"
+      - "|122.31Mb"
+      - Relay_ |93.66Mb
+      - Relay_ | 8.26Mb
+      - "|59.72Mb"
+      - Relay_ |145.18Mb
+      - Relay_ |83.33Mb
+      - _170
+      - Relay_ |137.19Mb
+      - Relay_ |88.72Mb
+      - Relay_-🇰🇷KR_171
+      - Relay_ |146.02Mb
+      - Relay_ |83.71Mb
+      - Relay_-🇩🇪DE_183
+      - Relay_-🇩🇪DE_179
+      - "|16.35Mb"
+      - Relay_-🇰🇷KR_174
+      - Relay_ |84.09Mb
+      - Relay_ |37.81Mb
+      - Relay_-🇰🇷KR_173
+      - Relay_ | 7.91Mb
+      - Relay_-🇩🇪DE_163
+      - Pool_ |10.65Mb
+      - "|53.09Mb"
+      - "|11.45Mb"
+      - "| 2.37Mb"
+      - Relay_ |23.45Mb
+      - "|46.25Mb"
+      - "|15.44Mb"
+      - Relay_-🇰🇷KR_161
+      - Relay_ |14.63Mb
+      - "|32.14Mb"
+      - "|160.22Mb"
+      - "|10.31Mb"
+      - 🇰🇷 Relay_🇰🇷KR-🇰🇷KR_188
+      - ""
+      - Pool_ | 2.87Mb
       - 🇩🇪 德国 - Frankfurt am Main - 1
       - 🇫🇮 芬兰 - Helsinki - 1
       - 🇰🇷 韩国 - Incheon - 1
@@ -2305,6 +2465,102 @@ proxy-groups:
       - 🇺🇸 美国 - Los Angeles - 1
       - 🇺🇸 美国 - Los Angeles - 2
       - 🇨🇳 中国 - Kwai Chung - 1
+      - Relay_-🇰🇷KR_171 2
+      - Relay_-🇰🇷KR_174 2
+      - Relay_-🇰🇷KR_173 2
+      - Relay_-🇰🇷KR_161 2
+      - 🇰🇷 Relay_🇰🇷KR-🇰🇷KR_188 2
+      - 🇺🇸 United States_None_ss_101
+      - 🇭🇰 Hong Kong_Tuen Mun_vmess_102
+      - 🇭🇰 Hong Kong_None_trojan_103
+      - 🇭🇰 Hong Kong_None_trojan_104
+      - 🇭🇰 Hong Kong_None_trojan_105
+      - 🇭🇰 Hong Kong_None_trojan_106
+      - 🇭🇰 Hong Kong_None_trojan_107
+      - 🇭🇰 Hong Kong_None_trojan_108
+      - 🇭🇰 Hong Kong_None_trojan_109
+      - 🇭🇰 Hong Kong_None_trojan_1010
+      - 🇭🇰 Hong Kong_None_trojan_1011
+      - 🇵🇱 Poland_None_trojan_1012
+      - 🇭🇰 Hong Kong_None_trojan_1013
+      - 🇭🇰 Hong Kong_None_trojan_1014
+      - 🇭🇰 Hong Kong_Tuen Mun_vmess_1015
+      - 🇭🇰 Hong Kong_None_trojan_1016
+      - 🇭🇰 Hong Kong_None_trojan_1017
+      - 🇯🇵 Japan_Tokyo_trojan_1018
+      - Unknown_vmess_111
+      - Unknown_vmess_112
+      - Unknown_vmess_113
+      - Unknown_vmess_114
+      - Unknown_vmess_115
+      - Unknown_vmess_116
+      - Unknown_vmess_117
+      - Unknown_vmess_118
+      - Unknown_vmess_119
+      - Unknown_vmess_1110
+      - 🇺🇸 United States_None_ss_1111
+      - 🇭🇰 Hong Kong_Tuen Mun_vmess_1112
+      - 🇭🇰 Hong Kong_None_trojan_1113
+      - 🇭🇰 Hong Kong_None_trojan_1114
+      - 🇭🇰 Hong Kong_None_trojan_1115
+      - 🇭🇰 Hong Kong_None_trojan_1116
+      - 🇭🇰 Hong Kong_None_trojan_1117
+      - 🇭🇰 Hong Kong_None_trojan_1118
+      - 🇭🇰 Hong Kong_None_trojan_1119
+      - 🇭🇰 Hong Kong_None_trojan_1120
+      - 🇭🇰 Hong Kong_None_trojan_1121
+      - 🇵🇱 Poland_None_trojan_1122
+      - 🇭🇰 Hong Kong_None_trojan_1123
+      - 🇭🇰 Hong Kong_None_trojan_1124
+      - 🇭🇰 Hong Kong_Tuen Mun_vmess_1125
+      - 🇭🇰 Hong Kong_None_trojan_1126
+      - 🇭🇰 Hong Kong_None_trojan_1127
+      - 🇯🇵 Japan_Tokyo_trojan_1128
+      - _161 |19.32Mb
+      - disney_netflix_US | 6.88Mb
+      - disney_netflix_NL |216.78Mb
+      - disney_netflix_NL |210.80Mb
+      - netflix_PL | 7.30Mb
+      - disney_netflix_NL |199.18Mb
+      - disney_netflix_NL |202.92Mb
+      - disney_netflix_US |275.54Mb
+      - disney_netflix_NL |25.21Mb
+      - netflix_JP |122.31Mb
+      - Relay_ |93.66Mb 2
+      - netflix_PL | 8.26Mb
+      - "|59.72Mb 2"
+      - Relay_ |145.18Mb 2
+      - Relay_ |83.33Mb 2
+      - disney_KR
+      - Relay_ |137.19Mb 2
+      - disney_netflix_HK |88.72Mb
+      - disney_KR 2
+      - Relay_ |146.02Mb 2
+      - Relay_ |83.71Mb 2
+      - disney_netflix_GB
+      - disney_netflix_GB 2
+      - disney_netflix_FR |16.35Mb
+      - disney_KR 3
+      - Relay_ |84.09Mb 2
+      - disney_netflix_FR |37.81Mb
+      - disney_KR 4
+      - netflix_PL | 7.91Mb
+      - disney_netflix_GB 3
+      - netflix_ES |10.65Mb
+      - disney_netflix_FR |53.09Mb
+      - "|11.45Mb 2"
+      - disney_netflix_FR | 2.37Mb
+      - disney_netflix_FR |23.45Mb
+      - disney_netflix_FR |46.25Mb
+      - disney_netflix_FR |15.44Mb
+      - disney_KR 5
+      - disney_netflix_FR |14.63Mb
+      - disney_netflix_FR |32.14Mb
+      - disney_netflix_NL |160.22Mb
+      - disney_netflix_HK |10.31Mb
+      - disney_KR 6
+      - disney_TW
+      - Pool_ | 2.87Mb 2
   - name: 🎯 全球直连
     type: select
     proxies:
@@ -2321,107 +2577,6 @@ proxy-groups:
       - 🎯 全球直连
       - ♻️ 自动选择
       - Shadowsocks
-      - "|266.48Mb"
-      - "|937.19Mb"
-      - Relay_ |145.63Mb
-      - "|118.85Mb"
-      - "|968.06Mb"
-      - Relay_ |156.79Mb
-      - "|26.60Mb"
-      - Relay_ |27.36Mb
-      - Relay_ |26.24Mb
-      - Relay_ |24.41Mb
-      - Relay_ |26.50Mb
-      - Relay_ |27.60Mb
-      - Relay_ | 2.11Mb
-      - Relay_ |83.83Mb
-      - Relay_ |82.91Mb
-      - Pool_ |301.71Mb
-      - "|15.48Mb"
-      - Relay_ |80.06Mb
-      - 🇺🇸 United States_None_ss_101
-      - 🇭🇰 Hong Kong_Tuen Mun_vmess_102
-      - 🇭🇰 Hong Kong_None_trojan_103
-      - 🇭🇰 Hong Kong_None_trojan_104
-      - 🇭🇰 Hong Kong_None_trojan_105
-      - 🇭🇰 Hong Kong_None_trojan_106
-      - 🇭🇰 Hong Kong_None_trojan_107
-      - 🇭🇰 Hong Kong_None_trojan_108
-      - 🇭🇰 Hong Kong_None_trojan_109
-      - 🇭🇰 Hong Kong_None_trojan_1010
-      - 🇭🇰 Hong Kong_None_trojan_1011
-      - 🇵🇱 Poland_None_trojan_1012
-      - 🇭🇰 Hong Kong_None_trojan_1013
-      - 🇭🇰 Hong Kong_None_trojan_1014
-      - 🇭🇰 Hong Kong_Tuen Mun_vmess_1015
-      - 🇭🇰 Hong Kong_None_trojan_1016
-      - 🇭🇰 Hong Kong_None_trojan_1017
-      - 🇯🇵 Japan_Tokyo_trojan_1018
-      - Unknown_vmess_111
-      - Unknown_vmess_112
-      - Unknown_vmess_113
-      - Unknown_vmess_114
-      - Unknown_vmess_115
-      - Unknown_vmess_116
-      - Unknown_vmess_117
-      - Unknown_vmess_118
-      - Unknown_vmess_119
-      - Unknown_vmess_1110
-      - 🇺🇸 United States_None_ss_1111
-      - 🇭🇰 Hong Kong_Tuen Mun_vmess_1112
-      - 🇭🇰 Hong Kong_None_trojan_1113
-      - 🇭🇰 Hong Kong_None_trojan_1114
-      - 🇭🇰 Hong Kong_None_trojan_1115
-      - 🇭🇰 Hong Kong_None_trojan_1116
-      - 🇭🇰 Hong Kong_None_trojan_1117
-      - 🇭🇰 Hong Kong_None_trojan_1118
-      - 🇭🇰 Hong Kong_None_trojan_1119
-      - 🇭🇰 Hong Kong_None_trojan_1120
-      - 🇭🇰 Hong Kong_None_trojan_1121
-      - 🇵🇱 Poland_None_trojan_1122
-      - 🇭🇰 Hong Kong_None_trojan_1123
-      - 🇭🇰 Hong Kong_None_trojan_1124
-      - 🇭🇰 Hong Kong_Tuen Mun_vmess_1125
-      - None_None_trojan_1126
-      - 🇯🇵 Japan_Tokyo_trojan_1127
-      - 🇭🇰 Hong Kong_None_trojan_1128
-      - 🇭🇰 Hong Kong_None_trojan_1129
-      - 🇯🇵 Japan_Tokyo_trojan_1130
-      - disney_netflix_US |266.48Mb
-      - netflix_NL |751.41Mb
-      - netflix_NL |782.20Mb
-      - netflix_NL |968.06Mb
-      - Relay_-🇹🇷TR_204 |246.96Mb
-      - netflix_JP |119.93Mb
-      - netflix_NL |937.19Mb
-      - netflix_PL |118.85Mb
-      - disney_netflix_US |145.63Mb
-      - Relay_-🇭🇰HK_209 |26.24Mb
-      - disney_KR
-      - disney_KR 2
-      - Relay_-🇫🇷FR_212 |156.79Mb
-      - Relay_-🇭🇰HK_213 |24.41Mb
-      - Relay_-🇺🇸US_214 |26.50Mb
-      - Relay_-🇫🇷FR_215 | 2.11Mb
-      - Relay_-🇺🇸US_216 |27.60Mb
-      - Relay_-🇯🇵JP_217 |82.91Mb
-      - disney_KR 3
-      - Relay_-🇯🇵JP_219 |80.06Mb
-      - _220 |26.60Mb
-      - disney_KR 4
-      - Relay_-🇺🇸US_222 |27.36Mb
-      - disney_KR 5
-      - Relay_-🇯🇵JP_224 |83.83Mb
-      - Relay_-🇬🇧GB_225 |270.75Mb
-      - Relay_-🇬🇧GB_226 |267.10Mb
-      - disney_netflix_GB
-      - netflix_ES |301.71Mb
-      - _229 |15.48Mb
-      - disney_netflix_GB 2
-      - Relay_-🇧🇷BR_231 |34.75Mb
-      - disney_netflix_GB 3
-      - disney_KR 6
-      - Pool_🇺🇸US_235 | 2.87Mb
       - 🇮🇸 [免费机场TG@proxyshareCN] 冰岛01-标准
       - "[免费机场TG@proxyshareCN] 列支敦士登01-标准"
       - 🇲🇰 [免费机场TG@proxyshareCN] 北马其顿01-标准
@@ -2577,14 +2732,51 @@ proxy-groups:
       - 🇦🇱 Web 阿尔巴尼亚I-标准
       - 🇭🇰 Web 香港I-标准
       - 🇭🇰 Web 香港II-标准
-      - netflix_JP |119.93Mb 2
-      - disney_KR 7
-      - disney_KR 8
-      - disney_KR 9
-      - disney_KR 10
-      - disney_KR 11
-      - disney_KR 12
-      - disney_TW
+      - "|19.32Mb"
+      - Relay_ | 6.88Mb
+      - "|216.78Mb"
+      - "|210.80Mb"
+      - "| 7.30Mb"
+      - "|199.18Mb"
+      - "|202.92Mb"
+      - "|275.54Mb"
+      - "|25.21Mb"
+      - "|122.31Mb"
+      - Relay_ |93.66Mb
+      - Relay_ | 8.26Mb
+      - "|59.72Mb"
+      - Relay_ |145.18Mb
+      - Relay_ |83.33Mb
+      - _170
+      - Relay_ |137.19Mb
+      - Relay_ |88.72Mb
+      - Relay_-🇰🇷KR_171
+      - Relay_ |146.02Mb
+      - Relay_ |83.71Mb
+      - Relay_-🇩🇪DE_183
+      - Relay_-🇩🇪DE_179
+      - "|16.35Mb"
+      - Relay_-🇰🇷KR_174
+      - Relay_ |84.09Mb
+      - Relay_ |37.81Mb
+      - Relay_-🇰🇷KR_173
+      - Relay_ | 7.91Mb
+      - Relay_-🇩🇪DE_163
+      - Pool_ |10.65Mb
+      - "|53.09Mb"
+      - "|11.45Mb"
+      - "| 2.37Mb"
+      - Relay_ |23.45Mb
+      - "|46.25Mb"
+      - "|15.44Mb"
+      - Relay_-🇰🇷KR_161
+      - Relay_ |14.63Mb
+      - "|32.14Mb"
+      - "|160.22Mb"
+      - "|10.31Mb"
+      - 🇰🇷 Relay_🇰🇷KR-🇰🇷KR_188
+      - ""
+      - Pool_ | 2.87Mb
       - 🇩🇪 德国 - Frankfurt am Main - 1
       - 🇫🇮 芬兰 - Helsinki - 1
       - 🇰🇷 韩国 - Incheon - 1
@@ -2597,6 +2789,102 @@ proxy-groups:
       - 🇺🇸 美国 - Los Angeles - 1
       - 🇺🇸 美国 - Los Angeles - 2
       - 🇨🇳 中国 - Kwai Chung - 1
+      - Relay_-🇰🇷KR_171 2
+      - Relay_-🇰🇷KR_174 2
+      - Relay_-🇰🇷KR_173 2
+      - Relay_-🇰🇷KR_161 2
+      - 🇰🇷 Relay_🇰🇷KR-🇰🇷KR_188 2
+      - 🇺🇸 United States_None_ss_101
+      - 🇭🇰 Hong Kong_Tuen Mun_vmess_102
+      - 🇭🇰 Hong Kong_None_trojan_103
+      - 🇭🇰 Hong Kong_None_trojan_104
+      - 🇭🇰 Hong Kong_None_trojan_105
+      - 🇭🇰 Hong Kong_None_trojan_106
+      - 🇭🇰 Hong Kong_None_trojan_107
+      - 🇭🇰 Hong Kong_None_trojan_108
+      - 🇭🇰 Hong Kong_None_trojan_109
+      - 🇭🇰 Hong Kong_None_trojan_1010
+      - 🇭🇰 Hong Kong_None_trojan_1011
+      - 🇵🇱 Poland_None_trojan_1012
+      - 🇭🇰 Hong Kong_None_trojan_1013
+      - 🇭🇰 Hong Kong_None_trojan_1014
+      - 🇭🇰 Hong Kong_Tuen Mun_vmess_1015
+      - 🇭🇰 Hong Kong_None_trojan_1016
+      - 🇭🇰 Hong Kong_None_trojan_1017
+      - 🇯🇵 Japan_Tokyo_trojan_1018
+      - Unknown_vmess_111
+      - Unknown_vmess_112
+      - Unknown_vmess_113
+      - Unknown_vmess_114
+      - Unknown_vmess_115
+      - Unknown_vmess_116
+      - Unknown_vmess_117
+      - Unknown_vmess_118
+      - Unknown_vmess_119
+      - Unknown_vmess_1110
+      - 🇺🇸 United States_None_ss_1111
+      - 🇭🇰 Hong Kong_Tuen Mun_vmess_1112
+      - 🇭🇰 Hong Kong_None_trojan_1113
+      - 🇭🇰 Hong Kong_None_trojan_1114
+      - 🇭🇰 Hong Kong_None_trojan_1115
+      - 🇭🇰 Hong Kong_None_trojan_1116
+      - 🇭🇰 Hong Kong_None_trojan_1117
+      - 🇭🇰 Hong Kong_None_trojan_1118
+      - 🇭🇰 Hong Kong_None_trojan_1119
+      - 🇭🇰 Hong Kong_None_trojan_1120
+      - 🇭🇰 Hong Kong_None_trojan_1121
+      - 🇵🇱 Poland_None_trojan_1122
+      - 🇭🇰 Hong Kong_None_trojan_1123
+      - 🇭🇰 Hong Kong_None_trojan_1124
+      - 🇭🇰 Hong Kong_Tuen Mun_vmess_1125
+      - 🇭🇰 Hong Kong_None_trojan_1126
+      - 🇭🇰 Hong Kong_None_trojan_1127
+      - 🇯🇵 Japan_Tokyo_trojan_1128
+      - _161 |19.32Mb
+      - disney_netflix_US | 6.88Mb
+      - disney_netflix_NL |216.78Mb
+      - disney_netflix_NL |210.80Mb
+      - netflix_PL | 7.30Mb
+      - disney_netflix_NL |199.18Mb
+      - disney_netflix_NL |202.92Mb
+      - disney_netflix_US |275.54Mb
+      - disney_netflix_NL |25.21Mb
+      - netflix_JP |122.31Mb
+      - Relay_ |93.66Mb 2
+      - netflix_PL | 8.26Mb
+      - "|59.72Mb 2"
+      - Relay_ |145.18Mb 2
+      - Relay_ |83.33Mb 2
+      - disney_KR
+      - Relay_ |137.19Mb 2
+      - disney_netflix_HK |88.72Mb
+      - disney_KR 2
+      - Relay_ |146.02Mb 2
+      - Relay_ |83.71Mb 2
+      - disney_netflix_GB
+      - disney_netflix_GB 2
+      - disney_netflix_FR |16.35Mb
+      - disney_KR 3
+      - Relay_ |84.09Mb 2
+      - disney_netflix_FR |37.81Mb
+      - disney_KR 4
+      - netflix_PL | 7.91Mb
+      - disney_netflix_GB 3
+      - netflix_ES |10.65Mb
+      - disney_netflix_FR |53.09Mb
+      - "|11.45Mb 2"
+      - disney_netflix_FR | 2.37Mb
+      - disney_netflix_FR |23.45Mb
+      - disney_netflix_FR |46.25Mb
+      - disney_netflix_FR |15.44Mb
+      - disney_KR 5
+      - disney_netflix_FR |14.63Mb
+      - disney_netflix_FR |32.14Mb
+      - disney_netflix_NL |160.22Mb
+      - disney_netflix_HK |10.31Mb
+      - disney_KR 6
+      - disney_TW
+      - Pool_ | 2.87Mb 2
 rules:
   - DOMAIN-SUFFIX,local,🎯 全球直连
   - IP-CIDR,192.168.0.0/16,🎯 全球直连,no-resolve
