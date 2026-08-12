@@ -537,13 +537,19 @@ def generate_readme(today):
     date_str = f'{today.month}-{today.day}'
     update_time = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 
-    # 订阅文件路径定义: (显示名, 文件路径, 格式说明)
+    # 订阅文件路径定义: (显示名, 文件路径, 格式说明, GitHub 项目链接)
+    # 末尾的链接字段让各软件标题成为可点击的超链接，跳转到对应 GitHub 仓库
     sub_files = [
-        ('Clash', f'output/clash/{date_str}.yaml', 'Clash / Clash Meta / Mihomo'),
-        ('V2Ray', f'output/v2ray/{date_str}.txt', 'V2RayN / V2RayNG / Shadowrocket (Base64)'),
-        ('Surge', f'output/surge/{date_str}.conf', 'Surge 4+'),
-        ('Mixed', f'output/mixed/{date_str}.txt', '混合格式 Base64 (全协议)'),
-        ('原始 YAML', f'sub/{today.year}/{today.month}/{date_str}.yaml', '向后兼容格式 (含分类)'),
+        ('Clash', f'output/clash/{date_str}.yaml', 'Clash / Clash Meta / Mihomo',
+         'https://github.com/clash-verge-rev/clash-verge-rev'),
+        ('V2Ray', f'output/v2ray/{date_str}.txt', 'V2RayN / V2RayNG / Shadowrocket (Base64)',
+         'https://github.com/2dust/v2rayN'),
+        ('Surge', f'output/surge/{date_str}.conf', 'Surge 4+',
+         None),
+        ('Mixed', f'output/mixed/{date_str}.txt', '混合格式 Base64 (全协议)',
+         None),
+        ('原始 YAML', f'sub/{today.year}/{today.month}/{date_str}.yaml', '向后兼容格式 (含分类)',
+         None),
     ]
 
     lines = []
@@ -553,13 +559,17 @@ def generate_readme(today):
     lines.append('')
     lines.append('## 订阅链接')
     lines.append('')
-    lines.append('复制下方链接到客户端的订阅地址中即可使用。')
+    lines.append('复制下方链接到客户端的订阅地址中即可使用。各软件标题为超链接，点击可跳转到对应 GitHub 仓库。')
     lines.append('')
     lines.append('---')
     lines.append('')
 
-    for display_name, file_path, note in sub_files:
-        lines.append(f'### {display_name}')
+    for display_name, file_path, note, github_url in sub_files:
+        # 标题渲染: 有 github_url 则包成 [显示名](github_url) 超链接，否则保留原样
+        if github_url:
+            lines.append(f'### [{display_name}]({github_url})')
+        else:
+            lines.append(f'### {display_name}')
         lines.append('')
         lines.append(f'<sub>{note}</sub>')
         lines.append('')
