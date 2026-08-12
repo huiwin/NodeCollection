@@ -60,6 +60,25 @@ SUBCONVERTER_URL = os.environ.get('SUBCONVERTER_URL', 'http://127.0.0.1:25500')
 SUBCONVERTER_TIMEOUT = 30
 SUBCONVERTER_EXTERNAL_CONFIG = 'subconverter/external_config.ini'
 
+# GitHub 仓库信息 (用于生成 README 中的订阅链接)
+GITHUB_OWNER = os.environ.get('GITHUB_OWNER', 'huiwin')
+GITHUB_REPO = os.environ.get('GITHUB_REPO', 'NodeCollection')
+GITHUB_BRANCH = os.environ.get('GITHUB_BRANCH', 'main')
+
+# Raw 链接基础路径
+RAW_BASE = f'https://raw.githubusercontent.com/{GITHUB_OWNER}/{GITHUB_REPO}/{GITHUB_BRANCH}'
+
+# 加速代理前缀配置: (显示名, 前缀模板)
+# {url} 会被替换为原始 raw 链接
+PROXY_PREFIXES = [
+    ('原生', '{url}'),
+    ('kkgithub', 'https://raw.kkgithub.com/{GITHUB_OWNER}/{GITHUB_REPO}/{GITHUB_BRANCH}{path}'),
+    ('ghproxy.net', 'https://ghproxy.net/{url}'),
+    ('gh-proxy.com', 'https://gh-proxy.com/{url}'),
+    ('ghfast.top', 'https://ghfast.top/{url}'),
+    ('jsdelivr', 'https://fastly.jsdelivr.net/gh/{GITHUB_OWNER}/{GITHUB_REPO}@{GITHUB_BRANCH}{path}'),
+]
+
 # 输出格式: (target参数, 输出子目录, 文件扩展名)
 OUTPUT_FORMATS = [
     ('clash', 'clash', 'yaml'),
@@ -507,6 +526,83 @@ def generate_multi_format(all_sub_urls):
 
 
 # ============================================================
+# README 自动生成 (每次运行后更新订阅链接)
+# ============================================================
+
+def generate_readme(today):
+    """
+    生成 README.md，仅包含最新订阅链接。
+    包含原生链接 + 多种加速代理前缀。
+    """
+    date_str = f'{today.month}-{today.day}'
+    update_time = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+
+    # 订阅文件路径定义: (显示名, 文件路径, 格式说明)
+    sub_files = [
+        ('Clash', f'output/clash/{date_str}.yaml', 'Clash / Clash Meta / Mihomo'),
+        ('V2Ray', f'output/v2ray/{date_str}.txt', 'V2RayN / V2RayNG / Shadowrocket (Base64)'),
+        ('Surge', f'output/surge/{date_str}.conf', 'Surge 4+'),
+        ('Mixed', f'output/mixed/{date_str}.txt', '混合格式 Base64 (全协议)'),
+        ('原始 YAML', f'sub/{today.year}/{today.month}/{date_str}.yaml', '向后兼容格式 (含分类)'),
+    ]
+
+    lines = []
+    lines.append('# NodeCollection')
+    lines.append('')
+    lines.append(f'> 自动更新时间: {update_time}')
+    lines.append('')
+    lines.append('## 订阅链接')
+    lines.append('')
+    lines.append('复制下方链接到客户端的订阅地址中即可使用。')
+    lines.append('')
+    lines.append('---')
+    lines.append('')
+
+    for display_name, file_path, note in sub_files:
+        lines.append(f'### {display_name}')
+        lines.append('')
+        lines.append(f'<sub>{note}</sub>')
+        lines.append('')
+        lines.append('| 加速方式 | 订阅地址 |')
+        lines.append('| :--- | :--- |')
+
+        for proxy_name, proxy_template in PROXY_PREFIXES:
+            raw_url = f'{RAW_BASE}/{file_path}'
+            if '{path}' in proxy_template:
+                # kkgithub / jsdelivr: 替换域名方式
+                proxy_url = proxy_template.format(
+                    GITHUB_OWNER=GITHUB_OWNER,
+                    GITHUB_REPO=GITHUB_REPO,
+                    GITHUB_BRANCH=GITHUB_BRANCH,
+                    path=f'/{file_path}',
+                )
+            else:
+                # ghproxy: 加前缀方式
+                proxy_url = proxy_template.format(url=raw_url)
+
+            lines.append(f'| {proxy_name} | `{proxy_url}` |')
+
+        lines.append('')
+        lines.append('---')
+        lines.append('')
+
+    lines.append('## 说明')
+    lines.append('')
+    lines.append(f'- 每 4 小时自动更新一次 (GitHub Actions)')
+    lines.append(f'- 当前日期文件: `{date_str}` (月-日)')
+    lines.append(f'- 加速方式按实时性排序: kkgithub/ghproxy 实时更新, jsdelivr 有缓存延迟')
+    lines.append(f'- 如某加速节点不可用, 换一个即可')
+    lines.append('')
+    lines.append('> 项目详细信息请参阅 [ABOUT.md](ABOUT.md)')
+    lines.append('')
+
+    readme_path = 'README.md'
+    with open(readme_path, 'w', encoding='utf-8') as f:
+        f.write('\n'.join(lines))
+    logger.info(f'README.md 已更新: {readme_path}')
+
+
+# ============================================================
 # 主流程
 # ============================================================
 
@@ -584,6 +680,11 @@ def main():
         f'  流量信息: {len(play_list)}\n'
         f'  多格式输出: {OUTPUT_DIR}/'
     )
+
+    # 11. 自动更新 README.md (订阅链接展示)
+    today = datetime.datetime.today()
+    generate_readme(today)
+
     logger.info('全部任务完成')
 
 

@@ -1,74 +1,93 @@
-# NodeCollection Pro
+# NodeCollection
 
-Telegram + Airport subscription collector with multi-format output via subconverter.
+> 自动更新时间: 2026-08-12 11:08:52
 
-## Features
+## 订阅链接
 
-- Crawl 34+ Telegram channels for proxy subscription links
-- Probe 50+ airport domains for public subscriptions
-- Validate and classify subscriptions (airport / clash / v2ray)
-- Convert to multiple formats via subconverter:
-  - Clash (with ACL4SSR rules, custom proxy groups)
-  - V2Ray (base64)
-  - Surge 4
-  - Mixed (all protocols in base64)
-- GitHub Actions auto-run every 4 hours
+复制下方链接到客户端的订阅地址中即可使用。
 
-## Directory Structure
+---
 
-```
-main.py                          Main script
-config.yaml                      TG channel list
-airports.yaml                    Airport domain list
-subconverter/
-  external_config.ini            subconverter external config (rules, groups, emoji)
-.github/workflows/fetch.yaml     GitHub Actions workflow
-sub/                             Raw collected subscriptions (YAML, by date)
-output/                          Multi-format converted output
-  clash/                         Clash format
-  v2ray/                         V2Ray base64
-  surge/                         Surge config
-  mixed/                         Mixed base64
-  index.json                     Index of latest outputs
-```
+### Clash
 
-## Usage
+<sub>Clash / Clash Meta / Mihomo</sub>
 
-### Local
+| 加速方式 | 订阅地址 |
+| :--- | :--- |
+| 原生 | `https://raw.githubusercontent.com/huiwin/NodeCollection/main/output/clash/8-12.yaml` |
+| kkgithub | `https://raw.kkgithub.com/huiwin/NodeCollection/main/output/clash/8-12.yaml` |
+| ghproxy.net | `https://ghproxy.net/https://raw.githubusercontent.com/huiwin/NodeCollection/main/output/clash/8-12.yaml` |
+| gh-proxy.com | `https://gh-proxy.com/https://raw.githubusercontent.com/huiwin/NodeCollection/main/output/clash/8-12.yaml` |
+| ghfast.top | `https://ghfast.top/https://raw.githubusercontent.com/huiwin/NodeCollection/main/output/clash/8-12.yaml` |
+| jsdelivr | `https://fastly.jsdelivr.net/gh/huiwin/NodeCollection@main/output/clash/8-12.yaml` |
 
-1. Download subconverter binary and start it
-2. Run: `python main.py`
+---
 
-### GitHub Actions
+### V2Ray
 
-Automatically runs every 4 hours. No manual intervention needed.
+<sub>V2RayN / V2RayNG / Shadowrocket (Base64)</sub>
 
-## Integration Architecture
+| 加速方式 | 订阅地址 |
+| :--- | :--- |
+| 原生 | `https://raw.githubusercontent.com/huiwin/NodeCollection/main/output/v2ray/8-12.txt` |
+| kkgithub | `https://raw.kkgithub.com/huiwin/NodeCollection/main/output/v2ray/8-12.txt` |
+| ghproxy.net | `https://ghproxy.net/https://raw.githubusercontent.com/huiwin/NodeCollection/main/output/v2ray/8-12.txt` |
+| gh-proxy.com | `https://gh-proxy.com/https://raw.githubusercontent.com/huiwin/NodeCollection/main/output/v2ray/8-12.txt` |
+| ghfast.top | `https://ghfast.top/https://raw.githubusercontent.com/huiwin/NodeCollection/main/output/v2ray/8-12.txt` |
+| jsdelivr | `https://fastly.jsdelivr.net/gh/huiwin/NodeCollection@main/output/v2ray/8-12.txt` |
 
-```
-config.yaml (TG channels)           airports.yaml (airport domains)
-         |                                    |
-         v                                    v
-   crawl_all_channels()              probe_all_airports()
-         |                                    |
-         +---------- merge + -----------------+
-                       |
-                       v
-              check_all_urls() (validate + classify)
-                       |
-            +----------+----------+
-            |                     |
-            v                     v
-     sub/YYYY/M/D.yaml     subconverter API
-     (raw, backward        (multi-format convert)
-      compatible)                 |
-                              v
-                    output/clash/ v2ray/ surge/ mixed/
-```
+---
 
-## Credits
+### Surge
 
-- Original: [huiwin/collectSub-google](https://github.com/huiwin/collectSub-google)
-- subconverter: [tindy2013/subconverter](https://github.com/tindy2013/subconverter)
-- Airport list: [moneyfly1/jichangnodes](https://github.com/moneyfly1/jichangnodes)
-- Rules: [ACL4SSR](https://github.com/ACL4SSR/ACL4SSR)
+<sub>Surge 4+</sub>
+
+| 加速方式 | 订阅地址 |
+| :--- | :--- |
+| 原生 | `https://raw.githubusercontent.com/huiwin/NodeCollection/main/output/surge/8-12.conf` |
+| kkgithub | `https://raw.kkgithub.com/huiwin/NodeCollection/main/output/surge/8-12.conf` |
+| ghproxy.net | `https://ghproxy.net/https://raw.githubusercontent.com/huiwin/NodeCollection/main/output/surge/8-12.conf` |
+| gh-proxy.com | `https://gh-proxy.com/https://raw.githubusercontent.com/huiwin/NodeCollection/main/output/surge/8-12.conf` |
+| ghfast.top | `https://ghfast.top/https://raw.githubusercontent.com/huiwin/NodeCollection/main/output/surge/8-12.conf` |
+| jsdelivr | `https://fastly.jsdelivr.net/gh/huiwin/NodeCollection@main/output/surge/8-12.conf` |
+
+---
+
+### Mixed
+
+<sub>混合格式 Base64 (全协议)</sub>
+
+| 加速方式 | 订阅地址 |
+| :--- | :--- |
+| 原生 | `https://raw.githubusercontent.com/huiwin/NodeCollection/main/output/mixed/8-12.txt` |
+| kkgithub | `https://raw.kkgithub.com/huiwin/NodeCollection/main/output/mixed/8-12.txt` |
+| ghproxy.net | `https://ghproxy.net/https://raw.githubusercontent.com/huiwin/NodeCollection/main/output/mixed/8-12.txt` |
+| gh-proxy.com | `https://gh-proxy.com/https://raw.githubusercontent.com/huiwin/NodeCollection/main/output/mixed/8-12.txt` |
+| ghfast.top | `https://ghfast.top/https://raw.githubusercontent.com/huiwin/NodeCollection/main/output/mixed/8-12.txt` |
+| jsdelivr | `https://fastly.jsdelivr.net/gh/huiwin/NodeCollection@main/output/mixed/8-12.txt` |
+
+---
+
+### 原始 YAML
+
+<sub>向后兼容格式 (含分类)</sub>
+
+| 加速方式 | 订阅地址 |
+| :--- | :--- |
+| 原生 | `https://raw.githubusercontent.com/huiwin/NodeCollection/main/sub/2026/8/8-12.yaml` |
+| kkgithub | `https://raw.kkgithub.com/huiwin/NodeCollection/main/sub/2026/8/8-12.yaml` |
+| ghproxy.net | `https://ghproxy.net/https://raw.githubusercontent.com/huiwin/NodeCollection/main/sub/2026/8/8-12.yaml` |
+| gh-proxy.com | `https://gh-proxy.com/https://raw.githubusercontent.com/huiwin/NodeCollection/main/sub/2026/8/8-12.yaml` |
+| ghfast.top | `https://ghfast.top/https://raw.githubusercontent.com/huiwin/NodeCollection/main/sub/2026/8/8-12.yaml` |
+| jsdelivr | `https://fastly.jsdelivr.net/gh/huiwin/NodeCollection@main/sub/2026/8/8-12.yaml` |
+
+---
+
+## 说明
+
+- 每 4 小时自动更新一次 (GitHub Actions)
+- 当前日期文件: `8-12` (月-日)
+- 加速方式按实时性排序: kkgithub/ghproxy 实时更新, jsdelivr 有缓存延迟
+- 如某加速节点不可用, 换一个即可
+
+> 项目详细信息请参阅 [ABOUT.md](ABOUT.md)
