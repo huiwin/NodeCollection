@@ -19,6 +19,7 @@ Telegram + Airport 订阅源采集与多格式转换一体化工具，通过 Git
 
 ```
 NodeCollection/
+│
 ├── main.py                        主程序 (采集 + 转换 + README 生成)
 ├── config.yaml                    Telegram 频道列表配置
 ├── airports.yaml                  机场域名列表 (50+ 条目)
@@ -28,16 +29,19 @@ NodeCollection/
 ├── update.sh                      一键更新脚本 (5种模式)
 ├── update.bat                     Windows 批处理入口 (双击运行)
 ├── .gitignore                     Git 忽略规则
+│
 ├── .github/
 │   └── workflows/
 │       └── fetch.yaml             GitHub Actions 工作流 (每4小时)
+│
 ├── subconverter/
 │   └── external_config.ini        subconverter 外部配置 (代理组+分流规则)
-├── sub/                           原始采集数据 (向后兼容)
-│   └── YYYY/
-│       └── M/
-│           └── M-D.yaml           按日期组织的 YAML 文件
-└── output/                        多格式转换输出
+│
+├── sub/                           原始采集数据 (向后兼容, 运行时生成)
+│   └── YYYY/M/M-D.yaml            按日期组织的 YAML 文件
+│
+└── output/                        多格式转换输出 (运行时生成)
+    ├── .gitkeep                   目录占位 (确保空目录可跟踪)
     ├── clash/
     │   └── M-D.yaml               Clash 配置文件
     ├── v2ray/
@@ -48,6 +52,16 @@ NodeCollection/
     │   └── M-D.txt                混合格式 Base64
     └── index.json                 最新输出索引
 ```
+
+> **本地开发文件**（已加入 .gitignore，不上传 GitHub）：
+> ```
+> ├── deploy.sh                    一键部署脚本 (本地运行, 推送到 GitHub)
+> └── archive/                     一次性生成脚本和历史文档 (归档保留)
+>     ├── gen_configs.py            subconverter 配置生成脚本
+>     ├── gen_html.py               HTML 文档生成脚本
+>     ├── deployment-guide.html     部署指南
+>     └── integration-plan.html     集成方案文档
+> ```
 
 ## 技术栈
 
