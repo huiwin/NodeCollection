@@ -1,14 +1,14 @@
 # NodeCollection
 
-> 自动更新时间: 2026-08-12 11:08:52
+> 自动更新时间: 2026-08-12 17:54:18
 
 ## 订阅链接
 
-复制下方链接到客户端的订阅地址中即可使用。
+复制下方链接到客户端的订阅地址中即可使用。各软件标题为超链接，点击可跳转到对应 GitHub 仓库。
 
 ---
 
-### Clash
+### [Clash](https://github.com/clash-verge-rev/clash-verge-rev)
 
 <sub>Clash / Clash Meta / Mihomo</sub>
 
@@ -23,7 +23,7 @@
 
 ---
 
-### V2Ray
+### [V2Ray](https://github.com/2dust/v2rayN)
 
 <sub>V2RayN / V2RayNG / Shadowrocket (Base64)</sub>
 
