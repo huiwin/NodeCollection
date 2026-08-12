@@ -1,0 +1,86 @@
+# ============================================================
+# airports.yaml - 机场列表配置
+# 来源: jichangnodes 项目 (https://github.com/moneyfly1/jichangnodes)
+#
+# 字段说明:
+#   domain:   机场域名 (不含协议前缀，脚本会自动加 https://)
+#   clash:    true 表示该机场已知支持 Clash 格式 (可选)
+#   note:     备注 (可选)
+#   enabled:  false 表示暂时跳过该机场 (可选，默认 true)
+#
+# 注意: 此列表仅用于探测公开页面中的订阅链接。
+#       不包含自动注册功能 (Phase 2 实现)。
+# ============================================================
+
+airports:
+  # === 已知支持 Clash 的机场 ===
+  - domain: ayucloud.services
+    clash: true
+  - domain: cyanmori.com
+    clash: true
+  - domain: lm.laomaoyun.me
+    clash: true
+    note: 需要优惠券 laomaoyun
+  - domain: ziyun.cyou
+    clash: true
+
+  # === 常见免费/试用机场 ===
+  - domain: ikuuuu.co
+  - domain: ikuuuu.live
+  - domain: ikuuuu.ltd
+  - domain: ikuuuu.org
+  - domain: fastnode.info
+  - domain: fastnode.me
+  - domain: free.riyumi.xyz
+  - domain: riyumi.xyz
+  - domain: sonsome.com
+  - domain: xxft.cc
+  - domain: bingoboot.com
+  - domain: xiaohuolongjc.top
+  - domain: feima.online
+
+  # === v2board 面板机场 ===
+  - domain: cloxy.io
+  - domain: onesekai.top
+  - domain: onesekai.xyz
+  - domain: kingfisher.top
+  - domain: sakuranet.pro
+  - domain: socloud.cc
+  - domain: socloud.fun
+  - domain: tizi.uk
+  - domain: vvlink.org
+  - domain: ppcloud.vip
+  - domain: ppcloud.xyz
+
+  # === 更多机场 (从 jichangnodes trial.cfg 精选) ===
+  - domain: biubiufast.com
+  - domain: cfcloud.cyou
+  - domain: fastestcloud.xyz
+  - domain: flashwolf.best
+  - domain: flashwolf.site
+  - domain: jiasu138.top
+  - domain: jike.ph
+  - domain: jisu138.top
+  - domain: muguacloud.top
+  - domain: nekocloud.qzz.io
+  - domain: nexusnod.com
+  - domain: oceancloud.asia
+  - domain: paofu.cloud
+  - domain: ppjc.xyz
+  - domain: sunbirds.top
+  - domain: tanzcloud.com
+  - domain: xtynotes.top
+  - domain: yunlinks.cc
+
+  # === 以下机场暂时禁用 (连接不稳定或已知失效) ===
+  # - domain: example-disabled.com
+  #   enabled: false
+
+# ============================================================
+# 高级配置 (Phase 2 预留)
+# ============================================================
+# auto_register:
+#   enabled: false
+#   temp_email_provider: "mail.tm"
+#   v2board_api: "/api/v1/passport/auth/register"
+#   default_password: "NodeCollection2026"

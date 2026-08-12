@@ -1,35 +1,33 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-NodeCollection - Telegram 频道订阅源采集工具
-整合稳定版 v2.0
+NodeCollection Pro - 订阅源采集 + 多格式转换一体化工具
+v3.0 集成 subconverter + jichangnodes 机场列表
 
-原项目: https://github.com/huiwin/collectSub-google
- Fork: https://github.com/RenaLio/proxy-minging/
+架构:
+  config.yaml (TG频道) + airports.yaml (机场列表)
+  → 并发爬取频道 + 探测机场公开订阅
+  → 校验分类去重
+  → 原始 YAML 输出 (向后兼容)
+  → subconverter API 多格式转换 (Clash/V2Ray/Surge/SingBox)
+  → GitHub Actions 自动提交
 
-功能: 爬取 Telegram 频道公开页面，提取并校验代理订阅链接，
-      按机场/clash/v2分类存储，支持 GitHub Actions 定时自动运行。
-
-修复项:
-  P0 - 全局变量多线程无锁写入 → ThreadPoolExecutor + 返回值收集
-  P0 - 三层 except:pass 静默吞异常 → 线性分类逻辑 + 具体异常捕获
-  P0 - 频道爬取串行无超时 → 并发爬取 + 超时控制
-  P0 - URL 无安全校验 → SSRF 防护过滤
-  P1 - 无连接复用 → requests.Session 连接池
-  P1 - logger.error 字符串拼接 TypeError → f-string 格式化
-  P1 - setDaemon 已废弃 → ThreadPoolExecutor 管理
-  P1 - 日志无统计 → 运行结束时输出统计摘要
+新增模块:
+  - load_airports(): 加载机场列表
+  - probe_airport(): 探测机场公开订阅链接
+  - call_subconverter(): 调用 subconverter API 转换格式
+  - generate_multi_format(): 生成多格式订阅文件
 """
 
 import re
 import os
 import sys
 import time
+import json
 import base64
 import ipaddress
 import datetime
-import threading
-from urllib.parse import urlparse
+from urllib.parse import urlparse, quote
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 import yaml
@@ -43,32 +41,56 @@ from retry import retry
 # ============================================================
 
 CONFIG_PATH = './config.yaml'
+AIRPORTS_PATH = './airports.yaml'
 SUB_DIR = 'sub'
-MAX_THREADS = 32           # 订阅校验并发线程数
-CHANNEL_THREADS = 8        # 频道爬取并发线程数
-REQUEST_TIMEOUT = 10       # 单个 URL 校验超时（秒）
-CHANNEL_TIMEOUT = 15       # 频道页面请求超时（秒）
-RETRY_TIMES = 2            # 校验失败重试次数
+OUTPUT_DIR = 'output'
+
+MAX_THREADS = 32
+CHANNEL_THREADS = 8
+AIRPORT_THREADS = 8
+REQUEST_TIMEOUT = 10
+CHANNEL_TIMEOUT = 15
+AIRPORT_TIMEOUT = 8
+RETRY_TIMES = 2
 USER_AGENT = 'ClashforWindows/0.18.1'
 PROTOCOL_PREFIXES = ('ss://', 'ssr://', 'vmess://', 'trojan://')
+
+# subconverter 配置
+SUBCONVERTER_URL = os.environ.get('SUBCONVERTER_URL', 'http://127.0.0.1:25500')
+SUBCONVERTER_TIMEOUT = 30
+SUBCONVERTER_EXTERNAL_CONFIG = 'subconverter/external_config.ini'
+
+# 输出格式: (target参数, 输出子目录, 文件扩展名)
+OUTPUT_FORMATS = [
+    ('clash', 'clash', 'yaml'),
+    ('v2ray', 'v2ray', 'txt'),
+    ('surge&ver=4', 'surge', 'conf'),
+    ('mixed', 'mixed', 'txt'),
+]
+
 URL_REGEX = re.compile(
     r'https?://[-A-Za-z0-9+&@#/%?=~_|!:,.;]+[-A-Za-z0-9+&@#/%=~_|]'
 )
+# 机场页面中常见的订阅/节点关键词
+SUB_KEYWORDS = re.compile(
+    r'(subscribe|subscription|sub|api/v1/client|clash|v2ray|trojan|ssr|free|'
+    r'node|节点|订阅|免费|试用|trial)',
+    re.IGNORECASE
+)
+
 
 # ============================================================
-# 初始化目录结构（原 pre_check.py 功能）
+# 初始化目录
 # ============================================================
 
 def pre_check():
-    """根据当前日期创建 sub/YYYY/M/ 目录，返回当日输出文件路径。"""
+    """创建 sub/YYYY/M/ 和 output/ 目录结构，返回当日输出路径。"""
     today = datetime.datetime.today()
     path_year = os.path.join(SUB_DIR, str(today.year))
     path_mon = os.path.join(path_year, str(today.month))
-    path_yaml = os.path.join(
-        path_mon, f'{today.month}-{today.day}.yaml'
-    )
+    path_yaml = os.path.join(path_mon, f'{today.month}-{today.day}.yaml')
 
-    for directory in (SUB_DIR, path_year, path_mon):
+    for directory in (SUB_DIR, path_year, path_mon, OUTPUT_DIR):
         if not os.path.exists(directory):
             os.makedirs(directory)
 
@@ -92,7 +114,7 @@ def yaml_check(path_yaml):
             'v2订阅': [],
             '开心玩耍': [],
         }
-    logger.info('读取文件成功')
+    logger.info('读取已有文件成功')
     return dict_url
 
 
@@ -100,7 +122,7 @@ def yaml_save(path_yaml, dict_url):
     """将订阅数据写入 YAML 文件。"""
     with open(path_yaml, 'w', encoding='utf-8') as f:
         yaml.dump(dict_url, f, allow_unicode=True)
-    logger.info(f'写入文件成功: {path_yaml}')
+    logger.info(f'写入原始 YAML: {path_yaml}')
 
 
 # ============================================================
@@ -108,7 +130,7 @@ def yaml_save(path_yaml, dict_url):
 # ============================================================
 
 def get_config():
-    """读取 config.yaml 中的 Telegram 频道列表，转换为 t.me/s/ 公开页面格式。"""
+    """读取 config.yaml 中的 Telegram 频道列表。"""
     with open(CONFIG_PATH, encoding='UTF-8') as f:
         data = yaml.load(f, Loader=yaml.FullLoader)
 
@@ -118,8 +140,25 @@ def get_config():
         channel_name = url.split('/')[-1].strip()
         if channel_name:
             new_list.append(f'https://t.me/s/{channel_name}')
-    logger.info(f'读取配置成功，共 {len(new_list)} 个频道')
+    logger.info(f'读取 TG 频道配置: {len(new_list)} 个')
     return new_list
+
+
+def load_airports():
+    """
+    读取 airports.yaml 机场列表。
+    返回: list[dict] 每项含 domain, clash(可选), note(可选)
+    """
+    if not os.path.isfile(AIRPORTS_PATH):
+        logger.info('未找到 airports.yaml，跳过机场探测')
+        return []
+
+    with open(AIRPORTS_PATH, encoding='UTF-8') as f:
+        data = yaml.load(f, Loader=yaml.FullLoader)
+
+    airports = data.get('airports', []) if data else []
+    logger.info(f'读取机场列表: {len(airports)} 个')
+    return airports
 
 
 # ============================================================
@@ -132,21 +171,17 @@ def is_safe_url(url):
         parsed = urlparse(url)
     except Exception:
         return False
-
     if parsed.scheme not in ('http', 'https'):
         return False
-
     host = parsed.hostname
     if not host:
         return False
-
     try:
         ip = ipaddress.ip_address(host)
         if ip.is_private or ip.is_loopback or ip.is_reserved or ip.is_link_local:
             return False
     except ValueError:
-        pass  # 域名，允许通过
-
+        pass
     return True
 
 
@@ -173,7 +208,7 @@ def get_channel_http(session, channel_url):
 
 
 def crawl_all_channels(session, channel_urls):
-    """并发爬取所有 Telegram 频道，返回去重后的 URL 列表。"""
+    """并发爬取所有 Telegram 频道。"""
     all_urls = []
     with ThreadPoolExecutor(max_workers=CHANNEL_THREADS) as executor:
         futures = {
@@ -185,14 +220,92 @@ def crawl_all_channels(session, channel_urls):
             if result:
                 all_urls.extend(result)
 
-    # 安全过滤 + 去重
     safe_urls = [u for u in all_urls if is_safe_url(u)]
     unique_urls = list(set(safe_urls))
     logger.info(
-        f'频道爬取完成: 原始 {len(all_urls)} 个 URL, '
-        f'安全过滤后 {len(safe_urls)} 个, 去重后 {len(unique_urls)} 个'
+        f'频道爬取完成: 原始 {len(all_urls)}, 安全 {len(safe_urls)}, 去重 {len(unique_urls)}'
     )
     return unique_urls
+
+
+# ============================================================
+# 机场探测 (Phase 1: 简单版 - 探测公开页面中的订阅链接)
+# ============================================================
+
+def probe_airport(session, airport):
+    """
+    探测单个机场域名的公开订阅链接。
+
+    策略:
+      1. 访问 https://{domain}/ 页面
+      2. 正则提取页面中所有 URL
+      3. 过滤出含订阅关键词的链接
+      4. 返回候选订阅 URL 列表
+
+    注意: 此为 Phase 1 简单实现，不包含自动注册。
+    Phase 2 将增加 v2board API 自动注册获取试用订阅。
+    """
+    domain = airport.get('domain', '').strip()
+    if not domain:
+        return []
+
+    # 标准化域名为完整 URL
+    if not domain.startswith('http'):
+        domain = f'https://{domain}'
+
+    if not is_safe_url(domain):
+        return []
+
+    candidate_urls = []
+    try:
+        resp = session.get(domain, timeout=AIRPORT_TIMEOUT, allow_redirects=True)
+        page_urls = URL_REGEX.findall(resp.text)
+
+        for url in page_urls:
+            if not is_safe_url(url):
+                continue
+            # 检查 URL 或路径是否包含订阅关键词
+            if SUB_KEYWORDS.search(url):
+                candidate_urls.append(url)
+
+        # 也检查页面文本中的 base64 编码内容 (可能包含节点链接)
+        # 这里保持简单，不做 base64 解码
+
+    except requests.Timeout:
+        logger.debug(f'[airport] {domain}\t超时')
+    except requests.ConnectionError:
+        logger.debug(f'[airport] {domain}\t连接失败')
+    except Exception as e:
+        logger.debug(f'[airport] {domain}\t{type(e).__name__}: {e}')
+
+    if candidate_urls:
+        logger.info(f'[airport] {domain}\t发现 {len(candidate_urls)} 个候选订阅')
+    return candidate_urls
+
+
+def probe_all_airports(session, airports):
+    """并发探测所有机场域名。"""
+    if not airports:
+        return []
+
+    all_candidates = []
+    logger.info(f'开始探测 {len(airports)} 个机场域名 ---')
+
+    with ThreadPoolExecutor(max_workers=AIRPORT_THREADS) as executor:
+        futures = {
+            executor.submit(probe_airport, session, airport): airport
+            for airport in airports
+        }
+        for future in as_completed(futures):
+            result = future.result()
+            if result:
+                all_candidates.extend(result)
+
+    unique_candidates = list(set(all_candidates))
+    logger.info(
+        f'机场探测完成: 原始 {len(all_candidates)}, 去重 {len(unique_candidates)}'
+    )
+    return unique_candidates
 
 
 # ============================================================
@@ -202,7 +315,6 @@ def crawl_all_channels(session, channel_urls):
 def classify_subscription(res):
     """
     根据响应内容分类订阅类型。
-
     返回: (类型字符串, 信息字符串)
       类型: 'sub' | 'clash' | 'v2' | None
     """
@@ -219,7 +331,7 @@ def classify_subscription(res):
             if unused_rounded > 0:
                 return 'sub', f'可用流量: {unused_rounded} GB                    {res.url}'
 
-    # 2. 检查 clash 格式（含 proxies: 关键字）
+    # 2. 检查 clash 格式
     if 'proxies:' in res.text:
         return 'clash', None
 
@@ -236,11 +348,7 @@ def classify_subscription(res):
 
 
 def sub_check(session, url):
-    """
-    校验单个 URL 是否为有效订阅链接。
-
-    返回: dict {'type': 'sub'|'clash'|'v2'|None, 'url': str, 'info': str|None}
-    """
+    """校验单个 URL 是否为有效订阅链接。"""
     headers = {'User-Agent': USER_AGENT}
 
     @retry(tries=RETRY_TIMES, exceptions=requests.RequestException)
@@ -249,11 +357,7 @@ def sub_check(session, url):
 
     try:
         res = _do_check()
-    except requests.Timeout:
-        return {'type': None, 'url': url, 'info': None}
-    except requests.ConnectionError:
-        return {'type': None, 'url': url, 'info': None}
-    except requests.RequestException:
+    except (requests.Timeout, requests.ConnectionError, requests.RequestException):
         return {'type': None, 'url': url, 'info': None}
 
     if res.status_code != 200:
@@ -264,16 +368,14 @@ def sub_check(session, url):
 
 
 def check_all_urls(session, url_list):
-    """多线程并发校验所有 URL，返回分类结果。"""
+    """多线程并发校验所有 URL。"""
     results = {'sub': [], 'clash': [], 'v2': [], 'play': []}
     total = len(url_list)
-
     if total == 0:
         logger.warning('URL 列表为空，跳过校验')
         return results
 
     bar = tqdm(total=total, desc='订阅筛选')
-
     with ThreadPoolExecutor(max_workers=MAX_THREADS) as executor:
         futures = {executor.submit(sub_check, session, url): url for url in url_list}
         for future in as_completed(futures):
@@ -288,9 +390,120 @@ def check_all_urls(session, url_list):
             elif sub_type == 'v2':
                 results['v2'].append(result['url'])
             bar.update(1)
-
     bar.close()
     return results
+
+
+# ============================================================
+# subconverter 集成 (Phase 1 核心)
+# ============================================================
+
+def check_subconverter():
+    """检查 subconverter 服务是否可用。"""
+    try:
+        resp = requests.get(
+            f'{SUBCONVERTER_URL}/version',
+            timeout=5
+        )
+        if resp.status_code == 200:
+            logger.info(f'subconverter 服务可用: {resp.text.strip()[:50]}')
+            return True
+    except Exception:
+        pass
+    logger.warning('subconverter 服务不可用，跳过多格式转换')
+    return False
+
+
+def call_subconverter(target, sub_urls, output_path):
+    """
+    调用 subconverter API 转换订阅格式。
+
+    Args:
+        target: 目标格式 (clash, v2ray, surge&ver=4, mixed 等)
+        sub_urls: 订阅 URL 列表
+        output_path: 输出文件路径
+    """
+    if not sub_urls:
+        logger.warning(f'[{target}] 订阅 URL 为空，跳过')
+        return False
+
+    # 用 | 合并多个订阅 URL，然后 URL-encode
+    merged_url = '|'.join(sub_urls)
+    encoded_url = quote(merged_url, safe='')
+
+    # 构造外部配置路径 (使用绝对路径)
+    config_path = os.path.abspath(SUBCONVERTER_EXTERNAL_CONFIG)
+    encoded_config = quote(f'file://{config_path}', safe='')
+
+    api_url = (
+        f'{SUBCONVERTER_URL}/sub?'
+        f'target={target}&'
+        f'url={encoded_url}&'
+        f'config={encoded_config}&'
+        f'emoji=true&'
+        f'udp=true&'
+        f'tfo=false&'
+        f'expand=true&'
+        f'append_info=true&'
+        f'sort=false'
+    )
+
+    try:
+        resp = requests.get(api_url, timeout=SUBCONVERTER_TIMEOUT)
+        if resp.status_code == 200 and resp.text.strip():
+            # 确保输出目录存在
+            os.makedirs(os.path.dirname(output_path), exist_ok=True)
+            with open(output_path, 'w', encoding='utf-8') as f:
+                f.write(resp.text)
+            logger.info(f'[{target}] 转换成功 → {output_path} ({len(resp.text)} bytes)')
+            return True
+        else:
+            logger.warning(f'[{target}] 转换失败: HTTP {resp.status_code}')
+            return False
+    except requests.Timeout:
+        logger.warning(f'[{target}] subconverter 请求超时')
+        return False
+    except Exception as e:
+        logger.warning(f'[{target}] subconverter 异常: {type(e).__name__}: {e}')
+        return False
+
+
+def generate_multi_format(all_sub_urls):
+    """
+    将所有订阅 URL 通过 subconverter 转换为多格式输出。
+
+    Args:
+        all_sub_urls: 所有有效订阅 URL 的列表
+    """
+    if not check_subconverter():
+        logger.warning('subconverter 不可用，仅输出原始 YAML')
+        return
+
+    today = datetime.datetime.today()
+    date_str = f'{today.year}/{today.month}/{today.month}-{today.day}'
+
+    for target, subdir, ext in OUTPUT_FORMATS:
+        output_path = os.path.join(
+            OUTPUT_DIR, subdir,
+            f'{today.month}-{today.day}.{ext}'
+        )
+        call_subconverter(target, all_sub_urls, output_path)
+
+    # 额外: 生成一个合并所有格式的 index.json 索引文件
+    index_path = os.path.join(OUTPUT_DIR, 'index.json')
+    index_data = {
+        'update_time': datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+        'date': date_str,
+        'formats': {},
+        'total_urls': len(all_sub_urls),
+    }
+    for target, subdir, ext in OUTPUT_FORMATS:
+        fname = f'{today.month}-{today.day}.{ext}'
+        index_data['formats'][target] = f'{subdir}/{fname}'
+
+    with open(index_path, 'w', encoding='utf-8') as f:
+        json.dump(index_data, f, ensure_ascii=False, indent=2)
+    logger.info(f'索引文件: {index_path}')
 
 
 # ============================================================
@@ -312,7 +525,10 @@ def main():
         logger.error('config.yaml 中未找到有效频道，程序退出')
         sys.exit(1)
 
-    # 4. 创建 HTTP Session（连接池复用）
+    # 3.5 读取机场列表
+    airports = load_airports()
+
+    # 4. 创建 HTTP Session
     session = requests.Session()
     adapter = requests.adapters.HTTPAdapter(
         pool_connections=MAX_THREADS,
@@ -321,14 +537,18 @@ def main():
     session.mount('https://', adapter)
     session.mount('http://', adapter)
 
-    # 5. 并发爬取所有频道
-    logger.info('开始爬取频道 ---')
-    url_list = crawl_all_channels(session, channel_urls)
+    # 5. 并发爬取 TG 频道
+    logger.info('=== 开始爬取 TG 频道 ===')
+    tg_urls = crawl_all_channels(session, channel_urls)
 
-    # 6. 多线程校验订阅
-    logger.info('开始筛选订阅 ---')
-    new_results = check_all_urls(session, url_list)
-    logger.info('筛选完成')
+    # 5.5 探测机场公开订阅 (Phase 1)
+    logger.info('=== 开始探测机场列表 ===')
+    airport_urls = probe_all_airports(session, airports)
+
+    # 6. 合并所有 URL 并校验
+    all_urls = list(set(tg_urls + airport_urls))
+    logger.info(f'=== 开始校验订阅 (共 {len(all_urls)} 个 URL) ===')
+    new_results = check_all_urls(session, all_urls)
 
     # 7. 合并旧数据 + 去重
     new_sub_list = list(set(new_results['sub'] + dict_url.get('机场订阅', [])))
@@ -336,7 +556,7 @@ def main():
     new_v2_list = list(set(new_results['v2'] + dict_url.get('v2订阅', [])))
     play_list = list(set(new_results['play'] + dict_url.get('开心玩耍', [])))
 
-    # 8. 更新并写入 YAML
+    # 8. 写入原始 YAML (向后兼容)
     dict_url.update({
         '机场订阅': new_sub_list,
         'clash订阅': new_clash_list,
@@ -345,16 +565,24 @@ def main():
     })
     yaml_save(path_yaml, dict_url)
 
-    # 9. 输出运行统计
+    # 9. subconverter 多格式转换
+    logger.info('=== subconverter 多格式转换 ===')
+    all_sub_urls = new_sub_list + new_clash_list + new_v2_list
+    generate_multi_format(all_sub_urls)
+
+    # 10. 输出运行统计
     elapsed = round(time.time() - start_time, 2)
     logger.info(
-        f'运行统计 | 耗时: {elapsed}s | '
-        f'频道数: {len(channel_urls)} | '
-        f'校验URL: {len(url_list)} | '
-        f'机场订阅: {len(new_sub_list)} | '
-        f'clash订阅: {len(new_clash_list)} | '
-        f'v2订阅: {len(new_v2_list)} | '
-        f'可用流量信息: {len(play_list)}'
+        f'=== 运行统计 ===\n'
+        f'  耗时: {elapsed}s\n'
+        f'  TG频道: {len(channel_urls)}\n'
+        f'  机场域名: {len(airports)}\n'
+        f'  校验URL: {len(all_urls)}\n'
+        f'  机场订阅: {len(new_sub_list)}\n'
+        f'  clash订阅: {len(new_clash_list)}\n'
+        f'  v2订阅: {len(new_v2_list)}\n'
+        f'  流量信息: {len(play_list)}\n'
+        f'  多格式输出: {OUTPUT_DIR}/'
     )
     logger.info('全部任务完成')
 
