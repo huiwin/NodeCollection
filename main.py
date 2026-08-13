@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-NodeCollection Pro - 订阅源采集 + 多格式转换一体化工具
-v3.0 集成 subconverter + jichangnodes 机场列表
+NodeCollection Pro v1.3.1 - 订阅源采集 + 多格式转换一体化工具
 
 架构:
   config.yaml (TG频道) + airports.yaml (机场列表)
