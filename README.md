@@ -1,6 +1,6 @@
 # NodeCollection
 
-> 自动更新时间: 2026-08-17 20:19:23
+> 自动更新时间: 2026-08-17 21:25:22
 
 ## 订阅链接
 
@@ -14,12 +14,12 @@
 
 | 加速方式 | 订阅地址 |
 | :--- | :--- |
-| 原生 | `https://raw.githubusercontent.com/huiwin/NodeCollection/main/output/clash/8-17.yaml` |
-| kkgithub | `https://raw.kkgithub.com/huiwin/NodeCollection/main/output/clash/8-17.yaml` |
-| ghproxy.net | `https://ghproxy.net/https://raw.githubusercontent.com/huiwin/NodeCollection/main/output/clash/8-17.yaml` |
-| gh-proxy.com | `https://gh-proxy.com/https://raw.githubusercontent.com/huiwin/NodeCollection/main/output/clash/8-17.yaml` |
-| ghfast.top | `https://ghfast.top/https://raw.githubusercontent.com/huiwin/NodeCollection/main/output/clash/8-17.yaml` |
-| jsdelivr | `https://fastly.jsdelivr.net/gh/huiwin/NodeCollection@main/output/clash/8-17.yaml` |
+| 原生 | `https://raw.githubusercontent.com/huiwin/NodeCollection/main/output/clash/latest.yaml` |
+| kkgithub | `https://raw.kkgithub.com/huiwin/NodeCollection/main/output/clash/latest.yaml` |
+| ghproxy.net | `https://ghproxy.net/https://raw.githubusercontent.com/huiwin/NodeCollection/main/output/clash/latest.yaml` |
+| gh-proxy.com | `https://gh-proxy.com/https://raw.githubusercontent.com/huiwin/NodeCollection/main/output/clash/latest.yaml` |
+| ghfast.top | `https://ghfast.top/https://raw.githubusercontent.com/huiwin/NodeCollection/main/output/clash/latest.yaml` |
+| jsdelivr | `https://fastly.jsdelivr.net/gh/huiwin/NodeCollection@main/output/clash/latest.yaml` |
 
 ---
 
@@ -29,12 +29,12 @@
 
 | 加速方式 | 订阅地址 |
 | :--- | :--- |
-| 原生 | `https://raw.githubusercontent.com/huiwin/NodeCollection/main/output/v2ray/8-17.txt` |
-| kkgithub | `https://raw.kkgithub.com/huiwin/NodeCollection/main/output/v2ray/8-17.txt` |
-| ghproxy.net | `https://ghproxy.net/https://raw.githubusercontent.com/huiwin/NodeCollection/main/output/v2ray/8-17.txt` |
-| gh-proxy.com | `https://gh-proxy.com/https://raw.githubusercontent.com/huiwin/NodeCollection/main/output/v2ray/8-17.txt` |
-| ghfast.top | `https://ghfast.top/https://raw.githubusercontent.com/huiwin/NodeCollection/main/output/v2ray/8-17.txt` |
-| jsdelivr | `https://fastly.jsdelivr.net/gh/huiwin/NodeCollection@main/output/v2ray/8-17.txt` |
+| 原生 | `https://raw.githubusercontent.com/huiwin/NodeCollection/main/output/v2ray/latest.txt` |
+| kkgithub | `https://raw.kkgithub.com/huiwin/NodeCollection/main/output/v2ray/latest.txt` |
+| ghproxy.net | `https://ghproxy.net/https://raw.githubusercontent.com/huiwin/NodeCollection/main/output/v2ray/latest.txt` |
+| gh-proxy.com | `https://gh-proxy.com/https://raw.githubusercontent.com/huiwin/NodeCollection/main/output/v2ray/latest.txt` |
+| ghfast.top | `https://ghfast.top/https://raw.githubusercontent.com/huiwin/NodeCollection/main/output/v2ray/latest.txt` |
+| jsdelivr | `https://fastly.jsdelivr.net/gh/huiwin/NodeCollection@main/output/v2ray/latest.txt` |
 
 ---
 
@@ -44,12 +44,12 @@
 
 | 加速方式 | 订阅地址 |
 | :--- | :--- |
-| 原生 | `https://raw.githubusercontent.com/huiwin/NodeCollection/main/output/surge/8-17.conf` |
-| kkgithub | `https://raw.kkgithub.com/huiwin/NodeCollection/main/output/surge/8-17.conf` |
-| ghproxy.net | `https://ghproxy.net/https://raw.githubusercontent.com/huiwin/NodeCollection/main/output/surge/8-17.conf` |
-| gh-proxy.com | `https://gh-proxy.com/https://raw.githubusercontent.com/huiwin/NodeCollection/main/output/surge/8-17.conf` |
-| ghfast.top | `https://ghfast.top/https://raw.githubusercontent.com/huiwin/NodeCollection/main/output/surge/8-17.conf` |
-| jsdelivr | `https://fastly.jsdelivr.net/gh/huiwin/NodeCollection@main/output/surge/8-17.conf` |
+| 原生 | `https://raw.githubusercontent.com/huiwin/NodeCollection/main/output/surge/latest.conf` |
+| kkgithub | `https://raw.kkgithub.com/huiwin/NodeCollection/main/output/surge/latest.conf` |
+| ghproxy.net | `https://ghproxy.net/https://raw.githubusercontent.com/huiwin/NodeCollection/main/output/surge/latest.conf` |
+| gh-proxy.com | `https://gh-proxy.com/https://raw.githubusercontent.com/huiwin/NodeCollection/main/output/surge/latest.conf` |
+| ghfast.top | `https://ghfast.top/https://raw.githubusercontent.com/huiwin/NodeCollection/main/output/surge/latest.conf` |
+| jsdelivr | `https://fastly.jsdelivr.net/gh/huiwin/NodeCollection@main/output/surge/latest.conf` |
 
 ---
 
@@ -59,12 +59,12 @@
 
 | 加速方式 | 订阅地址 |
 | :--- | :--- |
-| 原生 | `https://raw.githubusercontent.com/huiwin/NodeCollection/main/output/mixed/8-17.txt` |
-| kkgithub | `https://raw.kkgithub.com/huiwin/NodeCollection/main/output/mixed/8-17.txt` |
-| ghproxy.net | `https://ghproxy.net/https://raw.githubusercontent.com/huiwin/NodeCollection/main/output/mixed/8-17.txt` |
-| gh-proxy.com | `https://gh-proxy.com/https://raw.githubusercontent.com/huiwin/NodeCollection/main/output/mixed/8-17.txt` |
-| ghfast.top | `https://ghfast.top/https://raw.githubusercontent.com/huiwin/NodeCollection/main/output/mixed/8-17.txt` |
-| jsdelivr | `https://fastly.jsdelivr.net/gh/huiwin/NodeCollection@main/output/mixed/8-17.txt` |
+| 原生 | `https://raw.githubusercontent.com/huiwin/NodeCollection/main/output/mixed/latest.txt` |
+| kkgithub | `https://raw.kkgithub.com/huiwin/NodeCollection/main/output/mixed/latest.txt` |
+| ghproxy.net | `https://ghproxy.net/https://raw.githubusercontent.com/huiwin/NodeCollection/main/output/mixed/latest.txt` |
+| gh-proxy.com | `https://gh-proxy.com/https://raw.githubusercontent.com/huiwin/NodeCollection/main/output/mixed/latest.txt` |
+| ghfast.top | `https://ghfast.top/https://raw.githubusercontent.com/huiwin/NodeCollection/main/output/mixed/latest.txt` |
+| jsdelivr | `https://fastly.jsdelivr.net/gh/huiwin/NodeCollection@main/output/mixed/latest.txt` |
 
 ---
 
@@ -74,19 +74,20 @@
 
 | 加速方式 | 订阅地址 |
 | :--- | :--- |
-| 原生 | `https://raw.githubusercontent.com/huiwin/NodeCollection/main/sub/2026/8/8-17.yaml` |
-| kkgithub | `https://raw.kkgithub.com/huiwin/NodeCollection/main/sub/2026/8/8-17.yaml` |
-| ghproxy.net | `https://ghproxy.net/https://raw.githubusercontent.com/huiwin/NodeCollection/main/sub/2026/8/8-17.yaml` |
-| gh-proxy.com | `https://gh-proxy.com/https://raw.githubusercontent.com/huiwin/NodeCollection/main/sub/2026/8/8-17.yaml` |
-| ghfast.top | `https://ghfast.top/https://raw.githubusercontent.com/huiwin/NodeCollection/main/sub/2026/8/8-17.yaml` |
-| jsdelivr | `https://fastly.jsdelivr.net/gh/huiwin/NodeCollection@main/sub/2026/8/8-17.yaml` |
+| 原生 | `https://raw.githubusercontent.com/huiwin/NodeCollection/main/sub/latest.yaml` |
+| kkgithub | `https://raw.kkgithub.com/huiwin/NodeCollection/main/sub/latest.yaml` |
+| ghproxy.net | `https://ghproxy.net/https://raw.githubusercontent.com/huiwin/NodeCollection/main/sub/latest.yaml` |
+| gh-proxy.com | `https://gh-proxy.com/https://raw.githubusercontent.com/huiwin/NodeCollection/main/sub/latest.yaml` |
+| ghfast.top | `https://ghfast.top/https://raw.githubusercontent.com/huiwin/NodeCollection/main/sub/latest.yaml` |
+| jsdelivr | `https://fastly.jsdelivr.net/gh/huiwin/NodeCollection@main/sub/latest.yaml` |
 
 ---
 
 ## 说明
 
 - 每 4 小时自动更新一次 (GitHub Actions)
-- 当前日期文件: `8-17` (月-日)
+- 订阅链接为固定地址，复制一次即可长期使用，内容随自动更新刷新
+- 当前更新时间: `2026-08-17 21:25:22`
 - 加速方式按实时性排序: kkgithub/ghproxy 实时更新, jsdelivr 有缓存延迟
 - 如某加速节点不可用, 换一个即可
 
