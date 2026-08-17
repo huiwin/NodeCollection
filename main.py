@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-NodeCollection Pro v1.4.0 - 订阅源采集 + 多格式转换一体化工具
+NodeCollection Pro v1.4.1 - 订阅源采集 + 多格式转换一体化工具
 
 架构:
   config.yaml (TG频道) + airports.yaml (机场列表) + merge.yaml (上游订阅白名单)
@@ -80,6 +80,15 @@ CLASH_PROXY_TYPES = {
     'ss', 'ssr', 'vmess', 'vless', 'trojan', 'hysteria', 'hysteria2',
     'tuic', 'snell', 'socks5', 'http', 'mixed',
 }
+
+# 上游拉取镜像回退: 主 URL 连续失败时按序尝试镜像前缀 (仅对 raw.githubusercontent.com 生效)
+# 解决本地/国内网络直连 raw.githubusercontent.com 被阻断 (10054) 或限流 (HTTP 429) 的问题
+RAW_GITHUB_HOST = 'raw.githubusercontent.com'
+UPSTREAM_MIRROR_PREFIXES = (
+    'https://ghfast.top/',
+    'https://gh-proxy.com/',
+    'https://ghproxy.net/',
+)
 
 # subconverter 配置
 SUBCONVERTER_URL = os.environ.get('SUBCONVERTER_URL', 'http://127.0.0.1:25500')
@@ -385,10 +394,37 @@ def load_upstreams():
     return upstreams
 
 
+def _upstream_fetch_candidates(url):
+    """
+    构造上游拉取的候选 URL 列表: [主 URL] + 镜像 URL (仅 raw.githubusercontent.com)。
+    主 URL 享有完整重试次数；镜像各尝试 1 次，作为网络阻断时的回退通道。
+    """
+    candidates = [url]
+    try:
+        if urlparse(url).hostname == RAW_GITHUB_HOST:
+            candidates += [m + url for m in UPSTREAM_MIRROR_PREFIXES]
+    except Exception:
+        pass
+    return candidates
+
+
+def _fetch_upstream_once(session, name, url):
+    """单次拉取一个 URL。成功返回订阅文本，失败返回 None (日志由调用方统一输出)。"""
+    resp = session.get(
+        url, headers={'User-Agent': USER_AGENT}, timeout=UPSTREAM_TIMEOUT
+    )
+    if resp.status_code == 200 and resp.text.strip():
+        logger.info(f'[ext:{name}] 拉取成功 ({len(resp.text)} bytes, via {urlparse(url).hostname})')
+        return resp.text
+    logger.warning(f'[ext:{name}] 拉取失败: HTTP {resp.status_code} (via {urlparse(url).hostname})')
+    return None
+
+
 def fetch_upstream(session, upstream):
     """
     拉取单个上游订阅内容。
-    60s 超时 + 3 次重试 (间隔 5s)，失败返回 None，不阻断主流程 (失败隔离)。
+    主 URL: 60s 超时 + 3 次重试 (间隔 5s)；全部失败后依次尝试镜像 (各 1 次)。
+    任何成功即返回，彻底失败返回 None，不阻断主流程 (失败隔离)。
     """
     name = upstream.get('name', 'unknown')
     url = upstream['url']
@@ -397,18 +433,14 @@ def fetch_upstream(session, upstream):
         logger.warning(f'[ext:{name}] URL 未通过安全校验 (SSRF 防护)，已跳过')
         return None
 
+    candidates = _upstream_fetch_candidates(url)
+
+    # 1. 主 URL: 完整重试
     for attempt in range(1, UPSTREAM_RETRIES + 1):
         try:
-            resp = session.get(
-                url, headers={'User-Agent': USER_AGENT}, timeout=UPSTREAM_TIMEOUT
-            )
-            if resp.status_code == 200 and resp.text.strip():
-                logger.info(f'[ext:{name}] 拉取成功 ({len(resp.text)} bytes)')
-                return resp.text
-            logger.warning(
-                f'[ext:{name}] 第 {attempt}/{UPSTREAM_RETRIES} 次拉取失败: '
-                f'HTTP {resp.status_code}'
-            )
+            text = _fetch_upstream_once(session, name, candidates[0])
+            if text:
+                return text
         except requests.Timeout:
             logger.warning(
                 f'[ext:{name}] 第 {attempt}/{UPSTREAM_RETRIES} 次请求超时 '
@@ -423,7 +455,19 @@ def fetch_upstream(session, upstream):
         if attempt < UPSTREAM_RETRIES:
             time.sleep(UPSTREAM_RETRY_DELAY)
 
-    logger.error(f'[ext:{name}] 连续 {UPSTREAM_RETRIES} 次拉取失败，已跳过')
+    # 2. 镜像回退: 各尝试 1 次
+    for mirror_url in candidates[1:]:
+        try:
+            text = _fetch_upstream_once(session, name, mirror_url)
+            if text:
+                return text
+        except Exception as e:
+            logger.warning(
+                f'[ext:{name}] 镜像拉取异常: {urlparse(mirror_url).hostname}: '
+                f'{type(e).__name__}'
+            )
+
+    logger.error(f'[ext:{name}] 主 URL + {len(candidates) - 1} 个镜像均拉取失败，已跳过')
     return None
 
 
@@ -567,20 +611,24 @@ def _serve_local_files(file_paths):
     return server, urls
 
 
-def _ensure_merged_latest_fallback(target, ext):
+def _ensure_merged_latest_fallback(target, latest_fname):
     """merged 转换失败且 latest 缺失时，回退复制最近的历史日期文件 (按文件名日期)。"""
-    latest_path = os.path.join(OUTPUT_DIR, MERGED_DIR, f'latest.{ext}')
+    subdir_path = os.path.join(OUTPUT_DIR, MERGED_DIR)
+    latest_path = os.path.join(subdir_path, latest_fname)
     if os.path.exists(latest_path):
         return
+
+    if not os.path.isdir(subdir_path):
+        return  # 目录尚未创建 (从未成功转换过)，无历史文件可回退
 
     def _date_key(fname):
         m = re.match(r'(\d{1,2})-(\d{1,2})\.', fname)
         return (int(m.group(1)), int(m.group(2))) if m else (0, 0)
 
-    subdir_path = os.path.join(OUTPUT_DIR, MERGED_DIR)
     candidates = sorted(
         (f for f in os.listdir(subdir_path)
-         if f.endswith(f'.{ext}') and f != f'latest.{ext}'),
+         if f.endswith(f'.{target}.{latest_fname.rsplit(".", 1)[-1]}')
+         and f != latest_fname),
         key=_date_key,
         reverse=True,
     )
@@ -657,18 +705,23 @@ def generate_merged_format(upstream_texts, upstreams):
         server, local_sub_urls = _serve_local_files(local_files)
 
         # 4. 多格式转换 → 独立输出 output/merged/
+        #    文件名带格式 token (clash/v2ray/surge/mixed) 防止同扩展名互相覆盖
+        #    (v2ray 与 mixed 均为 .txt，不带 token 会发生 latest.txt 覆盖冲突)
         today = datetime.datetime.today()
         for target, _, ext in OUTPUT_FORMATS:
-            date_fname = f'{today.month}-{today.day}.{ext}'
+            token = target.split('&')[0]
+            date_fname = f'{today.month}-{today.day}.{token}.{ext}'
             output_path = os.path.join(OUTPUT_DIR, MERGED_DIR, date_fname)
+            os.makedirs(os.path.join(OUTPUT_DIR, MERGED_DIR), exist_ok=True)
             success = call_subconverter(f'merged/{target}', local_sub_urls, output_path)
 
-            latest_path = os.path.join(OUTPUT_DIR, MERGED_DIR, f'latest.{ext}')
+            latest_fname = f'latest.{token}.{ext}'
+            latest_path = os.path.join(OUTPUT_DIR, MERGED_DIR, latest_fname)
             if success:
                 shutil.copy2(output_path, latest_path)
                 logger.info(f'[merged/{target}] 固定链接已更新 → {latest_path}')
             else:
-                _ensure_merged_latest_fallback(target, ext)
+                _ensure_merged_latest_fallback(token, latest_fname)
 
         # 5. 更新 index.json 增加 merged 段
         index_path = os.path.join(OUTPUT_DIR, 'index.json')
@@ -687,9 +740,10 @@ def generate_merged_format(upstream_texts, upstreams):
             'sources': sorted(upstream_texts.keys()),
         }
         for target, _, ext in OUTPUT_FORMATS:
-            merged_section['formats'][target] = \
-                f'{MERGED_DIR}/{today.month}-{today.day}.{ext}'
-            merged_section['latest'][target] = f'{MERGED_DIR}/latest.{ext}'
+            token = target.split('&')[0]
+            merged_section['formats'][token] = \
+                f'{MERGED_DIR}/{today.month}-{today.day}.{token}.{ext}'
+            merged_section['latest'][token] = f'{MERGED_DIR}/latest.{token}.{ext}'
         index_data['merged'] = merged_section
         with open(index_path, 'w', encoding='utf-8') as f:
             json.dump(index_data, f, ensure_ascii=False, indent=2)
@@ -804,7 +858,8 @@ def check_subconverter():
             return True
     except Exception:
         pass
-    logger.warning('subconverter 服务不可用，跳过多格式转换')
+    logger.warning('subconverter 服务不可用，跳过多格式转换 '
+                   '(本地运行请先执行: bash update.sh local)')
     return False
 
 
@@ -898,6 +953,9 @@ def generate_multi_format(all_sub_urls):
                 return (int(m.group(1)), int(m.group(2))) if m else (0, 0)
 
             subdir_path = os.path.join(OUTPUT_DIR, subdir)
+            if not os.path.isdir(subdir_path):
+                os.makedirs(subdir_path, exist_ok=True)
+                continue  # 目录尚未创建 (从未成功转换过)，无历史文件可回退
             candidates = sorted(
                 (f for f in os.listdir(subdir_path)
                  if f.endswith(f'.{ext}') and f != f'latest.{ext}'),
@@ -1006,11 +1064,12 @@ def generate_readme(upstreams=None):
     ]
 
     # 融合订阅文件 (上游外部来源，节点名带 [ext:来源] 前缀)
+    # 文件名带格式 token，与 generate_merged_format 的输出命名保持一致
     merged_files = [
-        ('Clash', 'output/merged/latest.yaml', '融合节点 (含外部来源标注)'),
-        ('V2Ray', 'output/merged/latest.txt', '融合节点 Base64'),
-        ('Surge', 'output/merged/latest.conf', '融合节点 Surge 配置'),
-        ('Mixed', 'output/merged/latest.txt', '融合节点混合 Base64'),
+        ('Clash', 'output/merged/latest.clash.yaml', '融合节点 (含外部来源标注)'),
+        ('V2Ray', 'output/merged/latest.v2ray.txt', '融合节点 Base64'),
+        ('Surge', 'output/merged/latest.surge.conf', '融合节点 Surge 配置'),
+        ('Mixed', 'output/merged/latest.mixed.txt', '融合节点混合 Base64'),
     ]
 
     lines = []
