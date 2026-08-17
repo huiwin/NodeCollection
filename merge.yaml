@@ -1,0 +1,29 @@
+# ============================================================
+# 上游订阅融合白名单 (v1.4.0+)
+#
+# 使用规则:
+#   - 仅添加明确公开免费、长期活跃的来源；发现来源性质变化请立即移除
+#   - 绝不添加付费机场的订阅链接 (违反服务条款且易被封禁)
+#   - name 会作为节点前缀 [ext:name] 展示，请使用简短英文标识
+#   - max_nodes 为该来源的节点数上限，0 表示不限制
+#   - enabled: false 可临时停用某个来源而不删除配置
+#
+# 新增来源时需同步在 main.py 的 UPSTREAM_REPO_MAP 中补充仓库地址，
+# 用于 README 来源表致谢 (P2 阶段将改为全自动生成)
+# ============================================================
+
+upstreams:
+  - name: freenode
+    url: https://raw.githubusercontent.com/ripaojiedian/freenode/main/sub
+    enabled: true
+    max_nodes: 80
+
+  - name: NoMoreWalls
+    url: https://raw.githubusercontent.com/peasoft/NoMoreWalls/main/list_raw.txt
+    enabled: true
+    max_nodes: 80
+
+  - name: FreeNodes
+    url: https://raw.githubusercontent.com/Barabama/FreeNodes/main/nodes/cfmem.txt
+    enabled: true
+    max_nodes: 80
