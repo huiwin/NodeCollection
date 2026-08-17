@@ -24,6 +24,7 @@ import sys
 import time
 import json
 import base64
+import shutil
 import ipaddress
 import datetime
 from urllib.parse import urlparse, quote
@@ -501,11 +502,15 @@ def generate_multi_format(all_sub_urls):
     date_str = f'{today.year}/{today.month}/{today.month}-{today.day}'
 
     for target, subdir, ext in OUTPUT_FORMATS:
-        output_path = os.path.join(
-            OUTPUT_DIR, subdir,
-            f'{today.month}-{today.day}.{ext}'
-        )
-        call_subconverter(target, all_sub_urls, output_path)
+        date_fname = f'{today.month}-{today.day}.{ext}'
+        output_path = os.path.join(OUTPUT_DIR, subdir, date_fname)
+        success = call_subconverter(target, all_sub_urls, output_path)
+
+        # 同时写入 latest 固定文件 (URL 永不改变，内容随每次运行更新)
+        if success:
+            latest_path = os.path.join(OUTPUT_DIR, subdir, f'latest.{ext}')
+            shutil.copy2(output_path, latest_path)
+            logger.info(f'[{target}] 固定链接已更新 → {latest_path}')
 
     # 额外: 生成一个合并所有格式的 index.json 索引文件
     index_path = os.path.join(OUTPUT_DIR, 'index.json')
@@ -513,11 +518,13 @@ def generate_multi_format(all_sub_urls):
         'update_time': datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
         'date': date_str,
         'formats': {},
+        'latest': {},
         'total_urls': len(all_sub_urls),
     }
     for target, subdir, ext in OUTPUT_FORMATS:
-        fname = f'{today.month}-{today.day}.{ext}'
-        index_data['formats'][target] = f'{subdir}/{fname}'
+        date_fname = f'{today.month}-{today.day}.{ext}'
+        index_data['formats'][target] = f'{subdir}/{date_fname}'
+        index_data['latest'][target] = f'{subdir}/latest.{ext}'
 
     with open(index_path, 'w', encoding='utf-8') as f:
         json.dump(index_data, f, ensure_ascii=False, indent=2)
@@ -528,26 +535,27 @@ def generate_multi_format(all_sub_urls):
 # README 自动生成 (每次运行后更新订阅链接)
 # ============================================================
 
-def generate_readme(today):
+def generate_readme():
     """
     生成 README.md，仅包含最新订阅链接。
+    使用 latest 固定路径，URL 永不改变，内容随每次运行自动更新。
     包含原生链接 + 多种加速代理前缀。
     """
-    date_str = f'{today.month}-{today.day}'
     update_time = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 
     # 订阅文件路径定义: (显示名, 文件路径, 格式说明, GitHub 项目链接)
+    # 使用 latest 固定路径，URL 永不改变，内容随每次运行自动更新
     # 末尾的链接字段让各软件标题成为可点击的超链接，跳转到对应 GitHub 仓库
     sub_files = [
-        ('Clash', f'output/clash/{date_str}.yaml', 'Clash / Clash Meta / Mihomo',
+        ('Clash', 'output/clash/latest.yaml', 'Clash / Clash Meta / Mihomo',
          'https://github.com/clash-verge-rev/clash-verge-rev'),
-        ('V2Ray', f'output/v2ray/{date_str}.txt', 'V2RayN / V2RayNG / Shadowrocket (Base64)',
+        ('V2Ray', 'output/v2ray/latest.txt', 'V2RayN / V2RayNG / Shadowrocket (Base64)',
          'https://github.com/2dust/v2rayN'),
-        ('Surge', f'output/surge/{date_str}.conf', 'Surge 4+',
+        ('Surge', 'output/surge/latest.conf', 'Surge 4+',
          None),
-        ('Mixed', f'output/mixed/{date_str}.txt', '混合格式 Base64 (全协议)',
+        ('Mixed', 'output/mixed/latest.txt', '混合格式 Base64 (全协议)',
          None),
-        ('原始 YAML', f'sub/{today.year}/{today.month}/{date_str}.yaml', '向后兼容格式 (含分类)',
+        ('原始 YAML', 'sub/latest.yaml', '向后兼容格式 (含分类)',
          None),
     ]
 
@@ -598,7 +606,8 @@ def generate_readme(today):
     lines.append('## 说明')
     lines.append('')
     lines.append(f'- 每 4 小时自动更新一次 (GitHub Actions)')
-    lines.append(f'- 当前日期文件: `{date_str}` (月-日)')
+    lines.append(f'- 订阅链接为固定地址，复制一次即可长期使用，内容随自动更新刷新')
+    lines.append(f'- 当前更新时间: `{update_time}`')
     lines.append(f'- 加速方式按实时性排序: kkgithub/ghproxy 实时更新, jsdelivr 有缓存延迟')
     lines.append(f'- 如某加速节点不可用, 换一个即可')
     lines.append('')
@@ -670,6 +679,11 @@ def main():
     })
     yaml_save(path_yaml, dict_url)
 
+    # 8.5 同时写入固定路径 sub/latest.yaml (URL 永不改变)
+    latest_yaml_path = os.path.join(SUB_DIR, 'latest.yaml')
+    shutil.copy2(path_yaml, latest_yaml_path)
+    logger.info(f'固定链接已更新 → {latest_yaml_path}')
+
     # 9. subconverter 多格式转换
     logger.info('=== subconverter 多格式转换 ===')
     all_sub_urls = new_sub_list + new_clash_list + new_v2_list
@@ -691,8 +705,7 @@ def main():
     )
 
     # 11. 自动更新 README.md (订阅链接展示)
-    today = datetime.datetime.today()
-    generate_readme(today)
+    generate_readme()
 
     logger.info('全部任务完成')
 
