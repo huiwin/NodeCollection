@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-NodeCollection Pro v1.3.1 - 订阅源采集 + 多格式转换一体化工具
+NodeCollection Pro v1.3.2 - 订阅源采集 + 多格式转换一体化工具
 
 架构:
   config.yaml (TG频道) + airports.yaml (机场列表)
@@ -57,7 +57,9 @@ PROTOCOL_PREFIXES = ('ss://', 'ssr://', 'vmess://', 'trojan://')
 
 # subconverter 配置
 SUBCONVERTER_URL = os.environ.get('SUBCONVERTER_URL', 'http://127.0.0.1:25500')
-SUBCONVERTER_TIMEOUT = 30
+SUBCONVERTER_TIMEOUT = 60
+SUBCONVERTER_RETRIES = 3
+SUBCONVERTER_RETRY_DELAY = 5
 SUBCONVERTER_EXTERNAL_CONFIG = 'subconverter/external_config.ini'
 
 # GitHub 仓库信息 (用于生成 README 中的订阅链接)
@@ -467,24 +469,27 @@ def call_subconverter(target, sub_urls, output_path):
         f'sort=false'
     )
 
-    try:
-        resp = requests.get(api_url, timeout=SUBCONVERTER_TIMEOUT)
-        if resp.status_code == 200 and resp.text.strip():
-            # 确保输出目录存在
-            os.makedirs(os.path.dirname(output_path), exist_ok=True)
-            with open(output_path, 'w', encoding='utf-8') as f:
-                f.write(resp.text)
-            logger.info(f'[{target}] 转换成功 → {output_path} ({len(resp.text)} bytes)')
-            return True
-        else:
-            logger.warning(f'[{target}] 转换失败: HTTP {resp.status_code}')
-            return False
-    except requests.Timeout:
-        logger.warning(f'[{target}] subconverter 请求超时')
-        return False
-    except Exception as e:
-        logger.warning(f'[{target}] subconverter 异常: {type(e).__name__}: {e}')
-        return False
+    for attempt in range(1, SUBCONVERTER_RETRIES + 1):
+        try:
+            resp = requests.get(api_url, timeout=SUBCONVERTER_TIMEOUT)
+            if resp.status_code == 200 and resp.text.strip():
+                # 确保输出目录存在
+                os.makedirs(os.path.dirname(output_path), exist_ok=True)
+                with open(output_path, 'w', encoding='utf-8') as f:
+                    f.write(resp.text)
+                logger.info(f'[{target}] 转换成功 → {output_path} ({len(resp.text)} bytes)')
+                return True
+            logger.warning(f'[{target}] 第 {attempt}/{SUBCONVERTER_RETRIES} 次转换失败: HTTP {resp.status_code}')
+        except requests.Timeout:
+            logger.warning(f'[{target}] 第 {attempt}/{SUBCONVERTER_RETRIES} 次请求超时 ({SUBCONVERTER_TIMEOUT}s)')
+        except Exception as e:
+            logger.warning(f'[{target}] 第 {attempt}/{SUBCONVERTER_RETRIES} 次异常: {type(e).__name__}: {e}')
+
+        if attempt < SUBCONVERTER_RETRIES:
+            time.sleep(SUBCONVERTER_RETRY_DELAY)
+
+    logger.error(f'[{target}] 连续 {SUBCONVERTER_RETRIES} 次转换失败，已跳过')
+    return False
 
 
 def generate_multi_format(all_sub_urls):
@@ -507,10 +512,31 @@ def generate_multi_format(all_sub_urls):
         success = call_subconverter(target, all_sub_urls, output_path)
 
         # 同时写入 latest 固定文件 (URL 永不改变，内容随每次运行更新)
+        latest_path = os.path.join(OUTPUT_DIR, subdir, f'latest.{ext}')
         if success:
-            latest_path = os.path.join(OUTPUT_DIR, subdir, f'latest.{ext}')
             shutil.copy2(output_path, latest_path)
             logger.info(f'[{target}] 固定链接已更新 → {latest_path}')
+        elif not os.path.exists(latest_path):
+            # 转换失败且 latest 文件不存在时，回退复制最近的历史日期文件，
+            # 保证固定链接永不 404 (内容可能是较早的快照)
+            # 注意: CI 中 git checkout 会重置 mtime，因此按文件名中的日期排序
+            def _date_key(fname):
+                m = re.match(r'(\d{1,2})-(\d{1,2})\.', fname)
+                return (int(m.group(1)), int(m.group(2))) if m else (0, 0)
+
+            subdir_path = os.path.join(OUTPUT_DIR, subdir)
+            candidates = sorted(
+                (f for f in os.listdir(subdir_path)
+                 if f.endswith(f'.{ext}') and f != f'latest.{ext}'),
+                key=_date_key,
+                reverse=True,
+            )
+            if candidates:
+                fallback = os.path.join(subdir_path, candidates[0])
+                shutil.copy2(fallback, latest_path)
+                logger.warning(
+                    f'[{target}] 本次转换失败，latest 已回退为历史文件: {candidates[0]}'
+                )
 
     # 额外: 生成一个合并所有格式的 index.json 索引文件
     index_path = os.path.join(OUTPUT_DIR, 'index.json')
