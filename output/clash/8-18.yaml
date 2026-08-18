@@ -5,6 +5,67 @@ mode: Rule
 log-level: info
 external-controller: :9090
 proxies:
+  - {name: 高清無碼AV - AVToday.io - 🇺🇸US_86|214KB/s|A004-260618, server: 37.19.198.236, port: 443, type: ss, cipher: aes-128-gcm, password: shadowsocks, udp: true}
+  - {name: 高清無碼AV - AVToday.io - 🇳🇱NL_60|327KB/s|A004-260618, server: 82.38.31.28, port: 8080, type: ss, cipher: chacha20-ietf-poly1305, password: oZIoA69Q8yhcQV8ka3Pa3A, udp: true}
+  - {name: 高清無碼AV - AVToday.io - 🇪🇸ES_5|425KB/s|A004-260618, server: 108.181.121.226, port: 8388, type: ss, cipher: chacha20-ietf-poly1305, password: WSyL4XTwNsdv, udp: true}
+  - {name: 高清無碼AV - AVToday.io - 🇳🇱NL_61|347KB/s|A004-260618, server: 193.29.139.235, port: 8080, type: ss, cipher: chacha20-ietf-poly1305, password: oZIoA69Q8yhcQV8ka3Pa3A, udp: true}
+  - {name: CA_8|250KB/s|C002-260622, server: 134.195.196.211, port: 18000, type: vmess, uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, udp: true}
+  - {name: 高清無碼AV - AVToday.io - 🇫🇷FR_63|357KB/s|C002-260622, server: 104.16.73.213, port: 443, type: trojan, password: humanity, sni: www.ignitelimit.com, skip-cert-verify: false, network: ws, ws-opts: {path: /assignment, headers: {Host: www.ignitelimit.com}}, udp: true}
+  - {name: 高清無碼AV - AVToday.io - 🇫🇷FR_64|198KB/s|C002-260622, server: 104.18.152.204, port: 443, type: trojan, password: humanity, sni: www.ignitelimit.com, skip-cert-verify: false, network: ws, ws-opts: {path: /assignment, headers: {Host: www.ignitelimit.com}}, udp: true}
+  - {name: 高清無碼AV - AVToday.io - 🇫🇷FR_66|269KB/s|C002-260622, server: 104.18.152.246, port: 443, type: trojan, password: humanity, sni: www.ignitelimit.com, skip-cert-verify: false, network: ws, ws-opts: {path: /assignment, headers: {Host: www.ignitelimit.com}}, udp: true}
+  - {name: US_87|354KB/s|C002-260622, server: 38.110.1.246, port: 18000, type: vmess, uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, udp: true}
+  - {name: US_89|162KB/s|M002-260618, server: 82.198.246.250, port: 180, type: vmess, uuid: d13fc2f5-3e05-4795-81eb-44143a09e552, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, udp: true}
+  - {name: US_90|308KB/s|M002-260618, server: 82.198.246.233, port: 180, type: vmess, uuid: d13fc2f5-3e05-4795-81eb-44143a09e552, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, udp: true}
+  - {name: 高清無碼AV - AVToday.io - 🇳🇱NL_69|331KB/s|A003-260618, server: 82.38.31.204, port: 8080, type: ss, cipher: chacha20-ietf-poly1305, password: k1dBOmOB4oqi7Ump37a1bQ, udp: true}
+  - {name: US_91|391KB/s|M002-260618, server: 82.198.246.233, port: 180, type: vmess, uuid: d13fc2f5-3e05-4795-81eb-44143a09e552, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, udp: true}
+  - {name: US_92|217KB/s|M002-260618, server: 82.198.246.233, port: 180, type: vmess, uuid: d13fc2f5-3e05-4795-81eb-44143a09e552, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, udp: true}
+  - {name: 高清無碼AV - AVToday.io - 🇳🇱NL_70|352KB/s|B007-260618, server: 82.38.31.49, port: 8080, type: ss, cipher: chacha20-ietf-poly1305, password: oZIoA69Q8yhcQV8ka3Pa3A, udp: true}
+  - {name: US_93|236KB/s|M002-260618, server: 82.198.246.37, port: 180, type: vmess, uuid: d13fc2f5-3e05-4795-81eb-44143a09e552, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, udp: true}
+  - {name: US_95|249KB/s|M002-260618, server: 82.198.246.37, port: 180, type: vmess, uuid: d13fc2f5-3e05-4795-81eb-44143a09e552, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, udp: true}
+  - {name: US_98|119KB/s|M002-260618, server: 82.198.246.97, port: 180, type: vmess, uuid: d13fc2f5-3e05-4795-81eb-44143a09e552, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, udp: true}
+  - {name: 高清無碼AV - AVToday.io - 🇳🇱NL_72|133KB/s, server: 82.38.31.205, port: 8080, type: ss, cipher: chacha20-ietf-poly1305, password: k1dBOmOB4oqi7Ump37a1bQ, udp: true}
+  - {name: 高清無碼AV - AVToday.io - 🇳🇱NL_73|276KB/s, server: 82.38.31.208, port: 8080, type: ss, cipher: chacha20-ietf-poly1305, password: k1dBOmOB4oqi7Ump37a1bQ, udp: true}
+  - {name: 高清無碼AV - AVToday.io - 🇦🇺AU_2|266KB/s|A003-260618, server: 104.156.233.234, port: 27116, type: ss, cipher: chacha20-ietf-poly1305, password: bIOoi5TuImG2KccxV7-jcA7Cez+vun-c_E, udp: true}
+  - {name: SG_10|154KB/s|C002-260622, server: 149.88.23.207, port: 18000, type: vmess, uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, udp: true}
+  - {name: US_99|108KB/s|M002-260618, server: 82.198.246.97, port: 180, type: vmess, uuid: d13fc2f5-3e05-4795-81eb-44143a09e552, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, udp: true}
+  - {name: US_100|137KB/s|M002-260618, server: 82.198.246.97, port: 180, type: vmess, uuid: d13fc2f5-3e05-4795-81eb-44143a09e552, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, udp: true}
+  - {name: US_101|142KB/s|M002-260618, server: 82.198.246.233, port: 180, type: vmess, uuid: d13fc2f5-3e05-4795-81eb-44143a09e552, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, udp: true}
+  - {name: US_102|417KB/s|M002-260618, server: 82.198.246.233, port: 180, type: vmess, uuid: d13fc2f5-3e05-4795-81eb-44143a09e552, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, udp: true}
+  - {name: 高清無碼AV - AVToday.io - 🇳🇱NL_76|229KB/s|B007-260618, server: 82.38.31.162, port: 443, type: ss, cipher: chacha20-ietf-poly1305, password: oZIoA69Q8yhcQV8ka3Pa3A, udp: true}
+  - {name: 高清無碼AV - AVToday.io - 🇳🇱NL_77|348KB/s, server: 82.38.31.2, port: 8080, type: ss, cipher: chacha20-ietf-poly1305, password: oZIoA69Q8yhcQV8ka3Pa3A, udp: true}
+  - {name: US_103|277KB/s|M002-260618, server: 165.140.216.141, port: 443, type: vmess, uuid: e7d72a8d-26f2-4b54-b366-0c43e0bcba7d, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, udp: true}
+  - {name: IN_1|184KB/s, server: 152.67.8.205, port: 80, type: vmess, uuid: 9db4c708-aef8-4359-821b-38e47990be0d, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /}, udp: true}
+  - {name: US_104|103KB/s|B007-260618, server: 216.106.185.141, port: 22324, type: vmess, uuid: 04621bae-ab36-11ec-b909-0242ac120002, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, udp: true}
+  - {name: 高清無碼AV - AVToday.io - 🇳🇱NL_79|395KB/s|B007-260618, server: 193.29.139.147, port: 8080, type: ss, cipher: chacha20-ietf-poly1305, password: k1dBOmOB4oqi7Ump37a1bQ, udp: true}
+  - {name: US_105|211KB/s, server: 38.91.107.49, port: 18000, type: vmess, uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, udp: true}
+  - {name: 高清無碼AV - AVToday.io - 🇰🇭KH_1|156KB/s|A004-260618, server: 38.54.93.66, port: 49692, type: ss, cipher: rc4-md5, password: ad80f76711ec7213, udp: true}
+  - {name: 🇩🇪 高清免費無碼AV - AVToday.io - 🇩🇪德国  25.81MB/s, server: leading-eel.rooster465.autos, port: 443, type: trojan, password: FH72359861, skip-cert-verify: false, udp: true}
+  - {name: 🇷🇴 高清免費無碼AV - AVToday.io - 🇷🇴罗马尼亚  18.25MB/s, server: bold-eagle.rooster465.autos, port: 443, type: trojan, password: FH72359861, skip-cert-verify: false, udp: true}
+  - {name: 🇷🇴 高清免費無碼AV - AVToday.io - 🇷🇴罗马尼亚 17.84MB/s, server: epic-iguana.rooster465.autos, port: 443, type: trojan, password: FH72359861, skip-cert-verify: false, udp: true}
+  - {name: 🇺🇸 美国 原生IP 8.44MB/s 285 linuxdo@onimaii, server: 157.254.227.163, port: 443, type: vmess, uuid: eba24d1d-0c2b-4b67-862f-cae68626f3fa, alterId: 0, cipher: auto, tls: true, skip-cert-verify: false, servername: xc166.meiziba5566.com, network: ws, ws-opts: {path: /cae68626f3fa}, udp: true}
+  - {name: 🇺🇸 美国 原生IP 29.10MB/s 343 linuxdo@onimaii, server: 66.42.72.146, port: 46373, type: vmess, uuid: f98fdefd-1b61-4052-c5b5-2a196f6e0541, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /my-vmess-path}, udp: true}
+  - {name: 🇺🇸 高清免費無碼AV - AVToday.io - 🇺🇸美国 3.08MB/s, server: 163.176.130.243, port: 59319, type: ss, cipher: 2022-blake3-chacha20-poly1305, password: 0s/s2MCl4+gpGdRBqSxP7ruTy1yT3AnLhCyc+8G9H+Y=, udp: true}
+  - {name: 高清免費無碼AV - AVToday.io - 🇧🇷BR 20.35MB/s, server: 163.176.64.97, port: 59319, type: ss, cipher: 2022-blake3-chacha20-poly1305, password: vm/54x6x1jshW8TH5BPO2MAMtQ1M5esrFpb+DydSbhk=, udp: true}
+  - {name: 高清免費無碼AV - AVToday.io - 🇧🇷BR 16.96MB/s, server: 163.176.212.36, port: 59319, type: ss, cipher: 2022-blake3-chacha20-poly1305, password: Odwl6fTZmZrBcaH2WNDIhqDu4MZO/5yFCTO2CeN8G5M=, udp: true}
+  - {name: 高清免費無碼AV - AVToday.io - 🇧🇷BR 20.69MB/s, server: 163.176.194.183, port: 59319, type: ss, cipher: 2022-blake3-chacha20-poly1305, password: DRFgJf7ZBvgTIJqPTX8UQ4KTuvAw3rsSKbUkAt30dyo=, udp: true}
+  - {name: 高清免費無碼AV - AVToday.io - 🇧🇷BR 19.83MB/s, server: 163.176.85.126, port: 59319, type: ss, cipher: 2022-blake3-chacha20-poly1305, password: tmNoITDlBC6uGpvPYjou7PZKAH2MOs9tHjig37+TT/Q=, udp: true}
+  - {name: 🇺🇸 美国 原生IP 9.08MB/s 293 linuxdo@onimaii, server: 198.23.184.122, port: 443, type: vmess, uuid: 6910f78e-3c38-46a1-b287-837279ad9b4a, alterId: 0, cipher: auto, tls: true, skip-cert-verify: false, servername: xc163.meiziba5566.com, network: ws, ws-opts: {path: /837279ad9b4a}, udp: true}
+  - {name: 🇧🇷 高清免費無碼AV - AVToday.io - BR-São Paulo-7151811-hccx, server: 147.15.18.110, port: 59319, type: ss, cipher: 2022-blake3-chacha20-poly1305, password: 41V7PSJSBS7f7AgDZyYEm5ZcP/ruYl3OFjo5wWTOhi4=, udp: true}
+  - {name: 🇧🇷 高清免費無碼AV - AVToday.io - BR-São Paulo-31762123-hhel, server: 163.176.212.36, port: 59319, type: ss, cipher: 2022-blake3-chacha20-poly1305, password: Odwl6fTZmZrBcaH2WNDIhqDu4MZO/5yFCTO2CeN8G5M=, udp: true}
+  - {name: 🇸🇬 高清免費無碼AV - AVToday.io - SG-Singapore-1281443-hsly, server: darling-ram.rooster465.autos, port: 443, type: trojan, password: FH72359861, sni: darling-ram.rooster465.autos, skip-cert-verify: false, udp: true}
+  - {name: 🇸🇬 新加坡 | SGP, server: 140.83.57.20, port: 13118, type: vmess, uuid: 1f01e389-fbcb-494c-e46a-210ec36329c2, alterId: 0, cipher: auto, tls: true, skip-cert-verify: false, network: ws, ws-opts: {path: /, headers: {Host: sg.11160321.de5.net}}, udp: true}
+  - {name: 🇨🇦 高清免費無碼AV - AVToday.io - 🇨🇦 加拿大 | CAN, server: 142.4.216.225, port: 443, type: ss, cipher: chacha20-ietf-poly1305, password: ytw2awn, udp: true}
+  - {name: 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA, server: 163.176.240.6, port: 59319, type: ss, cipher: 2022-blake3-chacha20-poly1305, password: Wy1UImjn4slIMGk7alrakt+yyl9YHXCMhtO5RypXDPE=, udp: true}
+  - {name: 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA 2, server: 147.15.18.110, port: 59319, type: ss, cipher: 2022-blake3-chacha20-poly1305, password: 41V7PSJSBS7f7AgDZyYEm5ZcP/ruYl3OFjo5wWTOhi4=, udp: true}
+  - {name: 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA 3, server: 163.176.115.182, port: 59319, type: ss, cipher: 2022-blake3-chacha20-poly1305, password: 9jbr4rN/jUHADrXAvzott4jArdE7p9kmG9Ya2DJw/iw=, udp: true}
+  - {name: 🇩🇪 德国 | DEU, server: www.true.th, port: 80, type: vmess, uuid: a150d554-e962-4632-829f-ee583ada3f95, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /htun, headers: {Host: d7pu5mzr9c4b0.cloudfront.net}}, udp: true}
+  - {name: "[openproxylist.com] TH 15388312", server: www.true.th, port: 80, type: vmess, uuid: a150d554-e962-4632-829f-ee583ada3f95, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /htun, headers: {Host: d7pu5mzr9c4b0.cloudfront.net}}, udp: true}
+  - {name: 🇨🇦 高清免費無碼AV - AVToday.io -  CA 356844, server: 142.4.216.225, port: 443, type: ss, cipher: chacha20-ietf-poly1305, password: ytw2awn, udp: true}
+  - {name: 高清免費無碼AV - AVToday.io -  BR 15388256, server: 163.176.254.175, port: 59319, type: ss, cipher: 2022-blake3-chacha20-poly1305, password: 7pTuen2wPOFpfCTvsQCW/zE35d9zLqoiYoI9LEd+t6s=, udp: true}
+  - {name: 高清免費無碼AV - AVToday.io -  BR 15388254, server: 163.176.240.6, port: 59319, type: ss, cipher: 2022-blake3-chacha20-poly1305, password: Wy1UImjn4slIMGk7alrakt+yyl9YHXCMhtO5RypXDPE=, udp: true}
+  - {name: 高清免費無碼AV - AVToday.io -  BR 15388262, server: 163.176.85.126, port: 59319, type: ss, cipher: 2022-blake3-chacha20-poly1305, password: tmNoITDlBC6uGpvPYjou7PZKAH2MOs9tHjig37+TT/Q=, udp: true}
+  - {name: 高清免費無碼AV - AVToday.io -  BR 15388247, server: 147.15.18.110, port: 59319, type: ss, cipher: 2022-blake3-chacha20-poly1305, password: 41V7PSJSBS7f7AgDZyYEm5ZcP/ruYl3OFjo5wWTOhi4=, udp: true}
+  - {name: Shadowsocks, server: 127.0.0.1, port: 1080, type: socks5, udp: true}
   - {name: 🇦🇪 阿拉伯联合酋长国 - Dubai - 1, server: cn18.somethingstranges.com, port: 8629, type: ss, cipher: chacha20-ietf, password: passwd, plugin: obfs, plugin-opts: {mode: http, host: 43309-nIao34iu.download.microsoft.com}, udp: true}
   - {name: 🇮🇪 爱尔兰 - Dublin - 1, server: v4.hdacd.com, port: 30804, type: vmess, uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484, alterId: 2, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
   - {name: 🇩🇪 德国 - Frankfurt am Main - 1, server: 167.172.172.190, port: 443, type: http, username: testuser1, password: e4b72b531a2d10900519, tls: true, skip-cert-verify: true, udp: true}
@@ -119,25 +180,23 @@ proxies:
   - {name: 🇨🇳 中国 - Kwai Chung - 1, server: v9.hdacd.com, port: 30809, type: vmess, uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484, alterId: 2, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
   - {name: 🇨🇳 中国 - Sha Tin - 2, server: cn01.somethingstranges.com, port: 8102, type: ss, cipher: chacha20-ietf, password: passwd, plugin: obfs, plugin-opts: {mode: http, host: 43309-nIao34iu.download.microsoft.com}, udp: true}
   - {name: 🇨🇳 中国 - Sha Tin - 5, server: cn01.somethingstranges.com, port: 8101, type: ss, cipher: chacha20-ietf, password: passwd, plugin: obfs, plugin-opts: {mode: http, host: 43309-nIao34iu.download.microsoft.com}, udp: true}
-  - {name: Shadowsocks, server: 127.0.0.1, port: 1080, type: socks5, udp: true}
   - {name: 🇺🇸 United States_None_ss_101, server: 63.180.254.10, port: 443, type: ss, cipher: aes-256-cfb, password: amazonskr05, udp: true}
   - {name: 🇭🇰 Hong Kong_Central_vmess_102, server: v10.hdacd.com, port: 30807, type: vmess, uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484, alterId: 2, cipher: auto, tls: false, skip-cert-verify: false, udp: true}
-  - {name: 🇭🇰 Hong Kong_None_trojan_103, server: 16.163.156.207, port: 14684, type: trojan, password: 6ec301428255a78a1d826988d86cc87e, sni: www.nintendogames.net, skip-cert-verify: true, udp: true}
-  - {name: 🇭🇰 Hong Kong_None_trojan_104, server: 43.198.240.223, port: 29444, type: trojan, password: BxceQaOe, sni: t.me%2Fripaojiedian, skip-cert-verify: true, udp: true}
-  - {name: 🇭🇰 Hong Kong_None_trojan_105, server: 43.198.109.134, port: 14684, type: trojan, password: BxceQaOe, sni: t.me%2Fripaojiedian, skip-cert-verify: true, udp: true}
-  - {name: 🇭🇰 Hong Kong_None_trojan_106, server: 16.163.139.175, port: 49811, type: trojan, password: BxceQaOe, sni: t.me%252Fripaojiedian, skip-cert-verify: true, udp: true}
-  - {name: 🇭🇰 Hong Kong_None_trojan_107, server: 16.162.109.29, port: 55564, type: trojan, password: 6ec301428255a78a1d826988d86cc87e, sni: www.nintendogames.net, skip-cert-verify: true, udp: true}
-  - {name: 🇭🇰 Hong Kong_None_trojan_108, server: 16.162.192.182, port: 3415, type: trojan, password: 6ec301428255a78a1d826988d86cc87e, sni: www.nintendogames.net, skip-cert-verify: true, udp: true}
-  - {name: 🇵🇱 Poland_None_trojan_109, server: 95.40.14.234, port: 51396, type: trojan, password: 6ec301428255a78a1d826988d86cc87e, sni: www.nintendogames.net, skip-cert-verify: true, udp: true}
-  - {name: 🇭🇰 Hong Kong_None_trojan_1010, server: 16.162.100.124, port: 7375, type: trojan, password: 6ec301428255a78a1d826988d86cc87e, sni: www.nintendogames.net, skip-cert-verify: true, udp: true}
-  - {name: 🇭🇰 Hong Kong_None_trojan_1011, server: 16.163.139.175, port: 26704, type: trojan, password: BxceQaOe, sni: t.me%252Fripaojiedian, skip-cert-verify: true, udp: true}
-  - {name: 🇭🇰 Hong Kong_None_trojan_1012, server: 18.163.126.92, port: 28051, type: trojan, password: 6ec301428255a78a1d826988d86cc87e, sni: www.nintendogames.net, skip-cert-verify: true, udp: true}
-  - {name: 🇭🇰 Hong Kong_None_trojan_1013, server: 16.162.192.182, port: 28051, type: trojan, password: 6ec301428255a78a1d826988d86cc87e, sni: www.nintendogames.net, skip-cert-verify: true, udp: true}
-  - {name: 🇭🇰 Hong Kong_None_trojan_1014, server: 16.163.144.245, port: 39024, type: trojan, password: BxceQaOe, sni: t.me%2Fripaojiedian, skip-cert-verify: true, udp: true}
-  - {name: 🇭🇰 Hong Kong_Central_vmess_1015, server: v10.hdacd.com, port: 30807, type: vmess, uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484, alterId: 2, cipher: auto, tls: false, udp: true}
-  - {name: 🇭🇰 Hong Kong_None_trojan_1016, server: 16.162.3.11, port: 27161, type: trojan, password: BxceQaOe, sni: t.me/ripaojiedian, skip-cert-verify: true, udp: true}
-  - {name: 🇭🇰 Hong Kong_None_trojan_1017, server: 16.162.3.11, port: 27161, type: trojan, password: BxceQaOe, sni: t.me%2Fripaojiedian, skip-cert-verify: true, udp: true}
-  - {name: 🇯🇵 Japan_Tokyo_trojan_1018, server: t11.qifei.app, port: 55682, type: trojan, password: 7d8e6db4-96cc-4710-afc0-619edde2d7a1, sni: t11.qifei.app, skip-cert-verify: true, udp: true}
+  - {name: 🇭🇰 Hong Kong_None_trojan_103, server: 18.162.156.145, port: 50887, type: trojan, password: 6ec301428255a78a1d826988d86cc87e, sni: www.nintendogames.net, skip-cert-verify: true, udp: true}
+  - {name: 🇭🇰 Hong Kong_None_trojan_104, server: 18.163.114.228, port: 7674, type: trojan, password: BxceQaOe, sni: t.me%2Fripaojiedian, skip-cert-verify: true, udp: true}
+  - {name: 🇭🇰 Hong Kong_None_trojan_105, server: 16.162.103.28, port: 7674, type: trojan, password: BxceQaOe, sni: t.me%2Fripaojiedian, skip-cert-verify: true, udp: true}
+  - {name: 🇺🇸 United States_None_trojan_106, server: 54.46.126.133, port: 9408, type: trojan, password: BxceQaOe, sni: t.me%252Fripaojiedian, skip-cert-verify: true, udp: true}
+  - {name: 🇭🇰 Hong Kong_None_trojan_107, server: 16.162.109.29, port: 18617, type: trojan, password: 6ec301428255a78a1d826988d86cc87e, sni: www.nintendogames.net, skip-cert-verify: true, udp: true}
+  - {name: 🇭🇰 Hong Kong_None_trojan_108, server: 18.163.114.228, port: 26704, type: trojan, password: 6ec301428255a78a1d826988d86cc87e, sni: www.nintendogames.net, skip-cert-verify: true, udp: true}
+  - {name: 🇭🇰 Hong Kong_None_trojan_109, server: 16.162.100.124, port: 51396, type: trojan, password: 6ec301428255a78a1d826988d86cc87e, sni: www.nintendogames.net, skip-cert-verify: true, udp: true}
+  - {name: 🇭🇰 Hong Kong_None_trojan_1010, server: 16.163.139.175, port: 26704, type: trojan, password: BxceQaOe, sni: t.me%252Fripaojiedian, skip-cert-verify: true, udp: true}
+  - {name: 🇭🇰 Hong Kong_None_trojan_1011, server: 16.162.192.182, port: 39024, type: trojan, password: 6ec301428255a78a1d826988d86cc87e, sni: www.nintendogames.net, skip-cert-verify: true, udp: true}
+  - {name: 🇭🇰 Hong Kong_None_trojan_1012, server: 16.162.100.124, port: 39024, type: trojan, password: 6ec301428255a78a1d826988d86cc87e, sni: www.nintendogames.net, skip-cert-verify: true, udp: true}
+  - {name: 🇭🇰 Hong Kong_None_trojan_1013, server: 16.162.103.28, port: 53001, type: trojan, password: BxceQaOe, sni: t.me%2Fripaojiedian, skip-cert-verify: true, udp: true}
+  - {name: 🇭🇰 Hong Kong_Central_vmess_1014, server: v10.hdacd.com, port: 30807, type: vmess, uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484, alterId: 2, cipher: auto, tls: false, udp: true}
+  - {name: 🇭🇰 Hong Kong_None_trojan_1015, server: 16.162.3.11, port: 27161, type: trojan, password: BxceQaOe, sni: t.me/ripaojiedian, skip-cert-verify: true, udp: true}
+  - {name: 🇭🇰 Hong Kong_None_trojan_1016, server: 16.162.3.11, port: 27161, type: trojan, password: BxceQaOe, sni: t.me%2Fripaojiedian, skip-cert-verify: true, udp: true}
+  - {name: 🇯🇵 Japan_Tokyo_trojan_1017, server: t11.qifei.app, port: 55682, type: trojan, password: 7d8e6db4-96cc-4710-afc0-619edde2d7a1, sni: t11.qifei.app, skip-cert-verify: true, udp: true}
   - {name: Unknown_vmess_111, server: 127.0.0.53, port: 80, type: vmess, uuid: 88888888-8888-8888-8888-888888888888, alterId: 0, cipher: auto, tls: false, udp: true}
   - {name: Unknown_vmess_112, server: 127.0.0.53, port: 81, type: vmess, uuid: 88888888-8888-8888-8888-888888888888, alterId: 0, cipher: auto, tls: false, udp: true}
   - {name: Unknown_vmess_113, server: 127.0.0.53, port: 82, type: vmess, uuid: 88888888-8888-8888-8888-888888888888, alterId: 0, cipher: auto, tls: false, udp: true}
@@ -150,87 +209,40 @@ proxies:
   - {name: Unknown_vmess_1110, server: 127.0.0.53, port: 89, type: vmess, uuid: 88888888-8888-8888-8888-888888888888, alterId: 0, cipher: auto, tls: false, udp: true}
   - {name: 🇺🇸 United States_None_ss_1111, server: 63.180.254.10, port: 443, type: ss, cipher: aes-256-cfb, password: amazonskr05, udp: true}
   - {name: 🇭🇰 Hong Kong_Central_vmess_1112, server: v10.hdacd.com, port: 30807, type: vmess, uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484, alterId: 2, cipher: auto, tls: false, skip-cert-verify: false, udp: true}
-  - {name: 🇭🇰 Hong Kong_None_trojan_1113, server: 16.163.156.207, port: 14684, type: trojan, password: 6ec301428255a78a1d826988d86cc87e, sni: www.nintendogames.net, skip-cert-verify: true, udp: true}
-  - {name: 🇭🇰 Hong Kong_None_trojan_1114, server: 43.198.240.223, port: 29444, type: trojan, password: BxceQaOe, sni: t.me%2Fripaojiedian, skip-cert-verify: true, udp: true}
-  - {name: 🇭🇰 Hong Kong_None_trojan_1115, server: 43.198.109.134, port: 14684, type: trojan, password: BxceQaOe, sni: t.me%2Fripaojiedian, skip-cert-verify: true, udp: true}
-  - {name: 🇭🇰 Hong Kong_None_trojan_1116, server: 16.163.139.175, port: 49811, type: trojan, password: BxceQaOe, sni: t.me%252Fripaojiedian, skip-cert-verify: true, udp: true}
-  - {name: 🇭🇰 Hong Kong_None_trojan_1117, server: 16.162.109.29, port: 55564, type: trojan, password: 6ec301428255a78a1d826988d86cc87e, sni: www.nintendogames.net, skip-cert-verify: true, udp: true}
-  - {name: 🇭🇰 Hong Kong_None_trojan_1118, server: 16.162.192.182, port: 3415, type: trojan, password: 6ec301428255a78a1d826988d86cc87e, sni: www.nintendogames.net, skip-cert-verify: true, udp: true}
-  - {name: 🇵🇱 Poland_None_trojan_1119, server: 95.40.14.234, port: 51396, type: trojan, password: 6ec301428255a78a1d826988d86cc87e, sni: www.nintendogames.net, skip-cert-verify: true, udp: true}
-  - {name: 🇭🇰 Hong Kong_None_trojan_1120, server: 16.162.100.124, port: 7375, type: trojan, password: 6ec301428255a78a1d826988d86cc87e, sni: www.nintendogames.net, skip-cert-verify: true, udp: true}
-  - {name: 🇭🇰 Hong Kong_None_trojan_1121, server: 16.163.139.175, port: 26704, type: trojan, password: BxceQaOe, sni: t.me%252Fripaojiedian, skip-cert-verify: true, udp: true}
-  - {name: 🇭🇰 Hong Kong_None_trojan_1122, server: 18.163.126.92, port: 28051, type: trojan, password: 6ec301428255a78a1d826988d86cc87e, sni: www.nintendogames.net, skip-cert-verify: true, udp: true}
-  - {name: 🇭🇰 Hong Kong_None_trojan_1123, server: 16.162.192.182, port: 28051, type: trojan, password: 6ec301428255a78a1d826988d86cc87e, sni: www.nintendogames.net, skip-cert-verify: true, udp: true}
-  - {name: 🇭🇰 Hong Kong_None_trojan_1124, server: 16.163.144.245, port: 39024, type: trojan, password: BxceQaOe, sni: t.me%2Fripaojiedian, skip-cert-verify: true, udp: true}
-  - {name: 🇭🇰 Hong Kong_Central_vmess_1125, server: v10.hdacd.com, port: 30807, type: vmess, uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484, alterId: 2, cipher: auto, tls: false, udp: true}
-  - {name: 🇯🇵 Japan_Tokyo_trojan_1126, server: 139.162.100.58, port: 49755, type: trojan, password: a196faa4-403e-4a8b-987a-d1789f379685, sni: vpn-node.internal, skip-cert-verify: true, network: ws, ws-opts: {path: /xVpnTrojanWsSvc7f3a, headers: {Host: vpn-node.internal}}, udp: true}
-  - {name: 🇫🇷 France_None_vmess_1127, server: planb.mojcn.com.linuxlh.xin, port: 16632, type: vmess, uuid: 97c638c6-86d5-4cf6-b70b-114c6809b637, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /, headers: {Host: 407a2bc6d452ff93e6d7b73078539d9e.mobgslb.tbcache.com}}, udp: true}
-  - {name: None_None_trojan_1128, server: 104.18.23.63, port: 443, type: trojan, password: humanity, sni: www.ignitelimit.com, skip-cert-verify: false, network: ws, ws-opts: {path: /assignment, headers: {Host: www.ignitelimit.com}}, udp: true}
-  - {name: 🇬🇧 United Kingdom_Shoreditch_vmess_1129, server: 192.248.163.148, port: 53224, type: vmess, uuid: 647c2dc6-fd48-4a84-9b59-163df19ad6f9, alterId: 0, cipher: auto, tls: false, network: ws, ws-opts: {path: /647c2dc6-fd48-4a84-9b59-163df19ad6f9}, udp: true}
-  - {name: 🇺🇸 United States_Columbus_ss_1130, server: 18.191.198.248, port: 443, type: ss, cipher: aes-256-cfb, password: amazonskr05, udp: true}
-  - {name: 🇭🇰 Hong Kong_None_trojan_1131, server: 16.162.3.11, port: 27161, type: trojan, password: BxceQaOe, sni: t.me/ripaojiedian, skip-cert-verify: true, udp: true}
-  - {name: 🇭🇰 Hong Kong_None_trojan_1132, server: 16.162.3.11, port: 27161, type: trojan, password: BxceQaOe, sni: t.me%2Fripaojiedian, skip-cert-verify: true, udp: true}
-  - {name: 🇯🇵 Japan_Tokyo_trojan_1133, server: t11.qifei.app, port: 55682, type: trojan, password: 7d8e6db4-96cc-4710-afc0-619edde2d7a1, sni: t11.qifei.app, skip-cert-verify: true, udp: true}
-  - {name: 高清無碼AV - AVToday.io - 🇺🇸US_86|214KB/s|A004-260618, server: 37.19.198.236, port: 443, type: ss, cipher: aes-128-gcm, password: shadowsocks, udp: true}
-  - {name: 高清無碼AV - AVToday.io - 🇳🇱NL_60|327KB/s|A004-260618, server: 82.38.31.28, port: 8080, type: ss, cipher: chacha20-ietf-poly1305, password: oZIoA69Q8yhcQV8ka3Pa3A, udp: true}
-  - {name: 高清無碼AV - AVToday.io - 🇪🇸ES_5|425KB/s|A004-260618, server: 108.181.121.226, port: 8388, type: ss, cipher: chacha20-ietf-poly1305, password: WSyL4XTwNsdv, udp: true}
-  - {name: 高清無碼AV - AVToday.io - 🇳🇱NL_61|347KB/s|A004-260618, server: 193.29.139.235, port: 8080, type: ss, cipher: chacha20-ietf-poly1305, password: oZIoA69Q8yhcQV8ka3Pa3A, udp: true}
-  - {name: CA_8|250KB/s|C002-260622, server: 134.195.196.211, port: 18000, type: vmess, uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, udp: true}
-  - {name: 高清無碼AV - AVToday.io - 🇫🇷FR_63|357KB/s|C002-260622, server: 104.16.73.213, port: 443, type: trojan, password: humanity, sni: www.ignitelimit.com, skip-cert-verify: false, network: ws, ws-opts: {path: /assignment, headers: {Host: www.ignitelimit.com}}, udp: true}
-  - {name: 高清無碼AV - AVToday.io - 🇫🇷FR_64|198KB/s|C002-260622, server: 104.18.152.204, port: 443, type: trojan, password: humanity, sni: www.ignitelimit.com, skip-cert-verify: false, network: ws, ws-opts: {path: /assignment, headers: {Host: www.ignitelimit.com}}, udp: true}
-  - {name: 高清無碼AV - AVToday.io - 🇫🇷FR_66|269KB/s|C002-260622, server: 104.18.152.246, port: 443, type: trojan, password: humanity, sni: www.ignitelimit.com, skip-cert-verify: false, network: ws, ws-opts: {path: /assignment, headers: {Host: www.ignitelimit.com}}, udp: true}
-  - {name: US_87|354KB/s|C002-260622, server: 38.110.1.246, port: 18000, type: vmess, uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, udp: true}
-  - {name: US_89|162KB/s|M002-260618, server: 82.198.246.250, port: 180, type: vmess, uuid: d13fc2f5-3e05-4795-81eb-44143a09e552, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, udp: true}
-  - {name: US_90|308KB/s|M002-260618, server: 82.198.246.233, port: 180, type: vmess, uuid: d13fc2f5-3e05-4795-81eb-44143a09e552, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, udp: true}
-  - {name: 高清無碼AV - AVToday.io - 🇳🇱NL_69|331KB/s|A003-260618, server: 82.38.31.204, port: 8080, type: ss, cipher: chacha20-ietf-poly1305, password: k1dBOmOB4oqi7Ump37a1bQ, udp: true}
-  - {name: US_91|391KB/s|M002-260618, server: 82.198.246.233, port: 180, type: vmess, uuid: d13fc2f5-3e05-4795-81eb-44143a09e552, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, udp: true}
-  - {name: US_92|217KB/s|M002-260618, server: 82.198.246.233, port: 180, type: vmess, uuid: d13fc2f5-3e05-4795-81eb-44143a09e552, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, udp: true}
-  - {name: 高清無碼AV - AVToday.io - 🇳🇱NL_70|352KB/s|B007-260618, server: 82.38.31.49, port: 8080, type: ss, cipher: chacha20-ietf-poly1305, password: oZIoA69Q8yhcQV8ka3Pa3A, udp: true}
-  - {name: US_93|236KB/s|M002-260618, server: 82.198.246.37, port: 180, type: vmess, uuid: d13fc2f5-3e05-4795-81eb-44143a09e552, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, udp: true}
-  - {name: US_95|249KB/s|M002-260618, server: 82.198.246.37, port: 180, type: vmess, uuid: d13fc2f5-3e05-4795-81eb-44143a09e552, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, udp: true}
-  - {name: US_98|119KB/s|M002-260618, server: 82.198.246.97, port: 180, type: vmess, uuid: d13fc2f5-3e05-4795-81eb-44143a09e552, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, udp: true}
-  - {name: 高清無碼AV - AVToday.io - 🇳🇱NL_72|133KB/s, server: 82.38.31.205, port: 8080, type: ss, cipher: chacha20-ietf-poly1305, password: k1dBOmOB4oqi7Ump37a1bQ, udp: true}
-  - {name: 高清無碼AV - AVToday.io - 🇳🇱NL_73|276KB/s, server: 82.38.31.208, port: 8080, type: ss, cipher: chacha20-ietf-poly1305, password: k1dBOmOB4oqi7Ump37a1bQ, udp: true}
-  - {name: 高清無碼AV - AVToday.io - 🇦🇺AU_2|266KB/s|A003-260618, server: 104.156.233.234, port: 27116, type: ss, cipher: chacha20-ietf-poly1305, password: bIOoi5TuImG2KccxV7-jcA7Cez+vun-c_E, udp: true}
-  - {name: SG_10|154KB/s|C002-260622, server: 149.88.23.207, port: 18000, type: vmess, uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, udp: true}
-  - {name: US_99|108KB/s|M002-260618, server: 82.198.246.97, port: 180, type: vmess, uuid: d13fc2f5-3e05-4795-81eb-44143a09e552, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, udp: true}
-  - {name: US_100|137KB/s|M002-260618, server: 82.198.246.97, port: 180, type: vmess, uuid: d13fc2f5-3e05-4795-81eb-44143a09e552, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, udp: true}
-  - {name: US_101|142KB/s|M002-260618, server: 82.198.246.233, port: 180, type: vmess, uuid: d13fc2f5-3e05-4795-81eb-44143a09e552, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, udp: true}
-  - {name: US_102|417KB/s|M002-260618, server: 82.198.246.233, port: 180, type: vmess, uuid: d13fc2f5-3e05-4795-81eb-44143a09e552, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, udp: true}
-  - {name: 高清無碼AV - AVToday.io - 🇳🇱NL_76|229KB/s|B007-260618, server: 82.38.31.162, port: 443, type: ss, cipher: chacha20-ietf-poly1305, password: oZIoA69Q8yhcQV8ka3Pa3A, udp: true}
-  - {name: 高清無碼AV - AVToday.io - 🇳🇱NL_77|348KB/s, server: 82.38.31.2, port: 8080, type: ss, cipher: chacha20-ietf-poly1305, password: oZIoA69Q8yhcQV8ka3Pa3A, udp: true}
-  - {name: US_103|277KB/s|M002-260618, server: 165.140.216.141, port: 443, type: vmess, uuid: e7d72a8d-26f2-4b54-b366-0c43e0bcba7d, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, udp: true}
-  - {name: IN_1|184KB/s, server: 152.67.8.205, port: 80, type: vmess, uuid: 9db4c708-aef8-4359-821b-38e47990be0d, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /}, udp: true}
-  - {name: US_104|103KB/s|B007-260618, server: 216.106.185.141, port: 22324, type: vmess, uuid: 04621bae-ab36-11ec-b909-0242ac120002, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, udp: true}
-  - {name: 高清無碼AV - AVToday.io - 🇳🇱NL_79|395KB/s|B007-260618, server: 193.29.139.147, port: 8080, type: ss, cipher: chacha20-ietf-poly1305, password: k1dBOmOB4oqi7Ump37a1bQ, udp: true}
-  - {name: US_105|211KB/s, server: 38.91.107.49, port: 18000, type: vmess, uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, udp: true}
-  - {name: 高清無碼AV - AVToday.io - 🇰🇭KH_1|156KB/s|A004-260618, server: 38.54.93.66, port: 49692, type: ss, cipher: rc4-md5, password: ad80f76711ec7213, udp: true}
-  - {name: 🇩🇪 高清免費無碼AV - AVToday.io - 🇩🇪德国  25.81MB/s, server: leading-eel.rooster465.autos, port: 443, type: trojan, password: FH72359861, skip-cert-verify: false, udp: true}
-  - {name: 🇷🇴 高清免費無碼AV - AVToday.io - 🇷🇴罗马尼亚  18.25MB/s, server: bold-eagle.rooster465.autos, port: 443, type: trojan, password: FH72359861, skip-cert-verify: false, udp: true}
-  - {name: 🇷🇴 高清免費無碼AV - AVToday.io - 🇷🇴罗马尼亚 17.84MB/s, server: epic-iguana.rooster465.autos, port: 443, type: trojan, password: FH72359861, skip-cert-verify: false, udp: true}
-  - {name: 🇺🇸 美国 原生IP 8.44MB/s 285 linuxdo@onimaii, server: 157.254.227.163, port: 443, type: vmess, uuid: eba24d1d-0c2b-4b67-862f-cae68626f3fa, alterId: 0, cipher: auto, tls: true, skip-cert-verify: false, servername: xc166.meiziba5566.com, network: ws, ws-opts: {path: /cae68626f3fa}, udp: true}
-  - {name: 🇺🇸 美国 原生IP 29.10MB/s 343 linuxdo@onimaii, server: 66.42.72.146, port: 46373, type: vmess, uuid: f98fdefd-1b61-4052-c5b5-2a196f6e0541, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /my-vmess-path}, udp: true}
-  - {name: 🇺🇸 高清免費無碼AV - AVToday.io - 🇺🇸美国 3.08MB/s, server: 163.176.130.243, port: 59319, type: ss, cipher: 2022-blake3-chacha20-poly1305, password: 0s/s2MCl4+gpGdRBqSxP7ruTy1yT3AnLhCyc+8G9H+Y=, udp: true}
-  - {name: 高清免費無碼AV - AVToday.io - 🇧🇷BR 20.35MB/s, server: 163.176.64.97, port: 59319, type: ss, cipher: 2022-blake3-chacha20-poly1305, password: vm/54x6x1jshW8TH5BPO2MAMtQ1M5esrFpb+DydSbhk=, udp: true}
-  - {name: 高清免費無碼AV - AVToday.io - 🇧🇷BR 16.96MB/s, server: 163.176.212.36, port: 59319, type: ss, cipher: 2022-blake3-chacha20-poly1305, password: Odwl6fTZmZrBcaH2WNDIhqDu4MZO/5yFCTO2CeN8G5M=, udp: true}
-  - {name: 高清免費無碼AV - AVToday.io - 🇧🇷BR 20.69MB/s, server: 163.176.194.183, port: 59319, type: ss, cipher: 2022-blake3-chacha20-poly1305, password: DRFgJf7ZBvgTIJqPTX8UQ4KTuvAw3rsSKbUkAt30dyo=, udp: true}
-  - {name: 高清免費無碼AV - AVToday.io - 🇧🇷BR 19.83MB/s, server: 163.176.85.126, port: 59319, type: ss, cipher: 2022-blake3-chacha20-poly1305, password: tmNoITDlBC6uGpvPYjou7PZKAH2MOs9tHjig37+TT/Q=, udp: true}
-  - {name: 🇺🇸 美国 原生IP 9.08MB/s 293 linuxdo@onimaii, server: 198.23.184.122, port: 443, type: vmess, uuid: 6910f78e-3c38-46a1-b287-837279ad9b4a, alterId: 0, cipher: auto, tls: true, skip-cert-verify: false, servername: xc163.meiziba5566.com, network: ws, ws-opts: {path: /837279ad9b4a}, udp: true}
-  - {name: 🇧🇷 高清免費無碼AV - AVToday.io - BR-São Paulo-7151811-hccx, server: 147.15.18.110, port: 59319, type: ss, cipher: 2022-blake3-chacha20-poly1305, password: 41V7PSJSBS7f7AgDZyYEm5ZcP/ruYl3OFjo5wWTOhi4=, udp: true}
-  - {name: 🇧🇷 高清免費無碼AV - AVToday.io - BR-São Paulo-31762123-hhel, server: 163.176.212.36, port: 59319, type: ss, cipher: 2022-blake3-chacha20-poly1305, password: Odwl6fTZmZrBcaH2WNDIhqDu4MZO/5yFCTO2CeN8G5M=, udp: true}
-  - {name: 🇸🇬 高清免費無碼AV - AVToday.io - SG-Singapore-1281443-hsly, server: darling-ram.rooster465.autos, port: 443, type: trojan, password: FH72359861, sni: darling-ram.rooster465.autos, skip-cert-verify: false, udp: true}
-  - {name: 🇸🇬 新加坡 | SGP, server: 140.83.57.20, port: 13118, type: vmess, uuid: 1f01e389-fbcb-494c-e46a-210ec36329c2, alterId: 0, cipher: auto, tls: true, skip-cert-verify: false, network: ws, ws-opts: {path: /, headers: {Host: sg.11160321.de5.net}}, udp: true}
-  - {name: 🇨🇦 高清免費無碼AV - AVToday.io - 🇨🇦 加拿大 | CAN, server: 142.4.216.225, port: 443, type: ss, cipher: chacha20-ietf-poly1305, password: ytw2awn, udp: true}
-  - {name: 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA, server: 163.176.240.6, port: 59319, type: ss, cipher: 2022-blake3-chacha20-poly1305, password: Wy1UImjn4slIMGk7alrakt+yyl9YHXCMhtO5RypXDPE=, udp: true}
-  - {name: 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA 2, server: 147.15.18.110, port: 59319, type: ss, cipher: 2022-blake3-chacha20-poly1305, password: 41V7PSJSBS7f7AgDZyYEm5ZcP/ruYl3OFjo5wWTOhi4=, udp: true}
-  - {name: 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA 3, server: 163.176.115.182, port: 59319, type: ss, cipher: 2022-blake3-chacha20-poly1305, password: 9jbr4rN/jUHADrXAvzott4jArdE7p9kmG9Ya2DJw/iw=, udp: true}
-  - {name: 🇩🇪 德国 | DEU, server: www.true.th, port: 80, type: vmess, uuid: a150d554-e962-4632-829f-ee583ada3f95, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /htun, headers: {Host: d7pu5mzr9c4b0.cloudfront.net}}, udp: true}
-  - {name: "[openproxylist.com] TH 15388312", server: www.true.th, port: 80, type: vmess, uuid: a150d554-e962-4632-829f-ee583ada3f95, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /htun, headers: {Host: d7pu5mzr9c4b0.cloudfront.net}}, udp: true}
-  - {name: 🇨🇦 高清免費無碼AV - AVToday.io -  CA 356844, server: 142.4.216.225, port: 443, type: ss, cipher: chacha20-ietf-poly1305, password: ytw2awn, udp: true}
-  - {name: 高清免費無碼AV - AVToday.io -  BR 15388256, server: 163.176.254.175, port: 59319, type: ss, cipher: 2022-blake3-chacha20-poly1305, password: 7pTuen2wPOFpfCTvsQCW/zE35d9zLqoiYoI9LEd+t6s=, udp: true}
-  - {name: 高清免費無碼AV - AVToday.io -  BR 15388254, server: 163.176.240.6, port: 59319, type: ss, cipher: 2022-blake3-chacha20-poly1305, password: Wy1UImjn4slIMGk7alrakt+yyl9YHXCMhtO5RypXDPE=, udp: true}
-  - {name: 高清免費無碼AV - AVToday.io -  BR 15388262, server: 163.176.85.126, port: 59319, type: ss, cipher: 2022-blake3-chacha20-poly1305, password: tmNoITDlBC6uGpvPYjou7PZKAH2MOs9tHjig37+TT/Q=, udp: true}
-  - {name: 高清免費無碼AV - AVToday.io -  BR 15388247, server: 147.15.18.110, port: 59319, type: ss, cipher: 2022-blake3-chacha20-poly1305, password: 41V7PSJSBS7f7AgDZyYEm5ZcP/ruYl3OFjo5wWTOhi4=, udp: true}
+  - {name: 🇭🇰 Hong Kong_None_trojan_1113, server: 18.162.156.145, port: 50887, type: trojan, password: 6ec301428255a78a1d826988d86cc87e, sni: www.nintendogames.net, skip-cert-verify: true, udp: true}
+  - {name: 🇭🇰 Hong Kong_None_trojan_1114, server: 18.163.114.228, port: 7674, type: trojan, password: BxceQaOe, sni: t.me%2Fripaojiedian, skip-cert-verify: true, udp: true}
+  - {name: 🇭🇰 Hong Kong_None_trojan_1115, server: 16.162.103.28, port: 7674, type: trojan, password: BxceQaOe, sni: t.me%2Fripaojiedian, skip-cert-verify: true, udp: true}
+  - {name: 🇺🇸 United States_None_trojan_1116, server: 54.46.126.133, port: 9408, type: trojan, password: BxceQaOe, sni: t.me%252Fripaojiedian, skip-cert-verify: true, udp: true}
+  - {name: 🇭🇰 Hong Kong_None_trojan_1117, server: 16.162.109.29, port: 18617, type: trojan, password: 6ec301428255a78a1d826988d86cc87e, sni: www.nintendogames.net, skip-cert-verify: true, udp: true}
+  - {name: 🇭🇰 Hong Kong_None_trojan_1118, server: 18.163.114.228, port: 26704, type: trojan, password: 6ec301428255a78a1d826988d86cc87e, sni: www.nintendogames.net, skip-cert-verify: true, udp: true}
+  - {name: 🇭🇰 Hong Kong_None_trojan_1119, server: 16.162.100.124, port: 51396, type: trojan, password: 6ec301428255a78a1d826988d86cc87e, sni: www.nintendogames.net, skip-cert-verify: true, udp: true}
+  - {name: 🇭🇰 Hong Kong_None_trojan_1120, server: 16.163.139.175, port: 26704, type: trojan, password: BxceQaOe, sni: t.me%252Fripaojiedian, skip-cert-verify: true, udp: true}
+  - {name: 🇭🇰 Hong Kong_None_trojan_1121, server: 16.162.192.182, port: 39024, type: trojan, password: 6ec301428255a78a1d826988d86cc87e, sni: www.nintendogames.net, skip-cert-verify: true, udp: true}
+  - {name: 🇭🇰 Hong Kong_None_trojan_1122, server: 16.162.100.124, port: 39024, type: trojan, password: 6ec301428255a78a1d826988d86cc87e, sni: www.nintendogames.net, skip-cert-verify: true, udp: true}
+  - {name: 🇭🇰 Hong Kong_None_trojan_1123, server: 16.162.103.28, port: 53001, type: trojan, password: BxceQaOe, sni: t.me%2Fripaojiedian, skip-cert-verify: true, udp: true}
+  - {name: 🇭🇰 Hong Kong_Central_vmess_1124, server: v10.hdacd.com, port: 30807, type: vmess, uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484, alterId: 2, cipher: auto, tls: false, udp: true}
+  - {name: 🇷🇺 Russia_None_trojan_1125, server: ru-5b7331.atlanta-games.com, port: 443, type: trojan, password: HaZLUMP__fVySm7WzxFcnk7Nm8-f1CCK, sni: ru-5b7331.atlanta-games.com, skip-cert-verify: true, network: grpc, grpc-opts: {grpc-service-name: ajv}, udp: true}
+  - {name: 🇫🇷 France_Paris_trojan_1126, server: lucky-marmot.rooster465.autos, port: 443, type: trojan, password: PQ05174892, skip-cert-verify: true, udp: true}
+  - {name: 🇫🇷 France_None_vmess_1127, server: planb.mojcn.com.linuxlh.xin, port: 16632, type: vmess, uuid: 97c638c6-86d5-4cf6-b70b-114c6809b637, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /, headers: {Host: 407a2bc6d452ff93e6d7b73078539d9e.mobgslb.tbcache.com}}, udp: true}
+  - {name: 🇯🇵 Japan_Tokyo_trojan_1128, server: accepted-starling.rooster465.autos, port: 443, type: trojan, password: HC04361579, sni: accepted-starling.rooster465.autos, skip-cert-verify: true, udp: true}
+  - {name: 🇺🇸 United States_None_trojan_1129, server: 172.67.149.60, port: 443, type: trojan, password: humanity, sni: www.ignitelimit.com, skip-cert-verify: false, network: ws, ws-opts: {path: /assignment, headers: {Host: www.ignitelimit.com}}, udp: true}
+  - {name: 🇺🇸 United States_None_trojan_1130, server: 165.215.250.14, port: 443, type: trojan, password: humanity, sni: www.ignitelimit.com, skip-cert-verify: false, network: ws, ws-opts: {path: /assignment, headers: {Host: www.ignitelimit.com}}, udp: true}
+  - {name: 🇰🇷 South Korea_Incheon_trojan_1131, server: powerful-troll.rooster465.autos, port: 443, type: trojan, password: HC04361579, sni: powerful-troll.rooster465.autos, skip-cert-verify: false, udp: true}
+  - {name: 🇺🇸 United States_None_trojan_1132, server: www.speedtest.org, port: 443, type: trojan, password: humanity, sni: www.ignitelimit.com, skip-cert-verify: false, network: ws, ws-opts: {path: /assignment, headers: {Host: www.ignitelimit.com}}, udp: true}
+  - {name: None_None_trojan_1133, server: www.ignitelimit.com, port: 443, type: trojan, password: humanity, skip-cert-verify: false, network: ws, ws-opts: {path: /assignment}, udp: true}
+  - {name: 🇺🇸 United States_Ashburn_trojan_1134, server: 86.38.214.205, port: 443, type: trojan, password: humanity, sni: www.ignitelimit.com, skip-cert-verify: false, network: ws, ws-opts: {path: /assignment, headers: {Host: www.ignitelimit.com}}, udp: true}
+  - {name: None_None_trojan_1135, server: 104.18.152.113, port: 443, type: trojan, password: humanity, sni: www.ignitelimit.com, skip-cert-verify: false, network: ws, ws-opts: {path: /assignment, headers: {Host: www.ignitelimit.com}}, udp: true}
+  - {name: None_None_trojan_1136, server: 104.17.177.143, port: 443, type: trojan, password: humanity, sni: www.ignitelimit.com, skip-cert-verify: false, network: ws, ws-opts: {path: /assignment, headers: {Host: www.ignitelimit.com}}, udp: true}
+  - {name: None_None_trojan_1137, server: 104.18.152.210, port: 443, type: trojan, password: humanity, sni: www.ignitelimit.com, skip-cert-verify: false, network: ws, ws-opts: {path: /assignment, headers: {Host: www.ignitelimit.com}}, udp: true}
+  - {name: None_None_trojan_1138, server: 104.16.174.14, port: 443, type: trojan, password: humanity, sni: www.ignitelimit.com, skip-cert-verify: false, network: ws, ws-opts: {path: /assignment, headers: {Host: www.ignitelimit.com}}, udp: true}
+  - {name: None_None_trojan_1139, server: 104.18.152.143, port: 443, type: trojan, password: humanity, sni: www.ignitelimit.com, skip-cert-verify: false, network: ws, ws-opts: {path: /assignment, headers: {Host: www.ignitelimit.com}}, udp: true}
+  - {name: 🇫🇷 France_Paris_trojan_1141, server: lucky-marmot.rooster465.autos, port: 443, type: trojan, password: PQ05174892, sni: lucky-marmot.rooster465.autos, udp: true}
+  - {name: 🇰🇷 South Korea_Incheon_trojan_1142, server: 43.202.4.25, port: 443, type: trojan, password: HC04361579, sni: powerful-troll.rooster465.autos, skip-cert-verify: true, udp: true}
+  - {name: 🇷🇺 Russia_None_trojan_1143, server: ru-5b7331.atlanta-games.com, port: 443, type: trojan, password: HaZLUMP__fVySm7WzxFcnk7Nm8-f1CCK, skip-cert-verify: false, network: grpc, grpc-opts: {grpc-service-name: ajv}, udp: true}
+  - {name: 🇺🇸 United States_None_trojan_1144, server: join-telegram-channel-tirexnet.trex.kdns.fr, port: 443, type: trojan, password: humanity, sni: www.ignitelimit.com, skip-cert-verify: false, network: ws, ws-opts: {path: /assignment, headers: {Host: www.ignitelimit.com}}, udp: true}
+  - {name: 🇭🇰 Hong Kong_None_trojan_1145, server: 16.162.3.11, port: 27161, type: trojan, password: BxceQaOe, sni: t.me/ripaojiedian, skip-cert-verify: true, udp: true}
+  - {name: 🇭🇰 Hong Kong_None_trojan_1146, server: 16.162.3.11, port: 27161, type: trojan, password: BxceQaOe, sni: t.me%2Fripaojiedian, skip-cert-verify: true, udp: true}
+  - {name: 🇯🇵 Japan_Tokyo_trojan_1147, server: t11.qifei.app, port: 55682, type: trojan, password: 7d8e6db4-96cc-4710-afc0-619edde2d7a1, sni: t11.qifei.app, skip-cert-verify: true, udp: true}
   - {name: 跨境云- Ú� -台北 II-5zg02, server: 117.27.228.29, port: 10000, type: vmess, uuid: 2c90af15-bac7-f850-4c7c-120c5a420636, alterId: 0, cipher: auto, tls: false, network: ws, ws-opts: {path: /}, udp: true}
   - {name: 🇮🇩 印尼-路由器-家宽, server: 202.47.89.133, port: 53548, type: vmess, uuid: 3a03613b-bbac-4a22-bee6-2c9a751a2761, alterId: 0, cipher: auto, tls: false, network: ws, ws-opts: {path: /dkfjh222}, udp: true}
 proxy-groups:
@@ -239,6 +251,67 @@ proxy-groups:
     proxies:
       - ♻️ 自动选择
       - 🎯 全球直连
+      - 高清無碼AV - AVToday.io - 🇺🇸US_86|214KB/s|A004-260618
+      - 高清無碼AV - AVToday.io - 🇳🇱NL_60|327KB/s|A004-260618
+      - 高清無碼AV - AVToday.io - 🇪🇸ES_5|425KB/s|A004-260618
+      - 高清無碼AV - AVToday.io - 🇳🇱NL_61|347KB/s|A004-260618
+      - CA_8|250KB/s|C002-260622
+      - 高清無碼AV - AVToday.io - 🇫🇷FR_63|357KB/s|C002-260622
+      - 高清無碼AV - AVToday.io - 🇫🇷FR_64|198KB/s|C002-260622
+      - 高清無碼AV - AVToday.io - 🇫🇷FR_66|269KB/s|C002-260622
+      - US_87|354KB/s|C002-260622
+      - US_89|162KB/s|M002-260618
+      - US_90|308KB/s|M002-260618
+      - 高清無碼AV - AVToday.io - 🇳🇱NL_69|331KB/s|A003-260618
+      - US_91|391KB/s|M002-260618
+      - US_92|217KB/s|M002-260618
+      - 高清無碼AV - AVToday.io - 🇳🇱NL_70|352KB/s|B007-260618
+      - US_93|236KB/s|M002-260618
+      - US_95|249KB/s|M002-260618
+      - US_98|119KB/s|M002-260618
+      - 高清無碼AV - AVToday.io - 🇳🇱NL_72|133KB/s
+      - 高清無碼AV - AVToday.io - 🇳🇱NL_73|276KB/s
+      - 高清無碼AV - AVToday.io - 🇦🇺AU_2|266KB/s|A003-260618
+      - SG_10|154KB/s|C002-260622
+      - US_99|108KB/s|M002-260618
+      - US_100|137KB/s|M002-260618
+      - US_101|142KB/s|M002-260618
+      - US_102|417KB/s|M002-260618
+      - 高清無碼AV - AVToday.io - 🇳🇱NL_76|229KB/s|B007-260618
+      - 高清無碼AV - AVToday.io - 🇳🇱NL_77|348KB/s
+      - US_103|277KB/s|M002-260618
+      - IN_1|184KB/s
+      - US_104|103KB/s|B007-260618
+      - 高清無碼AV - AVToday.io - 🇳🇱NL_79|395KB/s|B007-260618
+      - US_105|211KB/s
+      - 高清無碼AV - AVToday.io - 🇰🇭KH_1|156KB/s|A004-260618
+      - 🇩🇪 高清免費無碼AV - AVToday.io - 🇩🇪德国  25.81MB/s
+      - 🇷🇴 高清免費無碼AV - AVToday.io - 🇷🇴罗马尼亚  18.25MB/s
+      - 🇷🇴 高清免費無碼AV - AVToday.io - 🇷🇴罗马尼亚 17.84MB/s
+      - 🇺🇸 美国 原生IP 8.44MB/s 285 linuxdo@onimaii
+      - 🇺🇸 美国 原生IP 29.10MB/s 343 linuxdo@onimaii
+      - 🇺🇸 高清免費無碼AV - AVToday.io - 🇺🇸美国 3.08MB/s
+      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 20.35MB/s
+      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 16.96MB/s
+      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 20.69MB/s
+      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 19.83MB/s
+      - 🇺🇸 美国 原生IP 9.08MB/s 293 linuxdo@onimaii
+      - 🇧🇷 高清免費無碼AV - AVToday.io - BR-São Paulo-7151811-hccx
+      - 🇧🇷 高清免費無碼AV - AVToday.io - BR-São Paulo-31762123-hhel
+      - 🇸🇬 高清免費無碼AV - AVToday.io - SG-Singapore-1281443-hsly
+      - 🇸🇬 新加坡 | SGP
+      - 🇨🇦 高清免費無碼AV - AVToday.io - 🇨🇦 加拿大 | CAN
+      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA
+      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA 2
+      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA 3
+      - 🇩🇪 德国 | DEU
+      - "[openproxylist.com] TH 15388312"
+      - 🇨🇦 高清免費無碼AV - AVToday.io -  CA 356844
+      - 高清免費無碼AV - AVToday.io -  BR 15388256
+      - 高清免費無碼AV - AVToday.io -  BR 15388254
+      - 高清免費無碼AV - AVToday.io -  BR 15388262
+      - 高清免費無碼AV - AVToday.io -  BR 15388247
+      - Shadowsocks
       - 🇦🇪 阿拉伯联合酋长国 - Dubai - 1
       - 🇮🇪 爱尔兰 - Dublin - 1
       - 🇩🇪 德国 - Frankfurt am Main - 1
@@ -353,25 +426,23 @@ proxy-groups:
       - 🇨🇳 中国 - Kwai Chung - 1
       - 🇨🇳 中国 - Sha Tin - 2
       - 🇨🇳 中国 - Sha Tin - 5
-      - Shadowsocks
       - 🇺🇸 United States_None_ss_101
       - 🇭🇰 Hong Kong_Central_vmess_102
       - 🇭🇰 Hong Kong_None_trojan_103
       - 🇭🇰 Hong Kong_None_trojan_104
       - 🇭🇰 Hong Kong_None_trojan_105
-      - 🇭🇰 Hong Kong_None_trojan_106
+      - 🇺🇸 United States_None_trojan_106
       - 🇭🇰 Hong Kong_None_trojan_107
       - 🇭🇰 Hong Kong_None_trojan_108
-      - 🇵🇱 Poland_None_trojan_109
+      - 🇭🇰 Hong Kong_None_trojan_109
       - 🇭🇰 Hong Kong_None_trojan_1010
       - 🇭🇰 Hong Kong_None_trojan_1011
       - 🇭🇰 Hong Kong_None_trojan_1012
       - 🇭🇰 Hong Kong_None_trojan_1013
-      - 🇭🇰 Hong Kong_None_trojan_1014
-      - 🇭🇰 Hong Kong_Central_vmess_1015
+      - 🇭🇰 Hong Kong_Central_vmess_1014
+      - 🇭🇰 Hong Kong_None_trojan_1015
       - 🇭🇰 Hong Kong_None_trojan_1016
-      - 🇭🇰 Hong Kong_None_trojan_1017
-      - 🇯🇵 Japan_Tokyo_trojan_1018
+      - 🇯🇵 Japan_Tokyo_trojan_1017
       - Unknown_vmess_111
       - Unknown_vmess_112
       - Unknown_vmess_113
@@ -387,90 +458,104 @@ proxy-groups:
       - 🇭🇰 Hong Kong_None_trojan_1113
       - 🇭🇰 Hong Kong_None_trojan_1114
       - 🇭🇰 Hong Kong_None_trojan_1115
-      - 🇭🇰 Hong Kong_None_trojan_1116
+      - 🇺🇸 United States_None_trojan_1116
       - 🇭🇰 Hong Kong_None_trojan_1117
       - 🇭🇰 Hong Kong_None_trojan_1118
-      - 🇵🇱 Poland_None_trojan_1119
+      - 🇭🇰 Hong Kong_None_trojan_1119
       - 🇭🇰 Hong Kong_None_trojan_1120
       - 🇭🇰 Hong Kong_None_trojan_1121
       - 🇭🇰 Hong Kong_None_trojan_1122
       - 🇭🇰 Hong Kong_None_trojan_1123
-      - 🇭🇰 Hong Kong_None_trojan_1124
-      - 🇭🇰 Hong Kong_Central_vmess_1125
-      - 🇯🇵 Japan_Tokyo_trojan_1126
+      - 🇭🇰 Hong Kong_Central_vmess_1124
+      - 🇷🇺 Russia_None_trojan_1125
+      - 🇫🇷 France_Paris_trojan_1126
       - 🇫🇷 France_None_vmess_1127
-      - None_None_trojan_1128
-      - 🇬🇧 United Kingdom_Shoreditch_vmess_1129
-      - 🇺🇸 United States_Columbus_ss_1130
-      - 🇭🇰 Hong Kong_None_trojan_1131
-      - 🇭🇰 Hong Kong_None_trojan_1132
-      - 🇯🇵 Japan_Tokyo_trojan_1133
-      - 高清無碼AV - AVToday.io - 🇺🇸US_86|214KB/s|A004-260618
-      - 高清無碼AV - AVToday.io - 🇳🇱NL_60|327KB/s|A004-260618
-      - 高清無碼AV - AVToday.io - 🇪🇸ES_5|425KB/s|A004-260618
-      - 高清無碼AV - AVToday.io - 🇳🇱NL_61|347KB/s|A004-260618
-      - CA_8|250KB/s|C002-260622
-      - 高清無碼AV - AVToday.io - 🇫🇷FR_63|357KB/s|C002-260622
-      - 高清無碼AV - AVToday.io - 🇫🇷FR_64|198KB/s|C002-260622
-      - 高清無碼AV - AVToday.io - 🇫🇷FR_66|269KB/s|C002-260622
-      - US_87|354KB/s|C002-260622
-      - US_89|162KB/s|M002-260618
-      - US_90|308KB/s|M002-260618
-      - 高清無碼AV - AVToday.io - 🇳🇱NL_69|331KB/s|A003-260618
-      - US_91|391KB/s|M002-260618
-      - US_92|217KB/s|M002-260618
-      - 高清無碼AV - AVToday.io - 🇳🇱NL_70|352KB/s|B007-260618
-      - US_93|236KB/s|M002-260618
-      - US_95|249KB/s|M002-260618
-      - US_98|119KB/s|M002-260618
-      - 高清無碼AV - AVToday.io - 🇳🇱NL_72|133KB/s
-      - 高清無碼AV - AVToday.io - 🇳🇱NL_73|276KB/s
-      - 高清無碼AV - AVToday.io - 🇦🇺AU_2|266KB/s|A003-260618
-      - SG_10|154KB/s|C002-260622
-      - US_99|108KB/s|M002-260618
-      - US_100|137KB/s|M002-260618
-      - US_101|142KB/s|M002-260618
-      - US_102|417KB/s|M002-260618
-      - 高清無碼AV - AVToday.io - 🇳🇱NL_76|229KB/s|B007-260618
-      - 高清無碼AV - AVToday.io - 🇳🇱NL_77|348KB/s
-      - US_103|277KB/s|M002-260618
-      - IN_1|184KB/s
-      - US_104|103KB/s|B007-260618
-      - 高清無碼AV - AVToday.io - 🇳🇱NL_79|395KB/s|B007-260618
-      - US_105|211KB/s
-      - 高清無碼AV - AVToday.io - 🇰🇭KH_1|156KB/s|A004-260618
-      - 🇩🇪 高清免費無碼AV - AVToday.io - 🇩🇪德国  25.81MB/s
-      - 🇷🇴 高清免費無碼AV - AVToday.io - 🇷🇴罗马尼亚  18.25MB/s
-      - 🇷🇴 高清免費無碼AV - AVToday.io - 🇷🇴罗马尼亚 17.84MB/s
-      - 🇺🇸 美国 原生IP 8.44MB/s 285 linuxdo@onimaii
-      - 🇺🇸 美国 原生IP 29.10MB/s 343 linuxdo@onimaii
-      - 🇺🇸 高清免費無碼AV - AVToday.io - 🇺🇸美国 3.08MB/s
-      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 20.35MB/s
-      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 16.96MB/s
-      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 20.69MB/s
-      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 19.83MB/s
-      - 🇺🇸 美国 原生IP 9.08MB/s 293 linuxdo@onimaii
-      - 🇧🇷 高清免費無碼AV - AVToday.io - BR-São Paulo-7151811-hccx
-      - 🇧🇷 高清免費無碼AV - AVToday.io - BR-São Paulo-31762123-hhel
-      - 🇸🇬 高清免費無碼AV - AVToday.io - SG-Singapore-1281443-hsly
-      - 🇸🇬 新加坡 | SGP
-      - 🇨🇦 高清免費無碼AV - AVToday.io - 🇨🇦 加拿大 | CAN
-      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA
-      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA 2
-      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA 3
-      - 🇩🇪 德国 | DEU
-      - "[openproxylist.com] TH 15388312"
-      - 🇨🇦 高清免費無碼AV - AVToday.io -  CA 356844
-      - 高清免費無碼AV - AVToday.io -  BR 15388256
-      - 高清免費無碼AV - AVToday.io -  BR 15388254
-      - 高清免費無碼AV - AVToday.io -  BR 15388262
-      - 高清免費無碼AV - AVToday.io -  BR 15388247
+      - 🇯🇵 Japan_Tokyo_trojan_1128
+      - 🇺🇸 United States_None_trojan_1129
+      - 🇺🇸 United States_None_trojan_1130
+      - 🇰🇷 South Korea_Incheon_trojan_1131
+      - 🇺🇸 United States_None_trojan_1132
+      - None_None_trojan_1133
+      - 🇺🇸 United States_Ashburn_trojan_1134
+      - None_None_trojan_1135
+      - None_None_trojan_1136
+      - None_None_trojan_1137
+      - None_None_trojan_1138
+      - None_None_trojan_1139
+      - 🇫🇷 France_Paris_trojan_1141
+      - 🇰🇷 South Korea_Incheon_trojan_1142
+      - 🇷🇺 Russia_None_trojan_1143
+      - 🇺🇸 United States_None_trojan_1144
+      - 🇭🇰 Hong Kong_None_trojan_1145
+      - 🇭🇰 Hong Kong_None_trojan_1146
+      - 🇯🇵 Japan_Tokyo_trojan_1147
       - 🇮🇩 印尼-路由器-家宽
   - name: ♻️ 自动选择
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 300
     proxies:
+      - 高清無碼AV - AVToday.io - 🇺🇸US_86|214KB/s|A004-260618
+      - 高清無碼AV - AVToday.io - 🇳🇱NL_60|327KB/s|A004-260618
+      - 高清無碼AV - AVToday.io - 🇪🇸ES_5|425KB/s|A004-260618
+      - 高清無碼AV - AVToday.io - 🇳🇱NL_61|347KB/s|A004-260618
+      - CA_8|250KB/s|C002-260622
+      - 高清無碼AV - AVToday.io - 🇫🇷FR_63|357KB/s|C002-260622
+      - 高清無碼AV - AVToday.io - 🇫🇷FR_64|198KB/s|C002-260622
+      - 高清無碼AV - AVToday.io - 🇫🇷FR_66|269KB/s|C002-260622
+      - US_87|354KB/s|C002-260622
+      - US_89|162KB/s|M002-260618
+      - US_90|308KB/s|M002-260618
+      - 高清無碼AV - AVToday.io - 🇳🇱NL_69|331KB/s|A003-260618
+      - US_91|391KB/s|M002-260618
+      - US_92|217KB/s|M002-260618
+      - 高清無碼AV - AVToday.io - 🇳🇱NL_70|352KB/s|B007-260618
+      - US_93|236KB/s|M002-260618
+      - US_95|249KB/s|M002-260618
+      - US_98|119KB/s|M002-260618
+      - 高清無碼AV - AVToday.io - 🇳🇱NL_72|133KB/s
+      - 高清無碼AV - AVToday.io - 🇳🇱NL_73|276KB/s
+      - 高清無碼AV - AVToday.io - 🇦🇺AU_2|266KB/s|A003-260618
+      - SG_10|154KB/s|C002-260622
+      - US_99|108KB/s|M002-260618
+      - US_100|137KB/s|M002-260618
+      - US_101|142KB/s|M002-260618
+      - US_102|417KB/s|M002-260618
+      - 高清無碼AV - AVToday.io - 🇳🇱NL_76|229KB/s|B007-260618
+      - 高清無碼AV - AVToday.io - 🇳🇱NL_77|348KB/s
+      - US_103|277KB/s|M002-260618
+      - IN_1|184KB/s
+      - US_104|103KB/s|B007-260618
+      - 高清無碼AV - AVToday.io - 🇳🇱NL_79|395KB/s|B007-260618
+      - US_105|211KB/s
+      - 高清無碼AV - AVToday.io - 🇰🇭KH_1|156KB/s|A004-260618
+      - 🇩🇪 高清免費無碼AV - AVToday.io - 🇩🇪德国  25.81MB/s
+      - 🇷🇴 高清免費無碼AV - AVToday.io - 🇷🇴罗马尼亚  18.25MB/s
+      - 🇷🇴 高清免費無碼AV - AVToday.io - 🇷🇴罗马尼亚 17.84MB/s
+      - 🇺🇸 美国 原生IP 8.44MB/s 285 linuxdo@onimaii
+      - 🇺🇸 美国 原生IP 29.10MB/s 343 linuxdo@onimaii
+      - 🇺🇸 高清免費無碼AV - AVToday.io - 🇺🇸美国 3.08MB/s
+      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 20.35MB/s
+      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 16.96MB/s
+      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 20.69MB/s
+      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 19.83MB/s
+      - 🇺🇸 美国 原生IP 9.08MB/s 293 linuxdo@onimaii
+      - 🇧🇷 高清免費無碼AV - AVToday.io - BR-São Paulo-7151811-hccx
+      - 🇧🇷 高清免費無碼AV - AVToday.io - BR-São Paulo-31762123-hhel
+      - 🇸🇬 高清免費無碼AV - AVToday.io - SG-Singapore-1281443-hsly
+      - 🇸🇬 新加坡 | SGP
+      - 🇨🇦 高清免費無碼AV - AVToday.io - 🇨🇦 加拿大 | CAN
+      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA
+      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA 2
+      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA 3
+      - 🇩🇪 德国 | DEU
+      - "[openproxylist.com] TH 15388312"
+      - 🇨🇦 高清免費無碼AV - AVToday.io -  CA 356844
+      - 高清免費無碼AV - AVToday.io -  BR 15388256
+      - 高清免費無碼AV - AVToday.io -  BR 15388254
+      - 高清免費無碼AV - AVToday.io -  BR 15388262
+      - 高清免費無碼AV - AVToday.io -  BR 15388247
+      - Shadowsocks
       - 🇦🇪 阿拉伯联合酋长国 - Dubai - 1
       - 🇮🇪 爱尔兰 - Dublin - 1
       - 🇩🇪 德国 - Frankfurt am Main - 1
@@ -585,25 +670,23 @@ proxy-groups:
       - 🇨🇳 中国 - Kwai Chung - 1
       - 🇨🇳 中国 - Sha Tin - 2
       - 🇨🇳 中国 - Sha Tin - 5
-      - Shadowsocks
       - 🇺🇸 United States_None_ss_101
       - 🇭🇰 Hong Kong_Central_vmess_102
       - 🇭🇰 Hong Kong_None_trojan_103
       - 🇭🇰 Hong Kong_None_trojan_104
       - 🇭🇰 Hong Kong_None_trojan_105
-      - 🇭🇰 Hong Kong_None_trojan_106
+      - 🇺🇸 United States_None_trojan_106
       - 🇭🇰 Hong Kong_None_trojan_107
       - 🇭🇰 Hong Kong_None_trojan_108
-      - 🇵🇱 Poland_None_trojan_109
+      - 🇭🇰 Hong Kong_None_trojan_109
       - 🇭🇰 Hong Kong_None_trojan_1010
       - 🇭🇰 Hong Kong_None_trojan_1011
       - 🇭🇰 Hong Kong_None_trojan_1012
       - 🇭🇰 Hong Kong_None_trojan_1013
-      - 🇭🇰 Hong Kong_None_trojan_1014
-      - 🇭🇰 Hong Kong_Central_vmess_1015
+      - 🇭🇰 Hong Kong_Central_vmess_1014
+      - 🇭🇰 Hong Kong_None_trojan_1015
       - 🇭🇰 Hong Kong_None_trojan_1016
-      - 🇭🇰 Hong Kong_None_trojan_1017
-      - 🇯🇵 Japan_Tokyo_trojan_1018
+      - 🇯🇵 Japan_Tokyo_trojan_1017
       - Unknown_vmess_111
       - Unknown_vmess_112
       - Unknown_vmess_113
@@ -619,84 +702,37 @@ proxy-groups:
       - 🇭🇰 Hong Kong_None_trojan_1113
       - 🇭🇰 Hong Kong_None_trojan_1114
       - 🇭🇰 Hong Kong_None_trojan_1115
-      - 🇭🇰 Hong Kong_None_trojan_1116
+      - 🇺🇸 United States_None_trojan_1116
       - 🇭🇰 Hong Kong_None_trojan_1117
       - 🇭🇰 Hong Kong_None_trojan_1118
-      - 🇵🇱 Poland_None_trojan_1119
+      - 🇭🇰 Hong Kong_None_trojan_1119
       - 🇭🇰 Hong Kong_None_trojan_1120
       - 🇭🇰 Hong Kong_None_trojan_1121
       - 🇭🇰 Hong Kong_None_trojan_1122
       - 🇭🇰 Hong Kong_None_trojan_1123
-      - 🇭🇰 Hong Kong_None_trojan_1124
-      - 🇭🇰 Hong Kong_Central_vmess_1125
-      - 🇯🇵 Japan_Tokyo_trojan_1126
+      - 🇭🇰 Hong Kong_Central_vmess_1124
+      - 🇷🇺 Russia_None_trojan_1125
+      - 🇫🇷 France_Paris_trojan_1126
       - 🇫🇷 France_None_vmess_1127
-      - None_None_trojan_1128
-      - 🇬🇧 United Kingdom_Shoreditch_vmess_1129
-      - 🇺🇸 United States_Columbus_ss_1130
-      - 🇭🇰 Hong Kong_None_trojan_1131
-      - 🇭🇰 Hong Kong_None_trojan_1132
-      - 🇯🇵 Japan_Tokyo_trojan_1133
-      - 高清無碼AV - AVToday.io - 🇺🇸US_86|214KB/s|A004-260618
-      - 高清無碼AV - AVToday.io - 🇳🇱NL_60|327KB/s|A004-260618
-      - 高清無碼AV - AVToday.io - 🇪🇸ES_5|425KB/s|A004-260618
-      - 高清無碼AV - AVToday.io - 🇳🇱NL_61|347KB/s|A004-260618
-      - CA_8|250KB/s|C002-260622
-      - 高清無碼AV - AVToday.io - 🇫🇷FR_63|357KB/s|C002-260622
-      - 高清無碼AV - AVToday.io - 🇫🇷FR_64|198KB/s|C002-260622
-      - 高清無碼AV - AVToday.io - 🇫🇷FR_66|269KB/s|C002-260622
-      - US_87|354KB/s|C002-260622
-      - US_89|162KB/s|M002-260618
-      - US_90|308KB/s|M002-260618
-      - 高清無碼AV - AVToday.io - 🇳🇱NL_69|331KB/s|A003-260618
-      - US_91|391KB/s|M002-260618
-      - US_92|217KB/s|M002-260618
-      - 高清無碼AV - AVToday.io - 🇳🇱NL_70|352KB/s|B007-260618
-      - US_93|236KB/s|M002-260618
-      - US_95|249KB/s|M002-260618
-      - US_98|119KB/s|M002-260618
-      - 高清無碼AV - AVToday.io - 🇳🇱NL_72|133KB/s
-      - 高清無碼AV - AVToday.io - 🇳🇱NL_73|276KB/s
-      - 高清無碼AV - AVToday.io - 🇦🇺AU_2|266KB/s|A003-260618
-      - SG_10|154KB/s|C002-260622
-      - US_99|108KB/s|M002-260618
-      - US_100|137KB/s|M002-260618
-      - US_101|142KB/s|M002-260618
-      - US_102|417KB/s|M002-260618
-      - 高清無碼AV - AVToday.io - 🇳🇱NL_76|229KB/s|B007-260618
-      - 高清無碼AV - AVToday.io - 🇳🇱NL_77|348KB/s
-      - US_103|277KB/s|M002-260618
-      - IN_1|184KB/s
-      - US_104|103KB/s|B007-260618
-      - 高清無碼AV - AVToday.io - 🇳🇱NL_79|395KB/s|B007-260618
-      - US_105|211KB/s
-      - 高清無碼AV - AVToday.io - 🇰🇭KH_1|156KB/s|A004-260618
-      - 🇩🇪 高清免費無碼AV - AVToday.io - 🇩🇪德国  25.81MB/s
-      - 🇷🇴 高清免費無碼AV - AVToday.io - 🇷🇴罗马尼亚  18.25MB/s
-      - 🇷🇴 高清免費無碼AV - AVToday.io - 🇷🇴罗马尼亚 17.84MB/s
-      - 🇺🇸 美国 原生IP 8.44MB/s 285 linuxdo@onimaii
-      - 🇺🇸 美国 原生IP 29.10MB/s 343 linuxdo@onimaii
-      - 🇺🇸 高清免費無碼AV - AVToday.io - 🇺🇸美国 3.08MB/s
-      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 20.35MB/s
-      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 16.96MB/s
-      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 20.69MB/s
-      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 19.83MB/s
-      - 🇺🇸 美国 原生IP 9.08MB/s 293 linuxdo@onimaii
-      - 🇧🇷 高清免費無碼AV - AVToday.io - BR-São Paulo-7151811-hccx
-      - 🇧🇷 高清免費無碼AV - AVToday.io - BR-São Paulo-31762123-hhel
-      - 🇸🇬 高清免費無碼AV - AVToday.io - SG-Singapore-1281443-hsly
-      - 🇸🇬 新加坡 | SGP
-      - 🇨🇦 高清免費無碼AV - AVToday.io - 🇨🇦 加拿大 | CAN
-      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA
-      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA 2
-      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA 3
-      - 🇩🇪 德国 | DEU
-      - "[openproxylist.com] TH 15388312"
-      - 🇨🇦 高清免費無碼AV - AVToday.io -  CA 356844
-      - 高清免費無碼AV - AVToday.io -  BR 15388256
-      - 高清免費無碼AV - AVToday.io -  BR 15388254
-      - 高清免費無碼AV - AVToday.io -  BR 15388262
-      - 高清免費無碼AV - AVToday.io -  BR 15388247
+      - 🇯🇵 Japan_Tokyo_trojan_1128
+      - 🇺🇸 United States_None_trojan_1129
+      - 🇺🇸 United States_None_trojan_1130
+      - 🇰🇷 South Korea_Incheon_trojan_1131
+      - 🇺🇸 United States_None_trojan_1132
+      - None_None_trojan_1133
+      - 🇺🇸 United States_Ashburn_trojan_1134
+      - None_None_trojan_1135
+      - None_None_trojan_1136
+      - None_None_trojan_1137
+      - None_None_trojan_1138
+      - None_None_trojan_1139
+      - 🇫🇷 France_Paris_trojan_1141
+      - 🇰🇷 South Korea_Incheon_trojan_1142
+      - 🇷🇺 Russia_None_trojan_1143
+      - 🇺🇸 United States_None_trojan_1144
+      - 🇭🇰 Hong Kong_None_trojan_1145
+      - 🇭🇰 Hong Kong_None_trojan_1146
+      - 🇯🇵 Japan_Tokyo_trojan_1147
       - 🇮🇩 印尼-路由器-家宽
   - name: 🎥 NETFLIX
     type: select
@@ -704,6 +740,67 @@ proxy-groups:
       - 🔰 节点选择
       - ♻️ 自动选择
       - 🎯 全球直连
+      - 高清無碼AV - AVToday.io - 🇺🇸US_86|214KB/s|A004-260618
+      - 高清無碼AV - AVToday.io - 🇳🇱NL_60|327KB/s|A004-260618
+      - 高清無碼AV - AVToday.io - 🇪🇸ES_5|425KB/s|A004-260618
+      - 高清無碼AV - AVToday.io - 🇳🇱NL_61|347KB/s|A004-260618
+      - CA_8|250KB/s|C002-260622
+      - 高清無碼AV - AVToday.io - 🇫🇷FR_63|357KB/s|C002-260622
+      - 高清無碼AV - AVToday.io - 🇫🇷FR_64|198KB/s|C002-260622
+      - 高清無碼AV - AVToday.io - 🇫🇷FR_66|269KB/s|C002-260622
+      - US_87|354KB/s|C002-260622
+      - US_89|162KB/s|M002-260618
+      - US_90|308KB/s|M002-260618
+      - 高清無碼AV - AVToday.io - 🇳🇱NL_69|331KB/s|A003-260618
+      - US_91|391KB/s|M002-260618
+      - US_92|217KB/s|M002-260618
+      - 高清無碼AV - AVToday.io - 🇳🇱NL_70|352KB/s|B007-260618
+      - US_93|236KB/s|M002-260618
+      - US_95|249KB/s|M002-260618
+      - US_98|119KB/s|M002-260618
+      - 高清無碼AV - AVToday.io - 🇳🇱NL_72|133KB/s
+      - 高清無碼AV - AVToday.io - 🇳🇱NL_73|276KB/s
+      - 高清無碼AV - AVToday.io - 🇦🇺AU_2|266KB/s|A003-260618
+      - SG_10|154KB/s|C002-260622
+      - US_99|108KB/s|M002-260618
+      - US_100|137KB/s|M002-260618
+      - US_101|142KB/s|M002-260618
+      - US_102|417KB/s|M002-260618
+      - 高清無碼AV - AVToday.io - 🇳🇱NL_76|229KB/s|B007-260618
+      - 高清無碼AV - AVToday.io - 🇳🇱NL_77|348KB/s
+      - US_103|277KB/s|M002-260618
+      - IN_1|184KB/s
+      - US_104|103KB/s|B007-260618
+      - 高清無碼AV - AVToday.io - 🇳🇱NL_79|395KB/s|B007-260618
+      - US_105|211KB/s
+      - 高清無碼AV - AVToday.io - 🇰🇭KH_1|156KB/s|A004-260618
+      - 🇩🇪 高清免費無碼AV - AVToday.io - 🇩🇪德国  25.81MB/s
+      - 🇷🇴 高清免費無碼AV - AVToday.io - 🇷🇴罗马尼亚  18.25MB/s
+      - 🇷🇴 高清免費無碼AV - AVToday.io - 🇷🇴罗马尼亚 17.84MB/s
+      - 🇺🇸 美国 原生IP 8.44MB/s 285 linuxdo@onimaii
+      - 🇺🇸 美国 原生IP 29.10MB/s 343 linuxdo@onimaii
+      - 🇺🇸 高清免費無碼AV - AVToday.io - 🇺🇸美国 3.08MB/s
+      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 20.35MB/s
+      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 16.96MB/s
+      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 20.69MB/s
+      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 19.83MB/s
+      - 🇺🇸 美国 原生IP 9.08MB/s 293 linuxdo@onimaii
+      - 🇧🇷 高清免費無碼AV - AVToday.io - BR-São Paulo-7151811-hccx
+      - 🇧🇷 高清免費無碼AV - AVToday.io - BR-São Paulo-31762123-hhel
+      - 🇸🇬 高清免費無碼AV - AVToday.io - SG-Singapore-1281443-hsly
+      - 🇸🇬 新加坡 | SGP
+      - 🇨🇦 高清免費無碼AV - AVToday.io - 🇨🇦 加拿大 | CAN
+      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA
+      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA 2
+      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA 3
+      - 🇩🇪 德国 | DEU
+      - "[openproxylist.com] TH 15388312"
+      - 🇨🇦 高清免費無碼AV - AVToday.io -  CA 356844
+      - 高清免費無碼AV - AVToday.io -  BR 15388256
+      - 高清免費無碼AV - AVToday.io -  BR 15388254
+      - 高清免費無碼AV - AVToday.io -  BR 15388262
+      - 高清免費無碼AV - AVToday.io -  BR 15388247
+      - Shadowsocks
       - 🇦🇪 阿拉伯联合酋长国 - Dubai - 1
       - 🇮🇪 爱尔兰 - Dublin - 1
       - 🇩🇪 德国 - Frankfurt am Main - 1
@@ -818,25 +915,23 @@ proxy-groups:
       - 🇨🇳 中国 - Kwai Chung - 1
       - 🇨🇳 中国 - Sha Tin - 2
       - 🇨🇳 中国 - Sha Tin - 5
-      - Shadowsocks
       - 🇺🇸 United States_None_ss_101
       - 🇭🇰 Hong Kong_Central_vmess_102
       - 🇭🇰 Hong Kong_None_trojan_103
       - 🇭🇰 Hong Kong_None_trojan_104
       - 🇭🇰 Hong Kong_None_trojan_105
-      - 🇭🇰 Hong Kong_None_trojan_106
+      - 🇺🇸 United States_None_trojan_106
       - 🇭🇰 Hong Kong_None_trojan_107
       - 🇭🇰 Hong Kong_None_trojan_108
-      - 🇵🇱 Poland_None_trojan_109
+      - 🇭🇰 Hong Kong_None_trojan_109
       - 🇭🇰 Hong Kong_None_trojan_1010
       - 🇭🇰 Hong Kong_None_trojan_1011
       - 🇭🇰 Hong Kong_None_trojan_1012
       - 🇭🇰 Hong Kong_None_trojan_1013
-      - 🇭🇰 Hong Kong_None_trojan_1014
-      - 🇭🇰 Hong Kong_Central_vmess_1015
+      - 🇭🇰 Hong Kong_Central_vmess_1014
+      - 🇭🇰 Hong Kong_None_trojan_1015
       - 🇭🇰 Hong Kong_None_trojan_1016
-      - 🇭🇰 Hong Kong_None_trojan_1017
-      - 🇯🇵 Japan_Tokyo_trojan_1018
+      - 🇯🇵 Japan_Tokyo_trojan_1017
       - Unknown_vmess_111
       - Unknown_vmess_112
       - Unknown_vmess_113
@@ -852,84 +947,37 @@ proxy-groups:
       - 🇭🇰 Hong Kong_None_trojan_1113
       - 🇭🇰 Hong Kong_None_trojan_1114
       - 🇭🇰 Hong Kong_None_trojan_1115
-      - 🇭🇰 Hong Kong_None_trojan_1116
+      - 🇺🇸 United States_None_trojan_1116
       - 🇭🇰 Hong Kong_None_trojan_1117
       - 🇭🇰 Hong Kong_None_trojan_1118
-      - 🇵🇱 Poland_None_trojan_1119
+      - 🇭🇰 Hong Kong_None_trojan_1119
       - 🇭🇰 Hong Kong_None_trojan_1120
       - 🇭🇰 Hong Kong_None_trojan_1121
       - 🇭🇰 Hong Kong_None_trojan_1122
       - 🇭🇰 Hong Kong_None_trojan_1123
-      - 🇭🇰 Hong Kong_None_trojan_1124
-      - 🇭🇰 Hong Kong_Central_vmess_1125
-      - 🇯🇵 Japan_Tokyo_trojan_1126
+      - 🇭🇰 Hong Kong_Central_vmess_1124
+      - 🇷🇺 Russia_None_trojan_1125
+      - 🇫🇷 France_Paris_trojan_1126
       - 🇫🇷 France_None_vmess_1127
-      - None_None_trojan_1128
-      - 🇬🇧 United Kingdom_Shoreditch_vmess_1129
-      - 🇺🇸 United States_Columbus_ss_1130
-      - 🇭🇰 Hong Kong_None_trojan_1131
-      - 🇭🇰 Hong Kong_None_trojan_1132
-      - 🇯🇵 Japan_Tokyo_trojan_1133
-      - 高清無碼AV - AVToday.io - 🇺🇸US_86|214KB/s|A004-260618
-      - 高清無碼AV - AVToday.io - 🇳🇱NL_60|327KB/s|A004-260618
-      - 高清無碼AV - AVToday.io - 🇪🇸ES_5|425KB/s|A004-260618
-      - 高清無碼AV - AVToday.io - 🇳🇱NL_61|347KB/s|A004-260618
-      - CA_8|250KB/s|C002-260622
-      - 高清無碼AV - AVToday.io - 🇫🇷FR_63|357KB/s|C002-260622
-      - 高清無碼AV - AVToday.io - 🇫🇷FR_64|198KB/s|C002-260622
-      - 高清無碼AV - AVToday.io - 🇫🇷FR_66|269KB/s|C002-260622
-      - US_87|354KB/s|C002-260622
-      - US_89|162KB/s|M002-260618
-      - US_90|308KB/s|M002-260618
-      - 高清無碼AV - AVToday.io - 🇳🇱NL_69|331KB/s|A003-260618
-      - US_91|391KB/s|M002-260618
-      - US_92|217KB/s|M002-260618
-      - 高清無碼AV - AVToday.io - 🇳🇱NL_70|352KB/s|B007-260618
-      - US_93|236KB/s|M002-260618
-      - US_95|249KB/s|M002-260618
-      - US_98|119KB/s|M002-260618
-      - 高清無碼AV - AVToday.io - 🇳🇱NL_72|133KB/s
-      - 高清無碼AV - AVToday.io - 🇳🇱NL_73|276KB/s
-      - 高清無碼AV - AVToday.io - 🇦🇺AU_2|266KB/s|A003-260618
-      - SG_10|154KB/s|C002-260622
-      - US_99|108KB/s|M002-260618
-      - US_100|137KB/s|M002-260618
-      - US_101|142KB/s|M002-260618
-      - US_102|417KB/s|M002-260618
-      - 高清無碼AV - AVToday.io - 🇳🇱NL_76|229KB/s|B007-260618
-      - 高清無碼AV - AVToday.io - 🇳🇱NL_77|348KB/s
-      - US_103|277KB/s|M002-260618
-      - IN_1|184KB/s
-      - US_104|103KB/s|B007-260618
-      - 高清無碼AV - AVToday.io - 🇳🇱NL_79|395KB/s|B007-260618
-      - US_105|211KB/s
-      - 高清無碼AV - AVToday.io - 🇰🇭KH_1|156KB/s|A004-260618
-      - 🇩🇪 高清免費無碼AV - AVToday.io - 🇩🇪德国  25.81MB/s
-      - 🇷🇴 高清免費無碼AV - AVToday.io - 🇷🇴罗马尼亚  18.25MB/s
-      - 🇷🇴 高清免費無碼AV - AVToday.io - 🇷🇴罗马尼亚 17.84MB/s
-      - 🇺🇸 美国 原生IP 8.44MB/s 285 linuxdo@onimaii
-      - 🇺🇸 美国 原生IP 29.10MB/s 343 linuxdo@onimaii
-      - 🇺🇸 高清免費無碼AV - AVToday.io - 🇺🇸美国 3.08MB/s
-      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 20.35MB/s
-      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 16.96MB/s
-      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 20.69MB/s
-      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 19.83MB/s
-      - 🇺🇸 美国 原生IP 9.08MB/s 293 linuxdo@onimaii
-      - 🇧🇷 高清免費無碼AV - AVToday.io - BR-São Paulo-7151811-hccx
-      - 🇧🇷 高清免費無碼AV - AVToday.io - BR-São Paulo-31762123-hhel
-      - 🇸🇬 高清免費無碼AV - AVToday.io - SG-Singapore-1281443-hsly
-      - 🇸🇬 新加坡 | SGP
-      - 🇨🇦 高清免費無碼AV - AVToday.io - 🇨🇦 加拿大 | CAN
-      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA
-      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA 2
-      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA 3
-      - 🇩🇪 德国 | DEU
-      - "[openproxylist.com] TH 15388312"
-      - 🇨🇦 高清免費無碼AV - AVToday.io -  CA 356844
-      - 高清免費無碼AV - AVToday.io -  BR 15388256
-      - 高清免費無碼AV - AVToday.io -  BR 15388254
-      - 高清免費無碼AV - AVToday.io -  BR 15388262
-      - 高清免費無碼AV - AVToday.io -  BR 15388247
+      - 🇯🇵 Japan_Tokyo_trojan_1128
+      - 🇺🇸 United States_None_trojan_1129
+      - 🇺🇸 United States_None_trojan_1130
+      - 🇰🇷 South Korea_Incheon_trojan_1131
+      - 🇺🇸 United States_None_trojan_1132
+      - None_None_trojan_1133
+      - 🇺🇸 United States_Ashburn_trojan_1134
+      - None_None_trojan_1135
+      - None_None_trojan_1136
+      - None_None_trojan_1137
+      - None_None_trojan_1138
+      - None_None_trojan_1139
+      - 🇫🇷 France_Paris_trojan_1141
+      - 🇰🇷 South Korea_Incheon_trojan_1142
+      - 🇷🇺 Russia_None_trojan_1143
+      - 🇺🇸 United States_None_trojan_1144
+      - 🇭🇰 Hong Kong_None_trojan_1145
+      - 🇭🇰 Hong Kong_None_trojan_1146
+      - 🇯🇵 Japan_Tokyo_trojan_1147
       - 🇮🇩 印尼-路由器-家宽
   - name: ⛔️ 广告拦截
     type: select
@@ -949,6 +997,67 @@ proxy-groups:
       - 🔰 节点选择
       - ♻️ 自动选择
       - 🎯 全球直连
+      - 高清無碼AV - AVToday.io - 🇺🇸US_86|214KB/s|A004-260618
+      - 高清無碼AV - AVToday.io - 🇳🇱NL_60|327KB/s|A004-260618
+      - 高清無碼AV - AVToday.io - 🇪🇸ES_5|425KB/s|A004-260618
+      - 高清無碼AV - AVToday.io - 🇳🇱NL_61|347KB/s|A004-260618
+      - CA_8|250KB/s|C002-260622
+      - 高清無碼AV - AVToday.io - 🇫🇷FR_63|357KB/s|C002-260622
+      - 高清無碼AV - AVToday.io - 🇫🇷FR_64|198KB/s|C002-260622
+      - 高清無碼AV - AVToday.io - 🇫🇷FR_66|269KB/s|C002-260622
+      - US_87|354KB/s|C002-260622
+      - US_89|162KB/s|M002-260618
+      - US_90|308KB/s|M002-260618
+      - 高清無碼AV - AVToday.io - 🇳🇱NL_69|331KB/s|A003-260618
+      - US_91|391KB/s|M002-260618
+      - US_92|217KB/s|M002-260618
+      - 高清無碼AV - AVToday.io - 🇳🇱NL_70|352KB/s|B007-260618
+      - US_93|236KB/s|M002-260618
+      - US_95|249KB/s|M002-260618
+      - US_98|119KB/s|M002-260618
+      - 高清無碼AV - AVToday.io - 🇳🇱NL_72|133KB/s
+      - 高清無碼AV - AVToday.io - 🇳🇱NL_73|276KB/s
+      - 高清無碼AV - AVToday.io - 🇦🇺AU_2|266KB/s|A003-260618
+      - SG_10|154KB/s|C002-260622
+      - US_99|108KB/s|M002-260618
+      - US_100|137KB/s|M002-260618
+      - US_101|142KB/s|M002-260618
+      - US_102|417KB/s|M002-260618
+      - 高清無碼AV - AVToday.io - 🇳🇱NL_76|229KB/s|B007-260618
+      - 高清無碼AV - AVToday.io - 🇳🇱NL_77|348KB/s
+      - US_103|277KB/s|M002-260618
+      - IN_1|184KB/s
+      - US_104|103KB/s|B007-260618
+      - 高清無碼AV - AVToday.io - 🇳🇱NL_79|395KB/s|B007-260618
+      - US_105|211KB/s
+      - 高清無碼AV - AVToday.io - 🇰🇭KH_1|156KB/s|A004-260618
+      - 🇩🇪 高清免費無碼AV - AVToday.io - 🇩🇪德国  25.81MB/s
+      - 🇷🇴 高清免費無碼AV - AVToday.io - 🇷🇴罗马尼亚  18.25MB/s
+      - 🇷🇴 高清免費無碼AV - AVToday.io - 🇷🇴罗马尼亚 17.84MB/s
+      - 🇺🇸 美国 原生IP 8.44MB/s 285 linuxdo@onimaii
+      - 🇺🇸 美国 原生IP 29.10MB/s 343 linuxdo@onimaii
+      - 🇺🇸 高清免費無碼AV - AVToday.io - 🇺🇸美国 3.08MB/s
+      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 20.35MB/s
+      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 16.96MB/s
+      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 20.69MB/s
+      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 19.83MB/s
+      - 🇺🇸 美国 原生IP 9.08MB/s 293 linuxdo@onimaii
+      - 🇧🇷 高清免費無碼AV - AVToday.io - BR-São Paulo-7151811-hccx
+      - 🇧🇷 高清免費無碼AV - AVToday.io - BR-São Paulo-31762123-hhel
+      - 🇸🇬 高清免費無碼AV - AVToday.io - SG-Singapore-1281443-hsly
+      - 🇸🇬 新加坡 | SGP
+      - 🇨🇦 高清免費無碼AV - AVToday.io - 🇨🇦 加拿大 | CAN
+      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA
+      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA 2
+      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA 3
+      - 🇩🇪 德国 | DEU
+      - "[openproxylist.com] TH 15388312"
+      - 🇨🇦 高清免費無碼AV - AVToday.io -  CA 356844
+      - 高清免費無碼AV - AVToday.io -  BR 15388256
+      - 高清免費無碼AV - AVToday.io -  BR 15388254
+      - 高清免費無碼AV - AVToday.io -  BR 15388262
+      - 高清免費無碼AV - AVToday.io -  BR 15388247
+      - Shadowsocks
       - 🇦🇪 阿拉伯联合酋长国 - Dubai - 1
       - 🇮🇪 爱尔兰 - Dublin - 1
       - 🇩🇪 德国 - Frankfurt am Main - 1
@@ -1063,25 +1172,23 @@ proxy-groups:
       - 🇨🇳 中国 - Kwai Chung - 1
       - 🇨🇳 中国 - Sha Tin - 2
       - 🇨🇳 中国 - Sha Tin - 5
-      - Shadowsocks
       - 🇺🇸 United States_None_ss_101
       - 🇭🇰 Hong Kong_Central_vmess_102
       - 🇭🇰 Hong Kong_None_trojan_103
       - 🇭🇰 Hong Kong_None_trojan_104
       - 🇭🇰 Hong Kong_None_trojan_105
-      - 🇭🇰 Hong Kong_None_trojan_106
+      - 🇺🇸 United States_None_trojan_106
       - 🇭🇰 Hong Kong_None_trojan_107
       - 🇭🇰 Hong Kong_None_trojan_108
-      - 🇵🇱 Poland_None_trojan_109
+      - 🇭🇰 Hong Kong_None_trojan_109
       - 🇭🇰 Hong Kong_None_trojan_1010
       - 🇭🇰 Hong Kong_None_trojan_1011
       - 🇭🇰 Hong Kong_None_trojan_1012
       - 🇭🇰 Hong Kong_None_trojan_1013
-      - 🇭🇰 Hong Kong_None_trojan_1014
-      - 🇭🇰 Hong Kong_Central_vmess_1015
+      - 🇭🇰 Hong Kong_Central_vmess_1014
+      - 🇭🇰 Hong Kong_None_trojan_1015
       - 🇭🇰 Hong Kong_None_trojan_1016
-      - 🇭🇰 Hong Kong_None_trojan_1017
-      - 🇯🇵 Japan_Tokyo_trojan_1018
+      - 🇯🇵 Japan_Tokyo_trojan_1017
       - Unknown_vmess_111
       - Unknown_vmess_112
       - Unknown_vmess_113
@@ -1097,84 +1204,37 @@ proxy-groups:
       - 🇭🇰 Hong Kong_None_trojan_1113
       - 🇭🇰 Hong Kong_None_trojan_1114
       - 🇭🇰 Hong Kong_None_trojan_1115
-      - 🇭🇰 Hong Kong_None_trojan_1116
+      - 🇺🇸 United States_None_trojan_1116
       - 🇭🇰 Hong Kong_None_trojan_1117
       - 🇭🇰 Hong Kong_None_trojan_1118
-      - 🇵🇱 Poland_None_trojan_1119
+      - 🇭🇰 Hong Kong_None_trojan_1119
       - 🇭🇰 Hong Kong_None_trojan_1120
       - 🇭🇰 Hong Kong_None_trojan_1121
       - 🇭🇰 Hong Kong_None_trojan_1122
       - 🇭🇰 Hong Kong_None_trojan_1123
-      - 🇭🇰 Hong Kong_None_trojan_1124
-      - 🇭🇰 Hong Kong_Central_vmess_1125
-      - 🇯🇵 Japan_Tokyo_trojan_1126
+      - 🇭🇰 Hong Kong_Central_vmess_1124
+      - 🇷🇺 Russia_None_trojan_1125
+      - 🇫🇷 France_Paris_trojan_1126
       - 🇫🇷 France_None_vmess_1127
-      - None_None_trojan_1128
-      - 🇬🇧 United Kingdom_Shoreditch_vmess_1129
-      - 🇺🇸 United States_Columbus_ss_1130
-      - 🇭🇰 Hong Kong_None_trojan_1131
-      - 🇭🇰 Hong Kong_None_trojan_1132
-      - 🇯🇵 Japan_Tokyo_trojan_1133
-      - 高清無碼AV - AVToday.io - 🇺🇸US_86|214KB/s|A004-260618
-      - 高清無碼AV - AVToday.io - 🇳🇱NL_60|327KB/s|A004-260618
-      - 高清無碼AV - AVToday.io - 🇪🇸ES_5|425KB/s|A004-260618
-      - 高清無碼AV - AVToday.io - 🇳🇱NL_61|347KB/s|A004-260618
-      - CA_8|250KB/s|C002-260622
-      - 高清無碼AV - AVToday.io - 🇫🇷FR_63|357KB/s|C002-260622
-      - 高清無碼AV - AVToday.io - 🇫🇷FR_64|198KB/s|C002-260622
-      - 高清無碼AV - AVToday.io - 🇫🇷FR_66|269KB/s|C002-260622
-      - US_87|354KB/s|C002-260622
-      - US_89|162KB/s|M002-260618
-      - US_90|308KB/s|M002-260618
-      - 高清無碼AV - AVToday.io - 🇳🇱NL_69|331KB/s|A003-260618
-      - US_91|391KB/s|M002-260618
-      - US_92|217KB/s|M002-260618
-      - 高清無碼AV - AVToday.io - 🇳🇱NL_70|352KB/s|B007-260618
-      - US_93|236KB/s|M002-260618
-      - US_95|249KB/s|M002-260618
-      - US_98|119KB/s|M002-260618
-      - 高清無碼AV - AVToday.io - 🇳🇱NL_72|133KB/s
-      - 高清無碼AV - AVToday.io - 🇳🇱NL_73|276KB/s
-      - 高清無碼AV - AVToday.io - 🇦🇺AU_2|266KB/s|A003-260618
-      - SG_10|154KB/s|C002-260622
-      - US_99|108KB/s|M002-260618
-      - US_100|137KB/s|M002-260618
-      - US_101|142KB/s|M002-260618
-      - US_102|417KB/s|M002-260618
-      - 高清無碼AV - AVToday.io - 🇳🇱NL_76|229KB/s|B007-260618
-      - 高清無碼AV - AVToday.io - 🇳🇱NL_77|348KB/s
-      - US_103|277KB/s|M002-260618
-      - IN_1|184KB/s
-      - US_104|103KB/s|B007-260618
-      - 高清無碼AV - AVToday.io - 🇳🇱NL_79|395KB/s|B007-260618
-      - US_105|211KB/s
-      - 高清無碼AV - AVToday.io - 🇰🇭KH_1|156KB/s|A004-260618
-      - 🇩🇪 高清免費無碼AV - AVToday.io - 🇩🇪德国  25.81MB/s
-      - 🇷🇴 高清免費無碼AV - AVToday.io - 🇷🇴罗马尼亚  18.25MB/s
-      - 🇷🇴 高清免費無碼AV - AVToday.io - 🇷🇴罗马尼亚 17.84MB/s
-      - 🇺🇸 美国 原生IP 8.44MB/s 285 linuxdo@onimaii
-      - 🇺🇸 美国 原生IP 29.10MB/s 343 linuxdo@onimaii
-      - 🇺🇸 高清免費無碼AV - AVToday.io - 🇺🇸美国 3.08MB/s
-      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 20.35MB/s
-      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 16.96MB/s
-      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 20.69MB/s
-      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 19.83MB/s
-      - 🇺🇸 美国 原生IP 9.08MB/s 293 linuxdo@onimaii
-      - 🇧🇷 高清免費無碼AV - AVToday.io - BR-São Paulo-7151811-hccx
-      - 🇧🇷 高清免費無碼AV - AVToday.io - BR-São Paulo-31762123-hhel
-      - 🇸🇬 高清免費無碼AV - AVToday.io - SG-Singapore-1281443-hsly
-      - 🇸🇬 新加坡 | SGP
-      - 🇨🇦 高清免費無碼AV - AVToday.io - 🇨🇦 加拿大 | CAN
-      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA
-      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA 2
-      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA 3
-      - 🇩🇪 德国 | DEU
-      - "[openproxylist.com] TH 15388312"
-      - 🇨🇦 高清免費無碼AV - AVToday.io -  CA 356844
-      - 高清免費無碼AV - AVToday.io -  BR 15388256
-      - 高清免費無碼AV - AVToday.io -  BR 15388254
-      - 高清免費無碼AV - AVToday.io -  BR 15388262
-      - 高清免費無碼AV - AVToday.io -  BR 15388247
+      - 🇯🇵 Japan_Tokyo_trojan_1128
+      - 🇺🇸 United States_None_trojan_1129
+      - 🇺🇸 United States_None_trojan_1130
+      - 🇰🇷 South Korea_Incheon_trojan_1131
+      - 🇺🇸 United States_None_trojan_1132
+      - None_None_trojan_1133
+      - 🇺🇸 United States_Ashburn_trojan_1134
+      - None_None_trojan_1135
+      - None_None_trojan_1136
+      - None_None_trojan_1137
+      - None_None_trojan_1138
+      - None_None_trojan_1139
+      - 🇫🇷 France_Paris_trojan_1141
+      - 🇰🇷 South Korea_Incheon_trojan_1142
+      - 🇷🇺 Russia_None_trojan_1143
+      - 🇺🇸 United States_None_trojan_1144
+      - 🇭🇰 Hong Kong_None_trojan_1145
+      - 🇭🇰 Hong Kong_None_trojan_1146
+      - 🇯🇵 Japan_Tokyo_trojan_1147
       - 🇮🇩 印尼-路由器-家宽
   - name: 🌏 国内媒体
     type: select
@@ -1186,6 +1246,67 @@ proxy-groups:
     proxies:
       - 🎯 全球直连
       - 🔰 节点选择
+      - 高清無碼AV - AVToday.io - 🇺🇸US_86|214KB/s|A004-260618
+      - 高清無碼AV - AVToday.io - 🇳🇱NL_60|327KB/s|A004-260618
+      - 高清無碼AV - AVToday.io - 🇪🇸ES_5|425KB/s|A004-260618
+      - 高清無碼AV - AVToday.io - 🇳🇱NL_61|347KB/s|A004-260618
+      - CA_8|250KB/s|C002-260622
+      - 高清無碼AV - AVToday.io - 🇫🇷FR_63|357KB/s|C002-260622
+      - 高清無碼AV - AVToday.io - 🇫🇷FR_64|198KB/s|C002-260622
+      - 高清無碼AV - AVToday.io - 🇫🇷FR_66|269KB/s|C002-260622
+      - US_87|354KB/s|C002-260622
+      - US_89|162KB/s|M002-260618
+      - US_90|308KB/s|M002-260618
+      - 高清無碼AV - AVToday.io - 🇳🇱NL_69|331KB/s|A003-260618
+      - US_91|391KB/s|M002-260618
+      - US_92|217KB/s|M002-260618
+      - 高清無碼AV - AVToday.io - 🇳🇱NL_70|352KB/s|B007-260618
+      - US_93|236KB/s|M002-260618
+      - US_95|249KB/s|M002-260618
+      - US_98|119KB/s|M002-260618
+      - 高清無碼AV - AVToday.io - 🇳🇱NL_72|133KB/s
+      - 高清無碼AV - AVToday.io - 🇳🇱NL_73|276KB/s
+      - 高清無碼AV - AVToday.io - 🇦🇺AU_2|266KB/s|A003-260618
+      - SG_10|154KB/s|C002-260622
+      - US_99|108KB/s|M002-260618
+      - US_100|137KB/s|M002-260618
+      - US_101|142KB/s|M002-260618
+      - US_102|417KB/s|M002-260618
+      - 高清無碼AV - AVToday.io - 🇳🇱NL_76|229KB/s|B007-260618
+      - 高清無碼AV - AVToday.io - 🇳🇱NL_77|348KB/s
+      - US_103|277KB/s|M002-260618
+      - IN_1|184KB/s
+      - US_104|103KB/s|B007-260618
+      - 高清無碼AV - AVToday.io - 🇳🇱NL_79|395KB/s|B007-260618
+      - US_105|211KB/s
+      - 高清無碼AV - AVToday.io - 🇰🇭KH_1|156KB/s|A004-260618
+      - 🇩🇪 高清免費無碼AV - AVToday.io - 🇩🇪德国  25.81MB/s
+      - 🇷🇴 高清免費無碼AV - AVToday.io - 🇷🇴罗马尼亚  18.25MB/s
+      - 🇷🇴 高清免費無碼AV - AVToday.io - 🇷🇴罗马尼亚 17.84MB/s
+      - 🇺🇸 美国 原生IP 8.44MB/s 285 linuxdo@onimaii
+      - 🇺🇸 美国 原生IP 29.10MB/s 343 linuxdo@onimaii
+      - 🇺🇸 高清免費無碼AV - AVToday.io - 🇺🇸美国 3.08MB/s
+      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 20.35MB/s
+      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 16.96MB/s
+      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 20.69MB/s
+      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 19.83MB/s
+      - 🇺🇸 美国 原生IP 9.08MB/s 293 linuxdo@onimaii
+      - 🇧🇷 高清免費無碼AV - AVToday.io - BR-São Paulo-7151811-hccx
+      - 🇧🇷 高清免費無碼AV - AVToday.io - BR-São Paulo-31762123-hhel
+      - 🇸🇬 高清免費無碼AV - AVToday.io - SG-Singapore-1281443-hsly
+      - 🇸🇬 新加坡 | SGP
+      - 🇨🇦 高清免費無碼AV - AVToday.io - 🇨🇦 加拿大 | CAN
+      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA
+      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA 2
+      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA 3
+      - 🇩🇪 德国 | DEU
+      - "[openproxylist.com] TH 15388312"
+      - 🇨🇦 高清免費無碼AV - AVToday.io -  CA 356844
+      - 高清免費無碼AV - AVToday.io -  BR 15388256
+      - 高清免費無碼AV - AVToday.io -  BR 15388254
+      - 高清免費無碼AV - AVToday.io -  BR 15388262
+      - 高清免費無碼AV - AVToday.io -  BR 15388247
+      - Shadowsocks
       - 🇦🇪 阿拉伯联合酋长国 - Dubai - 1
       - 🇮🇪 爱尔兰 - Dublin - 1
       - 🇩🇪 德国 - Frankfurt am Main - 1
@@ -1300,25 +1421,23 @@ proxy-groups:
       - 🇨🇳 中国 - Kwai Chung - 1
       - 🇨🇳 中国 - Sha Tin - 2
       - 🇨🇳 中国 - Sha Tin - 5
-      - Shadowsocks
       - 🇺🇸 United States_None_ss_101
       - 🇭🇰 Hong Kong_Central_vmess_102
       - 🇭🇰 Hong Kong_None_trojan_103
       - 🇭🇰 Hong Kong_None_trojan_104
       - 🇭🇰 Hong Kong_None_trojan_105
-      - 🇭🇰 Hong Kong_None_trojan_106
+      - 🇺🇸 United States_None_trojan_106
       - 🇭🇰 Hong Kong_None_trojan_107
       - 🇭🇰 Hong Kong_None_trojan_108
-      - 🇵🇱 Poland_None_trojan_109
+      - 🇭🇰 Hong Kong_None_trojan_109
       - 🇭🇰 Hong Kong_None_trojan_1010
       - 🇭🇰 Hong Kong_None_trojan_1011
       - 🇭🇰 Hong Kong_None_trojan_1012
       - 🇭🇰 Hong Kong_None_trojan_1013
-      - 🇭🇰 Hong Kong_None_trojan_1014
-      - 🇭🇰 Hong Kong_Central_vmess_1015
+      - 🇭🇰 Hong Kong_Central_vmess_1014
+      - 🇭🇰 Hong Kong_None_trojan_1015
       - 🇭🇰 Hong Kong_None_trojan_1016
-      - 🇭🇰 Hong Kong_None_trojan_1017
-      - 🇯🇵 Japan_Tokyo_trojan_1018
+      - 🇯🇵 Japan_Tokyo_trojan_1017
       - Unknown_vmess_111
       - Unknown_vmess_112
       - Unknown_vmess_113
@@ -1334,90 +1453,104 @@ proxy-groups:
       - 🇭🇰 Hong Kong_None_trojan_1113
       - 🇭🇰 Hong Kong_None_trojan_1114
       - 🇭🇰 Hong Kong_None_trojan_1115
-      - 🇭🇰 Hong Kong_None_trojan_1116
+      - 🇺🇸 United States_None_trojan_1116
       - 🇭🇰 Hong Kong_None_trojan_1117
       - 🇭🇰 Hong Kong_None_trojan_1118
-      - 🇵🇱 Poland_None_trojan_1119
+      - 🇭🇰 Hong Kong_None_trojan_1119
       - 🇭🇰 Hong Kong_None_trojan_1120
       - 🇭🇰 Hong Kong_None_trojan_1121
       - 🇭🇰 Hong Kong_None_trojan_1122
       - 🇭🇰 Hong Kong_None_trojan_1123
-      - 🇭🇰 Hong Kong_None_trojan_1124
-      - 🇭🇰 Hong Kong_Central_vmess_1125
-      - 🇯🇵 Japan_Tokyo_trojan_1126
+      - 🇭🇰 Hong Kong_Central_vmess_1124
+      - 🇷🇺 Russia_None_trojan_1125
+      - 🇫🇷 France_Paris_trojan_1126
       - 🇫🇷 France_None_vmess_1127
-      - None_None_trojan_1128
-      - 🇬🇧 United Kingdom_Shoreditch_vmess_1129
-      - 🇺🇸 United States_Columbus_ss_1130
-      - 🇭🇰 Hong Kong_None_trojan_1131
-      - 🇭🇰 Hong Kong_None_trojan_1132
-      - 🇯🇵 Japan_Tokyo_trojan_1133
-      - 高清無碼AV - AVToday.io - 🇺🇸US_86|214KB/s|A004-260618
-      - 高清無碼AV - AVToday.io - 🇳🇱NL_60|327KB/s|A004-260618
-      - 高清無碼AV - AVToday.io - 🇪🇸ES_5|425KB/s|A004-260618
-      - 高清無碼AV - AVToday.io - 🇳🇱NL_61|347KB/s|A004-260618
-      - CA_8|250KB/s|C002-260622
-      - 高清無碼AV - AVToday.io - 🇫🇷FR_63|357KB/s|C002-260622
-      - 高清無碼AV - AVToday.io - 🇫🇷FR_64|198KB/s|C002-260622
-      - 高清無碼AV - AVToday.io - 🇫🇷FR_66|269KB/s|C002-260622
-      - US_87|354KB/s|C002-260622
-      - US_89|162KB/s|M002-260618
-      - US_90|308KB/s|M002-260618
-      - 高清無碼AV - AVToday.io - 🇳🇱NL_69|331KB/s|A003-260618
-      - US_91|391KB/s|M002-260618
-      - US_92|217KB/s|M002-260618
-      - 高清無碼AV - AVToday.io - 🇳🇱NL_70|352KB/s|B007-260618
-      - US_93|236KB/s|M002-260618
-      - US_95|249KB/s|M002-260618
-      - US_98|119KB/s|M002-260618
-      - 高清無碼AV - AVToday.io - 🇳🇱NL_72|133KB/s
-      - 高清無碼AV - AVToday.io - 🇳🇱NL_73|276KB/s
-      - 高清無碼AV - AVToday.io - 🇦🇺AU_2|266KB/s|A003-260618
-      - SG_10|154KB/s|C002-260622
-      - US_99|108KB/s|M002-260618
-      - US_100|137KB/s|M002-260618
-      - US_101|142KB/s|M002-260618
-      - US_102|417KB/s|M002-260618
-      - 高清無碼AV - AVToday.io - 🇳🇱NL_76|229KB/s|B007-260618
-      - 高清無碼AV - AVToday.io - 🇳🇱NL_77|348KB/s
-      - US_103|277KB/s|M002-260618
-      - IN_1|184KB/s
-      - US_104|103KB/s|B007-260618
-      - 高清無碼AV - AVToday.io - 🇳🇱NL_79|395KB/s|B007-260618
-      - US_105|211KB/s
-      - 高清無碼AV - AVToday.io - 🇰🇭KH_1|156KB/s|A004-260618
-      - 🇩🇪 高清免費無碼AV - AVToday.io - 🇩🇪德国  25.81MB/s
-      - 🇷🇴 高清免費無碼AV - AVToday.io - 🇷🇴罗马尼亚  18.25MB/s
-      - 🇷🇴 高清免費無碼AV - AVToday.io - 🇷🇴罗马尼亚 17.84MB/s
-      - 🇺🇸 美国 原生IP 8.44MB/s 285 linuxdo@onimaii
-      - 🇺🇸 美国 原生IP 29.10MB/s 343 linuxdo@onimaii
-      - 🇺🇸 高清免費無碼AV - AVToday.io - 🇺🇸美国 3.08MB/s
-      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 20.35MB/s
-      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 16.96MB/s
-      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 20.69MB/s
-      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 19.83MB/s
-      - 🇺🇸 美国 原生IP 9.08MB/s 293 linuxdo@onimaii
-      - 🇧🇷 高清免費無碼AV - AVToday.io - BR-São Paulo-7151811-hccx
-      - 🇧🇷 高清免費無碼AV - AVToday.io - BR-São Paulo-31762123-hhel
-      - 🇸🇬 高清免費無碼AV - AVToday.io - SG-Singapore-1281443-hsly
-      - 🇸🇬 新加坡 | SGP
-      - 🇨🇦 高清免費無碼AV - AVToday.io - 🇨🇦 加拿大 | CAN
-      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA
-      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA 2
-      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA 3
-      - 🇩🇪 德国 | DEU
-      - "[openproxylist.com] TH 15388312"
-      - 🇨🇦 高清免費無碼AV - AVToday.io -  CA 356844
-      - 高清免費無碼AV - AVToday.io -  BR 15388256
-      - 高清免費無碼AV - AVToday.io -  BR 15388254
-      - 高清免費無碼AV - AVToday.io -  BR 15388262
-      - 高清免費無碼AV - AVToday.io -  BR 15388247
+      - 🇯🇵 Japan_Tokyo_trojan_1128
+      - 🇺🇸 United States_None_trojan_1129
+      - 🇺🇸 United States_None_trojan_1130
+      - 🇰🇷 South Korea_Incheon_trojan_1131
+      - 🇺🇸 United States_None_trojan_1132
+      - None_None_trojan_1133
+      - 🇺🇸 United States_Ashburn_trojan_1134
+      - None_None_trojan_1135
+      - None_None_trojan_1136
+      - None_None_trojan_1137
+      - None_None_trojan_1138
+      - None_None_trojan_1139
+      - 🇫🇷 France_Paris_trojan_1141
+      - 🇰🇷 South Korea_Incheon_trojan_1142
+      - 🇷🇺 Russia_None_trojan_1143
+      - 🇺🇸 United States_None_trojan_1144
+      - 🇭🇰 Hong Kong_None_trojan_1145
+      - 🇭🇰 Hong Kong_None_trojan_1146
+      - 🇯🇵 Japan_Tokyo_trojan_1147
       - 🇮🇩 印尼-路由器-家宽
   - name: 📲 电报信息
     type: select
     proxies:
       - 🔰 节点选择
       - 🎯 全球直连
+      - 高清無碼AV - AVToday.io - 🇺🇸US_86|214KB/s|A004-260618
+      - 高清無碼AV - AVToday.io - 🇳🇱NL_60|327KB/s|A004-260618
+      - 高清無碼AV - AVToday.io - 🇪🇸ES_5|425KB/s|A004-260618
+      - 高清無碼AV - AVToday.io - 🇳🇱NL_61|347KB/s|A004-260618
+      - CA_8|250KB/s|C002-260622
+      - 高清無碼AV - AVToday.io - 🇫🇷FR_63|357KB/s|C002-260622
+      - 高清無碼AV - AVToday.io - 🇫🇷FR_64|198KB/s|C002-260622
+      - 高清無碼AV - AVToday.io - 🇫🇷FR_66|269KB/s|C002-260622
+      - US_87|354KB/s|C002-260622
+      - US_89|162KB/s|M002-260618
+      - US_90|308KB/s|M002-260618
+      - 高清無碼AV - AVToday.io - 🇳🇱NL_69|331KB/s|A003-260618
+      - US_91|391KB/s|M002-260618
+      - US_92|217KB/s|M002-260618
+      - 高清無碼AV - AVToday.io - 🇳🇱NL_70|352KB/s|B007-260618
+      - US_93|236KB/s|M002-260618
+      - US_95|249KB/s|M002-260618
+      - US_98|119KB/s|M002-260618
+      - 高清無碼AV - AVToday.io - 🇳🇱NL_72|133KB/s
+      - 高清無碼AV - AVToday.io - 🇳🇱NL_73|276KB/s
+      - 高清無碼AV - AVToday.io - 🇦🇺AU_2|266KB/s|A003-260618
+      - SG_10|154KB/s|C002-260622
+      - US_99|108KB/s|M002-260618
+      - US_100|137KB/s|M002-260618
+      - US_101|142KB/s|M002-260618
+      - US_102|417KB/s|M002-260618
+      - 高清無碼AV - AVToday.io - 🇳🇱NL_76|229KB/s|B007-260618
+      - 高清無碼AV - AVToday.io - 🇳🇱NL_77|348KB/s
+      - US_103|277KB/s|M002-260618
+      - IN_1|184KB/s
+      - US_104|103KB/s|B007-260618
+      - 高清無碼AV - AVToday.io - 🇳🇱NL_79|395KB/s|B007-260618
+      - US_105|211KB/s
+      - 高清無碼AV - AVToday.io - 🇰🇭KH_1|156KB/s|A004-260618
+      - 🇩🇪 高清免費無碼AV - AVToday.io - 🇩🇪德国  25.81MB/s
+      - 🇷🇴 高清免費無碼AV - AVToday.io - 🇷🇴罗马尼亚  18.25MB/s
+      - 🇷🇴 高清免費無碼AV - AVToday.io - 🇷🇴罗马尼亚 17.84MB/s
+      - 🇺🇸 美国 原生IP 8.44MB/s 285 linuxdo@onimaii
+      - 🇺🇸 美国 原生IP 29.10MB/s 343 linuxdo@onimaii
+      - 🇺🇸 高清免費無碼AV - AVToday.io - 🇺🇸美国 3.08MB/s
+      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 20.35MB/s
+      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 16.96MB/s
+      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 20.69MB/s
+      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 19.83MB/s
+      - 🇺🇸 美国 原生IP 9.08MB/s 293 linuxdo@onimaii
+      - 🇧🇷 高清免費無碼AV - AVToday.io - BR-São Paulo-7151811-hccx
+      - 🇧🇷 高清免費無碼AV - AVToday.io - BR-São Paulo-31762123-hhel
+      - 🇸🇬 高清免費無碼AV - AVToday.io - SG-Singapore-1281443-hsly
+      - 🇸🇬 新加坡 | SGP
+      - 🇨🇦 高清免費無碼AV - AVToday.io - 🇨🇦 加拿大 | CAN
+      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA
+      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA 2
+      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA 3
+      - 🇩🇪 德国 | DEU
+      - "[openproxylist.com] TH 15388312"
+      - 🇨🇦 高清免費無碼AV - AVToday.io -  CA 356844
+      - 高清免費無碼AV - AVToday.io -  BR 15388256
+      - 高清免費無碼AV - AVToday.io -  BR 15388254
+      - 高清免費無碼AV - AVToday.io -  BR 15388262
+      - 高清免費無碼AV - AVToday.io -  BR 15388247
+      - Shadowsocks
       - 🇦🇪 阿拉伯联合酋长国 - Dubai - 1
       - 🇮🇪 爱尔兰 - Dublin - 1
       - 🇩🇪 德国 - Frankfurt am Main - 1
@@ -1532,25 +1665,23 @@ proxy-groups:
       - 🇨🇳 中国 - Kwai Chung - 1
       - 🇨🇳 中国 - Sha Tin - 2
       - 🇨🇳 中国 - Sha Tin - 5
-      - Shadowsocks
       - 🇺🇸 United States_None_ss_101
       - 🇭🇰 Hong Kong_Central_vmess_102
       - 🇭🇰 Hong Kong_None_trojan_103
       - 🇭🇰 Hong Kong_None_trojan_104
       - 🇭🇰 Hong Kong_None_trojan_105
-      - 🇭🇰 Hong Kong_None_trojan_106
+      - 🇺🇸 United States_None_trojan_106
       - 🇭🇰 Hong Kong_None_trojan_107
       - 🇭🇰 Hong Kong_None_trojan_108
-      - 🇵🇱 Poland_None_trojan_109
+      - 🇭🇰 Hong Kong_None_trojan_109
       - 🇭🇰 Hong Kong_None_trojan_1010
       - 🇭🇰 Hong Kong_None_trojan_1011
       - 🇭🇰 Hong Kong_None_trojan_1012
       - 🇭🇰 Hong Kong_None_trojan_1013
-      - 🇭🇰 Hong Kong_None_trojan_1014
-      - 🇭🇰 Hong Kong_Central_vmess_1015
+      - 🇭🇰 Hong Kong_Central_vmess_1014
+      - 🇭🇰 Hong Kong_None_trojan_1015
       - 🇭🇰 Hong Kong_None_trojan_1016
-      - 🇭🇰 Hong Kong_None_trojan_1017
-      - 🇯🇵 Japan_Tokyo_trojan_1018
+      - 🇯🇵 Japan_Tokyo_trojan_1017
       - Unknown_vmess_111
       - Unknown_vmess_112
       - Unknown_vmess_113
@@ -1566,84 +1697,37 @@ proxy-groups:
       - 🇭🇰 Hong Kong_None_trojan_1113
       - 🇭🇰 Hong Kong_None_trojan_1114
       - 🇭🇰 Hong Kong_None_trojan_1115
-      - 🇭🇰 Hong Kong_None_trojan_1116
+      - 🇺🇸 United States_None_trojan_1116
       - 🇭🇰 Hong Kong_None_trojan_1117
       - 🇭🇰 Hong Kong_None_trojan_1118
-      - 🇵🇱 Poland_None_trojan_1119
+      - 🇭🇰 Hong Kong_None_trojan_1119
       - 🇭🇰 Hong Kong_None_trojan_1120
       - 🇭🇰 Hong Kong_None_trojan_1121
       - 🇭🇰 Hong Kong_None_trojan_1122
       - 🇭🇰 Hong Kong_None_trojan_1123
-      - 🇭🇰 Hong Kong_None_trojan_1124
-      - 🇭🇰 Hong Kong_Central_vmess_1125
-      - 🇯🇵 Japan_Tokyo_trojan_1126
+      - 🇭🇰 Hong Kong_Central_vmess_1124
+      - 🇷🇺 Russia_None_trojan_1125
+      - 🇫🇷 France_Paris_trojan_1126
       - 🇫🇷 France_None_vmess_1127
-      - None_None_trojan_1128
-      - 🇬🇧 United Kingdom_Shoreditch_vmess_1129
-      - 🇺🇸 United States_Columbus_ss_1130
-      - 🇭🇰 Hong Kong_None_trojan_1131
-      - 🇭🇰 Hong Kong_None_trojan_1132
-      - 🇯🇵 Japan_Tokyo_trojan_1133
-      - 高清無碼AV - AVToday.io - 🇺🇸US_86|214KB/s|A004-260618
-      - 高清無碼AV - AVToday.io - 🇳🇱NL_60|327KB/s|A004-260618
-      - 高清無碼AV - AVToday.io - 🇪🇸ES_5|425KB/s|A004-260618
-      - 高清無碼AV - AVToday.io - 🇳🇱NL_61|347KB/s|A004-260618
-      - CA_8|250KB/s|C002-260622
-      - 高清無碼AV - AVToday.io - 🇫🇷FR_63|357KB/s|C002-260622
-      - 高清無碼AV - AVToday.io - 🇫🇷FR_64|198KB/s|C002-260622
-      - 高清無碼AV - AVToday.io - 🇫🇷FR_66|269KB/s|C002-260622
-      - US_87|354KB/s|C002-260622
-      - US_89|162KB/s|M002-260618
-      - US_90|308KB/s|M002-260618
-      - 高清無碼AV - AVToday.io - 🇳🇱NL_69|331KB/s|A003-260618
-      - US_91|391KB/s|M002-260618
-      - US_92|217KB/s|M002-260618
-      - 高清無碼AV - AVToday.io - 🇳🇱NL_70|352KB/s|B007-260618
-      - US_93|236KB/s|M002-260618
-      - US_95|249KB/s|M002-260618
-      - US_98|119KB/s|M002-260618
-      - 高清無碼AV - AVToday.io - 🇳🇱NL_72|133KB/s
-      - 高清無碼AV - AVToday.io - 🇳🇱NL_73|276KB/s
-      - 高清無碼AV - AVToday.io - 🇦🇺AU_2|266KB/s|A003-260618
-      - SG_10|154KB/s|C002-260622
-      - US_99|108KB/s|M002-260618
-      - US_100|137KB/s|M002-260618
-      - US_101|142KB/s|M002-260618
-      - US_102|417KB/s|M002-260618
-      - 高清無碼AV - AVToday.io - 🇳🇱NL_76|229KB/s|B007-260618
-      - 高清無碼AV - AVToday.io - 🇳🇱NL_77|348KB/s
-      - US_103|277KB/s|M002-260618
-      - IN_1|184KB/s
-      - US_104|103KB/s|B007-260618
-      - 高清無碼AV - AVToday.io - 🇳🇱NL_79|395KB/s|B007-260618
-      - US_105|211KB/s
-      - 高清無碼AV - AVToday.io - 🇰🇭KH_1|156KB/s|A004-260618
-      - 🇩🇪 高清免費無碼AV - AVToday.io - 🇩🇪德国  25.81MB/s
-      - 🇷🇴 高清免費無碼AV - AVToday.io - 🇷🇴罗马尼亚  18.25MB/s
-      - 🇷🇴 高清免費無碼AV - AVToday.io - 🇷🇴罗马尼亚 17.84MB/s
-      - 🇺🇸 美国 原生IP 8.44MB/s 285 linuxdo@onimaii
-      - 🇺🇸 美国 原生IP 29.10MB/s 343 linuxdo@onimaii
-      - 🇺🇸 高清免費無碼AV - AVToday.io - 🇺🇸美国 3.08MB/s
-      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 20.35MB/s
-      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 16.96MB/s
-      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 20.69MB/s
-      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 19.83MB/s
-      - 🇺🇸 美国 原生IP 9.08MB/s 293 linuxdo@onimaii
-      - 🇧🇷 高清免費無碼AV - AVToday.io - BR-São Paulo-7151811-hccx
-      - 🇧🇷 高清免費無碼AV - AVToday.io - BR-São Paulo-31762123-hhel
-      - 🇸🇬 高清免費無碼AV - AVToday.io - SG-Singapore-1281443-hsly
-      - 🇸🇬 新加坡 | SGP
-      - 🇨🇦 高清免費無碼AV - AVToday.io - 🇨🇦 加拿大 | CAN
-      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA
-      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA 2
-      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA 3
-      - 🇩🇪 德国 | DEU
-      - "[openproxylist.com] TH 15388312"
-      - 🇨🇦 高清免費無碼AV - AVToday.io -  CA 356844
-      - 高清免費無碼AV - AVToday.io -  BR 15388256
-      - 高清免費無碼AV - AVToday.io -  BR 15388254
-      - 高清免費無碼AV - AVToday.io -  BR 15388262
-      - 高清免費無碼AV - AVToday.io -  BR 15388247
+      - 🇯🇵 Japan_Tokyo_trojan_1128
+      - 🇺🇸 United States_None_trojan_1129
+      - 🇺🇸 United States_None_trojan_1130
+      - 🇰🇷 South Korea_Incheon_trojan_1131
+      - 🇺🇸 United States_None_trojan_1132
+      - None_None_trojan_1133
+      - 🇺🇸 United States_Ashburn_trojan_1134
+      - None_None_trojan_1135
+      - None_None_trojan_1136
+      - None_None_trojan_1137
+      - None_None_trojan_1138
+      - None_None_trojan_1139
+      - 🇫🇷 France_Paris_trojan_1141
+      - 🇰🇷 South Korea_Incheon_trojan_1142
+      - 🇷🇺 Russia_None_trojan_1143
+      - 🇺🇸 United States_None_trojan_1144
+      - 🇭🇰 Hong Kong_None_trojan_1145
+      - 🇭🇰 Hong Kong_None_trojan_1146
+      - 🇯🇵 Japan_Tokyo_trojan_1147
       - 🇮🇩 印尼-路由器-家宽
   - name: 🍎 苹果服务
     type: select
@@ -1651,6 +1735,67 @@ proxy-groups:
       - 🔰 节点选择
       - 🎯 全球直连
       - ♻️ 自动选择
+      - 高清無碼AV - AVToday.io - 🇺🇸US_86|214KB/s|A004-260618
+      - 高清無碼AV - AVToday.io - 🇳🇱NL_60|327KB/s|A004-260618
+      - 高清無碼AV - AVToday.io - 🇪🇸ES_5|425KB/s|A004-260618
+      - 高清無碼AV - AVToday.io - 🇳🇱NL_61|347KB/s|A004-260618
+      - CA_8|250KB/s|C002-260622
+      - 高清無碼AV - AVToday.io - 🇫🇷FR_63|357KB/s|C002-260622
+      - 高清無碼AV - AVToday.io - 🇫🇷FR_64|198KB/s|C002-260622
+      - 高清無碼AV - AVToday.io - 🇫🇷FR_66|269KB/s|C002-260622
+      - US_87|354KB/s|C002-260622
+      - US_89|162KB/s|M002-260618
+      - US_90|308KB/s|M002-260618
+      - 高清無碼AV - AVToday.io - 🇳🇱NL_69|331KB/s|A003-260618
+      - US_91|391KB/s|M002-260618
+      - US_92|217KB/s|M002-260618
+      - 高清無碼AV - AVToday.io - 🇳🇱NL_70|352KB/s|B007-260618
+      - US_93|236KB/s|M002-260618
+      - US_95|249KB/s|M002-260618
+      - US_98|119KB/s|M002-260618
+      - 高清無碼AV - AVToday.io - 🇳🇱NL_72|133KB/s
+      - 高清無碼AV - AVToday.io - 🇳🇱NL_73|276KB/s
+      - 高清無碼AV - AVToday.io - 🇦🇺AU_2|266KB/s|A003-260618
+      - SG_10|154KB/s|C002-260622
+      - US_99|108KB/s|M002-260618
+      - US_100|137KB/s|M002-260618
+      - US_101|142KB/s|M002-260618
+      - US_102|417KB/s|M002-260618
+      - 高清無碼AV - AVToday.io - 🇳🇱NL_76|229KB/s|B007-260618
+      - 高清無碼AV - AVToday.io - 🇳🇱NL_77|348KB/s
+      - US_103|277KB/s|M002-260618
+      - IN_1|184KB/s
+      - US_104|103KB/s|B007-260618
+      - 高清無碼AV - AVToday.io - 🇳🇱NL_79|395KB/s|B007-260618
+      - US_105|211KB/s
+      - 高清無碼AV - AVToday.io - 🇰🇭KH_1|156KB/s|A004-260618
+      - 🇩🇪 高清免費無碼AV - AVToday.io - 🇩🇪德国  25.81MB/s
+      - 🇷🇴 高清免費無碼AV - AVToday.io - 🇷🇴罗马尼亚  18.25MB/s
+      - 🇷🇴 高清免費無碼AV - AVToday.io - 🇷🇴罗马尼亚 17.84MB/s
+      - 🇺🇸 美国 原生IP 8.44MB/s 285 linuxdo@onimaii
+      - 🇺🇸 美国 原生IP 29.10MB/s 343 linuxdo@onimaii
+      - 🇺🇸 高清免費無碼AV - AVToday.io - 🇺🇸美国 3.08MB/s
+      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 20.35MB/s
+      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 16.96MB/s
+      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 20.69MB/s
+      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 19.83MB/s
+      - 🇺🇸 美国 原生IP 9.08MB/s 293 linuxdo@onimaii
+      - 🇧🇷 高清免費無碼AV - AVToday.io - BR-São Paulo-7151811-hccx
+      - 🇧🇷 高清免費無碼AV - AVToday.io - BR-São Paulo-31762123-hhel
+      - 🇸🇬 高清免費無碼AV - AVToday.io - SG-Singapore-1281443-hsly
+      - 🇸🇬 新加坡 | SGP
+      - 🇨🇦 高清免費無碼AV - AVToday.io - 🇨🇦 加拿大 | CAN
+      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA
+      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA 2
+      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA 3
+      - 🇩🇪 德国 | DEU
+      - "[openproxylist.com] TH 15388312"
+      - 🇨🇦 高清免費無碼AV - AVToday.io -  CA 356844
+      - 高清免費無碼AV - AVToday.io -  BR 15388256
+      - 高清免費無碼AV - AVToday.io -  BR 15388254
+      - 高清免費無碼AV - AVToday.io -  BR 15388262
+      - 高清免費無碼AV - AVToday.io -  BR 15388247
+      - Shadowsocks
       - 🇦🇪 阿拉伯联合酋长国 - Dubai - 1
       - 🇮🇪 爱尔兰 - Dublin - 1
       - 🇩🇪 德国 - Frankfurt am Main - 1
@@ -1765,25 +1910,23 @@ proxy-groups:
       - 🇨🇳 中国 - Kwai Chung - 1
       - 🇨🇳 中国 - Sha Tin - 2
       - 🇨🇳 中国 - Sha Tin - 5
-      - Shadowsocks
       - 🇺🇸 United States_None_ss_101
       - 🇭🇰 Hong Kong_Central_vmess_102
       - 🇭🇰 Hong Kong_None_trojan_103
       - 🇭🇰 Hong Kong_None_trojan_104
       - 🇭🇰 Hong Kong_None_trojan_105
-      - 🇭🇰 Hong Kong_None_trojan_106
+      - 🇺🇸 United States_None_trojan_106
       - 🇭🇰 Hong Kong_None_trojan_107
       - 🇭🇰 Hong Kong_None_trojan_108
-      - 🇵🇱 Poland_None_trojan_109
+      - 🇭🇰 Hong Kong_None_trojan_109
       - 🇭🇰 Hong Kong_None_trojan_1010
       - 🇭🇰 Hong Kong_None_trojan_1011
       - 🇭🇰 Hong Kong_None_trojan_1012
       - 🇭🇰 Hong Kong_None_trojan_1013
-      - 🇭🇰 Hong Kong_None_trojan_1014
-      - 🇭🇰 Hong Kong_Central_vmess_1015
+      - 🇭🇰 Hong Kong_Central_vmess_1014
+      - 🇭🇰 Hong Kong_None_trojan_1015
       - 🇭🇰 Hong Kong_None_trojan_1016
-      - 🇭🇰 Hong Kong_None_trojan_1017
-      - 🇯🇵 Japan_Tokyo_trojan_1018
+      - 🇯🇵 Japan_Tokyo_trojan_1017
       - Unknown_vmess_111
       - Unknown_vmess_112
       - Unknown_vmess_113
@@ -1799,84 +1942,37 @@ proxy-groups:
       - 🇭🇰 Hong Kong_None_trojan_1113
       - 🇭🇰 Hong Kong_None_trojan_1114
       - 🇭🇰 Hong Kong_None_trojan_1115
-      - 🇭🇰 Hong Kong_None_trojan_1116
+      - 🇺🇸 United States_None_trojan_1116
       - 🇭🇰 Hong Kong_None_trojan_1117
       - 🇭🇰 Hong Kong_None_trojan_1118
-      - 🇵🇱 Poland_None_trojan_1119
+      - 🇭🇰 Hong Kong_None_trojan_1119
       - 🇭🇰 Hong Kong_None_trojan_1120
       - 🇭🇰 Hong Kong_None_trojan_1121
       - 🇭🇰 Hong Kong_None_trojan_1122
       - 🇭🇰 Hong Kong_None_trojan_1123
-      - 🇭🇰 Hong Kong_None_trojan_1124
-      - 🇭🇰 Hong Kong_Central_vmess_1125
-      - 🇯🇵 Japan_Tokyo_trojan_1126
+      - 🇭🇰 Hong Kong_Central_vmess_1124
+      - 🇷🇺 Russia_None_trojan_1125
+      - 🇫🇷 France_Paris_trojan_1126
       - 🇫🇷 France_None_vmess_1127
-      - None_None_trojan_1128
-      - 🇬🇧 United Kingdom_Shoreditch_vmess_1129
-      - 🇺🇸 United States_Columbus_ss_1130
-      - 🇭🇰 Hong Kong_None_trojan_1131
-      - 🇭🇰 Hong Kong_None_trojan_1132
-      - 🇯🇵 Japan_Tokyo_trojan_1133
-      - 高清無碼AV - AVToday.io - 🇺🇸US_86|214KB/s|A004-260618
-      - 高清無碼AV - AVToday.io - 🇳🇱NL_60|327KB/s|A004-260618
-      - 高清無碼AV - AVToday.io - 🇪🇸ES_5|425KB/s|A004-260618
-      - 高清無碼AV - AVToday.io - 🇳🇱NL_61|347KB/s|A004-260618
-      - CA_8|250KB/s|C002-260622
-      - 高清無碼AV - AVToday.io - 🇫🇷FR_63|357KB/s|C002-260622
-      - 高清無碼AV - AVToday.io - 🇫🇷FR_64|198KB/s|C002-260622
-      - 高清無碼AV - AVToday.io - 🇫🇷FR_66|269KB/s|C002-260622
-      - US_87|354KB/s|C002-260622
-      - US_89|162KB/s|M002-260618
-      - US_90|308KB/s|M002-260618
-      - 高清無碼AV - AVToday.io - 🇳🇱NL_69|331KB/s|A003-260618
-      - US_91|391KB/s|M002-260618
-      - US_92|217KB/s|M002-260618
-      - 高清無碼AV - AVToday.io - 🇳🇱NL_70|352KB/s|B007-260618
-      - US_93|236KB/s|M002-260618
-      - US_95|249KB/s|M002-260618
-      - US_98|119KB/s|M002-260618
-      - 高清無碼AV - AVToday.io - 🇳🇱NL_72|133KB/s
-      - 高清無碼AV - AVToday.io - 🇳🇱NL_73|276KB/s
-      - 高清無碼AV - AVToday.io - 🇦🇺AU_2|266KB/s|A003-260618
-      - SG_10|154KB/s|C002-260622
-      - US_99|108KB/s|M002-260618
-      - US_100|137KB/s|M002-260618
-      - US_101|142KB/s|M002-260618
-      - US_102|417KB/s|M002-260618
-      - 高清無碼AV - AVToday.io - 🇳🇱NL_76|229KB/s|B007-260618
-      - 高清無碼AV - AVToday.io - 🇳🇱NL_77|348KB/s
-      - US_103|277KB/s|M002-260618
-      - IN_1|184KB/s
-      - US_104|103KB/s|B007-260618
-      - 高清無碼AV - AVToday.io - 🇳🇱NL_79|395KB/s|B007-260618
-      - US_105|211KB/s
-      - 高清無碼AV - AVToday.io - 🇰🇭KH_1|156KB/s|A004-260618
-      - 🇩🇪 高清免費無碼AV - AVToday.io - 🇩🇪德国  25.81MB/s
-      - 🇷🇴 高清免費無碼AV - AVToday.io - 🇷🇴罗马尼亚  18.25MB/s
-      - 🇷🇴 高清免費無碼AV - AVToday.io - 🇷🇴罗马尼亚 17.84MB/s
-      - 🇺🇸 美国 原生IP 8.44MB/s 285 linuxdo@onimaii
-      - 🇺🇸 美国 原生IP 29.10MB/s 343 linuxdo@onimaii
-      - 🇺🇸 高清免費無碼AV - AVToday.io - 🇺🇸美国 3.08MB/s
-      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 20.35MB/s
-      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 16.96MB/s
-      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 20.69MB/s
-      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 19.83MB/s
-      - 🇺🇸 美国 原生IP 9.08MB/s 293 linuxdo@onimaii
-      - 🇧🇷 高清免費無碼AV - AVToday.io - BR-São Paulo-7151811-hccx
-      - 🇧🇷 高清免費無碼AV - AVToday.io - BR-São Paulo-31762123-hhel
-      - 🇸🇬 高清免費無碼AV - AVToday.io - SG-Singapore-1281443-hsly
-      - 🇸🇬 新加坡 | SGP
-      - 🇨🇦 高清免費無碼AV - AVToday.io - 🇨🇦 加拿大 | CAN
-      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA
-      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA 2
-      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA 3
-      - 🇩🇪 德国 | DEU
-      - "[openproxylist.com] TH 15388312"
-      - 🇨🇦 高清免費無碼AV - AVToday.io -  CA 356844
-      - 高清免費無碼AV - AVToday.io -  BR 15388256
-      - 高清免費無碼AV - AVToday.io -  BR 15388254
-      - 高清免費無碼AV - AVToday.io -  BR 15388262
-      - 高清免費無碼AV - AVToday.io -  BR 15388247
+      - 🇯🇵 Japan_Tokyo_trojan_1128
+      - 🇺🇸 United States_None_trojan_1129
+      - 🇺🇸 United States_None_trojan_1130
+      - 🇰🇷 South Korea_Incheon_trojan_1131
+      - 🇺🇸 United States_None_trojan_1132
+      - None_None_trojan_1133
+      - 🇺🇸 United States_Ashburn_trojan_1134
+      - None_None_trojan_1135
+      - None_None_trojan_1136
+      - None_None_trojan_1137
+      - None_None_trojan_1138
+      - None_None_trojan_1139
+      - 🇫🇷 France_Paris_trojan_1141
+      - 🇰🇷 South Korea_Incheon_trojan_1142
+      - 🇷🇺 Russia_None_trojan_1143
+      - 🇺🇸 United States_None_trojan_1144
+      - 🇭🇰 Hong Kong_None_trojan_1145
+      - 🇭🇰 Hong Kong_None_trojan_1146
+      - 🇯🇵 Japan_Tokyo_trojan_1147
       - 🇮🇩 印尼-路由器-家宽
   - name: 🎯 全球直连
     type: select
@@ -1893,6 +1989,67 @@ proxy-groups:
       - 🔰 节点选择
       - 🎯 全球直连
       - ♻️ 自动选择
+      - 高清無碼AV - AVToday.io - 🇺🇸US_86|214KB/s|A004-260618
+      - 高清無碼AV - AVToday.io - 🇳🇱NL_60|327KB/s|A004-260618
+      - 高清無碼AV - AVToday.io - 🇪🇸ES_5|425KB/s|A004-260618
+      - 高清無碼AV - AVToday.io - 🇳🇱NL_61|347KB/s|A004-260618
+      - CA_8|250KB/s|C002-260622
+      - 高清無碼AV - AVToday.io - 🇫🇷FR_63|357KB/s|C002-260622
+      - 高清無碼AV - AVToday.io - 🇫🇷FR_64|198KB/s|C002-260622
+      - 高清無碼AV - AVToday.io - 🇫🇷FR_66|269KB/s|C002-260622
+      - US_87|354KB/s|C002-260622
+      - US_89|162KB/s|M002-260618
+      - US_90|308KB/s|M002-260618
+      - 高清無碼AV - AVToday.io - 🇳🇱NL_69|331KB/s|A003-260618
+      - US_91|391KB/s|M002-260618
+      - US_92|217KB/s|M002-260618
+      - 高清無碼AV - AVToday.io - 🇳🇱NL_70|352KB/s|B007-260618
+      - US_93|236KB/s|M002-260618
+      - US_95|249KB/s|M002-260618
+      - US_98|119KB/s|M002-260618
+      - 高清無碼AV - AVToday.io - 🇳🇱NL_72|133KB/s
+      - 高清無碼AV - AVToday.io - 🇳🇱NL_73|276KB/s
+      - 高清無碼AV - AVToday.io - 🇦🇺AU_2|266KB/s|A003-260618
+      - SG_10|154KB/s|C002-260622
+      - US_99|108KB/s|M002-260618
+      - US_100|137KB/s|M002-260618
+      - US_101|142KB/s|M002-260618
+      - US_102|417KB/s|M002-260618
+      - 高清無碼AV - AVToday.io - 🇳🇱NL_76|229KB/s|B007-260618
+      - 高清無碼AV - AVToday.io - 🇳🇱NL_77|348KB/s
+      - US_103|277KB/s|M002-260618
+      - IN_1|184KB/s
+      - US_104|103KB/s|B007-260618
+      - 高清無碼AV - AVToday.io - 🇳🇱NL_79|395KB/s|B007-260618
+      - US_105|211KB/s
+      - 高清無碼AV - AVToday.io - 🇰🇭KH_1|156KB/s|A004-260618
+      - 🇩🇪 高清免費無碼AV - AVToday.io - 🇩🇪德国  25.81MB/s
+      - 🇷🇴 高清免費無碼AV - AVToday.io - 🇷🇴罗马尼亚  18.25MB/s
+      - 🇷🇴 高清免費無碼AV - AVToday.io - 🇷🇴罗马尼亚 17.84MB/s
+      - 🇺🇸 美国 原生IP 8.44MB/s 285 linuxdo@onimaii
+      - 🇺🇸 美国 原生IP 29.10MB/s 343 linuxdo@onimaii
+      - 🇺🇸 高清免費無碼AV - AVToday.io - 🇺🇸美国 3.08MB/s
+      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 20.35MB/s
+      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 16.96MB/s
+      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 20.69MB/s
+      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 19.83MB/s
+      - 🇺🇸 美国 原生IP 9.08MB/s 293 linuxdo@onimaii
+      - 🇧🇷 高清免費無碼AV - AVToday.io - BR-São Paulo-7151811-hccx
+      - 🇧🇷 高清免費無碼AV - AVToday.io - BR-São Paulo-31762123-hhel
+      - 🇸🇬 高清免費無碼AV - AVToday.io - SG-Singapore-1281443-hsly
+      - 🇸🇬 新加坡 | SGP
+      - 🇨🇦 高清免費無碼AV - AVToday.io - 🇨🇦 加拿大 | CAN
+      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA
+      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA 2
+      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA 3
+      - 🇩🇪 德国 | DEU
+      - "[openproxylist.com] TH 15388312"
+      - 🇨🇦 高清免費無碼AV - AVToday.io -  CA 356844
+      - 高清免費無碼AV - AVToday.io -  BR 15388256
+      - 高清免費無碼AV - AVToday.io -  BR 15388254
+      - 高清免費無碼AV - AVToday.io -  BR 15388262
+      - 高清免費無碼AV - AVToday.io -  BR 15388247
+      - Shadowsocks
       - 🇦🇪 阿拉伯联合酋长国 - Dubai - 1
       - 🇮🇪 爱尔兰 - Dublin - 1
       - 🇩🇪 德国 - Frankfurt am Main - 1
@@ -2007,25 +2164,23 @@ proxy-groups:
       - 🇨🇳 中国 - Kwai Chung - 1
       - 🇨🇳 中国 - Sha Tin - 2
       - 🇨🇳 中国 - Sha Tin - 5
-      - Shadowsocks
       - 🇺🇸 United States_None_ss_101
       - 🇭🇰 Hong Kong_Central_vmess_102
       - 🇭🇰 Hong Kong_None_trojan_103
       - 🇭🇰 Hong Kong_None_trojan_104
       - 🇭🇰 Hong Kong_None_trojan_105
-      - 🇭🇰 Hong Kong_None_trojan_106
+      - 🇺🇸 United States_None_trojan_106
       - 🇭🇰 Hong Kong_None_trojan_107
       - 🇭🇰 Hong Kong_None_trojan_108
-      - 🇵🇱 Poland_None_trojan_109
+      - 🇭🇰 Hong Kong_None_trojan_109
       - 🇭🇰 Hong Kong_None_trojan_1010
       - 🇭🇰 Hong Kong_None_trojan_1011
       - 🇭🇰 Hong Kong_None_trojan_1012
       - 🇭🇰 Hong Kong_None_trojan_1013
-      - 🇭🇰 Hong Kong_None_trojan_1014
-      - 🇭🇰 Hong Kong_Central_vmess_1015
+      - 🇭🇰 Hong Kong_Central_vmess_1014
+      - 🇭🇰 Hong Kong_None_trojan_1015
       - 🇭🇰 Hong Kong_None_trojan_1016
-      - 🇭🇰 Hong Kong_None_trojan_1017
-      - 🇯🇵 Japan_Tokyo_trojan_1018
+      - 🇯🇵 Japan_Tokyo_trojan_1017
       - Unknown_vmess_111
       - Unknown_vmess_112
       - Unknown_vmess_113
@@ -2041,84 +2196,37 @@ proxy-groups:
       - 🇭🇰 Hong Kong_None_trojan_1113
       - 🇭🇰 Hong Kong_None_trojan_1114
       - 🇭🇰 Hong Kong_None_trojan_1115
-      - 🇭🇰 Hong Kong_None_trojan_1116
+      - 🇺🇸 United States_None_trojan_1116
       - 🇭🇰 Hong Kong_None_trojan_1117
       - 🇭🇰 Hong Kong_None_trojan_1118
-      - 🇵🇱 Poland_None_trojan_1119
+      - 🇭🇰 Hong Kong_None_trojan_1119
       - 🇭🇰 Hong Kong_None_trojan_1120
       - 🇭🇰 Hong Kong_None_trojan_1121
       - 🇭🇰 Hong Kong_None_trojan_1122
       - 🇭🇰 Hong Kong_None_trojan_1123
-      - 🇭🇰 Hong Kong_None_trojan_1124
-      - 🇭🇰 Hong Kong_Central_vmess_1125
-      - 🇯🇵 Japan_Tokyo_trojan_1126
+      - 🇭🇰 Hong Kong_Central_vmess_1124
+      - 🇷🇺 Russia_None_trojan_1125
+      - 🇫🇷 France_Paris_trojan_1126
       - 🇫🇷 France_None_vmess_1127
-      - None_None_trojan_1128
-      - 🇬🇧 United Kingdom_Shoreditch_vmess_1129
-      - 🇺🇸 United States_Columbus_ss_1130
-      - 🇭🇰 Hong Kong_None_trojan_1131
-      - 🇭🇰 Hong Kong_None_trojan_1132
-      - 🇯🇵 Japan_Tokyo_trojan_1133
-      - 高清無碼AV - AVToday.io - 🇺🇸US_86|214KB/s|A004-260618
-      - 高清無碼AV - AVToday.io - 🇳🇱NL_60|327KB/s|A004-260618
-      - 高清無碼AV - AVToday.io - 🇪🇸ES_5|425KB/s|A004-260618
-      - 高清無碼AV - AVToday.io - 🇳🇱NL_61|347KB/s|A004-260618
-      - CA_8|250KB/s|C002-260622
-      - 高清無碼AV - AVToday.io - 🇫🇷FR_63|357KB/s|C002-260622
-      - 高清無碼AV - AVToday.io - 🇫🇷FR_64|198KB/s|C002-260622
-      - 高清無碼AV - AVToday.io - 🇫🇷FR_66|269KB/s|C002-260622
-      - US_87|354KB/s|C002-260622
-      - US_89|162KB/s|M002-260618
-      - US_90|308KB/s|M002-260618
-      - 高清無碼AV - AVToday.io - 🇳🇱NL_69|331KB/s|A003-260618
-      - US_91|391KB/s|M002-260618
-      - US_92|217KB/s|M002-260618
-      - 高清無碼AV - AVToday.io - 🇳🇱NL_70|352KB/s|B007-260618
-      - US_93|236KB/s|M002-260618
-      - US_95|249KB/s|M002-260618
-      - US_98|119KB/s|M002-260618
-      - 高清無碼AV - AVToday.io - 🇳🇱NL_72|133KB/s
-      - 高清無碼AV - AVToday.io - 🇳🇱NL_73|276KB/s
-      - 高清無碼AV - AVToday.io - 🇦🇺AU_2|266KB/s|A003-260618
-      - SG_10|154KB/s|C002-260622
-      - US_99|108KB/s|M002-260618
-      - US_100|137KB/s|M002-260618
-      - US_101|142KB/s|M002-260618
-      - US_102|417KB/s|M002-260618
-      - 高清無碼AV - AVToday.io - 🇳🇱NL_76|229KB/s|B007-260618
-      - 高清無碼AV - AVToday.io - 🇳🇱NL_77|348KB/s
-      - US_103|277KB/s|M002-260618
-      - IN_1|184KB/s
-      - US_104|103KB/s|B007-260618
-      - 高清無碼AV - AVToday.io - 🇳🇱NL_79|395KB/s|B007-260618
-      - US_105|211KB/s
-      - 高清無碼AV - AVToday.io - 🇰🇭KH_1|156KB/s|A004-260618
-      - 🇩🇪 高清免費無碼AV - AVToday.io - 🇩🇪德国  25.81MB/s
-      - 🇷🇴 高清免費無碼AV - AVToday.io - 🇷🇴罗马尼亚  18.25MB/s
-      - 🇷🇴 高清免費無碼AV - AVToday.io - 🇷🇴罗马尼亚 17.84MB/s
-      - 🇺🇸 美国 原生IP 8.44MB/s 285 linuxdo@onimaii
-      - 🇺🇸 美国 原生IP 29.10MB/s 343 linuxdo@onimaii
-      - 🇺🇸 高清免費無碼AV - AVToday.io - 🇺🇸美国 3.08MB/s
-      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 20.35MB/s
-      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 16.96MB/s
-      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 20.69MB/s
-      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 19.83MB/s
-      - 🇺🇸 美国 原生IP 9.08MB/s 293 linuxdo@onimaii
-      - 🇧🇷 高清免費無碼AV - AVToday.io - BR-São Paulo-7151811-hccx
-      - 🇧🇷 高清免費無碼AV - AVToday.io - BR-São Paulo-31762123-hhel
-      - 🇸🇬 高清免費無碼AV - AVToday.io - SG-Singapore-1281443-hsly
-      - 🇸🇬 新加坡 | SGP
-      - 🇨🇦 高清免費無碼AV - AVToday.io - 🇨🇦 加拿大 | CAN
-      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA
-      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA 2
-      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA 3
-      - 🇩🇪 德国 | DEU
-      - "[openproxylist.com] TH 15388312"
-      - 🇨🇦 高清免費無碼AV - AVToday.io -  CA 356844
-      - 高清免費無碼AV - AVToday.io -  BR 15388256
-      - 高清免費無碼AV - AVToday.io -  BR 15388254
-      - 高清免費無碼AV - AVToday.io -  BR 15388262
-      - 高清免費無碼AV - AVToday.io -  BR 15388247
+      - 🇯🇵 Japan_Tokyo_trojan_1128
+      - 🇺🇸 United States_None_trojan_1129
+      - 🇺🇸 United States_None_trojan_1130
+      - 🇰🇷 South Korea_Incheon_trojan_1131
+      - 🇺🇸 United States_None_trojan_1132
+      - None_None_trojan_1133
+      - 🇺🇸 United States_Ashburn_trojan_1134
+      - None_None_trojan_1135
+      - None_None_trojan_1136
+      - None_None_trojan_1137
+      - None_None_trojan_1138
+      - None_None_trojan_1139
+      - 🇫🇷 France_Paris_trojan_1141
+      - 🇰🇷 South Korea_Incheon_trojan_1142
+      - 🇷🇺 Russia_None_trojan_1143
+      - 🇺🇸 United States_None_trojan_1144
+      - 🇭🇰 Hong Kong_None_trojan_1145
+      - 🇭🇰 Hong Kong_None_trojan_1146
+      - 🇯🇵 Japan_Tokyo_trojan_1147
       - 🇮🇩 印尼-路由器-家宽
 rules:
   - DOMAIN-SUFFIX,local,🎯 全球直连
