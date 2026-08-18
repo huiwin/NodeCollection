@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-NodeCollection Pro v1.4.1 - 订阅源采集 + 多格式转换一体化工具
+NodeCollection Pro v1.4.2 - 订阅源采集 + 多格式转换一体化工具
 
 架构:
   config.yaml (TG频道) + airports.yaml (机场列表) + merge.yaml (上游订阅白名单)
@@ -713,7 +713,9 @@ def generate_merged_format(upstream_texts, upstreams):
             date_fname = f'{today.month}-{today.day}.{token}.{ext}'
             output_path = os.path.join(OUTPUT_DIR, MERGED_DIR, date_fname)
             os.makedirs(os.path.join(OUTPUT_DIR, MERGED_DIR), exist_ok=True)
-            success = call_subconverter(f'merged/{target}', local_sub_urls, output_path)
+            # 注意: subconverter 的 target 必须是格式名 (clash/v2ray/...),
+            # 不能带 'merged/' 路径前缀; 输出目录已由 MERGED_DIR 控制
+            success = call_subconverter(target, local_sub_urls, output_path)
 
             latest_fname = f'latest.{token}.{ext}'
             latest_path = os.path.join(OUTPUT_DIR, MERGED_DIR, latest_fname)
