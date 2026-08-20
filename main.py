@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-NodeCollection Pro v1.5.0 - 订阅源采集 + 多格式转换一体化工具
+NodeCollection Pro v1.6.0 - 订阅源采集 + 多格式转换一体化工具
 
 架构:
   config.yaml (TG频道) + airports.yaml (机场列表) + merge.yaml (上游订阅白名单)
@@ -91,6 +91,12 @@ LATENCY_SAMPLE_RATIO = 1.0    # 抽测比例 (1.0 = 全量测速), 可在 merge.
 LATENCY_FAIL_THRESHOLD = 2   # 连续 N 个周期不可达则剔除 (与 T1.2 共用)
 MERGED_MAX_NODES = 200       # 融合输出每格式总量上限 (与 T1.4 共用)
 
+# 历史版本保留配置 (P2 v1.6.0, T2.2)
+HISTORY_KEEP_COUNT = 5       # 每格式保留最近 N 版日期文件, 超出自动清理最旧版本
+
+# 上游监控与降级配置 (P2 v1.6.0, T2.3)
+UPSTREAM_DEGRADE_THRESHOLD = 3  # 连续 N 次拉取失败标记为 degraded (已降级)
+
 # 上游拉取镜像回退: 主 URL 连续失败时按序尝试镜像前缀 (仅对 raw.githubusercontent.com 生效)
 # 解决本地/国内网络直连 raw.githubusercontent.com 被阻断 (10054) 或限流 (HTTP 429) 的问题
 RAW_GITHUB_HOST = 'raw.githubusercontent.com'
@@ -128,11 +134,13 @@ PROXY_PREFIXES = [
 ]
 
 # 输出格式: (target参数, 输出子目录, 文件扩展名)
+# T2.1 (v1.6.0): 新增 singbox 格式 (Sing-box / SagerNet / Hiddify 客户端)
 OUTPUT_FORMATS = [
     ('clash', 'clash', 'yaml'),
     ('v2ray', 'v2ray', 'txt'),
     ('surge&ver=4', 'surge', 'conf'),
     ('mixed', 'mixed', 'txt'),
+    ('singbox', 'singbox', 'json'),
 ]
 
 URL_REGEX = re.compile(
@@ -803,6 +811,24 @@ def load_node_health():
         return {}
 
 
+def load_upstream_health():
+    """
+    从 index.json 的 merged.upstream_health 读取上游拉取健康记录。
+    返回: dict {name: {fail_count, last_success, degraded}}
+    文件不存在或损坏时返回空 dict, 不影响主流程。
+    """
+    index_path = os.path.join(OUTPUT_DIR, 'index.json')
+    if not os.path.isfile(index_path):
+        return {}
+    try:
+        with open(index_path, encoding='utf-8') as f:
+            data = json.load(f)
+        return (data.get('merged', {})
+                   .get('upstream_health', {}) or {})
+    except Exception:
+        return {}
+
+
 def filter_and_sort_nodes(items, latencies, health_data):
     """
     根据延迟与健康记录对节点排序、剔除。
@@ -901,6 +927,51 @@ def _ensure_merged_latest_fallback(target, latest_fname):
         )
 
 
+def cleanup_old_versions(directory, pattern_suffix, keep=HISTORY_KEEP_COUNT):
+    """
+    清理目录中的旧版本文件，保留最近 keep 个 (按文件名中的日期排序)。
+
+    Args:
+        directory: 目录路径
+        pattern_suffix: 文件名后缀匹配 (如 '.yaml' 或 '.clash.yaml')
+        keep: 保留数量 (默认 HISTORY_KEEP_COUNT=5)
+
+    说明:
+        - 仅清理日期文件 (匹配 M-D 开头的文件名)，不触碰 latest.* 文件
+        - 同一天多次运行只保留最新文件 (同名覆盖, 此处不处理)
+        - 按 (月, 日) 降序排列, 删除超出 keep 的最旧文件
+    """
+    if not os.path.isdir(directory):
+        return 0
+
+    def _date_key(fname):
+        m = re.match(r'(\d{1,2})-(\d{1,2})\.', fname)
+        return (int(m.group(1)), int(m.group(2))) if m else (0, 0)
+
+    candidates = sorted(
+        (f for f in os.listdir(directory)
+         if f.endswith(pattern_suffix)
+         and not f.startswith('latest.')
+         and re.match(r'\d{1,2}-\d{1,2}\.', f)),
+        key=_date_key,
+        reverse=True,
+    )
+
+    removed = 0
+    for old_file in candidates[keep:]:
+        old_path = os.path.join(directory, old_file)
+        try:
+            os.remove(old_path)
+            removed += 1
+            logger.debug(f'[history] 清理旧版本: {old_path}')
+        except OSError as e:
+            logger.warning(f'[history] 清理失败 {old_path}: {e}')
+
+    if removed:
+        logger.info(f'[history] {directory} 保留最近 {keep} 版, 清理 {removed} 个旧文件')
+    return removed
+
+
 def generate_merged_format(upstream_texts, upstreams):
     """
     上游订阅融合主入口:
@@ -955,6 +1026,30 @@ def generate_merged_format(upstream_texts, upstreams):
     # 2.5 (T1.2) 测速 → 健康更新 → 剔除失效 → 按延迟排序
     #     健康记录跨周期持久化, 连续 LATENCY_FAIL_THRESHOLD 次不可达的节点剔除
     health_data = load_node_health()
+
+    # T2.3: 上游拉取健康记录更新 (连续 UPSTREAM_DEGRADE_THRESHOLD 次失败标记 degraded)
+    upstream_health = load_upstream_health()
+    today_str = datetime.datetime.today().strftime('%Y-%m-%d')
+    successful_names = set(upstream_texts.keys())
+    for upstream in upstreams:
+        name = upstream.get('name', 'unknown')
+        rec = upstream_health.get(name, {
+            'fail_count': 0, 'last_success': '', 'degraded': False,
+        })
+        if name in successful_names:
+            rec['fail_count'] = 0
+            rec['last_success'] = today_str
+            rec['degraded'] = False
+        else:
+            rec['fail_count'] = rec.get('fail_count', 0) + 1
+            if rec['fail_count'] >= UPSTREAM_DEGRADE_THRESHOLD:
+                if not rec.get('degraded'):
+                    logger.warning(
+                        f'[upstream] {name} 连续 {rec["fail_count"]} 次拉取失败, '
+                        f'已标记为 degraded'
+                    )
+                rec['degraded'] = True
+        upstream_health[name] = rec
 
     uri_latencies = measure_uri_latencies(all_uris) if all_uris else {}
     uri_survivors, uri_excluded = filter_and_sort_nodes(
@@ -1114,6 +1209,14 @@ def generate_merged_format(upstream_texts, upstreams):
             else:
                 _ensure_merged_latest_fallback(token, latest_fname)
 
+        # T2.2: 融合订阅历史版本清理 (按格式 token 分组, 每组保留最近 5 版)
+        for target, _, ext in OUTPUT_FORMATS:
+            token = target.split('&')[0]
+            cleanup_old_versions(
+                os.path.join(OUTPUT_DIR, MERGED_DIR),
+                f'.{token}.{ext}',
+            )
+
         # 5. 更新 index.json 增加 merged 段
         index_path = os.path.join(OUTPUT_DIR, 'index.json')
         index_data = {}
@@ -1129,6 +1232,8 @@ def generate_merged_format(upstream_texts, upstreams):
             'latest': {},
             'total_nodes': total_nodes,
             'sources': sorted(upstream_texts.keys()),
+            # T2.3: 上游拉取健康记录 (连续失败计数 + 降级标记)
+            'upstream_health': upstream_health,
             # T1.2+T1.4+T1.5 质量指标: 解析数/存活数/剔除数/截断数/可用率/延迟统计/健康记录
             'quality': {
                 'total_parsed': total_nodes,
@@ -1375,6 +1480,13 @@ def generate_multi_format(all_sub_urls):
                     f'[{target}] 本次转换失败，latest 已回退为历史文件: {candidates[0]}'
                 )
 
+    # T2.2: 历史版本清理 (每格式保留最近 HISTORY_KEEP_COUNT 版)
+    for target, subdir, ext in OUTPUT_FORMATS:
+        cleanup_old_versions(
+            os.path.join(OUTPUT_DIR, subdir),
+            f'.{ext}',
+        )
+
     # 额外: 生成一个合并所有格式的 index.json 索引文件
     index_path = os.path.join(OUTPUT_DIR, 'index.json')
     index_data = {
@@ -1465,6 +1577,9 @@ def generate_readme(upstreams=None):
          None),
         ('Mixed', 'output/mixed/latest.txt', '混合格式 Base64 (全协议)',
          None),
+        # T2.1 (v1.6.0): 新增 Sing-box 输出
+        ('Sing-box', 'output/singbox/latest.json', 'Sing-box / SagerNet / Hiddify (JSON)',
+         'https://github.com/SagerNet/sing-box'),
         ('原始 YAML', 'sub/latest.yaml', '向后兼容格式 (含分类)',
          None),
     ]
@@ -1476,6 +1591,8 @@ def generate_readme(upstreams=None):
         ('V2Ray', 'output/merged/latest.v2ray.txt', '融合节点 Base64'),
         ('Surge', 'output/merged/latest.surge.conf', '融合节点 Surge 配置'),
         ('Mixed', 'output/merged/latest.mixed.txt', '融合节点混合 Base64'),
+        # T2.1 (v1.6.0): 新增 Sing-box 融合输出
+        ('Sing-box', 'output/merged/latest.singbox.json', '融合节点 Sing-box JSON'),
     ]
 
     lines = []
@@ -1534,18 +1651,56 @@ def generate_readme(upstreams=None):
 
         lines.append('### 上游来源 (Thanks)')
         lines.append('')
-        lines.append('| 来源 | 项目地址 |')
-        lines.append('| :--- | :--- |')
+        # T2.3: 从 index.json 读取上游健康状态, 降级的来源显示 ⚠️ 标记
+        upstream_health = {}
+        _idx_path = os.path.join(OUTPUT_DIR, 'index.json')
+        if os.path.isfile(_idx_path):
+            try:
+                with open(_idx_path, encoding='utf-8') as _f:
+                    _idx_data = json.load(_f)
+                upstream_health = _idx_data.get('merged', {}).get('upstream_health', {})
+            except Exception:
+                pass
+
+        lines.append('| 来源 | 项目地址 | 状态 |')
+        lines.append('| :--- | :--- | :--- |')
         seen = set()
         for upstream in upstreams:
             name = upstream.get('name', '')
             if not name or name in seen:
                 continue
             seen.add(name)
-            repo, url = UPSTREAM_REPO_MAP.get(
-                name, (name, upstream.get('url', ''))
-            )
-            lines.append(f'| {name} | [{repo}]({url}) |')
+            # T2.4: Credits 自动同步, 优先级: merge.yaml repo 字段 > URL 提取 > UPSTREAM_REPO_MAP 回退
+            repo_field = upstream.get('repo', '').strip()
+            if repo_field:
+                repo = repo_field
+                repo_url = f'https://github.com/{repo_field}'
+            else:
+                # 从 raw.githubusercontent.com URL 自动提取仓库路径
+                src_url = upstream.get('url', '')
+                try:
+                    parsed = urlparse(src_url)
+                    if parsed.hostname == RAW_GITHUB_HOST:
+                        parts = parsed.path.strip('/').split('/')
+                        if len(parts) >= 2:
+                            repo = f'{parts[0]}/{parts[1]}'
+                            repo_url = f'https://github.com/{repo}'
+                        else:
+                            repo, repo_url = UPSTREAM_REPO_MAP.get(name, (name, src_url))
+                    else:
+                        repo, repo_url = UPSTREAM_REPO_MAP.get(name, (name, src_url))
+                except Exception:
+                    repo, repo_url = UPSTREAM_REPO_MAP.get(name, (name, src_url))
+            # T2.3: 降级状态显示
+            health = upstream_health.get(name, {})
+            if health.get('degraded'):
+                fail_cnt = health.get('fail_count', 0)
+                status = f'⚠️ 已降级 (连续 {fail_cnt} 次失败)'
+            elif health.get('fail_count', 0) > 0:
+                status = f'⚠️ 异常 ({health["fail_count"]} 次失败)'
+            else:
+                status = '✅ 正常'
+            lines.append(f'| {name} | [{repo}]({repo_url}) | {status} |')
         lines.append('')
         lines.append('上游节点遵循各来源项目的许可证与分发要求，如来源项目提出异议将立即移除。')
         lines.append('')

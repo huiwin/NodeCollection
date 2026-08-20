@@ -15,15 +15,18 @@
 upstreams:
   - name: freenode
     url: https://raw.githubusercontent.com/ripaojiedian/freenode/main/sub
+    repo: ripaojiedian/freenode
     enabled: true
     max_nodes: 80
 
   - name: NoMoreWalls
     url: https://raw.githubusercontent.com/peasoft/NoMoreWalls/master/list_raw.txt
+    repo: peasoft/NoMoreWalls
     enabled: true
     max_nodes: 80
 
   - name: FreeNodes
     url: https://raw.githubusercontent.com/Barabama/FreeNodes/feat/ai-crawler-v2/nodes/cfmem.txt
+    repo: Barabama/FreeNodes
     enabled: true
     max_nodes: 80
