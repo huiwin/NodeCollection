@@ -5,32 +5,41 @@ mode: Rule
 log-level: info
 external-controller: :9090
 proxies:
-  - {name: "[ext:NoMoreWalls] 🇫🇷FR_4|2.0MB/s", server: 104.17.111.3, port: 443, type: trojan, password: humanity, sni: www.ignitelimit.com, skip-cert-verify: false, network: ws, ws-opts: {path: /assignment, headers: {Host: www.ignitelimit.com}}, udp: true}
-  - {name: "[ext:NoMoreWalls] 🇫🇷FR_1|2.6MB/s", server: 104.16.174.33, port: 443, type: trojan, password: humanity, sni: www.ignitelimit.com, skip-cert-verify: false, network: ws, ws-opts: {path: /assignment, headers: {Host: www.ignitelimit.com}}, udp: true}
-  - {name: "[ext:NoMoreWalls] 🇫🇷FR_2|2.1MB/s", server: 104.16.174.6, port: 443, type: trojan, password: humanity, sni: www.ignitelimit.com, skip-cert-verify: false, network: ws, ws-opts: {path: /assignment, headers: {Host: www.ignitelimit.com}}, udp: true}
-  - {name: "[ext:NoMoreWalls] 🇫🇷FR_3|1.1MB/s", server: 216.24.57.7, port: 443, type: trojan, password: humanity, sni: www.ignitelimit.com, skip-cert-verify: false, network: ws, ws-opts: {path: /assignment, headers: {Host: www.ignitelimit.com}}, udp: true}
-  - {name: "[ext:NoMoreWalls] 🇫🇷FR_5|1.5MB/s", server: 104.18.152.144, port: 443, type: trojan, password: humanity, sni: www.ignitelimit.com, skip-cert-verify: false, network: ws, ws-opts: {path: /assignment, headers: {Host: www.ignitelimit.com}}, udp: true}
-  - {name: "🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本", server: 3.112.15.214, port: 443, type: trojan, password: ND91608427, sni: adjusted-labrador.rooster465.autos, udp: true}
-  - {name: "🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 2", server: driven-doberman.rooster465.autos, port: 443, type: trojan, password: HC04361579, sni: driven-doberman.rooster465.autos, udp: true}
-  - {name: "🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 3", server: accepted-starling.rooster465.autos, port: 443, type: trojan, password: HC04361579, sni: accepted-starling.rooster465.autos, udp: true}
-  - {name: "🇦🇺 [ext:FreeNodes] 🇦🇺_AU_澳大利亚", server: national-stingray.rooster465.autos, port: 443, type: trojan, password: FH72359861, sni: national-stingray.rooster465.autos, skip-cert-verify: true, udp: true}
-  - {name: "🇫🇷 [ext:FreeNodes] 🇫🇷_FR_法国", server: 15.237.189.197, port: 443, type: ss, cipher: aes-256-cfb, password: amazonskr05, udp: true}
-  - {name: "[ext:NoMoreWalls] 🇩🇪DE_2|3.5MB/s", server: 3.79.230.55, port: 443, type: ss, cipher: aes-256-cfb, password: amazonskr05, udp: true}
-  - {name: "🇺🇸 [ext:NoMoreWalls] 美国3|@ripaojiedian", server: 18.163.74.15, port: 10418, type: trojan, password: BxceQaOe, sni: t.me%2Fripaojiedian, skip-cert-verify: true, udp: true}
-  - {name: "🇺🇸 [ext:freenode] 美国3|@ripaojiedian", server: 18.163.74.15, port: 10418, type: trojan, password: BxceQaOe, sni: t.me%2Fripaojiedian, skip-cert-verify: true, udp: true}
-  - {name: "🇭🇰 [ext:NoMoreWalls] 香港|@ripaojiedian", server: v10.hdacd.com, port: 30807, type: vmess, uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484, alterId: 2, cipher: auto, tls: false, udp: true}
+  - {name: "[ext:NoMoreWalls] 🇫🇷FR_2|2.2MB/s", server: 172.67.221.242, port: 443, type: trojan, password: humanity, sni: www.ignitelimit.com, skip-cert-verify: false, network: ws, ws-opts: {path: /assignment, headers: {Host: www.ignitelimit.com}}, udp: true}
+  - {name: "[ext:NoMoreWalls] 🇫🇷FR_1|1.8MB/s", server: 104.18.152.225, port: 443, type: trojan, password: humanity, sni: www.ignitelimit.com, skip-cert-verify: false, network: ws, ws-opts: {path: /assignment, headers: {Host: www.ignitelimit.com}}, udp: true}
+  - {name: "[ext:NoMoreWalls] 🇫🇷FR_3|1.3MB/s", server: 104.18.152.108, port: 443, type: trojan, password: humanity, sni: www.ignitelimit.com, skip-cert-verify: false, network: ws, ws-opts: {path: /assignment, headers: {Host: www.ignitelimit.com}}, udp: true}
+  - {name: "[ext:NoMoreWalls] 🇺🇸US_17|2.5MB/s", server: cdn.shopify.com, port: 80, type: ss, cipher: 2022-blake3-aes-128-gcm, password: YTE1ZWU4ZTEyZjc3YmEzZA==:ZjQ4NzExMzUtMGYzNy00NA==, udp: true}
+  - {name: "🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国", server: 128.1.248.162, port: 5692, type: trojan, password: fg20mtCFHy, sni: quicknet.southbyte.xyz, udp: true}
+  - {name: "🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国 2", server: 162.221.197.83, port: 5453, type: trojan, password: fg20mtCFHy, sni: trdatas.southbyte.xyz, udp: true}
+  - {name: "[ext:NoMoreWalls] 🇺🇸US_2|3.5MB/s", server: 3.145.35.194, port: 443, type: ss, cipher: aes-256-cfb, password: amazonskr05, udp: true}
+  - {name: "🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国 3", server: 18.188.213.207, port: 443, type: ss, cipher: aes-256-cfb, password: amazonskr05, udp: true}
+  - {name: "[ext:NoMoreWalls] 🇯🇵JP_3|5.2MB/s", server: 18.183.135.94, port: 443, type: trojan, password: AE62539071, sni: central-jawfish.rooster465.autos, skip-cert-verify: false, udp: true}
+  - {name: "[ext:NoMoreWalls] 🇯🇵JP_4|5.6MB/s", server: 54.249.33.71, port: 443, type: trojan, password: AE62539071, sni: outgoing-ladybird.rooster465.autos, skip-cert-verify: false, udp: true}
+  - {name: "[ext:NoMoreWalls] 🇯🇵JP_6|2.4MB/s", server: whole-perch.rooster465.autos, port: 443, type: trojan, password: AE62539071, skip-cert-verify: false, udp: true}
+  - {name: "🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本", server: pet-albacore.rooster465.autos, port: 443, type: trojan, password: HC04361579, sni: pet-albacore.rooster465.autos, skip-cert-verify: true, udp: true}
+  - {name: "🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 2", server: legible-ocelot.rooster465.autos, port: 443, type: trojan, password: HC04361579, sni: legible-ocelot.rooster465.autos, udp: true}
+  - {name: "🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 3", server: exact-sawfish.rooster465.autos, port: 443, type: trojan, password: HC04361579, sni: exact-sawfish.rooster465.autos, udp: true}
+  - {name: "[ext:NoMoreWalls] 🇯🇵JP_5|4.8MB/s", server: real-cardinal.rooster465.autos, port: 443, type: trojan, password: AE62539071, skip-cert-verify: false, udp: true}
+  - {name: "🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 4", server: accepted-starling.rooster465.autos, port: 443, type: trojan, password: HC04361579, sni: accepted-starling.rooster465.autos, udp: true}
+  - {name: "🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 5", server: wealthy-gobbler.rooster465.autos, port: 443, type: trojan, password: EQ30679154, sni: wealthy-gobbler.rooster465.autos, skip-cert-verify: true, udp: true}
+  - {name: "[ext:NoMoreWalls] 🇯🇵JP_2|5.6MB/s", server: whole-perch.rooster465.autos, port: 443, type: trojan, password: AE62539071, sni: whole-perch.rooster465.autos, skip-cert-verify: false, udp: true}
+  - {name: "🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 6", server: settling-shad.rooster465.autos, port: 443, type: trojan, password: HC04361579, sni: settling-shad.rooster465.autos, skip-cert-verify: true, udp: true}
+  - {name: "🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 7", server: driven-doberman.rooster465.autos, port: 443, type: trojan, password: HC04361579, sni: driven-doberman.rooster465.autos, udp: true}
+  - {name: "[ext:NoMoreWalls] 🇩🇪DE_2|4.5MB/s", server: 18.153.64.41, port: 443, type: ss, cipher: aes-256-cfb, password: amazonskr05, udp: true}
+  - {name: "[ext:NoMoreWalls] 🇩🇪DE_1|3.0MB/s", server: 63.178.246.78, port: 443, type: ss, cipher: aes-256-cfb, password: amazonskr05, udp: true}
   - {name: "🇭🇰 [ext:NoMoreWalls] 🇭🇰 香港|@ripaojiedian", server: v10.hdacd.com, port: 30807, type: vmess, uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484, alterId: 2, cipher: auto, tls: false, udp: true}
-  - {name: "🇸🇬 [ext:FreeNodes] 🇸🇬_SG_新加坡", server: 52.220.98.46, port: 443, type: trojan, password: PQ05174892, sni: pleased-albacore.rooster465.autos, udp: true}
-  - {name: "🇸🇬 [ext:FreeNodes] 🇸🇬_SG_新加坡 2", server: welcome-monitor.rooster465.autos, port: 443, type: trojan, password: PQ05174892, sni: welcome-monitor.rooster465.autos, udp: true}
-  - {name: "[ext:NoMoreWalls] 🇹🇼TW_1|1.3MB/s", server: 120.232.253.94, port: 65443, type: ss, cipher: aes-256-cfb, password: 7eadc6dbe2ae, udp: true}
-  - {name: "[ext:NoMoreWalls] 🇭🇰HK_1|5.8MB/s", server: 120.232.253.96, port: 65443, type: ss, cipher: aes-256-cfb, password: 7eadc6dbe2ae, udp: true}
-  - {name: "[ext:NoMoreWalls] 🇩🇪DE_1|1.3MB/s", server: 120.232.250.163, port: 65443, type: ss, cipher: aes-256-cfb, password: 7eadc6dbe2ae, udp: true}
-  - {name: "[ext:NoMoreWalls] 🇯🇵JP_1|6.1MB/s", server: 121.46.230.136, port: 65443, type: ss, cipher: aes-256-cfb, password: 7eadc6dbe2ae, udp: true}
+  - {name: "🇭🇰 [ext:NoMoreWalls] 香港|@ripaojiedian", server: v10.hdacd.com, port: 30807, type: vmess, uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484, alterId: 2, cipher: auto, tls: false, udp: true}
+  - {name: "🇸🇬 [ext:FreeNodes] 🇸🇬_SG_新加坡", server: 47.129.160.142, port: 443, type: trojan, password: EQ30679154, sni: well-goshawk.rooster465.autos, udp: true}
+  - {name: "🇰🇷 [ext:FreeNodes] 🇨🇳_CN_中国->🇰🇷_KR_韩国", server: 121.46.230.235, port: 65443, type: ss, cipher: aes-256-cfb, password: 7eadc6dbe2ae, udp: true}
+  - {name: "🇵🇱 [ext:FreeNodes] 🇵🇱_PL_波兰", server: pretty-mollusk.rooster465.autos, port: 443, type: trojan, password: EQ30679154, udp: true}
+  - {name: "🇸🇬 [ext:FreeNodes] 🇸🇬_SG_新加坡 2", server: fleet-pony.rooster465.autos, port: 443, type: trojan, password: PQ05174892, udp: true}
   - {name: "🇭🇰 [ext:freenode] 香港|@ripaojiedian", server: v10.hdacd.com, port: 30807, type: vmess, uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484, alterId: 2, cipher: auto, tls: false, udp: true}
   - {name: "🇷🇺 [ext:FreeNodes] 🇷🇺_RU_俄罗斯", server: 45.8.158.176, port: 10801, type: ss, cipher: aes-256-gcm, password: 1eadd4e4a37b6601, udp: true}
-  - {name: "🇺🇸 [ext:FreeNodes] 🇨🇳_CN_中国->🇺🇸_US_美国", server: v29.hdacd.com, port: 30829, type: vmess, uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484, alterId: 2, cipher: auto, tls: false, udp: true}
-  - {name: "🇯🇵 [ext:FreeNodes] 🇨🇳_CN_中国->🇯🇵_JP_日本", server: v6.hdacd.com, port: 30806, type: vmess, uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484, alterId: 2, cipher: auto, tls: false, udp: true}
-  - {name: "🇮🇪 [ext:FreeNodes] 🇨🇳_CN_中国->🇮🇪_IE_爱尔兰", server: v4.hdacd.com, port: 30804, type: vmess, uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484, alterId: 2, cipher: auto, tls: false, udp: true}
+  - {name: "🇮🇳 [ext:FreeNodes] 🇮🇳_IN_印度", server: 34.131.228.210, port: 443, type: trojan, password: M7v%w11Se*, sni: hyfuuf6.wsone.icu, skip-cert-verify: true, udp: true}
+  - {name: "[ext:NoMoreWalls] 🇩🇪DE_3|3.1MB/s", server: e2.cover20.ir, port: 30874, type: ss, cipher: chacha20-ietf-poly1305, password: BlRtjyYlj18kYcrEL/8wcbSyqNKSPESiwSDDvisu9+o=, udp: true}
+  - {name: "[ext:NoMoreWalls] 🇰🇷KR_1|4.2MB/s", server: 121.46.230.235, port: 65443, type: ss, cipher: aes-256-cfb, password: 7eadc6dbe2ae, udp: true}
+  - {name: "[ext:NoMoreWalls] 🇯🇵JP_1|3.9MB/s", server: 121.46.230.136, port: 65443, type: ss, cipher: aes-256-cfb, password: 7eadc6dbe2ae, udp: true}
+  - {name: "🇺🇸 [ext:FreeNodes] 🇨🇳_CN_中国->🇺🇸_US_美国", server: 121.46.230.234, port: 65443, type: ss, cipher: aes-256-cfb, password: 7eadc6dbe2ae, udp: true}
   - {name: "[ext:NoMoreWalls] 防范境外势力渗透", server: 127.0.0.53, port: 80, type: vmess, uuid: 88888888-8888-8888-8888-888888888888, alterId: 0, cipher: auto, tls: false, udp: true}
   - {name: "[ext:NoMoreWalls] 防范境外势力渗透 #1", server: 127.0.0.53, port: 81, type: vmess, uuid: 88888888-8888-8888-8888-888888888888, alterId: 0, cipher: auto, tls: false, udp: true}
   - {name: "[ext:NoMoreWalls] 防范境外势力渗透 #2", server: 127.0.0.53, port: 82, type: vmess, uuid: 88888888-8888-8888-8888-888888888888, alterId: 0, cipher: auto, tls: false, udp: true}
@@ -40,18 +49,21 @@ proxies:
   - {name: "[ext:NoMoreWalls] 防范境外势力渗透 #6", server: 127.0.0.53, port: 86, type: vmess, uuid: 88888888-8888-8888-8888-888888888888, alterId: 0, cipher: auto, tls: false, udp: true}
   - {name: "[ext:NoMoreWalls] 防范境外势力渗透 #7", server: 127.0.0.53, port: 87, type: vmess, uuid: 88888888-8888-8888-8888-888888888888, alterId: 0, cipher: auto, tls: false, udp: true}
   - {name: "[ext:NoMoreWalls] 防范境外势力渗透 #8", server: 127.0.0.53, port: 88, type: vmess, uuid: 88888888-8888-8888-8888-888888888888, alterId: 0, cipher: auto, tls: false, udp: true}
-  - {name: "[ext:NoMoreWalls] 防范境外势力渗透 #9", server: 127.0.0.53, port: 89, type: vmess, uuid: 88888888-8888-8888-8888-888888888888, alterId: 0, cipher: auto, tls: false, udp: true}
-  - {name: "🇳🇱 [ext:FreeNodes] 🇷🇺_RU_俄罗斯->🇳🇱_NL_荷兰", server: 37.252.20.41, port: 150, type: ss, cipher: chacha20-ietf-poly1305, password: xKUIJK-B4eSS7l1_hgJP-A, udp: true}
-  - {name: "🇪🇸 [ext:FreeNodes] 🇪🇸_ES_西班牙", server: 172.233.107.18, port: 5575, type: trojan, password: fg20mtCFHy, sni: fgrsd.southbyte.xyz, udp: true}
-  - {name: "🇰🇷 [ext:FreeNodes] 🇰🇷_KR_韩国", server: awake-redbird.rooster465.autos, port: 443, type: trojan, password: PQ05174892, sni: awake-redbird.rooster465.autos, udp: true}
-  - {name: "🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国", server: 173.255.247.228, port: 5444, type: trojan, password: fg20mtCFHy, sni: frsdata.southbyte.xyz, udp: true}
-  - {name: "🇬🇧 [ext:FreeNodes] 🇬🇧_GB_英国", server: 104.248.167.79, port: 5624, type: trojan, password: fg20mtCFHy, sni: dsgvc.southbyte.xyz, udp: true}
-  - {name: "🇮🇳 [ext:FreeNodes] 🇮🇳_IN_印度", server: 157.245.99.215, port: 5750, type: trojan, password: fg20mtCFHy, sni: inyct.southbyte.xyz, udp: true}
-  - {name: "🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国 2", server: 147.182.198.83, port: 5444, type: trojan, password: fg20mtCFHy, sni: sfouctc.southbyte.xyz, udp: true}
-  - {name: "🇯🇵 [ext:FreeNodes] 🇨🇳_CN_中国->🇯🇵_JP_日本 2", server: 211.91.158.24, port: 21109, type: ss, cipher: chacha20-ietf-poly1305, password: 9325a345-c72f-4637-a8f4-34f9effb7ba6, udp: true}
-  - {name: "🇮🇳 [ext:FreeNodes] 🇮🇳_IN_印度 2", server: 34.131.228.210, port: 443, type: trojan, password: M7v%w11Se*, sni: hyfuuf6.wsone.icu, skip-cert-verify: true, udp: true}
-  - {name: "🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 4", server: 172.104.77.237, port: 6092, type: trojan, password: fg20mtCFHy, sni: tkicy.southbyte.xyz, udp: true}
-  - {name: "🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 5", server: 172.105.197.232, port: 5710, type: trojan, password: fg20mtCFHy, sni: jpcaw.southbyte.xyz, udp: true}
+  - {name: "🇯🇵 [ext:FreeNodes] 🇨🇳_CN_中国->🇯🇵_JP_日本", server: 211.91.158.24, port: 21109, type: ss, cipher: chacha20-ietf-poly1305, password: 9325a345-c72f-4637-a8f4-34f9effb7ba6, udp: true}
+  - {name: "🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 8", server: 172.104.77.237, port: 6092, type: trojan, password: fg20mtCFHy, sni: tkicy.southbyte.xyz, udp: true}
+  - {name: "🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国 4", server: 173.255.247.228, port: 5444, type: trojan, password: fg20mtCFHy, sni: frsdata.southbyte.xyz, udp: true}
+  - {name: "🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 9", server: 172.105.197.232, port: 5710, type: trojan, password: fg20mtCFHy, sni: jpcaw.southbyte.xyz, udp: true}
+  - {name: "🇺🇸 [ext:FreeNodes] 🇨🇦_CA_加拿大->🇺🇸_US_美国", server: cdn.shopify.com, port: 80, type: ss, cipher: 2022-blake3-aes-128-gcm, password: YTE1ZWU4ZTEyZjc3YmEzZA==:ZGYzOWJkMjMtMjk0YS00Ng==, udp: true}
+  - {name: "🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 10", server: 108.61.223.231, port: 443, type: ss, cipher: chacha20-ietf-poly1305, password: WbEN0g6Rbnsye8EJZz94OF, udp: true}
+  - {name: "🇰🇷 [ext:FreeNodes] 🇰🇷_KR_韩国", server: novel-kodiak.rooster465.autos, port: 443, type: trojan, password: EQ30679154, sni: novel-kodiak.rooster465.autos, udp: true}
+  - {name: "🇫🇷 [ext:FreeNodes] 🇫🇷_FR_法国", server: 172.232.42.44, port: 5577, type: trojan, password: fg20mtCFHy, sni: gtyxz.southbyte.xyz, udp: true}
+  - {name: "🇭🇰 [ext:FreeNodes] 🇭🇰_HK_中国香港", server: 212.192.15.46, port: 60112, type: ss, cipher: aes-256-gcm, password: 72553320ae6bcc8f, udp: true}
+  - {name: "🇷🇺 [ext:FreeNodes] 🇷🇺_RU_俄罗斯 2", server: 195.133.23.200, port: 10998, type: ss, cipher: aes-256-gcm, password: 81a20429165df87e, udp: true}
+  - {name: "🇰🇷 [ext:FreeNodes] 🇨🇳_CN_中国->🇰🇷_KR_韩国 2", server: 211.91.158.27, port: 21107, type: ss, cipher: chacha20-ietf-poly1305, password: 9325a345-c72f-4637-a8f4-34f9effb7ba6, udp: true}
+  - {name: "🇭🇰 [ext:FreeNodes] 🇭🇰_HK_中国香港 2", server: hk1.network-cdn-gw-yd.net, port: 32060, type: ss, cipher: chacha20-ietf-poly1305, password: aed6e687-58a9-4836-ba62-7d8184c94df4, udp: true}
+  - {name: "🇭🇰 [ext:FreeNodes] 🇨🇳_CN_中国->🇭🇰_HK_中国香港", server: 120.232.251.128, port: 65443, type: ss, cipher: aes-256-cfb, password: 7eadc6dbe2ae, udp: true}
+  - {name: "🇯🇵 [ext:FreeNodes] 🇨🇳_CN_中国->🇯🇵_JP_日本 2", server: 211.91.158.27, port: 21109, type: ss, cipher: chacha20-ietf-poly1305, password: 9325a345-c72f-4637-a8f4-34f9effb7ba6, udp: true}
+  - {name: "🇯🇵 [ext:FreeNodes] 🇺🇸_US_美国->🇯🇵_JP_日本", server: 66.112.211.35, port: 443, type: ss, cipher: aes-128-gcm, password: synlgmm, udp: true}
   - {name: "[ext:freenode] tg频道:@ripaojiedian", server: 63.180.254.10, port: 443, type: ss, cipher: aes-256-cfb, password: amazonskr05, udp: true}
   - {name: "🇭🇰 [ext:freenode] 香港3|@ripaojiedian", server: 43.199.143.104, port: 14684, type: trojan, password: 6ec301428255a78a1d826988d86cc87e, sni: www.nintendogames.net, skip-cert-verify: true, udp: true}
   - {name: "🇭🇰 [ext:freenode] 香港4|@ripaojiedian", server: 95.40.89.31, port: 11231, type: trojan, password: BxceQaOe, sni: t.me%2Fripaojiedian, skip-cert-verify: true, udp: true}
@@ -64,38 +76,48 @@ proxies:
   - {name: "🇸🇬 [ext:freenode] 新加坡3|@ripaojiedian", server: 16.162.100.208, port: 45744, type: trojan, password: BxceQaOe, sni: t.me%252Fripaojiedian, skip-cert-verify: true, udp: true}
   - {name: "🇺🇸 [ext:freenode] 美国|@ripaojiedian", server: 16.162.109.29, port: 39024, type: trojan, password: 6ec301428255a78a1d826988d86cc87e, sni: www.nintendogames.net, skip-cert-verify: true, udp: true}
   - {name: "🇺🇸 [ext:freenode] 美国2|@ripaojiedian", server: 18.163.126.92, port: 28051, type: trojan, password: 6ec301428255a78a1d826988d86cc87e, sni: www.nintendogames.net, skip-cert-verify: true, udp: true}
+  - {name: "🇺🇸 [ext:freenode] 美国3|@ripaojiedian", server: 18.163.74.15, port: 10418, type: trojan, password: BxceQaOe, sni: t.me%2Fripaojiedian, skip-cert-verify: true, udp: true}
 proxy-groups:
   - name: 🔰 节点选择
     type: select
     proxies:
       - ♻️ 自动选择
       - 🎯 全球直连
-      - "[ext:NoMoreWalls] 🇫🇷FR_4|2.0MB/s"
-      - "[ext:NoMoreWalls] 🇫🇷FR_1|2.6MB/s"
-      - "[ext:NoMoreWalls] 🇫🇷FR_2|2.1MB/s"
-      - "[ext:NoMoreWalls] 🇫🇷FR_3|1.1MB/s"
-      - "[ext:NoMoreWalls] 🇫🇷FR_5|1.5MB/s"
+      - "[ext:NoMoreWalls] 🇫🇷FR_2|2.2MB/s"
+      - "[ext:NoMoreWalls] 🇫🇷FR_1|1.8MB/s"
+      - "[ext:NoMoreWalls] 🇫🇷FR_3|1.3MB/s"
+      - "[ext:NoMoreWalls] 🇺🇸US_17|2.5MB/s"
+      - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国
+      - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国 2
+      - "[ext:NoMoreWalls] 🇺🇸US_2|3.5MB/s"
+      - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国 3
+      - "[ext:NoMoreWalls] 🇯🇵JP_3|5.2MB/s"
+      - "[ext:NoMoreWalls] 🇯🇵JP_4|5.6MB/s"
+      - "[ext:NoMoreWalls] 🇯🇵JP_6|2.4MB/s"
       - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本
       - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 2
       - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 3
-      - 🇦🇺 [ext:FreeNodes] 🇦🇺_AU_澳大利亚
-      - 🇫🇷 [ext:FreeNodes] 🇫🇷_FR_法国
-      - "[ext:NoMoreWalls] 🇩🇪DE_2|3.5MB/s"
-      - 🇺🇸 [ext:NoMoreWalls] 美国3|@ripaojiedian
-      - 🇺🇸 [ext:freenode] 美国3|@ripaojiedian
-      - 🇭🇰 [ext:NoMoreWalls] 香港|@ripaojiedian
+      - "[ext:NoMoreWalls] 🇯🇵JP_5|4.8MB/s"
+      - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 4
+      - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 5
+      - "[ext:NoMoreWalls] 🇯🇵JP_2|5.6MB/s"
+      - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 6
+      - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 7
+      - "[ext:NoMoreWalls] 🇩🇪DE_2|4.5MB/s"
+      - "[ext:NoMoreWalls] 🇩🇪DE_1|3.0MB/s"
       - 🇭🇰 [ext:NoMoreWalls] 🇭🇰 香港|@ripaojiedian
+      - 🇭🇰 [ext:NoMoreWalls] 香港|@ripaojiedian
       - 🇸🇬 [ext:FreeNodes] 🇸🇬_SG_新加坡
+      - 🇰🇷 [ext:FreeNodes] 🇨🇳_CN_中国->🇰🇷_KR_韩国
+      - 🇵🇱 [ext:FreeNodes] 🇵🇱_PL_波兰
       - 🇸🇬 [ext:FreeNodes] 🇸🇬_SG_新加坡 2
-      - "[ext:NoMoreWalls] 🇹🇼TW_1|1.3MB/s"
-      - "[ext:NoMoreWalls] 🇭🇰HK_1|5.8MB/s"
-      - "[ext:NoMoreWalls] 🇩🇪DE_1|1.3MB/s"
-      - "[ext:NoMoreWalls] 🇯🇵JP_1|6.1MB/s"
       - 🇭🇰 [ext:freenode] 香港|@ripaojiedian
       - 🇷🇺 [ext:FreeNodes] 🇷🇺_RU_俄罗斯
+      - 🇮🇳 [ext:FreeNodes] 🇮🇳_IN_印度
+      - "[ext:NoMoreWalls] 🇩🇪DE_3|3.1MB/s"
+      - "[ext:NoMoreWalls] 🇰🇷KR_1|4.2MB/s"
+      - "[ext:NoMoreWalls] 🇯🇵JP_1|3.9MB/s"
       - 🇺🇸 [ext:FreeNodes] 🇨🇳_CN_中国->🇺🇸_US_美国
-      - 🇯🇵 [ext:FreeNodes] 🇨🇳_CN_中国->🇯🇵_JP_日本
-      - 🇮🇪 [ext:FreeNodes] 🇨🇳_CN_中国->🇮🇪_IE_爱尔兰
       - "[ext:NoMoreWalls] 防范境外势力渗透"
       - "[ext:NoMoreWalls] 防范境外势力渗透 #1"
       - "[ext:NoMoreWalls] 防范境外势力渗透 #2"
@@ -105,18 +127,21 @@ proxy-groups:
       - "[ext:NoMoreWalls] 防范境外势力渗透 #6"
       - "[ext:NoMoreWalls] 防范境外势力渗透 #7"
       - "[ext:NoMoreWalls] 防范境外势力渗透 #8"
-      - "[ext:NoMoreWalls] 防范境外势力渗透 #9"
-      - 🇳🇱 [ext:FreeNodes] 🇷🇺_RU_俄罗斯->🇳🇱_NL_荷兰
-      - 🇪🇸 [ext:FreeNodes] 🇪🇸_ES_西班牙
+      - 🇯🇵 [ext:FreeNodes] 🇨🇳_CN_中国->🇯🇵_JP_日本
+      - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 8
+      - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国 4
+      - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 9
+      - 🇺🇸 [ext:FreeNodes] 🇨🇦_CA_加拿大->🇺🇸_US_美国
+      - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 10
       - 🇰🇷 [ext:FreeNodes] 🇰🇷_KR_韩国
-      - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国
-      - 🇬🇧 [ext:FreeNodes] 🇬🇧_GB_英国
-      - 🇮🇳 [ext:FreeNodes] 🇮🇳_IN_印度
-      - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国 2
+      - 🇫🇷 [ext:FreeNodes] 🇫🇷_FR_法国
+      - 🇭🇰 [ext:FreeNodes] 🇭🇰_HK_中国香港
+      - 🇷🇺 [ext:FreeNodes] 🇷🇺_RU_俄罗斯 2
+      - 🇰🇷 [ext:FreeNodes] 🇨🇳_CN_中国->🇰🇷_KR_韩国 2
+      - 🇭🇰 [ext:FreeNodes] 🇭🇰_HK_中国香港 2
+      - 🇭🇰 [ext:FreeNodes] 🇨🇳_CN_中国->🇭🇰_HK_中国香港
       - 🇯🇵 [ext:FreeNodes] 🇨🇳_CN_中国->🇯🇵_JP_日本 2
-      - 🇮🇳 [ext:FreeNodes] 🇮🇳_IN_印度 2
-      - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 4
-      - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 5
+      - 🇯🇵 [ext:FreeNodes] 🇺🇸_US_美国->🇯🇵_JP_日本
       - "[ext:freenode] tg频道:@ripaojiedian"
       - 🇭🇰 [ext:freenode] 香港3|@ripaojiedian
       - 🇭🇰 [ext:freenode] 香港4|@ripaojiedian
@@ -129,37 +154,47 @@ proxy-groups:
       - 🇸🇬 [ext:freenode] 新加坡3|@ripaojiedian
       - 🇺🇸 [ext:freenode] 美国|@ripaojiedian
       - 🇺🇸 [ext:freenode] 美国2|@ripaojiedian
+      - 🇺🇸 [ext:freenode] 美国3|@ripaojiedian
   - name: ♻️ 自动选择
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - "[ext:NoMoreWalls] 🇫🇷FR_4|2.0MB/s"
-      - "[ext:NoMoreWalls] 🇫🇷FR_1|2.6MB/s"
-      - "[ext:NoMoreWalls] 🇫🇷FR_2|2.1MB/s"
-      - "[ext:NoMoreWalls] 🇫🇷FR_3|1.1MB/s"
-      - "[ext:NoMoreWalls] 🇫🇷FR_5|1.5MB/s"
+      - "[ext:NoMoreWalls] 🇫🇷FR_2|2.2MB/s"
+      - "[ext:NoMoreWalls] 🇫🇷FR_1|1.8MB/s"
+      - "[ext:NoMoreWalls] 🇫🇷FR_3|1.3MB/s"
+      - "[ext:NoMoreWalls] 🇺🇸US_17|2.5MB/s"
+      - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国
+      - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国 2
+      - "[ext:NoMoreWalls] 🇺🇸US_2|3.5MB/s"
+      - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国 3
+      - "[ext:NoMoreWalls] 🇯🇵JP_3|5.2MB/s"
+      - "[ext:NoMoreWalls] 🇯🇵JP_4|5.6MB/s"
+      - "[ext:NoMoreWalls] 🇯🇵JP_6|2.4MB/s"
       - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本
       - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 2
       - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 3
-      - 🇦🇺 [ext:FreeNodes] 🇦🇺_AU_澳大利亚
-      - 🇫🇷 [ext:FreeNodes] 🇫🇷_FR_法国
-      - "[ext:NoMoreWalls] 🇩🇪DE_2|3.5MB/s"
-      - 🇺🇸 [ext:NoMoreWalls] 美国3|@ripaojiedian
-      - 🇺🇸 [ext:freenode] 美国3|@ripaojiedian
-      - 🇭🇰 [ext:NoMoreWalls] 香港|@ripaojiedian
+      - "[ext:NoMoreWalls] 🇯🇵JP_5|4.8MB/s"
+      - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 4
+      - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 5
+      - "[ext:NoMoreWalls] 🇯🇵JP_2|5.6MB/s"
+      - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 6
+      - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 7
+      - "[ext:NoMoreWalls] 🇩🇪DE_2|4.5MB/s"
+      - "[ext:NoMoreWalls] 🇩🇪DE_1|3.0MB/s"
       - 🇭🇰 [ext:NoMoreWalls] 🇭🇰 香港|@ripaojiedian
+      - 🇭🇰 [ext:NoMoreWalls] 香港|@ripaojiedian
       - 🇸🇬 [ext:FreeNodes] 🇸🇬_SG_新加坡
+      - 🇰🇷 [ext:FreeNodes] 🇨🇳_CN_中国->🇰🇷_KR_韩国
+      - 🇵🇱 [ext:FreeNodes] 🇵🇱_PL_波兰
       - 🇸🇬 [ext:FreeNodes] 🇸🇬_SG_新加坡 2
-      - "[ext:NoMoreWalls] 🇹🇼TW_1|1.3MB/s"
-      - "[ext:NoMoreWalls] 🇭🇰HK_1|5.8MB/s"
-      - "[ext:NoMoreWalls] 🇩🇪DE_1|1.3MB/s"
-      - "[ext:NoMoreWalls] 🇯🇵JP_1|6.1MB/s"
       - 🇭🇰 [ext:freenode] 香港|@ripaojiedian
       - 🇷🇺 [ext:FreeNodes] 🇷🇺_RU_俄罗斯
+      - 🇮🇳 [ext:FreeNodes] 🇮🇳_IN_印度
+      - "[ext:NoMoreWalls] 🇩🇪DE_3|3.1MB/s"
+      - "[ext:NoMoreWalls] 🇰🇷KR_1|4.2MB/s"
+      - "[ext:NoMoreWalls] 🇯🇵JP_1|3.9MB/s"
       - 🇺🇸 [ext:FreeNodes] 🇨🇳_CN_中国->🇺🇸_US_美国
-      - 🇯🇵 [ext:FreeNodes] 🇨🇳_CN_中国->🇯🇵_JP_日本
-      - 🇮🇪 [ext:FreeNodes] 🇨🇳_CN_中国->🇮🇪_IE_爱尔兰
       - "[ext:NoMoreWalls] 防范境外势力渗透"
       - "[ext:NoMoreWalls] 防范境外势力渗透 #1"
       - "[ext:NoMoreWalls] 防范境外势力渗透 #2"
@@ -169,18 +204,21 @@ proxy-groups:
       - "[ext:NoMoreWalls] 防范境外势力渗透 #6"
       - "[ext:NoMoreWalls] 防范境外势力渗透 #7"
       - "[ext:NoMoreWalls] 防范境外势力渗透 #8"
-      - "[ext:NoMoreWalls] 防范境外势力渗透 #9"
-      - 🇳🇱 [ext:FreeNodes] 🇷🇺_RU_俄罗斯->🇳🇱_NL_荷兰
-      - 🇪🇸 [ext:FreeNodes] 🇪🇸_ES_西班牙
+      - 🇯🇵 [ext:FreeNodes] 🇨🇳_CN_中国->🇯🇵_JP_日本
+      - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 8
+      - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国 4
+      - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 9
+      - 🇺🇸 [ext:FreeNodes] 🇨🇦_CA_加拿大->🇺🇸_US_美国
+      - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 10
       - 🇰🇷 [ext:FreeNodes] 🇰🇷_KR_韩国
-      - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国
-      - 🇬🇧 [ext:FreeNodes] 🇬🇧_GB_英国
-      - 🇮🇳 [ext:FreeNodes] 🇮🇳_IN_印度
-      - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国 2
+      - 🇫🇷 [ext:FreeNodes] 🇫🇷_FR_法国
+      - 🇭🇰 [ext:FreeNodes] 🇭🇰_HK_中国香港
+      - 🇷🇺 [ext:FreeNodes] 🇷🇺_RU_俄罗斯 2
+      - 🇰🇷 [ext:FreeNodes] 🇨🇳_CN_中国->🇰🇷_KR_韩国 2
+      - 🇭🇰 [ext:FreeNodes] 🇭🇰_HK_中国香港 2
+      - 🇭🇰 [ext:FreeNodes] 🇨🇳_CN_中国->🇭🇰_HK_中国香港
       - 🇯🇵 [ext:FreeNodes] 🇨🇳_CN_中国->🇯🇵_JP_日本 2
-      - 🇮🇳 [ext:FreeNodes] 🇮🇳_IN_印度 2
-      - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 4
-      - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 5
+      - 🇯🇵 [ext:FreeNodes] 🇺🇸_US_美国->🇯🇵_JP_日本
       - "[ext:freenode] tg频道:@ripaojiedian"
       - 🇭🇰 [ext:freenode] 香港3|@ripaojiedian
       - 🇭🇰 [ext:freenode] 香港4|@ripaojiedian
@@ -193,38 +231,48 @@ proxy-groups:
       - 🇸🇬 [ext:freenode] 新加坡3|@ripaojiedian
       - 🇺🇸 [ext:freenode] 美国|@ripaojiedian
       - 🇺🇸 [ext:freenode] 美国2|@ripaojiedian
+      - 🇺🇸 [ext:freenode] 美国3|@ripaojiedian
   - name: 🎥 NETFLIX
     type: select
     proxies:
       - 🔰 节点选择
       - ♻️ 自动选择
       - 🎯 全球直连
-      - "[ext:NoMoreWalls] 🇫🇷FR_4|2.0MB/s"
-      - "[ext:NoMoreWalls] 🇫🇷FR_1|2.6MB/s"
-      - "[ext:NoMoreWalls] 🇫🇷FR_2|2.1MB/s"
-      - "[ext:NoMoreWalls] 🇫🇷FR_3|1.1MB/s"
-      - "[ext:NoMoreWalls] 🇫🇷FR_5|1.5MB/s"
+      - "[ext:NoMoreWalls] 🇫🇷FR_2|2.2MB/s"
+      - "[ext:NoMoreWalls] 🇫🇷FR_1|1.8MB/s"
+      - "[ext:NoMoreWalls] 🇫🇷FR_3|1.3MB/s"
+      - "[ext:NoMoreWalls] 🇺🇸US_17|2.5MB/s"
+      - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国
+      - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国 2
+      - "[ext:NoMoreWalls] 🇺🇸US_2|3.5MB/s"
+      - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国 3
+      - "[ext:NoMoreWalls] 🇯🇵JP_3|5.2MB/s"
+      - "[ext:NoMoreWalls] 🇯🇵JP_4|5.6MB/s"
+      - "[ext:NoMoreWalls] 🇯🇵JP_6|2.4MB/s"
       - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本
       - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 2
       - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 3
-      - 🇦🇺 [ext:FreeNodes] 🇦🇺_AU_澳大利亚
-      - 🇫🇷 [ext:FreeNodes] 🇫🇷_FR_法国
-      - "[ext:NoMoreWalls] 🇩🇪DE_2|3.5MB/s"
-      - 🇺🇸 [ext:NoMoreWalls] 美国3|@ripaojiedian
-      - 🇺🇸 [ext:freenode] 美国3|@ripaojiedian
-      - 🇭🇰 [ext:NoMoreWalls] 香港|@ripaojiedian
+      - "[ext:NoMoreWalls] 🇯🇵JP_5|4.8MB/s"
+      - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 4
+      - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 5
+      - "[ext:NoMoreWalls] 🇯🇵JP_2|5.6MB/s"
+      - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 6
+      - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 7
+      - "[ext:NoMoreWalls] 🇩🇪DE_2|4.5MB/s"
+      - "[ext:NoMoreWalls] 🇩🇪DE_1|3.0MB/s"
       - 🇭🇰 [ext:NoMoreWalls] 🇭🇰 香港|@ripaojiedian
+      - 🇭🇰 [ext:NoMoreWalls] 香港|@ripaojiedian
       - 🇸🇬 [ext:FreeNodes] 🇸🇬_SG_新加坡
+      - 🇰🇷 [ext:FreeNodes] 🇨🇳_CN_中国->🇰🇷_KR_韩国
+      - 🇵🇱 [ext:FreeNodes] 🇵🇱_PL_波兰
       - 🇸🇬 [ext:FreeNodes] 🇸🇬_SG_新加坡 2
-      - "[ext:NoMoreWalls] 🇹🇼TW_1|1.3MB/s"
-      - "[ext:NoMoreWalls] 🇭🇰HK_1|5.8MB/s"
-      - "[ext:NoMoreWalls] 🇩🇪DE_1|1.3MB/s"
-      - "[ext:NoMoreWalls] 🇯🇵JP_1|6.1MB/s"
       - 🇭🇰 [ext:freenode] 香港|@ripaojiedian
       - 🇷🇺 [ext:FreeNodes] 🇷🇺_RU_俄罗斯
+      - 🇮🇳 [ext:FreeNodes] 🇮🇳_IN_印度
+      - "[ext:NoMoreWalls] 🇩🇪DE_3|3.1MB/s"
+      - "[ext:NoMoreWalls] 🇰🇷KR_1|4.2MB/s"
+      - "[ext:NoMoreWalls] 🇯🇵JP_1|3.9MB/s"
       - 🇺🇸 [ext:FreeNodes] 🇨🇳_CN_中国->🇺🇸_US_美国
-      - 🇯🇵 [ext:FreeNodes] 🇨🇳_CN_中国->🇯🇵_JP_日本
-      - 🇮🇪 [ext:FreeNodes] 🇨🇳_CN_中国->🇮🇪_IE_爱尔兰
       - "[ext:NoMoreWalls] 防范境外势力渗透"
       - "[ext:NoMoreWalls] 防范境外势力渗透 #1"
       - "[ext:NoMoreWalls] 防范境外势力渗透 #2"
@@ -234,18 +282,21 @@ proxy-groups:
       - "[ext:NoMoreWalls] 防范境外势力渗透 #6"
       - "[ext:NoMoreWalls] 防范境外势力渗透 #7"
       - "[ext:NoMoreWalls] 防范境外势力渗透 #8"
-      - "[ext:NoMoreWalls] 防范境外势力渗透 #9"
-      - 🇳🇱 [ext:FreeNodes] 🇷🇺_RU_俄罗斯->🇳🇱_NL_荷兰
-      - 🇪🇸 [ext:FreeNodes] 🇪🇸_ES_西班牙
+      - 🇯🇵 [ext:FreeNodes] 🇨🇳_CN_中国->🇯🇵_JP_日本
+      - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 8
+      - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国 4
+      - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 9
+      - 🇺🇸 [ext:FreeNodes] 🇨🇦_CA_加拿大->🇺🇸_US_美国
+      - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 10
       - 🇰🇷 [ext:FreeNodes] 🇰🇷_KR_韩国
-      - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国
-      - 🇬🇧 [ext:FreeNodes] 🇬🇧_GB_英国
-      - 🇮🇳 [ext:FreeNodes] 🇮🇳_IN_印度
-      - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国 2
+      - 🇫🇷 [ext:FreeNodes] 🇫🇷_FR_法国
+      - 🇭🇰 [ext:FreeNodes] 🇭🇰_HK_中国香港
+      - 🇷🇺 [ext:FreeNodes] 🇷🇺_RU_俄罗斯 2
+      - 🇰🇷 [ext:FreeNodes] 🇨🇳_CN_中国->🇰🇷_KR_韩国 2
+      - 🇭🇰 [ext:FreeNodes] 🇭🇰_HK_中国香港 2
+      - 🇭🇰 [ext:FreeNodes] 🇨🇳_CN_中国->🇭🇰_HK_中国香港
       - 🇯🇵 [ext:FreeNodes] 🇨🇳_CN_中国->🇯🇵_JP_日本 2
-      - 🇮🇳 [ext:FreeNodes] 🇮🇳_IN_印度 2
-      - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 4
-      - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 5
+      - 🇯🇵 [ext:FreeNodes] 🇺🇸_US_美国->🇯🇵_JP_日本
       - "[ext:freenode] tg频道:@ripaojiedian"
       - 🇭🇰 [ext:freenode] 香港3|@ripaojiedian
       - 🇭🇰 [ext:freenode] 香港4|@ripaojiedian
@@ -258,6 +309,7 @@ proxy-groups:
       - 🇸🇬 [ext:freenode] 新加坡3|@ripaojiedian
       - 🇺🇸 [ext:freenode] 美国|@ripaojiedian
       - 🇺🇸 [ext:freenode] 美国2|@ripaojiedian
+      - 🇺🇸 [ext:freenode] 美国3|@ripaojiedian
   - name: ⛔️ 广告拦截
     type: select
     proxies:
@@ -276,32 +328,41 @@ proxy-groups:
       - 🔰 节点选择
       - ♻️ 自动选择
       - 🎯 全球直连
-      - "[ext:NoMoreWalls] 🇫🇷FR_4|2.0MB/s"
-      - "[ext:NoMoreWalls] 🇫🇷FR_1|2.6MB/s"
-      - "[ext:NoMoreWalls] 🇫🇷FR_2|2.1MB/s"
-      - "[ext:NoMoreWalls] 🇫🇷FR_3|1.1MB/s"
-      - "[ext:NoMoreWalls] 🇫🇷FR_5|1.5MB/s"
+      - "[ext:NoMoreWalls] 🇫🇷FR_2|2.2MB/s"
+      - "[ext:NoMoreWalls] 🇫🇷FR_1|1.8MB/s"
+      - "[ext:NoMoreWalls] 🇫🇷FR_3|1.3MB/s"
+      - "[ext:NoMoreWalls] 🇺🇸US_17|2.5MB/s"
+      - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国
+      - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国 2
+      - "[ext:NoMoreWalls] 🇺🇸US_2|3.5MB/s"
+      - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国 3
+      - "[ext:NoMoreWalls] 🇯🇵JP_3|5.2MB/s"
+      - "[ext:NoMoreWalls] 🇯🇵JP_4|5.6MB/s"
+      - "[ext:NoMoreWalls] 🇯🇵JP_6|2.4MB/s"
       - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本
       - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 2
       - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 3
-      - 🇦🇺 [ext:FreeNodes] 🇦🇺_AU_澳大利亚
-      - 🇫🇷 [ext:FreeNodes] 🇫🇷_FR_法国
-      - "[ext:NoMoreWalls] 🇩🇪DE_2|3.5MB/s"
-      - 🇺🇸 [ext:NoMoreWalls] 美国3|@ripaojiedian
-      - 🇺🇸 [ext:freenode] 美国3|@ripaojiedian
-      - 🇭🇰 [ext:NoMoreWalls] 香港|@ripaojiedian
+      - "[ext:NoMoreWalls] 🇯🇵JP_5|4.8MB/s"
+      - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 4
+      - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 5
+      - "[ext:NoMoreWalls] 🇯🇵JP_2|5.6MB/s"
+      - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 6
+      - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 7
+      - "[ext:NoMoreWalls] 🇩🇪DE_2|4.5MB/s"
+      - "[ext:NoMoreWalls] 🇩🇪DE_1|3.0MB/s"
       - 🇭🇰 [ext:NoMoreWalls] 🇭🇰 香港|@ripaojiedian
+      - 🇭🇰 [ext:NoMoreWalls] 香港|@ripaojiedian
       - 🇸🇬 [ext:FreeNodes] 🇸🇬_SG_新加坡
+      - 🇰🇷 [ext:FreeNodes] 🇨🇳_CN_中国->🇰🇷_KR_韩国
+      - 🇵🇱 [ext:FreeNodes] 🇵🇱_PL_波兰
       - 🇸🇬 [ext:FreeNodes] 🇸🇬_SG_新加坡 2
-      - "[ext:NoMoreWalls] 🇹🇼TW_1|1.3MB/s"
-      - "[ext:NoMoreWalls] 🇭🇰HK_1|5.8MB/s"
-      - "[ext:NoMoreWalls] 🇩🇪DE_1|1.3MB/s"
-      - "[ext:NoMoreWalls] 🇯🇵JP_1|6.1MB/s"
       - 🇭🇰 [ext:freenode] 香港|@ripaojiedian
       - 🇷🇺 [ext:FreeNodes] 🇷🇺_RU_俄罗斯
+      - 🇮🇳 [ext:FreeNodes] 🇮🇳_IN_印度
+      - "[ext:NoMoreWalls] 🇩🇪DE_3|3.1MB/s"
+      - "[ext:NoMoreWalls] 🇰🇷KR_1|4.2MB/s"
+      - "[ext:NoMoreWalls] 🇯🇵JP_1|3.9MB/s"
       - 🇺🇸 [ext:FreeNodes] 🇨🇳_CN_中国->🇺🇸_US_美国
-      - 🇯🇵 [ext:FreeNodes] 🇨🇳_CN_中国->🇯🇵_JP_日本
-      - 🇮🇪 [ext:FreeNodes] 🇨🇳_CN_中国->🇮🇪_IE_爱尔兰
       - "[ext:NoMoreWalls] 防范境外势力渗透"
       - "[ext:NoMoreWalls] 防范境外势力渗透 #1"
       - "[ext:NoMoreWalls] 防范境外势力渗透 #2"
@@ -311,18 +372,21 @@ proxy-groups:
       - "[ext:NoMoreWalls] 防范境外势力渗透 #6"
       - "[ext:NoMoreWalls] 防范境外势力渗透 #7"
       - "[ext:NoMoreWalls] 防范境外势力渗透 #8"
-      - "[ext:NoMoreWalls] 防范境外势力渗透 #9"
-      - 🇳🇱 [ext:FreeNodes] 🇷🇺_RU_俄罗斯->🇳🇱_NL_荷兰
-      - 🇪🇸 [ext:FreeNodes] 🇪🇸_ES_西班牙
+      - 🇯🇵 [ext:FreeNodes] 🇨🇳_CN_中国->🇯🇵_JP_日本
+      - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 8
+      - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国 4
+      - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 9
+      - 🇺🇸 [ext:FreeNodes] 🇨🇦_CA_加拿大->🇺🇸_US_美国
+      - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 10
       - 🇰🇷 [ext:FreeNodes] 🇰🇷_KR_韩国
-      - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国
-      - 🇬🇧 [ext:FreeNodes] 🇬🇧_GB_英国
-      - 🇮🇳 [ext:FreeNodes] 🇮🇳_IN_印度
-      - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国 2
+      - 🇫🇷 [ext:FreeNodes] 🇫🇷_FR_法国
+      - 🇭🇰 [ext:FreeNodes] 🇭🇰_HK_中国香港
+      - 🇷🇺 [ext:FreeNodes] 🇷🇺_RU_俄罗斯 2
+      - 🇰🇷 [ext:FreeNodes] 🇨🇳_CN_中国->🇰🇷_KR_韩国 2
+      - 🇭🇰 [ext:FreeNodes] 🇭🇰_HK_中国香港 2
+      - 🇭🇰 [ext:FreeNodes] 🇨🇳_CN_中国->🇭🇰_HK_中国香港
       - 🇯🇵 [ext:FreeNodes] 🇨🇳_CN_中国->🇯🇵_JP_日本 2
-      - 🇮🇳 [ext:FreeNodes] 🇮🇳_IN_印度 2
-      - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 4
-      - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 5
+      - 🇯🇵 [ext:FreeNodes] 🇺🇸_US_美国->🇯🇵_JP_日本
       - "[ext:freenode] tg频道:@ripaojiedian"
       - 🇭🇰 [ext:freenode] 香港3|@ripaojiedian
       - 🇭🇰 [ext:freenode] 香港4|@ripaojiedian
@@ -335,13 +399,17 @@ proxy-groups:
       - 🇸🇬 [ext:freenode] 新加坡3|@ripaojiedian
       - 🇺🇸 [ext:freenode] 美国|@ripaojiedian
       - 🇺🇸 [ext:freenode] 美国2|@ripaojiedian
+      - 🇺🇸 [ext:freenode] 美国3|@ripaojiedian
   - name: 🌏 国内媒体
     type: select
     proxies:
       - 🎯 全球直连
-      - 🇭🇰 [ext:NoMoreWalls] 香港|@ripaojiedian
       - 🇭🇰 [ext:NoMoreWalls] 🇭🇰 香港|@ripaojiedian
+      - 🇭🇰 [ext:NoMoreWalls] 香港|@ripaojiedian
       - 🇭🇰 [ext:freenode] 香港|@ripaojiedian
+      - 🇭🇰 [ext:FreeNodes] 🇭🇰_HK_中国香港
+      - 🇭🇰 [ext:FreeNodes] 🇭🇰_HK_中国香港 2
+      - 🇭🇰 [ext:FreeNodes] 🇨🇳_CN_中国->🇭🇰_HK_中国香港
       - 🇭🇰 [ext:freenode] 香港3|@ripaojiedian
       - 🇭🇰 [ext:freenode] 香港4|@ripaojiedian
       - 🇭🇰 [ext:freenode] 香港5|@ripaojiedian
@@ -351,32 +419,41 @@ proxy-groups:
     proxies:
       - 🎯 全球直连
       - 🔰 节点选择
-      - "[ext:NoMoreWalls] 🇫🇷FR_4|2.0MB/s"
-      - "[ext:NoMoreWalls] 🇫🇷FR_1|2.6MB/s"
-      - "[ext:NoMoreWalls] 🇫🇷FR_2|2.1MB/s"
-      - "[ext:NoMoreWalls] 🇫🇷FR_3|1.1MB/s"
-      - "[ext:NoMoreWalls] 🇫🇷FR_5|1.5MB/s"
+      - "[ext:NoMoreWalls] 🇫🇷FR_2|2.2MB/s"
+      - "[ext:NoMoreWalls] 🇫🇷FR_1|1.8MB/s"
+      - "[ext:NoMoreWalls] 🇫🇷FR_3|1.3MB/s"
+      - "[ext:NoMoreWalls] 🇺🇸US_17|2.5MB/s"
+      - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国
+      - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国 2
+      - "[ext:NoMoreWalls] 🇺🇸US_2|3.5MB/s"
+      - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国 3
+      - "[ext:NoMoreWalls] 🇯🇵JP_3|5.2MB/s"
+      - "[ext:NoMoreWalls] 🇯🇵JP_4|5.6MB/s"
+      - "[ext:NoMoreWalls] 🇯🇵JP_6|2.4MB/s"
       - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本
       - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 2
       - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 3
-      - 🇦🇺 [ext:FreeNodes] 🇦🇺_AU_澳大利亚
-      - 🇫🇷 [ext:FreeNodes] 🇫🇷_FR_法国
-      - "[ext:NoMoreWalls] 🇩🇪DE_2|3.5MB/s"
-      - 🇺🇸 [ext:NoMoreWalls] 美国3|@ripaojiedian
-      - 🇺🇸 [ext:freenode] 美国3|@ripaojiedian
-      - 🇭🇰 [ext:NoMoreWalls] 香港|@ripaojiedian
+      - "[ext:NoMoreWalls] 🇯🇵JP_5|4.8MB/s"
+      - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 4
+      - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 5
+      - "[ext:NoMoreWalls] 🇯🇵JP_2|5.6MB/s"
+      - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 6
+      - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 7
+      - "[ext:NoMoreWalls] 🇩🇪DE_2|4.5MB/s"
+      - "[ext:NoMoreWalls] 🇩🇪DE_1|3.0MB/s"
       - 🇭🇰 [ext:NoMoreWalls] 🇭🇰 香港|@ripaojiedian
+      - 🇭🇰 [ext:NoMoreWalls] 香港|@ripaojiedian
       - 🇸🇬 [ext:FreeNodes] 🇸🇬_SG_新加坡
+      - 🇰🇷 [ext:FreeNodes] 🇨🇳_CN_中国->🇰🇷_KR_韩国
+      - 🇵🇱 [ext:FreeNodes] 🇵🇱_PL_波兰
       - 🇸🇬 [ext:FreeNodes] 🇸🇬_SG_新加坡 2
-      - "[ext:NoMoreWalls] 🇹🇼TW_1|1.3MB/s"
-      - "[ext:NoMoreWalls] 🇭🇰HK_1|5.8MB/s"
-      - "[ext:NoMoreWalls] 🇩🇪DE_1|1.3MB/s"
-      - "[ext:NoMoreWalls] 🇯🇵JP_1|6.1MB/s"
       - 🇭🇰 [ext:freenode] 香港|@ripaojiedian
       - 🇷🇺 [ext:FreeNodes] 🇷🇺_RU_俄罗斯
+      - 🇮🇳 [ext:FreeNodes] 🇮🇳_IN_印度
+      - "[ext:NoMoreWalls] 🇩🇪DE_3|3.1MB/s"
+      - "[ext:NoMoreWalls] 🇰🇷KR_1|4.2MB/s"
+      - "[ext:NoMoreWalls] 🇯🇵JP_1|3.9MB/s"
       - 🇺🇸 [ext:FreeNodes] 🇨🇳_CN_中国->🇺🇸_US_美国
-      - 🇯🇵 [ext:FreeNodes] 🇨🇳_CN_中国->🇯🇵_JP_日本
-      - 🇮🇪 [ext:FreeNodes] 🇨🇳_CN_中国->🇮🇪_IE_爱尔兰
       - "[ext:NoMoreWalls] 防范境外势力渗透"
       - "[ext:NoMoreWalls] 防范境外势力渗透 #1"
       - "[ext:NoMoreWalls] 防范境外势力渗透 #2"
@@ -386,18 +463,21 @@ proxy-groups:
       - "[ext:NoMoreWalls] 防范境外势力渗透 #6"
       - "[ext:NoMoreWalls] 防范境外势力渗透 #7"
       - "[ext:NoMoreWalls] 防范境外势力渗透 #8"
-      - "[ext:NoMoreWalls] 防范境外势力渗透 #9"
-      - 🇳🇱 [ext:FreeNodes] 🇷🇺_RU_俄罗斯->🇳🇱_NL_荷兰
-      - 🇪🇸 [ext:FreeNodes] 🇪🇸_ES_西班牙
+      - 🇯🇵 [ext:FreeNodes] 🇨🇳_CN_中国->🇯🇵_JP_日本
+      - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 8
+      - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国 4
+      - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 9
+      - 🇺🇸 [ext:FreeNodes] 🇨🇦_CA_加拿大->🇺🇸_US_美国
+      - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 10
       - 🇰🇷 [ext:FreeNodes] 🇰🇷_KR_韩国
-      - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国
-      - 🇬🇧 [ext:FreeNodes] 🇬🇧_GB_英国
-      - 🇮🇳 [ext:FreeNodes] 🇮🇳_IN_印度
-      - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国 2
+      - 🇫🇷 [ext:FreeNodes] 🇫🇷_FR_法国
+      - 🇭🇰 [ext:FreeNodes] 🇭🇰_HK_中国香港
+      - 🇷🇺 [ext:FreeNodes] 🇷🇺_RU_俄罗斯 2
+      - 🇰🇷 [ext:FreeNodes] 🇨🇳_CN_中国->🇰🇷_KR_韩国 2
+      - 🇭🇰 [ext:FreeNodes] 🇭🇰_HK_中国香港 2
+      - 🇭🇰 [ext:FreeNodes] 🇨🇳_CN_中国->🇭🇰_HK_中国香港
       - 🇯🇵 [ext:FreeNodes] 🇨🇳_CN_中国->🇯🇵_JP_日本 2
-      - 🇮🇳 [ext:FreeNodes] 🇮🇳_IN_印度 2
-      - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 4
-      - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 5
+      - 🇯🇵 [ext:FreeNodes] 🇺🇸_US_美国->🇯🇵_JP_日本
       - "[ext:freenode] tg频道:@ripaojiedian"
       - 🇭🇰 [ext:freenode] 香港3|@ripaojiedian
       - 🇭🇰 [ext:freenode] 香港4|@ripaojiedian
@@ -410,37 +490,47 @@ proxy-groups:
       - 🇸🇬 [ext:freenode] 新加坡3|@ripaojiedian
       - 🇺🇸 [ext:freenode] 美国|@ripaojiedian
       - 🇺🇸 [ext:freenode] 美国2|@ripaojiedian
+      - 🇺🇸 [ext:freenode] 美国3|@ripaojiedian
   - name: 📲 电报信息
     type: select
     proxies:
       - 🔰 节点选择
       - 🎯 全球直连
-      - "[ext:NoMoreWalls] 🇫🇷FR_4|2.0MB/s"
-      - "[ext:NoMoreWalls] 🇫🇷FR_1|2.6MB/s"
-      - "[ext:NoMoreWalls] 🇫🇷FR_2|2.1MB/s"
-      - "[ext:NoMoreWalls] 🇫🇷FR_3|1.1MB/s"
-      - "[ext:NoMoreWalls] 🇫🇷FR_5|1.5MB/s"
+      - "[ext:NoMoreWalls] 🇫🇷FR_2|2.2MB/s"
+      - "[ext:NoMoreWalls] 🇫🇷FR_1|1.8MB/s"
+      - "[ext:NoMoreWalls] 🇫🇷FR_3|1.3MB/s"
+      - "[ext:NoMoreWalls] 🇺🇸US_17|2.5MB/s"
+      - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国
+      - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国 2
+      - "[ext:NoMoreWalls] 🇺🇸US_2|3.5MB/s"
+      - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国 3
+      - "[ext:NoMoreWalls] 🇯🇵JP_3|5.2MB/s"
+      - "[ext:NoMoreWalls] 🇯🇵JP_4|5.6MB/s"
+      - "[ext:NoMoreWalls] 🇯🇵JP_6|2.4MB/s"
       - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本
       - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 2
       - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 3
-      - 🇦🇺 [ext:FreeNodes] 🇦🇺_AU_澳大利亚
-      - 🇫🇷 [ext:FreeNodes] 🇫🇷_FR_法国
-      - "[ext:NoMoreWalls] 🇩🇪DE_2|3.5MB/s"
-      - 🇺🇸 [ext:NoMoreWalls] 美国3|@ripaojiedian
-      - 🇺🇸 [ext:freenode] 美国3|@ripaojiedian
-      - 🇭🇰 [ext:NoMoreWalls] 香港|@ripaojiedian
+      - "[ext:NoMoreWalls] 🇯🇵JP_5|4.8MB/s"
+      - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 4
+      - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 5
+      - "[ext:NoMoreWalls] 🇯🇵JP_2|5.6MB/s"
+      - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 6
+      - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 7
+      - "[ext:NoMoreWalls] 🇩🇪DE_2|4.5MB/s"
+      - "[ext:NoMoreWalls] 🇩🇪DE_1|3.0MB/s"
       - 🇭🇰 [ext:NoMoreWalls] 🇭🇰 香港|@ripaojiedian
+      - 🇭🇰 [ext:NoMoreWalls] 香港|@ripaojiedian
       - 🇸🇬 [ext:FreeNodes] 🇸🇬_SG_新加坡
+      - 🇰🇷 [ext:FreeNodes] 🇨🇳_CN_中国->🇰🇷_KR_韩国
+      - 🇵🇱 [ext:FreeNodes] 🇵🇱_PL_波兰
       - 🇸🇬 [ext:FreeNodes] 🇸🇬_SG_新加坡 2
-      - "[ext:NoMoreWalls] 🇹🇼TW_1|1.3MB/s"
-      - "[ext:NoMoreWalls] 🇭🇰HK_1|5.8MB/s"
-      - "[ext:NoMoreWalls] 🇩🇪DE_1|1.3MB/s"
-      - "[ext:NoMoreWalls] 🇯🇵JP_1|6.1MB/s"
       - 🇭🇰 [ext:freenode] 香港|@ripaojiedian
       - 🇷🇺 [ext:FreeNodes] 🇷🇺_RU_俄罗斯
+      - 🇮🇳 [ext:FreeNodes] 🇮🇳_IN_印度
+      - "[ext:NoMoreWalls] 🇩🇪DE_3|3.1MB/s"
+      - "[ext:NoMoreWalls] 🇰🇷KR_1|4.2MB/s"
+      - "[ext:NoMoreWalls] 🇯🇵JP_1|3.9MB/s"
       - 🇺🇸 [ext:FreeNodes] 🇨🇳_CN_中国->🇺🇸_US_美国
-      - 🇯🇵 [ext:FreeNodes] 🇨🇳_CN_中国->🇯🇵_JP_日本
-      - 🇮🇪 [ext:FreeNodes] 🇨🇳_CN_中国->🇮🇪_IE_爱尔兰
       - "[ext:NoMoreWalls] 防范境外势力渗透"
       - "[ext:NoMoreWalls] 防范境外势力渗透 #1"
       - "[ext:NoMoreWalls] 防范境外势力渗透 #2"
@@ -450,18 +540,21 @@ proxy-groups:
       - "[ext:NoMoreWalls] 防范境外势力渗透 #6"
       - "[ext:NoMoreWalls] 防范境外势力渗透 #7"
       - "[ext:NoMoreWalls] 防范境外势力渗透 #8"
-      - "[ext:NoMoreWalls] 防范境外势力渗透 #9"
-      - 🇳🇱 [ext:FreeNodes] 🇷🇺_RU_俄罗斯->🇳🇱_NL_荷兰
-      - 🇪🇸 [ext:FreeNodes] 🇪🇸_ES_西班牙
+      - 🇯🇵 [ext:FreeNodes] 🇨🇳_CN_中国->🇯🇵_JP_日本
+      - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 8
+      - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国 4
+      - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 9
+      - 🇺🇸 [ext:FreeNodes] 🇨🇦_CA_加拿大->🇺🇸_US_美国
+      - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 10
       - 🇰🇷 [ext:FreeNodes] 🇰🇷_KR_韩国
-      - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国
-      - 🇬🇧 [ext:FreeNodes] 🇬🇧_GB_英国
-      - 🇮🇳 [ext:FreeNodes] 🇮🇳_IN_印度
-      - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国 2
+      - 🇫🇷 [ext:FreeNodes] 🇫🇷_FR_法国
+      - 🇭🇰 [ext:FreeNodes] 🇭🇰_HK_中国香港
+      - 🇷🇺 [ext:FreeNodes] 🇷🇺_RU_俄罗斯 2
+      - 🇰🇷 [ext:FreeNodes] 🇨🇳_CN_中国->🇰🇷_KR_韩国 2
+      - 🇭🇰 [ext:FreeNodes] 🇭🇰_HK_中国香港 2
+      - 🇭🇰 [ext:FreeNodes] 🇨🇳_CN_中国->🇭🇰_HK_中国香港
       - 🇯🇵 [ext:FreeNodes] 🇨🇳_CN_中国->🇯🇵_JP_日本 2
-      - 🇮🇳 [ext:FreeNodes] 🇮🇳_IN_印度 2
-      - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 4
-      - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 5
+      - 🇯🇵 [ext:FreeNodes] 🇺🇸_US_美国->🇯🇵_JP_日本
       - "[ext:freenode] tg频道:@ripaojiedian"
       - 🇭🇰 [ext:freenode] 香港3|@ripaojiedian
       - 🇭🇰 [ext:freenode] 香港4|@ripaojiedian
@@ -474,38 +567,48 @@ proxy-groups:
       - 🇸🇬 [ext:freenode] 新加坡3|@ripaojiedian
       - 🇺🇸 [ext:freenode] 美国|@ripaojiedian
       - 🇺🇸 [ext:freenode] 美国2|@ripaojiedian
+      - 🇺🇸 [ext:freenode] 美国3|@ripaojiedian
   - name: 🍎 苹果服务
     type: select
     proxies:
       - 🔰 节点选择
       - 🎯 全球直连
       - ♻️ 自动选择
-      - "[ext:NoMoreWalls] 🇫🇷FR_4|2.0MB/s"
-      - "[ext:NoMoreWalls] 🇫🇷FR_1|2.6MB/s"
-      - "[ext:NoMoreWalls] 🇫🇷FR_2|2.1MB/s"
-      - "[ext:NoMoreWalls] 🇫🇷FR_3|1.1MB/s"
-      - "[ext:NoMoreWalls] 🇫🇷FR_5|1.5MB/s"
+      - "[ext:NoMoreWalls] 🇫🇷FR_2|2.2MB/s"
+      - "[ext:NoMoreWalls] 🇫🇷FR_1|1.8MB/s"
+      - "[ext:NoMoreWalls] 🇫🇷FR_3|1.3MB/s"
+      - "[ext:NoMoreWalls] 🇺🇸US_17|2.5MB/s"
+      - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国
+      - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国 2
+      - "[ext:NoMoreWalls] 🇺🇸US_2|3.5MB/s"
+      - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国 3
+      - "[ext:NoMoreWalls] 🇯🇵JP_3|5.2MB/s"
+      - "[ext:NoMoreWalls] 🇯🇵JP_4|5.6MB/s"
+      - "[ext:NoMoreWalls] 🇯🇵JP_6|2.4MB/s"
       - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本
       - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 2
       - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 3
-      - 🇦🇺 [ext:FreeNodes] 🇦🇺_AU_澳大利亚
-      - 🇫🇷 [ext:FreeNodes] 🇫🇷_FR_法国
-      - "[ext:NoMoreWalls] 🇩🇪DE_2|3.5MB/s"
-      - 🇺🇸 [ext:NoMoreWalls] 美国3|@ripaojiedian
-      - 🇺🇸 [ext:freenode] 美国3|@ripaojiedian
-      - 🇭🇰 [ext:NoMoreWalls] 香港|@ripaojiedian
+      - "[ext:NoMoreWalls] 🇯🇵JP_5|4.8MB/s"
+      - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 4
+      - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 5
+      - "[ext:NoMoreWalls] 🇯🇵JP_2|5.6MB/s"
+      - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 6
+      - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 7
+      - "[ext:NoMoreWalls] 🇩🇪DE_2|4.5MB/s"
+      - "[ext:NoMoreWalls] 🇩🇪DE_1|3.0MB/s"
       - 🇭🇰 [ext:NoMoreWalls] 🇭🇰 香港|@ripaojiedian
+      - 🇭🇰 [ext:NoMoreWalls] 香港|@ripaojiedian
       - 🇸🇬 [ext:FreeNodes] 🇸🇬_SG_新加坡
+      - 🇰🇷 [ext:FreeNodes] 🇨🇳_CN_中国->🇰🇷_KR_韩国
+      - 🇵🇱 [ext:FreeNodes] 🇵🇱_PL_波兰
       - 🇸🇬 [ext:FreeNodes] 🇸🇬_SG_新加坡 2
-      - "[ext:NoMoreWalls] 🇹🇼TW_1|1.3MB/s"
-      - "[ext:NoMoreWalls] 🇭🇰HK_1|5.8MB/s"
-      - "[ext:NoMoreWalls] 🇩🇪DE_1|1.3MB/s"
-      - "[ext:NoMoreWalls] 🇯🇵JP_1|6.1MB/s"
       - 🇭🇰 [ext:freenode] 香港|@ripaojiedian
       - 🇷🇺 [ext:FreeNodes] 🇷🇺_RU_俄罗斯
+      - 🇮🇳 [ext:FreeNodes] 🇮🇳_IN_印度
+      - "[ext:NoMoreWalls] 🇩🇪DE_3|3.1MB/s"
+      - "[ext:NoMoreWalls] 🇰🇷KR_1|4.2MB/s"
+      - "[ext:NoMoreWalls] 🇯🇵JP_1|3.9MB/s"
       - 🇺🇸 [ext:FreeNodes] 🇨🇳_CN_中国->🇺🇸_US_美国
-      - 🇯🇵 [ext:FreeNodes] 🇨🇳_CN_中国->🇯🇵_JP_日本
-      - 🇮🇪 [ext:FreeNodes] 🇨🇳_CN_中国->🇮🇪_IE_爱尔兰
       - "[ext:NoMoreWalls] 防范境外势力渗透"
       - "[ext:NoMoreWalls] 防范境外势力渗透 #1"
       - "[ext:NoMoreWalls] 防范境外势力渗透 #2"
@@ -515,18 +618,21 @@ proxy-groups:
       - "[ext:NoMoreWalls] 防范境外势力渗透 #6"
       - "[ext:NoMoreWalls] 防范境外势力渗透 #7"
       - "[ext:NoMoreWalls] 防范境外势力渗透 #8"
-      - "[ext:NoMoreWalls] 防范境外势力渗透 #9"
-      - 🇳🇱 [ext:FreeNodes] 🇷🇺_RU_俄罗斯->🇳🇱_NL_荷兰
-      - 🇪🇸 [ext:FreeNodes] 🇪🇸_ES_西班牙
+      - 🇯🇵 [ext:FreeNodes] 🇨🇳_CN_中国->🇯🇵_JP_日本
+      - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 8
+      - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国 4
+      - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 9
+      - 🇺🇸 [ext:FreeNodes] 🇨🇦_CA_加拿大->🇺🇸_US_美国
+      - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 10
       - 🇰🇷 [ext:FreeNodes] 🇰🇷_KR_韩国
-      - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国
-      - 🇬🇧 [ext:FreeNodes] 🇬🇧_GB_英国
-      - 🇮🇳 [ext:FreeNodes] 🇮🇳_IN_印度
-      - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国 2
+      - 🇫🇷 [ext:FreeNodes] 🇫🇷_FR_法国
+      - 🇭🇰 [ext:FreeNodes] 🇭🇰_HK_中国香港
+      - 🇷🇺 [ext:FreeNodes] 🇷🇺_RU_俄罗斯 2
+      - 🇰🇷 [ext:FreeNodes] 🇨🇳_CN_中国->🇰🇷_KR_韩国 2
+      - 🇭🇰 [ext:FreeNodes] 🇭🇰_HK_中国香港 2
+      - 🇭🇰 [ext:FreeNodes] 🇨🇳_CN_中国->🇭🇰_HK_中国香港
       - 🇯🇵 [ext:FreeNodes] 🇨🇳_CN_中国->🇯🇵_JP_日本 2
-      - 🇮🇳 [ext:FreeNodes] 🇮🇳_IN_印度 2
-      - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 4
-      - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 5
+      - 🇯🇵 [ext:FreeNodes] 🇺🇸_US_美国->🇯🇵_JP_日本
       - "[ext:freenode] tg频道:@ripaojiedian"
       - 🇭🇰 [ext:freenode] 香港3|@ripaojiedian
       - 🇭🇰 [ext:freenode] 香港4|@ripaojiedian
@@ -539,6 +645,7 @@ proxy-groups:
       - 🇸🇬 [ext:freenode] 新加坡3|@ripaojiedian
       - 🇺🇸 [ext:freenode] 美国|@ripaojiedian
       - 🇺🇸 [ext:freenode] 美国2|@ripaojiedian
+      - 🇺🇸 [ext:freenode] 美国3|@ripaojiedian
   - name: 🎯 全球直连
     type: select
     proxies:
@@ -554,32 +661,41 @@ proxy-groups:
       - 🔰 节点选择
       - 🎯 全球直连
       - ♻️ 自动选择
-      - "[ext:NoMoreWalls] 🇫🇷FR_4|2.0MB/s"
-      - "[ext:NoMoreWalls] 🇫🇷FR_1|2.6MB/s"
-      - "[ext:NoMoreWalls] 🇫🇷FR_2|2.1MB/s"
-      - "[ext:NoMoreWalls] 🇫🇷FR_3|1.1MB/s"
-      - "[ext:NoMoreWalls] 🇫🇷FR_5|1.5MB/s"
+      - "[ext:NoMoreWalls] 🇫🇷FR_2|2.2MB/s"
+      - "[ext:NoMoreWalls] 🇫🇷FR_1|1.8MB/s"
+      - "[ext:NoMoreWalls] 🇫🇷FR_3|1.3MB/s"
+      - "[ext:NoMoreWalls] 🇺🇸US_17|2.5MB/s"
+      - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国
+      - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国 2
+      - "[ext:NoMoreWalls] 🇺🇸US_2|3.5MB/s"
+      - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国 3
+      - "[ext:NoMoreWalls] 🇯🇵JP_3|5.2MB/s"
+      - "[ext:NoMoreWalls] 🇯🇵JP_4|5.6MB/s"
+      - "[ext:NoMoreWalls] 🇯🇵JP_6|2.4MB/s"
       - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本
       - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 2
       - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 3
-      - 🇦🇺 [ext:FreeNodes] 🇦🇺_AU_澳大利亚
-      - 🇫🇷 [ext:FreeNodes] 🇫🇷_FR_法国
-      - "[ext:NoMoreWalls] 🇩🇪DE_2|3.5MB/s"
-      - 🇺🇸 [ext:NoMoreWalls] 美国3|@ripaojiedian
-      - 🇺🇸 [ext:freenode] 美国3|@ripaojiedian
-      - 🇭🇰 [ext:NoMoreWalls] 香港|@ripaojiedian
+      - "[ext:NoMoreWalls] 🇯🇵JP_5|4.8MB/s"
+      - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 4
+      - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 5
+      - "[ext:NoMoreWalls] 🇯🇵JP_2|5.6MB/s"
+      - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 6
+      - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 7
+      - "[ext:NoMoreWalls] 🇩🇪DE_2|4.5MB/s"
+      - "[ext:NoMoreWalls] 🇩🇪DE_1|3.0MB/s"
       - 🇭🇰 [ext:NoMoreWalls] 🇭🇰 香港|@ripaojiedian
+      - 🇭🇰 [ext:NoMoreWalls] 香港|@ripaojiedian
       - 🇸🇬 [ext:FreeNodes] 🇸🇬_SG_新加坡
+      - 🇰🇷 [ext:FreeNodes] 🇨🇳_CN_中国->🇰🇷_KR_韩国
+      - 🇵🇱 [ext:FreeNodes] 🇵🇱_PL_波兰
       - 🇸🇬 [ext:FreeNodes] 🇸🇬_SG_新加坡 2
-      - "[ext:NoMoreWalls] 🇹🇼TW_1|1.3MB/s"
-      - "[ext:NoMoreWalls] 🇭🇰HK_1|5.8MB/s"
-      - "[ext:NoMoreWalls] 🇩🇪DE_1|1.3MB/s"
-      - "[ext:NoMoreWalls] 🇯🇵JP_1|6.1MB/s"
       - 🇭🇰 [ext:freenode] 香港|@ripaojiedian
       - 🇷🇺 [ext:FreeNodes] 🇷🇺_RU_俄罗斯
+      - 🇮🇳 [ext:FreeNodes] 🇮🇳_IN_印度
+      - "[ext:NoMoreWalls] 🇩🇪DE_3|3.1MB/s"
+      - "[ext:NoMoreWalls] 🇰🇷KR_1|4.2MB/s"
+      - "[ext:NoMoreWalls] 🇯🇵JP_1|3.9MB/s"
       - 🇺🇸 [ext:FreeNodes] 🇨🇳_CN_中国->🇺🇸_US_美国
-      - 🇯🇵 [ext:FreeNodes] 🇨🇳_CN_中国->🇯🇵_JP_日本
-      - 🇮🇪 [ext:FreeNodes] 🇨🇳_CN_中国->🇮🇪_IE_爱尔兰
       - "[ext:NoMoreWalls] 防范境外势力渗透"
       - "[ext:NoMoreWalls] 防范境外势力渗透 #1"
       - "[ext:NoMoreWalls] 防范境外势力渗透 #2"
@@ -589,18 +705,21 @@ proxy-groups:
       - "[ext:NoMoreWalls] 防范境外势力渗透 #6"
       - "[ext:NoMoreWalls] 防范境外势力渗透 #7"
       - "[ext:NoMoreWalls] 防范境外势力渗透 #8"
-      - "[ext:NoMoreWalls] 防范境外势力渗透 #9"
-      - 🇳🇱 [ext:FreeNodes] 🇷🇺_RU_俄罗斯->🇳🇱_NL_荷兰
-      - 🇪🇸 [ext:FreeNodes] 🇪🇸_ES_西班牙
+      - 🇯🇵 [ext:FreeNodes] 🇨🇳_CN_中国->🇯🇵_JP_日本
+      - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 8
+      - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国 4
+      - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 9
+      - 🇺🇸 [ext:FreeNodes] 🇨🇦_CA_加拿大->🇺🇸_US_美国
+      - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 10
       - 🇰🇷 [ext:FreeNodes] 🇰🇷_KR_韩国
-      - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国
-      - 🇬🇧 [ext:FreeNodes] 🇬🇧_GB_英国
-      - 🇮🇳 [ext:FreeNodes] 🇮🇳_IN_印度
-      - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国 2
+      - 🇫🇷 [ext:FreeNodes] 🇫🇷_FR_法国
+      - 🇭🇰 [ext:FreeNodes] 🇭🇰_HK_中国香港
+      - 🇷🇺 [ext:FreeNodes] 🇷🇺_RU_俄罗斯 2
+      - 🇰🇷 [ext:FreeNodes] 🇨🇳_CN_中国->🇰🇷_KR_韩国 2
+      - 🇭🇰 [ext:FreeNodes] 🇭🇰_HK_中国香港 2
+      - 🇭🇰 [ext:FreeNodes] 🇨🇳_CN_中国->🇭🇰_HK_中国香港
       - 🇯🇵 [ext:FreeNodes] 🇨🇳_CN_中国->🇯🇵_JP_日本 2
-      - 🇮🇳 [ext:FreeNodes] 🇮🇳_IN_印度 2
-      - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 4
-      - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本 5
+      - 🇯🇵 [ext:FreeNodes] 🇺🇸_US_美国->🇯🇵_JP_日本
       - "[ext:freenode] tg频道:@ripaojiedian"
       - 🇭🇰 [ext:freenode] 香港3|@ripaojiedian
       - 🇭🇰 [ext:freenode] 香港4|@ripaojiedian
@@ -613,6 +732,7 @@ proxy-groups:
       - 🇸🇬 [ext:freenode] 新加坡3|@ripaojiedian
       - 🇺🇸 [ext:freenode] 美国|@ripaojiedian
       - 🇺🇸 [ext:freenode] 美国2|@ripaojiedian
+      - 🇺🇸 [ext:freenode] 美国3|@ripaojiedian
 rules:
   - DOMAIN-SUFFIX,local,🎯 全球直连
   - IP-CIDR,192.168.0.0/16,🎯 全球直连,no-resolve
