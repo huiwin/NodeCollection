@@ -1,6 +1,6 @@
 # NodeCollection
 
-> 自动更新时间: 2026-08-20 08:45:05
+> 自动更新时间: 2026-08-20 09:23:09
 
 > ⚠️ **免责声明**：本项目所有节点均来自互联网公开资源，仅供学习与交流使用，不保证节点的安全性、可用性与合法性。请勿用于任何违反所在地区法律法规的用途，也请勿通过免费节点登录银行、邮箱等敏感账号。使用本项目产生的一切后果由使用者自行承担。
 
@@ -67,6 +67,21 @@
 | gh-proxy.com | `https://gh-proxy.com/https://raw.githubusercontent.com/huiwin/NodeCollection/main/output/mixed/latest.txt` |
 | ghfast.top | `https://ghfast.top/https://raw.githubusercontent.com/huiwin/NodeCollection/main/output/mixed/latest.txt` |
 | jsdelivr | `https://fastly.jsdelivr.net/gh/huiwin/NodeCollection@main/output/mixed/latest.txt` |
+
+---
+
+### [Sing-box](https://github.com/SagerNet/sing-box)
+
+<sub>Sing-box / SagerNet / Hiddify (JSON)</sub>
+
+| 加速方式 | 订阅地址 |
+| :--- | :--- |
+| 原生 | `https://raw.githubusercontent.com/huiwin/NodeCollection/main/output/singbox/latest.json` |
+| kkgithub | `https://raw.kkgithub.com/huiwin/NodeCollection/main/output/singbox/latest.json` |
+| ghproxy.net | `https://ghproxy.net/https://raw.githubusercontent.com/huiwin/NodeCollection/main/output/singbox/latest.json` |
+| gh-proxy.com | `https://gh-proxy.com/https://raw.githubusercontent.com/huiwin/NodeCollection/main/output/singbox/latest.json` |
+| ghfast.top | `https://ghfast.top/https://raw.githubusercontent.com/huiwin/NodeCollection/main/output/singbox/latest.json` |
+| jsdelivr | `https://fastly.jsdelivr.net/gh/huiwin/NodeCollection@main/output/singbox/latest.json` |
 
 ---
 
@@ -151,6 +166,21 @@
 
 ---
 
+### Sing-box
+
+<sub>融合节点 Sing-box JSON</sub>
+
+| 加速方式 | 订阅地址 |
+| :--- | :--- |
+| 原生 | `https://raw.githubusercontent.com/huiwin/NodeCollection/main/output/merged/latest.singbox.json` |
+| kkgithub | `https://raw.kkgithub.com/huiwin/NodeCollection/main/output/merged/latest.singbox.json` |
+| ghproxy.net | `https://ghproxy.net/https://raw.githubusercontent.com/huiwin/NodeCollection/main/output/merged/latest.singbox.json` |
+| gh-proxy.com | `https://gh-proxy.com/https://raw.githubusercontent.com/huiwin/NodeCollection/main/output/merged/latest.singbox.json` |
+| ghfast.top | `https://ghfast.top/https://raw.githubusercontent.com/huiwin/NodeCollection/main/output/merged/latest.singbox.json` |
+| jsdelivr | `https://fastly.jsdelivr.net/gh/huiwin/NodeCollection@main/output/merged/latest.singbox.json` |
+
+---
+
 ### 节点分组
 
 融合订阅（Clash 格式）按地区自动分组，支持以下代理组：
@@ -173,11 +203,11 @@
 
 ### 上游来源 (Thanks)
 
-| 来源 | 项目地址 |
-| :--- | :--- |
-| freenode | [ripaojiedian/freenode](https://github.com/ripaojiedian/freenode) |
-| NoMoreWalls | [peasoft/NoMoreWalls](https://github.com/peasoft/NoMoreWalls) |
-| FreeNodes | [Barabama/FreeNodes](https://github.com/Barabama/FreeNodes) |
+| 来源 | 项目地址 | 状态 |
+| :--- | :--- | :--- |
+| freenode | [ripaojiedian/freenode](https://github.com/ripaojiedian/freenode) | ✅ 正常 |
+| NoMoreWalls | [peasoft/NoMoreWalls](https://github.com/peasoft/NoMoreWalls) | ✅ 正常 |
+| FreeNodes | [Barabama/FreeNodes](https://github.com/Barabama/FreeNodes) | ✅ 正常 |
 
 上游节点遵循各来源项目的许可证与分发要求，如来源项目提出异议将立即移除。
 
@@ -185,7 +215,7 @@
 
 - 每 4 小时自动更新一次 (GitHub Actions)
 - 订阅链接为固定地址，复制一次即可长期使用，内容随自动更新刷新
-- 当前更新时间: `2026-08-20 08:45:05`
+- 当前更新时间: `2026-08-20 09:23:09`
 - 加速方式按实时性排序: kkgithub/ghproxy 实时更新, jsdelivr 有缓存延迟
 - 如某加速节点不可用, 换一个即可
 
