@@ -5,6 +5,25 @@ mode: Rule
 log-level: info
 external-controller: :9090
 proxies:
+  - {name: 🇮🇪 爱尔兰 - Dublin - 1, server: 54.74.159.195, port: 443, type: trojan, password: AE62539071, sni: kind-stork.rooster465.autos, udp: true}
+  - {name: 🇮🇪 爱尔兰 - Dublin - 2, server: funny-hen.rooster465.autos, port: 443, type: trojan, password: EQ30679154, sni: funny-hen.rooster465.autos, skip-cert-verify: true, udp: true}
+  - {name: 🇮🇪 爱尔兰 - Dublin - 3, server: kind-stork.rooster465.autos, port: 443, type: trojan, password: AE62539071, skip-cert-verify: true, udp: true}
+  - {name: 🇮🇪 爱尔兰 - Dublin - 4, server: kind-stork.rooster465.autos, port: 443, type: trojan, password: PQ05174892, sni: kind-stork.rooster465.autos, skip-cert-verify: true, udp: true}
+  - {name: 🇦🇺 澳大利亚 - Sydney - 1, server: together-dingo.rooster465.autos, port: 443, type: trojan, password: AE62539071, skip-cert-verify: true, udp: true}
+  - {name: 🇦🇺 澳大利亚 - Sydney - 2, server: darling-mutt.rooster465.autos, port: 443, type: trojan, password: AE62539071, skip-cert-verify: true, udp: true}
+  - {name: 🇦🇺 澳大利亚 - Sydney - 3, server: 87.121.33.162, port: 443, type: trojan, password: AE62539071, sni: together-dingo.rooster465.autos, udp: true}
+  - {name: 🇩🇪 德国 - Frankfurt am Main - 1, server: 3.66.86.250, port: 443, type: ss, cipher: aes-256-cfb, password: amazonskr05, udp: true}
+  - {name: 🇫🇷 法国 - Paris - 1, server: 13.38.30.165, port: 443, type: ss, cipher: aes-256-cfb, password: amazonskr05, udp: true}
+  - {name: 🇳🇱 荷兰 - Amsterdam - 1, server: thorough-falcon.rooster465.autos, port: 443, type: trojan, password: AE62539071, skip-cert-verify: true, udp: true}
+  - {name: 🇳🇱 荷兰 - Amsterdam - 2, server: thorough-falcon.rooster465.autos, port: 443, type: trojan, password: EQ30679154, skip-cert-verify: true, udp: true}
+  - {name: 🇳🇱 荷兰 - Amsterdam - 3, server: 193.169.239.160, port: 443, type: trojan, password: AE62539071, sni: thorough-falcon.rooster465.autos, skip-cert-verify: true, udp: true}
+  - {name: 🇺🇸 美国 - Los Angeles - 2, server: 128.14.148.84, port: 5531, type: trojan, password: fg20mtCFHy, sni: ycgsc.southbyte.xyz, skip-cert-verify: true, udp: true}
+  - {name: 🇺🇸 美国 - Secaucus - 1, server: 162.243.36.19, port: 80, type: ss, cipher: aes-256-gcm, password: 1BuVr1kYF7v435mF, udp: true}
+  - {name: 🇯🇵 日本 - Tokyo - 1, server: polished-imp.rooster465.autos, port: 443, type: trojan, password: AE62539071, skip-cert-verify: true, udp: true}
+  - {name: 🇯🇵 日本 - Tokyo - 2, server: 13.115.230.84, port: 443, type: trojan, password: AE62539071, sni: polished-imp.rooster465.autos, udp: true}
+  - {name: 🇸🇬 新加坡 - Singapore - 1, server: 139.59.238.97, port: 50573, type: trojan, password: pvZE3UfT0ziK1omVLlsjINBqeqqwab1M, sni: 139.59.238.97, skip-cert-verify: true, udp: true}
+  - {name: 🇭🇰 中国 - Hong Kong - 2, server: 47.86.107.20, port: 5443, type: trojan, password: fg20mtCFHy, sni: hytfes.southbyte.xyz, skip-cert-verify: true, udp: true}
+  - {name: 🇨🇳 中国 - Taipei - 1, server: 2.27.174.110, port: 794, type: vmess, uuid: fd2c3c77-1984-4f7c-befe-efba034e1f3c, alterId: 0, cipher: auto, tls: false, udp: true}
   - {name: Shadowsocks, server: 127.0.0.1, port: 1080, type: socks5, udp: true}
   - {name: 🇺🇸 United States_None_ss_101, server: 63.180.254.10, port: 443, type: ss, cipher: aes-256-cfb, password: amazonskr05, udp: true}
   - {name: 🇭🇰 Hong Kong_Central_vmess_102, server: v10.hdacd.com, port: 30807, type: vmess, uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484, alterId: 2, cipher: auto, tls: false, skip-cert-verify: false, udp: true}
@@ -46,10 +65,35 @@ proxies:
   - {name: 🇭🇰 Hong Kong_None_trojan_1123, server: 18.163.126.92, port: 28051, type: trojan, password: 6ec301428255a78a1d826988d86cc87e, sni: www.nintendogames.net, skip-cert-verify: true, udp: true}
   - {name: 🇭🇰 Hong Kong_None_trojan_1124, server: 18.163.74.15, port: 10418, type: trojan, password: BxceQaOe, sni: t.me%2Fripaojiedian, skip-cert-verify: true, udp: true}
   - {name: 🇭🇰 Hong Kong_Central_vmess_1125, server: v10.hdacd.com, port: 30807, type: vmess, uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484, alterId: 2, cipher: auto, tls: false, udp: true}
-  - {name: 🇯🇵 Japan_Tokyo_trojan_1126, server: ideal-phoenix.rooster465.autos, port: 443, type: trojan, password: PQ05174892, sni: ideal-phoenix.rooster465.autos, skip-cert-verify: false, udp: true}
-  - {name: None_None_vmess_1127, server: node.socks5.kdns.fr, port: 443, type: vmess, uuid: 3d69d9bc-eaae-42bd-828f-6894c7d7edbf, alterId: 0, cipher: auto, tls: true, skip-cert-verify: false, servername: resolution-secretary-presence-amazing.trycloudflare.com, network: ws, ws-opts: {path: /3d69d9bc-eaae-42bd-828f-6894c7d7edbf-vm, headers: {Host: resolution-secretary-presence-amazing.trycloudflare.com}}, udp: true}
-  - {name: None_None_vmess_1128, server: node.socks5.kdns.fr, port: 443, type: vmess, uuid: 3e1c7cc6-6324-48bf-9855-05c8afae90b3, alterId: 0, cipher: auto, tls: true, skip-cert-verify: false, servername: willing-relative-las-legislative.trycloudflare.com, network: ws, ws-opts: {path: /3e1c7cc6-6324-48bf-9855-05c8afae90b3-vm, headers: {Host: willing-relative-las-legislative.trycloudflare.com}}, udp: true}
-  - {name: None_None_vmess_1129, server: node.socks5.kdns.fr, port: 443, type: vmess, uuid: 20a16a21-6468-4e63-96e1-d9cecf0035ce, alterId: 0, cipher: auto, tls: true, skip-cert-verify: false, servername: pas-seo-delays-safe.trycloudflare.com, network: ws, ws-opts: {path: /20a16a21-6468-4e63-96e1-d9cecf0035ce-vm, headers: {Host: pas-seo-delays-safe.trycloudflare.com}}, udp: true}
+  - {name: None_None_vmess_1126, server: node.socks5.kdns.fr, port: 443, type: vmess, uuid: f683235c-54b0-4442-bf0d-812d3804946e, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, servername: ericsson-lab-managed-oem.trycloudflare.com, network: ws, ws-opts: {path: /f683235c-54b0-4442-bf0d-812d3804946e-vm, headers: {Host: ericsson-lab-managed-oem.trycloudflare.com}}, udp: true}
+  - {name: None_None_trojan_1127, server: 198.41.223.96, port: 443, type: trojan, password: humanity, sni: www.ignitelimit.com, skip-cert-verify: false, network: ws, ws-opts: {path: /assignment, headers: {Host: www.ignitelimit.com}}, udp: true}
+  - {name: 🇺🇸 United States_San Francisco_vmess_1128, server: node.socks5.kdns.fr, port: 443, type: vmess, uuid: 36dba83c-5b10-48aa-aee3-6d85790a9bf3, alterId: 0, cipher: auto, tls: true, skip-cert-verify: false, network: ws, ws-opts: {path: /36dba83c-5b10-48aa-aee3-6d85790a9bf3-vm, headers: {Host: smaller-independently-ball-mil.trycloudflare.com}}, udp: true}
+  - {name: 🇩🇪 高清免費無碼AV - AVToday.io - 🇩🇪德国  25.81MB/s, server: leading-eel.rooster465.autos, port: 443, type: trojan, password: FH72359861, skip-cert-verify: false, udp: true}
+  - {name: 🇷🇴 高清免費無碼AV - AVToday.io - 🇷🇴罗马尼亚  18.25MB/s, server: bold-eagle.rooster465.autos, port: 443, type: trojan, password: FH72359861, skip-cert-verify: false, udp: true}
+  - {name: 🇷🇴 高清免費無碼AV - AVToday.io - 🇷🇴罗马尼亚 17.84MB/s, server: epic-iguana.rooster465.autos, port: 443, type: trojan, password: FH72359861, skip-cert-verify: false, udp: true}
+  - {name: 🇺🇸 美国 原生IP 8.44MB/s 285 linuxdo@onimaii, server: 157.254.227.163, port: 443, type: vmess, uuid: eba24d1d-0c2b-4b67-862f-cae68626f3fa, alterId: 0, cipher: auto, tls: true, skip-cert-verify: false, servername: xc166.meiziba5566.com, network: ws, ws-opts: {path: /cae68626f3fa}, udp: true}
+  - {name: 🇺🇸 美国 原生IP 29.10MB/s 343 linuxdo@onimaii, server: 66.42.72.146, port: 46373, type: vmess, uuid: f98fdefd-1b61-4052-c5b5-2a196f6e0541, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /my-vmess-path}, udp: true}
+  - {name: 🇺🇸 高清免費無碼AV - AVToday.io - 🇺🇸美国 3.08MB/s, server: 163.176.130.243, port: 59319, type: ss, cipher: 2022-blake3-chacha20-poly1305, password: 0s/s2MCl4+gpGdRBqSxP7ruTy1yT3AnLhCyc+8G9H+Y=, udp: true}
+  - {name: 高清免費無碼AV - AVToday.io - 🇧🇷BR 20.35MB/s, server: 163.176.64.97, port: 59319, type: ss, cipher: 2022-blake3-chacha20-poly1305, password: vm/54x6x1jshW8TH5BPO2MAMtQ1M5esrFpb+DydSbhk=, udp: true}
+  - {name: 高清免費無碼AV - AVToday.io - 🇧🇷BR 16.96MB/s, server: 163.176.212.36, port: 59319, type: ss, cipher: 2022-blake3-chacha20-poly1305, password: Odwl6fTZmZrBcaH2WNDIhqDu4MZO/5yFCTO2CeN8G5M=, udp: true}
+  - {name: 高清免費無碼AV - AVToday.io - 🇧🇷BR 20.69MB/s, server: 163.176.194.183, port: 59319, type: ss, cipher: 2022-blake3-chacha20-poly1305, password: DRFgJf7ZBvgTIJqPTX8UQ4KTuvAw3rsSKbUkAt30dyo=, udp: true}
+  - {name: 高清免費無碼AV - AVToday.io - 🇧🇷BR 19.83MB/s, server: 163.176.85.126, port: 59319, type: ss, cipher: 2022-blake3-chacha20-poly1305, password: tmNoITDlBC6uGpvPYjou7PZKAH2MOs9tHjig37+TT/Q=, udp: true}
+  - {name: 🇺🇸 美国 原生IP 9.08MB/s 293 linuxdo@onimaii, server: 198.23.184.122, port: 443, type: vmess, uuid: 6910f78e-3c38-46a1-b287-837279ad9b4a, alterId: 0, cipher: auto, tls: true, skip-cert-verify: false, servername: xc163.meiziba5566.com, network: ws, ws-opts: {path: /837279ad9b4a}, udp: true}
+  - {name: 🇧🇷 高清免費無碼AV - AVToday.io - BR-São Paulo-7151811-hccx, server: 147.15.18.110, port: 59319, type: ss, cipher: 2022-blake3-chacha20-poly1305, password: 41V7PSJSBS7f7AgDZyYEm5ZcP/ruYl3OFjo5wWTOhi4=, udp: true}
+  - {name: 🇧🇷 高清免費無碼AV - AVToday.io - BR-São Paulo-31762123-hhel, server: 163.176.212.36, port: 59319, type: ss, cipher: 2022-blake3-chacha20-poly1305, password: Odwl6fTZmZrBcaH2WNDIhqDu4MZO/5yFCTO2CeN8G5M=, udp: true}
+  - {name: 🇸🇬 高清免費無碼AV - AVToday.io - SG-Singapore-1281443-hsly, server: darling-ram.rooster465.autos, port: 443, type: trojan, password: FH72359861, sni: darling-ram.rooster465.autos, skip-cert-verify: false, udp: true}
+  - {name: 🇸🇬 新加坡 | SGP, server: 140.83.57.20, port: 13118, type: vmess, uuid: 1f01e389-fbcb-494c-e46a-210ec36329c2, alterId: 0, cipher: auto, tls: true, skip-cert-verify: false, network: ws, ws-opts: {path: /, headers: {Host: sg.11160321.de5.net}}, udp: true}
+  - {name: 🇨🇦 高清免費無碼AV - AVToday.io - 🇨🇦 加拿大 | CAN, server: 142.4.216.225, port: 443, type: ss, cipher: chacha20-ietf-poly1305, password: ytw2awn, udp: true}
+  - {name: 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA, server: 163.176.240.6, port: 59319, type: ss, cipher: 2022-blake3-chacha20-poly1305, password: Wy1UImjn4slIMGk7alrakt+yyl9YHXCMhtO5RypXDPE=, udp: true}
+  - {name: 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA 2, server: 147.15.18.110, port: 59319, type: ss, cipher: 2022-blake3-chacha20-poly1305, password: 41V7PSJSBS7f7AgDZyYEm5ZcP/ruYl3OFjo5wWTOhi4=, udp: true}
+  - {name: 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA 3, server: 163.176.115.182, port: 59319, type: ss, cipher: 2022-blake3-chacha20-poly1305, password: 9jbr4rN/jUHADrXAvzott4jArdE7p9kmG9Ya2DJw/iw=, udp: true}
+  - {name: 🇩🇪 德国 | DEU, server: www.true.th, port: 80, type: vmess, uuid: a150d554-e962-4632-829f-ee583ada3f95, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /htun, headers: {Host: d7pu5mzr9c4b0.cloudfront.net}}, udp: true}
+  - {name: "[openproxylist.com] TH 15388312", server: www.true.th, port: 80, type: vmess, uuid: a150d554-e962-4632-829f-ee583ada3f95, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /htun, headers: {Host: d7pu5mzr9c4b0.cloudfront.net}}, udp: true}
+  - {name: 🇨🇦 高清免費無碼AV - AVToday.io -  CA 356844, server: 142.4.216.225, port: 443, type: ss, cipher: chacha20-ietf-poly1305, password: ytw2awn, udp: true}
+  - {name: 高清免費無碼AV - AVToday.io -  BR 15388256, server: 163.176.254.175, port: 59319, type: ss, cipher: 2022-blake3-chacha20-poly1305, password: 7pTuen2wPOFpfCTvsQCW/zE35d9zLqoiYoI9LEd+t6s=, udp: true}
+  - {name: 高清免費無碼AV - AVToday.io -  BR 15388254, server: 163.176.240.6, port: 59319, type: ss, cipher: 2022-blake3-chacha20-poly1305, password: Wy1UImjn4slIMGk7alrakt+yyl9YHXCMhtO5RypXDPE=, udp: true}
+  - {name: 高清免費無碼AV - AVToday.io -  BR 15388262, server: 163.176.85.126, port: 59319, type: ss, cipher: 2022-blake3-chacha20-poly1305, password: tmNoITDlBC6uGpvPYjou7PZKAH2MOs9tHjig37+TT/Q=, udp: true}
+  - {name: 高清免費無碼AV - AVToday.io -  BR 15388247, server: 147.15.18.110, port: 59319, type: ss, cipher: 2022-blake3-chacha20-poly1305, password: 41V7PSJSBS7f7AgDZyYEm5ZcP/ruYl3OFjo5wWTOhi4=, udp: true}
   - {name: 高清無碼AV - AVToday.io - 🇺🇸US_86|214KB/s|A004-260618, server: 37.19.198.236, port: 443, type: ss, cipher: aes-128-gcm, password: shadowsocks, udp: true}
   - {name: 高清無碼AV - AVToday.io - 🇳🇱NL_60|327KB/s|A004-260618, server: 82.38.31.28, port: 8080, type: ss, cipher: chacha20-ietf-poly1305, password: oZIoA69Q8yhcQV8ka3Pa3A, udp: true}
   - {name: 高清無碼AV - AVToday.io - 🇪🇸ES_5|425KB/s|A004-260618, server: 108.181.121.226, port: 8388, type: ss, cipher: chacha20-ietf-poly1305, password: WSyL4XTwNsdv, udp: true}
@@ -84,57 +128,31 @@ proxies:
   - {name: 高清無碼AV - AVToday.io - 🇳🇱NL_79|395KB/s|B007-260618, server: 193.29.139.147, port: 8080, type: ss, cipher: chacha20-ietf-poly1305, password: k1dBOmOB4oqi7Ump37a1bQ, udp: true}
   - {name: US_105|211KB/s, server: 38.91.107.49, port: 18000, type: vmess, uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, udp: true}
   - {name: 高清無碼AV - AVToday.io - 🇰🇭KH_1|156KB/s|A004-260618, server: 38.54.93.66, port: 49692, type: ss, cipher: rc4-md5, password: ad80f76711ec7213, udp: true}
-  - {name: 🇮🇪 爱尔兰 - Dublin - 1, server: 54.74.159.195, port: 443, type: trojan, password: AE62539071, sni: kind-stork.rooster465.autos, udp: true}
-  - {name: 🇮🇪 爱尔兰 - Dublin - 2, server: funny-hen.rooster465.autos, port: 443, type: trojan, password: EQ30679154, sni: funny-hen.rooster465.autos, skip-cert-verify: true, udp: true}
-  - {name: 🇮🇪 爱尔兰 - Dublin - 3, server: kind-stork.rooster465.autos, port: 443, type: trojan, password: AE62539071, skip-cert-verify: true, udp: true}
-  - {name: 🇮🇪 爱尔兰 - Dublin - 4, server: kind-stork.rooster465.autos, port: 443, type: trojan, password: PQ05174892, sni: kind-stork.rooster465.autos, skip-cert-verify: true, udp: true}
-  - {name: 🇦🇺 澳大利亚 - Sydney - 1, server: together-dingo.rooster465.autos, port: 443, type: trojan, password: AE62539071, skip-cert-verify: true, udp: true}
-  - {name: 🇦🇺 澳大利亚 - Sydney - 2, server: darling-mutt.rooster465.autos, port: 443, type: trojan, password: AE62539071, skip-cert-verify: true, udp: true}
-  - {name: 🇦🇺 澳大利亚 - Sydney - 3, server: 87.121.33.162, port: 443, type: trojan, password: AE62539071, sni: together-dingo.rooster465.autos, udp: true}
-  - {name: 🇩🇪 德国 - Frankfurt am Main - 1, server: 3.66.86.250, port: 443, type: ss, cipher: aes-256-cfb, password: amazonskr05, udp: true}
-  - {name: 🇫🇷 法国 - Paris - 1, server: 13.38.30.165, port: 443, type: ss, cipher: aes-256-cfb, password: amazonskr05, udp: true}
-  - {name: 🇳🇱 荷兰 - Amsterdam - 1, server: thorough-falcon.rooster465.autos, port: 443, type: trojan, password: AE62539071, skip-cert-verify: true, udp: true}
-  - {name: 🇳🇱 荷兰 - Amsterdam - 2, server: thorough-falcon.rooster465.autos, port: 443, type: trojan, password: EQ30679154, skip-cert-verify: true, udp: true}
-  - {name: 🇳🇱 荷兰 - Amsterdam - 3, server: 193.169.239.160, port: 443, type: trojan, password: AE62539071, sni: thorough-falcon.rooster465.autos, skip-cert-verify: true, udp: true}
-  - {name: 🇺🇸 美国 - Los Angeles - 2, server: 128.14.148.84, port: 5531, type: trojan, password: fg20mtCFHy, sni: ycgsc.southbyte.xyz, skip-cert-verify: true, udp: true}
-  - {name: 🇺🇸 美国 - Secaucus - 1, server: 162.243.36.19, port: 80, type: ss, cipher: aes-256-gcm, password: 1BuVr1kYF7v435mF, udp: true}
-  - {name: 🇯🇵 日本 - Tokyo - 1, server: polished-imp.rooster465.autos, port: 443, type: trojan, password: AE62539071, skip-cert-verify: true, udp: true}
-  - {name: 🇯🇵 日本 - Tokyo - 2, server: 13.115.230.84, port: 443, type: trojan, password: AE62539071, sni: polished-imp.rooster465.autos, udp: true}
-  - {name: 🇸🇬 新加坡 - Singapore - 1, server: 139.59.238.97, port: 50573, type: trojan, password: pvZE3UfT0ziK1omVLlsjINBqeqqwab1M, sni: 139.59.238.97, skip-cert-verify: true, udp: true}
-  - {name: 🇭🇰 中国 - Hong Kong - 2, server: 47.86.107.20, port: 5443, type: trojan, password: fg20mtCFHy, sni: hytfes.southbyte.xyz, skip-cert-verify: true, udp: true}
-  - {name: 🇨🇳 中国 - Taipei - 1, server: 2.27.174.110, port: 794, type: vmess, uuid: fd2c3c77-1984-4f7c-befe-efba034e1f3c, alterId: 0, cipher: auto, tls: false, udp: true}
-  - {name: 🇩🇪 高清免費無碼AV - AVToday.io - 🇩🇪德国  25.81MB/s, server: leading-eel.rooster465.autos, port: 443, type: trojan, password: FH72359861, skip-cert-verify: false, udp: true}
-  - {name: 🇷🇴 高清免費無碼AV - AVToday.io - 🇷🇴罗马尼亚  18.25MB/s, server: bold-eagle.rooster465.autos, port: 443, type: trojan, password: FH72359861, skip-cert-verify: false, udp: true}
-  - {name: 🇷🇴 高清免費無碼AV - AVToday.io - 🇷🇴罗马尼亚 17.84MB/s, server: epic-iguana.rooster465.autos, port: 443, type: trojan, password: FH72359861, skip-cert-verify: false, udp: true}
-  - {name: 🇺🇸 美国 原生IP 8.44MB/s 285 linuxdo@onimaii, server: 157.254.227.163, port: 443, type: vmess, uuid: eba24d1d-0c2b-4b67-862f-cae68626f3fa, alterId: 0, cipher: auto, tls: true, skip-cert-verify: false, servername: xc166.meiziba5566.com, network: ws, ws-opts: {path: /cae68626f3fa}, udp: true}
-  - {name: 🇺🇸 美国 原生IP 29.10MB/s 343 linuxdo@onimaii, server: 66.42.72.146, port: 46373, type: vmess, uuid: f98fdefd-1b61-4052-c5b5-2a196f6e0541, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /my-vmess-path}, udp: true}
-  - {name: 🇺🇸 高清免費無碼AV - AVToday.io - 🇺🇸美国 3.08MB/s, server: 163.176.130.243, port: 59319, type: ss, cipher: 2022-blake3-chacha20-poly1305, password: 0s/s2MCl4+gpGdRBqSxP7ruTy1yT3AnLhCyc+8G9H+Y=, udp: true}
-  - {name: 高清免費無碼AV - AVToday.io - 🇧🇷BR 20.35MB/s, server: 163.176.64.97, port: 59319, type: ss, cipher: 2022-blake3-chacha20-poly1305, password: vm/54x6x1jshW8TH5BPO2MAMtQ1M5esrFpb+DydSbhk=, udp: true}
-  - {name: 高清免費無碼AV - AVToday.io - 🇧🇷BR 16.96MB/s, server: 163.176.212.36, port: 59319, type: ss, cipher: 2022-blake3-chacha20-poly1305, password: Odwl6fTZmZrBcaH2WNDIhqDu4MZO/5yFCTO2CeN8G5M=, udp: true}
-  - {name: 高清免費無碼AV - AVToday.io - 🇧🇷BR 20.69MB/s, server: 163.176.194.183, port: 59319, type: ss, cipher: 2022-blake3-chacha20-poly1305, password: DRFgJf7ZBvgTIJqPTX8UQ4KTuvAw3rsSKbUkAt30dyo=, udp: true}
-  - {name: 高清免費無碼AV - AVToday.io - 🇧🇷BR 19.83MB/s, server: 163.176.85.126, port: 59319, type: ss, cipher: 2022-blake3-chacha20-poly1305, password: tmNoITDlBC6uGpvPYjou7PZKAH2MOs9tHjig37+TT/Q=, udp: true}
-  - {name: 🇺🇸 美国 原生IP 9.08MB/s 293 linuxdo@onimaii, server: 198.23.184.122, port: 443, type: vmess, uuid: 6910f78e-3c38-46a1-b287-837279ad9b4a, alterId: 0, cipher: auto, tls: true, skip-cert-verify: false, servername: xc163.meiziba5566.com, network: ws, ws-opts: {path: /837279ad9b4a}, udp: true}
-  - {name: 🇧🇷 高清免費無碼AV - AVToday.io - BR-São Paulo-7151811-hccx, server: 147.15.18.110, port: 59319, type: ss, cipher: 2022-blake3-chacha20-poly1305, password: 41V7PSJSBS7f7AgDZyYEm5ZcP/ruYl3OFjo5wWTOhi4=, udp: true}
-  - {name: 🇧🇷 高清免費無碼AV - AVToday.io - BR-São Paulo-31762123-hhel, server: 163.176.212.36, port: 59319, type: ss, cipher: 2022-blake3-chacha20-poly1305, password: Odwl6fTZmZrBcaH2WNDIhqDu4MZO/5yFCTO2CeN8G5M=, udp: true}
-  - {name: 🇸🇬 高清免費無碼AV - AVToday.io - SG-Singapore-1281443-hsly, server: darling-ram.rooster465.autos, port: 443, type: trojan, password: FH72359861, sni: darling-ram.rooster465.autos, skip-cert-verify: false, udp: true}
-  - {name: 🇸🇬 新加坡 | SGP, server: 140.83.57.20, port: 13118, type: vmess, uuid: 1f01e389-fbcb-494c-e46a-210ec36329c2, alterId: 0, cipher: auto, tls: true, skip-cert-verify: false, network: ws, ws-opts: {path: /, headers: {Host: sg.11160321.de5.net}}, udp: true}
-  - {name: 🇨🇦 高清免費無碼AV - AVToday.io - 🇨🇦 加拿大 | CAN, server: 142.4.216.225, port: 443, type: ss, cipher: chacha20-ietf-poly1305, password: ytw2awn, udp: true}
-  - {name: 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA, server: 163.176.240.6, port: 59319, type: ss, cipher: 2022-blake3-chacha20-poly1305, password: Wy1UImjn4slIMGk7alrakt+yyl9YHXCMhtO5RypXDPE=, udp: true}
-  - {name: 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA 2, server: 147.15.18.110, port: 59319, type: ss, cipher: 2022-blake3-chacha20-poly1305, password: 41V7PSJSBS7f7AgDZyYEm5ZcP/ruYl3OFjo5wWTOhi4=, udp: true}
-  - {name: 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA 3, server: 163.176.115.182, port: 59319, type: ss, cipher: 2022-blake3-chacha20-poly1305, password: 9jbr4rN/jUHADrXAvzott4jArdE7p9kmG9Ya2DJw/iw=, udp: true}
-  - {name: 🇩🇪 德国 | DEU, server: www.true.th, port: 80, type: vmess, uuid: a150d554-e962-4632-829f-ee583ada3f95, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /htun, headers: {Host: d7pu5mzr9c4b0.cloudfront.net}}, udp: true}
-  - {name: "[openproxylist.com] TH 15388312", server: www.true.th, port: 80, type: vmess, uuid: a150d554-e962-4632-829f-ee583ada3f95, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /htun, headers: {Host: d7pu5mzr9c4b0.cloudfront.net}}, udp: true}
-  - {name: 🇨🇦 高清免費無碼AV - AVToday.io -  CA 356844, server: 142.4.216.225, port: 443, type: ss, cipher: chacha20-ietf-poly1305, password: ytw2awn, udp: true}
-  - {name: 高清免費無碼AV - AVToday.io -  BR 15388256, server: 163.176.254.175, port: 59319, type: ss, cipher: 2022-blake3-chacha20-poly1305, password: 7pTuen2wPOFpfCTvsQCW/zE35d9zLqoiYoI9LEd+t6s=, udp: true}
-  - {name: 高清免費無碼AV - AVToday.io -  BR 15388254, server: 163.176.240.6, port: 59319, type: ss, cipher: 2022-blake3-chacha20-poly1305, password: Wy1UImjn4slIMGk7alrakt+yyl9YHXCMhtO5RypXDPE=, udp: true}
-  - {name: 高清免費無碼AV - AVToday.io -  BR 15388262, server: 163.176.85.126, port: 59319, type: ss, cipher: 2022-blake3-chacha20-poly1305, password: tmNoITDlBC6uGpvPYjou7PZKAH2MOs9tHjig37+TT/Q=, udp: true}
-  - {name: 高清免費無碼AV - AVToday.io -  BR 15388247, server: 147.15.18.110, port: 59319, type: ss, cipher: 2022-blake3-chacha20-poly1305, password: 41V7PSJSBS7f7AgDZyYEm5ZcP/ruYl3OFjo5wWTOhi4=, udp: true}
 proxy-groups:
   - name: 🔰 节点选择
     type: select
     proxies:
       - ♻️ 自动选择
       - 🎯 全球直连
+      - 🇮🇪 爱尔兰 - Dublin - 1
+      - 🇮🇪 爱尔兰 - Dublin - 2
+      - 🇮🇪 爱尔兰 - Dublin - 3
+      - 🇮🇪 爱尔兰 - Dublin - 4
+      - 🇦🇺 澳大利亚 - Sydney - 1
+      - 🇦🇺 澳大利亚 - Sydney - 2
+      - 🇦🇺 澳大利亚 - Sydney - 3
+      - 🇩🇪 德国 - Frankfurt am Main - 1
+      - 🇫🇷 法国 - Paris - 1
+      - 🇳🇱 荷兰 - Amsterdam - 1
+      - 🇳🇱 荷兰 - Amsterdam - 2
+      - 🇳🇱 荷兰 - Amsterdam - 3
+      - 🇺🇸 美国 - Los Angeles - 2
+      - 🇺🇸 美国 - Secaucus - 1
+      - 🇯🇵 日本 - Tokyo - 1
+      - 🇯🇵 日本 - Tokyo - 2
+      - 🇸🇬 新加坡 - Singapore - 1
+      - 🇭🇰 中国 - Hong Kong - 2
+      - 🇨🇳 中国 - Taipei - 1
       - Shadowsocks
       - 🇺🇸 United States_None_ss_101
       - 🇭🇰 Hong Kong_Central_vmess_102
@@ -176,10 +194,35 @@ proxy-groups:
       - 🇭🇰 Hong Kong_None_trojan_1123
       - 🇭🇰 Hong Kong_None_trojan_1124
       - 🇭🇰 Hong Kong_Central_vmess_1125
-      - 🇯🇵 Japan_Tokyo_trojan_1126
-      - None_None_vmess_1127
-      - None_None_vmess_1128
-      - None_None_vmess_1129
+      - None_None_vmess_1126
+      - None_None_trojan_1127
+      - 🇺🇸 United States_San Francisco_vmess_1128
+      - 🇩🇪 高清免費無碼AV - AVToday.io - 🇩🇪德国  25.81MB/s
+      - 🇷🇴 高清免費無碼AV - AVToday.io - 🇷🇴罗马尼亚  18.25MB/s
+      - 🇷🇴 高清免費無碼AV - AVToday.io - 🇷🇴罗马尼亚 17.84MB/s
+      - 🇺🇸 美国 原生IP 8.44MB/s 285 linuxdo@onimaii
+      - 🇺🇸 美国 原生IP 29.10MB/s 343 linuxdo@onimaii
+      - 🇺🇸 高清免費無碼AV - AVToday.io - 🇺🇸美国 3.08MB/s
+      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 20.35MB/s
+      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 16.96MB/s
+      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 20.69MB/s
+      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 19.83MB/s
+      - 🇺🇸 美国 原生IP 9.08MB/s 293 linuxdo@onimaii
+      - 🇧🇷 高清免費無碼AV - AVToday.io - BR-São Paulo-7151811-hccx
+      - 🇧🇷 高清免費無碼AV - AVToday.io - BR-São Paulo-31762123-hhel
+      - 🇸🇬 高清免費無碼AV - AVToday.io - SG-Singapore-1281443-hsly
+      - 🇸🇬 新加坡 | SGP
+      - 🇨🇦 高清免費無碼AV - AVToday.io - 🇨🇦 加拿大 | CAN
+      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA
+      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA 2
+      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA 3
+      - 🇩🇪 德国 | DEU
+      - "[openproxylist.com] TH 15388312"
+      - 🇨🇦 高清免費無碼AV - AVToday.io -  CA 356844
+      - 高清免費無碼AV - AVToday.io -  BR 15388256
+      - 高清免費無碼AV - AVToday.io -  BR 15388254
+      - 高清免費無碼AV - AVToday.io -  BR 15388262
+      - 高清免費無碼AV - AVToday.io -  BR 15388247
       - 高清無碼AV - AVToday.io - 🇺🇸US_86|214KB/s|A004-260618
       - 高清無碼AV - AVToday.io - 🇳🇱NL_60|327KB/s|A004-260618
       - 高清無碼AV - AVToday.io - 🇪🇸ES_5|425KB/s|A004-260618
@@ -214,56 +257,30 @@ proxy-groups:
       - 高清無碼AV - AVToday.io - 🇳🇱NL_79|395KB/s|B007-260618
       - US_105|211KB/s
       - 高清無碼AV - AVToday.io - 🇰🇭KH_1|156KB/s|A004-260618
-      - 🇮🇪 爱尔兰 - Dublin - 1
-      - 🇮🇪 爱尔兰 - Dublin - 2
-      - 🇮🇪 爱尔兰 - Dublin - 3
-      - 🇮🇪 爱尔兰 - Dublin - 4
-      - 🇦🇺 澳大利亚 - Sydney - 1
-      - 🇦🇺 澳大利亚 - Sydney - 2
-      - 🇦🇺 澳大利亚 - Sydney - 3
-      - 🇩🇪 德国 - Frankfurt am Main - 1
-      - 🇫🇷 法国 - Paris - 1
-      - 🇳🇱 荷兰 - Amsterdam - 1
-      - 🇳🇱 荷兰 - Amsterdam - 2
-      - 🇳🇱 荷兰 - Amsterdam - 3
-      - 🇺🇸 美国 - Los Angeles - 2
-      - 🇺🇸 美国 - Secaucus - 1
-      - 🇯🇵 日本 - Tokyo - 1
-      - 🇯🇵 日本 - Tokyo - 2
-      - 🇸🇬 新加坡 - Singapore - 1
-      - 🇭🇰 中国 - Hong Kong - 2
-      - 🇨🇳 中国 - Taipei - 1
-      - 🇩🇪 高清免費無碼AV - AVToday.io - 🇩🇪德国  25.81MB/s
-      - 🇷🇴 高清免費無碼AV - AVToday.io - 🇷🇴罗马尼亚  18.25MB/s
-      - 🇷🇴 高清免費無碼AV - AVToday.io - 🇷🇴罗马尼亚 17.84MB/s
-      - 🇺🇸 美国 原生IP 8.44MB/s 285 linuxdo@onimaii
-      - 🇺🇸 美国 原生IP 29.10MB/s 343 linuxdo@onimaii
-      - 🇺🇸 高清免費無碼AV - AVToday.io - 🇺🇸美国 3.08MB/s
-      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 20.35MB/s
-      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 16.96MB/s
-      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 20.69MB/s
-      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 19.83MB/s
-      - 🇺🇸 美国 原生IP 9.08MB/s 293 linuxdo@onimaii
-      - 🇧🇷 高清免費無碼AV - AVToday.io - BR-São Paulo-7151811-hccx
-      - 🇧🇷 高清免費無碼AV - AVToday.io - BR-São Paulo-31762123-hhel
-      - 🇸🇬 高清免費無碼AV - AVToday.io - SG-Singapore-1281443-hsly
-      - 🇸🇬 新加坡 | SGP
-      - 🇨🇦 高清免費無碼AV - AVToday.io - 🇨🇦 加拿大 | CAN
-      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA
-      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA 2
-      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA 3
-      - 🇩🇪 德国 | DEU
-      - "[openproxylist.com] TH 15388312"
-      - 🇨🇦 高清免費無碼AV - AVToday.io -  CA 356844
-      - 高清免費無碼AV - AVToday.io -  BR 15388256
-      - 高清免費無碼AV - AVToday.io -  BR 15388254
-      - 高清免費無碼AV - AVToday.io -  BR 15388262
-      - 高清免費無碼AV - AVToday.io -  BR 15388247
   - name: ♻️ 自动选择
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 300
     proxies:
+      - 🇮🇪 爱尔兰 - Dublin - 1
+      - 🇮🇪 爱尔兰 - Dublin - 2
+      - 🇮🇪 爱尔兰 - Dublin - 3
+      - 🇮🇪 爱尔兰 - Dublin - 4
+      - 🇦🇺 澳大利亚 - Sydney - 1
+      - 🇦🇺 澳大利亚 - Sydney - 2
+      - 🇦🇺 澳大利亚 - Sydney - 3
+      - 🇩🇪 德国 - Frankfurt am Main - 1
+      - 🇫🇷 法国 - Paris - 1
+      - 🇳🇱 荷兰 - Amsterdam - 1
+      - 🇳🇱 荷兰 - Amsterdam - 2
+      - 🇳🇱 荷兰 - Amsterdam - 3
+      - 🇺🇸 美国 - Los Angeles - 2
+      - 🇺🇸 美国 - Secaucus - 1
+      - 🇯🇵 日本 - Tokyo - 1
+      - 🇯🇵 日本 - Tokyo - 2
+      - 🇸🇬 新加坡 - Singapore - 1
+      - 🇭🇰 中国 - Hong Kong - 2
+      - 🇨🇳 中国 - Taipei - 1
       - Shadowsocks
       - 🇺🇸 United States_None_ss_101
       - 🇭🇰 Hong Kong_Central_vmess_102
@@ -305,10 +322,35 @@ proxy-groups:
       - 🇭🇰 Hong Kong_None_trojan_1123
       - 🇭🇰 Hong Kong_None_trojan_1124
       - 🇭🇰 Hong Kong_Central_vmess_1125
-      - 🇯🇵 Japan_Tokyo_trojan_1126
-      - None_None_vmess_1127
-      - None_None_vmess_1128
-      - None_None_vmess_1129
+      - None_None_vmess_1126
+      - None_None_trojan_1127
+      - 🇺🇸 United States_San Francisco_vmess_1128
+      - 🇩🇪 高清免費無碼AV - AVToday.io - 🇩🇪德国  25.81MB/s
+      - 🇷🇴 高清免費無碼AV - AVToday.io - 🇷🇴罗马尼亚  18.25MB/s
+      - 🇷🇴 高清免費無碼AV - AVToday.io - 🇷🇴罗马尼亚 17.84MB/s
+      - 🇺🇸 美国 原生IP 8.44MB/s 285 linuxdo@onimaii
+      - 🇺🇸 美国 原生IP 29.10MB/s 343 linuxdo@onimaii
+      - 🇺🇸 高清免費無碼AV - AVToday.io - 🇺🇸美国 3.08MB/s
+      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 20.35MB/s
+      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 16.96MB/s
+      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 20.69MB/s
+      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 19.83MB/s
+      - 🇺🇸 美国 原生IP 9.08MB/s 293 linuxdo@onimaii
+      - 🇧🇷 高清免費無碼AV - AVToday.io - BR-São Paulo-7151811-hccx
+      - 🇧🇷 高清免費無碼AV - AVToday.io - BR-São Paulo-31762123-hhel
+      - 🇸🇬 高清免費無碼AV - AVToday.io - SG-Singapore-1281443-hsly
+      - 🇸🇬 新加坡 | SGP
+      - 🇨🇦 高清免費無碼AV - AVToday.io - 🇨🇦 加拿大 | CAN
+      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA
+      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA 2
+      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA 3
+      - 🇩🇪 德国 | DEU
+      - "[openproxylist.com] TH 15388312"
+      - 🇨🇦 高清免費無碼AV - AVToday.io -  CA 356844
+      - 高清免費無碼AV - AVToday.io -  BR 15388256
+      - 高清免費無碼AV - AVToday.io -  BR 15388254
+      - 高清免費無碼AV - AVToday.io -  BR 15388262
+      - 高清免費無碼AV - AVToday.io -  BR 15388247
       - 高清無碼AV - AVToday.io - 🇺🇸US_86|214KB/s|A004-260618
       - 高清無碼AV - AVToday.io - 🇳🇱NL_60|327KB/s|A004-260618
       - 高清無碼AV - AVToday.io - 🇪🇸ES_5|425KB/s|A004-260618
@@ -343,57 +385,31 @@ proxy-groups:
       - 高清無碼AV - AVToday.io - 🇳🇱NL_79|395KB/s|B007-260618
       - US_105|211KB/s
       - 高清無碼AV - AVToday.io - 🇰🇭KH_1|156KB/s|A004-260618
-      - 🇮🇪 爱尔兰 - Dublin - 1
-      - 🇮🇪 爱尔兰 - Dublin - 2
-      - 🇮🇪 爱尔兰 - Dublin - 3
-      - 🇮🇪 爱尔兰 - Dublin - 4
-      - 🇦🇺 澳大利亚 - Sydney - 1
-      - 🇦🇺 澳大利亚 - Sydney - 2
-      - 🇦🇺 澳大利亚 - Sydney - 3
-      - 🇩🇪 德国 - Frankfurt am Main - 1
-      - 🇫🇷 法国 - Paris - 1
-      - 🇳🇱 荷兰 - Amsterdam - 1
-      - 🇳🇱 荷兰 - Amsterdam - 2
-      - 🇳🇱 荷兰 - Amsterdam - 3
-      - 🇺🇸 美国 - Los Angeles - 2
-      - 🇺🇸 美国 - Secaucus - 1
-      - 🇯🇵 日本 - Tokyo - 1
-      - 🇯🇵 日本 - Tokyo - 2
-      - 🇸🇬 新加坡 - Singapore - 1
-      - 🇭🇰 中国 - Hong Kong - 2
-      - 🇨🇳 中国 - Taipei - 1
-      - 🇩🇪 高清免費無碼AV - AVToday.io - 🇩🇪德国  25.81MB/s
-      - 🇷🇴 高清免費無碼AV - AVToday.io - 🇷🇴罗马尼亚  18.25MB/s
-      - 🇷🇴 高清免費無碼AV - AVToday.io - 🇷🇴罗马尼亚 17.84MB/s
-      - 🇺🇸 美国 原生IP 8.44MB/s 285 linuxdo@onimaii
-      - 🇺🇸 美国 原生IP 29.10MB/s 343 linuxdo@onimaii
-      - 🇺🇸 高清免費無碼AV - AVToday.io - 🇺🇸美国 3.08MB/s
-      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 20.35MB/s
-      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 16.96MB/s
-      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 20.69MB/s
-      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 19.83MB/s
-      - 🇺🇸 美国 原生IP 9.08MB/s 293 linuxdo@onimaii
-      - 🇧🇷 高清免費無碼AV - AVToday.io - BR-São Paulo-7151811-hccx
-      - 🇧🇷 高清免費無碼AV - AVToday.io - BR-São Paulo-31762123-hhel
-      - 🇸🇬 高清免費無碼AV - AVToday.io - SG-Singapore-1281443-hsly
-      - 🇸🇬 新加坡 | SGP
-      - 🇨🇦 高清免費無碼AV - AVToday.io - 🇨🇦 加拿大 | CAN
-      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA
-      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA 2
-      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA 3
-      - 🇩🇪 德国 | DEU
-      - "[openproxylist.com] TH 15388312"
-      - 🇨🇦 高清免費無碼AV - AVToday.io -  CA 356844
-      - 高清免費無碼AV - AVToday.io -  BR 15388256
-      - 高清免費無碼AV - AVToday.io -  BR 15388254
-      - 高清免費無碼AV - AVToday.io -  BR 15388262
-      - 高清免費無碼AV - AVToday.io -  BR 15388247
   - name: 🎥 NETFLIX
     type: select
     proxies:
       - 🔰 节点选择
       - ♻️ 自动选择
       - 🎯 全球直连
+      - 🇮🇪 爱尔兰 - Dublin - 1
+      - 🇮🇪 爱尔兰 - Dublin - 2
+      - 🇮🇪 爱尔兰 - Dublin - 3
+      - 🇮🇪 爱尔兰 - Dublin - 4
+      - 🇦🇺 澳大利亚 - Sydney - 1
+      - 🇦🇺 澳大利亚 - Sydney - 2
+      - 🇦🇺 澳大利亚 - Sydney - 3
+      - 🇩🇪 德国 - Frankfurt am Main - 1
+      - 🇫🇷 法国 - Paris - 1
+      - 🇳🇱 荷兰 - Amsterdam - 1
+      - 🇳🇱 荷兰 - Amsterdam - 2
+      - 🇳🇱 荷兰 - Amsterdam - 3
+      - 🇺🇸 美国 - Los Angeles - 2
+      - 🇺🇸 美国 - Secaucus - 1
+      - 🇯🇵 日本 - Tokyo - 1
+      - 🇯🇵 日本 - Tokyo - 2
+      - 🇸🇬 新加坡 - Singapore - 1
+      - 🇭🇰 中国 - Hong Kong - 2
+      - 🇨🇳 中国 - Taipei - 1
       - Shadowsocks
       - 🇺🇸 United States_None_ss_101
       - 🇭🇰 Hong Kong_Central_vmess_102
@@ -435,10 +451,35 @@ proxy-groups:
       - 🇭🇰 Hong Kong_None_trojan_1123
       - 🇭🇰 Hong Kong_None_trojan_1124
       - 🇭🇰 Hong Kong_Central_vmess_1125
-      - 🇯🇵 Japan_Tokyo_trojan_1126
-      - None_None_vmess_1127
-      - None_None_vmess_1128
-      - None_None_vmess_1129
+      - None_None_vmess_1126
+      - None_None_trojan_1127
+      - 🇺🇸 United States_San Francisco_vmess_1128
+      - 🇩🇪 高清免費無碼AV - AVToday.io - 🇩🇪德国  25.81MB/s
+      - 🇷🇴 高清免費無碼AV - AVToday.io - 🇷🇴罗马尼亚  18.25MB/s
+      - 🇷🇴 高清免費無碼AV - AVToday.io - 🇷🇴罗马尼亚 17.84MB/s
+      - 🇺🇸 美国 原生IP 8.44MB/s 285 linuxdo@onimaii
+      - 🇺🇸 美国 原生IP 29.10MB/s 343 linuxdo@onimaii
+      - 🇺🇸 高清免費無碼AV - AVToday.io - 🇺🇸美国 3.08MB/s
+      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 20.35MB/s
+      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 16.96MB/s
+      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 20.69MB/s
+      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 19.83MB/s
+      - 🇺🇸 美国 原生IP 9.08MB/s 293 linuxdo@onimaii
+      - 🇧🇷 高清免費無碼AV - AVToday.io - BR-São Paulo-7151811-hccx
+      - 🇧🇷 高清免費無碼AV - AVToday.io - BR-São Paulo-31762123-hhel
+      - 🇸🇬 高清免費無碼AV - AVToday.io - SG-Singapore-1281443-hsly
+      - 🇸🇬 新加坡 | SGP
+      - 🇨🇦 高清免費無碼AV - AVToday.io - 🇨🇦 加拿大 | CAN
+      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA
+      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA 2
+      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA 3
+      - 🇩🇪 德国 | DEU
+      - "[openproxylist.com] TH 15388312"
+      - 🇨🇦 高清免費無碼AV - AVToday.io -  CA 356844
+      - 高清免費無碼AV - AVToday.io -  BR 15388256
+      - 高清免費無碼AV - AVToday.io -  BR 15388254
+      - 高清免費無碼AV - AVToday.io -  BR 15388262
+      - 高清免費無碼AV - AVToday.io -  BR 15388247
       - 高清無碼AV - AVToday.io - 🇺🇸US_86|214KB/s|A004-260618
       - 高清無碼AV - AVToday.io - 🇳🇱NL_60|327KB/s|A004-260618
       - 高清無碼AV - AVToday.io - 🇪🇸ES_5|425KB/s|A004-260618
@@ -473,51 +514,6 @@ proxy-groups:
       - 高清無碼AV - AVToday.io - 🇳🇱NL_79|395KB/s|B007-260618
       - US_105|211KB/s
       - 高清無碼AV - AVToday.io - 🇰🇭KH_1|156KB/s|A004-260618
-      - 🇮🇪 爱尔兰 - Dublin - 1
-      - 🇮🇪 爱尔兰 - Dublin - 2
-      - 🇮🇪 爱尔兰 - Dublin - 3
-      - 🇮🇪 爱尔兰 - Dublin - 4
-      - 🇦🇺 澳大利亚 - Sydney - 1
-      - 🇦🇺 澳大利亚 - Sydney - 2
-      - 🇦🇺 澳大利亚 - Sydney - 3
-      - 🇩🇪 德国 - Frankfurt am Main - 1
-      - 🇫🇷 法国 - Paris - 1
-      - 🇳🇱 荷兰 - Amsterdam - 1
-      - 🇳🇱 荷兰 - Amsterdam - 2
-      - 🇳🇱 荷兰 - Amsterdam - 3
-      - 🇺🇸 美国 - Los Angeles - 2
-      - 🇺🇸 美国 - Secaucus - 1
-      - 🇯🇵 日本 - Tokyo - 1
-      - 🇯🇵 日本 - Tokyo - 2
-      - 🇸🇬 新加坡 - Singapore - 1
-      - 🇭🇰 中国 - Hong Kong - 2
-      - 🇨🇳 中国 - Taipei - 1
-      - 🇩🇪 高清免費無碼AV - AVToday.io - 🇩🇪德国  25.81MB/s
-      - 🇷🇴 高清免費無碼AV - AVToday.io - 🇷🇴罗马尼亚  18.25MB/s
-      - 🇷🇴 高清免費無碼AV - AVToday.io - 🇷🇴罗马尼亚 17.84MB/s
-      - 🇺🇸 美国 原生IP 8.44MB/s 285 linuxdo@onimaii
-      - 🇺🇸 美国 原生IP 29.10MB/s 343 linuxdo@onimaii
-      - 🇺🇸 高清免費無碼AV - AVToday.io - 🇺🇸美国 3.08MB/s
-      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 20.35MB/s
-      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 16.96MB/s
-      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 20.69MB/s
-      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 19.83MB/s
-      - 🇺🇸 美国 原生IP 9.08MB/s 293 linuxdo@onimaii
-      - 🇧🇷 高清免費無碼AV - AVToday.io - BR-São Paulo-7151811-hccx
-      - 🇧🇷 高清免費無碼AV - AVToday.io - BR-São Paulo-31762123-hhel
-      - 🇸🇬 高清免費無碼AV - AVToday.io - SG-Singapore-1281443-hsly
-      - 🇸🇬 新加坡 | SGP
-      - 🇨🇦 高清免費無碼AV - AVToday.io - 🇨🇦 加拿大 | CAN
-      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA
-      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA 2
-      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA 3
-      - 🇩🇪 德国 | DEU
-      - "[openproxylist.com] TH 15388312"
-      - 🇨🇦 高清免費無碼AV - AVToday.io -  CA 356844
-      - 高清免費無碼AV - AVToday.io -  BR 15388256
-      - 高清免費無碼AV - AVToday.io -  BR 15388254
-      - 高清免費無碼AV - AVToday.io -  BR 15388262
-      - 高清免費無碼AV - AVToday.io -  BR 15388247
   - name: ⛔️ 广告拦截
     type: select
     proxies:
@@ -536,6 +532,25 @@ proxy-groups:
       - 🔰 节点选择
       - ♻️ 自动选择
       - 🎯 全球直连
+      - 🇮🇪 爱尔兰 - Dublin - 1
+      - 🇮🇪 爱尔兰 - Dublin - 2
+      - 🇮🇪 爱尔兰 - Dublin - 3
+      - 🇮🇪 爱尔兰 - Dublin - 4
+      - 🇦🇺 澳大利亚 - Sydney - 1
+      - 🇦🇺 澳大利亚 - Sydney - 2
+      - 🇦🇺 澳大利亚 - Sydney - 3
+      - 🇩🇪 德国 - Frankfurt am Main - 1
+      - 🇫🇷 法国 - Paris - 1
+      - 🇳🇱 荷兰 - Amsterdam - 1
+      - 🇳🇱 荷兰 - Amsterdam - 2
+      - 🇳🇱 荷兰 - Amsterdam - 3
+      - 🇺🇸 美国 - Los Angeles - 2
+      - 🇺🇸 美国 - Secaucus - 1
+      - 🇯🇵 日本 - Tokyo - 1
+      - 🇯🇵 日本 - Tokyo - 2
+      - 🇸🇬 新加坡 - Singapore - 1
+      - 🇭🇰 中国 - Hong Kong - 2
+      - 🇨🇳 中国 - Taipei - 1
       - Shadowsocks
       - 🇺🇸 United States_None_ss_101
       - 🇭🇰 Hong Kong_Central_vmess_102
@@ -577,10 +592,35 @@ proxy-groups:
       - 🇭🇰 Hong Kong_None_trojan_1123
       - 🇭🇰 Hong Kong_None_trojan_1124
       - 🇭🇰 Hong Kong_Central_vmess_1125
-      - 🇯🇵 Japan_Tokyo_trojan_1126
-      - None_None_vmess_1127
-      - None_None_vmess_1128
-      - None_None_vmess_1129
+      - None_None_vmess_1126
+      - None_None_trojan_1127
+      - 🇺🇸 United States_San Francisco_vmess_1128
+      - 🇩🇪 高清免費無碼AV - AVToday.io - 🇩🇪德国  25.81MB/s
+      - 🇷🇴 高清免費無碼AV - AVToday.io - 🇷🇴罗马尼亚  18.25MB/s
+      - 🇷🇴 高清免費無碼AV - AVToday.io - 🇷🇴罗马尼亚 17.84MB/s
+      - 🇺🇸 美国 原生IP 8.44MB/s 285 linuxdo@onimaii
+      - 🇺🇸 美国 原生IP 29.10MB/s 343 linuxdo@onimaii
+      - 🇺🇸 高清免費無碼AV - AVToday.io - 🇺🇸美国 3.08MB/s
+      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 20.35MB/s
+      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 16.96MB/s
+      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 20.69MB/s
+      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 19.83MB/s
+      - 🇺🇸 美国 原生IP 9.08MB/s 293 linuxdo@onimaii
+      - 🇧🇷 高清免費無碼AV - AVToday.io - BR-São Paulo-7151811-hccx
+      - 🇧🇷 高清免費無碼AV - AVToday.io - BR-São Paulo-31762123-hhel
+      - 🇸🇬 高清免費無碼AV - AVToday.io - SG-Singapore-1281443-hsly
+      - 🇸🇬 新加坡 | SGP
+      - 🇨🇦 高清免費無碼AV - AVToday.io - 🇨🇦 加拿大 | CAN
+      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA
+      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA 2
+      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA 3
+      - 🇩🇪 德国 | DEU
+      - "[openproxylist.com] TH 15388312"
+      - 🇨🇦 高清免費無碼AV - AVToday.io -  CA 356844
+      - 高清免費無碼AV - AVToday.io -  BR 15388256
+      - 高清免費無碼AV - AVToday.io -  BR 15388254
+      - 高清免費無碼AV - AVToday.io -  BR 15388262
+      - 高清免費無碼AV - AVToday.io -  BR 15388247
       - 高清無碼AV - AVToday.io - 🇺🇸US_86|214KB/s|A004-260618
       - 高清無碼AV - AVToday.io - 🇳🇱NL_60|327KB/s|A004-260618
       - 高清無碼AV - AVToday.io - 🇪🇸ES_5|425KB/s|A004-260618
@@ -615,51 +655,6 @@ proxy-groups:
       - 高清無碼AV - AVToday.io - 🇳🇱NL_79|395KB/s|B007-260618
       - US_105|211KB/s
       - 高清無碼AV - AVToday.io - 🇰🇭KH_1|156KB/s|A004-260618
-      - 🇮🇪 爱尔兰 - Dublin - 1
-      - 🇮🇪 爱尔兰 - Dublin - 2
-      - 🇮🇪 爱尔兰 - Dublin - 3
-      - 🇮🇪 爱尔兰 - Dublin - 4
-      - 🇦🇺 澳大利亚 - Sydney - 1
-      - 🇦🇺 澳大利亚 - Sydney - 2
-      - 🇦🇺 澳大利亚 - Sydney - 3
-      - 🇩🇪 德国 - Frankfurt am Main - 1
-      - 🇫🇷 法国 - Paris - 1
-      - 🇳🇱 荷兰 - Amsterdam - 1
-      - 🇳🇱 荷兰 - Amsterdam - 2
-      - 🇳🇱 荷兰 - Amsterdam - 3
-      - 🇺🇸 美国 - Los Angeles - 2
-      - 🇺🇸 美国 - Secaucus - 1
-      - 🇯🇵 日本 - Tokyo - 1
-      - 🇯🇵 日本 - Tokyo - 2
-      - 🇸🇬 新加坡 - Singapore - 1
-      - 🇭🇰 中国 - Hong Kong - 2
-      - 🇨🇳 中国 - Taipei - 1
-      - 🇩🇪 高清免費無碼AV - AVToday.io - 🇩🇪德国  25.81MB/s
-      - 🇷🇴 高清免費無碼AV - AVToday.io - 🇷🇴罗马尼亚  18.25MB/s
-      - 🇷🇴 高清免費無碼AV - AVToday.io - 🇷🇴罗马尼亚 17.84MB/s
-      - 🇺🇸 美国 原生IP 8.44MB/s 285 linuxdo@onimaii
-      - 🇺🇸 美国 原生IP 29.10MB/s 343 linuxdo@onimaii
-      - 🇺🇸 高清免費無碼AV - AVToday.io - 🇺🇸美国 3.08MB/s
-      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 20.35MB/s
-      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 16.96MB/s
-      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 20.69MB/s
-      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 19.83MB/s
-      - 🇺🇸 美国 原生IP 9.08MB/s 293 linuxdo@onimaii
-      - 🇧🇷 高清免費無碼AV - AVToday.io - BR-São Paulo-7151811-hccx
-      - 🇧🇷 高清免費無碼AV - AVToday.io - BR-São Paulo-31762123-hhel
-      - 🇸🇬 高清免費無碼AV - AVToday.io - SG-Singapore-1281443-hsly
-      - 🇸🇬 新加坡 | SGP
-      - 🇨🇦 高清免費無碼AV - AVToday.io - 🇨🇦 加拿大 | CAN
-      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA
-      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA 2
-      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA 3
-      - 🇩🇪 德国 | DEU
-      - "[openproxylist.com] TH 15388312"
-      - 🇨🇦 高清免費無碼AV - AVToday.io -  CA 356844
-      - 高清免費無碼AV - AVToday.io -  BR 15388256
-      - 高清免費無碼AV - AVToday.io -  BR 15388254
-      - 高清免費無碼AV - AVToday.io -  BR 15388262
-      - 高清免費無碼AV - AVToday.io -  BR 15388247
   - name: 🌏 国内媒体
     type: select
     proxies:
@@ -670,6 +665,25 @@ proxy-groups:
     proxies:
       - 🎯 全球直连
       - 🔰 节点选择
+      - 🇮🇪 爱尔兰 - Dublin - 1
+      - 🇮🇪 爱尔兰 - Dublin - 2
+      - 🇮🇪 爱尔兰 - Dublin - 3
+      - 🇮🇪 爱尔兰 - Dublin - 4
+      - 🇦🇺 澳大利亚 - Sydney - 1
+      - 🇦🇺 澳大利亚 - Sydney - 2
+      - 🇦🇺 澳大利亚 - Sydney - 3
+      - 🇩🇪 德国 - Frankfurt am Main - 1
+      - 🇫🇷 法国 - Paris - 1
+      - 🇳🇱 荷兰 - Amsterdam - 1
+      - 🇳🇱 荷兰 - Amsterdam - 2
+      - 🇳🇱 荷兰 - Amsterdam - 3
+      - 🇺🇸 美国 - Los Angeles - 2
+      - 🇺🇸 美国 - Secaucus - 1
+      - 🇯🇵 日本 - Tokyo - 1
+      - 🇯🇵 日本 - Tokyo - 2
+      - 🇸🇬 新加坡 - Singapore - 1
+      - 🇭🇰 中国 - Hong Kong - 2
+      - 🇨🇳 中国 - Taipei - 1
       - Shadowsocks
       - 🇺🇸 United States_None_ss_101
       - 🇭🇰 Hong Kong_Central_vmess_102
@@ -711,10 +725,35 @@ proxy-groups:
       - 🇭🇰 Hong Kong_None_trojan_1123
       - 🇭🇰 Hong Kong_None_trojan_1124
       - 🇭🇰 Hong Kong_Central_vmess_1125
-      - 🇯🇵 Japan_Tokyo_trojan_1126
-      - None_None_vmess_1127
-      - None_None_vmess_1128
-      - None_None_vmess_1129
+      - None_None_vmess_1126
+      - None_None_trojan_1127
+      - 🇺🇸 United States_San Francisco_vmess_1128
+      - 🇩🇪 高清免費無碼AV - AVToday.io - 🇩🇪德国  25.81MB/s
+      - 🇷🇴 高清免費無碼AV - AVToday.io - 🇷🇴罗马尼亚  18.25MB/s
+      - 🇷🇴 高清免費無碼AV - AVToday.io - 🇷🇴罗马尼亚 17.84MB/s
+      - 🇺🇸 美国 原生IP 8.44MB/s 285 linuxdo@onimaii
+      - 🇺🇸 美国 原生IP 29.10MB/s 343 linuxdo@onimaii
+      - 🇺🇸 高清免費無碼AV - AVToday.io - 🇺🇸美国 3.08MB/s
+      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 20.35MB/s
+      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 16.96MB/s
+      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 20.69MB/s
+      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 19.83MB/s
+      - 🇺🇸 美国 原生IP 9.08MB/s 293 linuxdo@onimaii
+      - 🇧🇷 高清免費無碼AV - AVToday.io - BR-São Paulo-7151811-hccx
+      - 🇧🇷 高清免費無碼AV - AVToday.io - BR-São Paulo-31762123-hhel
+      - 🇸🇬 高清免費無碼AV - AVToday.io - SG-Singapore-1281443-hsly
+      - 🇸🇬 新加坡 | SGP
+      - 🇨🇦 高清免費無碼AV - AVToday.io - 🇨🇦 加拿大 | CAN
+      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA
+      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA 2
+      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA 3
+      - 🇩🇪 德国 | DEU
+      - "[openproxylist.com] TH 15388312"
+      - 🇨🇦 高清免費無碼AV - AVToday.io -  CA 356844
+      - 高清免費無碼AV - AVToday.io -  BR 15388256
+      - 高清免費無碼AV - AVToday.io -  BR 15388254
+      - 高清免費無碼AV - AVToday.io -  BR 15388262
+      - 高清免費無碼AV - AVToday.io -  BR 15388247
       - 高清無碼AV - AVToday.io - 🇺🇸US_86|214KB/s|A004-260618
       - 高清無碼AV - AVToday.io - 🇳🇱NL_60|327KB/s|A004-260618
       - 高清無碼AV - AVToday.io - 🇪🇸ES_5|425KB/s|A004-260618
@@ -749,56 +788,30 @@ proxy-groups:
       - 高清無碼AV - AVToday.io - 🇳🇱NL_79|395KB/s|B007-260618
       - US_105|211KB/s
       - 高清無碼AV - AVToday.io - 🇰🇭KH_1|156KB/s|A004-260618
-      - 🇮🇪 爱尔兰 - Dublin - 1
-      - 🇮🇪 爱尔兰 - Dublin - 2
-      - 🇮🇪 爱尔兰 - Dublin - 3
-      - 🇮🇪 爱尔兰 - Dublin - 4
-      - 🇦🇺 澳大利亚 - Sydney - 1
-      - 🇦🇺 澳大利亚 - Sydney - 2
-      - 🇦🇺 澳大利亚 - Sydney - 3
-      - 🇩🇪 德国 - Frankfurt am Main - 1
-      - 🇫🇷 法国 - Paris - 1
-      - 🇳🇱 荷兰 - Amsterdam - 1
-      - 🇳🇱 荷兰 - Amsterdam - 2
-      - 🇳🇱 荷兰 - Amsterdam - 3
-      - 🇺🇸 美国 - Los Angeles - 2
-      - 🇺🇸 美国 - Secaucus - 1
-      - 🇯🇵 日本 - Tokyo - 1
-      - 🇯🇵 日本 - Tokyo - 2
-      - 🇸🇬 新加坡 - Singapore - 1
-      - 🇭🇰 中国 - Hong Kong - 2
-      - 🇨🇳 中国 - Taipei - 1
-      - 🇩🇪 高清免費無碼AV - AVToday.io - 🇩🇪德国  25.81MB/s
-      - 🇷🇴 高清免費無碼AV - AVToday.io - 🇷🇴罗马尼亚  18.25MB/s
-      - 🇷🇴 高清免費無碼AV - AVToday.io - 🇷🇴罗马尼亚 17.84MB/s
-      - 🇺🇸 美国 原生IP 8.44MB/s 285 linuxdo@onimaii
-      - 🇺🇸 美国 原生IP 29.10MB/s 343 linuxdo@onimaii
-      - 🇺🇸 高清免費無碼AV - AVToday.io - 🇺🇸美国 3.08MB/s
-      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 20.35MB/s
-      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 16.96MB/s
-      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 20.69MB/s
-      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 19.83MB/s
-      - 🇺🇸 美国 原生IP 9.08MB/s 293 linuxdo@onimaii
-      - 🇧🇷 高清免費無碼AV - AVToday.io - BR-São Paulo-7151811-hccx
-      - 🇧🇷 高清免費無碼AV - AVToday.io - BR-São Paulo-31762123-hhel
-      - 🇸🇬 高清免費無碼AV - AVToday.io - SG-Singapore-1281443-hsly
-      - 🇸🇬 新加坡 | SGP
-      - 🇨🇦 高清免費無碼AV - AVToday.io - 🇨🇦 加拿大 | CAN
-      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA
-      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA 2
-      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA 3
-      - 🇩🇪 德国 | DEU
-      - "[openproxylist.com] TH 15388312"
-      - 🇨🇦 高清免費無碼AV - AVToday.io -  CA 356844
-      - 高清免費無碼AV - AVToday.io -  BR 15388256
-      - 高清免費無碼AV - AVToday.io -  BR 15388254
-      - 高清免費無碼AV - AVToday.io -  BR 15388262
-      - 高清免費無碼AV - AVToday.io -  BR 15388247
   - name: 📲 电报信息
     type: select
     proxies:
       - 🔰 节点选择
       - 🎯 全球直连
+      - 🇮🇪 爱尔兰 - Dublin - 1
+      - 🇮🇪 爱尔兰 - Dublin - 2
+      - 🇮🇪 爱尔兰 - Dublin - 3
+      - 🇮🇪 爱尔兰 - Dublin - 4
+      - 🇦🇺 澳大利亚 - Sydney - 1
+      - 🇦🇺 澳大利亚 - Sydney - 2
+      - 🇦🇺 澳大利亚 - Sydney - 3
+      - 🇩🇪 德国 - Frankfurt am Main - 1
+      - 🇫🇷 法国 - Paris - 1
+      - 🇳🇱 荷兰 - Amsterdam - 1
+      - 🇳🇱 荷兰 - Amsterdam - 2
+      - 🇳🇱 荷兰 - Amsterdam - 3
+      - 🇺🇸 美国 - Los Angeles - 2
+      - 🇺🇸 美国 - Secaucus - 1
+      - 🇯🇵 日本 - Tokyo - 1
+      - 🇯🇵 日本 - Tokyo - 2
+      - 🇸🇬 新加坡 - Singapore - 1
+      - 🇭🇰 中国 - Hong Kong - 2
+      - 🇨🇳 中国 - Taipei - 1
       - Shadowsocks
       - 🇺🇸 United States_None_ss_101
       - 🇭🇰 Hong Kong_Central_vmess_102
@@ -840,10 +853,35 @@ proxy-groups:
       - 🇭🇰 Hong Kong_None_trojan_1123
       - 🇭🇰 Hong Kong_None_trojan_1124
       - 🇭🇰 Hong Kong_Central_vmess_1125
-      - 🇯🇵 Japan_Tokyo_trojan_1126
-      - None_None_vmess_1127
-      - None_None_vmess_1128
-      - None_None_vmess_1129
+      - None_None_vmess_1126
+      - None_None_trojan_1127
+      - 🇺🇸 United States_San Francisco_vmess_1128
+      - 🇩🇪 高清免費無碼AV - AVToday.io - 🇩🇪德国  25.81MB/s
+      - 🇷🇴 高清免費無碼AV - AVToday.io - 🇷🇴罗马尼亚  18.25MB/s
+      - 🇷🇴 高清免費無碼AV - AVToday.io - 🇷🇴罗马尼亚 17.84MB/s
+      - 🇺🇸 美国 原生IP 8.44MB/s 285 linuxdo@onimaii
+      - 🇺🇸 美国 原生IP 29.10MB/s 343 linuxdo@onimaii
+      - 🇺🇸 高清免費無碼AV - AVToday.io - 🇺🇸美国 3.08MB/s
+      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 20.35MB/s
+      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 16.96MB/s
+      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 20.69MB/s
+      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 19.83MB/s
+      - 🇺🇸 美国 原生IP 9.08MB/s 293 linuxdo@onimaii
+      - 🇧🇷 高清免費無碼AV - AVToday.io - BR-São Paulo-7151811-hccx
+      - 🇧🇷 高清免費無碼AV - AVToday.io - BR-São Paulo-31762123-hhel
+      - 🇸🇬 高清免費無碼AV - AVToday.io - SG-Singapore-1281443-hsly
+      - 🇸🇬 新加坡 | SGP
+      - 🇨🇦 高清免費無碼AV - AVToday.io - 🇨🇦 加拿大 | CAN
+      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA
+      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA 2
+      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA 3
+      - 🇩🇪 德国 | DEU
+      - "[openproxylist.com] TH 15388312"
+      - 🇨🇦 高清免費無碼AV - AVToday.io -  CA 356844
+      - 高清免費無碼AV - AVToday.io -  BR 15388256
+      - 高清免費無碼AV - AVToday.io -  BR 15388254
+      - 高清免費無碼AV - AVToday.io -  BR 15388262
+      - 高清免費無碼AV - AVToday.io -  BR 15388247
       - 高清無碼AV - AVToday.io - 🇺🇸US_86|214KB/s|A004-260618
       - 高清無碼AV - AVToday.io - 🇳🇱NL_60|327KB/s|A004-260618
       - 高清無碼AV - AVToday.io - 🇪🇸ES_5|425KB/s|A004-260618
@@ -878,57 +916,31 @@ proxy-groups:
       - 高清無碼AV - AVToday.io - 🇳🇱NL_79|395KB/s|B007-260618
       - US_105|211KB/s
       - 高清無碼AV - AVToday.io - 🇰🇭KH_1|156KB/s|A004-260618
-      - 🇮🇪 爱尔兰 - Dublin - 1
-      - 🇮🇪 爱尔兰 - Dublin - 2
-      - 🇮🇪 爱尔兰 - Dublin - 3
-      - 🇮🇪 爱尔兰 - Dublin - 4
-      - 🇦🇺 澳大利亚 - Sydney - 1
-      - 🇦🇺 澳大利亚 - Sydney - 2
-      - 🇦🇺 澳大利亚 - Sydney - 3
-      - 🇩🇪 德国 - Frankfurt am Main - 1
-      - 🇫🇷 法国 - Paris - 1
-      - 🇳🇱 荷兰 - Amsterdam - 1
-      - 🇳🇱 荷兰 - Amsterdam - 2
-      - 🇳🇱 荷兰 - Amsterdam - 3
-      - 🇺🇸 美国 - Los Angeles - 2
-      - 🇺🇸 美国 - Secaucus - 1
-      - 🇯🇵 日本 - Tokyo - 1
-      - 🇯🇵 日本 - Tokyo - 2
-      - 🇸🇬 新加坡 - Singapore - 1
-      - 🇭🇰 中国 - Hong Kong - 2
-      - 🇨🇳 中国 - Taipei - 1
-      - 🇩🇪 高清免費無碼AV - AVToday.io - 🇩🇪德国  25.81MB/s
-      - 🇷🇴 高清免費無碼AV - AVToday.io - 🇷🇴罗马尼亚  18.25MB/s
-      - 🇷🇴 高清免費無碼AV - AVToday.io - 🇷🇴罗马尼亚 17.84MB/s
-      - 🇺🇸 美国 原生IP 8.44MB/s 285 linuxdo@onimaii
-      - 🇺🇸 美国 原生IP 29.10MB/s 343 linuxdo@onimaii
-      - 🇺🇸 高清免費無碼AV - AVToday.io - 🇺🇸美国 3.08MB/s
-      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 20.35MB/s
-      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 16.96MB/s
-      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 20.69MB/s
-      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 19.83MB/s
-      - 🇺🇸 美国 原生IP 9.08MB/s 293 linuxdo@onimaii
-      - 🇧🇷 高清免費無碼AV - AVToday.io - BR-São Paulo-7151811-hccx
-      - 🇧🇷 高清免費無碼AV - AVToday.io - BR-São Paulo-31762123-hhel
-      - 🇸🇬 高清免費無碼AV - AVToday.io - SG-Singapore-1281443-hsly
-      - 🇸🇬 新加坡 | SGP
-      - 🇨🇦 高清免費無碼AV - AVToday.io - 🇨🇦 加拿大 | CAN
-      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA
-      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA 2
-      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA 3
-      - 🇩🇪 德国 | DEU
-      - "[openproxylist.com] TH 15388312"
-      - 🇨🇦 高清免費無碼AV - AVToday.io -  CA 356844
-      - 高清免費無碼AV - AVToday.io -  BR 15388256
-      - 高清免費無碼AV - AVToday.io -  BR 15388254
-      - 高清免費無碼AV - AVToday.io -  BR 15388262
-      - 高清免費無碼AV - AVToday.io -  BR 15388247
   - name: 🍎 苹果服务
     type: select
     proxies:
       - 🔰 节点选择
       - 🎯 全球直连
       - ♻️ 自动选择
+      - 🇮🇪 爱尔兰 - Dublin - 1
+      - 🇮🇪 爱尔兰 - Dublin - 2
+      - 🇮🇪 爱尔兰 - Dublin - 3
+      - 🇮🇪 爱尔兰 - Dublin - 4
+      - 🇦🇺 澳大利亚 - Sydney - 1
+      - 🇦🇺 澳大利亚 - Sydney - 2
+      - 🇦🇺 澳大利亚 - Sydney - 3
+      - 🇩🇪 德国 - Frankfurt am Main - 1
+      - 🇫🇷 法国 - Paris - 1
+      - 🇳🇱 荷兰 - Amsterdam - 1
+      - 🇳🇱 荷兰 - Amsterdam - 2
+      - 🇳🇱 荷兰 - Amsterdam - 3
+      - 🇺🇸 美国 - Los Angeles - 2
+      - 🇺🇸 美国 - Secaucus - 1
+      - 🇯🇵 日本 - Tokyo - 1
+      - 🇯🇵 日本 - Tokyo - 2
+      - 🇸🇬 新加坡 - Singapore - 1
+      - 🇭🇰 中国 - Hong Kong - 2
+      - 🇨🇳 中国 - Taipei - 1
       - Shadowsocks
       - 🇺🇸 United States_None_ss_101
       - 🇭🇰 Hong Kong_Central_vmess_102
@@ -970,10 +982,35 @@ proxy-groups:
       - 🇭🇰 Hong Kong_None_trojan_1123
       - 🇭🇰 Hong Kong_None_trojan_1124
       - 🇭🇰 Hong Kong_Central_vmess_1125
-      - 🇯🇵 Japan_Tokyo_trojan_1126
-      - None_None_vmess_1127
-      - None_None_vmess_1128
-      - None_None_vmess_1129
+      - None_None_vmess_1126
+      - None_None_trojan_1127
+      - 🇺🇸 United States_San Francisco_vmess_1128
+      - 🇩🇪 高清免費無碼AV - AVToday.io - 🇩🇪德国  25.81MB/s
+      - 🇷🇴 高清免費無碼AV - AVToday.io - 🇷🇴罗马尼亚  18.25MB/s
+      - 🇷🇴 高清免費無碼AV - AVToday.io - 🇷🇴罗马尼亚 17.84MB/s
+      - 🇺🇸 美国 原生IP 8.44MB/s 285 linuxdo@onimaii
+      - 🇺🇸 美国 原生IP 29.10MB/s 343 linuxdo@onimaii
+      - 🇺🇸 高清免費無碼AV - AVToday.io - 🇺🇸美国 3.08MB/s
+      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 20.35MB/s
+      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 16.96MB/s
+      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 20.69MB/s
+      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 19.83MB/s
+      - 🇺🇸 美国 原生IP 9.08MB/s 293 linuxdo@onimaii
+      - 🇧🇷 高清免費無碼AV - AVToday.io - BR-São Paulo-7151811-hccx
+      - 🇧🇷 高清免費無碼AV - AVToday.io - BR-São Paulo-31762123-hhel
+      - 🇸🇬 高清免費無碼AV - AVToday.io - SG-Singapore-1281443-hsly
+      - 🇸🇬 新加坡 | SGP
+      - 🇨🇦 高清免費無碼AV - AVToday.io - 🇨🇦 加拿大 | CAN
+      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA
+      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA 2
+      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA 3
+      - 🇩🇪 德国 | DEU
+      - "[openproxylist.com] TH 15388312"
+      - 🇨🇦 高清免費無碼AV - AVToday.io -  CA 356844
+      - 高清免費無碼AV - AVToday.io -  BR 15388256
+      - 高清免費無碼AV - AVToday.io -  BR 15388254
+      - 高清免費無碼AV - AVToday.io -  BR 15388262
+      - 高清免費無碼AV - AVToday.io -  BR 15388247
       - 高清無碼AV - AVToday.io - 🇺🇸US_86|214KB/s|A004-260618
       - 高清無碼AV - AVToday.io - 🇳🇱NL_60|327KB/s|A004-260618
       - 高清無碼AV - AVToday.io - 🇪🇸ES_5|425KB/s|A004-260618
@@ -1008,51 +1045,6 @@ proxy-groups:
       - 高清無碼AV - AVToday.io - 🇳🇱NL_79|395KB/s|B007-260618
       - US_105|211KB/s
       - 高清無碼AV - AVToday.io - 🇰🇭KH_1|156KB/s|A004-260618
-      - 🇮🇪 爱尔兰 - Dublin - 1
-      - 🇮🇪 爱尔兰 - Dublin - 2
-      - 🇮🇪 爱尔兰 - Dublin - 3
-      - 🇮🇪 爱尔兰 - Dublin - 4
-      - 🇦🇺 澳大利亚 - Sydney - 1
-      - 🇦🇺 澳大利亚 - Sydney - 2
-      - 🇦🇺 澳大利亚 - Sydney - 3
-      - 🇩🇪 德国 - Frankfurt am Main - 1
-      - 🇫🇷 法国 - Paris - 1
-      - 🇳🇱 荷兰 - Amsterdam - 1
-      - 🇳🇱 荷兰 - Amsterdam - 2
-      - 🇳🇱 荷兰 - Amsterdam - 3
-      - 🇺🇸 美国 - Los Angeles - 2
-      - 🇺🇸 美国 - Secaucus - 1
-      - 🇯🇵 日本 - Tokyo - 1
-      - 🇯🇵 日本 - Tokyo - 2
-      - 🇸🇬 新加坡 - Singapore - 1
-      - 🇭🇰 中国 - Hong Kong - 2
-      - 🇨🇳 中国 - Taipei - 1
-      - 🇩🇪 高清免費無碼AV - AVToday.io - 🇩🇪德国  25.81MB/s
-      - 🇷🇴 高清免費無碼AV - AVToday.io - 🇷🇴罗马尼亚  18.25MB/s
-      - 🇷🇴 高清免費無碼AV - AVToday.io - 🇷🇴罗马尼亚 17.84MB/s
-      - 🇺🇸 美国 原生IP 8.44MB/s 285 linuxdo@onimaii
-      - 🇺🇸 美国 原生IP 29.10MB/s 343 linuxdo@onimaii
-      - 🇺🇸 高清免費無碼AV - AVToday.io - 🇺🇸美国 3.08MB/s
-      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 20.35MB/s
-      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 16.96MB/s
-      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 20.69MB/s
-      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 19.83MB/s
-      - 🇺🇸 美国 原生IP 9.08MB/s 293 linuxdo@onimaii
-      - 🇧🇷 高清免費無碼AV - AVToday.io - BR-São Paulo-7151811-hccx
-      - 🇧🇷 高清免費無碼AV - AVToday.io - BR-São Paulo-31762123-hhel
-      - 🇸🇬 高清免費無碼AV - AVToday.io - SG-Singapore-1281443-hsly
-      - 🇸🇬 新加坡 | SGP
-      - 🇨🇦 高清免費無碼AV - AVToday.io - 🇨🇦 加拿大 | CAN
-      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA
-      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA 2
-      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA 3
-      - 🇩🇪 德国 | DEU
-      - "[openproxylist.com] TH 15388312"
-      - 🇨🇦 高清免費無碼AV - AVToday.io -  CA 356844
-      - 高清免費無碼AV - AVToday.io -  BR 15388256
-      - 高清免費無碼AV - AVToday.io -  BR 15388254
-      - 高清免費無碼AV - AVToday.io -  BR 15388262
-      - 高清免費無碼AV - AVToday.io -  BR 15388247
   - name: 🎯 全球直连
     type: select
     proxies:
@@ -1068,6 +1060,25 @@ proxy-groups:
       - 🔰 节点选择
       - 🎯 全球直连
       - ♻️ 自动选择
+      - 🇮🇪 爱尔兰 - Dublin - 1
+      - 🇮🇪 爱尔兰 - Dublin - 2
+      - 🇮🇪 爱尔兰 - Dublin - 3
+      - 🇮🇪 爱尔兰 - Dublin - 4
+      - 🇦🇺 澳大利亚 - Sydney - 1
+      - 🇦🇺 澳大利亚 - Sydney - 2
+      - 🇦🇺 澳大利亚 - Sydney - 3
+      - 🇩🇪 德国 - Frankfurt am Main - 1
+      - 🇫🇷 法国 - Paris - 1
+      - 🇳🇱 荷兰 - Amsterdam - 1
+      - 🇳🇱 荷兰 - Amsterdam - 2
+      - 🇳🇱 荷兰 - Amsterdam - 3
+      - 🇺🇸 美国 - Los Angeles - 2
+      - 🇺🇸 美国 - Secaucus - 1
+      - 🇯🇵 日本 - Tokyo - 1
+      - 🇯🇵 日本 - Tokyo - 2
+      - 🇸🇬 新加坡 - Singapore - 1
+      - 🇭🇰 中国 - Hong Kong - 2
+      - 🇨🇳 中国 - Taipei - 1
       - Shadowsocks
       - 🇺🇸 United States_None_ss_101
       - 🇭🇰 Hong Kong_Central_vmess_102
@@ -1109,10 +1120,35 @@ proxy-groups:
       - 🇭🇰 Hong Kong_None_trojan_1123
       - 🇭🇰 Hong Kong_None_trojan_1124
       - 🇭🇰 Hong Kong_Central_vmess_1125
-      - 🇯🇵 Japan_Tokyo_trojan_1126
-      - None_None_vmess_1127
-      - None_None_vmess_1128
-      - None_None_vmess_1129
+      - None_None_vmess_1126
+      - None_None_trojan_1127
+      - 🇺🇸 United States_San Francisco_vmess_1128
+      - 🇩🇪 高清免費無碼AV - AVToday.io - 🇩🇪德国  25.81MB/s
+      - 🇷🇴 高清免費無碼AV - AVToday.io - 🇷🇴罗马尼亚  18.25MB/s
+      - 🇷🇴 高清免費無碼AV - AVToday.io - 🇷🇴罗马尼亚 17.84MB/s
+      - 🇺🇸 美国 原生IP 8.44MB/s 285 linuxdo@onimaii
+      - 🇺🇸 美国 原生IP 29.10MB/s 343 linuxdo@onimaii
+      - 🇺🇸 高清免費無碼AV - AVToday.io - 🇺🇸美国 3.08MB/s
+      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 20.35MB/s
+      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 16.96MB/s
+      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 20.69MB/s
+      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 19.83MB/s
+      - 🇺🇸 美国 原生IP 9.08MB/s 293 linuxdo@onimaii
+      - 🇧🇷 高清免費無碼AV - AVToday.io - BR-São Paulo-7151811-hccx
+      - 🇧🇷 高清免費無碼AV - AVToday.io - BR-São Paulo-31762123-hhel
+      - 🇸🇬 高清免費無碼AV - AVToday.io - SG-Singapore-1281443-hsly
+      - 🇸🇬 新加坡 | SGP
+      - 🇨🇦 高清免費無碼AV - AVToday.io - 🇨🇦 加拿大 | CAN
+      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA
+      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA 2
+      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA 3
+      - 🇩🇪 德国 | DEU
+      - "[openproxylist.com] TH 15388312"
+      - 🇨🇦 高清免費無碼AV - AVToday.io -  CA 356844
+      - 高清免費無碼AV - AVToday.io -  BR 15388256
+      - 高清免費無碼AV - AVToday.io -  BR 15388254
+      - 高清免費無碼AV - AVToday.io -  BR 15388262
+      - 高清免費無碼AV - AVToday.io -  BR 15388247
       - 高清無碼AV - AVToday.io - 🇺🇸US_86|214KB/s|A004-260618
       - 高清無碼AV - AVToday.io - 🇳🇱NL_60|327KB/s|A004-260618
       - 高清無碼AV - AVToday.io - 🇪🇸ES_5|425KB/s|A004-260618
@@ -1147,51 +1183,6 @@ proxy-groups:
       - 高清無碼AV - AVToday.io - 🇳🇱NL_79|395KB/s|B007-260618
       - US_105|211KB/s
       - 高清無碼AV - AVToday.io - 🇰🇭KH_1|156KB/s|A004-260618
-      - 🇮🇪 爱尔兰 - Dublin - 1
-      - 🇮🇪 爱尔兰 - Dublin - 2
-      - 🇮🇪 爱尔兰 - Dublin - 3
-      - 🇮🇪 爱尔兰 - Dublin - 4
-      - 🇦🇺 澳大利亚 - Sydney - 1
-      - 🇦🇺 澳大利亚 - Sydney - 2
-      - 🇦🇺 澳大利亚 - Sydney - 3
-      - 🇩🇪 德国 - Frankfurt am Main - 1
-      - 🇫🇷 法国 - Paris - 1
-      - 🇳🇱 荷兰 - Amsterdam - 1
-      - 🇳🇱 荷兰 - Amsterdam - 2
-      - 🇳🇱 荷兰 - Amsterdam - 3
-      - 🇺🇸 美国 - Los Angeles - 2
-      - 🇺🇸 美国 - Secaucus - 1
-      - 🇯🇵 日本 - Tokyo - 1
-      - 🇯🇵 日本 - Tokyo - 2
-      - 🇸🇬 新加坡 - Singapore - 1
-      - 🇭🇰 中国 - Hong Kong - 2
-      - 🇨🇳 中国 - Taipei - 1
-      - 🇩🇪 高清免費無碼AV - AVToday.io - 🇩🇪德国  25.81MB/s
-      - 🇷🇴 高清免費無碼AV - AVToday.io - 🇷🇴罗马尼亚  18.25MB/s
-      - 🇷🇴 高清免費無碼AV - AVToday.io - 🇷🇴罗马尼亚 17.84MB/s
-      - 🇺🇸 美国 原生IP 8.44MB/s 285 linuxdo@onimaii
-      - 🇺🇸 美国 原生IP 29.10MB/s 343 linuxdo@onimaii
-      - 🇺🇸 高清免費無碼AV - AVToday.io - 🇺🇸美国 3.08MB/s
-      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 20.35MB/s
-      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 16.96MB/s
-      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 20.69MB/s
-      - 高清免費無碼AV - AVToday.io - 🇧🇷BR 19.83MB/s
-      - 🇺🇸 美国 原生IP 9.08MB/s 293 linuxdo@onimaii
-      - 🇧🇷 高清免費無碼AV - AVToday.io - BR-São Paulo-7151811-hccx
-      - 🇧🇷 高清免費無碼AV - AVToday.io - BR-São Paulo-31762123-hhel
-      - 🇸🇬 高清免費無碼AV - AVToday.io - SG-Singapore-1281443-hsly
-      - 🇸🇬 新加坡 | SGP
-      - 🇨🇦 高清免費無碼AV - AVToday.io - 🇨🇦 加拿大 | CAN
-      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA
-      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA 2
-      - 🇧🇷 高清免費無碼AV - AVToday.io - 🇧🇷 巴西 | BRA 3
-      - 🇩🇪 德国 | DEU
-      - "[openproxylist.com] TH 15388312"
-      - 🇨🇦 高清免費無碼AV - AVToday.io -  CA 356844
-      - 高清免費無碼AV - AVToday.io -  BR 15388256
-      - 高清免費無碼AV - AVToday.io -  BR 15388254
-      - 高清免費無碼AV - AVToday.io -  BR 15388262
-      - 高清免費無碼AV - AVToday.io -  BR 15388247
 rules:
   - DOMAIN-SUFFIX,local,🎯 全球直连
   - IP-CIDR,192.168.0.0/16,🎯 全球直连,no-resolve
