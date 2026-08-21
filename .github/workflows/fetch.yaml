@@ -45,15 +45,29 @@ jobs:
         wget -q https://github.com/tindy2013/subconverter/releases/latest/download/subconverter_linux64.tar.gz
         mkdir -p subconverter_bin
         tar xzf subconverter_linux64.tar.gz -C subconverter_bin
-        # 修复: subconverter 的 config=file:// API 参数在 Linux 上不生效,
-        # 需要将自定义配置追加到 pref.ini (subconverter 默认配置文件).
-        # 注意: 必须用 >> 追加而非 cp 覆盖, 因为默认 pref.ini 包含 [common] section
-        # (clash_rule_base 等关键配置), 覆盖会导致 Clash 输出格式异常.
-        cat subconverter/external_config.ini >> subconverter_bin/subconverter/pref.ini
-        echo "pref.ini updated, [common] section preserved, [custom] section appended:"
-        grep -c "^\[" subconverter_bin/subconverter/pref.ini
-        echo "sections found in pref.ini"
-        cd subconverter_bin/subconverter && nohup ./subconverter > /dev/null 2>&1 &
+        echo "=== subconverter directory contents ==="
+        ls -la subconverter_bin/subconverter/
+        echo "=== base directory (if exists) ==="
+        ls -la subconverter_bin/subconverter/base/ 2>/dev/null || echo "no base dir"
+        # subconverter 配置加载:
+        # release 包可能包含 pref.example.ini 但不包含 pref.ini,
+        # 直接追加 external_config.ini 会创建只有 [custom] section 的不完整配置,
+        # 导致缺少 [common] 中的 clash_rule_base, Clash 输出格式异常.
+        # 正确做法: 优先从 pref.example.ini 复制完整配置, 再追加自定义 [custom] section.
+        SC_DIR=subconverter_bin/subconverter
+        if [ -f "$SC_DIR/pref.ini" ]; then
+          echo "pref.ini already exists, appending custom config"
+        elif [ -f "$SC_DIR/pref.example.ini" ]; then
+          echo "pref.ini not found, copying from pref.example.ini"
+          cp "$SC_DIR/pref.example.ini" "$SC_DIR/pref.ini"
+        else
+          echo "WARNING: neither pref.ini nor pref.example.ini found, creating minimal [common] section"
+          printf '[common]\nclash_rule_base=base/all_base.tpl\nsurge_rule_base=base/all_base.tpl\n' > "$SC_DIR/pref.ini"
+        fi
+        cat subconverter/external_config.ini >> "$SC_DIR/pref.ini"
+        echo "=== pref.ini sections ==="
+        grep "^\[" "$SC_DIR/pref.ini"
+        cd "$SC_DIR" && nohup ./subconverter > /dev/null 2>&1 &
         sleep 3
         curl -s http://127.0.0.1:25500/version || echo "subconverter start failed"
 
