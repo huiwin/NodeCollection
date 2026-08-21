@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-NodeCollection Pro v1.6.0 - 订阅源采集 + 多格式转换一体化工具
+NodeCollection Pro v1.8.0 - 订阅源采集 + 多格式转换一体化工具
 
 架构:
   config.yaml (TG频道) + airports.yaml (机场列表) + merge.yaml (上游订阅白名单)
@@ -1793,9 +1793,10 @@ def _append_sub_section(lines, display_name, file_path, note, github_url=None):
 
 # 上游订阅来源的 GitHub 仓库映射 (用于 README 来源表致谢)
 UPSTREAM_REPO_MAP = {
-    'freenode': ('ripaojiedian/freenode', 'https://github.com/ripaojiedian/freenode'),
     'NoMoreWalls': ('peasoft/NoMoreWalls', 'https://github.com/peasoft/NoMoreWalls'),
     'FreeNodes': ('Barabama/FreeNodes', 'https://github.com/Barabama/FreeNodes'),
+    'Pawdroid': ('Pawdroid/Free-servers', 'https://github.com/Pawdroid/Free-servers'),
+    'Jsnzkpg': ('Jsnzkpg/Jsnzkpg', 'https://github.com/Jsnzkpg/Jsnzkpg'),
 }
 
 
