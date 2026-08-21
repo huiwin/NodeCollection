@@ -45,6 +45,11 @@ jobs:
         wget -q https://github.com/tindy2013/subconverter/releases/latest/download/subconverter_linux64.tar.gz
         mkdir -p subconverter_bin
         tar xzf subconverter_linux64.tar.gz -C subconverter_bin
+        # 修复: subconverter 的 config=file:// API 参数在 Linux 上不生效,
+        # 需要将配置文件复制为工作目录下的 pref.ini (subconverter 默认配置名)
+        cp subconverter/external_config.ini subconverter_bin/subconverter/pref.ini
+        echo "pref.ini copied, content check:"
+        head -5 subconverter_bin/subconverter/pref.ini
         cd subconverter_bin/subconverter && nohup ./subconverter > /dev/null 2>&1 &
         sleep 3
         curl -s http://127.0.0.1:25500/version || echo "subconverter start failed"

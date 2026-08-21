@@ -1622,16 +1622,14 @@ def call_subconverter(target, sub_urls, output_path, config_path=None):
     merged_url = '|'.join(sub_urls)
     encoded_url = quote(merged_url, safe='')
 
-    # 构造外部配置路径 (使用绝对路径)
-    cfg = config_path or SUBCONVERTER_EXTERNAL_CONFIG
-    abs_config = os.path.abspath(cfg)
-    encoded_config = quote(f'file://{abs_config}', safe='')
+    # 注意: subconverter 的 config=file:// API 参数在 Linux 上不生效,
+    # 配置文件通过 fetch.yaml 复制为 pref.ini (subconverter 默认配置) 加载.
+    # config_path 参数保留用于向后兼容, 但不再传递给 API.
 
     api_url = (
         f'{SUBCONVERTER_URL}/sub?'
         f'target={target}&'
         f'url={encoded_url}&'
-        f'config={encoded_config}&'
         f'emoji=true&'
         f'udp=true&'
         f'tfo=false&'
