@@ -46,10 +46,13 @@ jobs:
         mkdir -p subconverter_bin
         tar xzf subconverter_linux64.tar.gz -C subconverter_bin
         # 修复: subconverter 的 config=file:// API 参数在 Linux 上不生效,
-        # 需要将配置文件复制为工作目录下的 pref.ini (subconverter 默认配置名)
-        cp subconverter/external_config.ini subconverter_bin/subconverter/pref.ini
-        echo "pref.ini copied, content check:"
-        head -5 subconverter_bin/subconverter/pref.ini
+        # 需要将自定义配置追加到 pref.ini (subconverter 默认配置文件).
+        # 注意: 必须用 >> 追加而非 cp 覆盖, 因为默认 pref.ini 包含 [common] section
+        # (clash_rule_base 等关键配置), 覆盖会导致 Clash 输出格式异常.
+        cat subconverter/external_config.ini >> subconverter_bin/subconverter/pref.ini
+        echo "pref.ini updated, [common] section preserved, [custom] section appended:"
+        grep -c "^\[" subconverter_bin/subconverter/pref.ini
+        echo "sections found in pref.ini"
         cd subconverter_bin/subconverter && nohup ./subconverter > /dev/null 2>&1 &
         sleep 3
         curl -s http://127.0.0.1:25500/version || echo "subconverter start failed"
