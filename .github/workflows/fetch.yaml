@@ -65,3 +65,12 @@ jobs:
         git add ./sub ./output ./README.md
         git diff --staged --quiet || git commit -m "Update $(date '+%Y-%m-%d %H:%M:%S')"
         git push origin main
+
+    - name: Deploy to GitHub Pages (T3.5)
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./output
+        force_orphan: true
+        user_name: 'GitHub Actions'
+        user_email: 'actions@github.com'

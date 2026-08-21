@@ -84,12 +84,42 @@ CLASH_PROXY_TYPES = {
     'tuic', 'snell', 'socks5', 'http', 'mixed',
 }
 
-# 节点延迟测速配置 (P1 v1.5.0)
-LATENCY_TIMEOUT = 5           # 单节点 TCP connect 超时 (秒)
-LATENCY_THREADS = 32          # 并发测速线程数
+# 节点延迟测速配置 (P1 v1.5.0, P3 v1.7.0 优化)
+LATENCY_TIMEOUT = 4           # 单节点 TCP connect 超时 (秒, P3: 5→4)
+LATENCY_THREADS = 48          # 并发测速线程数 (P3: 32→48)
 LATENCY_SAMPLE_RATIO = 1.0    # 抽测比例 (1.0 = 全量测速), 可在 merge.yaml 覆盖
-LATENCY_FAIL_THRESHOLD = 2   # 连续 N 个周期不可达则剔除 (与 T1.2 共用)
+LATENCY_FAIL_THRESHOLD = 3   # 连续 N 个周期不可达则剔除 (P3: 2→3, 与冷却期配合)
 MERGED_MAX_NODES = 200       # 融合输出每格式总量上限 (与 T1.4 共用)
+
+# 冷却期跳过测速配置 (P3 v1.7.0, T3.1)
+# 连续失败 COOLDOWN_ENTRY_THRESHOLD 次后进入冷却期, 跳过测速以减少耗时;
+# 每 COOLDOWN_RETRY_INTERVAL 个周期强制重试一次, 最多重试 COOLDOWN_MAX_RETRIES 次;
+# 重试成功则退出冷却期, 重试全部失败则剔除.
+COOLDOWN_ENTRY_THRESHOLD = 2   # 连续失败 N 次进入冷却期
+COOLDOWN_RETRY_INTERVAL = 3    # 冷却期内每 N 个周期强制重试一次
+COOLDOWN_MAX_RETRIES = 3       # 冷却期内最多重试 N 次, 超过则剔除
+
+# 协议兼容性矩阵 (P3 v1.7.0, T3.3)
+# 各输出格式支持的代理协议集合, 用于 README 标注和可选的预过滤
+# subconverter 本身会自动跳过不支持的协议, 此处主要用于文档说明
+PROTOCOL_COMPATIBILITY = {
+    'clash': ('ss', 'ssr', 'vmess', 'vless', 'trojan'),
+    'v2ray': ('ss', 'vmess', 'vless', 'trojan'),
+    'surge': ('ss', 'vmess', 'trojan'),
+    'mixed': ('ss', 'ssr', 'vmess', 'vless', 'trojan', 'hysteria', 'hysteria2', 'tuic'),
+    'singbox': ('ss', 'ssr', 'vmess', 'vless', 'trojan', 'hysteria', 'hysteria2', 'tuic'),
+}
+# 协议中文名称映射 (用于 README 显示)
+PROTOCOL_NAMES = {
+    'ss': 'Shadowsocks',
+    'ssr': 'ShadowsocksR',
+    'vmess': 'VMess',
+    'vless': 'VLESS',
+    'trojan': 'Trojan',
+    'hysteria': 'Hysteria',
+    'hysteria2': 'Hysteria2',
+    'tuic': 'TUIC',
+}
 
 # 历史版本保留配置 (P2 v1.6.0, T2.2)
 HISTORY_KEEP_COUNT = 5       # 每格式保留最近 N 版日期文件, 超出自动清理最旧版本
@@ -711,10 +741,17 @@ def _tcp_connect_latency(host, port):
         return None
 
 
-def measure_uri_latencies(uris):
+def measure_uri_latencies(uris, health_data=None):
     """
     并发测速分享链接 URI 列表。
-    返回: {uri: latency_ms_or_None}  (None = 不可达/无法解析)
+    P3 (v1.7.0): 支持冷却期跳过测速 — 冷却期节点且非强制重试周期直接返回 None。
+
+    Args:
+        uris: URI 列表
+        health_data: 健康记录 dict (可选), 用于判断冷却期节点; 为 None 时全量测速
+
+    Returns:
+        {uri: latency_ms_or_None}  (None = 不可达/无法解析/冷却期跳过)
     """
     if not uris:
         return {}
@@ -725,62 +762,104 @@ def measure_uri_latencies(uris):
         sample_count = max(1, int(len(uris) * LATENCY_SAMPLE_RATIO))
         sample = uris[:sample_count]
 
-    results = {}
-    bar = tqdm(total=len(sample), desc='节点测速')
+    # P3: 冷却期跳过 — 冷却期节点且 cooldown_cycles % RETRY_INTERVAL != 0 时跳过测速
+    skipped = {}
+    to_measure = []
+    if health_data:
+        for uri in sample:
+            rec = health_data.get(uri, {})
+            if (rec.get('cooling_down')
+                    and rec.get('cooldown_cycles', 0) % COOLDOWN_RETRY_INTERVAL != 0):
+                skipped[uri] = None  # 冷却期跳过, 视为不可达
+            else:
+                to_measure.append(uri)
+    else:
+        to_measure = sample
 
-    def _measure(uri):
-        host, port = extract_host_port(uri)
-        if not host or not port:
-            return uri, None
-        return uri, _tcp_connect_latency(host, port)
+    results = dict(skipped)  # 先放入跳过的节点
+    if to_measure:
+        bar = tqdm(total=len(to_measure), desc='节点测速')
 
-    with ThreadPoolExecutor(max_workers=LATENCY_THREADS) as executor:
-        futures = {executor.submit(_measure, uri): uri for uri in sample}
-        for future in as_completed(futures):
-            uri, latency = future.result()
-            results[uri] = latency
-            bar.update(1)
-    bar.close()
+        def _measure(uri):
+            host, port = extract_host_port(uri)
+            if not host or not port:
+                return uri, None
+            return uri, _tcp_connect_latency(host, port)
+
+        with ThreadPoolExecutor(max_workers=LATENCY_THREADS) as executor:
+            futures = {executor.submit(_measure, uri): uri for uri in to_measure}
+            for future in as_completed(futures):
+                uri, latency = future.result()
+                results[uri] = latency
+                bar.update(1)
+        bar.close()
 
     # 未抽测的 URI 标记为 None
     for uri in uris:
         results.setdefault(uri, None)
 
     available = sum(1 for v in results.values() if v is not None)
-    logger.info(f'测速完成: {available}/{len(uris)} 个节点可达')
+    skipped_count = len(skipped)
+    if skipped_count:
+        logger.info(f'测速完成: {available}/{len(uris)} 可达, {skipped_count} 个冷却期跳过')
+    else:
+        logger.info(f'测速完成: {available}/{len(uris)} 个节点可达')
     return results
 
 
-def measure_proxy_latencies(proxies):
+def measure_proxy_latencies(proxies, health_data=None):
     """
     并发测速 Clash YAML 代理列表。
+    P3 (v1.7.0): 支持冷却期跳过测速。
+
     proxies: list[dict] 每项含 'server', 'port', 'name' 字段
+    health_data: 健康记录 dict (可选), 用于判断冷却期节点
     返回: {proxy_name: latency_ms_or_None}
     """
     if not proxies:
         return {}
 
-    results = {}
-    bar = tqdm(total=len(proxies), desc='代理测速')
+    # P3: 冷却期跳过
+    skipped = {}
+    to_measure = []
+    if health_data:
+        for proxy in proxies:
+            name = proxy.get('name', '')
+            rec = health_data.get(name, {})
+            if (rec.get('cooling_down')
+                    and rec.get('cooldown_cycles', 0) % COOLDOWN_RETRY_INTERVAL != 0):
+                skipped[name] = None
+            else:
+                to_measure.append(proxy)
+    else:
+        to_measure = proxies
 
-    def _measure(proxy):
-        host = str(proxy.get('server', '')).strip()
-        port = int(proxy.get('port', 0) or 0)
-        name = proxy.get('name', '')
-        if not host or not port:
-            return name, None
-        return name, _tcp_connect_latency(host, port)
+    results = dict(skipped)
+    if to_measure:
+        bar = tqdm(total=len(to_measure), desc='代理测速')
 
-    with ThreadPoolExecutor(max_workers=LATENCY_THREADS) as executor:
-        futures = {executor.submit(_measure, p): p for p in proxies}
-        for future in as_completed(futures):
-            name, latency = future.result()
-            results[name] = latency
-            bar.update(1)
-    bar.close()
+        def _measure(proxy):
+            host = str(proxy.get('server', '')).strip()
+            port = int(proxy.get('port', 0) or 0)
+            name = proxy.get('name', '')
+            if not host or not port:
+                return name, None
+            return name, _tcp_connect_latency(host, port)
+
+        with ThreadPoolExecutor(max_workers=LATENCY_THREADS) as executor:
+            futures = {executor.submit(_measure, p): p for p in to_measure}
+            for future in as_completed(futures):
+                name, latency = future.result()
+                results[name] = latency
+                bar.update(1)
+        bar.close()
 
     available = sum(1 for v in results.values() if v is not None)
-    logger.info(f'代理测速完成: {available}/{len(proxies)} 个代理可达')
+    skipped_count = len(skipped)
+    if skipped_count:
+        logger.info(f'代理测速完成: {available}/{len(proxies)} 可达, {skipped_count} 个冷却期跳过')
+    else:
+        logger.info(f'代理测速完成: {available}/{len(proxies)} 个代理可达')
     return results
 
 
@@ -832,46 +911,96 @@ def load_upstream_health():
 def filter_and_sort_nodes(items, latencies, health_data):
     """
     根据延迟与健康记录对节点排序、剔除。
+    P3 (v1.7.0): 集成冷却期逻辑 — 连续失败 2 次进入冷却期, 跳过测速;
+    每 3 周期强制重试, 最多重试 3 次, 全部失败则剔除.
 
     Args:
         items: 节点标识列表 (URI 字符串 或 Clash proxy name)
-        latencies: {id: latency_ms_or_None}  (None = 本次测速不可达)
+        latencies: {id: latency_ms_or_None}  (None = 本次测速不可达 或 冷却期跳过)
         health_data: 健康记录 dict (就地更新, 跨周期累计 fail_count;
                     传入前应已用 load_node_health() 加载)
 
+    健康记录结构 (P3 扩展):
+        {node_id: {fail_count, last_latency, last_seen,
+                   cooling_down, cooldown_cycles, retry_count}}
+
     逻辑:
-        1. 可达 (latency 非 None) → fail_count 清零, 记录 last_latency
-        2. 不可达 (latency None) → fail_count += 1
-        3. fail_count >= LATENCY_FAIL_THRESHOLD → 剔除 (不进入输出)
-        4. 存活节点按延迟升序排列 (None 排末尾)
+        1. 可达 (latency 非 None) → 退出冷却期, fail_count 清零
+        2. 不可达 (latency None):
+           a. 非冷却期 → fail_count += 1; ≥2 进入冷却期; ≥3 直接剔除
+           b. 冷却期跳过周期 → cooldown_cycles += 1 (fail_count 冻结)
+           c. 冷却期强制重试失败 → retry_count += 1, cooldown_cycles=0; ≥3 剔除
+        3. 存活节点按延迟升序排列 (None 排末尾)
 
     Returns:
         (surviving_items, excluded_count)
-        surviving_items 已按延迟升序排列, 可直接用于回写 all_uris / dedup_proxies
     """
     today_str = datetime.datetime.today().strftime('%Y-%m-%d')
     surviving = []
     excluded = 0
     for nid in items:
-        lat = latencies.get(nid)  # None 表示本次测速不可达
-        rec = health_data.get(nid, {'fail_count': 0, 'last_latency': None, 'last_seen': ''})
-        if lat is None:
-            rec['fail_count'] = rec.get('fail_count', 0) + 1
-        else:
+        lat = latencies.get(nid)  # None 表示本次测速不可达 或 冷却期跳过
+        rec = health_data.get(nid, {
+            'fail_count': 0, 'last_latency': None, 'last_seen': '',
+            'cooling_down': False, 'cooldown_cycles': 0, 'retry_count': 0,
+        })
+
+        if lat is not None:
+            # 可达 → 退出冷却期, 清零所有计数
             rec['fail_count'] = 0
             rec['last_latency'] = lat
+            rec['cooling_down'] = False
+            rec['cooldown_cycles'] = 0
+            rec['retry_count'] = 0
+        else:
+            # 不可达 (含冷却期跳过)
+            if not rec.get('cooling_down'):
+                # 非冷却期: 正常累计 fail_count
+                rec['fail_count'] = rec.get('fail_count', 0) + 1
+                if rec['fail_count'] >= COOLDOWN_ENTRY_THRESHOLD:
+                    # 进入冷却期
+                    rec['cooling_down'] = True
+                    rec['cooldown_cycles'] = 0
+                    rec['retry_count'] = 0
+                    logger.info(f'[health] 节点进入冷却期 (连续 {rec["fail_count"]} 次不可达)')
+                if rec['fail_count'] >= LATENCY_FAIL_THRESHOLD:
+                    # 非冷却期直接剔除 (通常 2 次就进冷却期, 这里是兜底)
+                    excluded += 1
+                    rec['last_seen'] = today_str
+                    health_data[nid] = rec
+                    label = str(nid)
+                    if len(label) > 60:
+                        label = label[:57] + '...'
+                    logger.info(f'[health] 剔除连续 {rec["fail_count"]} 次不可达节点: {label}')
+                    continue
+            else:
+                # 冷却期: 判断本周期是跳过还是强制重试
+                old_cycles = rec.get('cooldown_cycles', 0)
+                if old_cycles % COOLDOWN_RETRY_INTERVAL == 0:
+                    # 强制重试周期, 测速失败 → retry_count += 1, 重新计时
+                    rec['retry_count'] = rec.get('retry_count', 0) + 1
+                    rec['cooldown_cycles'] = 1  # 设为 1, 下一周期 1%3!=0 → 跳过 (避免每周期都重试)
+                    if rec['retry_count'] >= COOLDOWN_MAX_RETRIES:
+                        # 重试全部失败 → 剔除
+                        excluded += 1
+                        rec['last_seen'] = today_str
+                        health_data[nid] = rec
+                        label = str(nid)
+                        if len(label) > 60:
+                            label = label[:57] + '...'
+                        logger.info(
+                            f'[health] 冷却期节点重试 {rec["retry_count"]} 次全部失败, 剔除: {label}'
+                        )
+                        continue
+                    logger.info(
+                        f'[health] 冷却期节点强制重试失败 (第 {rec["retry_count"]}/{COOLDOWN_MAX_RETRIES} 次)'
+                    )
+                else:
+                    # 跳过周期 → cooldown_cycles += 1 (fail_count 冻结)
+                    rec['cooldown_cycles'] = old_cycles + 1
+
         rec['last_seen'] = today_str
         health_data[nid] = rec
-
-        if rec['fail_count'] >= LATENCY_FAIL_THRESHOLD:
-            excluded += 1
-            label = str(nid)
-            if len(label) > 60:
-                label = label[:57] + '...'
-            logger.info(
-                f'[health] 剔除连续 {rec["fail_count"]} 次不可达节点: {label}'
-            )
-            continue
         surviving.append(nid)
 
     # 按延迟升序 (None 排末尾)
@@ -972,6 +1101,63 @@ def cleanup_old_versions(directory, pattern_suffix, keep=HISTORY_KEEP_COUNT):
     return removed
 
 
+def dedup_uris_by_host_port(uris, uri_source_map=None):
+    """
+    P3 (v1.7.0, T3.2): 基于 host:port 对 URI 节点智能去重。
+    同一 host:port 的多个节点只保留第一个 (后续测速排序后延迟低的会优先输出)。
+    无法提取 host:port 的节点 (如格式异常) 回退到完整 URI 去重。
+
+    Args:
+        uris: URI 列表
+        uri_source_map: 可选, {uri: source_name} 来源映射, 去重时合并来源
+
+    Returns:
+        deduped_uris: 去重后的 URI 列表 (保持原顺序)
+    """
+    seen_keys = set()
+    deduped = []
+    for uri in uris:
+        host, port = extract_host_port(uri)
+        if host and port:
+            key = f'{host}:{port}'
+        else:
+            key = uri  # 无法提取 host:port 时回退到完整 URI
+        if key not in seen_keys:
+            seen_keys.add(key)
+            deduped.append(uri)
+        elif uri_source_map is not None and uri in uri_source_map:
+            # 同一 host:port 来自多个上游时, 保留第一个来源 (来源合并暂不修改节点名)
+            pass
+    return deduped
+
+
+def dedup_proxies_by_host_port(proxies, proxy_source_map=None):
+    """
+    P3 (v1.7.0, T3.2): 基于 server:port 对 Clash proxy 节点智能去重。
+    同一 server:port 的多个节点只保留第一个。
+
+    Args:
+        proxies: Clash proxy 列表 (每项含 server, port, name)
+        proxy_source_map: 可选, {proxy_name: source_name} 来源映射
+
+    Returns:
+        deduped_proxies: 去重后的 proxy 列表
+    """
+    seen_keys = set()
+    deduped = []
+    for proxy in proxies:
+        host = str(proxy.get('server', '')).strip()
+        port = int(proxy.get('port', 0) or 0)
+        if host and port > 0:
+            key = f'{host}:{port}'
+        else:
+            key = proxy.get('name', '')  # 无法提取时回退到 name
+        if key not in seen_keys:
+            seen_keys.add(key)
+            deduped.append(proxy)
+    return deduped
+
+
 def generate_merged_format(upstream_texts, upstreams):
     """
     上游订阅融合主入口:
@@ -993,12 +1179,14 @@ def generate_merged_format(upstream_texts, upstreams):
     all_uris, all_clash_proxies = [], []
     uri_source_map = {}    # uri → 上游来源名 (T1.4 单源截断用)
     proxy_source_map = {}  # proxy_name → 上游来源名
+    upstream_parsed = {}   # T3.4: 每上游解析数 (去重前)
     for upstream in upstreams:
         text = upstream_texts.get(upstream.get('name'))
         if not text:
             continue
         source_name = upstream.get('name', 'unknown')
         uris, proxies = parse_upstream_text(text, upstream)
+        upstream_parsed[source_name] = len(uris) + len(proxies)
         for u in uris:
             uri_source_map.setdefault(u, source_name)
         for p in proxies:
@@ -1006,14 +1194,17 @@ def generate_merged_format(upstream_texts, upstreams):
         all_uris.extend(uris)
         all_clash_proxies.extend(proxies)
 
-    # 2. 节点级去重 (URI 全串去重 / Clash 代理按名称去重)
-    all_uris = list(dict.fromkeys(all_uris))
-    seen_names = set()
-    dedup_proxies = []
-    for proxy in all_clash_proxies:
-        if proxy['name'] not in seen_names:
-            seen_names.add(proxy['name'])
-            dedup_proxies.append(proxy)
+    # 2. 节点级智能去重 (P3 T3.2: 基于 host:port 去重, 同一节点多参数只保留一个)
+    #    无法提取 host:port 的节点回退到完整 URI / name 去重
+    before_dedup = len(all_uris) + len(all_clash_proxies)
+    all_uris = dedup_uris_by_host_port(all_uris, uri_source_map)
+    dedup_proxies = dedup_proxies_by_host_port(all_clash_proxies, proxy_source_map)
+    after_dedup = len(all_uris) + len(dedup_proxies)
+    if before_dedup > after_dedup:
+        logger.info(
+            f'[T3.2] 智能去重: {before_dedup} → {after_dedup} 节点 '
+            f'(去除 {before_dedup - after_dedup} 个重复 host:port)'
+        )
 
     total_nodes = len(all_uris) + len(dedup_proxies)
     if total_nodes == 0:
@@ -1051,13 +1242,13 @@ def generate_merged_format(upstream_texts, upstreams):
                 rec['degraded'] = True
         upstream_health[name] = rec
 
-    uri_latencies = measure_uri_latencies(all_uris) if all_uris else {}
+    uri_latencies = measure_uri_latencies(all_uris, health_data) if all_uris else {}
     uri_survivors, uri_excluded = filter_and_sort_nodes(
         all_uris, uri_latencies, health_data
     )
     all_uris = uri_survivors
 
-    proxy_latencies = measure_proxy_latencies(dedup_proxies) if dedup_proxies else {}
+    proxy_latencies = measure_proxy_latencies(dedup_proxies, health_data) if dedup_proxies else {}
     proxy_names = [p['name'] for p in dedup_proxies]
     proxy_survivors, proxy_excluded = filter_and_sort_nodes(
         proxy_names, proxy_latencies, health_data
@@ -1094,6 +1285,45 @@ def generate_merged_format(upstream_texts, upstreams):
     if post_health_count == 0:
         logger.warning('所有融合节点均不可达，跳过融合输出')
         return 0
+
+    # T3.4 (v1.7.0): 上游贡献统计 (基于剔除后、截断前的数据, 反映上游真实质量)
+    upstream_stats = {}
+    _up_after_dedup = {}
+    _up_available = {}
+    _up_latencies = {}
+    for u in all_uris:
+        _src = uri_source_map.get(u, 'unknown')
+        _up_after_dedup[_src] = _up_after_dedup.get(_src, 0) + 1
+        _lat = uri_latencies.get(u)
+        if _lat is not None:
+            _up_available[_src] = _up_available.get(_src, 0) + 1
+            _up_latencies.setdefault(_src, []).append(_lat)
+    for p in dedup_proxies:
+        _src = proxy_source_map.get(p['name'], 'unknown')
+        _up_after_dedup[_src] = _up_after_dedup.get(_src, 0) + 1
+        _lat = proxy_latencies.get(p['name'])
+        if _lat is not None:
+            _up_available[_src] = _up_available.get(_src, 0) + 1
+            _up_latencies.setdefault(_src, []).append(_lat)
+    for _src in sorted(set(list(upstream_parsed.keys()) + list(_up_after_dedup.keys()))):
+        _parsed = upstream_parsed.get(_src, 0)
+        _after = _up_after_dedup.get(_src, 0)
+        _avail = _up_available.get(_src, 0)
+        _lats = _up_latencies.get(_src, [])
+        _avg_lat = round(sum(_lats) / len(_lats)) if _lats else None
+        _rate = round(_avail / max(_after, 1) * 100, 1)
+        upstream_stats[_src] = {
+            'parsed': _parsed,
+            'after_dedup': _after,
+            'available': _avail,
+            'avg_latency_ms': _avg_lat,
+            'availability_rate': _rate,
+        }
+    if upstream_stats:
+        logger.info(
+            f'[T3.4] 上游贡献统计: '
+            + ', '.join(f'{k}({v["available"]}/{v["after_dedup"]}可达)' for k, v in upstream_stats.items())
+        )
 
     # 2.8 (T1.4) 单源截断 + 总量截断
     #   单源: 每个上游按 max_nodes 截断 (列表已按延迟升序, 取前 N)
@@ -1247,6 +1477,8 @@ def generate_merged_format(upstream_texts, upstreams):
                 'min_latency_ms': min_latency,
                 'node_health': health_data,
             },
+            # T3.4 (v1.7.0): 上游贡献统计 (每上游解析/去重/可达/延迟/可用率)
+            'upstream_stats': upstream_stats,
         }
         for target, _, ext in OUTPUT_FORMATS:
             token = target.split('&')[0]
@@ -1533,7 +1765,7 @@ def _append_proxy_table(lines, file_path):
 
 
 def _append_sub_section(lines, display_name, file_path, note, github_url=None):
-    """向 lines 追加一个订阅小节: 标题 + 说明 + 加速代理表格。"""
+    """向 lines 追加一个订阅小节: 标题 + 说明 + 协议支持 + 加速代理表格。"""
     # 标题渲染: 有 github_url 则包成 [显示名](github_url) 超链接，否则保留原样
     if github_url:
         lines.append(f'### [{display_name}]({github_url})')
@@ -1542,6 +1774,19 @@ def _append_sub_section(lines, display_name, file_path, note, github_url=None):
     lines.append('')
     lines.append(f'<sub>{note}</sub>')
     lines.append('')
+
+    # T3.3 (v1.7.0): 协议支持标注 (根据格式名映射到 PROTOCOL_COMPATIBILITY)
+    _format_key_map = {
+        'Clash': 'clash', 'V2Ray': 'v2ray', 'Surge': 'surge',
+        'Mixed': 'mixed', 'Sing-box': 'singbox',
+    }
+    _fmt_key = _format_key_map.get(display_name)
+    if _fmt_key and _fmt_key in PROTOCOL_COMPATIBILITY:
+        _protos = PROTOCOL_COMPATIBILITY[_fmt_key]
+        _proto_names = [PROTOCOL_NAMES.get(p, p) for p in _protos]
+        lines.append(f'> 支持协议: {", ".join(_proto_names)}')
+        lines.append('')
+
     _append_proxy_table(lines, file_path)
     lines.append('')
     lines.append('---')
@@ -1569,18 +1814,19 @@ def generate_readme(upstreams=None):
     # 使用 latest 固定路径，URL 永不改变，内容随每次运行自动更新
     # 末尾的链接字段让各软件标题成为可点击的超链接，跳转到对应 GitHub 仓库
     sub_files = [
+        # 顺序按用户使用频率排列: Clash > V2Ray > Sing-box > Surge > Mixed
         ('Clash', 'output/clash/latest.yaml', 'Clash / Clash Meta / Mihomo',
          'https://github.com/clash-verge-rev/clash-verge-rev'),
         ('V2Ray', 'output/v2ray/latest.txt', 'V2RayN / V2RayNG / Shadowrocket (Base64)',
          'https://github.com/2dust/v2rayN'),
+        # T2.1 (v1.6.0): Sing-box 输出
+        ('Sing-box', 'output/singbox/latest.json', 'Sing-box / SagerNet / Hiddify (JSON)',
+         'https://github.com/SagerNet/sing-box'),
         ('Surge', 'output/surge/latest.conf', 'Surge 4+',
          None),
         ('Mixed', 'output/mixed/latest.txt', '混合格式 Base64 (全协议)',
          None),
-        # T2.1 (v1.6.0): 新增 Sing-box 输出
-        ('Sing-box', 'output/singbox/latest.json', 'Sing-box / SagerNet / Hiddify (JSON)',
-         'https://github.com/SagerNet/sing-box'),
-        ('原始 YAML', 'sub/latest.yaml', '向后兼容格式 (含分类)',
+        ('原始 YAML', 'sub/latest.yaml', '向后兼容格式 (含分类, 开发者用)',
          None),
     ]
 
@@ -1589,11 +1835,27 @@ def generate_readme(upstreams=None):
     merged_files = [
         ('Clash', 'output/merged/latest.clash.yaml', '融合节点 (含外部来源标注)'),
         ('V2Ray', 'output/merged/latest.v2ray.txt', '融合节点 Base64'),
+        ('Sing-box', 'output/merged/latest.singbox.json', '融合节点 Sing-box JSON'),
         ('Surge', 'output/merged/latest.surge.conf', '融合节点 Surge 配置'),
         ('Mixed', 'output/merged/latest.mixed.txt', '融合节点混合 Base64'),
-        # T2.1 (v1.6.0): 新增 Sing-box 融合输出
-        ('Sing-box', 'output/merged/latest.singbox.json', '融合节点 Sing-box JSON'),
     ]
+
+    # 读取 index.json 获取质量数据 (用于顶部质量概览 + 上游来源表)
+    _index_data = {}
+    _merged_quality = {}
+    _upstream_health = {}
+    _upstream_stats = {}
+    _idx_path = os.path.join(OUTPUT_DIR, 'index.json')
+    if os.path.isfile(_idx_path):
+        try:
+            with open(_idx_path, encoding='utf-8') as _f:
+                _index_data = json.load(_f)
+            _merged = _index_data.get('merged', {})
+            _merged_quality = _merged.get('quality', {})
+            _upstream_health = _merged.get('upstream_health', {})
+            _upstream_stats = _merged.get('upstream_stats', {})
+        except Exception:
+            pass
 
     lines = []
     lines.append('# NodeCollection')
@@ -1604,9 +1866,56 @@ def generate_readme(upstreams=None):
                  '不保证节点的安全性、可用性与合法性。请勿用于任何违反所在地区法律法规的用途，'
                  '也请勿通过免费节点登录银行、邮箱等敏感账号。使用本项目产生的一切后果由使用者自行承担。')
     lines.append('')
+
+    # 节点质量概览 (从 index.json 读取, 让用户一眼看到当前节点质量)
+    if _merged_quality:
+        _total = _merged_quality.get('total_parsed', '-')
+        _avail = _merged_quality.get('total_available', '-')
+        _rate = _merged_quality.get('availability_rate', '-')
+        _avg_lat = _merged_quality.get('avg_latency_ms', '-')
+        _output = _merged_quality.get('output_count', '-')
+        _excluded = _merged_quality.get('excluded', 0)
+
+        lines.append('## 节点质量概览')
+        lines.append('')
+        lines.append('| 指标 | 数值 | 说明 |')
+        lines.append('| :--- | ---: | :--- |')
+        lines.append(f'| 解析节点总数 | {_total} | 上游订阅解析后节点数 |')
+        lines.append(f'| 可用节点 | {_avail} | 测速后存活节点数 (剔除前) |')
+        lines.append(f'| 最终输出 | {_output} | 体积截断后实际输出节点数 |')
+        lines.append(f'| 可用率 | {_rate}% | 可用节点 / 解析总数 |')
+        if isinstance(_avg_lat, int):
+            lines.append(f'| 平均延迟 | {_avg_lat}ms | 可达节点的平均 TCP 握手延迟 |')
+        else:
+            lines.append(f'| 平均延迟 | {_avg_lat} | 可达节点的平均 TCP 握手延迟 |')
+        if _excluded:
+            lines.append(f'| 已剔除 | {_excluded} | 连续不可达被剔除的节点数 |')
+        lines.append('')
+        lines.append(
+            '> 📊 查看详细状态: [Web 状态页](https://huiwin.github.io/NodeCollection/status.html) '
+            '（含上游贡献统计、质量指标、实时更新）'
+        )
+        lines.append('')
+        lines.append('---')
+        lines.append('')
+
     lines.append('## 订阅链接')
     lines.append('')
     lines.append('复制下方链接到客户端的订阅地址中即可使用。各软件标题为超链接，点击可跳转到对应 GitHub 仓库。')
+    lines.append('')
+
+    # 格式快速对比表 (排版优化: 让用户一眼了解各格式区别)
+    lines.append('### 格式选择指南')
+    lines.append('')
+    lines.append('| 格式 | 适用客户端 | 特点 | 协议支持 |')
+    lines.append('| :--- | :--- | :--- | :--- |')
+    lines.append('| **Clash** | Clash for Windows / ClashX / Mihomo | 完整配置含代理组+规则，最流行 | SS/SSR/VMess/VLESS/Trojan |')
+    lines.append('| **V2Ray** | V2RayN / V2RayNG / Shadowrocket | Base64 编码，兼容性最广 | SS/VMess/VLESS/Trojan |')
+    lines.append('| **Sing-box** | Sing-box / SagerNet / Hiddify | 全协议支持，性能优秀 | 全协议(含 Hysteria2/TUIC) |')
+    lines.append('| **Surge** | Surge 4+ (iOS/macOS) | 苹果生态原生，功能强大 | SS/VMess/Trojan |')
+    lines.append('| **Mixed** | 通用客户端 | 所有协议混合 Base64 | 全协议 |')
+    lines.append('')
+    lines.append('> 不确定选哪个？**Windows/Android 选 Clash**，**iOS 选 Shadowrocket(V2Ray)**，**需要 Hysteria2/TUIC 选 Sing-box**。')
     lines.append('')
     lines.append('---')
     lines.append('')
@@ -1651,19 +1960,12 @@ def generate_readme(upstreams=None):
 
         lines.append('### 上游来源 (Thanks)')
         lines.append('')
-        # T2.3: 从 index.json 读取上游健康状态, 降级的来源显示 ⚠️ 标记
-        upstream_health = {}
-        _idx_path = os.path.join(OUTPUT_DIR, 'index.json')
-        if os.path.isfile(_idx_path):
-            try:
-                with open(_idx_path, encoding='utf-8') as _f:
-                    _idx_data = json.load(_f)
-                upstream_health = _idx_data.get('merged', {}).get('upstream_health', {})
-            except Exception:
-                pass
+        # T2.3: 上游健康状态 (已在函数开头从 index.json 读取)
+        # T3.4: 上游贡献统计 (已在函数开头从 index.json 读取)
 
-        lines.append('| 来源 | 项目地址 | 状态 |')
-        lines.append('| :--- | :--- | :--- |')
+        # T3.4: 来源表含贡献统计 (解析/去重/可达/可用率/平均延迟/状态)
+        lines.append('| 来源 | 项目地址 | 解析 | 去重后 | 可达 | 可用率 | 平均延迟 | 状态 |')
+        lines.append('| :--- | :--- | ---: | ---: | ---: | ---: | ---: | :--- |')
         seen = set()
         for upstream in upstreams:
             name = upstream.get('name', '')
@@ -1692,7 +1994,7 @@ def generate_readme(upstreams=None):
                 except Exception:
                     repo, repo_url = UPSTREAM_REPO_MAP.get(name, (name, src_url))
             # T2.3: 降级状态显示
-            health = upstream_health.get(name, {})
+            health = _upstream_health.get(name, {})
             if health.get('degraded'):
                 fail_cnt = health.get('fail_count', 0)
                 status = f'⚠️ 已降级 (连续 {fail_cnt} 次失败)'
@@ -1700,7 +2002,17 @@ def generate_readme(upstreams=None):
                 status = f'⚠️ 异常 ({health["fail_count"]} 次失败)'
             else:
                 status = '✅ 正常'
-            lines.append(f'| {name} | [{repo}]({repo_url}) | {status} |')
+            # T3.4: 贡献统计
+            stats = _upstream_stats.get(name, {})
+            parsed_cnt = stats.get('parsed', '-')
+            after_dedup = stats.get('after_dedup', '-')
+            available = stats.get('available', '-')
+            avail_rate = f'{stats["availability_rate"]}%' if stats.get('availability_rate') is not None else '-'
+            avg_lat = f'{stats["avg_latency_ms"]}ms' if stats.get('avg_latency_ms') is not None else '-'
+            lines.append(
+                f'| {name} | [{repo}]({repo_url}) | {parsed_cnt} | {after_dedup} | '
+                f'{available} | {avail_rate} | {avg_lat} | {status} |'
+            )
         lines.append('')
         lines.append('上游节点遵循各来源项目的许可证与分发要求，如来源项目提出异议将立即移除。')
         lines.append('')
@@ -1720,6 +2032,128 @@ def generate_readme(upstreams=None):
     with open(readme_path, 'w', encoding='utf-8') as f:
         f.write('\n'.join(lines))
     logger.info(f'README.md 已更新: {readme_path}')
+
+
+def generate_status_page():
+    """
+    P3 (v1.7.0, T3.5): 生成 Web 状态页 output/status.html。
+    从 index.json 读取融合订阅数据, 展示概览、上游贡献、延迟分布。
+    单文件 HTML, 内嵌 CSS, 可通过 GitHub Pages 直接访问。
+    """
+    index_path = os.path.join(OUTPUT_DIR, 'index.json')
+    if not os.path.isfile(index_path):
+        logger.warning('index.json 不存在, 跳过状态页生成')
+        return
+
+    try:
+        with open(index_path, encoding='utf-8') as f:
+            index_data = json.load(f)
+    except Exception as e:
+        logger.warning(f'读取 index.json 失败, 跳过状态页: {e}')
+        return
+
+    merged = index_data.get('merged', {})
+    quality = merged.get('quality', {})
+    upstream_stats = merged.get('upstream_stats', {})
+    upstream_health = merged.get('upstream_health', {})
+
+    total_parsed = quality.get('total_parsed', 0)
+    total_available = quality.get('total_available', 0)
+    excluded = quality.get('excluded', 0)
+    output_count = quality.get('output_count', 0)
+    avail_rate = quality.get('availability_rate', 0)
+    avg_lat = quality.get('avg_latency_ms', '-')
+    min_lat = quality.get('min_latency_ms', '-')
+    max_lat = quality.get('max_latency_ms', '-')
+    update_time = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+
+    # 上游贡献表行
+    upstream_rows = ''
+    for src, stats in sorted(upstream_stats.items()):
+        health = upstream_health.get(src, {})
+        if health.get('degraded'):
+            status = '<span style="color:#f59e0b">⚠️ 已降级</span>'
+        elif health.get('fail_count', 0) > 0:
+            status = '<span style="color:#f59e0b">⚠️ 异常</span>'
+        else:
+            status = '<span style="color:#10b981">✅ 正常</span>'
+        avg_lat_str = f'{stats["avg_latency_ms"]}ms' if stats.get('avg_latency_ms') else '-'
+        upstream_rows += (
+            f'<tr><td>{src}</td><td>{stats.get("parsed", "-")}</td>'
+            f'<td>{stats.get("after_dedup", "-")}</td><td>{stats.get("available", "-")}</td>'
+            f'<td>{stats.get("availability_rate", "-")}%</td><td>{avg_lat_str}</td>'
+            f'<td>{status}</td></tr>\n'
+        )
+
+    html = f'''<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NodeCollection Pro - 状态页</title>
+<style>
+* {{ margin:0; padding:0; box-sizing:border-box; }}
+body {{ font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+        background:#0f172a; color:#e2e8f0; padding:20px; line-height:1.6; }}
+.container {{ max-width:960px; margin:0 auto; }}
+h1 {{ font-size:1.8rem; margin-bottom:4px; }}
+.subtitle {{ color:#94a3b8; font-size:0.9rem; margin-bottom:24px; }}
+.cards {{ display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:16px; margin-bottom:32px; }}
+.card {{ background:#1e293b; border-radius:12px; padding:20px; text-align:center; }}
+.card .num {{ font-size:2rem; font-weight:700; color:#38bdf8; }}
+.card .label {{ font-size:0.85rem; color:#94a3b8; margin-top:4px; }}
+.card.green .num {{ color:#10b981; }}
+.card.amber .num {{ color:#f59e0b; }}
+.card.purple .num {{ color:#a78bfa; }}
+h2 {{ font-size:1.2rem; margin:24px 0 12px; border-left:3px solid #38bdf8; padding-left:10px; }}
+table {{ width:100%; border-collapse:collapse; background:#1e293b; border-radius:8px; overflow:hidden; }}
+th,td {{ padding:10px 12px; text-align:left; border-bottom:1px solid #334155; font-size:0.9rem; }}
+th {{ background:#334155; color:#cbd5e1; font-weight:600; }}
+tr:last-child td {{ border-bottom:none; }}
+tr:hover {{ background:#273449; }}
+.footer {{ text-align:center; color:#64748b; font-size:0.8rem; margin-top:32px; }}
+a {{ color:#38bdf8; text-decoration:none; }}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>NodeCollection Pro</h1>
+<p class="subtitle">订阅源采集与多格式转换工具 · 更新时间: {update_time}</p>
+
+<div class="cards">
+<div class="card"><div class="num">{total_parsed}</div><div class="label">解析节点总数</div></div>
+<div class="card green"><div class="num">{total_available}</div><div class="label">存活节点</div></div>
+<div class="card amber"><div class="num">{avail_rate}%</div><div class="label">可用率</div></div>
+<div class="card purple"><div class="num">{avg_lat}{"ms" if isinstance(avg_lat,int) else ""}</div><div class="label">平均延迟</div></div>
+</div>
+
+<h2>质量指标</h2>
+<table>
+<tr><th>指标</th><th>数值</th></tr>
+<tr><td>最终输出节点数</td><td>{output_count}</td></tr>
+<tr><td>连续不可达剔除</td><td>{excluded}</td></tr>
+<tr><td>最小延迟</td><td>{min_lat}{"ms" if isinstance(min_lat,int) else ""}</td></tr>
+<tr><td>最大延迟</td><td>{max_lat}{"ms" if isinstance(max_lat,int) else ""}</td></tr>
+</table>
+
+<h2>上游贡献统计</h2>
+<table>
+<tr><th>来源</th><th>解析</th><th>去重后</th><th>可达</th><th>可用率</th><th>平均延迟</th><th>状态</th></tr>
+{upstream_rows}
+</table>
+
+<div class="footer">
+NodeCollection Pro · 基于 GitHub Actions 自动更新 · <a href="https://github.com/huiwin/NodeCollection">GitHub 仓库</a>
+</div>
+</div>
+</body>
+</html>'''
+
+    status_path = os.path.join(OUTPUT_DIR, 'status.html')
+    os.makedirs(OUTPUT_DIR, exist_ok=True)
+    with open(status_path, 'w', encoding='utf-8') as f:
+        f.write(html)
+    logger.info(f'[T3.5] 状态页已生成: {status_path}')
 
 
 # ============================================================
@@ -1837,6 +2271,9 @@ def main():
 
     # 11. 自动更新 README.md (订阅链接展示)
     generate_readme(upstreams)
+
+    # 12. (T3.5 v1.7.0) 生成 Web 状态页
+    generate_status_page()
 
     logger.info('全部任务完成')
 

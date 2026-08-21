@@ -6,7 +6,7 @@ Telegram + Airport 订阅源采集与多格式转换一体化工具，通过 Git
 
 - **多源采集**：34+ Telegram 频道 + 50+ 机场域名，双通道并行爬取
 - **自动分类**：智能识别机场订阅、Clash 配置、V2Ray Base64 三种类型
-- **多格式输出**：通过 subconverter 引擎转换，支持 Clash / V2Ray / Surge / Mixed 四种格式
+- **多格式输出**：通过 subconverter 引擎转换，支持 Clash / V2Ray / Sing-box / Surge / Mixed 五种格式
 - **ACL4SSR 规则**：内置完整分流规则集（广告拦截、国内外分流、流媒体解锁等）
 - **代理组优化**：自动按地区分组（香港/台湾/日本/新加坡/美国），支持自动测速、故障转移、负载均衡
 - **Emoji 标注**：节点名称自动添加国旗 Emoji，一目了然
@@ -35,7 +35,8 @@ NodeCollection/
 │       └── fetch.yaml             GitHub Actions 工作流 (每4小时)
 │
 ├── subconverter/
-│   └── external_config.ini        subconverter 外部配置 (代理组+分流规则)
+│   ├── external_config.ini        subconverter 外部配置 (代理组+分流规则)
+│   └── merged_config.ini          融合订阅独立配置 (地区分组, v1.5.0)
 │
 ├── sub/                           原始采集数据 (向后兼容, 运行时生成)
 │   └── YYYY/M/M-D.yaml            按日期组织的 YAML 文件
@@ -46,11 +47,16 @@ NodeCollection/
     │   └── M-D.yaml               Clash 配置文件
     ├── v2ray/
     │   └── M-D.txt                V2Ray Base64 订阅
+    ├── singbox/
+    │   └── M-D.json               Sing-box JSON (v1.6.0)
     ├── surge/
     │   └── M-D.conf               Surge 配置文件
     ├── mixed/
     │   └── M-D.txt                混合格式 Base64
-    └── index.json                 最新输出索引
+    ├── merged/
+    │   └── M-D.{format}.{ext}     融合订阅输出 (v1.4.0)
+    ├── status.html                Web 状态页 (v1.7.0)
+    └── index.json                 最新输出索引 (含质量指标/上游统计)
 ```
 
 > **本地开发文件**（已加入 .gitignore，不上传 GitHub）：
@@ -69,7 +75,7 @@ NodeCollection/
 | :--- | :--- | :--- |
 | 语言 | Python 3 | 标准库 + 第三方库 |
 | HTTP 请求 | requests + Session | 连接池复用，降低开销 |
-| 并发模型 | ThreadPoolExecutor | 32 线程校验 + 8 线程爬取 |
+| 并发模型 | ThreadPoolExecutor | 48 线程测速 + 8 线程爬取 (v1.7.0 优化) |
 | 日志 | loguru | 结构化日志输出 |
 | 进度条 | tqdm | 实时进度显示 |
 | 重试 | retry | 网络请求自动重试 |
@@ -118,6 +124,7 @@ config.yaml (TG频道)           airports.yaml (机场域名)
 | :--- | :--- | :--- |
 | Clash | Clash for Windows / ClashX / Mihomo / Clash Meta | 完整配置含代理组+规则 |
 | V2Ray | V2RayN / V2RayNG / Shadowrocket | Base64 编码，兼容性最广 |
+| Sing-box | Sing-box / SagerNet / Hiddify | 全协议支持，性能优秀 (v1.6.0) |
 | Surge | Surge 4+ (iOS/macOS) | Surge 原生配置格式 |
 | Mixed | 通用 | 所有协议混合的 Base64 |
 | 原始 YAML | 开发者 / 调试 | 含分类信息的原始数据 |
@@ -185,7 +192,7 @@ python main.py
 
 ## Credits
 
-- 原始项目: [huiwin/collectSub-google](https://github.com/huiwin/collectSub-google)
+- 原始项目: [huiwin/NodeCollection](https://github.com/huiwin/NodeCollection)
 - Fork 来源: [RenaLio/proxy-minging](https://github.com/RenaLio/proxy-minging)
 - 格式转换: [tindy2013/subconverter](https://github.com/tindy2013/subconverter)
 - 机场列表: [moneyfly1/jichangnodes](https://github.com/moneyfly1/jichangnodes)
