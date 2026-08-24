@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-NodeCollection Pro v1.8.0 - 订阅源采集 + 多格式转换一体化工具
+NodeCollection Pro v1.9.0 - 订阅源采集 + 多格式转换一体化工具
 
 架构:
   config.yaml (TG频道) + airports.yaml (机场列表) + merge.yaml (上游订阅白名单)
@@ -120,6 +120,82 @@ PROTOCOL_NAMES = {
     'hysteria2': 'Hysteria2',
     'tuic': 'TUIC',
 }
+
+# ============================================================
+# P5 (v1.9.0) 节点地区识别与无效过滤
+# ============================================================
+
+# 告警通知 Webhook (T5.6 预留接口, 暂不启用)
+# 配置后将在运行失败/节点数异常时发送通知
+# 支持: 钉钉机器人 / 飞书机器人 / Server酱 / 通用 Webhook
+# 格式: https://oapi.dingtalk.com/robot/send?access_token=xxx
+#       https://open.feishu.cn/open-apis/bot/v2/hook/xxx
+#       https://sctapi.ftqq.com/xxx.send
+ALERT_WEBHOOK_URL = os.environ.get('ALERT_WEBHOOK_URL', '')
+ALERT_ENABLED = bool(ALERT_WEBHOOK_URL)
+
+# 地区识别规则 (轻量方案: 基于节点名/服务器名的正则匹配)
+# 格式: (地区中文名, 地区代码, 正则模式列表)
+REGION_PATTERNS = [
+    ('香港', 'HK', [r'香港|hong\s*kong|hk|hkg|🇭🇰']),
+    ('台湾', 'TW', [r'台湾|taiwan|tw|tpe|🇹🇼']),
+    ('日本', 'JP', [r'日本|japan|jp|tyo|nrt|🇯🇵']),
+    ('新加坡', 'SG', [r'新加坡|singapore|sg|sin|🇸🇬']),
+    ('美国', 'US', [r'美国|usa|united\s*states|america|nyc|lax|sfo|us|🇺🇸']),
+    ('韩国', 'KR', [r'韩国|korea|kr|sel|icn|🇰🇷']),
+    ('英国', 'UK', [r'英国|united\s*kingdom|britain|london|lhr|uk|🇬🇧']),
+    ('德国', 'DE', [r'德国|germany|de|fra|🇩🇪']),
+    ('法国', 'FR', [r'法国|france|fr|cdg|🇫🇷']),
+    ('俄罗斯', 'RU', [r'俄罗斯|russia|ru|mow|🇷🇺']),
+    ('加拿大', 'CA', [r'加拿大|canada|ca|yyz|🇨🇦']),
+    ('澳大利亚', 'AU', [r'澳大利亚|australia|au|syd|🇦🇺']),
+    ('荷兰', 'NL', [r'荷兰|netherlands|nl|ams|🇳🇱']),
+    ('印度', 'IN', [r'印度|india|in|del|🇮🇳']),
+    ('巴西', 'BR', [r'巴西|brazil|br|gru|🇧🇷']),
+    ('波兰', 'PL', [r'波兰|poland|pl|waw|🇵🇱']),
+    ('爱尔兰', 'IE', [r'爱尔兰|ireland|ie|dub|🇮🇪']),
+    ('伊朗', 'IR', [r'伊朗|iran|ir|🇮🇷']),
+]
+
+# 已包含地区标识的正则 (用于判断是否需要添加地区前缀)
+REGION_ALREADY_MARKED = re.compile(
+    r'🇭🇰|🇹🇼|🇯🇵|🇸🇬|🇺🇸|🇰🇷|🇬🇧|🇩🇪|🇫🇷|🇷🇺|🇨🇦|🇦🇺|🇳🇱|🇮🇳|🇧🇷|🇵🇱|🇮🇪|🇮🇷|'
+    r'香港|台湾|日本|新加坡|美国|韩国|英国|德国|法国|俄罗斯|加拿大|澳大利亚|荷兰|印度|巴西|波兰|爱尔兰|伊朗|'
+    r'\b(HK|TW|JP|SG|US|KR|UK|DE|FR|RU|CA|AU|NL|IN|BR|PL|IE|IR)\b',
+    re.IGNORECASE
+)
+
+
+def detect_region(text):
+    """
+    P5 (v1.9.0, T5.3): 基于文本 (节点名/服务器名) 识别地区。
+    返回: (地区中文名, 地区代码) 或 (None, None)
+    轻量方案: 仅基于正则匹配, 不依赖 IP 地理库。
+    """
+    if not text:
+        return None, None
+    text_lower = text.lower()
+    for region_name, region_code, patterns in REGION_PATTERNS:
+        for pattern in patterns:
+            if re.search(pattern, text_lower):
+                return region_name, region_code
+    return None, None
+
+
+def is_invalid_node_host(host):
+    """
+    P5 (v1.9.0, T5.1): 检查 host 是否为无效地址 (本地/保留/回环/链路本地)。
+    域名节点返回 False (由客户端解析), IP 节点检查是否为私有/保留地址。
+    返回: True = 无效应剔除, False = 有效
+    """
+    if not host:
+        return True
+    try:
+        ip = ipaddress.ip_address(host)
+        return (ip.is_private or ip.is_loopback or ip.is_reserved
+                or ip.is_link_local or ip.is_multicast or ip.is_unspecified)
+    except ValueError:
+        return False  # 域名节点放行
 
 # 历史版本保留配置 (P2 v1.6.0, T2.2)
 HISTORY_KEEP_COUNT = 5       # 每格式保留最近 N 版日期文件, 超出自动清理最旧版本
@@ -597,6 +673,7 @@ def parse_upstream_text(text, upstream):
     """
     解析上游订阅文本为统一节点集合。
     自动识别: Clash YAML (proxies) / 整体 Base64 / 明文分享链接列表。
+    P5 (v1.9.0): 集成无效地址过滤 (T5.1) + 地区识别增强 (T5.3)。
     返回: (uris: list[str], clash_proxies: list[dict])
     """
     name = upstream.get('name', 'unknown')
@@ -611,6 +688,8 @@ def parse_upstream_text(text, upstream):
             data = yaml.safe_load(stripped)
             proxies = (data or {}).get('proxies') or []
             clash_proxies = filter_clash_proxies(proxies, prefix)
+            # T5.3: Clash 代理地区识别增强 (为无地区标识节点添加地区前缀)
+            clash_proxies = _enhance_clash_proxies_region(clash_proxies)
             logger.info(
                 f'[ext:{name}] Clash YAML 解析: {len(proxies)} 个代理, '
                 f'过滤后 {len(clash_proxies)}'
@@ -629,16 +708,108 @@ def parse_upstream_text(text, upstream):
         except Exception:
             pass
         # 明文分享链接列表 (含 Base64 解码结果)
-        uris = [
+        raw_uris = [
             l.strip() for l in lines
             if l.strip().startswith(UPSTREAM_PROTOCOL_PREFIXES)
         ]
-        uris = [rename_uri_node(u, prefix) for u in uris]
-        logger.info(f'[ext:{name}] 分享链接解析: {len(uris)} 个节点')
+        # T5.1: URI 节点无效地址过滤 (剔除 127.0.0.x/10.x/192.168.x 等本地保留地址)
+        valid_uris = []
+        invalid_count = 0
+        for u in raw_uris:
+            host, port = extract_host_port(u)
+            if is_invalid_node_host(host):
+                invalid_count += 1
+                continue
+            valid_uris.append(u)
+        if invalid_count:
+            logger.info(f'[ext:{name}] T5.1 无效地址过滤: 剔除 {invalid_count} 个本地/保留地址节点')
+        # 重命名 + T5.3 地区识别增强
+        renamed_uris = [rename_uri_node(u, prefix) for u in valid_uris]
+        uris = _enhance_uris_region(renamed_uris)
+        logger.info(f'[ext:{name}] 分享链接解析: {len(uris)} 个节点 '
+                     f'(原始 {len(raw_uris)}, 无效过滤 {invalid_count})')
 
     # T1.4: 截断逻辑已移至 generate_merged_format (测速排序后按延迟截断)
     # 此处返回全部解析节点, 由上层统一做「单源 max_nodes + 总量 MERGED_MAX_NODES」两层截断
     return uris, clash_proxies
+
+
+def _get_uri_name(uri):
+    """从 URI 中提取节点显示名 (fragment 部分), 失败返回空字符串。"""
+    try:
+        if '#' in uri:
+            _, fragment = uri.rsplit('#', 1)
+            return unquote(fragment).strip()
+    except Exception:
+        pass
+    return ''
+
+
+def _set_uri_name(uri, new_name):
+    """设置 URI 的节点显示名 (fragment 部分), 返回修改后的 URI。"""
+    try:
+        if '#' in uri:
+            base, _ = uri.rsplit('#', 1)
+        else:
+            base = uri
+        encoded_name = quote(new_name, safe='[]: ')
+        return f'{base}#{encoded_name}'
+    except Exception:
+        return uri
+
+
+def _enhance_uris_region(uris):
+    """
+    P5 (v1.9.0, T5.3): 为 URI 节点添加地区前缀 (轻量方案)。
+    仅对未包含地区标识的节点, 基于服务器名识别地区并添加前缀。
+    返回增强后的 URI 列表。
+    """
+    enhanced = []
+    added_count = 0
+    for uri in uris:
+        name = _get_uri_name(uri)
+        # 已包含地区标识则跳过
+        if name and REGION_ALREADY_MARKED.search(name):
+            enhanced.append(uri)
+            continue
+        # 基于服务器名识别地区
+        host, _ = extract_host_port(uri)
+        region_name, region_code = detect_region(host or '')
+        if region_name and name:
+            new_name = f'[{region_code}] {name}'
+            enhanced.append(_set_uri_name(uri, new_name))
+            added_count += 1
+        else:
+            enhanced.append(uri)
+    if added_count:
+        logger.debug(f'[T5.3] URI 地区识别: 为 {added_count} 个节点添加地区前缀')
+    return enhanced
+
+
+def _enhance_clash_proxies_region(proxies):
+    """
+    P5 (v1.9.0, T5.3): 为 Clash 代理节点添加地区前缀 (轻量方案)。
+    仅对未包含地区标识的节点, 基于 server 识别地区并添加前缀。
+    返回增强后的 proxy 列表。
+    """
+    enhanced = []
+    added_count = 0
+    for proxy in proxies:
+        name = str(proxy.get('name', ''))
+        # 已包含地区标识则跳过
+        if name and REGION_ALREADY_MARKED.search(name):
+            enhanced.append(proxy)
+            continue
+        # 基于 server 识别地区
+        server = str(proxy.get('server', ''))
+        region_name, region_code = detect_region(server)
+        if region_name and name:
+            proxy['name'] = f'[{region_code}] {name}'
+            added_count += 1
+        enhanced.append(proxy)
+    if added_count:
+        logger.debug(f'[T5.3] Clash 代理地区识别: 为 {added_count} 个节点添加地区前缀')
+    return enhanced
 
 
 # ============================================================
@@ -2036,8 +2207,8 @@ def generate_readme(upstreams=None):
 def generate_status_page():
     """
     P3 (v1.7.0, T3.5): 生成 Web 状态页 output/status.html。
-    从 index.json 读取融合订阅数据, 展示概览、上游贡献、延迟分布。
-    单文件 HTML, 内嵌 CSS, 可通过 GitHub Pages 直接访问。
+    P5 (v1.9.0, T5.5): 增强 — 新增 Chart.js 上游贡献饼图、延迟分布柱状图、优化质量卡片。
+    从 index.json 读取融合订阅数据, 单文件 HTML, 内嵌 CSS+JS, 可通过 GitHub Pages 直接访问。
     """
     index_path = os.path.join(OUTPUT_DIR, 'index.json')
     if not os.path.isfile(index_path):
@@ -2064,11 +2235,15 @@ def generate_status_page():
     avg_lat = quality.get('avg_latency_ms', '-')
     min_lat = quality.get('min_latency_ms', '-')
     max_lat = quality.get('max_latency_ms', '-')
+    truncated = quality.get('truncated', 0)
     update_time = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 
-    # 上游贡献表行
+    # 上游贡献表行 + 图表数据 (T5.5)
     upstream_rows = ''
-    for src, stats in sorted(upstream_stats.items()):
+    chart_labels = []
+    chart_data = []
+    chart_colors = ['#38bdf8', '#10b981', '#f59e0b', '#a78bfa', '#f472b6', '#fb923c', '#22d3ee', '#84cc16']
+    for i, (src, stats) in enumerate(sorted(upstream_stats.items())):
         health = upstream_health.get(src, {})
         if health.get('degraded'):
             status = '<span style="color:#f59e0b">⚠️ 已降级</span>'
@@ -2077,12 +2252,30 @@ def generate_status_page():
         else:
             status = '<span style="color:#10b981">✅ 正常</span>'
         avg_lat_str = f'{stats["avg_latency_ms"]}ms' if stats.get('avg_latency_ms') else '-'
+        avail_count = stats.get('available', 0)
         upstream_rows += (
             f'<tr><td>{src}</td><td>{stats.get("parsed", "-")}</td>'
-            f'<td>{stats.get("after_dedup", "-")}</td><td>{stats.get("available", "-")}</td>'
+            f'<td>{stats.get("after_dedup", "-")}</td><td>{avail_count}</td>'
             f'<td>{stats.get("availability_rate", "-")}%</td><td>{avg_lat_str}</td>'
             f'<td>{status}</td></tr>\n'
         )
+        if avail_count > 0:
+            chart_labels.append(src)
+            chart_data.append(avail_count)
+
+    # 延迟分布数据 (T5.5)
+    latency_labels = [s for s in chart_labels]
+    latency_data = [upstream_stats[s].get('avg_latency_ms', 0) for s in latency_labels
+                     if upstream_stats.get(s, {}).get('avg_latency_ms')]
+
+    chart_labels_json = json.dumps(chart_labels, ensure_ascii=False)
+    chart_data_json = json.dumps(chart_data)
+    chart_colors_json = json.dumps(chart_colors[:len(chart_labels)])
+    latency_labels_json = json.dumps(latency_labels, ensure_ascii=False)
+    latency_data_json = json.dumps(latency_data)
+    avg_lat_suffix = 'ms' if isinstance(avg_lat, int) else ''
+    min_lat_suffix = 'ms' if isinstance(min_lat, int) else ''
+    max_lat_suffix = 'ms' if isinstance(max_lat, int) else ''
 
     html = f'''<!DOCTYPE html>
 <html lang="zh-CN">
@@ -2090,49 +2283,72 @@ def generate_status_page():
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>NodeCollection Pro - 状态页</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <style>
 * {{ margin:0; padding:0; box-sizing:border-box; }}
 body {{ font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
-        background:#0f172a; color:#e2e8f0; padding:20px; line-height:1.6; }}
-.container {{ max-width:960px; margin:0 auto; }}
-h1 {{ font-size:1.8rem; margin-bottom:4px; }}
+        background:linear-gradient(135deg,#0f172a 0%,#1e1b4b 100%); color:#e2e8f0; padding:20px; line-height:1.6; min-height:100vh; }}
+.container {{ max-width:1100px; margin:0 auto; }}
+h1 {{ font-size:1.8rem; margin-bottom:4px; background:linear-gradient(90deg,#38bdf8,#a78bfa); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }}
 .subtitle {{ color:#94a3b8; font-size:0.9rem; margin-bottom:24px; }}
-.cards {{ display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:16px; margin-bottom:32px; }}
-.card {{ background:#1e293b; border-radius:12px; padding:20px; text-align:center; }}
+.cards {{ display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:16px; margin-bottom:32px; }}
+.card {{ background:rgba(30,41,59,0.8); backdrop-filter:blur(10px); border:1px solid rgba(56,189,248,0.2); border-radius:12px; padding:20px; text-align:center; transition:transform 0.2s,box-shadow 0.2s; }}
+.card:hover {{ transform:translateY(-2px); box-shadow:0 8px 24px rgba(56,189,248,0.15); }}
 .card .num {{ font-size:2rem; font-weight:700; color:#38bdf8; }}
 .card .label {{ font-size:0.85rem; color:#94a3b8; margin-top:4px; }}
 .card.green .num {{ color:#10b981; }}
 .card.amber .num {{ color:#f59e0b; }}
 .card.purple .num {{ color:#a78bfa; }}
+.card.pink .num {{ color:#f472b6; }}
+.charts {{ display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-bottom:32px; }}
+.chart-box {{ background:rgba(30,41,59,0.8); backdrop-filter:blur(10px); border:1px solid rgba(56,189,248,0.2); border-radius:12px; padding:20px; }}
+.chart-box h3 {{ font-size:1rem; margin-bottom:12px; color:#cbd5e1; }}
+.chart-box canvas {{ max-height:280px; }}
 h2 {{ font-size:1.2rem; margin:24px 0 12px; border-left:3px solid #38bdf8; padding-left:10px; }}
-table {{ width:100%; border-collapse:collapse; background:#1e293b; border-radius:8px; overflow:hidden; }}
+table {{ width:100%; border-collapse:collapse; background:rgba(30,41,59,0.8); border-radius:8px; overflow:hidden; }}
 th,td {{ padding:10px 12px; text-align:left; border-bottom:1px solid #334155; font-size:0.9rem; }}
 th {{ background:#334155; color:#cbd5e1; font-weight:600; }}
 tr:last-child td {{ border-bottom:none; }}
-tr:hover {{ background:#273449; }}
-.footer {{ text-align:center; color:#64748b; font-size:0.8rem; margin-top:32px; }}
+tr:hover {{ background:rgba(39,52,73,0.6); }}
+.footer {{ text-align:center; color:#64748b; font-size:0.8rem; margin-top:32px; padding:20px; }}
 a {{ color:#38bdf8; text-decoration:none; }}
+a:hover {{ text-decoration:underline; }}
+@media (max-width:768px) {{ .charts {{ grid-template-columns:1fr; }} }}
 </style>
 </head>
 <body>
 <div class="container">
 <h1>NodeCollection Pro</h1>
-<p class="subtitle">订阅源采集与多格式转换工具 · 更新时间: {update_time}</p>
+<p class="subtitle">订阅源采集与多格式转换工具 · 更新时间: {update_time} · v1.9.0</p>
 
 <div class="cards">
 <div class="card"><div class="num">{total_parsed}</div><div class="label">解析节点总数</div></div>
 <div class="card green"><div class="num">{total_available}</div><div class="label">存活节点</div></div>
 <div class="card amber"><div class="num">{avail_rate}%</div><div class="label">可用率</div></div>
-<div class="card purple"><div class="num">{avg_lat}{"ms" if isinstance(avg_lat,int) else ""}</div><div class="label">平均延迟</div></div>
+<div class="card purple"><div class="num">{avg_lat}{avg_lat_suffix}</div><div class="label">平均延迟</div></div>
+<div class="card pink"><div class="num">{output_count}</div><div class="label">最终输出</div></div>
+<div class="card"><div class="num">{excluded}</div><div class="label">剔除失效</div></div>
+</div>
+
+<div class="charts">
+<div class="chart-box">
+<h3>📊 上游贡献占比 (可达节点)</h3>
+<canvas id="upstreamPie"></canvas>
+</div>
+<div class="chart-box">
+<h3>⚡ 各上游平均延迟</h3>
+<canvas id="latencyBar"></canvas>
+</div>
 </div>
 
 <h2>质量指标</h2>
 <table>
-<tr><th>指标</th><th>数值</th></tr>
-<tr><td>最终输出节点数</td><td>{output_count}</td></tr>
-<tr><td>连续不可达剔除</td><td>{excluded}</td></tr>
-<tr><td>最小延迟</td><td>{min_lat}{"ms" if isinstance(min_lat,int) else ""}</td></tr>
-<tr><td>最大延迟</td><td>{max_lat}{"ms" if isinstance(max_lat,int) else ""}</td></tr>
+<tr><th>指标</th><th>数值</th><th>说明</th></tr>
+<tr><td>最终输出节点数</td><td>{output_count}</td><td>排序截断后实际输出</td></tr>
+<tr><td>连续不可达剔除</td><td>{excluded}</td><td>连续失败达到阈值的节点</td></tr>
+<tr><td>总量截断</td><td>{truncated}</td><td>超过 MERGED_MAX_NODES 被截断</td></tr>
+<tr><td>最小延迟</td><td>{min_lat}{min_lat_suffix}</td><td>最快节点延迟</td></tr>
+<tr><td>最大延迟</td><td>{max_lat}{max_lat_suffix}</td><td>最慢节点延迟</td></tr>
 </table>
 
 <h2>上游贡献统计</h2>
@@ -2142,9 +2358,62 @@ a {{ color:#38bdf8; text-decoration:none; }}
 </table>
 
 <div class="footer">
-NodeCollection Pro · 基于 GitHub Actions 自动更新 · <a href="https://github.com/huiwin/NodeCollection">GitHub 仓库</a>
+NodeCollection Pro v1.9.0 · 基于 GitHub Actions 自动更新 · <a href="https://github.com/huiwin/NodeCollection">GitHub 仓库</a>
 </div>
 </div>
+
+<script>
+// 上游贡献饼图
+const pieCtx = document.getElementById('upstreamPie').getContext('2d');
+new Chart(pieCtx, {{
+  type: 'doughnut',
+  data: {{
+    labels: {chart_labels_json},
+    datasets: [{{
+      data: {chart_data_json},
+      backgroundColor: {chart_colors_json},
+      borderWidth: 2,
+      borderColor: '#1e293b'
+    }}]
+  }},
+  options: {{
+    responsive: true,
+    plugins: {{
+      legend: {{ position: 'right', labels: {{ color: '#cbd5e1', font: {{ size: 12 }} }} }},
+      tooltip: {{ callbacks: {{ label: (ctx) => ctx.label + ': ' + ctx.parsed + ' 个节点' }} }}
+    }}
+  }}
+}});
+
+// 延迟分布柱状图
+const barCtx = document.getElementById('latencyBar').getContext('2d');
+new Chart(barCtx, {{
+  type: 'bar',
+  data: {{
+    labels: {latency_labels_json},
+    datasets: [{{
+      label: '平均延迟 (ms)',
+      data: {latency_data_json},
+      backgroundColor: 'rgba(56,189,248,0.7)',
+      borderColor: '#38bdf8',
+      borderWidth: 1,
+      borderRadius: 6
+    }}]
+  }},
+  options: {{
+    responsive: true,
+    indexAxis: 'y',
+    plugins: {{
+      legend: {{ display: false }},
+      tooltip: {{ callbacks: {{ label: (ctx) => ctx.parsed.x + ' ms' }} }}
+    }},
+    scales: {{
+      x: {{ grid: {{ color: 'rgba(148,163,184,0.1)' }}, ticks: {{ color: '#94a3b8' }} }},
+      y: {{ grid: {{ display: false }}, ticks: {{ color: '#cbd5e1' }} }}
+    }}
+  }}
+}});
+</script>
 </body>
 </html>'''
 
@@ -2152,7 +2421,57 @@ NodeCollection Pro · 基于 GitHub Actions 自动更新 · <a href="https://git
     os.makedirs(OUTPUT_DIR, exist_ok=True)
     with open(status_path, 'w', encoding='utf-8') as f:
         f.write(html)
-    logger.info(f'[T3.5] 状态页已生成: {status_path}')
+    logger.info(f'[T5.5] 状态页已增强生成: {status_path}')
+
+
+def send_alert(title, message, level='info'):
+    """
+    P5 (v1.9.0, T5.6): 告警通知预留接口。
+    通过 Webhook 发送运行状态通知 (钉钉/飞书/Server酱/通用 Webhook)。
+    暂不启用: ALERT_WEBHOOK_URL 为空时直接返回, 不发送任何通知。
+    启用方式: 设置环境变量 ALERT_WEBHOOK_URL 后即可自动发送。
+
+    Args:
+        title: 通知标题
+        message: 通知内容 (支持 Markdown)
+        level: 通知级别 info/warning/error
+    """
+    if not ALERT_ENABLED:
+        logger.debug(f'[T5.6] 告警未启用, 跳过: {title}')
+        return
+
+    try:
+        webhook = ALERT_WEBHOOK_URL
+        # 自动识别 Webhook 类型并构造对应 payload
+        if 'oapi.dingtalk.com' in webhook:
+            # 钉钉机器人
+            payload = {
+                'msgtype': 'markdown',
+                'markdown': {'title': title, 'text': f'### {title}\n\n{message}'},
+            }
+        elif 'open.feishu.cn' in webhook or 'open.larksuite.com' in webhook:
+            # 飞书机器人
+            payload = {
+                'msg_type': 'interactive',
+                'card': {
+                    'header': {'title': {'tag': 'plain_text', 'content': title}},
+                    'elements': [{'tag': 'markdown', 'content': message}],
+                },
+            }
+        elif 'sctapi.ftqq.com' in webhook:
+            # Server酱
+            payload = {'title': title, 'desp': message}
+        else:
+            # 通用 Webhook (JSON POST)
+            payload = {'title': title, 'message': message, 'level': level}
+
+        resp = requests.post(webhook, json=payload, timeout=10)
+        if resp.status_code == 200:
+            logger.info(f'[T5.6] 告警发送成功: {title}')
+        else:
+            logger.warning(f'[T5.6] 告警发送失败: HTTP {resp.status_code}')
+    except Exception as e:
+        logger.warning(f'[T5.6] 告警发送异常: {e}')
 
 
 # ============================================================
