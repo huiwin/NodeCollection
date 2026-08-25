@@ -40,13 +40,13 @@ a:hover { text-decoration:underline; }
 <body>
 <div class="container">
 <h1>NodeCollection Pro</h1>
-<p class="subtitle">订阅源采集与多格式转换工具 · 更新时间: 2026-08-25 08:21:47 · v1.9.0</p>
+<p class="subtitle">订阅源采集与多格式转换工具 · 更新时间: 2026-08-25 08:36:54 · v1.9.0</p>
 
 <div class="cards">
 <div class="card"><div class="num">280</div><div class="label">解析节点总数</div></div>
 <div class="card green"><div class="num">280</div><div class="label">存活节点</div></div>
 <div class="card amber"><div class="num">100.0%</div><div class="label">可用率</div></div>
-<div class="card purple"><div class="num">147ms</div><div class="label">平均延迟</div></div>
+<div class="card purple"><div class="num">143ms</div><div class="label">平均延迟</div></div>
 <div class="card pink"><div class="num">200</div><div class="label">最终输出</div></div>
 <div class="card"><div class="num">0</div><div class="label">剔除失效</div></div>
 </div>
@@ -68,17 +68,17 @@ a:hover { text-decoration:underline; }
 <tr><td>最终输出节点数</td><td>200</td><td>排序截断后实际输出</td></tr>
 <tr><td>连续不可达剔除</td><td>0</td><td>连续失败达到阈值的节点</td></tr>
 <tr><td>总量截断</td><td>23</td><td>超过 MERGED_MAX_NODES 被截断</td></tr>
-<tr><td>最小延迟</td><td>6ms</td><td>最快节点延迟</td></tr>
-<tr><td>最大延迟</td><td>642ms</td><td>最慢节点延迟</td></tr>
+<tr><td>最小延迟</td><td>5ms</td><td>最快节点延迟</td></tr>
+<tr><td>最大延迟</td><td>2253ms</td><td>最慢节点延迟</td></tr>
 </table>
 
 <h2>上游贡献统计</h2>
 <table>
 <tr><th>来源</th><th>解析</th><th>去重后</th><th>可达</th><th>可用率</th><th>平均延迟</th><th>状态</th></tr>
-<tr><td>FreeNodes</td><td>61</td><td>54</td><td>28</td><td>51.9%</td><td>187ms</td><td><span style="color:#10b981">✅ 正常</span></td></tr>
-<tr><td>Jsnzkpg</td><td>90</td><td>70</td><td>60</td><td>85.7%</td><td>134ms</td><td><span style="color:#10b981">✅ 正常</span></td></tr>
-<tr><td>NoMoreWalls</td><td>140</td><td>137</td><td>49</td><td>35.8%</td><td>178ms</td><td><span style="color:#10b981">✅ 正常</span></td></tr>
-<tr><td>Pawdroid</td><td>20</td><td>19</td><td>18</td><td>94.7%</td><td>40ms</td><td><span style="color:#10b981">✅ 正常</span></td></tr>
+<tr><td>FreeNodes</td><td>61</td><td>54</td><td>28</td><td>51.9%</td><td>183ms</td><td><span style="color:#10b981">✅ 正常</span></td></tr>
+<tr><td>Jsnzkpg</td><td>90</td><td>70</td><td>60</td><td>85.7%</td><td>110ms</td><td><span style="color:#10b981">✅ 正常</span></td></tr>
+<tr><td>NoMoreWalls</td><td>140</td><td>137</td><td>49</td><td>35.8%</td><td>206ms</td><td><span style="color:#10b981">✅ 正常</span></td></tr>
+<tr><td>Pawdroid</td><td>20</td><td>19</td><td>18</td><td>94.7%</td><td>24ms</td><td><span style="color:#10b981">✅ 正常</span></td></tr>
 
 </table>
 
@@ -118,7 +118,7 @@ new Chart(barCtx, {
     labels: ["FreeNodes", "Jsnzkpg", "NoMoreWalls", "Pawdroid"],
     datasets: [{
       label: '平均延迟 (ms)',
-      data: [187, 134, 178, 40],
+      data: [183, 110, 206, 24],
       backgroundColor: 'rgba(56,189,248,0.7)',
       borderColor: '#38bdf8',
       borderWidth: 1,
