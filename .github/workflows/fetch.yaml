@@ -10,6 +10,11 @@ on:
 permissions:
   contents: write
 
+# P7 (v2.1.0) 优化1: 并发控制, 避免定时任务与手动触发同时运行导致 git push 冲突
+concurrency:
+  group: nodecollection-fetch
+  cancel-in-progress: false  # 不取消正在运行的, 排队等待完成
+
 jobs:
   fetch:
     runs-on: ubuntu-latest
@@ -37,10 +42,14 @@ jobs:
       run: sudo timedatectl set-timezone 'Asia/Shanghai'
 
     - name: Install dependencies
+      # P7 (v2.1.0) 优化3: 超时设置
+      timeout-minutes: 5
       run: |
         pip install -r ./requirements.txt
 
     - name: Download and start subconverter
+      # P7 (v2.1.0) 优化3: 超时设置
+      timeout-minutes: 5
       run: |
         wget -q https://github.com/tindy2013/subconverter/releases/latest/download/subconverter_linux64.tar.gz
         mkdir -p subconverter_bin
@@ -68,10 +77,24 @@ jobs:
         echo "=== pref.ini sections ==="
         grep "^\[" "$SC_DIR/pref.ini"
         cd "$SC_DIR" && nohup ./subconverter > /dev/null 2>&1 &
-        sleep 3
-        curl -s http://127.0.0.1:25500/version || echo "subconverter start failed"
+        # P7 (v2.1.0) 优化2: 轮询等待 subconverter 启动, 替代不可靠的 sleep 3
+        echo "Waiting for subconverter to start..."
+        for i in $(seq 1 15); do
+          if curl -s http://127.0.0.1:25500/version > /dev/null 2>&1; then
+            echo "subconverter started successfully (after ${i}s)"
+            curl -s http://127.0.0.1:25500/version
+            break
+          fi
+          sleep 1
+        done
+        if ! curl -s http://127.0.0.1:25500/version > /dev/null 2>&1; then
+          echo "ERROR: subconverter failed to start within 15s"
+          exit 1
+        fi
 
     - name: Run collector
+      # P7 (v2.1.0) 优化3: 超时设置, 防止采集卡住浪费 Actions 时间
+      timeout-minutes: 15
       run: |
         python ./main.py
 
@@ -80,7 +103,32 @@ jobs:
       run: |
         pkill -f subconverter || true
 
+    - name: Verify output files
+      # P7 (v2.1.0) 优化4: commit 前验证关键输出文件存在且非空, 避免提交失败结果
+      run: |
+        echo "=== Verifying output files ==="
+        ERROR=0
+        for f in \
+          "output/merged/latest.clash.yaml" \
+          "output/index.json" \
+          "output/status.html" \
+          "README.md"; do
+          if [ ! -s "$f" ]; then
+            echo "❌ MISSING or EMPTY: $f"
+            ERROR=1
+          else
+            SIZE=$(stat -c%s "$f" 2>/dev/null || echo "?")
+            echo "✅ OK: $f (${SIZE} bytes)"
+          fi
+        done
+        if [ $ERROR -eq 1 ]; then
+          echo "ERROR: Critical output files missing or empty, aborting commit"
+          exit 1
+        fi
+
     - name: Commit and Push
+      # P7 (v2.1.0) 优化3: 超时设置
+      timeout-minutes: 5
       run: |
         git config --global user.name "GitHub Actions"
         git config --global user.email "actions@github.com"
@@ -89,6 +137,8 @@ jobs:
         git push origin main
 
     - name: Deploy to GitHub Pages (T3.5)
+      # P7 (v2.1.0) 优化3: 超时设置
+      timeout-minutes: 5
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
