@@ -47,13 +47,36 @@ jobs:
       run: |
         pip install -r ./requirements.txt
 
+    - name: Get subconverter latest version
+      # P8 (v2.2.0) T8.1a: 获取 subconverter 最新版本号, 作为缓存 key
+      id: sc-version
+      run: |
+        SC_VERSION=$(curl -sL https://api.github.com/repos/tindy2013/subconverter/releases/latest | grep -oP '"tag_name": "\K[^"]+' || echo "unknown")
+        echo "version=$SC_VERSION" >> $GITHUB_OUTPUT
+        echo "subconverter latest version: $SC_VERSION"
+
+    - name: Cache subconverter
+      # P8 (v2.2.0) T8.1a: 缓存 subconverter 二进制, 避免每次重复下载
+      uses: actions/cache@v4
+      with:
+        path: subconverter_bin
+        key: ${{ runner.os }}-subconverter-${{ steps.sc-version.outputs.version }}
+
     - name: Download and start subconverter
       # P7 (v2.1.0) 优化3: 超时设置
       timeout-minutes: 5
       run: |
-        wget -q https://github.com/tindy2013/subconverter/releases/latest/download/subconverter_linux64.tar.gz
-        mkdir -p subconverter_bin
-        tar xzf subconverter_linux64.tar.gz -C subconverter_bin
+        # P8 (v2.2.0) T8.1a: 缓存命中则跳过下载
+        if [ -d "subconverter_bin/subconverter" ] && [ -x "subconverter_bin/subconverter/subconverter" ]; then
+          echo "✅ subconverter cache hit, skipping download"
+        else
+          echo "⬇️ subconverter cache miss, downloading..."
+          # P8 (v2.2.0) T8.1d: 下载重试, 网络不稳定时自动重试 3 次
+          wget -q --tries=3 --retry-connrefused --timeout=30 \
+            https://github.com/tindy2013/subconverter/releases/latest/download/subconverter_linux64.tar.gz
+          mkdir -p subconverter_bin
+          tar xzf subconverter_linux64.tar.gz -C subconverter_bin
+        fi
         echo "=== subconverter directory contents ==="
         ls -la subconverter_bin/subconverter/
         echo "=== base directory (if exists) ==="
@@ -133,13 +156,23 @@ jobs:
         git config --global user.name "GitHub Actions"
         git config --global user.email "actions@github.com"
         git add ./sub ./output ./README.md
-        git diff --staged --quiet || git commit -m "Update $(date '+%Y-%m-%d %H:%M:%S')"
+        # P8 (v2.2.0) T8.1b: Commit 信息增强, 从 index.json 读取节点数和平均延迟
+        if [ -f output/index.json ]; then
+          NODE_COUNT=$(python3 -c "import json; d=json.load(open('output/index.json')); print(d.get('merged',{}).get('quality',{}).get('output_count','?'))" 2>/dev/null || echo "?")
+          AVG_LATENCY=$(python3 -c "import json; d=json.load(open('output/index.json')); print(d.get('merged',{}).get('quality',{}).get('avg_latency_ms','?'))" 2>/dev/null || echo "?")
+          COMMIT_MSG="Update $(date '+%Y-%m-%d %H:%M:%S') | ${NODE_COUNT} nodes | ${AVG_LATENCY}ms avg"
+        else
+          COMMIT_MSG="Update $(date '+%Y-%m-%d %H:%M:%S')"
+        fi
+        echo "Commit message: $COMMIT_MSG"
+        git diff --staged --quiet || git commit -m "$COMMIT_MSG"
         git push origin main
 
     - name: Deploy to GitHub Pages (T3.5)
       # P7 (v2.1.0) 优化3: 超时设置
+      # P8 (v2.2.0) T8.1c: 升级 peaceiris/actions-gh-pages v3 → v4
       timeout-minutes: 5
-      uses: peaceiris/actions-gh-pages@v3
+      uses: peaceiris/actions-gh-pages@v4
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./output
