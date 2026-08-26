@@ -166,7 +166,24 @@ jobs:
         fi
         echo "Commit message: $COMMIT_MSG"
         git diff --staged --quiet || git commit -m "$COMMIT_MSG"
-        git push origin main
+        # P8 (v2.2.0) 热修复: git push 并发冲突处理 — 先 pull --rebase 再 push, 失败重试 3 次
+        # 场景: 定时任务与手动触发同时运行时, 后 push 的会因 non-fast-forward 失败
+        PUSH_SUCCESS=0
+        for i in 1 2 3; do
+          echo "Push attempt $i/3..."
+          git pull --rebase origin main || { echo "git pull --rebase failed, aborting and retrying..."; git rebase --abort 2>/dev/null || true; sleep 2; continue; }
+          if git push origin main; then
+            PUSH_SUCCESS=1
+            echo "✅ Push successful on attempt $i"
+            break
+          fi
+          echo "Push failed on attempt $i, retrying..."
+          sleep 2
+        done
+        if [ $PUSH_SUCCESS -eq 0 ]; then
+          echo "❌ ERROR: git push failed after 3 attempts"
+          exit 1
+        fi
 
     - name: Deploy to GitHub Pages (T3.5)
       # P7 (v2.1.0) 优化3: 超时设置
