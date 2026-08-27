@@ -97,6 +97,9 @@ jobs:
           printf '[common]\nclash_rule_base=base/all_base.tpl\nsurge_rule_base=base/all_base.tpl\n' > "$SC_DIR/pref.ini"
         fi
         cat subconverter/external_config.ini >> "$SC_DIR/pref.ini"
+        # P9 (v2.3.0) T9.1: 同时追加 merged_config.ini, 确保主订阅也能获得地区组配置
+        # merged_config.ini 使用 [custom] section, 包含 custom_proxy_group (地区组/故障转移/负载均衡)
+        cat subconverter/merged_config.ini >> "$SC_DIR/pref.ini"
         echo "=== pref.ini sections ==="
         grep "^\[" "$SC_DIR/pref.ini"
         cd "$SC_DIR" && nohup ./subconverter > /dev/null 2>&1 &
