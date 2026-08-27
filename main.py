@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-NodeCollection Pro v2.3.3 - 订阅源采集 + 多格式转换一体化工具
+NodeCollection Pro v2.4.0 - 订阅源采集 + 多格式转换一体化工具
 
 架构:
   config.yaml (TG频道) + airports.yaml (机场列表) + merge.yaml (上游订阅白名单)
@@ -1836,6 +1836,77 @@ def call_subconverter(target, sub_urls, output_path, config_path=None):
     return False
 
 
+def _rename_and_prepare_subscriptions(all_sub_urls):
+    """
+    P10 (v2.4.0): 预处理所有订阅 URL, 拉取解析节点后统一重命名为 01/02/03...
+    彻底规避上游节点名称中的违规词 (如"高清无码"、"AVToday"等)。
+
+    流程:
+    1. 调用 subconverter 生成 Clash YAML 格式临时文件 (合并所有订阅)
+    2. 解析临时文件, 获取所有 proxies
+    3. 统一重命名为 01、02、03... (保留原始顺序)
+    4. 写入新的临时 Clash YAML 文件 (仅含 proxies)
+    5. 启动本地 HTTP 服务提供该文件
+    6. 返回 (server, local_urls)
+
+    Args:
+        all_sub_urls: 所有有效订阅 URL 的列表
+
+    Returns:
+        (server, local_urls): HTTP 服务器对象和本地文件 URL 列表
+        失败时返回 (None, all_sub_urls) 回退到原始 URL
+    """
+    import tempfile
+
+    if not all_sub_urls:
+        return None, all_sub_urls
+
+    try:
+        # 1. 创建临时目录
+        tmp_dir = tempfile.mkdtemp(prefix='nodecollection_rename_')
+        raw_path = os.path.join(tmp_dir, 'raw_merged.yaml')
+        renamed_path = os.path.join(tmp_dir, 'renamed.yaml')
+
+        # 2. 调用 subconverter 生成 Clash YAML 格式临时文件
+        logger.info(f'[rename] 预处理 {len(all_sub_urls)} 个订阅, 拉取解析节点...')
+        success = call_subconverter('clash', all_sub_urls, raw_path)
+        if not success or not os.path.exists(raw_path):
+            logger.warning('[rename] 预处理失败, 回退到原始 URL')
+            return None, all_sub_urls
+
+        # 3. 解析临时文件, 获取所有 proxies
+        with open(raw_path, encoding='utf-8') as f:
+            data = yaml.safe_load(f)
+        proxies = (data or {}).get('proxies') or []
+        if not proxies:
+            logger.warning('[rename] 解析到 0 个节点, 回退到原始 URL')
+            return None, all_sub_urls
+
+        logger.info(f'[rename] 解析到 {len(proxies)} 个节点, 开始重命名...')
+
+        # 4. 统一重命名为 01、02、03...
+        renamed_proxies = []
+        for i, proxy in enumerate(proxies, 1):
+            new_proxy = dict(proxy)
+            new_proxy['name'] = f'{i:02d}'
+            renamed_proxies.append(new_proxy)
+
+        # 5. 写入新的临时 Clash YAML 文件 (仅含 proxies)
+        renamed_data = {'proxies': renamed_proxies}
+        with open(renamed_path, 'w', encoding='utf-8') as f:
+            yaml.dump(renamed_data, f, allow_unicode=True, sort_keys=False)
+
+        logger.info(f'[rename] 重命名完成: {len(renamed_proxies)} 个节点 → {renamed_path}')
+
+        # 6. 启动本地 HTTP 服务提供该文件
+        server, local_urls = _serve_local_files([renamed_path])
+        return server, local_urls
+
+    except Exception as e:
+        logger.warning(f'[rename] 预处理异常: {type(e).__name__}: {e}, 回退到原始 URL')
+        return None, all_sub_urls
+
+
 def generate_multi_format(all_sub_urls):
     """
     将所有订阅 URL 通过 subconverter 转换为多格式输出。
@@ -1846,6 +1917,13 @@ def generate_multi_format(all_sub_urls):
     if not check_subconverter():
         logger.warning('subconverter 不可用，仅输出原始 YAML')
         return
+
+    # P10 (v2.4.0): 节点重命名预处理 - 拉取解析所有节点后统一重命名为 01/02/03
+    # 彻底规避上游节点名称中的违规词
+    rename_server, processed_urls = _rename_and_prepare_subscriptions(all_sub_urls)
+    if processed_urls:
+        all_sub_urls = processed_urls
+        logger.info(f'[rename] 使用重命名后的节点 ({len(all_sub_urls)} 个本地文件)')
 
     today = datetime.datetime.today()
     date_str = f'{today.year}/{today.month}/{today.month}-{today.day}'
