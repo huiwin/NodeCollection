@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-NodeCollection Pro v2.4.0 - 订阅源采集 + 多格式转换一体化工具
+NodeCollection Pro v2.5.0 - 订阅源采集 + 多格式转换一体化工具
 
 架构:
   config.yaml (TG频道) + airports.yaml (机场列表) + merge.yaml (上游订阅白名单)
@@ -84,12 +84,13 @@ CLASH_PROXY_TYPES = {
     'tuic', 'snell', 'socks5', 'http', 'mixed',
 }
 
-# 节点延迟测速配置 (P1 v1.5.0, P3 v1.7.0 优化)
+# 节点延迟测速配置 (P1 v1.5.0, P3 v1.7.0 优化, P11 v2.5.0 质量优化)
 LATENCY_TIMEOUT = 4           # 单节点 TCP connect 超时 (秒, P3: 5→4)
 LATENCY_THREADS = 48          # 并发测速线程数 (P3: 32→48)
 LATENCY_SAMPLE_RATIO = 1.0    # 抽测比例 (1.0 = 全量测速), 可在 merge.yaml 覆盖
 LATENCY_FAIL_THRESHOLD = 3   # 连续 N 个周期不可达则剔除 (P3: 2→3, 与冷却期配合)
-MERGED_MAX_NODES = 200       # 融合输出每格式总量上限 (与 T1.4 共用)
+LATENCY_MAX_THRESHOLD = 800   # P11: 延迟阈值 (ms), 超过此值的节点排到末尾, 总量截断时优先剔除
+MERGED_MAX_NODES = 150        # P11: 融合输出每格式总量上限 (200→150, 提升整体质量)
 
 # 冷却期跳过测速配置 (P3 v1.7.0, T3.1)
 # 连续失败 COOLDOWN_ENTRY_THRESHOLD 次后进入冷却期, 跳过测速以减少耗时;
@@ -1174,11 +1175,19 @@ def filter_and_sort_nodes(items, latencies, health_data):
         health_data[nid] = rec
         surviving.append(nid)
 
-    # 按延迟升序 (None 排末尾)
-    surviving.sort(key=lambda x: (
-        1 if latencies.get(x) is None else 0,
-        latencies.get(x) if latencies.get(x) is not None else float('inf'),
-    ))
+    # P11 (v2.5.0): 质量排序 - 延迟低于阈值的按延迟升序, 超过阈值的和 None 排到末尾
+    # 同组内考虑稳定性: fail_count 越低越稳定 (连续成功次数越多)
+    def _quality_sort_key(x):
+        lat = latencies.get(x)
+        rec = health_data.get(x, {})
+        fail_count = rec.get('fail_count', 0)
+        if lat is None or lat > LATENCY_MAX_THRESHOLD:
+            # 不可达或延迟超过阈值 → 排到末尾, 按 fail_count 排序 (稳定的稍前)
+            return (1, fail_count, float('inf'))
+        # 可达且延迟低于阈值 → 按延迟升序, 同时考虑稳定性 (fail_count 低的稍前)
+        return (0, lat, fail_count)
+
+    surviving.sort(key=_quality_sort_key)
     return surviving, excluded
 
 
@@ -1529,30 +1538,42 @@ def generate_merged_format(upstream_texts, upstreams):
         proxy_truncated.extend(items)
     dedup_proxies = proxy_truncated
 
-    # 单源截断后重新全局排序 (分组截断打乱了全局延迟顺序)
-    all_uris.sort(key=lambda u: (
-        1 if uri_latencies.get(u) is None else 0,
-        uri_latencies.get(u) if uri_latencies.get(u) is not None else float('inf'),
-    ))
-    dedup_proxies.sort(key=lambda p: (
-        1 if proxy_latencies.get(p['name']) is None else 0,
-        proxy_latencies.get(p['name']) if proxy_latencies.get(p['name']) is not None else float('inf'),
-    ))
+    # P11 (v2.5.0): 单源截断后重新全局排序 (延迟超过阈值的排到末尾)
+    def _uri_sort_key(u):
+        lat = uri_latencies.get(u)
+        if lat is None or lat > LATENCY_MAX_THRESHOLD:
+            return (1, float('inf'))
+        return (0, lat)
+    all_uris.sort(key=_uri_sort_key)
 
-    # 总量截断: 合并 URI + proxy 按延迟升序取前 MERGED_MAX_NODES
+    def _proxy_sort_key(p):
+        lat = proxy_latencies.get(p['name'])
+        if lat is None or lat > LATENCY_MAX_THRESHOLD:
+            return (1, float('inf'))
+        return (0, lat)
+    dedup_proxies.sort(key=_proxy_sort_key)
+
+    # P11 (v2.5.0): 总量截断 - 合并 URI + proxy 按质量排序取前 MERGED_MAX_NODES
+    # 延迟超过阈值的节点排到末尾, 总量截断时优先保留低延迟节点
     total_after_source = len(all_uris) + len(dedup_proxies)
     if total_after_source > MERGED_MAX_NODES:
         tagged = []
         for u in all_uris:
             lat = uri_latencies.get(u)
-            tagged.append((lat if lat is not None else float('inf'), 0, u))
+            if lat is None or lat > LATENCY_MAX_THRESHOLD:
+                tagged.append((1, float('inf'), 0, u))
+            else:
+                tagged.append((0, lat, 0, u))
         for p in dedup_proxies:
             lat = proxy_latencies.get(p['name'])
-            tagged.append((lat if lat is not None else float('inf'), 1, p))
-        tagged.sort(key=lambda x: (x[0], x[1]))
+            if lat is None or lat > LATENCY_MAX_THRESHOLD:
+                tagged.append((1, float('inf'), 1, p))
+            else:
+                tagged.append((0, lat, 1, p))
+        tagged.sort(key=lambda x: (x[0], x[1], x[2]))
         tagged = tagged[:MERGED_MAX_NODES]
-        all_uris = [item for _, kind, item in tagged if kind == 0]
-        dedup_proxies = [item for _, kind, item in tagged if kind == 1]
+        all_uris = [item for _, _, kind, item in tagged if kind == 0]
+        dedup_proxies = [item for _, _, kind, item in tagged if kind == 1]
 
     truncated_count = total_after_source - len(all_uris) - len(dedup_proxies)
     available_count = len(all_uris) + len(dedup_proxies)
@@ -1561,6 +1582,22 @@ def generate_merged_format(upstream_texts, upstreams):
             f'[T1.4] 体积截断 {truncated_count} 个节点 '
             f'(单源上限 + 总量 {MERGED_MAX_NODES}), 最终输出 {available_count}'
         )
+
+    # P10.1 (v2.4.1): 融合订阅节点统一重命名为 01/02/03...
+    # 彻底规避上游节点名称中的违规词 (如"高清无码"、"AVToday"等)
+    # 在所有处理 (去重/测速/健康/剔除/排序/截断) 完成后, 写入临时文件前执行
+    rename_counter = 1
+    renamed_uris = []
+    for u in all_uris:
+        renamed_uris.append(_set_uri_name(u, f'{rename_counter:02d}'))
+        rename_counter += 1
+    all_uris = renamed_uris
+
+    for p in dedup_proxies:
+        p['name'] = f'{rename_counter:02d}'
+        rename_counter += 1
+
+    logger.info(f'[rename] 融合订阅节点重命名完成: {rename_counter - 1} 个节点 → 01~{rename_counter - 1:02d}')
 
     # 3. 写入本地临时文件并通过本地 HTTP 服务提供给 subconverter
     tmp_dir = tempfile.mkdtemp(prefix='nodecollection_upstream_')
