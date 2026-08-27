@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-NodeCollection Pro v2.5.1 - 订阅源采集 + 多格式转换一体化工具
+NodeCollection Pro v2.5.3 - 订阅源采集 + 多格式转换一体化工具
 
 架构:
   config.yaml (TG频道) + airports.yaml (机场列表) + merge.yaml (上游订阅白名单)
@@ -1934,12 +1934,12 @@ def _rename_and_prepare_subscriptions(all_sub_urls):
 
     Returns:
         (server, local_urls): HTTP 服务器对象和本地文件 URL 列表
-        失败时返回 (None, all_sub_urls) 回退到原始 URL
+        失败时返回 (None, None) 回退到原始 URL
     """
     import tempfile
 
     if not all_sub_urls:
-        return None, all_sub_urls
+        return None, None
 
     try:
         # 1. 创建临时目录
@@ -1967,7 +1967,7 @@ def _rename_and_prepare_subscriptions(all_sub_urls):
         resp = requests.get(api_url, timeout=SUBCONVERTER_TIMEOUT)
         if resp.status_code != 200 or not resp.text.strip():
             logger.warning(f'[rename] subconverter 拉取失败: HTTP {resp.status_code}, 回退到原始 URL')
-            return None, all_sub_urls
+            return None, None
         with open(raw_path, 'w', encoding='utf-8') as f:
             f.write(resp.text)
 
@@ -1977,7 +1977,7 @@ def _rename_and_prepare_subscriptions(all_sub_urls):
         proxies = (data or {}).get('proxies') or []
         if not proxies:
             logger.warning('[rename] 解析到 0 个节点, 回退到原始 URL')
-            return None, all_sub_urls
+            return None, None
 
         logger.info(f'[rename] 解析到 {len(proxies)} 个节点')
 
@@ -1995,7 +1995,7 @@ def _rename_and_prepare_subscriptions(all_sub_urls):
             logger.info(f'[rename] 源头过滤 {illegal_count} 个违规词节点, 剩余 {len(filtered_proxies)} 个')
         if not filtered_proxies:
             logger.warning('[rename] 过滤后无有效节点, 回退到原始 URL')
-            return None, all_sub_urls
+            return None, None
 
         # 4. 统一重命名为 01、02、03...
         renamed_proxies = []
@@ -2017,7 +2017,68 @@ def _rename_and_prepare_subscriptions(all_sub_urls):
 
     except Exception as e:
         logger.warning(f'[rename] 预处理异常: {type(e).__name__}: {e}, 回退到原始 URL')
-        return None, all_sub_urls
+        return None, None
+
+
+def _filter_and_rename_clash_file(file_path):
+    """
+    P11.3 (v2.5.3): 直接在 Clash 输出文件中过滤违规词节点并重命名为 01/02/03...
+    作为 _rename_and_prepare_subscriptions() 失败时的兜底方案, 确保 Clash 输出
+    始终不包含违规词, 节点名称统一为序号。
+
+    Args:
+        file_path: Clash YAML 文件路径
+
+    Returns:
+        bool: 是否成功处理
+    """
+    if not os.path.exists(file_path):
+        return False
+
+    try:
+        with open(file_path, encoding='utf-8') as f:
+            data = yaml.safe_load(f)
+
+        if not data or 'proxies' not in data:
+            return False
+
+        proxies = data.get('proxies') or []
+        if not proxies:
+            return False
+
+        # 过滤违规词节点
+        filtered_proxies = []
+        illegal_count = 0
+        for proxy in proxies:
+            name = proxy.get('name', '')
+            if contains_illegal_keyword(name):
+                illegal_count += 1
+                continue
+            filtered_proxies.append(proxy)
+
+        if illegal_count > 0:
+            logger.info(f'[rename-file] 过滤 {illegal_count} 个违规词节点, 剩余 {len(filtered_proxies)} 个')
+
+        if not filtered_proxies:
+            logger.warning('[rename-file] 过滤后无有效节点, 不修改文件')
+            return False
+
+        # 统一重命名为 01、02、03...
+        for i, proxy in enumerate(filtered_proxies, 1):
+            proxy['name'] = f'{i:02d}'
+
+        data['proxies'] = filtered_proxies
+
+        # 写回文件
+        with open(file_path, 'w', encoding='utf-8') as f:
+            yaml.dump(data, f, allow_unicode=True, sort_keys=False)
+
+        logger.info(f'[rename-file] 重命名完成: {len(filtered_proxies)} 个节点 → {file_path}')
+        return True
+
+    except Exception as e:
+        logger.warning(f'[rename-file] 处理失败: {type(e).__name__}: {e}')
+        return False
 
 
 def generate_multi_format(all_sub_urls):
@@ -2031,12 +2092,15 @@ def generate_multi_format(all_sub_urls):
         logger.warning('subconverter 不可用，仅输出原始 YAML')
         return
 
-    # P10 (v2.4.0): 节点重命名预处理 - 拉取解析所有节点后统一重命名为 01/02/03
-    # 彻底规避上游节点名称中的违规词
+    # P10 (v2.4.0) + P11.1 (v2.5.1): 节点重命名预处理
+    # 拉取解析所有节点 → 过滤违规词 → 统一重命名为 01/02/03
+    # P11.2 修复: 失败时返回 (None, None), 避免误判为重命名成功
     rename_server, processed_urls = _rename_and_prepare_subscriptions(all_sub_urls)
-    if processed_urls:
+    if processed_urls is not None:
         all_sub_urls = processed_urls
         logger.info(f'[rename] 使用重命名后的节点 ({len(all_sub_urls)} 个本地文件)')
+    else:
+        logger.warning('[rename] 节点重命名预处理失败, 使用原始订阅 URL')
 
     today = datetime.datetime.today()
     date_str = f'{today.year}/{today.month}/{today.month}-{today.day}'
@@ -2045,6 +2109,12 @@ def generate_multi_format(all_sub_urls):
         date_fname = f'{today.month}-{today.day}.{ext}'
         output_path = os.path.join(OUTPUT_DIR, subdir, date_fname)
         success = call_subconverter(target, all_sub_urls, output_path)
+
+        # P11.3 (v2.5.3): Clash 格式输出兜底处理 - 直接在文件中过滤违规词并重命名
+        # 即使 _rename_and_prepare_subscriptions() 预处理失败, 也能保证 Clash 输出
+        # 不包含违规词, 节点名称统一为序号
+        if success and target.startswith('clash') and ext == 'yaml':
+            _filter_and_rename_clash_file(output_path)
 
         # 同时写入 latest 固定文件 (URL 永不改变，内容随每次运行更新)
         latest_path = os.path.join(OUTPUT_DIR, subdir, f'latest.{ext}')
