@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-NodeCollection Pro v2.3.2 - 订阅源采集 + 多格式转换一体化工具
+NodeCollection Pro v2.3.3 - 订阅源采集 + 多格式转换一体化工具
 
 架构:
   config.yaml (TG频道) + airports.yaml (机场列表) + merge.yaml (上游订阅白名单)
@@ -1793,14 +1793,18 @@ def call_subconverter(target, sub_urls, output_path, config_path=None):
     merged_url = '|'.join(sub_urls)
     encoded_url = quote(merged_url, safe='')
 
-    # 注意: subconverter 的 config=file:// API 参数在 Linux 上不生效,
-    # 配置文件通过 fetch.yaml 复制为 pref.ini (subconverter 默认配置) 加载.
-    # config_path 参数保留用于向后兼容, 但不再传递给 API.
+    # P9.3 (v2.3.3): 通过 API config 参数直接传递配置文件, 替代依赖 pref.ini
+    # 之前通过 fetch.yaml 将配置写入 pref.ini, 但存在重复 section / 替换丢失默认配置等问题
+    # config 参数使用 file:// 绝对路径, subconverter 会直接读取该配置文件
+    config_abs_path = os.path.abspath(SUBCONVERTER_EXTERNAL_CONFIG)
+    config_url = f'file://{config_abs_path}'
+    encoded_config = quote(config_url, safe='')
 
     api_url = (
         f'{SUBCONVERTER_URL}/sub?'
         f'target={target}&'
         f'url={encoded_url}&'
+        f'config={encoded_config}&'
         f'emoji=true&'
         f'udp=true&'
         f'tfo=false&'

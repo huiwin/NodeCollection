@@ -81,14 +81,17 @@ jobs:
         ls -la subconverter_bin/subconverter/
         echo "=== base directory (if exists) ==="
         ls -la subconverter_bin/subconverter/base/ 2>/dev/null || echo "no base dir"
-        # P9.2 (v2.3.2): 直接用 external_config.ini 替换 pref.ini, 而非追加
-        # 原因: 追加方式会导致 pref.ini 中出现重复 [common] section,
-        #       subconverter 可能只读取第一个 [common] section, 导致后面的
-        #       custom_proxy_group / emoji / ruleset 配置全部被忽略
-        # external_config.ini 已包含所有必要配置 (clash_rule_base / custom_proxy_group / ruleset 等)
+        # P9.3 (v2.3.3): 不再通过 pref.ini 加载自定义配置, 改为通过 API config 参数传递
+        # pref.ini 保留 subconverter 默认配置 (从 pref.example.ini 复制),
+        # 自定义配置 (custom_proxy_group / emoji / ruleset 等) 通过 main.py 的
+        # call_subconverter() 函数的 API config 参数直接传递 external_config.ini
         SC_DIR=subconverter_bin/subconverter
-        cp subconverter/external_config.ini "$SC_DIR/pref.ini"
-        echo "pref.ini replaced with external_config.ini"
+        if [ -f "$SC_DIR/pref.example.ini" ]; then
+          cp "$SC_DIR/pref.example.ini" "$SC_DIR/pref.ini"
+          echo "pref.ini copied from pref.example.ini"
+        else
+          echo "WARNING: pref.example.ini not found, using default pref.ini"
+        fi
         echo "=== pref.ini sections ==="
         grep "^\[" "$SC_DIR/pref.ini"
         cd "$SC_DIR" && nohup ./subconverter > /dev/null 2>&1 &
