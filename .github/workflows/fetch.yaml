@@ -81,22 +81,14 @@ jobs:
         ls -la subconverter_bin/subconverter/
         echo "=== base directory (if exists) ==="
         ls -la subconverter_bin/subconverter/base/ 2>/dev/null || echo "no base dir"
-        # subconverter 配置加载:
-        # release 包可能包含 pref.example.ini 但不包含 pref.ini,
-        # 直接追加 external_config.ini 会创建只有 [custom] section 的不完整配置,
-        # 导致缺少 [common] 中的 clash_rule_base, Clash 输出格式异常.
-        # 正确做法: 优先从 pref.example.ini 复制完整配置, 再追加自定义 [custom] section.
+        # P9.2 (v2.3.2): 直接用 external_config.ini 替换 pref.ini, 而非追加
+        # 原因: 追加方式会导致 pref.ini 中出现重复 [common] section,
+        #       subconverter 可能只读取第一个 [common] section, 导致后面的
+        #       custom_proxy_group / emoji / ruleset 配置全部被忽略
+        # external_config.ini 已包含所有必要配置 (clash_rule_base / custom_proxy_group / ruleset 等)
         SC_DIR=subconverter_bin/subconverter
-        if [ -f "$SC_DIR/pref.ini" ]; then
-          echo "pref.ini already exists, appending custom config"
-        elif [ -f "$SC_DIR/pref.example.ini" ]; then
-          echo "pref.ini not found, copying from pref.example.ini"
-          cp "$SC_DIR/pref.example.ini" "$SC_DIR/pref.ini"
-        else
-          echo "WARNING: neither pref.ini nor pref.example.ini found, creating minimal [common] section"
-          printf '[common]\nclash_rule_base=base/all_base.tpl\nsurge_rule_base=base/all_base.tpl\n' > "$SC_DIR/pref.ini"
-        fi
-        cat subconverter/external_config.ini >> "$SC_DIR/pref.ini"
+        cp subconverter/external_config.ini "$SC_DIR/pref.ini"
+        echo "pref.ini replaced with external_config.ini"
         echo "=== pref.ini sections ==="
         grep "^\[" "$SC_DIR/pref.ini"
         cd "$SC_DIR" && nohup ./subconverter > /dev/null 2>&1 &
