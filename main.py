@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-NodeCollection Pro v2.5.0 - 订阅源采集 + 多格式转换一体化工具
+NodeCollection Pro v2.5.1 - 订阅源采集 + 多格式转换一体化工具
 
 架构:
   config.yaml (TG频道) + airports.yaml (机场列表) + merge.yaml (上游订阅白名单)
@@ -99,6 +99,31 @@ MERGED_MAX_NODES = 150        # P11: 融合输出每格式总量上限 (200→15
 COOLDOWN_ENTRY_THRESHOLD = 2   # 连续失败 N 次进入冷却期
 COOLDOWN_RETRY_INTERVAL = 3    # 冷却期内每 N 个周期强制重试一次
 COOLDOWN_MAX_RETRIES = 3       # 冷却期内最多重试 N 次, 超过则剔除
+
+# P11.1 (v2.5.1): 违规词过滤 - 在源头屏蔽包含不良内容的节点
+# 不依赖 subconverter 的 exclude_remarks (可能因正则/编码问题失效), 直接在 Python 层过滤
+ILLEGAL_KEYWORDS = [
+    # 色情/成人相关
+    '高清无码', '高清無碼', 'AVToday', '成人影片', '色情', '情色', '黃色', '黄色',
+    '萝莉', '幼女', '强奸', '亂倫', '乱伦', '自慰', '性愛', '性爱', '做爱',
+    '炮友', '约炮', '一夜情', '外围', '援交', '主播福利', '福利姬', '裸聊',
+    '偷拍', '偷窥', '迷奸', '下药', '成人', '色图', '黄图', '淫',
+    # 广告/推广相关 (常见于免费节点命名)
+    '到期时间', '剩余流量', '官方网站', '产品介绍', '平台官网', '官网地址',
+    '推广链接', '广告投放', 'Expire', 'Traffic', 'Website',
+]
+
+
+def contains_illegal_keyword(name):
+    """检查节点名称是否包含违规词 (不区分大小写)"""
+    if not name:
+        return False
+    name_lower = str(name).lower()
+    for keyword in ILLEGAL_KEYWORDS:
+        if keyword.lower() in name_lower:
+            return True
+    return False
+
 
 # 协议兼容性矩阵 (P3 v1.7.0, T3.3)
 # 各输出格式支持的代理协议集合, 用于 README 标注和可选的预过滤
@@ -1360,6 +1385,7 @@ def generate_merged_format(upstream_texts, upstreams):
     uri_source_map = {}    # uri → 上游来源名 (T1.4 单源截断用)
     proxy_source_map = {}  # proxy_name → 上游来源名
     upstream_parsed = {}   # T3.4: 每上游解析数 (去重前)
+    illegal_filtered = 0   # P11.1: 违规词过滤计数
     for upstream in upstreams:
         text = upstream_texts.get(upstream.get('name'))
         if not text:
@@ -1367,12 +1393,27 @@ def generate_merged_format(upstream_texts, upstreams):
         source_name = upstream.get('name', 'unknown')
         uris, proxies = parse_upstream_text(text, upstream)
         upstream_parsed[source_name] = len(uris) + len(proxies)
+        # P11.1: 源头过滤违规词节点 (URI 节点)
         for u in uris:
+            node_name = _get_uri_name(u)
+            if contains_illegal_keyword(node_name):
+                illegal_filtered += 1
+                logger.debug(f'[merged] 过滤违规词 URI 节点: {node_name}')
+                continue
             uri_source_map.setdefault(u, source_name)
+            all_uris.append(u)
+        # P11.1: 源头过滤违规词节点 (Clash 代理节点)
         for p in proxies:
+            node_name = p.get('name', '')
+            if contains_illegal_keyword(node_name):
+                illegal_filtered += 1
+                logger.debug(f'[merged] 过滤违规词代理节点: {node_name}')
+                continue
             proxy_source_map.setdefault(p['name'], source_name)
-        all_uris.extend(uris)
-        all_clash_proxies.extend(proxies)
+            all_clash_proxies.append(p)
+
+    if illegal_filtered > 0:
+        logger.info(f'[P11.1] 源头过滤 {illegal_filtered} 个违规词节点')
 
     # 2. 节点级智能去重 (P3 T3.2: 基于 host:port 去重, 同一节点多参数只保留一个)
     #    无法提取 host:port 的节点回退到完整 URI / name 去重
@@ -1875,16 +1916,18 @@ def call_subconverter(target, sub_urls, output_path, config_path=None):
 
 def _rename_and_prepare_subscriptions(all_sub_urls):
     """
-    P10 (v2.4.0): 预处理所有订阅 URL, 拉取解析节点后统一重命名为 01/02/03...
-    彻底规避上游节点名称中的违规词 (如"高清无码"、"AVToday"等)。
+    P10 (v2.4.0) + P11.1 (v2.5.1): 预处理所有订阅 URL, 拉取解析节点后
+    过滤违规词节点 + 统一重命名为 01/02/03...
 
     流程:
-    1. 调用 subconverter 生成 Clash YAML 格式临时文件 (合并所有订阅)
+    1. 直接调用 subconverter API (不带 config 参数, 避免 exclude_remarks 干扰)
+       生成 Clash YAML 格式临时文件 (合并所有订阅)
     2. 解析临时文件, 获取所有 proxies
-    3. 统一重命名为 01、02、03... (保留原始顺序)
-    4. 写入新的临时 Clash YAML 文件 (仅含 proxies)
-    5. 启动本地 HTTP 服务提供该文件
-    6. 返回 (server, local_urls)
+    3. 过滤掉名称包含违规词的节点 (P11.1 源头过滤)
+    4. 统一重命名为 01、02、03... (保留原始顺序)
+    5. 写入新的临时 Clash YAML 文件 (仅含 proxies)
+    6. 启动本地 HTTP 服务提供该文件
+    7. 返回 (server, local_urls)
 
     Args:
         all_sub_urls: 所有有效订阅 URL 的列表
@@ -1904,12 +1947,29 @@ def _rename_and_prepare_subscriptions(all_sub_urls):
         raw_path = os.path.join(tmp_dir, 'raw_merged.yaml')
         renamed_path = os.path.join(tmp_dir, 'renamed.yaml')
 
-        # 2. 调用 subconverter 生成 Clash YAML 格式临时文件
+        # 2. 直接调用 subconverter API (不带 config 参数, 避免 exclude_remarks 干扰)
+        #    P11.1 修复: 之前使用 call_subconverter() 会带上 config 参数,
+        #    external_config.ini 的 exclude_remarks 可能导致 subconverter 异常或节点被过滤空
         logger.info(f'[rename] 预处理 {len(all_sub_urls)} 个订阅, 拉取解析节点...')
-        success = call_subconverter('clash', all_sub_urls, raw_path)
-        if not success or not os.path.exists(raw_path):
-            logger.warning('[rename] 预处理失败, 回退到原始 URL')
+        merged_url = '|'.join(all_sub_urls)
+        encoded_url = quote(merged_url, safe='')
+        api_url = (
+            f'{SUBCONVERTER_URL}/sub?'
+            f'target=clash&'
+            f'url={encoded_url}&'
+            f'emoji=false&'
+            f'udp=true&'
+            f'tfo=false&'
+            f'expand=true&'
+            f'append_info=false&'
+            f'sort=false'
+        )
+        resp = requests.get(api_url, timeout=SUBCONVERTER_TIMEOUT)
+        if resp.status_code != 200 or not resp.text.strip():
+            logger.warning(f'[rename] subconverter 拉取失败: HTTP {resp.status_code}, 回退到原始 URL')
             return None, all_sub_urls
+        with open(raw_path, 'w', encoding='utf-8') as f:
+            f.write(resp.text)
 
         # 3. 解析临时文件, 获取所有 proxies
         with open(raw_path, encoding='utf-8') as f:
@@ -1919,11 +1979,27 @@ def _rename_and_prepare_subscriptions(all_sub_urls):
             logger.warning('[rename] 解析到 0 个节点, 回退到原始 URL')
             return None, all_sub_urls
 
-        logger.info(f'[rename] 解析到 {len(proxies)} 个节点, 开始重命名...')
+        logger.info(f'[rename] 解析到 {len(proxies)} 个节点')
+
+        # 3.5 P11.1: 源头过滤违规词节点 (不依赖 subconverter 的 exclude_remarks)
+        filtered_proxies = []
+        illegal_count = 0
+        for proxy in proxies:
+            name = proxy.get('name', '')
+            if contains_illegal_keyword(name):
+                illegal_count += 1
+                logger.debug(f'[rename] 过滤违规词节点: {name}')
+                continue
+            filtered_proxies.append(proxy)
+        if illegal_count > 0:
+            logger.info(f'[rename] 源头过滤 {illegal_count} 个违规词节点, 剩余 {len(filtered_proxies)} 个')
+        if not filtered_proxies:
+            logger.warning('[rename] 过滤后无有效节点, 回退到原始 URL')
+            return None, all_sub_urls
 
         # 4. 统一重命名为 01、02、03...
         renamed_proxies = []
-        for i, proxy in enumerate(proxies, 1):
+        for i, proxy in enumerate(filtered_proxies, 1):
             new_proxy = dict(proxy)
             new_proxy['name'] = f'{i:02d}'
             renamed_proxies.append(new_proxy)
