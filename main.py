@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-NodeCollection Pro v2.5.4 - 订阅源采集 + 多格式转换一体化工具
+NodeCollection Pro v2.5.5 - 订阅源采集 + 多格式转换一体化工具
 
 架构:
   config.yaml (TG频道) + airports.yaml (机场列表) + merge.yaml (上游订阅白名单)
@@ -89,7 +89,7 @@ LATENCY_TIMEOUT = 4           # 单节点 TCP connect 超时 (秒, P3: 5→4)
 LATENCY_THREADS = 48          # 并发测速线程数 (P3: 32→48)
 LATENCY_SAMPLE_RATIO = 1.0    # 抽测比例 (1.0 = 全量测速), 可在 merge.yaml 覆盖
 LATENCY_FAIL_THRESHOLD = 3   # 连续 N 个周期不可达则剔除 (P3: 2→3, 与冷却期配合)
-LATENCY_MAX_THRESHOLD = 800   # P11: 延迟阈值 (ms), 超过此值的节点排到末尾, 总量截断时优先剔除
+LATENCY_MAX_THRESHOLD = 2000  # P11: 延迟阈值 (ms), 超过此值的节点排到末尾, 总量截断时优先剔除 (P11.5: 800→2000, 保留更多可用节点)
 MERGED_MAX_NODES = 150        # P11: 融合输出每格式总量上限 (200→150, 提升整体质量)
 
 # 冷却期跳过测速配置 (P3 v1.7.0, T3.1)
@@ -1738,6 +1738,22 @@ def generate_merged_format(upstream_texts, upstreams):
         with open(index_path, 'w', encoding='utf-8') as f:
             json.dump(index_data, f, ensure_ascii=False, indent=2)
         logger.info(f'索引文件已更新 (含 merged 段): {index_path}')
+
+        # P11.5 (v2.5.5): 融合订阅最终兜底 - 遍历 output/merged/ 目录所有 yaml 文件,
+        # 确保所有融合 Clash 文件都被重命名和过滤违规词 (与主订阅 P11.4 兜底对应)
+        merged_dir = os.path.join(OUTPUT_DIR, MERGED_DIR)
+        if os.path.isdir(merged_dir):
+            merged_renamed_count = 0
+            for fname in os.listdir(merged_dir):
+                if fname.endswith('.clash.yaml'):
+                    fpath = os.path.join(merged_dir, fname)
+                    if _filter_and_rename_clash_file(fpath):
+                        merged_renamed_count += 1
+            if merged_renamed_count > 0:
+                logger.info(
+                    f'[rename-final] 融合订阅最终兜底处理完成: '
+                    f'{merged_renamed_count} 个 Clash 文件已重命名'
+                )
 
         return available_count
     finally:
