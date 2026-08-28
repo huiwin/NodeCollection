@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-NodeCollection Pro v2.5.3 - 订阅源采集 + 多格式转换一体化工具
+NodeCollection Pro v2.5.4 - 订阅源采集 + 多格式转换一体化工具
 
 架构:
   config.yaml (TG频道) + airports.yaml (机场列表) + merge.yaml (上游订阅白名单)
@@ -2152,6 +2152,19 @@ def generate_multi_format(all_sub_urls):
             os.path.join(OUTPUT_DIR, subdir),
             f'.{ext}',
         )
+
+    # P11.4 (v2.5.4): 最终兜底 - 遍历 output/clash/ 目录所有 yaml 文件,
+    # 确保即使输出循环中的条件判断有问题, 所有 Clash 文件都被重命名和过滤违规词
+    clash_dir = os.path.join(OUTPUT_DIR, 'clash')
+    if os.path.isdir(clash_dir):
+        renamed_count = 0
+        for fname in os.listdir(clash_dir):
+            if fname.endswith('.yaml'):
+                fpath = os.path.join(clash_dir, fname)
+                if _filter_and_rename_clash_file(fpath):
+                    renamed_count += 1
+        if renamed_count > 0:
+            logger.info(f'[rename-final] 最终兜底处理完成: {renamed_count} 个 Clash 文件已重命名')
 
     # 额外: 生成一个合并所有格式的 index.json 索引文件
     index_path = os.path.join(OUTPUT_DIR, 'index.json')
