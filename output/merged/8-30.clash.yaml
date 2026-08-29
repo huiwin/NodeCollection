@@ -6,7 +6,7 @@ log-level: info
 external-controller: :9090
 proxies:
 - name: '01'
-  server: 198.41.223.96
+  server: 45.130.125.160
   port: 443
   type: trojan
   password: humanity
@@ -18,7 +18,7 @@ proxies:
       Host: www.ignitelimit.com
   udp: true
 - name: '02'
-  server: www.speedtest.org
+  server: 104.18.152.103
   port: 443
   type: trojan
   password: humanity
@@ -30,254 +30,8 @@ proxies:
       Host: www.ignitelimit.com
   udp: true
 - name: '03'
-  server: 23.95.248.105
+  server: 104.16.174.44
   port: 443
-  type: vmess
-  uuid: 6a89a215-22bf-4bd7-9642-b95b2e09583a
-  alterId: 0
-  cipher: auto
-  tls: true
-  servername: 23.95.248.105
-  udp: true
-- name: '04'
-  server: rush-6it6b.teeopp.quest
-  port: 443
-  type: vmess
-  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
-  alterId: 0
-  cipher: auto
-  tls: true
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: rush-6it6b.teeopp.quest
-  udp: true
-- name: '05'
-  server: hkdcrtc-e.catcat321.com
-  port: 20085
-  type: trojan
-  password: a126f35c-e832-4115-8593-b723ade3f7be
-  sni: hk.catxstar.com
-  skip-cert-verify: true
-  udp: true
-- name: '06'
-  server: hkdcrtc-e.catcat321.com
-  port: 20066
-  type: trojan
-  password: a126f35c-e832-4115-8593-b723ade3f7be
-  sni: hk.catxstar.com
-  skip-cert-verify: true
-  udp: true
-- name: '07'
-  server: 129.146.37.236
-  port: 50356
-  type: ss
-  cipher: 2022-blake3-chacha20-poly1305
-  password: wTMVvzUy0p3hrZvmp7BFTxuctsht2XRmkPfDvcU5ZS0=
-  udp: true
-- name: 08
-  server: 129.146.166.216
-  port: 50356
-  type: ss
-  cipher: 2022-blake3-chacha20-poly1305
-  password: /ghPwz9gUS7ZvM77tjriv4yzvGT9Uof0U0csAlJ/ZEk=
-  udp: true
-- name: 09
-  server: www.361371.xyz
-  port: 443
-  type: vmess
-  uuid: da77c564-3815-468c-8867-0aea0b397027
-  alterId: 0
-  cipher: auto
-  tls: true
-  servername: www.361371.xyz
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: www.361371.xyz
-  udp: true
-- name: '10'
-  server: us-23.hihu.net
-  port: 443
-  type: vmess
-  uuid: e9674560-9d1a-11f1-b333-205c6d5f5d78
-  alterId: 0
-  cipher: auto
-  tls: true
-  servername: us-23.hihu.net
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: chatbuzzteam.ir
-  udp: true
-- name: '11'
-  server: guanwang.awsno.com
-  port: 443
-  type: vmess
-  uuid: 6a89a215-22bf-4bd7-9642-b95b2e09583a
-  alterId: 0
-  cipher: auto
-  tls: true
-  udp: true
-- name: '12'
-  server: kkvlvvq-a.catcat321.com
-  port: 20066
-  type: trojan
-  password: a126f35c-e832-4115-8593-b723ade3f7be
-  sni: hk.catxstar.com
-  skip-cert-verify: true
-  udp: true
-- name: '13'
-  server: kkvlvvq-a.catcat321.com
-  port: 20085
-  type: trojan
-  password: a126f35c-e832-4115-8593-b723ade3f7be
-  sni: hk.catxstar.com
-  skip-cert-verify: true
-  udp: true
-- name: '14'
-  server: saj2000e.pacemakere.com
-  port: 20063
-  type: trojan
-  password: c857562678594197
-  skip-cert-verify: true
-  udp: true
-- name: '15'
-  server: jpaws.ccwink.photos
-  port: 53225
-  type: vmess
-  uuid: a157bb84-dd84-4ad8-86b0-0656bc76e4d1
-  alterId: 0
-  cipher: auto
-  tls: true
-  servername: gw.alicdn.com
-  udp: true
-- name: '16'
-  server: kuso153.pacemakere.com
-  port: 101
-  type: trojan
-  password: 3b9deff947c74dde
-  skip-cert-verify: true
-  udp: true
-- name: '17'
-  server: kkvlvvq-a.catcat321.com
-  port: 20056
-  type: trojan
-  password: a126f35c-e832-4115-8593-b723ade3f7be
-  sni: hk.catxstar.com
-  skip-cert-verify: true
-  udp: true
-- name: '18'
-  server: kuso30.pacemakere.com
-  port: 101
-  type: trojan
-  password: 5e89314202a8405f
-  skip-cert-verify: false
-  udp: true
-- name: '19'
-  server: 13.135.252.176
-  port: 443
-  type: ss
-  cipher: aes-256-cfb
-  password: amazonskr05
-  udp: true
-- name: '20'
-  server: 13.135.73.3
-  port: 443
-  type: ss
-  cipher: aes-256-cfb
-  password: amazonskr05
-  udp: true
-- name: '21'
-  server: 18.175.227.220
-  port: 443
-  type: ss
-  cipher: aes-256-cfb
-  password: amazonskr05
-  udp: true
-- name: '22'
-  server: 13.135.167.23
-  port: 443
-  type: ss
-  cipher: aes-256-cfb
-  password: amazonskr05
-  udp: true
-- name: '23'
-  server: 18.132.52.104
-  port: 443
-  type: ss
-  cipher: aes-256-cfb
-  password: amazonskr05
-  udp: true
-- name: '24'
-  server: 144.21.33.195
-  port: 45819
-  type: ss
-  cipher: 2022-blake3-chacha20-poly1305
-  password: 57fw+yTMy//FAjeLSTkIGPfbr0TzgFjBvUIIK6iodWY=
-  udp: true
-- name: '25'
-  server: v10.zgtfqs.click
-  port: 30807
-  type: vmess
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 2
-  cipher: auto
-  tls: false
-  udp: true
-- name: '26'
-  server: 47.250.84.25
-  port: 443
-  type: trojan
-  password: 5931134d1cde66bf83a54acdfebe7ab2
-  sni: moltbot.doctoroyy.net
-  skip-cert-verify: true
-  udp: true
-- name: '27'
-  server: 144.31.243.2
-  port: 16015
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: J1InuU6QRT5JOh1mQfkjU2
-  udp: true
-- name: '28'
-  server: 112.132.215.108
-  port: 50002
-  type: vmess
-  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
-  alterId: 64
-  cipher: auto
-  tls: false
-  udp: true
-- name: '29'
-  server: 103.169.67.34
-  port: 65443
-  type: ss
-  cipher: aes-256-cfb
-  password: 7eadc6dbe2ae
-  udp: true
-- name: '30'
-  server: v10.hdacd.com
-  port: 30807
-  type: vmess
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 2
-  cipher: auto
-  tls: false
-  udp: true
-- name: '31'
-  server: 121.46.230.138
-  port: 65443
-  type: ss
-  cipher: aes-256-cfb
-  password: 7eadc6dbe2ae
-  udp: true
-- name: '32'
-  server: 2.144.21.112
-  port: 40443
   type: trojan
   password: humanity
   sni: www.ignitelimit.com
@@ -287,214 +41,210 @@ proxies:
     headers:
       Host: www.ignitelimit.com
   udp: true
-- name: '33'
-  server: v6.hdacd.com
-  port: 30806
+- name: '04'
+  server: 104.18.152.77
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.ignitelimit.com
+  udp: true
+- name: '05'
+  server: 104.18.12.149
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.ignitelimit.com
+  udp: true
+- name: '06'
+  server: 104.16.174.121
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.ignitelimit.com
+  udp: true
+- name: '07'
+  server: 104.16.174.37
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.ignitelimit.com
+  udp: true
+- name: 08
+  server: 104.16.7.70
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.ignitelimit.com
+  udp: true
+- name: 09
+  server: 104.18.152.140
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.ignitelimit.com
+  udp: true
+- name: '10'
+  server: 104.16.174.34
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.ignitelimit.com
+  udp: true
+- name: '11'
+  server: 104.17.177.143
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.ignitelimit.com
+  udp: true
+- name: '12'
+  server: 129.146.62.211
+  port: 50356
+  type: ss
+  cipher: 2022-blake3-chacha20-poly1305
+  password: 3RVXu5xARCPQlD3Fv/cmQt7o/XGqUZLwrTTt0FkA2vo=
+  udp: true
+- name: '13'
+  server: guanwang.awsno.com
+  port: 443
   type: vmess
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 2
+  uuid: 6a89a215-22bf-4bd7-9642-b95b2e09583a
+  alterId: 0
   cipher: auto
-  tls: false
+  tls: true
   udp: true
-- name: '34'
-  server: v33.hdacd.com
-  port: 30833
-  type: vmess
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 2
-  cipher: auto
-  tls: false
-  udp: true
-- name: '35'
-  server: v35.hdacd.com
-  port: 30835
-  type: vmess
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 2
-  cipher: auto
-  tls: false
-  udp: true
-- name: '36'
-  server: 211.91.158.44
-  port: 21123
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: 9325a345-c72f-4637-a8f4-34f9effb7ba6
-  udp: true
-- name: '37'
-  server: 211.91.158.44
-  port: 21117
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: 9325a345-c72f-4637-a8f4-34f9effb7ba6
-  udp: true
-- name: '38'
-  server: 211.91.158.44
-  port: 21119
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: 9325a345-c72f-4637-a8f4-34f9effb7ba6
-  udp: true
-- name: '39'
-  server: 211.91.158.44
-  port: 21104
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: 9325a345-c72f-4637-a8f4-34f9effb7ba6
-  udp: true
-- name: '40'
-  server: 211.91.158.44
-  port: 21105
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: 9325a345-c72f-4637-a8f4-34f9effb7ba6
-  udp: true
-- name: '41'
-  server: 211.91.158.44
-  port: 21116
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: 9325a345-c72f-4637-a8f4-34f9effb7ba6
-  udp: true
-- name: '42'
-  server: 211.91.158.26
-  port: 21103
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: 9325a345-c72f-4637-a8f4-34f9effb7ba6
-  udp: true
-- name: '43'
-  server: 211.91.158.44
-  port: 21122
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: 9325a345-c72f-4637-a8f4-34f9effb7ba6
-  udp: true
-- name: '44'
-  server: 211.91.158.26
-  port: 21121
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: 9325a345-c72f-4637-a8f4-34f9effb7ba6
-  udp: true
-- name: '45'
-  server: 211.91.158.44
-  port: 21118
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: 9325a345-c72f-4637-a8f4-34f9effb7ba6
-  udp: true
-- name: '46'
-  server: 211.91.158.44
-  port: 21126
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: 9325a345-c72f-4637-a8f4-34f9effb7ba6
-  udp: true
-- name: '47'
-  server: 211.91.158.44
-  port: 21107
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: 9325a345-c72f-4637-a8f4-34f9effb7ba6
-  udp: true
-- name: '48'
-  server: 211.91.158.44
-  port: 21121
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: 9325a345-c72f-4637-a8f4-34f9effb7ba6
-  udp: true
-- name: '49'
-  server: 36.33.35.105
-  port: 10006
-  type: ss
-  cipher: aes-256-gcm
-  password: Butterfly123@qwe9527
-  udp: true
-- name: '50'
-  server: 121.46.230.136
-  port: 65443
+- name: '14'
+  server: 34.241.245.82
+  port: 443
   type: ss
   cipher: aes-256-cfb
-  password: 7eadc6dbe2ae
+  password: amazonskr05
   udp: true
-- name: '51'
-  server: 140.245.117.116
+- name: '15'
+  server: 141.148.237.64
+  port: 45819
+  type: ss
+  cipher: 2022-blake3-chacha20-poly1305
+  password: IVBe/v0PRzoIAxF7OKUA6rHMM+f8VFYJThG6KvBXNcY=
+  udp: true
+- name: '16'
+  server: 129.151.67.62
+  port: 61312
+  type: ss
+  cipher: 2022-blake3-chacha20-poly1305
+  password: OxtyOVFwJdUQxmuDhQdFaM4osbi2RAT32aXZ1z0PgM4=
+  udp: true
+- name: '17'
+  server: 84.235.171.56
+  port: 45819
+  type: ss
+  cipher: 2022-blake3-chacha20-poly1305
+  password: HRqwosfXqmllcha4w+K3LxYB8vJ+L1qRJwBZgVE1kRY=
+  udp: true
+- name: '18'
+  server: clsk2.rvvs.im
+  port: 16825
+  type: trojan
+  password: fef70590-17a9-4ddc-a38c-2b7467c083b5
+  sni: clsk2.rvvs.im
+  skip-cert-verify: true
+  udp: true
+- name: '19'
+  server: v10.zgtfqs.click
+  port: 30807
+  type: vmess
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
+  cipher: auto
+  tls: false
+  udp: true
+- name: '20'
+  server: 161.118.208.148
   port: 56927
   type: ss
   cipher: 2022-blake3-chacha20-poly1305
-  password: y0lUf5WDcD0z4Vm/57XU5GWoPKS+07qwaHOhXiwQekA=
+  password: +RVrrYpka8vzDG1IZIHEcuyFSuvRnfpylJWmqh3xGOc=
   udp: true
-- name: '52'
-  server: kkvlvvq-a.catcat321.com
-  port: 20023
+- name: '21'
+  server: 134.185.81.92
+  port: 56927
+  type: ss
+  cipher: 2022-blake3-chacha20-poly1305
+  password: qxzS4vtyrA12yfTquZuo50wCbKaMIDmctQuS1EfDFgc=
+  udp: true
+- name: '22'
+  server: 216.24.57.1
+  port: 443
   type: trojan
-  password: a126f35c-e832-4115-8593-b723ade3f7be
-  sni: hk.catxstar.com
+  password: humanity
+  sni: www.ignitelimit.com
   skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.ignitelimit.com
   udp: true
-- name: '53'
-  server: kkvlvvq-a.catcat321.com
-  port: 20066
-  type: trojan
-  password: a126f35c-e832-4115-8593-b723ade3f7be
-  sni: hk.catxstar.com
-  skip-cert-verify: true
+- name: '23'
+  server: 3.96.124.46
+  port: 443
+  type: ss
+  cipher: aes-256-cfb
+  password: amazonskr05
   udp: true
-- name: '54'
-  server: kkvlvvq-a.catcat321.com
-  port: 20056
-  type: trojan
-  password: a126f35c-e832-4115-8593-b723ade3f7be
-  sni: hk.catxstar.com
-  skip-cert-verify: true
+- name: '24'
+  server: 34.244.150.119
+  port: 443
+  type: ss
+  cipher: aes-256-cfb
+  password: amazonskr05
   udp: true
-- name: '55'
-  server: hkdcrtc-e.catcat321.com
-  port: 20085
-  type: trojan
-  password: a126f35c-e832-4115-8593-b723ade3f7be
-  sni: hk.catxstar.com
-  skip-cert-verify: true
-  udp: true
-- name: '56'
-  server: 121.46.230.138
+- name: '25'
+  server: 95.170.13.47
   port: 65443
   type: ss
   cipher: aes-256-cfb
   password: 7eadc6dbe2ae
-  udp: true
-- name: '57'
-  server: w192m.iamnew2020.top
-  port: 99
-  type: trojan
-  password: 58d1a580a3fc4a87
-  sni: w192m.iamnew2020.top
-  skip-cert-verify: true
-  udp: true
-- name: '58'
-  server: planb.mojcn.com.linuxlh.xin
-  port: 16632
-  type: vmess
-  uuid: 97c638c6-86d5-4cf6-b70b-114c6809b637
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: 407a2bc6d452ff93e6d7b73078539d9e.mobgslb.tbcache.com
-  udp: true
-- name: '59'
-  server: 18.181.83.46
-  port: 2944
-  type: trojan
-  password: BxceQaOe
-  sni: t.me%252Fripaojiedian
-  skip-cert-verify: true
   udp: true
 proxy-groups:
 - name: 🔰 节点选择
@@ -502,395 +252,189 @@ proxy-groups:
   proxies:
   - ♻️ 自动选择
   - 🎯 全球直连
-  - 🇺🇸 [ext:Pawdroid] 美国+CloudFlare节点
-  - 🇺🇸 [ext:Pawdroid] 美国+CloudFlare节点 2
+  - 2
+  - 5
+  - 6
+  - 08
+  - 09
+  - 10
+  - 11
+  - 13
+  - 14
+  - 15
+  - 18
+  - 23
   - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国
-  - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国 2
-  - 🇭🇰 [HK] [ext:NoMoreWalls] 🇳🇴NO_3|2.7MB/s
-  - 🇭🇰 [HK] [ext:NoMoreWalls] 🇺🇦UA_2|2.5MB/s
-  - '[ext:NoMoreWalls] 🇺🇸US_3|1.5MB/s'
-  - '[ext:NoMoreWalls] 🇺🇸US_10|1.4MB/s'
-  - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国 3
-  - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国 4
-  - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国 5
-  - 🇨🇦 [CA] [ext:NoMoreWalls] 🇺🇦UA_3|2.1MB/s
-  - 🇨🇦 [CA] [ext:NoMoreWalls] 🇳🇴NO_2|3.2MB/s
-  - '[ext:NoMoreWalls] 🇺🇸US_1|1.0MB/s'
-  - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本->🇩🇪_DE_德国
-  - 🇺🇸 [US] [ext:NoMoreWalls] 🇸🇨SC_2|4.1MB/s
-  - 🇮🇩 [ext:FreeNodes] 🇵🇱_PL_波兰->🇮🇩_ID_印度尼西亚
-  - 🇺🇸 [US] [ext:NoMoreWalls] 🇸🇨SC_3|3.2MB/s
-  - 🇬🇧 [ext:FreeNodes] 🇬🇧_GB_英国
-  - 🇬🇧 [ext:FreeNodes] 🇬🇧_GB_英国 2
-  - 🇬🇧 [ext:FreeNodes] 🇬🇧_GB_英国 3
-  - '[ext:NoMoreWalls] 🇬🇧GB_1|1.1MB/s'
-  - '[ext:NoMoreWalls] 🇬🇧GB_2|1.8MB/s'
-  - '[ext:NoMoreWalls] 🇳🇱NL_1|3.1MB/s'
+  - 30
+  - 31
+  - 38
+  - 40
+  - 43
   - 🇭🇰 [ext:FreeNodes] 🇭🇰_HK_中国香港
-  - 🇲🇾 [ext:FreeNodes] 🇲🇾_MY_马来西亚
-  - 🇱🇹 [ext:FreeNodes] 🇱🇹_LT_立陶宛
-  - '[ext:FreeNodes] 🇨🇳_CN_中国'
-  - 🇹🇭 [ext:FreeNodes] 🇹🇭_TH_泰国
-  - 🇭🇰 [ext:NoMoreWalls] 🇭🇰 香港|@ripaojiedian
-  - '[ext:NoMoreWalls] 🇰🇷KR_1|5.2MB/s'
-  - 🇮🇷 [ext:Pawdroid] 伊朗+V2CROSS.COM
-  - 🇯🇵 [ext:FreeNodes] 🇨🇳_CN_中国->🇯🇵_JP_日本
-  - 🇩🇪 [ext:FreeNodes] 🇨🇳_CN_中国->🇩🇪_DE_德国
-  - 🇫🇷 [ext:FreeNodes] 🇨🇳_CN_中国->🇫🇷_FR_法国
-  - 🇹🇭 [ext:FreeNodes] 🇨🇳_CN_中国->🇹🇭_TH_泰国
-  - 🇬🇧 [ext:FreeNodes] 🇨🇳_CN_中国->🇬🇧_GB_英国
-  - 🇯🇵 [ext:FreeNodes] 🇨🇳_CN_中国->🇯🇵_JP_日本 2
-  - 🇬🇧 [ext:FreeNodes] 🇨🇳_CN_中国->🇬🇧_GB_英国 2
-  - 🇺🇸 [ext:FreeNodes] 🇨🇳_CN_中国->🇺🇸_US_美国
-  - 🇮🇱 [ext:FreeNodes] 🇨🇳_CN_中国->🇮🇱_IL_以色列
-  - 🇮🇳 [ext:FreeNodes] 🇨🇳_CN_中国->🇮🇳_IN_印度
-  - 🇫🇷 [ext:FreeNodes] 🇨🇳_CN_中国->🇫🇷_FR_法国 2
-  - 🇸🇬 [ext:FreeNodes] 🇨🇳_CN_中国->🇸🇬_SG_新加坡
-  - 🇩🇪 [ext:FreeNodes] 🇨🇳_CN_中国->🇩🇪_DE_德国 2
-  - 🇫🇷 [ext:FreeNodes] 🇨🇳_CN_中国->🇫🇷_FR_法国 3
-  - 🇰🇷 [ext:FreeNodes] 🇨🇳_CN_中国->🇰🇷_KR_韩国
-  - 🇸🇬 [ext:FreeNodes] 🇨🇳_CN_中国->🇸🇬_SG_新加坡 2
-  - 🇭🇰 [ext:FreeNodes] 🇨🇳_CN_中国->🇭🇰_HK_中国香港
-  - 🇯🇵 [ext:FreeNodes] 🇨🇳_CN_中国->🇯🇵_JP_日本 3
-  - 🇸🇬 [ext:FreeNodes] 🇸🇬_SG_新加坡
-  - 🇨🇦 [CA] [ext:Jsnzkpg] ✈️关注TG频道@stymei 16
-  - 🇨🇦 [CA] [ext:Jsnzkpg] ✈️关注TG频道@stymei 10
-  - 🇨🇦 [CA] [ext:Jsnzkpg] ✈️关注TG频道@stymei 09
-  - 🇭🇰 [HK] [ext:Jsnzkpg] ✈️关注TG频道@stymei 15
-  - '[ext:Jsnzkpg] ✈️关注TG频道@stymei 07'
-  - '[ext:Jsnzkpg] ✈️关注TG频道@stymei 32'
-  - 🇮🇳 [IN] [ext:Jsnzkpg] ✈️关注TG频道@stymei 12
-  - '[ext:Jsnzkpg] ✈️关注TG频道@stymei 24'
+  - 47
+  - 48
+  - 135
+  - 140
+  - 141
+  - 143
 - name: ♻️ 自动选择
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
-  - 🇺🇸 [ext:Pawdroid] 美国+CloudFlare节点
-  - 🇺🇸 [ext:Pawdroid] 美国+CloudFlare节点 2
+  - 2
+  - 5
+  - 6
+  - 08
+  - 09
+  - 10
+  - 11
+  - 13
+  - 14
+  - 15
+  - 18
+  - 23
   - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国
-  - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国 2
-  - 🇭🇰 [HK] [ext:NoMoreWalls] 🇳🇴NO_3|2.7MB/s
-  - 🇭🇰 [HK] [ext:NoMoreWalls] 🇺🇦UA_2|2.5MB/s
-  - '[ext:NoMoreWalls] 🇺🇸US_3|1.5MB/s'
-  - '[ext:NoMoreWalls] 🇺🇸US_10|1.4MB/s'
-  - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国 3
-  - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国 4
-  - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国 5
-  - 🇨🇦 [CA] [ext:NoMoreWalls] 🇺🇦UA_3|2.1MB/s
-  - 🇨🇦 [CA] [ext:NoMoreWalls] 🇳🇴NO_2|3.2MB/s
-  - '[ext:NoMoreWalls] 🇺🇸US_1|1.0MB/s'
-  - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本->🇩🇪_DE_德国
-  - 🇺🇸 [US] [ext:NoMoreWalls] 🇸🇨SC_2|4.1MB/s
-  - 🇮🇩 [ext:FreeNodes] 🇵🇱_PL_波兰->🇮🇩_ID_印度尼西亚
-  - 🇺🇸 [US] [ext:NoMoreWalls] 🇸🇨SC_3|3.2MB/s
-  - 🇬🇧 [ext:FreeNodes] 🇬🇧_GB_英国
-  - 🇬🇧 [ext:FreeNodes] 🇬🇧_GB_英国 2
-  - 🇬🇧 [ext:FreeNodes] 🇬🇧_GB_英国 3
-  - '[ext:NoMoreWalls] 🇬🇧GB_1|1.1MB/s'
-  - '[ext:NoMoreWalls] 🇬🇧GB_2|1.8MB/s'
-  - '[ext:NoMoreWalls] 🇳🇱NL_1|3.1MB/s'
+  - 30
+  - 31
+  - 38
+  - 40
+  - 43
   - 🇭🇰 [ext:FreeNodes] 🇭🇰_HK_中国香港
-  - 🇲🇾 [ext:FreeNodes] 🇲🇾_MY_马来西亚
-  - 🇱🇹 [ext:FreeNodes] 🇱🇹_LT_立陶宛
-  - '[ext:FreeNodes] 🇨🇳_CN_中国'
-  - 🇹🇭 [ext:FreeNodes] 🇹🇭_TH_泰国
-  - 🇭🇰 [ext:NoMoreWalls] 🇭🇰 香港|@ripaojiedian
-  - '[ext:NoMoreWalls] 🇰🇷KR_1|5.2MB/s'
-  - 🇮🇷 [ext:Pawdroid] 伊朗+V2CROSS.COM
-  - 🇯🇵 [ext:FreeNodes] 🇨🇳_CN_中国->🇯🇵_JP_日本
-  - 🇩🇪 [ext:FreeNodes] 🇨🇳_CN_中国->🇩🇪_DE_德国
-  - 🇫🇷 [ext:FreeNodes] 🇨🇳_CN_中国->🇫🇷_FR_法国
-  - 🇹🇭 [ext:FreeNodes] 🇨🇳_CN_中国->🇹🇭_TH_泰国
-  - 🇬🇧 [ext:FreeNodes] 🇨🇳_CN_中国->🇬🇧_GB_英国
-  - 🇯🇵 [ext:FreeNodes] 🇨🇳_CN_中国->🇯🇵_JP_日本 2
-  - 🇬🇧 [ext:FreeNodes] 🇨🇳_CN_中国->🇬🇧_GB_英国 2
-  - 🇺🇸 [ext:FreeNodes] 🇨🇳_CN_中国->🇺🇸_US_美国
-  - 🇮🇱 [ext:FreeNodes] 🇨🇳_CN_中国->🇮🇱_IL_以色列
-  - 🇮🇳 [ext:FreeNodes] 🇨🇳_CN_中国->🇮🇳_IN_印度
-  - 🇫🇷 [ext:FreeNodes] 🇨🇳_CN_中国->🇫🇷_FR_法国 2
-  - 🇸🇬 [ext:FreeNodes] 🇨🇳_CN_中国->🇸🇬_SG_新加坡
-  - 🇩🇪 [ext:FreeNodes] 🇨🇳_CN_中国->🇩🇪_DE_德国 2
-  - 🇫🇷 [ext:FreeNodes] 🇨🇳_CN_中国->🇫🇷_FR_法国 3
-  - 🇰🇷 [ext:FreeNodes] 🇨🇳_CN_中国->🇰🇷_KR_韩国
-  - 🇸🇬 [ext:FreeNodes] 🇨🇳_CN_中国->🇸🇬_SG_新加坡 2
-  - 🇭🇰 [ext:FreeNodes] 🇨🇳_CN_中国->🇭🇰_HK_中国香港
-  - 🇯🇵 [ext:FreeNodes] 🇨🇳_CN_中国->🇯🇵_JP_日本 3
-  - 🇸🇬 [ext:FreeNodes] 🇸🇬_SG_新加坡
-  - 🇨🇦 [CA] [ext:Jsnzkpg] ✈️关注TG频道@stymei 16
-  - 🇨🇦 [CA] [ext:Jsnzkpg] ✈️关注TG频道@stymei 10
-  - 🇨🇦 [CA] [ext:Jsnzkpg] ✈️关注TG频道@stymei 09
-  - 🇭🇰 [HK] [ext:Jsnzkpg] ✈️关注TG频道@stymei 15
-  - '[ext:Jsnzkpg] ✈️关注TG频道@stymei 07'
-  - '[ext:Jsnzkpg] ✈️关注TG频道@stymei 32'
-  - 🇮🇳 [IN] [ext:Jsnzkpg] ✈️关注TG频道@stymei 12
-  - '[ext:Jsnzkpg] ✈️关注TG频道@stymei 24'
+  - 47
+  - 48
+  - 135
+  - 140
+  - 141
+  - 143
 - name: 🌍 国外媒体
   type: select
   proxies:
   - 🔰 节点选择
   - ♻️ 自动选择
   - 🎯 全球直连
-  - 🇺🇸 [ext:Pawdroid] 美国+CloudFlare节点
-  - 🇺🇸 [ext:Pawdroid] 美国+CloudFlare节点 2
+  - 2
+  - 5
+  - 6
+  - 08
+  - 09
+  - 10
+  - 11
+  - 13
+  - 14
+  - 15
+  - 18
+  - 23
   - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国
-  - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国 2
-  - 🇭🇰 [HK] [ext:NoMoreWalls] 🇳🇴NO_3|2.7MB/s
-  - 🇭🇰 [HK] [ext:NoMoreWalls] 🇺🇦UA_2|2.5MB/s
-  - '[ext:NoMoreWalls] 🇺🇸US_3|1.5MB/s'
-  - '[ext:NoMoreWalls] 🇺🇸US_10|1.4MB/s'
-  - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国 3
-  - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国 4
-  - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国 5
-  - 🇨🇦 [CA] [ext:NoMoreWalls] 🇺🇦UA_3|2.1MB/s
-  - 🇨🇦 [CA] [ext:NoMoreWalls] 🇳🇴NO_2|3.2MB/s
-  - '[ext:NoMoreWalls] 🇺🇸US_1|1.0MB/s'
-  - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本->🇩🇪_DE_德国
-  - 🇺🇸 [US] [ext:NoMoreWalls] 🇸🇨SC_2|4.1MB/s
-  - 🇮🇩 [ext:FreeNodes] 🇵🇱_PL_波兰->🇮🇩_ID_印度尼西亚
-  - 🇺🇸 [US] [ext:NoMoreWalls] 🇸🇨SC_3|3.2MB/s
-  - 🇬🇧 [ext:FreeNodes] 🇬🇧_GB_英国
-  - 🇬🇧 [ext:FreeNodes] 🇬🇧_GB_英国 2
-  - 🇬🇧 [ext:FreeNodes] 🇬🇧_GB_英国 3
-  - '[ext:NoMoreWalls] 🇬🇧GB_1|1.1MB/s'
-  - '[ext:NoMoreWalls] 🇬🇧GB_2|1.8MB/s'
-  - '[ext:NoMoreWalls] 🇳🇱NL_1|3.1MB/s'
+  - 30
+  - 31
+  - 38
+  - 40
+  - 43
   - 🇭🇰 [ext:FreeNodes] 🇭🇰_HK_中国香港
-  - 🇲🇾 [ext:FreeNodes] 🇲🇾_MY_马来西亚
-  - 🇱🇹 [ext:FreeNodes] 🇱🇹_LT_立陶宛
-  - '[ext:FreeNodes] 🇨🇳_CN_中国'
-  - 🇹🇭 [ext:FreeNodes] 🇹🇭_TH_泰国
-  - 🇭🇰 [ext:NoMoreWalls] 🇭🇰 香港|@ripaojiedian
-  - '[ext:NoMoreWalls] 🇰🇷KR_1|5.2MB/s'
-  - 🇮🇷 [ext:Pawdroid] 伊朗+V2CROSS.COM
-  - 🇯🇵 [ext:FreeNodes] 🇨🇳_CN_中国->🇯🇵_JP_日本
-  - 🇩🇪 [ext:FreeNodes] 🇨🇳_CN_中国->🇩🇪_DE_德国
-  - 🇫🇷 [ext:FreeNodes] 🇨🇳_CN_中国->🇫🇷_FR_法国
-  - 🇹🇭 [ext:FreeNodes] 🇨🇳_CN_中国->🇹🇭_TH_泰国
-  - 🇬🇧 [ext:FreeNodes] 🇨🇳_CN_中国->🇬🇧_GB_英国
-  - 🇯🇵 [ext:FreeNodes] 🇨🇳_CN_中国->🇯🇵_JP_日本 2
-  - 🇬🇧 [ext:FreeNodes] 🇨🇳_CN_中国->🇬🇧_GB_英国 2
-  - 🇺🇸 [ext:FreeNodes] 🇨🇳_CN_中国->🇺🇸_US_美国
-  - 🇮🇱 [ext:FreeNodes] 🇨🇳_CN_中国->🇮🇱_IL_以色列
-  - 🇮🇳 [ext:FreeNodes] 🇨🇳_CN_中国->🇮🇳_IN_印度
-  - 🇫🇷 [ext:FreeNodes] 🇨🇳_CN_中国->🇫🇷_FR_法国 2
-  - 🇸🇬 [ext:FreeNodes] 🇨🇳_CN_中国->🇸🇬_SG_新加坡
-  - 🇩🇪 [ext:FreeNodes] 🇨🇳_CN_中国->🇩🇪_DE_德国 2
-  - 🇫🇷 [ext:FreeNodes] 🇨🇳_CN_中国->🇫🇷_FR_法国 3
-  - 🇰🇷 [ext:FreeNodes] 🇨🇳_CN_中国->🇰🇷_KR_韩国
-  - 🇸🇬 [ext:FreeNodes] 🇨🇳_CN_中国->🇸🇬_SG_新加坡 2
-  - 🇭🇰 [ext:FreeNodes] 🇨🇳_CN_中国->🇭🇰_HK_中国香港
-  - 🇯🇵 [ext:FreeNodes] 🇨🇳_CN_中国->🇯🇵_JP_日本 3
-  - 🇸🇬 [ext:FreeNodes] 🇸🇬_SG_新加坡
-  - 🇨🇦 [CA] [ext:Jsnzkpg] ✈️关注TG频道@stymei 16
-  - 🇨🇦 [CA] [ext:Jsnzkpg] ✈️关注TG频道@stymei 10
-  - 🇨🇦 [CA] [ext:Jsnzkpg] ✈️关注TG频道@stymei 09
-  - 🇭🇰 [HK] [ext:Jsnzkpg] ✈️关注TG频道@stymei 15
-  - '[ext:Jsnzkpg] ✈️关注TG频道@stymei 07'
-  - '[ext:Jsnzkpg] ✈️关注TG频道@stymei 32'
-  - 🇮🇳 [IN] [ext:Jsnzkpg] ✈️关注TG频道@stymei 12
-  - '[ext:Jsnzkpg] ✈️关注TG频道@stymei 24'
+  - 47
+  - 48
+  - 135
+  - 140
+  - 141
+  - 143
 - name: 🌏 国内媒体
   type: select
   proxies:
   - 🎯 全球直连
   - 🇭🇰 [ext:FreeNodes] 🇭🇰_HK_中国香港
-  - 🇭🇰 [ext:NoMoreWalls] 🇭🇰 香港|@ripaojiedian
-  - 🇭🇰 [ext:FreeNodes] 🇨🇳_CN_中国->🇭🇰_HK_中国香港
   - 🔰 节点选择
 - name: Ⓜ️ 微软服务
   type: select
   proxies:
   - 🎯 全球直连
   - 🔰 节点选择
-  - 🇺🇸 [ext:Pawdroid] 美国+CloudFlare节点
-  - 🇺🇸 [ext:Pawdroid] 美国+CloudFlare节点 2
+  - 2
+  - 5
+  - 6
+  - 08
+  - 09
+  - 10
+  - 11
+  - 13
+  - 14
+  - 15
+  - 18
+  - 23
   - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国
-  - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国 2
-  - 🇭🇰 [HK] [ext:NoMoreWalls] 🇳🇴NO_3|2.7MB/s
-  - 🇭🇰 [HK] [ext:NoMoreWalls] 🇺🇦UA_2|2.5MB/s
-  - '[ext:NoMoreWalls] 🇺🇸US_3|1.5MB/s'
-  - '[ext:NoMoreWalls] 🇺🇸US_10|1.4MB/s'
-  - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国 3
-  - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国 4
-  - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国 5
-  - 🇨🇦 [CA] [ext:NoMoreWalls] 🇺🇦UA_3|2.1MB/s
-  - 🇨🇦 [CA] [ext:NoMoreWalls] 🇳🇴NO_2|3.2MB/s
-  - '[ext:NoMoreWalls] 🇺🇸US_1|1.0MB/s'
-  - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本->🇩🇪_DE_德国
-  - 🇺🇸 [US] [ext:NoMoreWalls] 🇸🇨SC_2|4.1MB/s
-  - 🇮🇩 [ext:FreeNodes] 🇵🇱_PL_波兰->🇮🇩_ID_印度尼西亚
-  - 🇺🇸 [US] [ext:NoMoreWalls] 🇸🇨SC_3|3.2MB/s
-  - 🇬🇧 [ext:FreeNodes] 🇬🇧_GB_英国
-  - 🇬🇧 [ext:FreeNodes] 🇬🇧_GB_英国 2
-  - 🇬🇧 [ext:FreeNodes] 🇬🇧_GB_英国 3
-  - '[ext:NoMoreWalls] 🇬🇧GB_1|1.1MB/s'
-  - '[ext:NoMoreWalls] 🇬🇧GB_2|1.8MB/s'
-  - '[ext:NoMoreWalls] 🇳🇱NL_1|3.1MB/s'
+  - 30
+  - 31
+  - 38
+  - 40
+  - 43
   - 🇭🇰 [ext:FreeNodes] 🇭🇰_HK_中国香港
-  - 🇲🇾 [ext:FreeNodes] 🇲🇾_MY_马来西亚
-  - 🇱🇹 [ext:FreeNodes] 🇱🇹_LT_立陶宛
-  - '[ext:FreeNodes] 🇨🇳_CN_中国'
-  - 🇹🇭 [ext:FreeNodes] 🇹🇭_TH_泰国
-  - 🇭🇰 [ext:NoMoreWalls] 🇭🇰 香港|@ripaojiedian
-  - '[ext:NoMoreWalls] 🇰🇷KR_1|5.2MB/s'
-  - 🇮🇷 [ext:Pawdroid] 伊朗+V2CROSS.COM
-  - 🇯🇵 [ext:FreeNodes] 🇨🇳_CN_中国->🇯🇵_JP_日本
-  - 🇩🇪 [ext:FreeNodes] 🇨🇳_CN_中国->🇩🇪_DE_德国
-  - 🇫🇷 [ext:FreeNodes] 🇨🇳_CN_中国->🇫🇷_FR_法国
-  - 🇹🇭 [ext:FreeNodes] 🇨🇳_CN_中国->🇹🇭_TH_泰国
-  - 🇬🇧 [ext:FreeNodes] 🇨🇳_CN_中国->🇬🇧_GB_英国
-  - 🇯🇵 [ext:FreeNodes] 🇨🇳_CN_中国->🇯🇵_JP_日本 2
-  - 🇬🇧 [ext:FreeNodes] 🇨🇳_CN_中国->🇬🇧_GB_英国 2
-  - 🇺🇸 [ext:FreeNodes] 🇨🇳_CN_中国->🇺🇸_US_美国
-  - 🇮🇱 [ext:FreeNodes] 🇨🇳_CN_中国->🇮🇱_IL_以色列
-  - 🇮🇳 [ext:FreeNodes] 🇨🇳_CN_中国->🇮🇳_IN_印度
-  - 🇫🇷 [ext:FreeNodes] 🇨🇳_CN_中国->🇫🇷_FR_法国 2
-  - 🇸🇬 [ext:FreeNodes] 🇨🇳_CN_中国->🇸🇬_SG_新加坡
-  - 🇩🇪 [ext:FreeNodes] 🇨🇳_CN_中国->🇩🇪_DE_德国 2
-  - 🇫🇷 [ext:FreeNodes] 🇨🇳_CN_中国->🇫🇷_FR_法国 3
-  - 🇰🇷 [ext:FreeNodes] 🇨🇳_CN_中国->🇰🇷_KR_韩国
-  - 🇸🇬 [ext:FreeNodes] 🇨🇳_CN_中国->🇸🇬_SG_新加坡 2
-  - 🇭🇰 [ext:FreeNodes] 🇨🇳_CN_中国->🇭🇰_HK_中国香港
-  - 🇯🇵 [ext:FreeNodes] 🇨🇳_CN_中国->🇯🇵_JP_日本 3
-  - 🇸🇬 [ext:FreeNodes] 🇸🇬_SG_新加坡
-  - 🇨🇦 [CA] [ext:Jsnzkpg] ✈️关注TG频道@stymei 16
-  - 🇨🇦 [CA] [ext:Jsnzkpg] ✈️关注TG频道@stymei 10
-  - 🇨🇦 [CA] [ext:Jsnzkpg] ✈️关注TG频道@stymei 09
-  - 🇭🇰 [HK] [ext:Jsnzkpg] ✈️关注TG频道@stymei 15
-  - '[ext:Jsnzkpg] ✈️关注TG频道@stymei 07'
-  - '[ext:Jsnzkpg] ✈️关注TG频道@stymei 32'
-  - 🇮🇳 [IN] [ext:Jsnzkpg] ✈️关注TG频道@stymei 12
-  - '[ext:Jsnzkpg] ✈️关注TG频道@stymei 24'
+  - 47
+  - 48
+  - 135
+  - 140
+  - 141
+  - 143
 - name: 📲 电报信息
   type: select
   proxies:
   - 🔰 节点选择
   - 🎯 全球直连
-  - 🇺🇸 [ext:Pawdroid] 美国+CloudFlare节点
-  - 🇺🇸 [ext:Pawdroid] 美国+CloudFlare节点 2
+  - 2
+  - 5
+  - 6
+  - 08
+  - 09
+  - 10
+  - 11
+  - 13
+  - 14
+  - 15
+  - 18
+  - 23
   - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国
-  - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国 2
-  - 🇭🇰 [HK] [ext:NoMoreWalls] 🇳🇴NO_3|2.7MB/s
-  - 🇭🇰 [HK] [ext:NoMoreWalls] 🇺🇦UA_2|2.5MB/s
-  - '[ext:NoMoreWalls] 🇺🇸US_3|1.5MB/s'
-  - '[ext:NoMoreWalls] 🇺🇸US_10|1.4MB/s'
-  - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国 3
-  - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国 4
-  - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国 5
-  - 🇨🇦 [CA] [ext:NoMoreWalls] 🇺🇦UA_3|2.1MB/s
-  - 🇨🇦 [CA] [ext:NoMoreWalls] 🇳🇴NO_2|3.2MB/s
-  - '[ext:NoMoreWalls] 🇺🇸US_1|1.0MB/s'
-  - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本->🇩🇪_DE_德国
-  - 🇺🇸 [US] [ext:NoMoreWalls] 🇸🇨SC_2|4.1MB/s
-  - 🇮🇩 [ext:FreeNodes] 🇵🇱_PL_波兰->🇮🇩_ID_印度尼西亚
-  - 🇺🇸 [US] [ext:NoMoreWalls] 🇸🇨SC_3|3.2MB/s
-  - 🇬🇧 [ext:FreeNodes] 🇬🇧_GB_英国
-  - 🇬🇧 [ext:FreeNodes] 🇬🇧_GB_英国 2
-  - 🇬🇧 [ext:FreeNodes] 🇬🇧_GB_英国 3
-  - '[ext:NoMoreWalls] 🇬🇧GB_1|1.1MB/s'
-  - '[ext:NoMoreWalls] 🇬🇧GB_2|1.8MB/s'
-  - '[ext:NoMoreWalls] 🇳🇱NL_1|3.1MB/s'
+  - 30
+  - 31
+  - 38
+  - 40
+  - 43
   - 🇭🇰 [ext:FreeNodes] 🇭🇰_HK_中国香港
-  - 🇲🇾 [ext:FreeNodes] 🇲🇾_MY_马来西亚
-  - 🇱🇹 [ext:FreeNodes] 🇱🇹_LT_立陶宛
-  - '[ext:FreeNodes] 🇨🇳_CN_中国'
-  - 🇹🇭 [ext:FreeNodes] 🇹🇭_TH_泰国
-  - 🇭🇰 [ext:NoMoreWalls] 🇭🇰 香港|@ripaojiedian
-  - '[ext:NoMoreWalls] 🇰🇷KR_1|5.2MB/s'
-  - 🇮🇷 [ext:Pawdroid] 伊朗+V2CROSS.COM
-  - 🇯🇵 [ext:FreeNodes] 🇨🇳_CN_中国->🇯🇵_JP_日本
-  - 🇩🇪 [ext:FreeNodes] 🇨🇳_CN_中国->🇩🇪_DE_德国
-  - 🇫🇷 [ext:FreeNodes] 🇨🇳_CN_中国->🇫🇷_FR_法国
-  - 🇹🇭 [ext:FreeNodes] 🇨🇳_CN_中国->🇹🇭_TH_泰国
-  - 🇬🇧 [ext:FreeNodes] 🇨🇳_CN_中国->🇬🇧_GB_英国
-  - 🇯🇵 [ext:FreeNodes] 🇨🇳_CN_中国->🇯🇵_JP_日本 2
-  - 🇬🇧 [ext:FreeNodes] 🇨🇳_CN_中国->🇬🇧_GB_英国 2
-  - 🇺🇸 [ext:FreeNodes] 🇨🇳_CN_中国->🇺🇸_US_美国
-  - 🇮🇱 [ext:FreeNodes] 🇨🇳_CN_中国->🇮🇱_IL_以色列
-  - 🇮🇳 [ext:FreeNodes] 🇨🇳_CN_中国->🇮🇳_IN_印度
-  - 🇫🇷 [ext:FreeNodes] 🇨🇳_CN_中国->🇫🇷_FR_法国 2
-  - 🇸🇬 [ext:FreeNodes] 🇨🇳_CN_中国->🇸🇬_SG_新加坡
-  - 🇩🇪 [ext:FreeNodes] 🇨🇳_CN_中国->🇩🇪_DE_德国 2
-  - 🇫🇷 [ext:FreeNodes] 🇨🇳_CN_中国->🇫🇷_FR_法国 3
-  - 🇰🇷 [ext:FreeNodes] 🇨🇳_CN_中国->🇰🇷_KR_韩国
-  - 🇸🇬 [ext:FreeNodes] 🇨🇳_CN_中国->🇸🇬_SG_新加坡 2
-  - 🇭🇰 [ext:FreeNodes] 🇨🇳_CN_中国->🇭🇰_HK_中国香港
-  - 🇯🇵 [ext:FreeNodes] 🇨🇳_CN_中国->🇯🇵_JP_日本 3
-  - 🇸🇬 [ext:FreeNodes] 🇸🇬_SG_新加坡
-  - 🇨🇦 [CA] [ext:Jsnzkpg] ✈️关注TG频道@stymei 16
-  - 🇨🇦 [CA] [ext:Jsnzkpg] ✈️关注TG频道@stymei 10
-  - 🇨🇦 [CA] [ext:Jsnzkpg] ✈️关注TG频道@stymei 09
-  - 🇭🇰 [HK] [ext:Jsnzkpg] ✈️关注TG频道@stymei 15
-  - '[ext:Jsnzkpg] ✈️关注TG频道@stymei 07'
-  - '[ext:Jsnzkpg] ✈️关注TG频道@stymei 32'
-  - 🇮🇳 [IN] [ext:Jsnzkpg] ✈️关注TG频道@stymei 12
-  - '[ext:Jsnzkpg] ✈️关注TG频道@stymei 24'
+  - 47
+  - 48
+  - 135
+  - 140
+  - 141
+  - 143
 - name: 🍎 苹果服务
   type: select
   proxies:
   - 🔰 节点选择
   - 🎯 全球直连
   - ♻️ 自动选择
-  - 🇺🇸 [ext:Pawdroid] 美国+CloudFlare节点
-  - 🇺🇸 [ext:Pawdroid] 美国+CloudFlare节点 2
+  - 2
+  - 5
+  - 6
+  - 08
+  - 09
+  - 10
+  - 11
+  - 13
+  - 14
+  - 15
+  - 18
+  - 23
   - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国
-  - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国 2
-  - 🇭🇰 [HK] [ext:NoMoreWalls] 🇳🇴NO_3|2.7MB/s
-  - 🇭🇰 [HK] [ext:NoMoreWalls] 🇺🇦UA_2|2.5MB/s
-  - '[ext:NoMoreWalls] 🇺🇸US_3|1.5MB/s'
-  - '[ext:NoMoreWalls] 🇺🇸US_10|1.4MB/s'
-  - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国 3
-  - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国 4
-  - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国 5
-  - 🇨🇦 [CA] [ext:NoMoreWalls] 🇺🇦UA_3|2.1MB/s
-  - 🇨🇦 [CA] [ext:NoMoreWalls] 🇳🇴NO_2|3.2MB/s
-  - '[ext:NoMoreWalls] 🇺🇸US_1|1.0MB/s'
-  - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本->🇩🇪_DE_德国
-  - 🇺🇸 [US] [ext:NoMoreWalls] 🇸🇨SC_2|4.1MB/s
-  - 🇮🇩 [ext:FreeNodes] 🇵🇱_PL_波兰->🇮🇩_ID_印度尼西亚
-  - 🇺🇸 [US] [ext:NoMoreWalls] 🇸🇨SC_3|3.2MB/s
-  - 🇬🇧 [ext:FreeNodes] 🇬🇧_GB_英国
-  - 🇬🇧 [ext:FreeNodes] 🇬🇧_GB_英国 2
-  - 🇬🇧 [ext:FreeNodes] 🇬🇧_GB_英国 3
-  - '[ext:NoMoreWalls] 🇬🇧GB_1|1.1MB/s'
-  - '[ext:NoMoreWalls] 🇬🇧GB_2|1.8MB/s'
-  - '[ext:NoMoreWalls] 🇳🇱NL_1|3.1MB/s'
+  - 30
+  - 31
+  - 38
+  - 40
+  - 43
   - 🇭🇰 [ext:FreeNodes] 🇭🇰_HK_中国香港
-  - 🇲🇾 [ext:FreeNodes] 🇲🇾_MY_马来西亚
-  - 🇱🇹 [ext:FreeNodes] 🇱🇹_LT_立陶宛
-  - '[ext:FreeNodes] 🇨🇳_CN_中国'
-  - 🇹🇭 [ext:FreeNodes] 🇹🇭_TH_泰国
-  - 🇭🇰 [ext:NoMoreWalls] 🇭🇰 香港|@ripaojiedian
-  - '[ext:NoMoreWalls] 🇰🇷KR_1|5.2MB/s'
-  - 🇮🇷 [ext:Pawdroid] 伊朗+V2CROSS.COM
-  - 🇯🇵 [ext:FreeNodes] 🇨🇳_CN_中国->🇯🇵_JP_日本
-  - 🇩🇪 [ext:FreeNodes] 🇨🇳_CN_中国->🇩🇪_DE_德国
-  - 🇫🇷 [ext:FreeNodes] 🇨🇳_CN_中国->🇫🇷_FR_法国
-  - 🇹🇭 [ext:FreeNodes] 🇨🇳_CN_中国->🇹🇭_TH_泰国
-  - 🇬🇧 [ext:FreeNodes] 🇨🇳_CN_中国->🇬🇧_GB_英国
-  - 🇯🇵 [ext:FreeNodes] 🇨🇳_CN_中国->🇯🇵_JP_日本 2
-  - 🇬🇧 [ext:FreeNodes] 🇨🇳_CN_中国->🇬🇧_GB_英国 2
-  - 🇺🇸 [ext:FreeNodes] 🇨🇳_CN_中国->🇺🇸_US_美国
-  - 🇮🇱 [ext:FreeNodes] 🇨🇳_CN_中国->🇮🇱_IL_以色列
-  - 🇮🇳 [ext:FreeNodes] 🇨🇳_CN_中国->🇮🇳_IN_印度
-  - 🇫🇷 [ext:FreeNodes] 🇨🇳_CN_中国->🇫🇷_FR_法国 2
-  - 🇸🇬 [ext:FreeNodes] 🇨🇳_CN_中国->🇸🇬_SG_新加坡
-  - 🇩🇪 [ext:FreeNodes] 🇨🇳_CN_中国->🇩🇪_DE_德国 2
-  - 🇫🇷 [ext:FreeNodes] 🇨🇳_CN_中国->🇫🇷_FR_法国 3
-  - 🇰🇷 [ext:FreeNodes] 🇨🇳_CN_中国->🇰🇷_KR_韩国
-  - 🇸🇬 [ext:FreeNodes] 🇨🇳_CN_中国->🇸🇬_SG_新加坡 2
-  - 🇭🇰 [ext:FreeNodes] 🇨🇳_CN_中国->🇭🇰_HK_中国香港
-  - 🇯🇵 [ext:FreeNodes] 🇨🇳_CN_中国->🇯🇵_JP_日本 3
-  - 🇸🇬 [ext:FreeNodes] 🇸🇬_SG_新加坡
-  - 🇨🇦 [CA] [ext:Jsnzkpg] ✈️关注TG频道@stymei 16
-  - 🇨🇦 [CA] [ext:Jsnzkpg] ✈️关注TG频道@stymei 10
-  - 🇨🇦 [CA] [ext:Jsnzkpg] ✈️关注TG频道@stymei 09
-  - 🇭🇰 [HK] [ext:Jsnzkpg] ✈️关注TG频道@stymei 15
-  - '[ext:Jsnzkpg] ✈️关注TG频道@stymei 07'
-  - '[ext:Jsnzkpg] ✈️关注TG频道@stymei 32'
-  - 🇮🇳 [IN] [ext:Jsnzkpg] ✈️关注TG频道@stymei 12
-  - '[ext:Jsnzkpg] ✈️关注TG频道@stymei 24'
+  - 47
+  - 48
+  - 135
+  - 140
+  - 141
+  - 143
 - name: 🎯 全球直连
   type: select
   proxies:
@@ -906,313 +450,31 @@ proxy-groups:
   - 🔰 节点选择
   - 🎯 全球直连
   - ♻️ 自动选择
-  - 🇺🇸 [ext:Pawdroid] 美国+CloudFlare节点
-  - 🇺🇸 [ext:Pawdroid] 美国+CloudFlare节点 2
+  - 2
+  - 5
+  - 6
+  - 08
+  - 09
+  - 10
+  - 11
+  - 13
+  - 14
+  - 15
+  - 18
+  - 23
   - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国
-  - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国 2
-  - 🇭🇰 [HK] [ext:NoMoreWalls] 🇳🇴NO_3|2.7MB/s
-  - 🇭🇰 [HK] [ext:NoMoreWalls] 🇺🇦UA_2|2.5MB/s
-  - '[ext:NoMoreWalls] 🇺🇸US_3|1.5MB/s'
-  - '[ext:NoMoreWalls] 🇺🇸US_10|1.4MB/s'
-  - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国 3
-  - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国 4
-  - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国 5
-  - 🇨🇦 [CA] [ext:NoMoreWalls] 🇺🇦UA_3|2.1MB/s
-  - 🇨🇦 [CA] [ext:NoMoreWalls] 🇳🇴NO_2|3.2MB/s
-  - '[ext:NoMoreWalls] 🇺🇸US_1|1.0MB/s'
-  - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本->🇩🇪_DE_德国
-  - 🇺🇸 [US] [ext:NoMoreWalls] 🇸🇨SC_2|4.1MB/s
-  - 🇮🇩 [ext:FreeNodes] 🇵🇱_PL_波兰->🇮🇩_ID_印度尼西亚
-  - 🇺🇸 [US] [ext:NoMoreWalls] 🇸🇨SC_3|3.2MB/s
-  - 🇬🇧 [ext:FreeNodes] 🇬🇧_GB_英国
-  - 🇬🇧 [ext:FreeNodes] 🇬🇧_GB_英国 2
-  - 🇬🇧 [ext:FreeNodes] 🇬🇧_GB_英国 3
-  - '[ext:NoMoreWalls] 🇬🇧GB_1|1.1MB/s'
-  - '[ext:NoMoreWalls] 🇬🇧GB_2|1.8MB/s'
-  - '[ext:NoMoreWalls] 🇳🇱NL_1|3.1MB/s'
+  - 30
+  - 31
+  - 38
+  - 40
+  - 43
   - 🇭🇰 [ext:FreeNodes] 🇭🇰_HK_中国香港
-  - 🇲🇾 [ext:FreeNodes] 🇲🇾_MY_马来西亚
-  - 🇱🇹 [ext:FreeNodes] 🇱🇹_LT_立陶宛
-  - '[ext:FreeNodes] 🇨🇳_CN_中国'
-  - 🇹🇭 [ext:FreeNodes] 🇹🇭_TH_泰国
-  - 🇭🇰 [ext:NoMoreWalls] 🇭🇰 香港|@ripaojiedian
-  - '[ext:NoMoreWalls] 🇰🇷KR_1|5.2MB/s'
-  - 🇮🇷 [ext:Pawdroid] 伊朗+V2CROSS.COM
-  - 🇯🇵 [ext:FreeNodes] 🇨🇳_CN_中国->🇯🇵_JP_日本
-  - 🇩🇪 [ext:FreeNodes] 🇨🇳_CN_中国->🇩🇪_DE_德国
-  - 🇫🇷 [ext:FreeNodes] 🇨🇳_CN_中国->🇫🇷_FR_法国
-  - 🇹🇭 [ext:FreeNodes] 🇨🇳_CN_中国->🇹🇭_TH_泰国
-  - 🇬🇧 [ext:FreeNodes] 🇨🇳_CN_中国->🇬🇧_GB_英国
-  - 🇯🇵 [ext:FreeNodes] 🇨🇳_CN_中国->🇯🇵_JP_日本 2
-  - 🇬🇧 [ext:FreeNodes] 🇨🇳_CN_中国->🇬🇧_GB_英国 2
-  - 🇺🇸 [ext:FreeNodes] 🇨🇳_CN_中国->🇺🇸_US_美国
-  - 🇮🇱 [ext:FreeNodes] 🇨🇳_CN_中国->🇮🇱_IL_以色列
-  - 🇮🇳 [ext:FreeNodes] 🇨🇳_CN_中国->🇮🇳_IN_印度
-  - 🇫🇷 [ext:FreeNodes] 🇨🇳_CN_中国->🇫🇷_FR_法国 2
-  - 🇸🇬 [ext:FreeNodes] 🇨🇳_CN_中国->🇸🇬_SG_新加坡
-  - 🇩🇪 [ext:FreeNodes] 🇨🇳_CN_中国->🇩🇪_DE_德国 2
-  - 🇫🇷 [ext:FreeNodes] 🇨🇳_CN_中国->🇫🇷_FR_法国 3
-  - 🇰🇷 [ext:FreeNodes] 🇨🇳_CN_中国->🇰🇷_KR_韩国
-  - 🇸🇬 [ext:FreeNodes] 🇨🇳_CN_中国->🇸🇬_SG_新加坡 2
-  - 🇭🇰 [ext:FreeNodes] 🇨🇳_CN_中国->🇭🇰_HK_中国香港
-  - 🇯🇵 [ext:FreeNodes] 🇨🇳_CN_中国->🇯🇵_JP_日本 3
-  - 🇸🇬 [ext:FreeNodes] 🇸🇬_SG_新加坡
-  - 🇨🇦 [CA] [ext:Jsnzkpg] ✈️关注TG频道@stymei 16
-  - 🇨🇦 [CA] [ext:Jsnzkpg] ✈️关注TG频道@stymei 10
-  - 🇨🇦 [CA] [ext:Jsnzkpg] ✈️关注TG频道@stymei 09
-  - 🇭🇰 [HK] [ext:Jsnzkpg] ✈️关注TG频道@stymei 15
-  - '[ext:Jsnzkpg] ✈️关注TG频道@stymei 07'
-  - '[ext:Jsnzkpg] ✈️关注TG频道@stymei 32'
-  - 🇮🇳 [IN] [ext:Jsnzkpg] ✈️关注TG频道@stymei 12
-  - '[ext:Jsnzkpg] ✈️关注TG频道@stymei 24'
-- name: 🎯 地区选择
-  type: select
-  proxies:
-  - ♻️ 自动选择
-  - 🇭🇰 香港节点
-  - 🇹🇼 台湾节点
-  - 🇯🇵 日本节点
-  - 🇸🇬 新加坡节点
-  - 🇺🇸 美国节点
-  - 🇰🇷 韩国节点
-  - 🇬🇧 英国节点
-  - 🇩🇪 德国节点
-  - 🇫🇷 法国节点
-  - 🇷🇺 俄罗斯节点
-  - DIRECT
-- name: 🇭🇰 香港节点
-  type: url-test
-  url: http://www.gstatic.com/generate_204
-  interval: 300
-  tolerance: 50
-  proxies:
-  - 🇭🇰 [HK] [ext:NoMoreWalls] 🇳🇴NO_3|2.7MB/s
-  - 🇭🇰 [HK] [ext:NoMoreWalls] 🇺🇦UA_2|2.5MB/s
-  - 🇭🇰 [ext:FreeNodes] 🇭🇰_HK_中国香港
-  - 🇭🇰 [ext:NoMoreWalls] 🇭🇰 香港|@ripaojiedian
-  - 🇭🇰 [ext:FreeNodes] 🇨🇳_CN_中国->🇭🇰_HK_中国香港
-  - 🇭🇰 [HK] [ext:Jsnzkpg] ✈️关注TG频道@stymei 15
-- name: 🇹🇼 台湾节点
-  type: url-test
-  url: http://www.gstatic.com/generate_204
-  interval: 300
-  tolerance: 50
-  proxies:
-  - DIRECT
-- name: 🇯🇵 日本节点
-  type: url-test
-  url: http://www.gstatic.com/generate_204
-  interval: 300
-  tolerance: 50
-  proxies:
-  - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本->🇩🇪_DE_德国
-  - 🇯🇵 [ext:FreeNodes] 🇨🇳_CN_中国->🇯🇵_JP_日本
-  - 🇯🇵 [ext:FreeNodes] 🇨🇳_CN_中国->🇯🇵_JP_日本 2
-  - 🇯🇵 [ext:FreeNodes] 🇨🇳_CN_中国->🇯🇵_JP_日本 3
-- name: 🇸🇬 新加坡节点
-  type: url-test
-  url: http://www.gstatic.com/generate_204
-  interval: 300
-  tolerance: 50
-  proxies:
-  - 🇸🇬 [ext:FreeNodes] 🇨🇳_CN_中国->🇸🇬_SG_新加坡
-  - 🇸🇬 [ext:FreeNodes] 🇨🇳_CN_中国->🇸🇬_SG_新加坡 2
-  - 🇸🇬 [ext:FreeNodes] 🇸🇬_SG_新加坡
-- name: 🇺🇸 美国节点
-  type: url-test
-  url: http://www.gstatic.com/generate_204
-  interval: 300
-  tolerance: 50
-  proxies:
-  - 🇺🇸 [ext:Pawdroid] 美国+CloudFlare节点
-  - 🇺🇸 [ext:Pawdroid] 美国+CloudFlare节点 2
-  - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国
-  - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国 2
-  - '[ext:NoMoreWalls] 🇺🇸US_3|1.5MB/s'
-  - '[ext:NoMoreWalls] 🇺🇸US_10|1.4MB/s'
-  - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国 3
-  - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国 4
-  - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国 5
-  - '[ext:NoMoreWalls] 🇺🇸US_1|1.0MB/s'
-  - 🇺🇸 [US] [ext:NoMoreWalls] 🇸🇨SC_2|4.1MB/s
-  - 🇺🇸 [US] [ext:NoMoreWalls] 🇸🇨SC_3|3.2MB/s
-  - 🇺🇸 [ext:FreeNodes] 🇨🇳_CN_中国->🇺🇸_US_美国
-- name: 🇰🇷 韩国节点
-  type: url-test
-  url: http://www.gstatic.com/generate_204
-  interval: 300
-  tolerance: 50
-  proxies:
-  - '[ext:NoMoreWalls] 🇰🇷KR_1|5.2MB/s'
-  - 🇰🇷 [ext:FreeNodes] 🇨🇳_CN_中国->🇰🇷_KR_韩国
-- name: 🇬🇧 英国节点
-  type: url-test
-  url: http://www.gstatic.com/generate_204
-  interval: 300
-  tolerance: 50
-  proxies:
-  - 🇬🇧 [ext:FreeNodes] 🇬🇧_GB_英国
-  - 🇬🇧 [ext:FreeNodes] 🇬🇧_GB_英国 2
-  - 🇬🇧 [ext:FreeNodes] 🇬🇧_GB_英国 3
-  - '[ext:NoMoreWalls] 🇬🇧GB_1|1.1MB/s'
-  - '[ext:NoMoreWalls] 🇬🇧GB_2|1.8MB/s'
-  - 🇬🇧 [ext:FreeNodes] 🇨🇳_CN_中国->🇬🇧_GB_英国
-  - 🇬🇧 [ext:FreeNodes] 🇨🇳_CN_中国->🇬🇧_GB_英国 2
-- name: 🇩🇪 德国节点
-  type: url-test
-  url: http://www.gstatic.com/generate_204
-  interval: 300
-  tolerance: 50
-  proxies:
-  - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本->🇩🇪_DE_德国
-  - 🇩🇪 [ext:FreeNodes] 🇨🇳_CN_中国->🇩🇪_DE_德国
-  - 🇩🇪 [ext:FreeNodes] 🇨🇳_CN_中国->🇩🇪_DE_德国 2
-- name: 🇫🇷 法国节点
-  type: url-test
-  url: http://www.gstatic.com/generate_204
-  interval: 300
-  tolerance: 50
-  proxies:
-  - 🇫🇷 [ext:FreeNodes] 🇨🇳_CN_中国->🇫🇷_FR_法国
-  - 🇫🇷 [ext:FreeNodes] 🇨🇳_CN_中国->🇫🇷_FR_法国 2
-  - 🇫🇷 [ext:FreeNodes] 🇨🇳_CN_中国->🇫🇷_FR_法国 3
-- name: 🇷🇺 俄罗斯节点
-  type: url-test
-  url: http://www.gstatic.com/generate_204
-  interval: 300
-  tolerance: 50
-  proxies:
-  - DIRECT
-- name: 🔗 故障转移
-  type: fallback
-  url: http://www.gstatic.com/generate_204
-  interval: 300
-  proxies:
-  - 🇺🇸 [ext:Pawdroid] 美国+CloudFlare节点
-  - 🇺🇸 [ext:Pawdroid] 美国+CloudFlare节点 2
-  - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国
-  - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国 2
-  - 🇭🇰 [HK] [ext:NoMoreWalls] 🇳🇴NO_3|2.7MB/s
-  - 🇭🇰 [HK] [ext:NoMoreWalls] 🇺🇦UA_2|2.5MB/s
-  - '[ext:NoMoreWalls] 🇺🇸US_3|1.5MB/s'
-  - '[ext:NoMoreWalls] 🇺🇸US_10|1.4MB/s'
-  - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国 3
-  - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国 4
-  - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国 5
-  - 🇨🇦 [CA] [ext:NoMoreWalls] 🇺🇦UA_3|2.1MB/s
-  - 🇨🇦 [CA] [ext:NoMoreWalls] 🇳🇴NO_2|3.2MB/s
-  - '[ext:NoMoreWalls] 🇺🇸US_1|1.0MB/s'
-  - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本->🇩🇪_DE_德国
-  - 🇺🇸 [US] [ext:NoMoreWalls] 🇸🇨SC_2|4.1MB/s
-  - 🇮🇩 [ext:FreeNodes] 🇵🇱_PL_波兰->🇮🇩_ID_印度尼西亚
-  - 🇺🇸 [US] [ext:NoMoreWalls] 🇸🇨SC_3|3.2MB/s
-  - 🇬🇧 [ext:FreeNodes] 🇬🇧_GB_英国
-  - 🇬🇧 [ext:FreeNodes] 🇬🇧_GB_英国 2
-  - 🇬🇧 [ext:FreeNodes] 🇬🇧_GB_英国 3
-  - '[ext:NoMoreWalls] 🇬🇧GB_1|1.1MB/s'
-  - '[ext:NoMoreWalls] 🇬🇧GB_2|1.8MB/s'
-  - '[ext:NoMoreWalls] 🇳🇱NL_1|3.1MB/s'
-  - 🇭🇰 [ext:FreeNodes] 🇭🇰_HK_中国香港
-  - 🇲🇾 [ext:FreeNodes] 🇲🇾_MY_马来西亚
-  - 🇱🇹 [ext:FreeNodes] 🇱🇹_LT_立陶宛
-  - '[ext:FreeNodes] 🇨🇳_CN_中国'
-  - 🇹🇭 [ext:FreeNodes] 🇹🇭_TH_泰国
-  - 🇭🇰 [ext:NoMoreWalls] 🇭🇰 香港|@ripaojiedian
-  - '[ext:NoMoreWalls] 🇰🇷KR_1|5.2MB/s'
-  - 🇮🇷 [ext:Pawdroid] 伊朗+V2CROSS.COM
-  - 🇯🇵 [ext:FreeNodes] 🇨🇳_CN_中国->🇯🇵_JP_日本
-  - 🇩🇪 [ext:FreeNodes] 🇨🇳_CN_中国->🇩🇪_DE_德国
-  - 🇫🇷 [ext:FreeNodes] 🇨🇳_CN_中国->🇫🇷_FR_法国
-  - 🇹🇭 [ext:FreeNodes] 🇨🇳_CN_中国->🇹🇭_TH_泰国
-  - 🇬🇧 [ext:FreeNodes] 🇨🇳_CN_中国->🇬🇧_GB_英国
-  - 🇯🇵 [ext:FreeNodes] 🇨🇳_CN_中国->🇯🇵_JP_日本 2
-  - 🇬🇧 [ext:FreeNodes] 🇨🇳_CN_中国->🇬🇧_GB_英国 2
-  - 🇺🇸 [ext:FreeNodes] 🇨🇳_CN_中国->🇺🇸_US_美国
-  - 🇮🇱 [ext:FreeNodes] 🇨🇳_CN_中国->🇮🇱_IL_以色列
-  - 🇮🇳 [ext:FreeNodes] 🇨🇳_CN_中国->🇮🇳_IN_印度
-  - 🇫🇷 [ext:FreeNodes] 🇨🇳_CN_中国->🇫🇷_FR_法国 2
-  - 🇸🇬 [ext:FreeNodes] 🇨🇳_CN_中国->🇸🇬_SG_新加坡
-  - 🇩🇪 [ext:FreeNodes] 🇨🇳_CN_中国->🇩🇪_DE_德国 2
-  - 🇫🇷 [ext:FreeNodes] 🇨🇳_CN_中国->🇫🇷_FR_法国 3
-  - 🇰🇷 [ext:FreeNodes] 🇨🇳_CN_中国->🇰🇷_KR_韩国
-  - 🇸🇬 [ext:FreeNodes] 🇨🇳_CN_中国->🇸🇬_SG_新加坡 2
-  - 🇭🇰 [ext:FreeNodes] 🇨🇳_CN_中国->🇭🇰_HK_中国香港
-  - 🇯🇵 [ext:FreeNodes] 🇨🇳_CN_中国->🇯🇵_JP_日本 3
-  - 🇸🇬 [ext:FreeNodes] 🇸🇬_SG_新加坡
-  - 🇨🇦 [CA] [ext:Jsnzkpg] ✈️关注TG频道@stymei 16
-  - 🇨🇦 [CA] [ext:Jsnzkpg] ✈️关注TG频道@stymei 10
-  - 🇨🇦 [CA] [ext:Jsnzkpg] ✈️关注TG频道@stymei 09
-  - 🇭🇰 [HK] [ext:Jsnzkpg] ✈️关注TG频道@stymei 15
-  - '[ext:Jsnzkpg] ✈️关注TG频道@stymei 07'
-  - '[ext:Jsnzkpg] ✈️关注TG频道@stymei 32'
-  - 🇮🇳 [IN] [ext:Jsnzkpg] ✈️关注TG频道@stymei 12
-  - '[ext:Jsnzkpg] ✈️关注TG频道@stymei 24'
-- name: ⚖️ 负载均衡
-  type: load-balance
-  strategy: consistent-hashing
-  url: http://www.gstatic.com/generate_204
-  interval: 300
-  tolerance: 50
-  proxies:
-  - 🇺🇸 [ext:Pawdroid] 美国+CloudFlare节点
-  - 🇺🇸 [ext:Pawdroid] 美国+CloudFlare节点 2
-  - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国
-  - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国 2
-  - 🇭🇰 [HK] [ext:NoMoreWalls] 🇳🇴NO_3|2.7MB/s
-  - 🇭🇰 [HK] [ext:NoMoreWalls] 🇺🇦UA_2|2.5MB/s
-  - '[ext:NoMoreWalls] 🇺🇸US_3|1.5MB/s'
-  - '[ext:NoMoreWalls] 🇺🇸US_10|1.4MB/s'
-  - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国 3
-  - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国 4
-  - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国 5
-  - 🇨🇦 [CA] [ext:NoMoreWalls] 🇺🇦UA_3|2.1MB/s
-  - 🇨🇦 [CA] [ext:NoMoreWalls] 🇳🇴NO_2|3.2MB/s
-  - '[ext:NoMoreWalls] 🇺🇸US_1|1.0MB/s'
-  - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本->🇩🇪_DE_德国
-  - 🇺🇸 [US] [ext:NoMoreWalls] 🇸🇨SC_2|4.1MB/s
-  - 🇮🇩 [ext:FreeNodes] 🇵🇱_PL_波兰->🇮🇩_ID_印度尼西亚
-  - 🇺🇸 [US] [ext:NoMoreWalls] 🇸🇨SC_3|3.2MB/s
-  - 🇬🇧 [ext:FreeNodes] 🇬🇧_GB_英国
-  - 🇬🇧 [ext:FreeNodes] 🇬🇧_GB_英国 2
-  - 🇬🇧 [ext:FreeNodes] 🇬🇧_GB_英国 3
-  - '[ext:NoMoreWalls] 🇬🇧GB_1|1.1MB/s'
-  - '[ext:NoMoreWalls] 🇬🇧GB_2|1.8MB/s'
-  - '[ext:NoMoreWalls] 🇳🇱NL_1|3.1MB/s'
-  - 🇭🇰 [ext:FreeNodes] 🇭🇰_HK_中国香港
-  - 🇲🇾 [ext:FreeNodes] 🇲🇾_MY_马来西亚
-  - 🇱🇹 [ext:FreeNodes] 🇱🇹_LT_立陶宛
-  - '[ext:FreeNodes] 🇨🇳_CN_中国'
-  - 🇹🇭 [ext:FreeNodes] 🇹🇭_TH_泰国
-  - 🇭🇰 [ext:NoMoreWalls] 🇭🇰 香港|@ripaojiedian
-  - '[ext:NoMoreWalls] 🇰🇷KR_1|5.2MB/s'
-  - 🇮🇷 [ext:Pawdroid] 伊朗+V2CROSS.COM
-  - 🇯🇵 [ext:FreeNodes] 🇨🇳_CN_中国->🇯🇵_JP_日本
-  - 🇩🇪 [ext:FreeNodes] 🇨🇳_CN_中国->🇩🇪_DE_德国
-  - 🇫🇷 [ext:FreeNodes] 🇨🇳_CN_中国->🇫🇷_FR_法国
-  - 🇹🇭 [ext:FreeNodes] 🇨🇳_CN_中国->🇹🇭_TH_泰国
-  - 🇬🇧 [ext:FreeNodes] 🇨🇳_CN_中国->🇬🇧_GB_英国
-  - 🇯🇵 [ext:FreeNodes] 🇨🇳_CN_中国->🇯🇵_JP_日本 2
-  - 🇬🇧 [ext:FreeNodes] 🇨🇳_CN_中国->🇬🇧_GB_英国 2
-  - 🇺🇸 [ext:FreeNodes] 🇨🇳_CN_中国->🇺🇸_US_美国
-  - 🇮🇱 [ext:FreeNodes] 🇨🇳_CN_中国->🇮🇱_IL_以色列
-  - 🇮🇳 [ext:FreeNodes] 🇨🇳_CN_中国->🇮🇳_IN_印度
-  - 🇫🇷 [ext:FreeNodes] 🇨🇳_CN_中国->🇫🇷_FR_法国 2
-  - 🇸🇬 [ext:FreeNodes] 🇨🇳_CN_中国->🇸🇬_SG_新加坡
-  - 🇩🇪 [ext:FreeNodes] 🇨🇳_CN_中国->🇩🇪_DE_德国 2
-  - 🇫🇷 [ext:FreeNodes] 🇨🇳_CN_中国->🇫🇷_FR_法国 3
-  - 🇰🇷 [ext:FreeNodes] 🇨🇳_CN_中国->🇰🇷_KR_韩国
-  - 🇸🇬 [ext:FreeNodes] 🇨🇳_CN_中国->🇸🇬_SG_新加坡 2
-  - 🇭🇰 [ext:FreeNodes] 🇨🇳_CN_中国->🇭🇰_HK_中国香港
-  - 🇯🇵 [ext:FreeNodes] 🇨🇳_CN_中国->🇯🇵_JP_日本 3
-  - 🇸🇬 [ext:FreeNodes] 🇸🇬_SG_新加坡
-  - 🇨🇦 [CA] [ext:Jsnzkpg] ✈️关注TG频道@stymei 16
-  - 🇨🇦 [CA] [ext:Jsnzkpg] ✈️关注TG频道@stymei 10
-  - 🇨🇦 [CA] [ext:Jsnzkpg] ✈️关注TG频道@stymei 09
-  - 🇭🇰 [HK] [ext:Jsnzkpg] ✈️关注TG频道@stymei 15
-  - '[ext:Jsnzkpg] ✈️关注TG频道@stymei 07'
-  - '[ext:Jsnzkpg] ✈️关注TG频道@stymei 32'
-  - 🇮🇳 [IN] [ext:Jsnzkpg] ✈️关注TG频道@stymei 12
-  - '[ext:Jsnzkpg] ✈️关注TG频道@stymei 24'
+  - 47
+  - 48
+  - 135
+  - 140
+  - 141
+  - 143
 rules:
 - DOMAIN-SUFFIX,local,🎯 全球直连
 - IP-CIDR,192.168.0.0/16,🎯 全球直连,no-resolve
