@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-NodeCollection Pro v2.5.6 - 订阅源采集 + 多格式转换一体化工具
+NodeCollection Pro v2.6.0 - 订阅源采集 + 多格式转换一体化工具
 
 架构:
   config.yaml (TG频道) + airports.yaml (机场列表) + merge.yaml (上游订阅白名单)
@@ -206,6 +206,44 @@ def detect_region(text):
             if re.search(pattern, text_lower):
                 return region_name, region_code
     return None, None
+
+
+# ============================================================
+# P12 (v2.6.0) 保留地区 + 序号重命名
+# ============================================================
+
+# 地区代码 → 旗帜 emoji 映射 (用于输出兜底阶段的美观重命名)
+REGION_EMOJI_MAP = {
+    'HK': '🇭🇰', 'TW': '🇹🇼', 'JP': '🇯🇵', 'SG': '🇸🇬', 'US': '🇺🇸',
+    'KR': '🇰🇷', 'UK': '🇬🇧', 'DE': '🇩🇪', 'FR': '🇫🇷', 'RU': '🇷🇺',
+    'CA': '🇨🇦', 'AU': '🇦🇺', 'NL': '🇳🇱', 'IN': '🇮🇳', 'BR': '🇧🇷',
+    'PL': '🇵🇱', 'IE': '🇮🇪', 'IR': '🇮🇷',
+}
+
+
+def _rename_with_region(name, index):
+    """
+    P12 (v2.6.0): 保留地区 + 序号重命名 (subconverter 转换前使用)。
+    从原始节点名提取地区代码, 生成 'US 01' / 'JP 02' 格式。
+    既规避违规词, 又让 subconverter 的地区 filter 和 emoji 规则能识别地区。
+    """
+    region_name, region_code = detect_region(name or '')
+    if region_code:
+        return f'{region_code} {index:02d}'
+    return f'{index:02d}'
+
+
+def _rename_with_region_emoji(name, index):
+    """
+    P12 (v2.6.0): 保留地区 emoji + 序号重命名 (输出兜底阶段使用)。
+    从节点名提取地区, 生成 '🇺🇸 01' / '🇯🇵 02' 格式。
+    美观且与 merged_config.ini 的地区 filter (含 emoji) 兼容。
+    """
+    region_name, region_code = detect_region(name or '')
+    if region_code:
+        emoji = REGION_EMOJI_MAP.get(region_code, '')
+        return f'{emoji} {index:02d}' if emoji else f'{region_code} {index:02d}'
+    return f'{index:02d}'
 
 
 def is_invalid_node_host(host):
@@ -1664,18 +1702,25 @@ def generate_merged_format(upstream_texts, upstreams):
     # P10.1 (v2.4.1): 融合订阅节点统一重命名为 01/02/03...
     # 彻底规避上游节点名称中的违规词 (如"高清无码"、"AVToday"等)
     # 在所有处理 (去重/测速/健康/剔除/排序/截断) 完成后, 写入临时文件前执行
+    # P12 (v2.6.0): 重命名时保留地区代码 (US 01 / JP 02), 恢复地区分组能力
+    # 既规避违规词, 又让 subconverter 的地区 filter / emoji 规则能识别地区
     rename_counter = 1
     renamed_uris = []
     for u in all_uris:
-        renamed_uris.append(_set_uri_name(u, f'{rename_counter:02d}'))
+        original_name = _get_uri_name(u)
+        renamed_uris.append(_set_uri_name(u, _rename_with_region(original_name, rename_counter)))
         rename_counter += 1
     all_uris = renamed_uris
 
     for p in dedup_proxies:
-        p['name'] = f'{rename_counter:02d}'
+        original_name = p.get('name', '')
+        p['name'] = _rename_with_region(original_name, rename_counter)
         rename_counter += 1
 
-    logger.info(f'[rename] 融合订阅节点重命名完成: {rename_counter - 1} 个节点 → 01~{rename_counter - 1:02d}')
+    logger.info(
+        f'[rename] 融合订阅节点重命名完成: {rename_counter - 1} 个节点 '
+        f'(P12 保留地区前缀 + 序号)'
+    )
 
     # 3. 写入本地临时文件并通过本地 HTTP 服务提供给 subconverter
     tmp_dir = tempfile.mkdtemp(prefix='nodecollection_upstream_')
@@ -2053,11 +2098,12 @@ def _rename_and_prepare_subscriptions(all_sub_urls):
             logger.warning('[rename] 过滤后无有效节点, 回退到原始 URL')
             return None, None
 
-        # 4. 统一重命名为 01、02、03...
+        # 4. P12 (v2.6.0): 保留地区 + 序号重命名 (US 01 / JP 02)
+        #    既规避违规词, 又保留地区分组能力
         renamed_proxies = []
         for i, proxy in enumerate(filtered_proxies, 1):
             new_proxy = dict(proxy)
-            new_proxy['name'] = f'{i:02d}'
+            new_proxy['name'] = _rename_with_region(proxy.get('name', ''), i)
             renamed_proxies.append(new_proxy)
 
         # 5. 写入新的临时 Clash YAML 文件 (仅含 proxies)
@@ -2119,9 +2165,10 @@ def _filter_and_rename_clash_file(file_path):
             logger.warning('[rename-file] 过滤后无有效节点, 不修改文件')
             return False
 
-        # 统一重命名为 01、02、03...
+        # P12 (v2.6.0): 保留地区 emoji + 序号重命名 (🇺🇸 01 / 🇯🇵 02)
+        # 输出兜底阶段, 从节点名提取地区并保留, 恢复地区分组
         for i, proxy in enumerate(filtered_proxies, 1):
-            proxy['name'] = f'{i:02d}'
+            proxy['name'] = _rename_with_region_emoji(proxy.get('name', ''), i)
 
         data['proxies'] = filtered_proxies
 
