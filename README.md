@@ -1,6 +1,6 @@
 # NodeCollection
 
-> 自动更新时间: 2026-08-31 06:16:21
+> 自动更新时间: 2026-08-31 09:59:36
 
 > ⚠️ **免责声明**：本项目所有节点均来自互联网公开资源，仅供学习与交流使用，不保证节点的安全性、可用性与合法性。请勿用于任何违反所在地区法律法规的用途，也请勿通过免费节点登录银行、邮箱等敏感账号。使用本项目产生的一切后果由使用者自行承担。
 
@@ -251,11 +251,11 @@
 
 | 来源 | 项目地址 | 解析 | 去重后 | 可达 | 可用率 | 平均延迟 | 状态 |
 | :--- | :--- | ---: | ---: | ---: | ---: | ---: | :--- |
-| NoMoreWalls | [peasoft/NoMoreWalls](https://github.com/peasoft/NoMoreWalls) | 193 | 172 | 48 | 27.9% | 155ms | ✅ 正常 |
-| FreeNodes | [Barabama/FreeNodes](https://github.com/Barabama/FreeNodes) | 43 | 34 | 23 | 67.6% | 211ms | ✅ 正常 |
-| Pawdroid | [Pawdroid/Free-servers](https://github.com/Pawdroid/Free-servers) | 20 | 16 | 16 | 100.0% | 73ms | ✅ 正常 |
-| Jsnzkpg | [Jsnzkpg/Jsnzkpg](https://github.com/Jsnzkpg/Jsnzkpg) | 53 | 47 | 39 | 83.0% | 155ms | ✅ 正常 |
-| maflya | [maflya](https://sub.maflya.com/) | 214 | 189 | 183 | 96.8% | 165ms | ✅ 正常 |
+| NoMoreWalls | [peasoft/NoMoreWalls](https://github.com/peasoft/NoMoreWalls) | 188 | 169 | 49 | 29.0% | 121ms | ✅ 正常 |
+| FreeNodes | [Barabama/FreeNodes](https://github.com/Barabama/FreeNodes) | 43 | 35 | 25 | 71.4% | 268ms | ✅ 正常 |
+| Pawdroid | [Pawdroid/Free-servers](https://github.com/Pawdroid/Free-servers) | 20 | 20 | 20 | 100.0% | 26ms | ✅ 正常 |
+| Jsnzkpg | [Jsnzkpg/Jsnzkpg](https://github.com/Jsnzkpg/Jsnzkpg) | 53 | 51 | 44 | 86.3% | 158ms | ✅ 正常 |
+| maflya | [maflya](https://sub.maflya.com/) | 208 | 183 | 176 | 96.2% | 173ms | ✅ 正常 |
 
 上游节点遵循各来源项目的许可证与分发要求，如来源项目提出异议将立即移除。
 
@@ -263,7 +263,7 @@
 
 - 每 4 小时自动更新一次 (GitHub Actions)
 - 订阅链接为固定地址，复制一次即可长期使用，内容随自动更新刷新
-- 当前更新时间: `2026-08-31 06:16:21`
+- 当前更新时间: `2026-08-31 09:59:36`
 - 加速方式按实时性排序: kkgithub/ghproxy 实时更新, jsdelivr 有缓存延迟
 - 如某加速节点不可用, 换一个即可
 
