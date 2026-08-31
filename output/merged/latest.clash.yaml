@@ -5,70 +5,63 @@ mode: Rule
 log-level: info
 external-controller: :9090
 proxies:
-  - {name: 🇺🇸 US 01, server: 104.18.152.229, port: 443, type: trojan, password: humanity, sni: www.ignitelimit.com, network: ws, ws-opts: {path: /assignment, headers: {Host: www.ignitelimit.com}}, udp: true}
-  - {name: 🇺🇸 US 02, server: 104.16.174.46, port: 443, type: trojan, password: humanity, sni: www.ignitelimit.com, network: ws, ws-opts: {path: /assignment, headers: {Host: www.ignitelimit.com}}, udp: true}
-  - {name: 🇺🇸 US 03, server: 104.18.152.155, port: 443, type: trojan, password: humanity, sni: www.ignitelimit.com, network: ws, ws-opts: {path: /assignment, headers: {Host: www.ignitelimit.com}}, udp: true}
-  - {name: 🇺🇸 US 04, server: 104.18.152.108, port: 443, type: trojan, password: humanity, sni: www.ignitelimit.com, network: ws, ws-opts: {path: /assignment, headers: {Host: www.ignitelimit.com}}, udp: true}
-  - {name: 🇺🇸 US 05, server: 104.26.14.137, port: 443, type: trojan, password: humanity, sni: www.ignitelimit.com, network: ws, ws-opts: {path: /assignment, headers: {Host: www.ignitelimit.com}}, udp: true}
-  - {name: 🇺🇸 US 06, server: 104.20.6.134, port: 443, type: trojan, password: humanity, sni: www.ignitelimit.com, network: ws, ws-opts: {path: /assignment, headers: {Host: www.ignitelimit.com}}, udp: true}
-  - {name: 🇺🇸 US 07, server: 104.18.152.175, port: 443, type: trojan, password: humanity, sni: www.ignitelimit.com, network: ws, ws-opts: {path: /assignment, headers: {Host: www.ignitelimit.com}}, udp: true}
-  - {name: 🇺🇸 US 08, server: 104.16.174.117, port: 443, type: trojan, password: humanity, sni: www.ignitelimit.com, network: ws, ws-opts: {path: /assignment, headers: {Host: www.ignitelimit.com}}, udp: true}
-  - {name: 🇺🇸 US 09, server: 104.16.7.70, port: 443, type: trojan, password: humanity, sni: www.ignitelimit.com, network: ws, ws-opts: {path: /assignment, headers: {Host: www.ignitelimit.com}}, udp: true}
-  - {name: 🇺🇸 US 10, server: 104.18.152.230, port: 443, type: trojan, password: humanity, sni: www.ignitelimit.com, network: ws, ws-opts: {path: /assignment, headers: {Host: www.ignitelimit.com}}, udp: true}
-  - {name: 🇺🇸 US 11, server: 104.16.174.14, port: 443, type: trojan, password: humanity, sni: www.ignitelimit.com, network: ws, ws-opts: {path: /assignment, headers: {Host: www.ignitelimit.com}}, udp: true}
-  - {name: 🇺🇸 US 12, server: 104.18.23.63, port: 443, type: trojan, password: humanity, sni: www.ignitelimit.com, network: ws, ws-opts: {path: /assignment, headers: {Host: www.ignitelimit.com}}, udp: true}
-  - {name: 🇺🇸 US 13, server: 104.17.111.8, port: 443, type: trojan, password: humanity, sni: www.ignitelimit.com, network: ws, ws-opts: {path: /assignment, headers: {Host: www.ignitelimit.com}}, udp: true}
-  - {name: 🇺🇸 US 14, server: 104.26.15.137, port: 443, type: trojan, password: humanity, sni: www.ignitelimit.com, network: ws, ws-opts: {path: /assignment, headers: {Host: www.ignitelimit.com}}, udp: true}
-  - {name: 🇺🇸 US 15, server: 104.16.174.44, port: 443, type: trojan, password: humanity, sni: www.ignitelimit.com, network: ws, ws-opts: {path: /assignment, headers: {Host: www.ignitelimit.com}}, udp: true}
-  - {name: 🇺🇸 US 16, server: 104.18.152.159, port: 443, type: trojan, password: humanity, sni: www.ignitelimit.com, network: ws, ws-opts: {path: /assignment, headers: {Host: www.ignitelimit.com}}, udp: true}
-  - {name: 🇺🇸 US 18, server: www.speedtest.org, port: 443, type: trojan, password: humanity, sni: www.ignitelimit.com, network: ws, ws-opts: {path: /assignment, headers: {Host: www.ignitelimit.com}}, udp: true}
-  - {name: 🇩🇪 DE 19, server: 3.96.124.46, port: 443, type: ss, cipher: aes-256-cfb, password: amazonskr05, udp: true}
-  - {name: 🇩🇪 DE 20, server: 35.182.250.193, port: 443, type: ss, cipher: aes-256-cfb, password: amazonskr05, udp: true}
-  - {name: "[ext:FreeNodes] 🇨🇳_CN_中国", server: 112.132.215.108, port: 50002, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: false, udp: true}
-  - {name: 🇬🇧 UK 22, server: 18.132.203.206, port: 443, type: ss, cipher: aes-256-cfb, password: amazonskr05, udp: true}
+  - {name: 🇺🇸 US 01, server: 104.20.6.134, port: 443, type: trojan, password: humanity, sni: www.ignitelimit.com, network: ws, ws-opts: {path: /assignment, headers: {Host: www.ignitelimit.com}}, udp: true}
+  - {name: 🇫🇷 FR 02, server: 141.101.90.101, port: 443, type: trojan, password: humanity, sni: www.ignitelimit.com, network: ws, ws-opts: {path: /assignment, headers: {Host: www.ignitelimit.com}}, udp: true}
+  - {name: 🇺🇸 US 03, server: 172.67.74.2, port: 443, type: trojan, password: humanity, sni: www.ignitelimit.com, network: ws, ws-opts: {path: /assignment, headers: {Host: www.ignitelimit.com}}, udp: true}
+  - {name: 🇺🇸 US 04, server: 104.18.152.246, port: 443, type: trojan, password: humanity, sni: www.ignitelimit.com, network: ws, ws-opts: {path: /assignment, headers: {Host: www.ignitelimit.com}}, udp: true}
+  - {name: 🇺🇸 US 05, server: 104.18.152.179, port: 443, type: trojan, password: humanity, sni: www.ignitelimit.com, network: ws, ws-opts: {path: /assignment, headers: {Host: www.ignitelimit.com}}, udp: true}
+  - {name: 🇺🇸 US 06, server: 104.17.177.143, port: 443, type: trojan, password: humanity, sni: www.ignitelimit.com, network: ws, ws-opts: {path: /assignment, headers: {Host: www.ignitelimit.com}}, udp: true}
+  - {name: 🇺🇸 US 07, server: 104.16.174.46, port: 443, type: trojan, password: humanity, sni: www.ignitelimit.com, network: ws, ws-opts: {path: /assignment, headers: {Host: www.ignitelimit.com}}, udp: true}
+  - {name: 🇺🇸 US 08, server: 104.18.152.208, port: 443, type: trojan, password: humanity, sni: www.ignitelimit.com, network: ws, ws-opts: {path: /assignment, headers: {Host: www.ignitelimit.com}}, udp: true}
+  - {name: 🇺🇸 US 09, server: 104.16.174.117, port: 443, type: trojan, password: humanity, sni: www.ignitelimit.com, network: ws, ws-opts: {path: /assignment, headers: {Host: www.ignitelimit.com}}, udp: true}
+  - {name: 🇺🇸 US 10, server: 104.19.229.21, port: 443, type: trojan, password: humanity, sni: www.ignitelimit.com, network: ws, ws-opts: {path: assignment, headers: {Host: www.ignitelimit.com}}, udp: true}
+  - {name: 🇺🇸 US 11, server: 104.17.111.3, port: 443, type: trojan, password: humanity, sni: www.ignitelimit.com, network: ws, ws-opts: {path: /assignment, headers: {Host: www.ignitelimit.com}}, udp: true}
+  - {name: 🇺🇸 US 12, server: 104.16.174.34, port: 443, type: trojan, password: humanity, sni: www.ignitelimit.com, network: ws, ws-opts: {path: /assignment, headers: {Host: www.ignitelimit.com}}, udp: true}
+  - {name: 🇺🇸 US 13, server: 104.18.152.97, port: 443, type: trojan, password: humanity, sni: www.ignitelimit.com, network: ws, ws-opts: {path: /assignment, headers: {Host: www.ignitelimit.com}}, udp: true}
+  - {name: 🇺🇸 US 14, server: 104.18.152.233, port: 443, type: trojan, password: humanity, sni: www.ignitelimit.com, network: ws, ws-opts: {path: /assignment, headers: {Host: www.ignitelimit.com}}, udp: true}
+  - {name: 🇨🇦 CA 15, server: 35.182.226.121, port: 443, type: ss, cipher: aes-256-cfb, password: amazonskr05, udp: true}
+  - {name: 🇩🇪 DE 16, server: 35.182.250.193, port: 443, type: ss, cipher: aes-256-cfb, password: amazonskr05, udp: true}
+  - {name: 🇩🇪 DE 17, server: 3.96.124.46, port: 443, type: ss, cipher: aes-256-cfb, password: amazonskr05, udp: true}
+  - {name: "🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国", server: 38.246.226.240, port: 52080, type: vmess, uuid: 7d4bd961-230c-4b34-ab5d-05cf0dfb4ea5, alterId: 0, cipher: auto, tls: false, network: http, http-opts: {method: GET, path: [/]}, udp: true}
+  - {name: 🇬🇧 UK 20, server: 18.132.203.206, port: 443, type: ss, cipher: aes-256-cfb, password: amazonskr05, udp: true}
+  - {name: 🇩🇪 DE 21, server: 95.170.13.47, port: 65443, type: ss, cipher: aes-256-cfb, password: 7eadc6dbe2ae, udp: true}
+  - {name: 🇺🇸 US 22, server: www.ignitelimit.com, port: 443, type: trojan, password: humanity, sni: www.ignitelimit.com, network: ws, ws-opts: {path: /assignment, headers: {Host: www.ignitelimit.com}}, udp: true}
   - {name: IE 23, server: 63.180.254.10, port: 443, type: ss, cipher: aes-256-cfb, password: amazonskr05, udp: true}
-  - {name: "🇭🇰 [ext:FreeNodes] 🇭🇰_HK_中国香港", server: v10.zgtfqs.click, port: 30807, type: vmess, uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484, alterId: 2, cipher: auto, tls: false, udp: true}
-  - {name: 🇩🇪 DE 25, server: 118.107.222.231, port: 65443, type: ss, cipher: aes-256-cfb, password: 7eadc6dbe2ae, udp: true}
-  - {name: 🇩🇪 DE 26, server: 103.169.67.34, port: 65443, type: ss, cipher: aes-256-cfb, password: 7eadc6dbe2ae, udp: true}
-  - {name: 🇺🇸 US 27, server: 121.46.230.232, port: 65443, type: ss, cipher: aes-256-cfb, password: 7eadc6dbe2ae, udp: true}
-  - {name: 🇩🇪 DE 28, server: 95.170.13.47, port: 65443, type: ss, cipher: aes-256-cfb, password: 7eadc6dbe2ae, udp: true}
-  - {name: 🇺🇸 US 29, server: 121.46.230.233, port: 65443, type: ss, cipher: aes-256-cfb, password: 7eadc6dbe2ae, udp: true}
-  - {name: 🇬🇧 UK 30, server: 176.97.66.175, port: 443, type: trojan, password: humanity, sni: www.ignitelimit.com, network: ws, ws-opts: {path: /assignment, headers: {Host: www.ignitelimit.com}}, udp: true}
-  - {name: "🇭🇰 [ext:NoMoreWalls] 🇭🇰 香港|@ripaojiedian", server: v10.hdacd.com, port: 30807, type: vmess, uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484, alterId: 2, cipher: auto, tls: false, udp: true}
+  - {name: 🇺🇸 US 24, server: join-telegram-channel.tirexnet.kdns.fr, port: 443, type: trojan, password: humanity, sni: www.ignitelimit.com, network: ws, ws-opts: {path: /assignment, headers: {Host: www.ignitelimit.com}}, udp: true}
+  - {name: "[ext:NoMoreWalls] 🇬🇧GB_8|4.6MB/s", server: jp.6807251.xyz, port: 34228, type: vmess, uuid: 7aa3a024-e333-4b63-99a2-3db9d3b2054e, alterId: 0, cipher: auto, tls: false, network: ws, ws-opts: {path: /, headers: {Host: a.189.cn}}, udp: true}
+  - {name: 🇰🇷 KR 26, server: 27.255.82.134, port: 2078, type: ss, cipher: aes-256-cfb, password: qwerREWQ@@, udp: true}
+  - {name: 🇩🇪 DE 27, server: 118.107.222.231, port: 65443, type: ss, cipher: aes-256-cfb, password: 7eadc6dbe2ae, udp: true}
+  - {name: 🇩🇪 DE 28, server: 121.46.230.138, port: 65443, type: ss, cipher: aes-256-cfb, password: 7eadc6dbe2ae, udp: true}
+  - {name: "[ext:FreeNodes] 🇨🇳_CN_中国", server: 112.132.215.108, port: 50002, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: false, udp: true}
+  - {name: 🇺🇸 US 30, server: 121.46.230.232, port: 65443, type: ss, cipher: aes-256-cfb, password: 7eadc6dbe2ae, udp: true}
+  - {name: 🇩🇪 DE 31, server: 103.169.67.34, port: 65443, type: ss, cipher: aes-256-cfb, password: 7eadc6dbe2ae, udp: true}
+  - {name: 🇺🇸 US 32, server: 121.46.230.233, port: 65443, type: ss, cipher: aes-256-cfb, password: 7eadc6dbe2ae, udp: true}
+  - {name: "[ext:NoMoreWalls] 🇭🇰HK_1|3.2MB/s", server: m.cnmjin.net, port: 16632, type: vmess, uuid: d7e9f3c3-57c6-457e-b10f-df27907ef081, alterId: 0, cipher: auto, tls: false, network: ws, ws-opts: {path: /, headers: {Host: 18a598fcab3909734096beb9fe7bc5b4.mobgslb.tbcache.com}}, udp: true}
+  - {name: "[ext:NoMoreWalls] 🇯🇵JP_2|3.6MB/s", server: planb.mojcn.com.linuxlh.xin, port: 16617, type: vmess, uuid: ca68cf56-7c3c-4127-816e-7442de9176b7, alterId: 0, cipher: auto, tls: false, network: ws, ws-opts: {path: /, headers: {Host: 7ddc7ef7c7f198c5e7dbed9634157ca7.mobgslb.tbcache.com}}, udp: true}
+  - {name: 🇺🇸 US 35, server: 3ce8ee8.hb.gladns.com, port: 2377, type: ss, cipher: chacha20-ietf-poly1305, password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv, udp: true}
+  - {name: "[ext:NoMoreWalls] 🇸🇬SG_1|6.0MB/s", server: v45.hdacd.com, port: 30845, type: vmess, uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484, alterId: 2, cipher: auto, tls: false, udp: true}
+  - {name: "🇸🇬 [ext:FreeNodes] 🇸🇬_SG_新加坡->🇺🇸_US_美国", server: v29.hdacd.com, port: 30829, type: vmess, uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484, alterId: 2, cipher: auto, tls: false, udp: true}
   - {name: "🇫🇷 [ext:FreeNodes] 🇨🇳_CN_中国->🇫🇷_FR_法国", server: v35.hdacd.com, port: 30835, type: vmess, uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484, alterId: 2, cipher: auto, tls: false, udp: true}
-  - {name: "[ext:NoMoreWalls] 🇺🇸US_1|3.6MB/s", server: v29.hdacd.com, port: 30829, type: vmess, uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484, alterId: 2, cipher: auto, tls: false, udp: true}
-  - {name: "[ext:NoMoreWalls] 🇭🇰HK_1|3.1MB/s", server: m.cnmjin.net, port: 16632, type: vmess, uuid: d7e9f3c3-57c6-457e-b10f-df27907ef081, alterId: 0, cipher: auto, tls: false, network: ws, ws-opts: {path: /, headers: {Host: 18a598fcab3909734096beb9fe7bc5b4.mobgslb.tbcache.com}}, udp: true}
-  - {name: "🇸🇬 [ext:FreeNodes] 🇨🇳_CN_中国->🇸🇬_SG_新加坡", server: v45.hdacd.com, port: 30845, type: vmess, uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484, alterId: 2, cipher: auto, tls: false, udp: true}
-  - {name: 🇸🇬 SG 38, server: cn07.somethingstranges.com, port: 8206, type: ss, cipher: chacha20-ietf, password: passwd, udp: true}
-  - {name: 🇸🇬 SG 39, server: cn08.somethingstranges.com, port: 8211, type: ss, cipher: chacha20-ietf, password: passwd, udp: true}
-  - {name: 🇯🇵 JP 40, server: cn12.somethingstranges.com, port: 8406, type: ss, cipher: chacha20-ietf, password: passwd, udp: true}
-  - {name: 🇺🇸 US 41, server: 129.146.27.138, port: 50356, type: ss, cipher: 2022-blake3-chacha20-poly1305, password: JsNI5ZMcbBpm0Ym1Li12sF47K1R3CvcWF8orVn+p1Ds=, udp: true}
-  - {name: 🇰🇷 KR 42, server: 121.46.230.138, port: 65443, type: ss, cipher: aes-256-cfb, password: 7eadc6dbe2ae, udp: true}
-  - {name: 🇩🇪 DE 43, server: 176.34.158.52, port: 443, type: ss, cipher: aes-256-cfb, password: amazonskr05, udp: true}
-  - {name: 🇭🇰 HK 44, server: 103.236.66.4, port: 10001, type: ss, cipher: aes-256-gcm, password: Butterfly123@qwe9527, udp: true}
-  - {name: 🇭🇰 HK 45, server: 112.28.141.77, port: 10006, type: ss, cipher: aes-256-gcm, password: Butterfly123@qwe9527, udp: true}
-  - {name: 🇭🇰 HK 46, server: 18.142.250.141, port: 7674, type: trojan, password: BxceQaOe, sni: t.me%2Fripaojiedian, skip-cert-verify: true, udp: true}
-  - {name: 🇭🇰 HK 47, server: 35.78.206.14, port: 2944, type: trojan, password: BxceQaOe, sni: t.me%2Fripaojiedian, skip-cert-verify: true, udp: true}
-  - {name: 🇯🇵 JP 48, server: 18.167.96.176, port: 9408, type: trojan, password: BxceQaOe, sni: t.me%252Fripaojiedian, skip-cert-verify: true, udp: true}
-  - {name: 🇯🇵 JP 49, server: 103.236.66.4, port: 40001, type: ss, cipher: aes-256-gcm, password: Butterfly123@qwe9527, udp: true}
-  - {name: 🇯🇵 JP 50, server: 103.236.66.4, port: 40002, type: ss, cipher: aes-256-gcm, password: Butterfly123@qwe9527, udp: true}
-  - {name: 🇸🇬 SG 51, server: 95.40.28.75, port: 9149, type: trojan, password: BxceQaOe, sni: t.me%252Fripaojiedian, skip-cert-verify: true, udp: true}
-  - {name: 🇺🇸 US 52, server: 103.236.66.4, port: 50003, type: ss, cipher: aes-256-gcm, password: Butterfly123@qwe9527, udp: true}
-  - {name: 🇺🇸 US 53, server: 103.236.66.4, port: 50001, type: ss, cipher: aes-256-gcm, password: Butterfly123@qwe9527, udp: true}
-  - {name: 🇺🇸 US 54, server: 18.167.96.176, port: 52770, type: trojan, password: BxceQaOe, sni: t.me%2Fripaojiedian, skip-cert-verify: true, udp: true}
-  - {name: 🇨🇳 TW 55, server: 36.33.35.105, port: 30001, type: ss, cipher: aes-256-gcm, password: Butterfly123@qwe9527, udp: true}
-  - {name: "[ext:NoMoreWalls] 🇺🇸US_4|4.0MB/s", server: 38.246.226.240, port: 52080, type: vmess, uuid: 7d4bd961-230c-4b34-ab5d-05cf0dfb4ea5, alterId: 0, cipher: auto, tls: false, network: http, http-opts: {method: GET, path: [/]}, udp: true}
-  - {name: 57, server: 216.24.57.1, port: 443, type: trojan, password: humanity, sni: www.ignitelimit.com, skip-cert-verify: true, network: ws, ws-opts: {path: /assignment, headers: {Host: www.ignitelimit.com}}, udp: true}
+  - {name: "🇭🇰 [ext:NoMoreWalls] 🇭🇰 香港|@ripaojiedian", server: v10.hdacd.com, port: 30807, type: vmess, uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484, alterId: 2, cipher: auto, tls: false, udp: true}
+  - {name: 🇭🇰 HK 42, server: 103.236.66.4, port: 10001, type: ss, cipher: aes-256-gcm, password: Butterfly123@qwe9527, udp: true}
+  - {name: 🇭🇰 HK 43, server: 112.28.141.77, port: 10006, type: ss, cipher: aes-256-gcm, password: Butterfly123@qwe9527, udp: true}
+  - {name: 🇭🇰 HK 44, server: 18.142.250.141, port: 7674, type: trojan, password: BxceQaOe, sni: t.me%2Fripaojiedian, skip-cert-verify: true, udp: true}
+  - {name: 🇭🇰 HK 45, server: 35.78.206.14, port: 2944, type: trojan, password: BxceQaOe, sni: t.me%2Fripaojiedian, skip-cert-verify: true, udp: true}
+  - {name: 🇯🇵 JP 46, server: 18.167.96.176, port: 9408, type: trojan, password: BxceQaOe, sni: t.me%252Fripaojiedian, skip-cert-verify: true, udp: true}
+  - {name: 🇯🇵 JP 47, server: 103.236.66.4, port: 40001, type: ss, cipher: aes-256-gcm, password: Butterfly123@qwe9527, udp: true}
+  - {name: 🇯🇵 JP 48, server: 103.236.66.4, port: 40002, type: ss, cipher: aes-256-gcm, password: Butterfly123@qwe9527, udp: true}
+  - {name: 🇸🇬 SG 49, server: 95.40.28.75, port: 9149, type: trojan, password: BxceQaOe, sni: t.me%252Fripaojiedian, skip-cert-verify: true, udp: true}
+  - {name: 🇺🇸 US 50, server: 103.236.66.4, port: 50003, type: ss, cipher: aes-256-gcm, password: Butterfly123@qwe9527, udp: true}
+  - {name: 🇺🇸 US 51, server: 103.236.66.4, port: 50001, type: ss, cipher: aes-256-gcm, password: Butterfly123@qwe9527, udp: true}
+  - {name: 🇺🇸 US 52, server: 18.167.96.176, port: 52770, type: trojan, password: BxceQaOe, sni: t.me%2Fripaojiedian, skip-cert-verify: true, udp: true}
+  - {name: 🇨🇳 TW 53, server: 36.33.35.105, port: 30001, type: ss, cipher: aes-256-gcm, password: Butterfly123@qwe9527, udp: true}
+  - {name: 🇸🇬 SG 54, server: cn08.somethingstranges.com, port: 8211, type: ss, cipher: chacha20-ietf, password: passwd, udp: true}
+  - {name: 🇸🇬 SG 55, server: cn07.somethingstranges.com, port: 8206, type: ss, cipher: chacha20-ietf, password: passwd, udp: true}
+  - {name: 🇩🇪 DE 56, server: 176.34.158.52, port: 443, type: ss, cipher: aes-256-cfb, password: amazonskr05, udp: true}
+  - {name: "🇭🇰 [ext:FreeNodes] 🇭🇰_HK_中国香港", server: v10.zgtfqs.click, port: 30807, type: vmess, uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484, alterId: 2, cipher: auto, tls: false, udp: true}
   - {name: 58, server: www.shopify.com, port: 443, type: trojan, password: 47fcef29-ab4e-4aa6-932b-d95a18f28a4e, sni: swjsb.1f1v.t8t.hh.vavava.kdns.fr, skip-cert-verify: true, network: ws, ws-opts: {path: "/?ed=2560", headers: {Host: swjsb.1f1v.t8t.hh.vavava.kdns.fr}}, udp: true}
-  - {name: 🇩🇪 DE 59, server: render.com, port: 443, type: trojan, password: humanity, sni: www.ignitelimit.com, skip-cert-verify: true, network: ws, ws-opts: {path: /assignment, headers: {Host: www.ignitelimit.com}}, udp: true}
-  - {name: 60, server: 45.192.242.201, port: 8888, type: socks5, username: hanbaocloud, password: hanbaocloud, udp: true}
-  - {name: 61, server: 18.133.240.229, port: 443, type: ss, cipher: aes-256-cfb, password: amazonskr05, udp: true}
-  - {name: 🇮🇳 IN 62, server: m.cnmjin.net, port: 16632, type: vmess, uuid: d7e9f3c3-57c6-457e-b10f-df27907ef081, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /, headers: {Host: 18a598fcab3909734096beb9fe7bc5b4.mobgslb.tbcache.com}}, udp: true}
-  - {name: 63, server: 95.170.13.47, port: 65443, type: ss, cipher: aes-256-cfb, password: 7eadc6dbe2ae, udp: true}
-  - {name: 🇮🇳 IN 64, server: cn07.somethingstranges.com, port: 8206, type: ss, cipher: chacha20-ietf, password: passwd, plugin: obfs, plugin-opts: {mode: http, host: 37949-LD4JNZAf.download.microsoft.com}, udp: true}
-  - {name: 65, server: 121.46.230.233, port: 65443, type: ss, cipher: aes-256-cfb, password: 7eadc6dbe2ae, udp: true}
-  - {name: 🇮🇳 IN 66, server: cn08.somethingstranges.com, port: 8211, type: ss, cipher: chacha20-ietf, password: passwd, plugin: obfs, plugin-opts: {mode: http, host: 37949-LD4JNZAf.download.microsoft.com}, udp: true}
-  - {name: 67, server: youxuan.cf.090227.xyz, port: 80, type: ss, cipher: aes-128-gcm, password: 47fcef29-ab4e-4aa6-932b-d95a18f28a4e, udp: true}
+  - {name: 59, server: 45.192.242.201, port: 8888, type: socks5, username: hanbaocloud, password: hanbaocloud, udp: true}
+  - {name: 60, server: youxuan.cf.090227.xyz, port: 80, type: ss, cipher: aes-128-gcm, password: 47fcef29-ab4e-4aa6-932b-d95a18f28a4e, udp: true}
 proxy-groups:
   - name: 🔰 节点选择
     type: select
@@ -76,7 +69,7 @@ proxy-groups:
       - ♻️ 自动选择
       - 🎯 全球直连
       - 🇺🇸 US 01
-      - 🇺🇸 US 02
+      - 🇫🇷 FR 02
       - 🇺🇸 US 03
       - 🇺🇸 US 04
       - 🇺🇸 US 05
@@ -89,63 +82,56 @@ proxy-groups:
       - 🇺🇸 US 12
       - 🇺🇸 US 13
       - 🇺🇸 US 14
-      - 🇺🇸 US 15
-      - 🇺🇸 US 16
-      - 🇺🇸 US 18
-      - 🇩🇪 DE 19
-      - 🇩🇪 DE 20
-      - "[ext:FreeNodes] 🇨🇳_CN_中国"
-      - 🇬🇧 UK 22
+      - 🇨🇦 CA 15
+      - 🇩🇪 DE 16
+      - 🇩🇪 DE 17
+      - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国
+      - 🇬🇧 UK 20
+      - 🇩🇪 DE 21
+      - 🇺🇸 US 22
       - IE 23
-      - 🇭🇰 [ext:FreeNodes] 🇭🇰_HK_中国香港
-      - 🇩🇪 DE 25
-      - 🇩🇪 DE 26
-      - 🇺🇸 US 27
+      - 🇺🇸 US 24
+      - "[ext:NoMoreWalls] 🇬🇧GB_8|4.6MB/s"
+      - 🇰🇷 KR 26
+      - 🇩🇪 DE 27
       - 🇩🇪 DE 28
-      - 🇺🇸 US 29
-      - 🇬🇧 UK 30
-      - 🇭🇰 [ext:NoMoreWalls] 🇭🇰 香港|@ripaojiedian
+      - "[ext:FreeNodes] 🇨🇳_CN_中国"
+      - 🇺🇸 US 30
+      - 🇩🇪 DE 31
+      - 🇺🇸 US 32
+      - "[ext:NoMoreWalls] 🇭🇰HK_1|3.2MB/s"
+      - "[ext:NoMoreWalls] 🇯🇵JP_2|3.6MB/s"
+      - 🇺🇸 US 35
+      - "[ext:NoMoreWalls] 🇸🇬SG_1|6.0MB/s"
+      - 🇸🇬 [ext:FreeNodes] 🇸🇬_SG_新加坡->🇺🇸_US_美国
       - 🇫🇷 [ext:FreeNodes] 🇨🇳_CN_中国->🇫🇷_FR_法国
-      - "[ext:NoMoreWalls] 🇺🇸US_1|3.6MB/s"
-      - "[ext:NoMoreWalls] 🇭🇰HK_1|3.1MB/s"
-      - 🇸🇬 [ext:FreeNodes] 🇨🇳_CN_中国->🇸🇬_SG_新加坡
-      - 🇸🇬 SG 38
-      - 🇸🇬 SG 39
-      - 🇯🇵 JP 40
-      - 🇺🇸 US 41
-      - 🇰🇷 KR 42
-      - 🇩🇪 DE 43
+      - 🇭🇰 [ext:NoMoreWalls] 🇭🇰 香港|@ripaojiedian
+      - 🇭🇰 HK 42
+      - 🇭🇰 HK 43
       - 🇭🇰 HK 44
       - 🇭🇰 HK 45
-      - 🇭🇰 HK 46
-      - 🇭🇰 HK 47
+      - 🇯🇵 JP 46
+      - 🇯🇵 JP 47
       - 🇯🇵 JP 48
-      - 🇯🇵 JP 49
-      - 🇯🇵 JP 50
-      - 🇸🇬 SG 51
+      - 🇸🇬 SG 49
+      - 🇺🇸 US 50
+      - 🇺🇸 US 51
       - 🇺🇸 US 52
-      - 🇺🇸 US 53
-      - 🇺🇸 US 54
-      - 🇨🇳 TW 55
-      - "[ext:NoMoreWalls] 🇺🇸US_4|4.0MB/s"
-      - 57
+      - 🇨🇳 TW 53
+      - 🇸🇬 SG 54
+      - 🇸🇬 SG 55
+      - 🇩🇪 DE 56
+      - 🇭🇰 [ext:FreeNodes] 🇭🇰_HK_中国香港
       - 58
-      - 🇩🇪 DE 59
+      - 59
       - 60
-      - 61
-      - 🇮🇳 IN 62
-      - 63
-      - 🇮🇳 IN 64
-      - 65
-      - 🇮🇳 IN 66
-      - 67
   - name: ♻️ 自动选择
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 300
     proxies:
       - 🇺🇸 US 01
-      - 🇺🇸 US 02
+      - 🇫🇷 FR 02
       - 🇺🇸 US 03
       - 🇺🇸 US 04
       - 🇺🇸 US 05
@@ -158,56 +144,49 @@ proxy-groups:
       - 🇺🇸 US 12
       - 🇺🇸 US 13
       - 🇺🇸 US 14
-      - 🇺🇸 US 15
-      - 🇺🇸 US 16
-      - 🇺🇸 US 18
-      - 🇩🇪 DE 19
-      - 🇩🇪 DE 20
-      - "[ext:FreeNodes] 🇨🇳_CN_中国"
-      - 🇬🇧 UK 22
+      - 🇨🇦 CA 15
+      - 🇩🇪 DE 16
+      - 🇩🇪 DE 17
+      - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国
+      - 🇬🇧 UK 20
+      - 🇩🇪 DE 21
+      - 🇺🇸 US 22
       - IE 23
-      - 🇭🇰 [ext:FreeNodes] 🇭🇰_HK_中国香港
-      - 🇩🇪 DE 25
-      - 🇩🇪 DE 26
-      - 🇺🇸 US 27
+      - 🇺🇸 US 24
+      - "[ext:NoMoreWalls] 🇬🇧GB_8|4.6MB/s"
+      - 🇰🇷 KR 26
+      - 🇩🇪 DE 27
       - 🇩🇪 DE 28
-      - 🇺🇸 US 29
-      - 🇬🇧 UK 30
-      - 🇭🇰 [ext:NoMoreWalls] 🇭🇰 香港|@ripaojiedian
+      - "[ext:FreeNodes] 🇨🇳_CN_中国"
+      - 🇺🇸 US 30
+      - 🇩🇪 DE 31
+      - 🇺🇸 US 32
+      - "[ext:NoMoreWalls] 🇭🇰HK_1|3.2MB/s"
+      - "[ext:NoMoreWalls] 🇯🇵JP_2|3.6MB/s"
+      - 🇺🇸 US 35
+      - "[ext:NoMoreWalls] 🇸🇬SG_1|6.0MB/s"
+      - 🇸🇬 [ext:FreeNodes] 🇸🇬_SG_新加坡->🇺🇸_US_美国
       - 🇫🇷 [ext:FreeNodes] 🇨🇳_CN_中国->🇫🇷_FR_法国
-      - "[ext:NoMoreWalls] 🇺🇸US_1|3.6MB/s"
-      - "[ext:NoMoreWalls] 🇭🇰HK_1|3.1MB/s"
-      - 🇸🇬 [ext:FreeNodes] 🇨🇳_CN_中国->🇸🇬_SG_新加坡
-      - 🇸🇬 SG 38
-      - 🇸🇬 SG 39
-      - 🇯🇵 JP 40
-      - 🇺🇸 US 41
-      - 🇰🇷 KR 42
-      - 🇩🇪 DE 43
+      - 🇭🇰 [ext:NoMoreWalls] 🇭🇰 香港|@ripaojiedian
+      - 🇭🇰 HK 42
+      - 🇭🇰 HK 43
       - 🇭🇰 HK 44
       - 🇭🇰 HK 45
-      - 🇭🇰 HK 46
-      - 🇭🇰 HK 47
+      - 🇯🇵 JP 46
+      - 🇯🇵 JP 47
       - 🇯🇵 JP 48
-      - 🇯🇵 JP 49
-      - 🇯🇵 JP 50
-      - 🇸🇬 SG 51
+      - 🇸🇬 SG 49
+      - 🇺🇸 US 50
+      - 🇺🇸 US 51
       - 🇺🇸 US 52
-      - 🇺🇸 US 53
-      - 🇺🇸 US 54
-      - 🇨🇳 TW 55
-      - "[ext:NoMoreWalls] 🇺🇸US_4|4.0MB/s"
-      - 57
+      - 🇨🇳 TW 53
+      - 🇸🇬 SG 54
+      - 🇸🇬 SG 55
+      - 🇩🇪 DE 56
+      - 🇭🇰 [ext:FreeNodes] 🇭🇰_HK_中国香港
       - 58
-      - 🇩🇪 DE 59
+      - 59
       - 60
-      - 61
-      - 🇮🇳 IN 62
-      - 63
-      - 🇮🇳 IN 64
-      - 65
-      - 🇮🇳 IN 66
-      - 67
   - name: 🌍 国外媒体
     type: select
     proxies:
@@ -215,7 +194,7 @@ proxy-groups:
       - ♻️ 自动选择
       - 🎯 全球直连
       - 🇺🇸 US 01
-      - 🇺🇸 US 02
+      - 🇫🇷 FR 02
       - 🇺🇸 US 03
       - 🇺🇸 US 04
       - 🇺🇸 US 05
@@ -228,62 +207,55 @@ proxy-groups:
       - 🇺🇸 US 12
       - 🇺🇸 US 13
       - 🇺🇸 US 14
-      - 🇺🇸 US 15
-      - 🇺🇸 US 16
-      - 🇺🇸 US 18
-      - 🇩🇪 DE 19
-      - 🇩🇪 DE 20
-      - "[ext:FreeNodes] 🇨🇳_CN_中国"
-      - 🇬🇧 UK 22
+      - 🇨🇦 CA 15
+      - 🇩🇪 DE 16
+      - 🇩🇪 DE 17
+      - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国
+      - 🇬🇧 UK 20
+      - 🇩🇪 DE 21
+      - 🇺🇸 US 22
       - IE 23
-      - 🇭🇰 [ext:FreeNodes] 🇭🇰_HK_中国香港
-      - 🇩🇪 DE 25
-      - 🇩🇪 DE 26
-      - 🇺🇸 US 27
+      - 🇺🇸 US 24
+      - "[ext:NoMoreWalls] 🇬🇧GB_8|4.6MB/s"
+      - 🇰🇷 KR 26
+      - 🇩🇪 DE 27
       - 🇩🇪 DE 28
-      - 🇺🇸 US 29
-      - 🇬🇧 UK 30
-      - 🇭🇰 [ext:NoMoreWalls] 🇭🇰 香港|@ripaojiedian
+      - "[ext:FreeNodes] 🇨🇳_CN_中国"
+      - 🇺🇸 US 30
+      - 🇩🇪 DE 31
+      - 🇺🇸 US 32
+      - "[ext:NoMoreWalls] 🇭🇰HK_1|3.2MB/s"
+      - "[ext:NoMoreWalls] 🇯🇵JP_2|3.6MB/s"
+      - 🇺🇸 US 35
+      - "[ext:NoMoreWalls] 🇸🇬SG_1|6.0MB/s"
+      - 🇸🇬 [ext:FreeNodes] 🇸🇬_SG_新加坡->🇺🇸_US_美国
       - 🇫🇷 [ext:FreeNodes] 🇨🇳_CN_中国->🇫🇷_FR_法国
-      - "[ext:NoMoreWalls] 🇺🇸US_1|3.6MB/s"
-      - "[ext:NoMoreWalls] 🇭🇰HK_1|3.1MB/s"
-      - 🇸🇬 [ext:FreeNodes] 🇨🇳_CN_中国->🇸🇬_SG_新加坡
-      - 🇸🇬 SG 38
-      - 🇸🇬 SG 39
-      - 🇯🇵 JP 40
-      - 🇺🇸 US 41
-      - 🇰🇷 KR 42
-      - 🇩🇪 DE 43
+      - 🇭🇰 [ext:NoMoreWalls] 🇭🇰 香港|@ripaojiedian
+      - 🇭🇰 HK 42
+      - 🇭🇰 HK 43
       - 🇭🇰 HK 44
       - 🇭🇰 HK 45
-      - 🇭🇰 HK 46
-      - 🇭🇰 HK 47
+      - 🇯🇵 JP 46
+      - 🇯🇵 JP 47
       - 🇯🇵 JP 48
-      - 🇯🇵 JP 49
-      - 🇯🇵 JP 50
-      - 🇸🇬 SG 51
+      - 🇸🇬 SG 49
+      - 🇺🇸 US 50
+      - 🇺🇸 US 51
       - 🇺🇸 US 52
-      - 🇺🇸 US 53
-      - 🇺🇸 US 54
-      - 🇨🇳 TW 55
-      - "[ext:NoMoreWalls] 🇺🇸US_4|4.0MB/s"
-      - 57
+      - 🇨🇳 TW 53
+      - 🇸🇬 SG 54
+      - 🇸🇬 SG 55
+      - 🇩🇪 DE 56
+      - 🇭🇰 [ext:FreeNodes] 🇭🇰_HK_中国香港
       - 58
-      - 🇩🇪 DE 59
+      - 59
       - 60
-      - 61
-      - 🇮🇳 IN 62
-      - 63
-      - 🇮🇳 IN 64
-      - 65
-      - 🇮🇳 IN 66
-      - 67
   - name: 🌏 国内媒体
     type: select
     proxies:
       - 🎯 全球直连
-      - 🇭🇰 [ext:FreeNodes] 🇭🇰_HK_中国香港
       - 🇭🇰 [ext:NoMoreWalls] 🇭🇰 香港|@ripaojiedian
+      - 🇭🇰 [ext:FreeNodes] 🇭🇰_HK_中国香港
       - 🔰 节点选择
   - name: Ⓜ️ 微软服务
     type: select
@@ -291,7 +263,7 @@ proxy-groups:
       - 🎯 全球直连
       - 🔰 节点选择
       - 🇺🇸 US 01
-      - 🇺🇸 US 02
+      - 🇫🇷 FR 02
       - 🇺🇸 US 03
       - 🇺🇸 US 04
       - 🇺🇸 US 05
@@ -304,63 +276,56 @@ proxy-groups:
       - 🇺🇸 US 12
       - 🇺🇸 US 13
       - 🇺🇸 US 14
-      - 🇺🇸 US 15
-      - 🇺🇸 US 16
-      - 🇺🇸 US 18
-      - 🇩🇪 DE 19
-      - 🇩🇪 DE 20
-      - "[ext:FreeNodes] 🇨🇳_CN_中国"
-      - 🇬🇧 UK 22
+      - 🇨🇦 CA 15
+      - 🇩🇪 DE 16
+      - 🇩🇪 DE 17
+      - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国
+      - 🇬🇧 UK 20
+      - 🇩🇪 DE 21
+      - 🇺🇸 US 22
       - IE 23
-      - 🇭🇰 [ext:FreeNodes] 🇭🇰_HK_中国香港
-      - 🇩🇪 DE 25
-      - 🇩🇪 DE 26
-      - 🇺🇸 US 27
+      - 🇺🇸 US 24
+      - "[ext:NoMoreWalls] 🇬🇧GB_8|4.6MB/s"
+      - 🇰🇷 KR 26
+      - 🇩🇪 DE 27
       - 🇩🇪 DE 28
-      - 🇺🇸 US 29
-      - 🇬🇧 UK 30
-      - 🇭🇰 [ext:NoMoreWalls] 🇭🇰 香港|@ripaojiedian
+      - "[ext:FreeNodes] 🇨🇳_CN_中国"
+      - 🇺🇸 US 30
+      - 🇩🇪 DE 31
+      - 🇺🇸 US 32
+      - "[ext:NoMoreWalls] 🇭🇰HK_1|3.2MB/s"
+      - "[ext:NoMoreWalls] 🇯🇵JP_2|3.6MB/s"
+      - 🇺🇸 US 35
+      - "[ext:NoMoreWalls] 🇸🇬SG_1|6.0MB/s"
+      - 🇸🇬 [ext:FreeNodes] 🇸🇬_SG_新加坡->🇺🇸_US_美国
       - 🇫🇷 [ext:FreeNodes] 🇨🇳_CN_中国->🇫🇷_FR_法国
-      - "[ext:NoMoreWalls] 🇺🇸US_1|3.6MB/s"
-      - "[ext:NoMoreWalls] 🇭🇰HK_1|3.1MB/s"
-      - 🇸🇬 [ext:FreeNodes] 🇨🇳_CN_中国->🇸🇬_SG_新加坡
-      - 🇸🇬 SG 38
-      - 🇸🇬 SG 39
-      - 🇯🇵 JP 40
-      - 🇺🇸 US 41
-      - 🇰🇷 KR 42
-      - 🇩🇪 DE 43
+      - 🇭🇰 [ext:NoMoreWalls] 🇭🇰 香港|@ripaojiedian
+      - 🇭🇰 HK 42
+      - 🇭🇰 HK 43
       - 🇭🇰 HK 44
       - 🇭🇰 HK 45
-      - 🇭🇰 HK 46
-      - 🇭🇰 HK 47
+      - 🇯🇵 JP 46
+      - 🇯🇵 JP 47
       - 🇯🇵 JP 48
-      - 🇯🇵 JP 49
-      - 🇯🇵 JP 50
-      - 🇸🇬 SG 51
+      - 🇸🇬 SG 49
+      - 🇺🇸 US 50
+      - 🇺🇸 US 51
       - 🇺🇸 US 52
-      - 🇺🇸 US 53
-      - 🇺🇸 US 54
-      - 🇨🇳 TW 55
-      - "[ext:NoMoreWalls] 🇺🇸US_4|4.0MB/s"
-      - 57
+      - 🇨🇳 TW 53
+      - 🇸🇬 SG 54
+      - 🇸🇬 SG 55
+      - 🇩🇪 DE 56
+      - 🇭🇰 [ext:FreeNodes] 🇭🇰_HK_中国香港
       - 58
-      - 🇩🇪 DE 59
+      - 59
       - 60
-      - 61
-      - 🇮🇳 IN 62
-      - 63
-      - 🇮🇳 IN 64
-      - 65
-      - 🇮🇳 IN 66
-      - 67
   - name: 📲 电报信息
     type: select
     proxies:
       - 🔰 节点选择
       - 🎯 全球直连
       - 🇺🇸 US 01
-      - 🇺🇸 US 02
+      - 🇫🇷 FR 02
       - 🇺🇸 US 03
       - 🇺🇸 US 04
       - 🇺🇸 US 05
@@ -373,56 +338,49 @@ proxy-groups:
       - 🇺🇸 US 12
       - 🇺🇸 US 13
       - 🇺🇸 US 14
-      - 🇺🇸 US 15
-      - 🇺🇸 US 16
-      - 🇺🇸 US 18
-      - 🇩🇪 DE 19
-      - 🇩🇪 DE 20
-      - "[ext:FreeNodes] 🇨🇳_CN_中国"
-      - 🇬🇧 UK 22
+      - 🇨🇦 CA 15
+      - 🇩🇪 DE 16
+      - 🇩🇪 DE 17
+      - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国
+      - 🇬🇧 UK 20
+      - 🇩🇪 DE 21
+      - 🇺🇸 US 22
       - IE 23
-      - 🇭🇰 [ext:FreeNodes] 🇭🇰_HK_中国香港
-      - 🇩🇪 DE 25
-      - 🇩🇪 DE 26
-      - 🇺🇸 US 27
+      - 🇺🇸 US 24
+      - "[ext:NoMoreWalls] 🇬🇧GB_8|4.6MB/s"
+      - 🇰🇷 KR 26
+      - 🇩🇪 DE 27
       - 🇩🇪 DE 28
-      - 🇺🇸 US 29
-      - 🇬🇧 UK 30
-      - 🇭🇰 [ext:NoMoreWalls] 🇭🇰 香港|@ripaojiedian
+      - "[ext:FreeNodes] 🇨🇳_CN_中国"
+      - 🇺🇸 US 30
+      - 🇩🇪 DE 31
+      - 🇺🇸 US 32
+      - "[ext:NoMoreWalls] 🇭🇰HK_1|3.2MB/s"
+      - "[ext:NoMoreWalls] 🇯🇵JP_2|3.6MB/s"
+      - 🇺🇸 US 35
+      - "[ext:NoMoreWalls] 🇸🇬SG_1|6.0MB/s"
+      - 🇸🇬 [ext:FreeNodes] 🇸🇬_SG_新加坡->🇺🇸_US_美国
       - 🇫🇷 [ext:FreeNodes] 🇨🇳_CN_中国->🇫🇷_FR_法国
-      - "[ext:NoMoreWalls] 🇺🇸US_1|3.6MB/s"
-      - "[ext:NoMoreWalls] 🇭🇰HK_1|3.1MB/s"
-      - 🇸🇬 [ext:FreeNodes] 🇨🇳_CN_中国->🇸🇬_SG_新加坡
-      - 🇸🇬 SG 38
-      - 🇸🇬 SG 39
-      - 🇯🇵 JP 40
-      - 🇺🇸 US 41
-      - 🇰🇷 KR 42
-      - 🇩🇪 DE 43
+      - 🇭🇰 [ext:NoMoreWalls] 🇭🇰 香港|@ripaojiedian
+      - 🇭🇰 HK 42
+      - 🇭🇰 HK 43
       - 🇭🇰 HK 44
       - 🇭🇰 HK 45
-      - 🇭🇰 HK 46
-      - 🇭🇰 HK 47
+      - 🇯🇵 JP 46
+      - 🇯🇵 JP 47
       - 🇯🇵 JP 48
-      - 🇯🇵 JP 49
-      - 🇯🇵 JP 50
-      - 🇸🇬 SG 51
+      - 🇸🇬 SG 49
+      - 🇺🇸 US 50
+      - 🇺🇸 US 51
       - 🇺🇸 US 52
-      - 🇺🇸 US 53
-      - 🇺🇸 US 54
-      - 🇨🇳 TW 55
-      - "[ext:NoMoreWalls] 🇺🇸US_4|4.0MB/s"
-      - 57
+      - 🇨🇳 TW 53
+      - 🇸🇬 SG 54
+      - 🇸🇬 SG 55
+      - 🇩🇪 DE 56
+      - 🇭🇰 [ext:FreeNodes] 🇭🇰_HK_中国香港
       - 58
-      - 🇩🇪 DE 59
+      - 59
       - 60
-      - 61
-      - 🇮🇳 IN 62
-      - 63
-      - 🇮🇳 IN 64
-      - 65
-      - 🇮🇳 IN 66
-      - 67
   - name: 🍎 苹果服务
     type: select
     proxies:
@@ -430,7 +388,7 @@ proxy-groups:
       - 🎯 全球直连
       - ♻️ 自动选择
       - 🇺🇸 US 01
-      - 🇺🇸 US 02
+      - 🇫🇷 FR 02
       - 🇺🇸 US 03
       - 🇺🇸 US 04
       - 🇺🇸 US 05
@@ -443,56 +401,49 @@ proxy-groups:
       - 🇺🇸 US 12
       - 🇺🇸 US 13
       - 🇺🇸 US 14
-      - 🇺🇸 US 15
-      - 🇺🇸 US 16
-      - 🇺🇸 US 18
-      - 🇩🇪 DE 19
-      - 🇩🇪 DE 20
-      - "[ext:FreeNodes] 🇨🇳_CN_中国"
-      - 🇬🇧 UK 22
+      - 🇨🇦 CA 15
+      - 🇩🇪 DE 16
+      - 🇩🇪 DE 17
+      - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国
+      - 🇬🇧 UK 20
+      - 🇩🇪 DE 21
+      - 🇺🇸 US 22
       - IE 23
-      - 🇭🇰 [ext:FreeNodes] 🇭🇰_HK_中国香港
-      - 🇩🇪 DE 25
-      - 🇩🇪 DE 26
-      - 🇺🇸 US 27
+      - 🇺🇸 US 24
+      - "[ext:NoMoreWalls] 🇬🇧GB_8|4.6MB/s"
+      - 🇰🇷 KR 26
+      - 🇩🇪 DE 27
       - 🇩🇪 DE 28
-      - 🇺🇸 US 29
-      - 🇬🇧 UK 30
-      - 🇭🇰 [ext:NoMoreWalls] 🇭🇰 香港|@ripaojiedian
+      - "[ext:FreeNodes] 🇨🇳_CN_中国"
+      - 🇺🇸 US 30
+      - 🇩🇪 DE 31
+      - 🇺🇸 US 32
+      - "[ext:NoMoreWalls] 🇭🇰HK_1|3.2MB/s"
+      - "[ext:NoMoreWalls] 🇯🇵JP_2|3.6MB/s"
+      - 🇺🇸 US 35
+      - "[ext:NoMoreWalls] 🇸🇬SG_1|6.0MB/s"
+      - 🇸🇬 [ext:FreeNodes] 🇸🇬_SG_新加坡->🇺🇸_US_美国
       - 🇫🇷 [ext:FreeNodes] 🇨🇳_CN_中国->🇫🇷_FR_法国
-      - "[ext:NoMoreWalls] 🇺🇸US_1|3.6MB/s"
-      - "[ext:NoMoreWalls] 🇭🇰HK_1|3.1MB/s"
-      - 🇸🇬 [ext:FreeNodes] 🇨🇳_CN_中国->🇸🇬_SG_新加坡
-      - 🇸🇬 SG 38
-      - 🇸🇬 SG 39
-      - 🇯🇵 JP 40
-      - 🇺🇸 US 41
-      - 🇰🇷 KR 42
-      - 🇩🇪 DE 43
+      - 🇭🇰 [ext:NoMoreWalls] 🇭🇰 香港|@ripaojiedian
+      - 🇭🇰 HK 42
+      - 🇭🇰 HK 43
       - 🇭🇰 HK 44
       - 🇭🇰 HK 45
-      - 🇭🇰 HK 46
-      - 🇭🇰 HK 47
+      - 🇯🇵 JP 46
+      - 🇯🇵 JP 47
       - 🇯🇵 JP 48
-      - 🇯🇵 JP 49
-      - 🇯🇵 JP 50
-      - 🇸🇬 SG 51
+      - 🇸🇬 SG 49
+      - 🇺🇸 US 50
+      - 🇺🇸 US 51
       - 🇺🇸 US 52
-      - 🇺🇸 US 53
-      - 🇺🇸 US 54
-      - 🇨🇳 TW 55
-      - "[ext:NoMoreWalls] 🇺🇸US_4|4.0MB/s"
-      - 57
+      - 🇨🇳 TW 53
+      - 🇸🇬 SG 54
+      - 🇸🇬 SG 55
+      - 🇩🇪 DE 56
+      - 🇭🇰 [ext:FreeNodes] 🇭🇰_HK_中国香港
       - 58
-      - 🇩🇪 DE 59
+      - 59
       - 60
-      - 61
-      - 🇮🇳 IN 62
-      - 63
-      - 🇮🇳 IN 64
-      - 65
-      - 🇮🇳 IN 66
-      - 67
   - name: 🎯 全球直连
     type: select
     proxies:
@@ -509,7 +460,7 @@ proxy-groups:
       - 🎯 全球直连
       - ♻️ 自动选择
       - 🇺🇸 US 01
-      - 🇺🇸 US 02
+      - 🇫🇷 FR 02
       - 🇺🇸 US 03
       - 🇺🇸 US 04
       - 🇺🇸 US 05
@@ -522,56 +473,49 @@ proxy-groups:
       - 🇺🇸 US 12
       - 🇺🇸 US 13
       - 🇺🇸 US 14
-      - 🇺🇸 US 15
-      - 🇺🇸 US 16
-      - 🇺🇸 US 18
-      - 🇩🇪 DE 19
-      - 🇩🇪 DE 20
-      - "[ext:FreeNodes] 🇨🇳_CN_中国"
-      - 🇬🇧 UK 22
+      - 🇨🇦 CA 15
+      - 🇩🇪 DE 16
+      - 🇩🇪 DE 17
+      - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国
+      - 🇬🇧 UK 20
+      - 🇩🇪 DE 21
+      - 🇺🇸 US 22
       - IE 23
-      - 🇭🇰 [ext:FreeNodes] 🇭🇰_HK_中国香港
-      - 🇩🇪 DE 25
-      - 🇩🇪 DE 26
-      - 🇺🇸 US 27
+      - 🇺🇸 US 24
+      - "[ext:NoMoreWalls] 🇬🇧GB_8|4.6MB/s"
+      - 🇰🇷 KR 26
+      - 🇩🇪 DE 27
       - 🇩🇪 DE 28
-      - 🇺🇸 US 29
-      - 🇬🇧 UK 30
-      - 🇭🇰 [ext:NoMoreWalls] 🇭🇰 香港|@ripaojiedian
+      - "[ext:FreeNodes] 🇨🇳_CN_中国"
+      - 🇺🇸 US 30
+      - 🇩🇪 DE 31
+      - 🇺🇸 US 32
+      - "[ext:NoMoreWalls] 🇭🇰HK_1|3.2MB/s"
+      - "[ext:NoMoreWalls] 🇯🇵JP_2|3.6MB/s"
+      - 🇺🇸 US 35
+      - "[ext:NoMoreWalls] 🇸🇬SG_1|6.0MB/s"
+      - 🇸🇬 [ext:FreeNodes] 🇸🇬_SG_新加坡->🇺🇸_US_美国
       - 🇫🇷 [ext:FreeNodes] 🇨🇳_CN_中国->🇫🇷_FR_法国
-      - "[ext:NoMoreWalls] 🇺🇸US_1|3.6MB/s"
-      - "[ext:NoMoreWalls] 🇭🇰HK_1|3.1MB/s"
-      - 🇸🇬 [ext:FreeNodes] 🇨🇳_CN_中国->🇸🇬_SG_新加坡
-      - 🇸🇬 SG 38
-      - 🇸🇬 SG 39
-      - 🇯🇵 JP 40
-      - 🇺🇸 US 41
-      - 🇰🇷 KR 42
-      - 🇩🇪 DE 43
+      - 🇭🇰 [ext:NoMoreWalls] 🇭🇰 香港|@ripaojiedian
+      - 🇭🇰 HK 42
+      - 🇭🇰 HK 43
       - 🇭🇰 HK 44
       - 🇭🇰 HK 45
-      - 🇭🇰 HK 46
-      - 🇭🇰 HK 47
+      - 🇯🇵 JP 46
+      - 🇯🇵 JP 47
       - 🇯🇵 JP 48
-      - 🇯🇵 JP 49
-      - 🇯🇵 JP 50
-      - 🇸🇬 SG 51
+      - 🇸🇬 SG 49
+      - 🇺🇸 US 50
+      - 🇺🇸 US 51
       - 🇺🇸 US 52
-      - 🇺🇸 US 53
-      - 🇺🇸 US 54
-      - 🇨🇳 TW 55
-      - "[ext:NoMoreWalls] 🇺🇸US_4|4.0MB/s"
-      - 57
+      - 🇨🇳 TW 53
+      - 🇸🇬 SG 54
+      - 🇸🇬 SG 55
+      - 🇩🇪 DE 56
+      - 🇭🇰 [ext:FreeNodes] 🇭🇰_HK_中国香港
       - 58
-      - 🇩🇪 DE 59
+      - 59
       - 60
-      - 61
-      - 🇮🇳 IN 62
-      - 63
-      - 🇮🇳 IN 64
-      - 65
-      - 🇮🇳 IN 66
-      - 67
 rules:
   - DOMAIN-SUFFIX,local,🎯 全球直连
   - IP-CIDR,192.168.0.0/16,🎯 全球直连,no-resolve
