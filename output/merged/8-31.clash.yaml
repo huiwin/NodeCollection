@@ -6,152 +6,6 @@ log-level: info
 external-controller: :9090
 proxies:
 - name: '01'
-  server: 104.18.152.175
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.ignitelimit.com
-  udp: true
-- name: '02'
-  server: 104.18.152.97
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.ignitelimit.com
-  udp: true
-- name: '03'
-  server: 104.18.152.50
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.ignitelimit.com
-  udp: true
-- name: '04'
-  server: 104.16.7.70
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.ignitelimit.com
-  udp: true
-- name: '05'
-  server: 104.18.152.143
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.ignitelimit.com
-  udp: true
-- name: '06'
-  server: 104.16.174.72
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.ignitelimit.com
-  udp: true
-- name: '07'
-  server: 104.16.174.124
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.ignitelimit.com
-  udp: true
-- name: 08
-  server: 104.16.174.6
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.ignitelimit.com
-  udp: true
-- name: 09
-  server: 86.38.214.205
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.ignitelimit.com
-  udp: true
-- name: '10'
-  server: 104.18.152.210
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.ignitelimit.com
-  udp: true
-- name: '11'
-  server: 104.26.15.137
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.ignitelimit.com
-  udp: true
-- name: '12'
-  server: 104.18.152.207
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.ignitelimit.com
-  udp: true
-- name: '13'
   server: 104.21.46.3
   port: 443
   type: trojan
@@ -163,7 +17,20 @@ proxies:
     headers:
       Host: www.ignitelimit.com
   udp: true
-- name: '14'
+- name: '02'
+  server: 172.67.221.242
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.ignitelimit.com
+  udp: true
+- name: '03'
   server: 104.16.174.12
   port: 443
   type: trojan
@@ -176,8 +43,136 @@ proxies:
     headers:
       Host: www.ignitelimit.com
   udp: true
-- name: '15'
+- name: '04'
+  server: 104.16.73.213
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.ignitelimit.com
+  udp: true
+- name: '05'
+  server: 172.67.74.2
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.ignitelimit.com
+  udp: true
+- name: '06'
+  server: 104.26.14.137
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.ignitelimit.com
+  udp: true
+- name: '07'
+  server: 104.18.152.230
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.ignitelimit.com
+  udp: true
+- name: 08
+  server: 104.19.229.21
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  network: ws
+  ws-opts:
+    path: assignment
+    headers:
+      Host: www.ignitelimit.com
+  udp: true
+- name: 09
+  server: 141.101.90.101
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.ignitelimit.com
+  udp: true
+- name: '10'
+  server: 104.16.174.185
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.ignitelimit.com
+  udp: true
+- name: '11'
+  server: 104.18.152.152
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.ignitelimit.com
+  udp: true
+- name: '12'
+  server: 104.18.152.140
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.ignitelimit.com
+  udp: true
+- name: '13'
+  server: 104.18.152.207
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.ignitelimit.com
+  udp: true
+- name: '14'
   server: 35.182.226.121
+  port: 443
+  type: ss
+  cipher: aes-256-cfb
+  password: amazonskr05
+  udp: true
+- name: '15'
+  server: 3.96.124.46
   port: 443
   type: ss
   cipher: aes-256-cfb
@@ -191,7 +186,7 @@ proxies:
   password: amazonskr05
   udp: true
 - name: '17'
-  server: 3.96.124.46
+  server: 34.241.245.82
   port: 443
   type: ss
   cipher: aes-256-cfb
@@ -219,27 +214,20 @@ proxies:
   password: amazonskr05
   udp: true
 - name: '20'
-  server: 34.241.245.82
-  port: 443
-  type: ss
-  cipher: aes-256-cfb
-  password: amazonskr05
-  udp: true
-- name: '21'
   server: 35.176.118.152
   port: 443
   type: ss
   cipher: aes-256-cfb
   password: amazonskr05
   udp: true
-- name: '22'
+- name: '21'
   server: 95.170.13.47
   port: 65443
   type: ss
   cipher: aes-256-cfb
   password: 7eadc6dbe2ae
   udp: true
-- name: '23'
+- name: '22'
   server: us003.421421.xyz
   port: 20230
   type: trojan
@@ -252,7 +240,313 @@ proxies:
     headers:
       Host: www.alibaba.com
   udp: true
+- name: '23'
+  server: guanwang.awsno.com
+  port: 443
+  type: vmess
+  uuid: 6a89a215-22bf-4bd7-9642-b95b2e09583a
+  alterId: 0
+  cipher: auto
+  tls: true
+  udp: true
 - name: '24'
+  server: www.speedtest.org
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.ignitelimit.com
+  udp: true
+- name: '25'
+  server: 121.46.230.138
+  port: 65443
+  type: ss
+  cipher: aes-256-cfb
+  password: 7eadc6dbe2ae
+  udp: true
+- name: '26'
+  server: 121.46.230.233
+  port: 65443
+  type: ss
+  cipher: aes-256-cfb
+  password: 7eadc6dbe2ae
+  udp: true
+- name: '27'
+  server: 112.132.215.108
+  port: 50002
+  type: vmess
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+  alterId: 64
+  cipher: auto
+  tls: false
+  udp: true
+- name: '28'
+  server: 103.169.67.34
+  port: 65443
+  type: ss
+  cipher: aes-256-cfb
+  password: 7eadc6dbe2ae
+  udp: true
+- name: '29'
+  server: v10.zgtfqs.click
+  port: 30807
+  type: vmess
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
+  cipher: auto
+  tls: false
+  udp: true
+- name: '30'
+  server: 118.107.222.231
+  port: 65443
+  type: ss
+  cipher: aes-256-cfb
+  password: 7eadc6dbe2ae
+  udp: true
+- name: '31'
+  server: v4.hdacd.com
+  port: 30804
+  type: vmess
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
+  cipher: auto
+  tls: false
+  udp: true
+- name: '32'
+  server: v35.hdacd.com
+  port: 30835
+  type: vmess
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
+  cipher: auto
+  tls: false
+  udp: true
+- name: '33'
+  server: p4.cnb.linuxlh.xin
+  port: 16617
+  type: vmess
+  uuid: 6ee2a7ba-cd92-427f-ac4f-2f8d284e316c
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: 5b22547ba5cc9b83a7a9534b4a7cf9ea.mobgslb.tbcache.com
+  udp: true
+- name: '34'
+  server: v45.hdacd.com
+  port: 30845
+  type: vmess
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
+  cipher: auto
+  tls: false
+  udp: true
+- name: '35'
+  server: v10.hdacd.com
+  port: 30807
+  type: vmess
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
+  cipher: auto
+  tls: false
+  udp: true
+- name: '36'
+  server: v29.hdacd.com
+  port: 30829
+  type: vmess
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
+  cipher: auto
+  tls: false
+  udp: true
+- name: '37'
+  server: 121.46.230.232
+  port: 65443
+  type: ss
+  cipher: aes-256-cfb
+  password: 7eadc6dbe2ae
+  udp: true
+- name: '38'
+  server: 63.180.254.10
+  port: 443
+  type: ss
+  cipher: aes-256-cfb
+  password: amazonskr05
+  udp: true
+- name: '39'
+  server: 103.236.66.4
+  port: 10001
+  type: ss
+  cipher: aes-256-gcm
+  password: Butterfly123@qwe9527
+  udp: true
+- name: '40'
+  server: 112.28.141.77
+  port: 10006
+  type: ss
+  cipher: aes-256-gcm
+  password: Butterfly123@qwe9527
+  udp: true
+- name: '41'
+  server: 95.40.24.249
+  port: 53001
+  type: trojan
+  password: BxceQaOe
+  sni: t.me%2Fripaojiedian
+  skip-cert-verify: true
+  udp: true
+- name: '42'
+  server: 54.168.189
+  port: 1103
+  type: trojan
+  password: BxceQaOe
+  sni: t.me%2Fripaojiedian
+  skip-cert-verify: true
+  udp: true
+- name: '43'
+  server: 18.163.11126
+  port: 9408
+  type: trojan
+  password: BxceQaOe
+  sni: t.me%252Fripaojiedian
+  skip-cert-verify: true
+  udp: true
+- name: '44'
+  server: 103.236.66.4
+  port: 40001
+  type: ss
+  cipher: aes-256-gcm
+  password: Butterfly123@qwe9527
+  udp: true
+- name: '45'
+  server: 103.236.66.4
+  port: 40002
+  type: ss
+  cipher: aes-256-gcm
+  password: Butterfly123@qwe9527
+  udp: true
+- name: '46'
+  server: 54.255.201.71
+  port: 41421
+  type: trojan
+  password: BxceQaOe
+  sni: t.me%252Fripaojiedian
+  skip-cert-verify: true
+  udp: true
+- name: '47'
+  server: 103.236.66.4
+  port: 50003
+  type: ss
+  cipher: aes-256-gcm
+  password: Butterfly123@qwe9527
+  udp: true
+- name: '48'
+  server: 103.236.66.4
+  port: 50001
+  type: ss
+  cipher: aes-256-gcm
+  password: Butterfly123@qwe9527
+  udp: true
+- name: '49'
+  server: 43.198.210.207
+  port: 1431
+  type: trojan
+  password: BxceQaOe
+  sni: t.me%2Fripaojiedian
+  skip-cert-verify: true
+  udp: true
+- name: '50'
+  server: 36.33.35.105
+  port: 30001
+  type: ss
+  cipher: aes-256-gcm
+  password: Butterfly123@qwe9527
+  udp: true
+- name: '51'
+  server: 52.195.148.119
+  port: 25982
+  type: trojan
+  password: BxceQaOe
+  sni: t.me%2Fripaojiedian
+  skip-cert-verify: true
+  udp: true
+- name: '52'
+  server: 18.163.115.126
+  port: 9408
+  type: trojan
+  password: BxceQaOe
+  sni: t.me%252Fripaojiedian
+  skip-cert-verify: true
+  udp: true
+- name: '53'
+  server: 79.76.100.14
+  port: 59924
+  type: ss
+  cipher: 2022-blake3-chacha20-poly1305
+  password: kwwU9fwtA1cW+BCUvO0sabEQGskLfLt7B0aWHeJpdYo=
+  udp: true
+- name: '54'
+  server: 141.148.244.146
+  port: 45819
+  type: ss
+  cipher: 2022-blake3-chacha20-poly1305
+  password: w5pcVb0VsP2Ze6TbJAXR7ZaofRyoJn5sm0CdhBg78q4=
+  udp: true
+- name: '55'
+  server: 130.61.87.118
+  port: 59924
+  type: ss
+  cipher: 2022-blake3-chacha20-poly1305
+  password: fvf8HrzAP5nIMchC+4SuGnNzU/nWjBbpe6moSwFGzWw=
+  udp: true
+- name: '56'
+  server: 176.34.158.52
+  port: 443
+  type: ss
+  cipher: aes-256-cfb
+  password: amazonskr05
+  udp: true
+- name: '57'
+  server: 129.151.64.147
+  port: 61312
+  type: ss
+  cipher: 2022-blake3-chacha20-poly1305
+  password: YsZAgtzuuQHa9Ekc7um7AhfAhEvtiIKJw4oxCLsN3eY=
+  udp: true
+- name: '58'
+  server: 198.41.223.96
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.ignitelimit.com
+  udp: true
+- name: '59'
+  server: 104.18.152.161
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.ignitelimit.com
+  udp: true
+- name: '60'
   server: 216.24.57.7
   port: 443
   type: trojan
@@ -265,59 +559,7 @@ proxies:
     headers:
       Host: www.ignitelimit.com
   udp: true
-- name: '25'
-  server: 45.130.125.160
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.ignitelimit.com
-  udp: true
-- name: '26'
-  server: 104.18.152.207
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.ignitelimit.com
-  udp: true
-- name: '27'
-  server: 188.114.97.7
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.ignitelimit.com
-  udp: true
-- name: '28'
-  server: 86.38.214.205
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.ignitelimit.com
-  udp: true
-- name: '29'
+- name: '61'
   server: 165.215.250.14
   port: 443
   type: trojan
@@ -330,14 +572,73 @@ proxies:
     headers:
       Host: www.ignitelimit.com
   udp: true
-- name: '30'
-  server: 35.182.226.121
+- name: '62'
+  server: 15.204.247.244
+  port: 4444
+  type: ss
+  cipher: aes-256-gcm
+  password: pKEW8JPByTVTLtM
+  udp: true
+- name: '63'
+  server: 86.38.214.205
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.ignitelimit.com
+  udp: true
+- name: '64'
+  server: 188.114.97.7
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.ignitelimit.com
+  udp: true
+- name: '65'
+  server: 45.130.125.160
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.ignitelimit.com
+  udp: true
+- name: '66'
+  server: 35.182.250.193
   port: 443
   type: ss
   cipher: aes-256-cfb
   password: amazonskr05
   udp: true
-- name: '31'
+- name: '67'
+  server: www.shopify.com
+  port: 443
+  type: trojan
+  password: 47fcef29-ab4e-4aa6-932b-d95a18f28a4e
+  sni: swjsb.1f1v.t8t.hh.vavava.kdns.fr
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      Host: swjsb.1f1v.t8t.hh.vavava.kdns.fr
+  udp: true
+- name: '68'
   server: render.com
   port: 443
   type: trojan
@@ -350,29 +651,82 @@ proxies:
     headers:
       Host: www.ignitelimit.com
   udp: true
-- name: '32'
-  server: 38.246.226.240
-  port: 52080
-  type: vmess
-  uuid: 7d4bd961-230c-4b34-ab5d-05cf0dfb4ea5
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: true
-  udp: true
-- name: '33'
-  server: 35.176.118.152
-  port: 443
-  type: ss
-  cipher: aes-256-cfb
-  password: amazonskr05
-  udp: true
-- name: '34'
+- name: '69'
   server: 95.170.13.47
   port: 65443
   type: ss
   cipher: aes-256-cfb
   password: 7eadc6dbe2ae
+  udp: true
+- name: '70'
+  server: 45.192.242.201
+  port: 8888
+  type: socks5
+  username: hanbaocloud
+  password: hanbaocloud
+  udp: true
+- name: '71'
+  server: de-server-1.zelnora.ir
+  port: 1080
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: OhGXJG4nEqTN62cDDcD_8_CddrpTHn0u
+  udp: true
+- name: '72'
+  server: 103.169.67.34
+  port: 65443
+  type: ss
+  cipher: aes-256-cfb
+  password: 7eadc6dbe2ae
+  udp: true
+- name: '73'
+  server: v45.hdacd.com
+  port: 30845
+  type: vmess
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
+  cipher: auto
+  tls: false
+  skip-cert-verify: true
+  udp: true
+- name: '74'
+  server: cn07.somethingstranges.com
+  port: 8206
+  type: ss
+  cipher: chacha20-ietf
+  password: passwd
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 37949-LD4JNZAf.download.microsoft.com
+  udp: true
+- name: '75'
+  server: v29.hdacd.com
+  port: 30829
+  type: vmess
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
+  cipher: auto
+  tls: false
+  skip-cert-verify: true
+  udp: true
+- name: '76'
+  server: cn08.somethingstranges.com
+  port: 8211
+  type: ss
+  cipher: chacha20-ietf
+  password: passwd
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 37949-LD4JNZAf.download.microsoft.com
+  udp: true
+- name: '77'
+  server: youxuan.cf.090227.xyz
+  port: 80
+  type: ss
+  cipher: aes-128-gcm
+  password: 47fcef29-ab4e-4aa6-932b-d95a18f28a4e
   udp: true
 proxy-groups:
 - name: 🔰 节点选择
@@ -380,242 +734,502 @@ proxy-groups:
   proxies:
   - ♻️ 自动选择
   - 🎯 全球直连
+  - 1
   - 2
   - 3
   - 4
   - 5
+  - 6
   - 7
   - 08
   - 09
   - 10
+  - 11
   - 12
   - 13
   - 14
-  - 17
-  - 23
-  - 24
-  - 29
-  - 30
-  - 31
+  - 15
+  - 16
+  - 18
   - '[ext:NoMoreWalls] 🇺🇸US_9|3.3MB/s'
-  - 38
+  - 20
+  - 21
+  - 22
+  - 23
+  - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国
+  - 25
+  - 26
+  - 27
+  - '[ext:FreeNodes] 🇨🇳_CN_中国'
+  - 29
+  - 🇭🇰 [ext:FreeNodes] 🇭🇰_HK_中国香港
+  - 31
+  - 🇺🇸 [ext:FreeNodes] 🇨🇳_CN_中国->🇺🇸_US_美国
+  - 🇫🇷 [ext:FreeNodes] 🇨🇳_CN_中国->🇫🇷_FR_法国
+  - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本
+  - 🇸🇬 [ext:FreeNodes] 🇸🇬_SG_新加坡
+  - 🇭🇰 [ext:NoMoreWalls] 🇭🇰 香港|@ripaojiedian
+  - '[ext:NoMoreWalls] 🇺🇸US_3|3.8MB/s'
   - 39
   - 40
+  - 41
+  - 42
   - 43
+  - 44
+  - 45
+  - 46
   - 47
+  - 48
+  - 49
+  - 50
+  - 51
+  - 52
+  - 53
   - 54
   - 55
+  - 57
+  - 58
+  - 59
+  - 60
+  - 61
+  - 62
+  - 63
+  - 64
+  - 65
+  - 66
+  - 67
+  - 68
+  - 69
+  - 70
+  - 71
+  - 72
+  - 73
+  - 74
+  - 75
+  - 76
+  - 77
+  - 78
   - 79
-  - 82
-  - 85
-  - 86
-  - 106
-  - 110
-  - 133
-  - 146
-  - 148
+  - 80
 - name: ♻️ 自动选择
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
+  - 1
   - 2
   - 3
   - 4
   - 5
+  - 6
   - 7
   - 08
   - 09
   - 10
+  - 11
   - 12
   - 13
   - 14
-  - 17
-  - 23
-  - 24
-  - 29
-  - 30
-  - 31
+  - 15
+  - 16
+  - 18
   - '[ext:NoMoreWalls] 🇺🇸US_9|3.3MB/s'
-  - 38
+  - 20
+  - 21
+  - 22
+  - 23
+  - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国
+  - 25
+  - 26
+  - 27
+  - '[ext:FreeNodes] 🇨🇳_CN_中国'
+  - 29
+  - 🇭🇰 [ext:FreeNodes] 🇭🇰_HK_中国香港
+  - 31
+  - 🇺🇸 [ext:FreeNodes] 🇨🇳_CN_中国->🇺🇸_US_美国
+  - 🇫🇷 [ext:FreeNodes] 🇨🇳_CN_中国->🇫🇷_FR_法国
+  - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本
+  - 🇸🇬 [ext:FreeNodes] 🇸🇬_SG_新加坡
+  - 🇭🇰 [ext:NoMoreWalls] 🇭🇰 香港|@ripaojiedian
+  - '[ext:NoMoreWalls] 🇺🇸US_3|3.8MB/s'
   - 39
   - 40
+  - 41
+  - 42
   - 43
+  - 44
+  - 45
+  - 46
   - 47
+  - 48
+  - 49
+  - 50
+  - 51
+  - 52
+  - 53
   - 54
   - 55
+  - 57
+  - 58
+  - 59
+  - 60
+  - 61
+  - 62
+  - 63
+  - 64
+  - 65
+  - 66
+  - 67
+  - 68
+  - 69
+  - 70
+  - 71
+  - 72
+  - 73
+  - 74
+  - 75
+  - 76
+  - 77
+  - 78
   - 79
-  - 82
-  - 85
-  - 86
-  - 106
-  - 110
-  - 133
-  - 146
-  - 148
+  - 80
 - name: 🌍 国外媒体
   type: select
   proxies:
   - 🔰 节点选择
   - ♻️ 自动选择
   - 🎯 全球直连
+  - 1
   - 2
   - 3
   - 4
   - 5
+  - 6
   - 7
   - 08
   - 09
   - 10
+  - 11
   - 12
   - 13
   - 14
-  - 17
-  - 23
-  - 24
-  - 29
-  - 30
-  - 31
+  - 15
+  - 16
+  - 18
   - '[ext:NoMoreWalls] 🇺🇸US_9|3.3MB/s'
-  - 38
+  - 20
+  - 21
+  - 22
+  - 23
+  - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国
+  - 25
+  - 26
+  - 27
+  - '[ext:FreeNodes] 🇨🇳_CN_中国'
+  - 29
+  - 🇭🇰 [ext:FreeNodes] 🇭🇰_HK_中国香港
+  - 31
+  - 🇺🇸 [ext:FreeNodes] 🇨🇳_CN_中国->🇺🇸_US_美国
+  - 🇫🇷 [ext:FreeNodes] 🇨🇳_CN_中国->🇫🇷_FR_法国
+  - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本
+  - 🇸🇬 [ext:FreeNodes] 🇸🇬_SG_新加坡
+  - 🇭🇰 [ext:NoMoreWalls] 🇭🇰 香港|@ripaojiedian
+  - '[ext:NoMoreWalls] 🇺🇸US_3|3.8MB/s'
   - 39
   - 40
+  - 41
+  - 42
   - 43
+  - 44
+  - 45
+  - 46
   - 47
+  - 48
+  - 49
+  - 50
+  - 51
+  - 52
+  - 53
   - 54
   - 55
+  - 57
+  - 58
+  - 59
+  - 60
+  - 61
+  - 62
+  - 63
+  - 64
+  - 65
+  - 66
+  - 67
+  - 68
+  - 69
+  - 70
+  - 71
+  - 72
+  - 73
+  - 74
+  - 75
+  - 76
+  - 77
+  - 78
   - 79
-  - 82
-  - 85
-  - 86
-  - 106
-  - 110
-  - 133
-  - 146
-  - 148
+  - 80
 - name: 🌏 国内媒体
   type: select
   proxies:
   - 🎯 全球直连
+  - 🇭🇰 [ext:FreeNodes] 🇭🇰_HK_中国香港
+  - 🇭🇰 [ext:NoMoreWalls] 🇭🇰 香港|@ripaojiedian
   - 🔰 节点选择
 - name: Ⓜ️ 微软服务
   type: select
   proxies:
   - 🎯 全球直连
   - 🔰 节点选择
+  - 1
   - 2
   - 3
   - 4
   - 5
+  - 6
   - 7
   - 08
   - 09
   - 10
+  - 11
   - 12
   - 13
   - 14
-  - 17
-  - 23
-  - 24
-  - 29
-  - 30
-  - 31
+  - 15
+  - 16
+  - 18
   - '[ext:NoMoreWalls] 🇺🇸US_9|3.3MB/s'
-  - 38
+  - 20
+  - 21
+  - 22
+  - 23
+  - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国
+  - 25
+  - 26
+  - 27
+  - '[ext:FreeNodes] 🇨🇳_CN_中国'
+  - 29
+  - 🇭🇰 [ext:FreeNodes] 🇭🇰_HK_中国香港
+  - 31
+  - 🇺🇸 [ext:FreeNodes] 🇨🇳_CN_中国->🇺🇸_US_美国
+  - 🇫🇷 [ext:FreeNodes] 🇨🇳_CN_中国->🇫🇷_FR_法国
+  - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本
+  - 🇸🇬 [ext:FreeNodes] 🇸🇬_SG_新加坡
+  - 🇭🇰 [ext:NoMoreWalls] 🇭🇰 香港|@ripaojiedian
+  - '[ext:NoMoreWalls] 🇺🇸US_3|3.8MB/s'
   - 39
   - 40
+  - 41
+  - 42
   - 43
+  - 44
+  - 45
+  - 46
   - 47
+  - 48
+  - 49
+  - 50
+  - 51
+  - 52
+  - 53
   - 54
   - 55
+  - 57
+  - 58
+  - 59
+  - 60
+  - 61
+  - 62
+  - 63
+  - 64
+  - 65
+  - 66
+  - 67
+  - 68
+  - 69
+  - 70
+  - 71
+  - 72
+  - 73
+  - 74
+  - 75
+  - 76
+  - 77
+  - 78
   - 79
-  - 82
-  - 85
-  - 86
-  - 106
-  - 110
-  - 133
-  - 146
-  - 148
+  - 80
 - name: 📲 电报信息
   type: select
   proxies:
   - 🔰 节点选择
   - 🎯 全球直连
+  - 1
   - 2
   - 3
   - 4
   - 5
+  - 6
   - 7
   - 08
   - 09
   - 10
+  - 11
   - 12
   - 13
   - 14
-  - 17
-  - 23
-  - 24
-  - 29
-  - 30
-  - 31
+  - 15
+  - 16
+  - 18
   - '[ext:NoMoreWalls] 🇺🇸US_9|3.3MB/s'
-  - 38
+  - 20
+  - 21
+  - 22
+  - 23
+  - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国
+  - 25
+  - 26
+  - 27
+  - '[ext:FreeNodes] 🇨🇳_CN_中国'
+  - 29
+  - 🇭🇰 [ext:FreeNodes] 🇭🇰_HK_中国香港
+  - 31
+  - 🇺🇸 [ext:FreeNodes] 🇨🇳_CN_中国->🇺🇸_US_美国
+  - 🇫🇷 [ext:FreeNodes] 🇨🇳_CN_中国->🇫🇷_FR_法国
+  - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本
+  - 🇸🇬 [ext:FreeNodes] 🇸🇬_SG_新加坡
+  - 🇭🇰 [ext:NoMoreWalls] 🇭🇰 香港|@ripaojiedian
+  - '[ext:NoMoreWalls] 🇺🇸US_3|3.8MB/s'
   - 39
   - 40
+  - 41
+  - 42
   - 43
+  - 44
+  - 45
+  - 46
   - 47
+  - 48
+  - 49
+  - 50
+  - 51
+  - 52
+  - 53
   - 54
   - 55
+  - 57
+  - 58
+  - 59
+  - 60
+  - 61
+  - 62
+  - 63
+  - 64
+  - 65
+  - 66
+  - 67
+  - 68
+  - 69
+  - 70
+  - 71
+  - 72
+  - 73
+  - 74
+  - 75
+  - 76
+  - 77
+  - 78
   - 79
-  - 82
-  - 85
-  - 86
-  - 106
-  - 110
-  - 133
-  - 146
-  - 148
+  - 80
 - name: 🍎 苹果服务
   type: select
   proxies:
   - 🔰 节点选择
   - 🎯 全球直连
   - ♻️ 自动选择
+  - 1
   - 2
   - 3
   - 4
   - 5
+  - 6
   - 7
   - 08
   - 09
   - 10
+  - 11
   - 12
   - 13
   - 14
-  - 17
-  - 23
-  - 24
-  - 29
-  - 30
-  - 31
+  - 15
+  - 16
+  - 18
   - '[ext:NoMoreWalls] 🇺🇸US_9|3.3MB/s'
-  - 38
+  - 20
+  - 21
+  - 22
+  - 23
+  - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国
+  - 25
+  - 26
+  - 27
+  - '[ext:FreeNodes] 🇨🇳_CN_中国'
+  - 29
+  - 🇭🇰 [ext:FreeNodes] 🇭🇰_HK_中国香港
+  - 31
+  - 🇺🇸 [ext:FreeNodes] 🇨🇳_CN_中国->🇺🇸_US_美国
+  - 🇫🇷 [ext:FreeNodes] 🇨🇳_CN_中国->🇫🇷_FR_法国
+  - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本
+  - 🇸🇬 [ext:FreeNodes] 🇸🇬_SG_新加坡
+  - 🇭🇰 [ext:NoMoreWalls] 🇭🇰 香港|@ripaojiedian
+  - '[ext:NoMoreWalls] 🇺🇸US_3|3.8MB/s'
   - 39
   - 40
+  - 41
+  - 42
   - 43
+  - 44
+  - 45
+  - 46
   - 47
+  - 48
+  - 49
+  - 50
+  - 51
+  - 52
+  - 53
   - 54
   - 55
+  - 57
+  - 58
+  - 59
+  - 60
+  - 61
+  - 62
+  - 63
+  - 64
+  - 65
+  - 66
+  - 67
+  - 68
+  - 69
+  - 70
+  - 71
+  - 72
+  - 73
+  - 74
+  - 75
+  - 76
+  - 77
+  - 78
   - 79
-  - 82
-  - 85
-  - 86
-  - 106
-  - 110
-  - 133
-  - 146
-  - 148
+  - 80
 - name: 🎯 全球直连
   type: select
   proxies:
@@ -631,40 +1245,83 @@ proxy-groups:
   - 🔰 节点选择
   - 🎯 全球直连
   - ♻️ 自动选择
+  - 1
   - 2
   - 3
   - 4
   - 5
+  - 6
   - 7
   - 08
   - 09
   - 10
+  - 11
   - 12
   - 13
   - 14
-  - 17
-  - 23
-  - 24
-  - 29
-  - 30
-  - 31
+  - 15
+  - 16
+  - 18
   - '[ext:NoMoreWalls] 🇺🇸US_9|3.3MB/s'
-  - 38
+  - 20
+  - 21
+  - 22
+  - 23
+  - 🇺🇸 [ext:FreeNodes] 🇺🇸_US_美国
+  - 25
+  - 26
+  - 27
+  - '[ext:FreeNodes] 🇨🇳_CN_中国'
+  - 29
+  - 🇭🇰 [ext:FreeNodes] 🇭🇰_HK_中国香港
+  - 31
+  - 🇺🇸 [ext:FreeNodes] 🇨🇳_CN_中国->🇺🇸_US_美国
+  - 🇫🇷 [ext:FreeNodes] 🇨🇳_CN_中国->🇫🇷_FR_法国
+  - 🇯🇵 [ext:FreeNodes] 🇯🇵_JP_日本
+  - 🇸🇬 [ext:FreeNodes] 🇸🇬_SG_新加坡
+  - 🇭🇰 [ext:NoMoreWalls] 🇭🇰 香港|@ripaojiedian
+  - '[ext:NoMoreWalls] 🇺🇸US_3|3.8MB/s'
   - 39
   - 40
+  - 41
+  - 42
   - 43
+  - 44
+  - 45
+  - 46
   - 47
+  - 48
+  - 49
+  - 50
+  - 51
+  - 52
+  - 53
   - 54
   - 55
+  - 57
+  - 58
+  - 59
+  - 60
+  - 61
+  - 62
+  - 63
+  - 64
+  - 65
+  - 66
+  - 67
+  - 68
+  - 69
+  - 70
+  - 71
+  - 72
+  - 73
+  - 74
+  - 75
+  - 76
+  - 77
+  - 78
   - 79
-  - 82
-  - 85
-  - 86
-  - 106
-  - 110
-  - 133
-  - 146
-  - 148
+  - 80
 rules:
 - DOMAIN-SUFFIX,local,🎯 全球直连
 - IP-CIDR,192.168.0.0/16,🎯 全球直连,no-resolve
