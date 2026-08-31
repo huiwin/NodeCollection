@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-NodeCollection Pro v2.5.5 - 订阅源采集 + 多格式转换一体化工具
+NodeCollection Pro v2.5.6 - 订阅源采集 + 多格式转换一体化工具
 
 架构:
   config.yaml (TG频道) + airports.yaml (机场列表) + merge.yaml (上游订阅白名单)
@@ -1415,6 +1415,43 @@ def generate_merged_format(upstream_texts, upstreams):
     if illegal_filtered > 0:
         logger.info(f'[P11.1] 源头过滤 {illegal_filtered} 个违规词节点')
 
+    # P11.6 (v2.5.6): 过滤 subconverter 无法输出的协议节点
+    # 问题: 上游解析支持 vless/hysteria2/hy2/tuic 等新协议, 但 subconverter 的
+    #       Clash 输出模板 (all_base.tpl) 不支持这些协议, 转换时节点全部丢失,
+    #       导致 index.json 记录 output_count=150 而实际输出只有 26 个节点。
+    # 方案: 在解析后过滤掉不支持的协议, 让 available_count 与实际输出一致,
+    #       同时避免无谓的测速耗时 (被过滤的协议无需测速)。
+    # 保留: ss / ssr / vmess / trojan / snell / socks5 / http (subconverter 可输出)
+    # 过滤: vless / hysteria / hysteria2 / hy2 / tuic / wireguard / mixed
+    SUPPORTED_MERGED_PROTOCOLS = {
+        'ss', 'ssr', 'vmess', 'trojan', 'snell', 'socks5', 'http',
+    }
+    filtered_protocol_uris = 0
+    filtered_protocol_proxies = 0
+    kept_uris, kept_proxies = [], []
+    for u in all_uris:
+        scheme = u.split('://', 1)[0].lower() if '://' in u else ''
+        if scheme in SUPPORTED_MERGED_PROTOCOLS:
+            kept_uris.append(u)
+        else:
+            filtered_protocol_uris += 1
+            uri_source_map.pop(u, None)
+    all_uris = kept_uris
+    for p in all_clash_proxies:
+        ptype = str(p.get('type', '')).lower()
+        if ptype in SUPPORTED_MERGED_PROTOCOLS:
+            kept_proxies.append(p)
+        else:
+            filtered_protocol_proxies += 1
+            proxy_source_map.pop(p.get('name', ''), None)
+    all_clash_proxies = kept_proxies
+    if filtered_protocol_uris or filtered_protocol_proxies:
+        logger.info(
+            f'[P11.6] 过滤 subconverter 不支持的协议节点: '
+            f'URI {filtered_protocol_uris} 个, Clash 代理 {filtered_protocol_proxies} 个 '
+            f'(vless/hysteria2/tuic 等无法由 subconverter 输出 Clash 格式)'
+        )
+
     # 2. 节点级智能去重 (P3 T3.2: 基于 host:port 去重, 同一节点多参数只保留一个)
     #    无法提取 host:port 的节点回退到完整 URI / name 去重
     before_dedup = len(all_uris) + len(all_clash_proxies)
@@ -1890,7 +1927,10 @@ def call_subconverter(target, sub_urls, output_path, config_path=None):
     # P9.3 (v2.3.3): 通过 API config 参数直接传递配置文件, 替代依赖 pref.ini
     # 之前通过 fetch.yaml 将配置写入 pref.ini, 但存在重复 section / 替换丢失默认配置等问题
     # config 参数使用 file:// 绝对路径, subconverter 会直接读取该配置文件
-    config_abs_path = os.path.abspath(SUBCONVERTER_EXTERNAL_CONFIG)
+    # P11.6 (v2.5.6): 修复 Bug - 之前忽略传入的 config_path 参数, 导致融合订阅
+    # 始终使用 SUBCONVERTER_EXTERNAL_CONFIG (主订阅配置), merged_config.ini 从未生效
+    effective_config = config_path if config_path else SUBCONVERTER_EXTERNAL_CONFIG
+    config_abs_path = os.path.abspath(effective_config)
     config_url = f'file://{config_abs_path}'
     encoded_config = quote(config_url, safe='')
 

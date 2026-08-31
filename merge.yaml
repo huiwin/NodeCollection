@@ -10,6 +10,13 @@
 #
 # 新增来源时需同步在 main.py 的 UPSTREAM_REPO_MAP 中补充仓库地址，
 # 用于 README 来源表致谢 (P2 阶段将改为全自动生成)
+#
+# P11.6 (v2.5.6) 协议过滤说明:
+#   融合订阅会过滤 subconverter 无法输出的协议节点
+#   (vless/hysteria/hysteria2/hy2/tuic/wireguard/mixed 会被丢弃,
+#    仅保留 ss/ssr/vmess/trojan/snell/socks5/http)
+#   原因: subconverter 的 Clash 输出模板 (all_base.tpl) 不支持这些新协议,
+#   转换时节点会丢失导致实际输出与 index.json 记录不符
 # ============================================================
 
 upstreams:
