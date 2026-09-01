@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-NodeCollection Pro v2.6.0 - 订阅源采集 + 多格式转换一体化工具
+NodeCollection Pro v2.6.1 - 订阅源采集 + 多格式转换一体化工具
 
 架构:
   config.yaml (TG频道) + airports.yaml (机场列表) + merge.yaml (上游订阅白名单)
@@ -197,9 +197,11 @@ def detect_region(text):
     P5 (v1.9.0, T5.3): 基于文本 (节点名/服务器名) 识别地区。
     返回: (地区中文名, 地区代码) 或 (None, None)
     轻量方案: 仅基于正则匹配, 不依赖 IP 地理库。
+    T13.1 (v2.6.1): 增加类型保护, 兼容 subconverter 输出 name 为数字的情况。
     """
     if not text:
         return None, None
+    text = str(text)
     text_lower = text.lower()
     for region_name, region_code, patterns in REGION_PATTERNS:
         for pattern in patterns:
@@ -2167,8 +2169,20 @@ def _filter_and_rename_clash_file(file_path):
 
         # P12 (v2.6.0): 保留地区 emoji + 序号重命名 (🇺🇸 01 / 🇯🇵 02)
         # 输出兜底阶段, 从节点名提取地区并保留, 恢复地区分组
+        # T13.3 (v2.6.1): 同步更新 proxy-groups 引用, 避免重命名后代理组失效
+        rename_map = {}
         for i, proxy in enumerate(filtered_proxies, 1):
-            proxy['name'] = _rename_with_region_emoji(proxy.get('name', ''), i)
+            old_name = proxy.get('name', '')
+            new_name = _rename_with_region_emoji(old_name, i)
+            rename_map[old_name] = new_name
+            proxy['name'] = new_name
+
+        # 同步更新 proxy-groups 中引用的节点名
+        groups = data.get('proxy-groups') or []
+        for group in groups:
+            members = group.get('proxies') or []
+            if members:
+                group['proxies'] = [rename_map.get(m, m) for m in members]
 
         data['proxies'] = filtered_proxies
 
