@@ -92,6 +92,22 @@ jobs:
         else
           echo "WARNING: pref.example.ini not found, using default pref.ini"
         fi
+        # P14 (v2.6.2): 复制外部配置文件到 subconverter 运行目录
+        #   main.py call_subconverter() 通过 config=<相对文件名> 传递,
+        #   subconverter 从自身 CWD 读取 (不能用 file:// 前缀或绝对路径,
+        #   fetchFile 受 isInScope 限制, 否则外部配置从未加载, 地区分组失效)
+        if [ -f "./subconverter/external_config.ini" ]; then
+          cp ./subconverter/external_config.ini "$SC_DIR/external_config.ini"
+          echo "✅ external_config.ini copied to subconverter dir"
+        else
+          echo "WARNING: subconverter/external_config.ini not found"
+        fi
+        if [ -f "./subconverter/merged_config.ini" ]; then
+          cp ./subconverter/merged_config.ini "$SC_DIR/merged_config.ini"
+          echo "✅ merged_config.ini copied to subconverter dir"
+        else
+          echo "WARNING: subconverter/merged_config.ini not found"
+        fi
         echo "=== pref.ini sections ==="
         grep "^\[" "$SC_DIR/pref.ini"
         cd "$SC_DIR" && nohup ./subconverter > /dev/null 2>&1 &

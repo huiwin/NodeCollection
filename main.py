@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-NodeCollection Pro v2.6.1 - 订阅源采集 + 多格式转换一体化工具
+NodeCollection Pro v2.6.2 - 订阅源采集 + 多格式转换一体化工具
 
 架构:
   config.yaml (TG频道) + airports.yaml (机场列表) + merge.yaml (上游订阅白名单)
@@ -1971,15 +1971,19 @@ def call_subconverter(target, sub_urls, output_path, config_path=None):
     merged_url = '|'.join(sub_urls)
     encoded_url = quote(merged_url, safe='')
 
-    # P9.3 (v2.3.3): 通过 API config 参数直接传递配置文件, 替代依赖 pref.ini
-    # 之前通过 fetch.yaml 将配置写入 pref.ini, 但存在重复 section / 替换丢失默认配置等问题
-    # config 参数使用 file:// 绝对路径, subconverter 会直接读取该配置文件
+    # P14 (v2.6.2): 根因修复 - config 参数必须用相对文件名, 不能用 file:// 前缀或绝对路径
+    #   实测(subconverter v0.9.0 + 源码): loadExternalConfig() 用 fetchFile(path, ...)
+    #   读取外部配置, fetchFile → fileExist(path, true)/fileGet(path, true) 受 isInScope
+    #   限制: file:// 前缀无法识别为本地文件, Linux 上以 / 开头的绝对路径也被拒绝,
+    #   导致 external_config.ini / merged_config.ini 从未被加载, 地区分组自始未生效。
+    #   P14 改为相对文件名: fetch.yaml 已把 external_config.ini / merged_config.ini
+    #   复制到 subconverter 运行目录 (subconverter_bin/subconverter/), subconverter
+    #   从自身 CWD 读取该文件名即可。
     # P11.6 (v2.5.6): 修复 Bug - 之前忽略传入的 config_path 参数, 导致融合订阅
     # 始终使用 SUBCONVERTER_EXTERNAL_CONFIG (主订阅配置), merged_config.ini 从未生效
     effective_config = config_path if config_path else SUBCONVERTER_EXTERNAL_CONFIG
-    config_abs_path = os.path.abspath(effective_config)
-    config_url = f'file://{config_abs_path}'
-    encoded_config = quote(config_url, safe='')
+    config_name = os.path.basename(effective_config)
+    encoded_config = quote(config_name, safe='')
 
     api_url = (
         f'{SUBCONVERTER_URL}/sub?'
