@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-NodeCollection Pro v2.7.0 - 订阅源采集 + 多格式转换一体化工具
+NodeCollection Pro v2.8.0 - 订阅源采集 + 多格式转换一体化工具
 
 架构:
   config.yaml (TG频道) + airports.yaml (机场列表) + merge.yaml (上游订阅白名单)
@@ -1403,6 +1403,25 @@ def dedup_proxies_by_host_port(proxies, proxy_source_map=None):
     return deduped
 
 
+def _load_main_sub_proxies():
+    """
+    P16 (v2.8.0): 读取主订阅 output/clash/latest.yaml 的节点作为综合订阅补充源。
+    主订阅经 filter_valid_sub_urls + subconverter 转换 + 违规词过滤后输出,
+    是已可用的有效节点集合; 纳入综合订阅前仍会走统一的去重/测速/过滤管线。
+    返回 proxies 列表; 文件不存在/解析失败返回空列表 (不影响融合底座)。
+    """
+    path = os.path.join(OUTPUT_DIR, 'clash', 'latest.yaml')
+    if not os.path.isfile(path):
+        return []
+    try:
+        with open(path, encoding='utf-8') as f:
+            data = yaml.safe_load(f)
+        return (data or {}).get('proxies') or []
+    except Exception as e:
+        logger.warning(f'[P16] 读取主订阅补充节点失败: {type(e).__name__}: {e}')
+        return []
+
+
 def generate_merged_format(upstream_texts, upstreams):
     """
     上游订阅融合主入口:
@@ -1454,6 +1473,32 @@ def generate_merged_format(upstream_texts, upstreams):
 
     if illegal_filtered > 0:
         logger.info(f'[P11.1] 源头过滤 {illegal_filtered} 个违规词节点')
+
+    # P16 (v2.8.0): 综合订阅 - 以融合为底座, 补充主订阅有效节点
+    # 主订阅经 filter_valid_sub_urls 剔除失效源 + subconverter 转换 + 违规词过滤,
+    # 其节点作为补充源纳入统一质量管线 (去重/测速/健康/剔除/排序/截断/重命名)。
+    main_proxies = _load_main_sub_proxies()
+    main_supplement_count = 0
+    main_http_filtered = 0
+    if main_proxies:
+        for p in main_proxies:
+            node_name = p.get('name', '')
+            if contains_illegal_keyword(node_name):
+                illegal_filtered += 1
+                continue
+            # 主订阅的 http/socks5 协议节点质量较差, 不纳入综合订阅
+            ptype = str(p.get('type', '')).lower()
+            if ptype in ('http', 'socks5'):
+                main_http_filtered += 1
+                continue
+            proxy_source_map.setdefault(p['name'], '主订阅')
+            all_clash_proxies.append(p)
+            main_supplement_count += 1
+        if main_supplement_count:
+            logger.info(
+                f'[P16] 综合订阅: 补充主订阅 {main_supplement_count} 个有效节点 '
+                f'(过滤 http/socks5 {main_http_filtered} 个)'
+            )
 
     # P11.6 (v2.5.6): 过滤 subconverter 无法输出的协议节点
     # 问题: 上游解析支持 vless/hysteria2/hy2/tuic 等新协议, 但 subconverter 的
@@ -1789,12 +1834,18 @@ def generate_merged_format(upstream_texts, upstreams):
                     index_data = json.load(f)
             except Exception:
                 index_data = {}
+        _combined_sources = sorted(upstream_texts.keys())
+        if main_supplement_count:
+            _combined_sources.append('主订阅')
         merged_section = {
             'date': f'{today.year}/{today.month}/{today.month}-{today.day}',
             'formats': {},
             'latest': {},
             'total_nodes': total_nodes,
-            'sources': sorted(upstream_texts.keys()),
+            # P16 (v2.8.0): 综合订阅标记 - 融合为底座 + 主订阅有效节点补充
+            'type': 'combined',
+            'main_supplement': main_supplement_count,
+            'sources': _combined_sources,
             # T2.3: 上游拉取健康记录 (连续失败计数 + 降级标记)
             'upstream_health': upstream_health,
             # T1.2+T1.4+T1.5 质量指标: 解析数/存活数/剔除数/截断数/可用率/延迟统计/健康记录
@@ -2468,31 +2519,14 @@ def generate_readme(upstreams=None):
     # 订阅文件路径定义: (显示名, 文件路径, 格式说明, GitHub 项目链接)
     # 使用 latest 固定路径，URL 永不改变，内容随每次运行自动更新
     # 末尾的链接字段让各软件标题成为可点击的超链接，跳转到对应 GitHub 仓库
-    sub_files = [
-        # 顺序按用户使用频率排列: Clash > V2Ray > Sing-box > Surge > Mixed
-        ('Clash', 'output/clash/latest.yaml', 'Clash / Clash Meta / Mihomo',
-         'https://github.com/clash-verge-rev/clash-verge-rev'),
-        ('V2Ray', 'output/v2ray/latest.txt', 'V2RayN / V2RayNG / Shadowrocket (Base64)',
-         'https://github.com/2dust/v2rayN'),
-        # T2.1 (v1.6.0): Sing-box 输出
-        ('Sing-box', 'output/singbox/latest.json', 'Sing-box / SagerNet / Hiddify (JSON)',
-         'https://github.com/SagerNet/sing-box'),
-        ('Surge', 'output/surge/latest.conf', 'Surge 4+',
-         None),
-        ('Mixed', 'output/mixed/latest.txt', '混合格式 Base64 (全协议)',
-         None),
-        ('原始 YAML', 'sub/latest.yaml', '向后兼容格式 (含分类, 开发者用)',
-         None),
-    ]
-
-    # 融合订阅文件 (上游外部来源，节点名带 [ext:来源] 前缀)
-    # 文件名带格式 token，与 generate_merged_format 的输出命名保持一致
+    # P16 (v2.8.0): 主页只展示综合订阅 (output/merged/, 融合底座 + 主订阅补充)
+    # 主订阅 output/clash/ 等仍作为内部数据源生成, 但不再单独对外展示
     merged_files = [
-        ('Clash', 'output/merged/latest.clash.yaml', '融合节点 (含外部来源标注)'),
-        ('V2Ray', 'output/merged/latest.v2ray.txt', '融合节点 Base64'),
-        ('Sing-box', 'output/merged/latest.singbox.json', '融合节点 Sing-box JSON'),
-        ('Surge', 'output/merged/latest.surge.conf', '融合节点 Surge 配置'),
-        ('Mixed', 'output/merged/latest.mixed.txt', '融合节点混合 Base64'),
+        ('Clash', 'output/merged/latest.clash.yaml', 'Clash / Clash Meta / Mihomo (含地区分组)'),
+        ('V2Ray', 'output/merged/latest.v2ray.txt', 'V2RayN / V2RayNG / Shadowrocket (Base64)'),
+        ('Sing-box', 'output/merged/latest.singbox.json', 'Sing-box / SagerNet / Hiddify (JSON)'),
+        ('Surge', 'output/merged/latest.surge.conf', 'Surge 4+'),
+        ('Mixed', 'output/merged/latest.mixed.txt', '混合格式 Base64 (全协议)'),
     ]
 
     # 读取 index.json 获取质量数据 (用于顶部质量概览 + 上游来源表)
@@ -2556,6 +2590,7 @@ def generate_readme(upstreams=None):
 
     lines.append('## 订阅链接')
     lines.append('')
+    lines.append('综合订阅：以精选上游为底座 + 主订阅有效节点补充，统一质量筛选，推荐使用。')
     lines.append('复制下方链接到客户端的订阅地址中即可使用。各软件标题为超链接，点击可跳转到对应 GitHub 仓库。')
     lines.append('')
 
@@ -2575,26 +2610,24 @@ def generate_readme(upstreams=None):
     lines.append('---')
     lines.append('')
 
-    for display_name, file_path, note, github_url in sub_files:
-        _append_sub_section(lines, display_name, file_path, note, github_url)
+    # P16 (v2.8.0): 只展示综合订阅 (融合底座 + 主订阅补充)
+    for display_name, file_path, note in merged_files:
+        _append_sub_section(lines, display_name, file_path, note)
 
-    # 融合订阅段落 (仅当上游白名单非空时渲染)
+    # 综合订阅说明段落 (仅当上游白名单非空时渲染)
     if upstreams:
-        lines.append('## 融合订阅（外部来源）')
+        lines.append('## 综合订阅')
         lines.append('')
-        lines.append('以下订阅融合了外部优质开源项目的公开免费节点，'
-                     '节点名带 `[ext:来源]` 前缀便于溯源。与主订阅相互独立，任选其一使用即可。')
+        lines.append('以精选外部上游为底座，并补充主订阅有效节点，统一经过去重、测速、'
+                     '健康筛选与地区分组，兼顾数量与质量。')
         lines.append('')
         lines.append('---')
         lines.append('')
 
-        for display_name, file_path, note in merged_files:
-            _append_sub_section(lines, display_name, file_path, note)
-
         # T1.3: 融合订阅节点分组说明
         lines.append('### 节点分组')
         lines.append('')
-        lines.append('融合订阅（Clash 格式）按地区自动分组，支持以下代理组：')
+        lines.append('综合订阅（Clash 格式）按地区自动分组，支持以下代理组：')
         lines.append('')
         lines.append('| 代理组 | 匹配规则 |')
         lines.append('| :--- | :--- |')
@@ -2610,7 +2643,7 @@ def generate_readme(upstreams=None):
         lines.append('| 🔗 故障转移 | 全部节点故障转移 |')
         lines.append('| ⚖️ 负载均衡 | 全部节点负载均衡 |')
         lines.append('')
-        lines.append('> 节点名带 `[ext:来源]` 前缀，地区识别基于节点名称中的地区关键词。')
+        lines.append('> 综合订阅节点按地区前缀 (🇺🇸/🇯🇵...) + 序号命名，地区识别基于节点名称关键词。')
         lines.append('')
 
         lines.append('### 上游来源 (Thanks)')
@@ -2721,6 +2754,7 @@ def generate_status_page():
     min_lat = quality.get('min_latency_ms', '-')
     max_lat = quality.get('max_latency_ms', '-')
     truncated = quality.get('truncated', 0)
+    main_supplement = merged.get('main_supplement', 0)  # P16: 主订阅补充节点数
     update_time = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 
     # 上游贡献表行 + 图表数据 (T5.5)
@@ -2804,7 +2838,7 @@ a:hover {{ text-decoration:underline; }}
 <body>
 <div class="container">
 <h1>NodeCollection Pro</h1>
-<p class="subtitle">订阅源采集与多格式转换工具 · 更新时间: {update_time} · v1.9.0</p>
+<p class="subtitle">综合订阅 · 融合精选上游为底座 + 主订阅有效节点补充 · 更新时间: {update_time} · v2.8.0</p>
 
 <div class="cards">
 <div class="card"><div class="num">{total_parsed}</div><div class="label">解析节点总数</div></div>
@@ -2812,6 +2846,7 @@ a:hover {{ text-decoration:underline; }}
 <div class="card amber"><div class="num">{avail_rate}%</div><div class="label">可用率</div></div>
 <div class="card purple"><div class="num">{avg_lat}{avg_lat_suffix}</div><div class="label">平均延迟</div></div>
 <div class="card pink"><div class="num">{output_count}</div><div class="label">最终输出</div></div>
+<div class="card"><div class="num">{main_supplement}</div><div class="label">主订阅补充</div></div>
 <div class="card"><div class="num">{excluded}</div><div class="label">剔除失效</div></div>
 </div>
 
@@ -2832,6 +2867,7 @@ a:hover {{ text-decoration:underline; }}
 <tr><td>最终输出节点数</td><td>{output_count}</td><td>排序截断后实际输出</td></tr>
 <tr><td>连续不可达剔除</td><td>{excluded}</td><td>连续失败达到阈值的节点</td></tr>
 <tr><td>总量截断</td><td>{truncated}</td><td>超过 MERGED_MAX_NODES 被截断</td></tr>
+<tr><td>主订阅补充</td><td>{main_supplement}</td><td>融合底座外补充的主订阅有效节点</td></tr>
 <tr><td>最小延迟</td><td>{min_lat}{min_lat_suffix}</td><td>最快节点延迟</td></tr>
 <tr><td>最大延迟</td><td>{max_lat}{max_lat_suffix}</td><td>最慢节点延迟</td></tr>
 </table>
@@ -2843,7 +2879,7 @@ a:hover {{ text-decoration:underline; }}
 </table>
 
 <div class="footer">
-NodeCollection Pro v1.9.0 · 基于 GitHub Actions 自动更新 · <a href="https://github.com/huiwin/NodeCollection">GitHub 仓库</a>
+NodeCollection Pro v2.8.0 · 综合订阅 (融合底座 + 主订阅补充) · 基于 GitHub Actions 自动更新 · <a href="https://github.com/huiwin/NodeCollection">GitHub 仓库</a>
 </div>
 </div>
 
