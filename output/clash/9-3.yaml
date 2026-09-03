@@ -419,20 +419,15 @@ proxies:
   cipher: auto
   tls: false
   udp: true
-- name: 🇩🇪 53
-  server: planb.mojcn.com.linuxlh.xin
-  port: 16626
+- name: 🇮🇳 53
+  server: v45.hdacd.com
+  port: 30845
   type: vmess
-  uuid: 45c4a7a4-a1d4-4657-a92a-ab45558afac0
-  alterId: 0
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
   cipher: auto
   tls: false
   skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: 6418046cd66ae322ebd1b8f4d82fd12c.mobgslb.tbcache.com
   udp: true
 - name: 🇩🇪 54
   server: planb.mojcn.com.linuxlh.xin
@@ -450,313 +445,28 @@ proxies:
       Host: d052c66d50dcf7c3cfab75ed7f8e8322.mobgslb.tbcache.com
   udp: true
 - name: 🇮🇳 55
-  server: 121.46.230.138
-  port: 65443
-  type: ss
-  cipher: aes-256-cfb
-  password: 7eadc6dbe2ae
-  udp: true
-- name: 🇯🇵 56
-  server: 54.168.242.25
-  port: 8555
+  server: v29.hdacd.com
+  port: 30829
   type: vmess
-  uuid: 7aa3a024-e333-4b63-99a2-3db9d3b2054e
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: a.189.cn
-  udp: true
-- name: 🇩🇪 57
-  server: planb.mojcn.com.linuxlh.xin
-  port: 16632
-  type: vmess
-  uuid: bc8a58c9-a544-4f85-87cf-274f6eb4d8cb
-  alterId: 0
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
   cipher: auto
   tls: false
   skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: 9531724e3efc3135bdf7f4339b2e04d7.mobgslb.tbcache.com
   udp: true
-- name: '58'
-  server: 127.0.0.53
-  port: 80
-  type: vmess
-  uuid: 88888888-8888-8888-8888-888888888888
-  alterId: 0
-  cipher: auto
-  tls: false
+- name: 🇬🇧 56
+  server: xn--1ugy405pdua.gayvibe.dpdns.org
+  port: 2174
+  type: trojan
+  password: tripitropa444
+  skip-cert-verify: false
   udp: true
-- name: '59'
-  server: 127.0.0.53
-  port: 81
-  type: vmess
-  uuid: 88888888-8888-8888-8888-888888888888
-  alterId: 0
-  cipher: auto
-  tls: false
-  udp: true
-- name: '60'
-  server: 127.0.0.53
-  port: 82
-  type: vmess
-  uuid: 88888888-8888-8888-8888-888888888888
-  alterId: 0
-  cipher: auto
-  tls: false
-  udp: true
-- name: '61'
-  server: 127.0.0.53
-  port: 83
-  type: vmess
-  uuid: 88888888-8888-8888-8888-888888888888
-  alterId: 0
-  cipher: auto
-  tls: false
-  udp: true
-- name: '62'
-  server: 127.0.0.53
-  port: 84
-  type: vmess
-  uuid: 88888888-8888-8888-8888-888888888888
-  alterId: 0
-  cipher: auto
-  tls: false
-  udp: true
-- name: '63'
-  server: 127.0.0.53
-  port: 85
-  type: vmess
-  uuid: 88888888-8888-8888-8888-888888888888
-  alterId: 0
-  cipher: auto
-  tls: false
-  udp: true
-- name: '64'
-  server: 127.0.0.53
-  port: 86
-  type: vmess
-  uuid: 88888888-8888-8888-8888-888888888888
-  alterId: 0
-  cipher: auto
-  tls: false
-  udp: true
-- name: '65'
-  server: 127.0.0.53
-  port: 87
-  type: vmess
-  uuid: 88888888-8888-8888-8888-888888888888
-  alterId: 0
-  cipher: auto
-  tls: false
-  udp: true
-- name: '66'
-  server: 127.0.0.53
-  port: 88
-  type: vmess
-  uuid: 88888888-8888-8888-8888-888888888888
-  alterId: 0
-  cipher: auto
-  tls: false
-  udp: true
-- name: '67'
-  server: 127.0.0.53
-  port: 89
-  type: vmess
-  uuid: 88888888-8888-8888-8888-888888888888
-  alterId: 0
-  cipher: auto
-  tls: false
-  udp: true
-- name: 🇺🇸 68
-  server: 63.180.254.10
+- name: 🇮🇳 57
+  server: 3.252.205.48
   port: 443
   type: ss
   cipher: aes-256-cfb
   password: amazonskr05
-  udp: true
-- name: 🇭🇰 69
-  server: v10.hdacd.com
-  port: 30807
-  type: vmess
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 2
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  udp: true
-- name: 🇮🇳 70
-  server: 103.236.66.4
-  port: 10001
-  type: ss
-  cipher: aes-256-gcm
-  password: Butterfly123@qwe9527
-  udp: true
-- name: 🇮🇳 71
-  server: 112.28.141.77
-  port: 10006
-  type: ss
-  cipher: aes-256-gcm
-  password: Butterfly123@qwe9527
-  udp: true
-- name: 🇸🇬 72
-  server: 18.142.250.141
-  port: 7674
-  type: trojan
-  password: BxceQaOe
-  sni: t.me%2Fripaojiedian
-  skip-cert-verify: true
-  udp: true
-- name: 🇯🇵 73
-  server: 35.78.206.14
-  port: 2944
-  type: trojan
-  password: BxceQaOe
-  sni: t.me%2Fripaojiedian
-  skip-cert-verify: true
-  udp: true
-- name: 🇭🇰 74
-  server: 18.167.96.176
-  port: 9408
-  type: trojan
-  password: BxceQaOe
-  sni: t.me%252Fripaojiedian
-  skip-cert-verify: true
-  udp: true
-- name: 🇮🇳 75
-  server: 103.236.66.4
-  port: 40001
-  type: ss
-  cipher: aes-256-gcm
-  password: Butterfly123@qwe9527
-  udp: true
-- name: 🇮🇳 76
-  server: 103.236.66.4
-  port: 40002
-  type: ss
-  cipher: aes-256-gcm
-  password: Butterfly123@qwe9527
-  udp: true
-- name: 🇵🇱 77
-  server: 95.40.28.75
-  port: 9149
-  type: trojan
-  password: BxceQaOe
-  sni: t.me%252Fripaojiedian
-  skip-cert-verify: true
-  udp: true
-- name: 🇮🇳 78
-  server: 103.236.66.4
-  port: 50003
-  type: ss
-  cipher: aes-256-gcm
-  password: Butterfly123@qwe9527
-  udp: true
-- name: 🇮🇳 79
-  server: 103.236.66.4
-  port: 50001
-  type: ss
-  cipher: aes-256-gcm
-  password: Butterfly123@qwe9527
-  udp: true
-- name: 🇭🇰 80
-  server: 18.167.96.176
-  port: 52770
-  type: trojan
-  password: BxceQaOe
-  sni: t.me%2Fripaojiedian
-  skip-cert-verify: true
-  udp: true
-- name: 🇮🇳 81
-  server: 36.33.35.105
-  port: 30001
-  type: ss
-  cipher: aes-256-gcm
-  password: Butterfly123@qwe9527
-  udp: true
-- name: 🇭🇰 82
-  server: v10.hdacd.com
-  port: 30807
-  type: vmess
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 2
-  cipher: auto
-  tls: false
-  udp: true
-- name: 🇩🇪 83
-  server: planb.mojcn.com.linuxlh.xin
-  port: 16626
-  type: vmess
-  uuid: 45c4a7a4-a1d4-4657-a92a-ab45558afac0
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: 6418046cd66ae322ebd1b8f4d82fd12c.mobgslb.tbcache.com
-  udp: true
-- name: 🇩🇪 84
-  server: planb.mojcn.com.linuxlh.xin
-  port: 16632
-  type: vmess
-  uuid: cefbe234-bcc6-4558-ab7b-1030e331e6a5
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: d052c66d50dcf7c3cfab75ed7f8e8322.mobgslb.tbcache.com
-  udp: true
-- name: 🇮🇳 85
-  server: 121.46.230.138
-  port: 65443
-  type: ss
-  cipher: aes-256-cfb
-  password: 7eadc6dbe2ae
-  udp: true
-- name: 🇯🇵 86
-  server: 54.168.242.25
-  port: 8555
-  type: vmess
-  uuid: 7aa3a024-e333-4b63-99a2-3db9d3b2054e
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: a.189.cn
-  udp: true
-- name: 🇩🇪 87
-  server: planb.mojcn.com.linuxlh.xin
-  port: 16632
-  type: vmess
-  uuid: bc8a58c9-a544-4f85-87cf-274f6eb4d8cb
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: 9531724e3efc3135bdf7f4339b2e04d7.mobgslb.tbcache.com
   udp: true
 proxy-groups:
 - name: 🎯 地区选择
@@ -833,41 +543,11 @@ proxy-groups:
   - 🇭🇰 50
   - 🇮🇳 51
   - 🇭🇰 52
-  - 🇩🇪 53
+  - 🇮🇳 53
   - 🇩🇪 54
   - 🇮🇳 55
-  - 🇯🇵 56
-  - 🇩🇪 57
-  - '58'
-  - '59'
-  - '60'
-  - '61'
-  - '62'
-  - '63'
-  - '64'
-  - '65'
-  - '66'
-  - '67'
-  - 🇺🇸 68
-  - 🇭🇰 69
-  - 🇮🇳 70
-  - 🇮🇳 71
-  - 🇸🇬 72
-  - 🇯🇵 73
-  - 🇭🇰 74
-  - 🇮🇳 75
-  - 🇮🇳 76
-  - 🇵🇱 77
-  - 🇮🇳 78
-  - 🇮🇳 79
-  - 🇭🇰 80
-  - 🇮🇳 81
-  - 🇭🇰 82
-  - 🇩🇪 83
-  - 🇩🇪 84
-  - 🇮🇳 85
-  - 🇯🇵 86
-  - 🇩🇪 87
+  - 🇬🇧 56
+  - 🇮🇳 57
 - name: 🇭🇰 香港节点
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -878,10 +558,6 @@ proxy-groups:
   - 🇭🇰 44
   - 🇭🇰 50
   - 🇭🇰 52
-  - 🇭🇰 69
-  - 🇭🇰 74
-  - 🇭🇰 80
-  - 🇭🇰 82
 - name: 🇹🇼 台湾节点
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -896,9 +572,6 @@ proxy-groups:
   tolerance: 50
   proxies:
   - 🇯🇵 43
-  - 🇯🇵 56
-  - 🇯🇵 73
-  - 🇯🇵 86
 - name: 🇸🇬 新加坡节点
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -906,7 +579,6 @@ proxy-groups:
   tolerance: 50
   proxies:
   - 🇸🇬 42
-  - 🇸🇬 72
 - name: 🇺🇸 美国节点
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -920,7 +592,6 @@ proxy-groups:
   - 🇺🇸 25
   - 🇺🇸 26
   - 🇺🇸 38
-  - 🇺🇸 68
 - name: 🇰🇷 韩国节点
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -934,19 +605,14 @@ proxy-groups:
   interval: 300
   tolerance: 50
   proxies:
-  - DIRECT
+  - 🇬🇧 56
 - name: 🇩🇪 德国节点
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - 🇩🇪 53
   - 🇩🇪 54
-  - 🇩🇪 57
-  - 🇩🇪 83
-  - 🇩🇪 84
-  - 🇩🇪 87
 - name: 🇫🇷 法国节点
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -1025,41 +691,11 @@ proxy-groups:
   - 🇭🇰 50
   - 🇮🇳 51
   - 🇭🇰 52
-  - 🇩🇪 53
+  - 🇮🇳 53
   - 🇩🇪 54
   - 🇮🇳 55
-  - 🇯🇵 56
-  - 🇩🇪 57
-  - '58'
-  - '59'
-  - '60'
-  - '61'
-  - '62'
-  - '63'
-  - '64'
-  - '65'
-  - '66'
-  - '67'
-  - 🇺🇸 68
-  - 🇭🇰 69
-  - 🇮🇳 70
-  - 🇮🇳 71
-  - 🇸🇬 72
-  - 🇯🇵 73
-  - 🇭🇰 74
-  - 🇮🇳 75
-  - 🇮🇳 76
-  - 🇵🇱 77
-  - 🇮🇳 78
-  - 🇮🇳 79
-  - 🇭🇰 80
-  - 🇮🇳 81
-  - 🇭🇰 82
-  - 🇩🇪 83
-  - 🇩🇪 84
-  - 🇮🇳 85
-  - 🇯🇵 86
-  - 🇩🇪 87
+  - 🇬🇧 56
+  - 🇮🇳 57
 - name: ⚖️ 负载均衡
   type: load-balance
   strategy: consistent-hashing
@@ -1119,41 +755,11 @@ proxy-groups:
   - 🇭🇰 50
   - 🇮🇳 51
   - 🇭🇰 52
-  - 🇩🇪 53
+  - 🇮🇳 53
   - 🇩🇪 54
   - 🇮🇳 55
-  - 🇯🇵 56
-  - 🇩🇪 57
-  - '58'
-  - '59'
-  - '60'
-  - '61'
-  - '62'
-  - '63'
-  - '64'
-  - '65'
-  - '66'
-  - '67'
-  - 🇺🇸 68
-  - 🇭🇰 69
-  - 🇮🇳 70
-  - 🇮🇳 71
-  - 🇸🇬 72
-  - 🇯🇵 73
-  - 🇭🇰 74
-  - 🇮🇳 75
-  - 🇮🇳 76
-  - 🇵🇱 77
-  - 🇮🇳 78
-  - 🇮🇳 79
-  - 🇭🇰 80
-  - 🇮🇳 81
-  - 🇭🇰 82
-  - 🇩🇪 83
-  - 🇩🇪 84
-  - 🇮🇳 85
-  - 🇯🇵 86
-  - 🇩🇪 87
+  - 🇬🇧 56
+  - 🇮🇳 57
 rules:
 - DOMAIN-KEYWORD,admarvel,🛑 广告拦截
 - DOMAIN-KEYWORD,admaster,🛑 广告拦截
