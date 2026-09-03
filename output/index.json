@@ -1,12 +1,12 @@
 {
-  "update_time": "2026-09-03 23:24:38",
-  "date": "2026/9/9-3",
+  "update_time": "2026-09-04 02:58:53",
+  "date": "2026/9/9-4",
   "formats": {
-    "clash": "clash/9-3.yaml",
-    "v2ray": "v2ray/9-3.txt",
-    "surge&ver=4": "surge/9-3.conf",
-    "mixed": "mixed/9-3.txt",
-    "singbox": "singbox/9-3.json"
+    "clash": "clash/9-4.yaml",
+    "v2ray": "v2ray/9-4.txt",
+    "surge&ver=4": "surge/9-4.conf",
+    "mixed": "mixed/9-4.txt",
+    "singbox": "singbox/9-4.json"
   },
   "latest": {
     "clash": "clash/latest.yaml",
@@ -15,15 +15,15 @@
     "mixed": "mixed/latest.txt",
     "singbox": "singbox/latest.json"
   },
-  "total_urls": 5,
+  "total_urls": 1,
   "merged": {
-    "date": "2026/9/9-3",
+    "date": "2026/9/9-4",
     "formats": {
-      "clash": "merged/9-3.clash.yaml",
-      "v2ray": "merged/9-3.v2ray.txt",
-      "surge": "merged/9-3.surge.conf",
-      "mixed": "merged/9-3.mixed.txt",
-      "singbox": "merged/9-3.singbox.json"
+      "clash": "merged/9-4.clash.yaml",
+      "v2ray": "merged/9-4.v2ray.txt",
+      "surge": "merged/9-4.surge.conf",
+      "mixed": "merged/9-4.mixed.txt",
+      "singbox": "merged/9-4.singbox.json"
     },
     "latest": {
       "clash": "merged/latest.clash.yaml",
@@ -32,66 +32,67 @@
       "mixed": "merged/latest.mixed.txt",
       "singbox": "merged/latest.singbox.json"
     },
-    "total_nodes": 71,
+    "total_nodes": 140,
     "type": "combined",
-    "main_supplement": 0,
+    "main_supplement": 117,
     "sources": [
       "FreeNodes",
       "Jsnzkpg",
       "NoMoreWalls",
       "Pawdroid",
-      "maflya"
+      "maflya",
+      "主订阅"
     ],
     "upstream_health": {
       "NoMoreWalls": {
         "fail_count": 0,
-        "last_success": "2026-09-03",
+        "last_success": "2026-09-04",
         "degraded": false
       },
       "FreeNodes": {
         "fail_count": 0,
-        "last_success": "2026-09-03",
+        "last_success": "2026-09-04",
         "degraded": false
       },
       "Pawdroid": {
         "fail_count": 0,
-        "last_success": "2026-09-03",
+        "last_success": "2026-09-04",
         "degraded": false
       },
       "Jsnzkpg": {
         "fail_count": 0,
-        "last_success": "2026-09-03",
+        "last_success": "2026-09-04",
         "degraded": false
       },
       "maflya": {
         "fail_count": 0,
-        "last_success": "2026-09-03",
+        "last_success": "2026-09-04",
         "degraded": false
       }
     },
     "quality": {
-      "total_parsed": 71,
-      "total_available": 71,
+      "total_parsed": 140,
+      "total_available": 140,
       "excluded": 0,
       "truncated": 0,
-      "output_count": 71,
+      "output_count": 140,
       "availability_rate": 100.0,
-      "avg_latency_ms": 210,
-      "max_latency_ms": 2312,
-      "min_latency_ms": 2,
+      "avg_latency_ms": 133,
+      "max_latency_ms": 1635,
+      "min_latency_ms": 1,
       "node_health": {
         "ss://YWVzLTI1Ni1jZmI6YW1hem9uc2tyMDU=@63.180.254.10:443#[ext:NoMoreWalls]%20tg%E9%A2%91%E9%81%93:%40ripaojiedian%20%231": {
           "fail_count": 0,
-          "last_latency": 152,
-          "last_seen": "2026-09-03",
+          "last_latency": 150,
+          "last_seen": "2026-09-04",
           "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
         },
         "vmess://eyJ2IjogIjIiLCAicHMiOiAiW2V4dDpOb01vcmVXYWxsc10g8J+HrfCfh7Ag6aaZ5rivfEByaXBhb2ppZWRpYW4iLCAiYWRkIjogInYxMC5oZGFjZC5jb20iLCAicG9ydCI6IDMwODA3LCAiYWlkIjogMiwgInNjeSI6ICJhdXRvIiwgIm5ldCI6ICJ0Y3AiLCAidHlwZSI6ICJub25lIiwgInRscyI6ICIiLCAiaWQiOiAiY2JiM2Y4NzctZDFmYi0zNDRjLTg3YTktZDE1M2JmZmQ1NDg0In0=": {
           "fail_count": 0,
-          "last_latency": 290,
-          "last_seen": "2026-09-03",
+          "last_latency": 243,
+          "last_seen": "2026-09-04",
           "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
@@ -99,7 +100,7 @@
         "ss://YWVzLTI1Ni1nY206QnV0dGVyZmx5MTIzQHF3ZTk1Mjc=@103.236.66.4:10001#[ext:NoMoreWalls]%20%E9%A6%99%E6%B8%AF2%7C%40ripaojiedian": {
           "fail_count": 1,
           "last_latency": null,
-          "last_seen": "2026-09-03",
+          "last_seen": "2026-09-04",
           "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
@@ -107,7 +108,7 @@
         "ss://YWVzLTI1Ni1nY206QnV0dGVyZmx5MTIzQHF3ZTk1Mjc=@112.28.141.77:10006#[ext:NoMoreWalls]%20%E9%A6%99%E6%B8%AF3%7C%40ripaojiedian": {
           "fail_count": 1,
           "last_latency": null,
-          "last_seen": "2026-09-03",
+          "last_seen": "2026-09-04",
           "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
@@ -115,7 +116,7 @@
         "trojan://BxceQaOe@18.142.250.141:7674?allowInsecure=1&sni=t.me%2Fripaojiedian#[ext:NoMoreWalls]%20%E9%A6%99%E6%B8%AF4%7C%40ripaojiedian": {
           "fail_count": 1,
           "last_latency": null,
-          "last_seen": "2026-09-03",
+          "last_seen": "2026-09-04",
           "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
@@ -123,7 +124,7 @@
         "trojan://BxceQaOe@35.78.206.14:2944?allowInsecure=1&sni=t.me%2Fripaojiedian#[ext:NoMoreWalls]%20%E9%A6%99%E6%B8%AF5%7C%40ripaojiedian": {
           "fail_count": 1,
           "last_latency": null,
-          "last_seen": "2026-09-03",
+          "last_seen": "2026-09-04",
           "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
@@ -131,7 +132,7 @@
         "trojan://BxceQaOe@18.167.96.176:9408?allowInsecure=1&sni=t.me%252Fripaojiedian#[ext:NoMoreWalls]%20%E6%97%A5%E6%9C%AC%7C%40ripaojiedian": {
           "fail_count": 1,
           "last_latency": null,
-          "last_seen": "2026-09-03",
+          "last_seen": "2026-09-04",
           "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
@@ -139,7 +140,7 @@
         "ss://YWVzLTI1Ni1nY206QnV0dGVyZmx5MTIzQHF3ZTk1Mjc=@103.236.66.4:40001#[ext:NoMoreWalls]%20%E6%97%A5%E6%9C%AC2%7C%40ripaojiedian": {
           "fail_count": 1,
           "last_latency": null,
-          "last_seen": "2026-09-03",
+          "last_seen": "2026-09-04",
           "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
@@ -147,7 +148,7 @@
         "ss://YWVzLTI1Ni1nY206QnV0dGVyZmx5MTIzQHF3ZTk1Mjc=@103.236.66.4:40002#[ext:NoMoreWalls]%20%E6%97%A5%E6%9C%AC3%7C%40ripaojiedian": {
           "fail_count": 1,
           "last_latency": null,
-          "last_seen": "2026-09-03",
+          "last_seen": "2026-09-04",
           "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
@@ -155,7 +156,7 @@
         "trojan://BxceQaOe@95.40.28.75:9149?allowInsecure=1&sni=t.me%252Fripaojiedian#[ext:NoMoreWalls]%20%E6%96%B0%E5%8A%A0%E5%9D%A13%7C%40ripaojiedian": {
           "fail_count": 1,
           "last_latency": null,
-          "last_seen": "2026-09-03",
+          "last_seen": "2026-09-04",
           "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
@@ -163,7 +164,7 @@
         "ss://YWVzLTI1Ni1nY206QnV0dGVyZmx5MTIzQHF3ZTk1Mjc=@103.236.66.4:50003#[ext:NoMoreWalls]%20%E7%BE%8E%E5%9B%BD2%7C%40ripaojiedian": {
           "fail_count": 1,
           "last_latency": null,
-          "last_seen": "2026-09-03",
+          "last_seen": "2026-09-04",
           "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
@@ -171,7 +172,7 @@
         "ss://YWVzLTI1Ni1nY206QnV0dGVyZmx5MTIzQHF3ZTk1Mjc=@103.236.66.4:50001#[ext:NoMoreWalls]%20%E7%BE%8E%E5%9B%BD%7C%40ripaojiedian": {
           "fail_count": 1,
           "last_latency": null,
-          "last_seen": "2026-09-03",
+          "last_seen": "2026-09-04",
           "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
@@ -179,7 +180,7 @@
         "trojan://BxceQaOe@18.167.96.176:52770?allowInsecure=1&sni=t.me%2Fripaojiedian#[ext:NoMoreWalls]%20%E7%BE%8E%E5%9B%BD3%7C%40ripaojiedian": {
           "fail_count": 1,
           "last_latency": null,
-          "last_seen": "2026-09-03",
+          "last_seen": "2026-09-04",
           "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
@@ -187,95 +188,95 @@
         "ss://YWVzLTI1Ni1nY206QnV0dGVyZmx5MTIzQHF3ZTk1Mjc=@36.33.35.105:30001#[ext:NoMoreWalls]%20%E5%8F%B0%E6%B9%BE%7C%40ripaojiedian": {
           "fail_count": 1,
           "last_latency": null,
-          "last_seen": "2026-09-03",
+          "last_seen": "2026-09-04",
           "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
         },
-        "trojan://humanity@216.24.57.1:443?allowInsecure=0&sni=www.ignitelimit.com&type=ws&path=/assignment#[ext:NoMoreWalls]%20%F0%9F%87%AB%F0%9F%87%B7FR_1%7C1.6MB%2Fs": {
+        "ss://YWVzLTI1Ni1jZmI6N2VhZGM2ZGJlMmFl@121.46.230.138:65443#[ext:NoMoreWalls]%20%F0%9F%87%B0%F0%9F%87%B7KR_1%7C1.1MB%2Fs": {
           "fail_count": 0,
-          "last_latency": 2,
-          "last_seen": "2026-09-03",
+          "last_latency": 188,
+          "last_seen": "2026-09-04",
           "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
         },
-        "vmess://eyJ2IjogIjIiLCAicHMiOiAiW2V4dDpOb01vcmVXYWxsc10g8J+HuvCfh7hVU18xfDEuMk1CL3MiLCAiYWRkIjogIjM4LjI0Ni4yMjYuMjQwIiwgInBvcnQiOiA1MjA4MCwgImFpZCI6IDAsICJzY3kiOiAiYXV0byIsICJuZXQiOiAiaHR0cCIsICJ0eXBlIjogIm5vbmUiLCAidGxzIjogIiIsICJpZCI6ICI3ZDRiZDk2MS0yMzBjLTRiMzQtYWI1ZC0wNWNmMGRmYjRlYTUifQ==": {
+        "ss://YWVzLTI1Ni1jZmI6YW1hem9uc2tyMDU=@3.252.205.48:443#[ext:NoMoreWalls]%20%F0%9F%87%AE%F0%9F%87%AAIE_1%7C3.7MB%2Fs": {
           "fail_count": 0,
-          "last_latency": 11,
-          "last_seen": "2026-09-03",
+          "last_latency": 132,
+          "last_seen": "2026-09-04",
           "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
         },
         "ss://YWVzLTI1Ni1jZmI6N2VhZGM2ZGJlMmFlQDExOC4xMDcuMjIyLjIzMTo2NTQ0Mw==#[ext:FreeNodes]%20%F0%9F%87%B2%F0%9F%87%BE_MY_%E9%A9%AC%E6%9D%A5%E8%A5%BF%E4%BA%9A": {
           "fail_count": 0,
-          "last_latency": 207,
-          "last_seen": "2026-09-03",
+          "last_latency": 245,
+          "last_seen": "2026-09-04",
           "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
         },
         "vmess://eyJhZGQiOiAidjYuaGRhY2QuY29tIiwgImFpZCI6IDIsICJhbGxvd0luc2VjdXJlIjogIjEiLCAiaWQiOiAiY2JiM2Y4NzctZDFmYi0zNDRjLTg3YTktZDE1M2JmZmQ1NDg0IiwgInBvcnQiOiAzMDgwNiwgInBzIjogIltleHQ6RnJlZU5vZGVzXSDwn4eo8J+Hs19DTl/kuK3lm70tPvCfh6/wn4e1X0pQX+aXpeacrCIsICJzZWN1cml0eSI6ICJub25lIn0=": {
-          "fail_count": 1,
-          "last_latency": null,
-          "last_seen": "2026-09-03",
+          "fail_count": 0,
+          "last_latency": 1635,
+          "last_seen": "2026-09-04",
           "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
         },
         "ss://YWVzLTI1Ni1jZmI6N2VhZGM2ZGJlMmFlQDEyMS40Ni4yMzAuMjMyOjY1NDQz#[ext:FreeNodes]%20%F0%9F%87%A8%F0%9F%87%B3_CN_%E4%B8%AD%E5%9B%BD": {
           "fail_count": 0,
-          "last_latency": 1220,
-          "last_seen": "2026-09-03",
+          "last_latency": 201,
+          "last_seen": "2026-09-04",
           "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
         },
         "vmess://eyJhZGQiOiAidjMzLmhkYWNkLmNvbSIsICJhaWQiOiAyLCAiYWxsb3dJbnNlY3VyZSI6ICIxIiwgImlkIjogImNiYjNmODc3LWQxZmItMzQ0Yy04N2E5LWQxNTNiZmZkNTQ4NCIsICJwb3J0IjogMzA4MzMsICJwcyI6ICJbZXh0OkZyZWVOb2Rlc10g8J+HqPCfh7NfQ05f5Lit5Zu9LT7wn4ep8J+Hql9ERV/lvrflm70iLCAic2VjdXJpdHkiOiAibm9uZSJ9": {
-          "fail_count": 0,
-          "last_latency": 195,
-          "last_seen": "2026-09-03",
+          "fail_count": 1,
+          "last_latency": null,
+          "last_seen": "2026-09-04",
           "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
         },
         "ss://YWVzLTI1Ni1jZmI6YW1hem9uc2tyMDVAMTMuNDAuOTQuNzA6NDQz#[ext:FreeNodes]%20%F0%9F%87%AC%F0%9F%87%A7_GB_%E8%8B%B1%E5%9B%BD": {
           "fail_count": 0,
-          "last_latency": 138,
-          "last_seen": "2026-09-03",
+          "last_latency": 141,
+          "last_seen": "2026-09-04",
           "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
         },
         "vmess://eyJhZGQiOiAicDA1LnJnaHZmLnNicyIsICJhaWQiOiAwLCAiYWxsb3dJbnNlY3VyZSI6ICIxIiwgImlkIjogIjliNjQxOWY4LTgxMjAtNDQyZS1hNDhjLTZiZjUyYWVmMGFiZiIsICJwb3J0IjogMTIzMywgInBzIjogIltleHQ6RnJlZU5vZGVzXSDwn4e68J+HuF9VU1/nvo7lm70iLCAic2VjdXJpdHkiOiAiYXV0byIsICJzbmkiOiAiZ2IudW5pcXVlbmFtZXMubmV0IiwgInRscyI6ICJ0bHMifQ==": {
           "fail_count": 0,
-          "last_latency": 106,
-          "last_seen": "2026-09-03",
+          "last_latency": 18,
+          "last_seen": "2026-09-04",
           "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
         },
         "ss://YWVzLTI1Ni1jZmI6YW1hem9uc2tyMDVAMzUuMTgyLjIyNi4xMjE6NDQz#[ext:FreeNodes]%20%F0%9F%87%A8%F0%9F%87%A6_CA_%E5%8A%A0%E6%8B%BF%E5%A4%A7": {
           "fail_count": 0,
-          "last_latency": 82,
-          "last_seen": "2026-09-03",
+          "last_latency": 77,
+          "last_seen": "2026-09-04",
           "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
         },
-        "ss://YWVzLTI1Ni1jZmI6N2VhZGM2ZGJlMmFlQDEyMS40Ni4yMzAuMTM4OjY1NDQz#[ext:FreeNodes]%20%F0%9F%87%A8%F0%9F%87%B3_CN_%E4%B8%AD%E5%9B%BD-%3E%F0%9F%87%B0%F0%9F%87%B7_KR_%E9%9F%A9%E5%9B%BD": {
+        "vmess://eyJhZGQiOiAiMzguMjQ2LjIyNi4yNDAiLCAiYWlkIjogMCwgImFsbG93SW5zZWN1cmUiOiAiMSIsICJpZCI6ICI3ZDRiZDk2MS0yMzBjLTRiMzQtYWI1ZC0wNWNmMGRmYjRlYTUiLCAibmV0IjogImh0dHAiLCAicG9ydCI6IDUyMDgwLCAicHMiOiAiW2V4dDpGcmVlTm9kZXNdIPCfh7rwn4e4X1VTX+e+juWbvSIsICJzZWN1cml0eSI6ICJhdXRvIn0=": {
           "fail_count": 0,
-          "last_latency": 217,
-          "last_seen": "2026-09-03",
+          "last_latency": 11,
+          "last_seen": "2026-09-04",
           "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
         },
         "vmess://eyJhZGQiOiAiMTk1LjEzMy4xOTIuMjMyIiwgImFpZCI6IDAsICJhbGxvd0luc2VjdXJlIjogIjEiLCAiaWQiOiAiOWI2NDE5ZjgtODEyMC00NDJlLWE0OGMtNmJmNTJhZWYwYWJmIiwgInBvcnQiOiAxMjMzLCAicHMiOiAiW2V4dDpGcmVlTm9kZXNdIPCfh7rwn4e4X1VTX+e+juWbvSIsICJzZWN1cml0eSI6ICJhdXRvIiwgInNuaSI6ICJnYi51bmlxdWVuYW1lcy5uZXQiLCAidGxzIjogInRscyJ9": {
           "fail_count": 0,
-          "last_latency": 3,
-          "last_seen": "2026-09-03",
+          "last_latency": 2,
+          "last_seen": "2026-09-04",
           "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
@@ -283,23 +284,23 @@
         "vmess://eyJhZGQiOiAiZ3VhbndhbmcuYXdzbm8uY29tIiwgImFpZCI6IDAsICJpZCI6ICI2YTg5YTIxNS0yMmJmLTRiZDctOTY0Mi1iOTViMmUwOTU4M2EiLCAibmV0IjogInRjcCIsICJwb3J0IjogNDQzLCAicHMiOiAiW2V4dDpGcmVlTm9kZXNdIPCfh7rwn4e4X1VTX+e+juWbvSIsICJzZWN1cml0eSI6ICJhdXRvIiwgInRscyI6ICJ0bHMifQ==": {
           "fail_count": 0,
           "last_latency": 78,
-          "last_seen": "2026-09-03",
+          "last_seen": "2026-09-04",
           "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
         },
         "vmess://eyJhZGQiOiAidjEwLnpndGZxcy5jbGljayIsICJhaWQiOiAyLCAiYWxsb3dJbnNlY3VyZSI6ICIxIiwgImlkIjogImNiYjNmODc3LWQxZmItMzQ0Yy04N2E5LWQxNTNiZmZkNTQ4NCIsICJwb3J0IjogMzA4MDcsICJwcyI6ICJbZXh0OkZyZWVOb2Rlc10g8J+HrfCfh7BfSEtf5Lit5Zu96aaZ5rivIiwgInNlY3VyaXR5IjogIm5vbmUifQ==": {
           "fail_count": 0,
-          "last_latency": 168,
-          "last_seen": "2026-09-03",
+          "last_latency": 163,
+          "last_seen": "2026-09-04",
           "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
         },
         "vmess://eyJhZGQiOiAidjQuaGRhY2QuY29tIiwgImFpZCI6IDIsICJpZCI6ICJjYmIzZjg3Ny1kMWZiLTM0NGMtODdhOS1kMTUzYmZmZDU0ODQiLCAibmV0IjogInRjcCIsICJwb3J0IjogMzA4MDQsICJwcyI6ICJbZXh0OkZyZWVOb2Rlc10g8J+HqPCfh7NfQ05f5Lit5Zu9LT7wn4e68J+HuF9VU1/nvo7lm70iLCAic2VjdXJpdHkiOiAiYXV0byJ9": {
           "fail_count": 0,
-          "last_latency": 160,
-          "last_seen": "2026-09-03",
+          "last_latency": 155,
+          "last_seen": "2026-09-04",
           "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
@@ -307,23 +308,23 @@
         "ss://YWVzLTI1Ni1jZmI6YW1hem9uc2tyMDVAMy45Ni4xMjQuNDY6NDQz#[ext:FreeNodes]%20%F0%9F%87%A8%F0%9F%87%A6_CA_%E5%8A%A0%E6%8B%BF%E5%A4%A7": {
           "fail_count": 1,
           "last_latency": null,
-          "last_seen": "2026-09-03",
+          "last_seen": "2026-09-04",
           "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
         },
         "vmess://eyJhZGQiOiAicGxhbmIubW9qY24uY29tLmxpbnV4bGgueGluIiwgImFpZCI6IDAsICJob3N0IjogIjY4NmE3NTU4ZGY1NzFhZmIxNDA4YjBlNzdhZTRmNjg3Lm1vYmdzbGIudGJjYWNoZS5jb20iLCAiaWQiOiAiNTZhNTExYmQtZjIwNy00OGY0LWJlNWItNDY1MmFmZTE3OGE0IiwgIm5ldCI6ICJ3cyIsICJwYXRoIjogIi8iLCAicG9ydCI6IDE2NjMyLCAicHMiOiAiW2V4dDpGcmVlTm9kZXNdIPCfh63wn4ewX0hLX+S4reWbvemmmea4ryIsICJzZWN1cml0eSI6ICJhdXRvIn0=": {
           "fail_count": 0,
-          "last_latency": 825,
-          "last_seen": "2026-09-03",
+          "last_latency": 408,
+          "last_seen": "2026-09-04",
           "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
         },
         "vmess://eyJhZGQiOiAiMTEyLjEzMi4yMTUuMTA4IiwgImFpZCI6IDY0LCAiaWQiOiAiNDE4MDQ4YWYtYTI5My00Yjk5LTliMGMtOThjYTM1ODBkZDI0IiwgIm5ldCI6ICJ0Y3AiLCAicG9ydCI6IDUwMDAyLCAicHMiOiAiW2V4dDpGcmVlTm9kZXNdIPCfh6jwn4ezX0NOX+S4reWbvSIsICJzZWN1cml0eSI6ICJhdXRvIn0=": {
           "fail_count": 0,
-          "last_latency": 194,
-          "last_seen": "2026-09-03",
+          "last_latency": 185,
+          "last_seen": "2026-09-04",
           "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
@@ -331,7 +332,7 @@
         "ss://YWVzLTI1Ni1jZmI6N2VhZGM2ZGJlMmFlQDEwMy4xNjkuNjcuMzQ6NjU0NDM=#[ext:FreeNodes]%20%F0%9F%87%B9%F0%9F%87%AD_TH_%E6%B3%B0%E5%9B%BD": {
           "fail_count": 0,
           "last_latency": 193,
-          "last_seen": "2026-09-03",
+          "last_seen": "2026-09-04",
           "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
@@ -339,191 +340,263 @@
         "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo4NmJmMzNlYS02MmQ5LTQ5YTEtOWJkMC03M2U0NWY2ZTE0MDNAdXMxMDAyLmx1bmFydHJhY2UuaW86NDAwMTM=#[ext:FreeNodes]%20%F0%9F%87%AD%F0%9F%87%B0_HK_%E4%B8%AD%E5%9B%BD%E9%A6%99%E6%B8%AF-%3E%F0%9F%87%BA%F0%9F%87%B8_US_%E7%BE%8E%E5%9B%BD": {
           "fail_count": 1,
           "last_latency": null,
-          "last_seen": "2026-09-03",
+          "last_seen": "2026-09-04",
           "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
         },
         "ss://YWVzLTI1Ni1jZmI6N2VhZGM2ZGJlMmFlQDk1LjE3MC4xMy40Nzo2NTQ0Mw==#[ext:FreeNodes]%20%F0%9F%87%AB%F0%9F%87%B7_FR_%E6%B3%95%E5%9B%BD": {
           "fail_count": 0,
-          "last_latency": 146,
-          "last_seen": "2026-09-03",
+          "last_latency": 153,
+          "last_seen": "2026-09-04",
           "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
         },
         "ss://YWVzLTI1Ni1jZmI6N2VhZGM2ZGJlMmFlQDEyMS40Ni4yMzAuMTM3OjY1NDQz#[ext:FreeNodes]%20%F0%9F%87%A8%F0%9F%87%B3_CN_%E4%B8%AD%E5%9B%BD-%3E%F0%9F%87%AF%F0%9F%87%B5_JP_%E6%97%A5%E6%9C%AC": {
           "fail_count": 0,
-          "last_latency": 213,
-          "last_seen": "2026-09-03",
+          "last_latency": 200,
+          "last_seen": "2026-09-04",
           "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
         },
         "vmess://eyJhZGQiOiAiMTkyLjIyNy4yNDcuMjciLCAiYWlkIjogMCwgImFsbG93SW5zZWN1cmUiOiAiMSIsICJpZCI6ICI2YTg5YTIxNS0yMmJmLTRiZDctOTY0Mi1iOTViMmUwOTU4M2EiLCAibmV0IjogInRjcCIsICJwb3J0IjogNDQzLCAicHMiOiAiW2V4dDpGcmVlTm9kZXNdIPCfh7rwn4e4X1VTX+e+juWbvSIsICJzZWN1cml0eSI6ICJhdXRvIiwgInRscyI6ICJ0bHMifQ==": {
           "fail_count": 0,
-          "last_latency": 12,
-          "last_seen": "2026-09-03",
+          "last_latency": 11,
+          "last_seen": "2026-09-04",
           "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
         },
         "vmess://eyJhZGQiOiAidjM1LmhkYWNkLmNvbSIsICJhaWQiOiAyLCAiaWQiOiAiY2JiM2Y4NzctZDFmYi0zNDRjLTg3YTktZDE1M2JmZmQ1NDg0IiwgIm5ldCI6ICJ0Y3AiLCAicG9ydCI6IDMwODM1LCAicHMiOiAiW2V4dDpGcmVlTm9kZXNdIPCfh6jwn4ezX0NOX+S4reWbvS0+8J+Hq/Cfh7dfRlJf5rOV5Zu9IiwgInNlY3VyaXR5IjogImF1dG8ifQ==": {
-          "fail_count": 1,
-          "last_latency": null,
-          "last_seen": "2026-09-03",
+          "fail_count": 0,
+          "last_latency": 729,
+          "last_seen": "2026-09-04",
           "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
         },
         "ss://YWVzLTI1Ni1jZmI6N2VhZGM2ZGJlMmFlQDEyMS40Ni4yMzAuMjMzOjY1NDQz#[ext:FreeNodes]%20%F0%9F%87%A8%F0%9F%87%B3_CN_%E4%B8%AD%E5%9B%BD-%3E%F0%9F%87%BA%F0%9F%87%B8_US_%E7%BE%8E%E5%9B%BD": {
           "fail_count": 0,
-          "last_latency": 183,
-          "last_seen": "2026-09-03",
+          "last_latency": 190,
+          "last_seen": "2026-09-04",
           "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
         },
         "ss://YWVzLTI1Ni1jZmI6YW1hem9uc2tyMDVAMy45Ny4xNi4xNjA6NDQz#[ext:FreeNodes]%20%F0%9F%87%A8%F0%9F%87%A6_CA_%E5%8A%A0%E6%8B%BF%E5%A4%A7": {
           "fail_count": 0,
-          "last_latency": 72,
-          "last_seen": "2026-09-03",
+          "last_latency": 74,
+          "last_seen": "2026-09-04",
           "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
         },
         "trojan://tripitropa994825@45.85.88.194:2234?allowInsecure=1&security=tls&sni=vps.tropicalhosting.net#[ext:FreeNodes]%20%F0%9F%87%AC%F0%9F%87%A7_GB_%E8%8B%B1%E5%9B%BD": {
           "fail_count": 0,
-          "last_latency": 145,
-          "last_seen": "2026-09-03",
+          "last_latency": 146,
+          "last_seen": "2026-09-04",
           "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
         },
         "vmess://eyJhZGQiOiAidjQ1LmhkYWNkLmNvbSIsICJhaWQiOiAyLCAiaWQiOiAiY2JiM2Y4NzctZDFmYi0zNDRjLTg3YTktZDE1M2JmZmQ1NDg0IiwgIm5ldCI6ICJ0Y3AiLCAicG9ydCI6IDMwODQ1LCAicHMiOiAiW2V4dDpGcmVlTm9kZXNdIPCfh6jwn4ezX0NOX+S4reWbvS0+8J+HuPCfh6xfU0df5paw5Yqg5Z2hIiwgInNlY3VyaXR5IjogImF1dG8ifQ==": {
-          "fail_count": 1,
-          "last_latency": null,
-          "last_seen": "2026-09-03",
+          "fail_count": 0,
+          "last_latency": 728,
+          "last_seen": "2026-09-04",
           "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
         },
         "vmess://eyJhZGQiOiAidjM2LmhkYWNkLmNvbSIsICJhaWQiOiAyLCAiaWQiOiAiY2JiM2Y4NzctZDFmYi0zNDRjLTg3YTktZDE1M2JmZmQ1NDg0IiwgIm5ldCI6ICJ0Y3AiLCAicG9ydCI6IDMwODM2LCAicHMiOiAiW2V4dDpGcmVlTm9kZXNdIPCfh6jwn4ezX0NOX+S4reWbvS0+8J+HrPCfh6dfR0Jf6Iux5Zu9IiwgInNlY3VyaXR5IjogImF1dG8ifQ==": {
-          "fail_count": 0,
-          "last_latency": 186,
-          "last_seen": "2026-09-03",
+          "fail_count": 1,
+          "last_latency": null,
+          "last_seen": "2026-09-04",
           "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
         },
         "vmess://eyJhZGQiOiAidjI5LmhkYWNkLmNvbSIsICJhaWQiOiAyLCAiaWQiOiAiY2JiM2Y4NzctZDFmYi0zNDRjLTg3YTktZDE1M2JmZmQ1NDg0IiwgIm5ldCI6ICJ0Y3AiLCAicG9ydCI6IDMwODI5LCAicHMiOiAiW2V4dDpGcmVlTm9kZXNdIPCfh6jwn4ezX0NOX+S4reWbvS0+8J+HuvCfh7hfVVNf576O5Zu9IiwgInNlY3VyaXR5IjogImF1dG8ifQ==": {
           "fail_count": 0,
-          "last_latency": 315,
-          "last_seen": "2026-09-03",
+          "last_latency": 167,
+          "last_seen": "2026-09-04",
+          "cooling_down": false,
+          "cooldown_cycles": 0,
+          "retry_count": 0
+        },
+        "trojan://humanity@render.com:443?security=tls&sni=www.ignitelimit.com&fp=chrome&type=ws&path=%2Fassignment#[ext:Pawdroid]%20%E7%BE%8E%E5%9B%BD%2B%E5%8A%A0%E5%B7%9E": {
+          "fail_count": 0,
+          "last_latency": 13,
+          "last_seen": "2026-09-04",
+          "cooling_down": false,
+          "cooldown_cycles": 0,
+          "retry_count": 0
+        },
+        "trojan://humanity@86.38.214.205:443?security=tls&sni=www.ignitelimit.com&type=ws&path=%2Fassignment#[ext:Pawdroid]%20%E7%AB%8B%E9%99%B6%E5%AE%9B%2BV2CROSS.COM": {
+          "fail_count": 0,
+          "last_latency": 3,
+          "last_seen": "2026-09-04",
+          "cooling_down": false,
+          "cooldown_cycles": 0,
+          "retry_count": 0
+        },
+        "trojan://humanity@198.41.223.96:443?security=tls&sni=www.ignitelimit.com&alpn=http%2F1.1%2Ch2%2Ch3&type=ws&host=www.ignitelimit.com&path=%2Fassignment#[ext:Pawdroid]%20%E7%BE%8E%E5%9B%BD%2BCloudFlare%E8%8A%82%E7%82%B9": {
+          "fail_count": 0,
+          "last_latency": 3,
+          "last_seen": "2026-09-04",
+          "cooling_down": false,
+          "cooldown_cycles": 0,
+          "retry_count": 0
+        },
+        "trojan://humanity@104.18.152.225:443?security=tls&sni=www.ignitelimit.com&type=ws&host=www.ignitelimit.com&path=%2Fassignment#[ext:Pawdroid]%20%E7%BE%8E%E5%9B%BD%2BCloudFlare%E8%8A%82%E7%82%B9": {
+          "fail_count": 0,
+          "last_latency": 2,
+          "last_seen": "2026-09-04",
+          "cooling_down": false,
+          "cooldown_cycles": 0,
+          "retry_count": 0
+        },
+        "trojan://humanity@104.18.152.187:443?security=tls&sni=www.ignitelimit.com&fp=chrome&type=ws&path=%2Fassignment#[ext:Pawdroid]%20%E7%BE%8E%E5%9B%BD%2BCloudFlare%E8%8A%82%E7%82%B9": {
+          "fail_count": 0,
+          "last_latency": 2,
+          "last_seen": "2026-09-04",
+          "cooling_down": false,
+          "cooldown_cycles": 0,
+          "retry_count": 0
+        },
+        "trojan://humanity@104.26.15.137:443?security=tls&sni=www.ignitelimit.com&type=ws&host=www.ignitelimit.com&path=%2Fassignment#[ext:Pawdroid]%20%E7%BE%8E%E5%9B%BD%2BCloudFlare%E8%8A%82%E7%82%B9": {
+          "fail_count": 0,
+          "last_latency": 2,
+          "last_seen": "2026-09-04",
+          "cooling_down": false,
+          "cooldown_cycles": 0,
+          "retry_count": 0
+        },
+        "trojan://humanity@104.18.152.161:443?security=tls&sni=www.ignitelimit.com&type=ws&path=%2Fassignment#[ext:Pawdroid]%20%E7%BE%8E%E5%9B%BD%2BCloudFlare%E8%8A%82%E7%82%B9": {
+          "fail_count": 0,
+          "last_latency": 2,
+          "last_seen": "2026-09-04",
+          "cooling_down": false,
+          "cooldown_cycles": 0,
+          "retry_count": 0
+        },
+        "trojan://humanity@104.17.177.143:443?security=tls&sni=www.ignitelimit.com&type=ws&host=www.ignitelimit.com&path=%2Fassignment#[ext:Pawdroid]%20%E7%BE%8E%E5%9B%BD%2BCloudFlare%E8%8A%82%E7%82%B9": {
+          "fail_count": 0,
+          "last_latency": 2,
+          "last_seen": "2026-09-04",
+          "cooling_down": false,
+          "cooldown_cycles": 0,
+          "retry_count": 0
+        },
+        "trojan://humanity@join-telegram-channel-tirexnet.trex.kdns.fr:443?security=tls&sni=www.ignitelimit.com&type=ws&host=www.ignitelimit.com&path=%2Fassignment#[ext:Pawdroid]%20%E7%BE%8E%E5%9B%BD%2BCloudFlare%E8%8A%82%E7%82%B9": {
+          "fail_count": 0,
+          "last_latency": 158,
+          "last_seen": "2026-09-04",
+          "cooling_down": false,
+          "cooldown_cycles": 0,
+          "retry_count": 0
+        },
+        "trojan://humanity@8.6.112.0:443?security=tls&sni=www.ignitelimit.com&type=ws&host=www.ignitelimit.com&path=%2Fassignment#[ext:Pawdroid]%20%E7%BE%8E%E5%9B%BD%2B%E5%BE%97%E5%85%8B%E8%90%A8%E6%96%AF%E5%B7%9E%E8%BE%BE%E6%8B%89%E6%96%AFCloudflare%2BWarp%E8%8A%82%E7%82%B9": {
+          "fail_count": 0,
+          "last_latency": 2,
+          "last_seen": "2026-09-04",
           "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
         },
         "trojan://humanity@104.26.14.137:443?security=tls&sni=www.ignitelimit.com&type=ws&path=%2Fassignment#[ext:Pawdroid]%20%E7%BE%8E%E5%9B%BD%2BCloudFlare%E8%8A%82%E7%82%B9": {
           "fail_count": 0,
+          "last_latency": 1,
+          "last_seen": "2026-09-04",
+          "cooling_down": false,
+          "cooldown_cycles": 0,
+          "retry_count": 0
+        },
+        "trojan://humanity@join-telegram-channel.tirexnet.kdns.fr:443?security=tls&sni=www.ignitelimit.com&alpn=h3%2Ch2%2Chttp%2F1.1&type=ws&host=www.ignitelimit.com&path=%2Fassignment#[ext:Pawdroid]%20%E7%BE%8E%E5%9B%BD%2BCloudFlare%E8%8A%82%E7%82%B9": {
+          "fail_count": 0,
+          "last_latency": 210,
+          "last_seen": "2026-09-04",
+          "cooling_down": false,
+          "cooldown_cycles": 0,
+          "retry_count": 0
+        },
+        "trojan://humanity@104.16.174.117:443?security=tls&sni=www.ignitelimit.com&type=ws&host=www.ignitelimit.com&path=%2Fassignment#[ext:Pawdroid]%20%E7%BE%8E%E5%9B%BD%2BCloudFlare%E8%8A%82%E7%82%B9": {
+          "fail_count": 0,
           "last_latency": 2,
-          "last_seen": "2026-09-03",
+          "last_seen": "2026-09-04",
           "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
         },
-        "trojan://humanity@176.97.66.175:443?security=tls&sni=www.ignitelimit.com&type=ws&path=%2Fassignment#[ext:Pawdroid]%20%E8%8B%B1%E5%9B%BD%2BV2CROSS.COM": {
+        "trojan://humanity@www.speedtest.org:443?security=tls&sni=www.ignitelimit.com&type=ws&host=www.ignitelimit.com&path=%2Fassignment#[ext:Pawdroid]%20%E7%BE%8E%E5%9B%BD%2BCloudFlare%E8%8A%82%E7%82%B9": {
           "fail_count": 0,
-          "last_latency": 2312,
-          "last_seen": "2026-09-03",
+          "last_latency": 243,
+          "last_seen": "2026-09-04",
           "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
         },
-        "trojan://humanity@172.67.74.2:443?security=tls&sni=www.ignitelimit.com&type=ws&host=www.ignitelimit.com&path=%2Fassignment#[ext:Pawdroid]%20%E7%BE%8E%E5%9B%BD%2BCloudFlare%E8%8A%82%E7%82%B9": {
+        "[IN] [ext:Jsnzkpg] ✈️关注TG频道@stymei 13": {
           "fail_count": 0,
-          "last_latency": 2,
-          "last_seen": "2026-09-03",
+          "last_latency": 160,
+          "last_seen": "2026-09-04",
           "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
         },
-        "trojan://humanity@172.67.221.242:443?security=tls&sni=www.ignitelimit.com&fp=chrome&alpn=h3%2Ch2%2Chttp%2F1.1&type=ws&path=%2Fassignment#[ext:Pawdroid]%20%E7%BE%8E%E5%9B%BD%2BCloudFlare%E8%8A%82%E7%82%B9": {
+        "[IN] [ext:Jsnzkpg] ✈️关注TG频道@stymei 14": {
           "fail_count": 0,
-          "last_latency": 72,
-          "last_seen": "2026-09-03",
+          "last_latency": 155,
+          "last_seen": "2026-09-04",
           "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
         },
-        "trojan://humanity@188.114.97.7:443?type=ws&path=/assignment&security=tls&sni=www.ignitelimit.com&ech=ip.gs+udp://8.8.8.8#[ext:Pawdroid]%20%E5%B7%B4%E8%A5%BF%E5%9C%A3%E4%BF%9D%E7%BD%97%2BCloudFlare%E8%8A%82%E7%82%B9": {
+        "[ext:Jsnzkpg] ✈️关注TG频道@stymei 29": {
           "fail_count": 0,
-          "last_latency": 150,
-          "last_seen": "2026-09-03",
+          "last_latency": 76,
+          "last_seen": "2026-09-04",
           "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
         },
-        "trojan://humanity@104.21.46.3:443?security=tls&sni=www.ignitelimit.com&alpn=h3%2Ch2%2Chttp%2F1.1&type=ws&host=www.ignitelimit.com&path=%2Fassignment#[ext:Pawdroid]%20%E7%BE%8E%E5%9B%BD%2BCloudFlare%E8%8A%82%E7%82%B9": {
+        "[IN] [ext:Jsnzkpg] ✈️关注TG频道@stymei 31": {
           "fail_count": 0,
-          "last_latency": 150,
-          "last_seen": "2026-09-03",
+          "last_latency": 158,
+          "last_seen": "2026-09-04",
           "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
         },
-        "ss://YWVzLTI1Ni1nY206Y2RCSURWNDJEQ3duZklO@51.79.64.198:8119#[ext:Pawdroid]%20%E5%8A%A0%E6%8B%BF%E5%A4%A7%2B%E9%AD%81%E5%8C%97%E5%85%8B%E7%9C%81%E5%8D%9A%E9%98%BF%E5%8A%AA%E7%93%A6OVH%E6%95%B0%E6%8D%AE%E4%B8%AD%E5%BF%83": {
+        "[ext:Jsnzkpg] ✈️关注TG频道@stymei 39": {
           "fail_count": 0,
-          "last_latency": 70,
-          "last_seen": "2026-09-03",
+          "last_latency": 12,
+          "last_seen": "2026-09-04",
           "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
         },
-        "trojan://humanity@www.speedtest.org:443?security=tls&sni=www.ignitelimit.com&type=ws&path=%2Fassignment#[ext:Pawdroid]%20%E7%BE%8E%E5%9B%BD%2BCloudFlare%E8%8A%82%E7%82%B9": {
+        "[ext:Jsnzkpg] ✈️关注TG频道@stymei 47": {
           "fail_count": 0,
-          "last_latency": 274,
-          "last_seen": "2026-09-03",
+          "last_latency": 141,
+          "last_seen": "2026-09-04",
           "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
         },
-        "[ext:Jsnzkpg] ✈️关注TG频道@stymei 10": {
-          "fail_count": 0,
-          "last_latency": 212,
-          "last_seen": "2026-09-03",
-          "cooling_down": false,
-          "cooldown_cycles": 0,
-          "retry_count": 0
-        },
-        "[ext:Jsnzkpg] ✈️关注TG频道@stymei 20": {
+        "[ext:Jsnzkpg] ✈️关注TG频道@stymei 48": {
           "fail_count": 0,
           "last_latency": 130,
-          "last_seen": "2026-09-03",
-          "cooling_down": false,
-          "cooldown_cycles": 0,
-          "retry_count": 0
-        },
-        "[ext:Jsnzkpg] ✈️关注TG频道@stymei 21": {
-          "fail_count": 0,
-          "last_latency": 146,
-          "last_seen": "2026-09-03",
-          "cooling_down": false,
-          "cooldown_cycles": 0,
-          "retry_count": 0
-        },
-        "[ext:Jsnzkpg] ✈️关注TG频道@stymei 31": {
-          "fail_count": 0,
-          "last_latency": 13,
-          "last_seen": "2026-09-03",
+          "last_seen": "2026-09-04",
           "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
         },
         "[ext:maflya] ★ ✈️TG频道@flymaf★": {
-          "fail_count": 1,
-          "last_latency": null,
-          "last_seen": "2026-09-03",
+          "fail_count": 0,
+          "last_latency": 105,
+          "last_seen": "2026-09-04",
           "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
@@ -531,15 +604,15 @@
         "[ext:maflya] 获取时间：2026-09-03 12:33:16 (UTC)": {
           "fail_count": 1,
           "last_latency": null,
-          "last_seen": "2026-09-03",
+          "last_seen": "2026-09-04",
           "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
         },
         "[ext:maflya] ★每小时自动更新★": {
           "fail_count": 0,
-          "last_latency": 67,
-          "last_seen": "2026-09-03",
+          "last_latency": 72,
+          "last_seen": "2026-09-04",
           "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
@@ -547,79 +620,71 @@
         "[ext:maflya] ★ https://sub.maflya.com/★": {
           "fail_count": 0,
           "last_latency": 66,
-          "last_seen": "2026-09-03",
+          "last_seen": "2026-09-04",
           "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
         },
         "[ext:maflya] ★公益节点,无广告★": {
           "fail_count": 0,
-          "last_latency": 194,
-          "last_seen": "2026-09-03",
+          "last_latency": 176,
+          "last_seen": "2026-09-04",
           "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
         },
         "[ext:maflya] ★赞助链接Donation link★": {
           "fail_count": 0,
-          "last_latency": 45,
-          "last_seen": "2026-09-03",
+          "last_latency": 80,
+          "last_seen": "2026-09-04",
           "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
         },
         "[ext:maflya] ★ https://pay.maflya.com  ★": {
-          "fail_count": 1,
-          "last_latency": null,
-          "last_seen": "2026-09-03",
+          "fail_count": 0,
+          "last_latency": 22,
+          "last_seen": "2026-09-04",
           "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
         },
         "[ext:maflya] ★ 安卓全平台Karing, 苹果 shadowrocket★": {
           "fail_count": 0,
-          "last_latency": 59,
-          "last_seen": "2026-09-03",
+          "last_latency": 46,
+          "last_seen": "2026-09-04",
           "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
         },
         "[ext:maflya] ★感谢所有赞助的大哥大姐★": {
           "fail_count": 0,
-          "last_latency": 121,
-          "last_seen": "2026-09-03",
+          "last_latency": 143,
+          "last_seen": "2026-09-04",
           "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
         },
         "[ext:maflya] MAFLYA.com节点订阅": {
           "fail_count": 0,
-          "last_latency": 139,
-          "last_seen": "2026-09-03",
+          "last_latency": 145,
+          "last_seen": "2026-09-04",
           "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
         },
         "[ext:maflya] ★节点来自哄哄，热气球，网友提供★": {
           "fail_count": 0,
-          "last_latency": 143,
-          "last_seen": "2026-09-03",
-          "cooling_down": false,
-          "cooldown_cycles": 0,
-          "retry_count": 0
-        },
-        "[ext:maflya] 美国US13-A13-TROJAN-D1": {
-          "fail_count": 0,
-          "last_latency": 82,
-          "last_seen": "2026-09-03",
+          "last_latency": 141,
+          "last_seen": "2026-09-04",
           "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
         },
         "[ext:maflya] 日本JP14-A14-TROJAN-D1": {
           "fail_count": 0,
-          "last_latency": 122,
-          "last_seen": "2026-09-03",
+          "last_latency": 180,
+          "last_seen": "2026-09-04",
           "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
@@ -627,23 +692,511 @@
         "[ext:maflya] 美国US15-A15-TROJAN-D1": {
           "fail_count": 0,
           "last_latency": 233,
-          "last_seen": "2026-09-03",
+          "last_seen": "2026-09-04",
           "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
         },
         "[ext:maflya] 关注@flymaf TG频道-2-A141-TROJAN-D8": {
           "fail_count": 0,
-          "last_latency": 9,
-          "last_seen": "2026-09-03",
+          "last_latency": 19,
+          "last_seen": "2026-09-04",
           "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
         },
         "[ext:maflya] 关注@flymaf TG频道-3-A142-SS-D8": {
           "fail_count": 0,
-          "last_latency": 404,
-          "last_seen": "2026-09-03",
+          "last_latency": 612,
+          "last_seen": "2026-09-04",
+          "cooling_down": false,
+          "cooldown_cycles": 0,
+          "retry_count": 0
+        },
+        "🇫🇷 01": {
+          "fail_count": 0,
+          "last_latency": 146,
+          "last_seen": "2026-09-04",
+          "cooling_down": false,
+          "cooldown_cycles": 0,
+          "retry_count": 0
+        },
+        "🇨🇦 07": {
+          "fail_count": 0,
+          "last_latency": 69,
+          "last_seen": "2026-09-04",
+          "cooling_down": false,
+          "cooldown_cycles": 0,
+          "retry_count": 0
+        },
+        "19": {
+          "fail_count": 0,
+          "last_latency": 227,
+          "last_seen": "2026-09-04",
+          "cooling_down": false,
+          "cooldown_cycles": 0,
+          "retry_count": 0
+        },
+        "🇺🇸 20": {
+          "fail_count": 0,
+          "last_latency": 76,
+          "last_seen": "2026-09-04",
+          "cooling_down": false,
+          "cooldown_cycles": 0,
+          "retry_count": 0
+        },
+        "🇺🇸 22": {
+          "fail_count": 0,
+          "last_latency": 204,
+          "last_seen": "2026-09-04",
+          "cooling_down": false,
+          "cooldown_cycles": 0,
+          "retry_count": 0
+        },
+        "🇺🇸 23": {
+          "fail_count": 1,
+          "last_latency": null,
+          "last_seen": "2026-09-04",
+          "cooling_down": false,
+          "cooldown_cycles": 0,
+          "retry_count": 0
+        },
+        "26": {
+          "fail_count": 0,
+          "last_latency": 183,
+          "last_seen": "2026-09-04",
+          "cooling_down": false,
+          "cooldown_cycles": 0,
+          "retry_count": 0
+        },
+        "🇩🇪 29": {
+          "fail_count": 1,
+          "last_latency": null,
+          "last_seen": "2026-09-04",
+          "cooling_down": false,
+          "cooldown_cycles": 0,
+          "retry_count": 0
+        },
+        "🇨🇦 30": {
+          "fail_count": 1,
+          "last_latency": null,
+          "last_seen": "2026-09-04",
+          "cooling_down": false,
+          "cooldown_cycles": 0,
+          "retry_count": 0
+        },
+        "31": {
+          "fail_count": 1,
+          "last_latency": null,
+          "last_seen": "2026-09-04",
+          "cooling_down": false,
+          "cooldown_cycles": 0,
+          "retry_count": 0
+        },
+        "33": {
+          "fail_count": 1,
+          "last_latency": null,
+          "last_seen": "2026-09-04",
+          "cooling_down": false,
+          "cooldown_cycles": 0,
+          "retry_count": 0
+        },
+        "34": {
+          "fail_count": 1,
+          "last_latency": null,
+          "last_seen": "2026-09-04",
+          "cooling_down": false,
+          "cooldown_cycles": 0,
+          "retry_count": 0
+        },
+        "35": {
+          "fail_count": 1,
+          "last_latency": null,
+          "last_seen": "2026-09-04",
+          "cooling_down": false,
+          "cooldown_cycles": 0,
+          "retry_count": 0
+        },
+        "36": {
+          "fail_count": 1,
+          "last_latency": null,
+          "last_seen": "2026-09-04",
+          "cooling_down": false,
+          "cooldown_cycles": 0,
+          "retry_count": 0
+        },
+        "37": {
+          "fail_count": 1,
+          "last_latency": null,
+          "last_seen": "2026-09-04",
+          "cooling_down": false,
+          "cooldown_cycles": 0,
+          "retry_count": 0
+        },
+        "38": {
+          "fail_count": 1,
+          "last_latency": null,
+          "last_seen": "2026-09-04",
+          "cooling_down": false,
+          "cooldown_cycles": 0,
+          "retry_count": 0
+        },
+        "39": {
+          "fail_count": 1,
+          "last_latency": null,
+          "last_seen": "2026-09-04",
+          "cooling_down": false,
+          "cooldown_cycles": 0,
+          "retry_count": 0
+        },
+        "40": {
+          "fail_count": 1,
+          "last_latency": null,
+          "last_seen": "2026-09-04",
+          "cooling_down": false,
+          "cooldown_cycles": 0,
+          "retry_count": 0
+        },
+        "41": {
+          "fail_count": 1,
+          "last_latency": null,
+          "last_seen": "2026-09-04",
+          "cooling_down": false,
+          "cooldown_cycles": 0,
+          "retry_count": 0
+        },
+        "42": {
+          "fail_count": 1,
+          "last_latency": null,
+          "last_seen": "2026-09-04",
+          "cooling_down": false,
+          "cooldown_cycles": 0,
+          "retry_count": 0
+        },
+        "🇺🇸 43": {
+          "fail_count": 0,
+          "last_latency": 151,
+          "last_seen": "2026-09-04",
+          "cooling_down": false,
+          "cooldown_cycles": 0,
+          "retry_count": 0
+        },
+        "🇭🇰 44": {
+          "fail_count": 0,
+          "last_latency": 160,
+          "last_seen": "2026-09-04",
+          "cooling_down": false,
+          "cooldown_cycles": 0,
+          "retry_count": 0
+        },
+        "🇮🇳 45": {
+          "fail_count": 1,
+          "last_latency": null,
+          "last_seen": "2026-09-04",
+          "cooling_down": false,
+          "cooldown_cycles": 0,
+          "retry_count": 0
+        },
+        "🇮🇳 46": {
+          "fail_count": 1,
+          "last_latency": null,
+          "last_seen": "2026-09-04",
+          "cooling_down": false,
+          "cooldown_cycles": 0,
+          "retry_count": 0
+        },
+        "🇸🇬 47": {
+          "fail_count": 1,
+          "last_latency": null,
+          "last_seen": "2026-09-04",
+          "cooling_down": false,
+          "cooldown_cycles": 0,
+          "retry_count": 0
+        },
+        "🇯🇵 48": {
+          "fail_count": 1,
+          "last_latency": null,
+          "last_seen": "2026-09-04",
+          "cooling_down": false,
+          "cooldown_cycles": 0,
+          "retry_count": 0
+        },
+        "🇭🇰 49": {
+          "fail_count": 1,
+          "last_latency": null,
+          "last_seen": "2026-09-04",
+          "cooling_down": false,
+          "cooldown_cycles": 0,
+          "retry_count": 0
+        },
+        "🇮🇳 50": {
+          "fail_count": 1,
+          "last_latency": null,
+          "last_seen": "2026-09-04",
+          "cooling_down": false,
+          "cooldown_cycles": 0,
+          "retry_count": 0
+        },
+        "🇮🇳 51": {
+          "fail_count": 1,
+          "last_latency": null,
+          "last_seen": "2026-09-04",
+          "cooling_down": false,
+          "cooldown_cycles": 0,
+          "retry_count": 0
+        },
+        "🇵🇱 52": {
+          "fail_count": 1,
+          "last_latency": null,
+          "last_seen": "2026-09-04",
+          "cooling_down": false,
+          "cooldown_cycles": 0,
+          "retry_count": 0
+        },
+        "🇮🇳 53": {
+          "fail_count": 1,
+          "last_latency": null,
+          "last_seen": "2026-09-04",
+          "cooling_down": false,
+          "cooldown_cycles": 0,
+          "retry_count": 0
+        },
+        "🇮🇳 54": {
+          "fail_count": 1,
+          "last_latency": null,
+          "last_seen": "2026-09-04",
+          "cooling_down": false,
+          "cooldown_cycles": 0,
+          "retry_count": 0
+        },
+        "🇭🇰 55": {
+          "fail_count": 1,
+          "last_latency": null,
+          "last_seen": "2026-09-04",
+          "cooling_down": false,
+          "cooldown_cycles": 0,
+          "retry_count": 0
+        },
+        "🇮🇳 56": {
+          "fail_count": 1,
+          "last_latency": null,
+          "last_seen": "2026-09-04",
+          "cooling_down": false,
+          "cooldown_cycles": 0,
+          "retry_count": 0
+        },
+        "🇺🇸 58": {
+          "fail_count": 0,
+          "last_latency": 3,
+          "last_seen": "2026-09-04",
+          "cooling_down": false,
+          "cooldown_cycles": 0,
+          "retry_count": 0
+        },
+        "🇺🇸 117": {
+          "fail_count": 0,
+          "last_latency": 199,
+          "last_seen": "2026-09-04",
+          "cooling_down": false,
+          "cooldown_cycles": 0,
+          "retry_count": 0
+        },
+        "🇺🇸 132": {
+          "fail_count": 0,
+          "last_latency": 381,
+          "last_seen": "2026-09-04",
+          "cooling_down": false,
+          "cooldown_cycles": 0,
+          "retry_count": 0
+        },
+        "🇭🇰 157": {
+          "fail_count": 0,
+          "last_latency": 215,
+          "last_seen": "2026-09-04",
+          "cooling_down": false,
+          "cooldown_cycles": 0,
+          "retry_count": 0
+        },
+        "🇯🇵 158": {
+          "fail_count": 0,
+          "last_latency": 185,
+          "last_seen": "2026-09-04",
+          "cooling_down": false,
+          "cooldown_cycles": 0,
+          "retry_count": 0
+        },
+        "🇰🇷 182": {
+          "fail_count": 0,
+          "last_latency": 183,
+          "last_seen": "2026-09-04",
+          "cooling_down": false,
+          "cooldown_cycles": 0,
+          "retry_count": 0
+        },
+        "🇩🇪 187": {
+          "fail_count": 0,
+          "last_latency": 251,
+          "last_seen": "2026-09-04",
+          "cooling_down": false,
+          "cooldown_cycles": 0,
+          "retry_count": 0
+        },
+        "🇩🇪 188": {
+          "fail_count": 0,
+          "last_latency": 20,
+          "last_seen": "2026-09-04",
+          "cooling_down": false,
+          "cooldown_cycles": 0,
+          "retry_count": 0
+        },
+        "🇩🇪 189": {
+          "fail_count": 0,
+          "last_latency": 2,
+          "last_seen": "2026-09-04",
+          "cooling_down": false,
+          "cooldown_cycles": 0,
+          "retry_count": 0
+        },
+        "🇩🇪 190": {
+          "fail_count": 0,
+          "last_latency": 2,
+          "last_seen": "2026-09-04",
+          "cooling_down": false,
+          "cooldown_cycles": 0,
+          "retry_count": 0
+        },
+        "🇩🇪 191": {
+          "fail_count": 0,
+          "last_latency": 20,
+          "last_seen": "2026-09-04",
+          "cooling_down": false,
+          "cooldown_cycles": 0,
+          "retry_count": 0
+        },
+        "🇩🇪 192": {
+          "fail_count": 0,
+          "last_latency": 2,
+          "last_seen": "2026-09-04",
+          "cooling_down": false,
+          "cooldown_cycles": 0,
+          "retry_count": 0
+        },
+        "🇩🇪 193": {
+          "fail_count": 0,
+          "last_latency": 1,
+          "last_seen": "2026-09-04",
+          "cooling_down": false,
+          "cooldown_cycles": 0,
+          "retry_count": 0
+        },
+        "🇩🇪 194": {
+          "fail_count": 0,
+          "last_latency": 2,
+          "last_seen": "2026-09-04",
+          "cooling_down": false,
+          "cooldown_cycles": 0,
+          "retry_count": 0
+        },
+        "🇩🇪 195": {
+          "fail_count": 0,
+          "last_latency": 2,
+          "last_seen": "2026-09-04",
+          "cooling_down": false,
+          "cooldown_cycles": 0,
+          "retry_count": 0
+        },
+        "🇩🇪 196": {
+          "fail_count": 0,
+          "last_latency": 2,
+          "last_seen": "2026-09-04",
+          "cooling_down": false,
+          "cooldown_cycles": 0,
+          "retry_count": 0
+        },
+        "🇩🇪 197": {
+          "fail_count": 0,
+          "last_latency": 20,
+          "last_seen": "2026-09-04",
+          "cooling_down": false,
+          "cooldown_cycles": 0,
+          "retry_count": 0
+        },
+        "🇩🇪 198": {
+          "fail_count": 0,
+          "last_latency": 2,
+          "last_seen": "2026-09-04",
+          "cooling_down": false,
+          "cooldown_cycles": 0,
+          "retry_count": 0
+        },
+        "🇩🇪 199": {
+          "fail_count": 0,
+          "last_latency": 2,
+          "last_seen": "2026-09-04",
+          "cooling_down": false,
+          "cooldown_cycles": 0,
+          "retry_count": 0
+        },
+        "🇩🇪 200": {
+          "fail_count": 0,
+          "last_latency": 2,
+          "last_seen": "2026-09-04",
+          "cooling_down": false,
+          "cooldown_cycles": 0,
+          "retry_count": 0
+        },
+        "🇩🇪 201": {
+          "fail_count": 0,
+          "last_latency": 2,
+          "last_seen": "2026-09-04",
+          "cooling_down": false,
+          "cooldown_cycles": 0,
+          "retry_count": 0
+        },
+        "🇩🇪 202": {
+          "fail_count": 0,
+          "last_latency": 2,
+          "last_seen": "2026-09-04",
+          "cooling_down": false,
+          "cooldown_cycles": 0,
+          "retry_count": 0
+        },
+        "🇩🇪 203": {
+          "fail_count": 0,
+          "last_latency": 2,
+          "last_seen": "2026-09-04",
+          "cooling_down": false,
+          "cooldown_cycles": 0,
+          "retry_count": 0
+        },
+        "🇩🇪 204": {
+          "fail_count": 0,
+          "last_latency": 2,
+          "last_seen": "2026-09-04",
+          "cooling_down": false,
+          "cooldown_cycles": 0,
+          "retry_count": 0
+        },
+        "🇩🇪 205": {
+          "fail_count": 0,
+          "last_latency": 2,
+          "last_seen": "2026-09-04",
+          "cooling_down": false,
+          "cooldown_cycles": 0,
+          "retry_count": 0
+        },
+        "🇩🇪 206": {
+          "fail_count": 0,
+          "last_latency": 1,
+          "last_seen": "2026-09-04",
+          "cooling_down": false,
+          "cooldown_cycles": 0,
+          "retry_count": 0
+        },
+        "🇩🇪 207": {
+          "fail_count": 0,
+          "last_latency": 2,
+          "last_seen": "2026-09-04",
           "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
@@ -654,37 +1207,44 @@
       "FreeNodes": {
         "parsed": 63,
         "after_dedup": 27,
-        "available": 22,
-        "avg_latency_ms": 230,
-        "availability_rate": 81.5
+        "available": 23,
+        "avg_latency_ms": 257,
+        "availability_rate": 85.2
       },
       "Jsnzkpg": {
-        "parsed": 43,
-        "after_dedup": 4,
-        "available": 4,
-        "avg_latency_ms": 125,
+        "parsed": 52,
+        "after_dedup": 7,
+        "available": 7,
+        "avg_latency_ms": 119,
         "availability_rate": 100.0
       },
       "NoMoreWalls": {
-        "parsed": 182,
+        "parsed": 176,
         "after_dedup": 16,
         "available": 4,
-        "avg_latency_ms": 114,
+        "avg_latency_ms": 178,
         "availability_rate": 25.0
       },
       "Pawdroid": {
-        "parsed": 9,
-        "after_dedup": 8,
-        "available": 8,
-        "avg_latency_ms": 379,
+        "parsed": 20,
+        "after_dedup": 14,
+        "available": 14,
+        "avg_latency_ms": 46,
         "availability_rate": 100.0
       },
       "maflya": {
         "parsed": 253,
-        "after_dedup": 16,
-        "available": 13,
-        "avg_latency_ms": 130,
-        "availability_rate": 81.2
+        "after_dedup": 15,
+        "available": 14,
+        "avg_latency_ms": 146,
+        "availability_rate": 93.3
+      },
+      "主订阅": {
+        "parsed": 0,
+        "after_dedup": 61,
+        "available": 35,
+        "avg_latency_ms": 78,
+        "availability_rate": 57.4
       }
     }
   }
