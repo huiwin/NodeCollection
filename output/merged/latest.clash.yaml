@@ -6,7 +6,7 @@ log-level: info
 external-controller: :9090
 proxies:
 - name: 🇺🇸 01
-  server: 104.16.174.101
+  server: 198.41.223.96
   port: 443
   type: trojan
   password: humanity
@@ -18,19 +18,16 @@ proxies:
       Host: www.ignitelimit.com
   udp: true
 - name: 🇺🇸 02
-  server: 104.20.6.134
+  server: 192.227.247.27
   port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.ignitelimit.com
+  type: vmess
+  uuid: 6a89a215-22bf-4bd7-9642-b95b2e09583a
+  alterId: 0
+  cipher: auto
+  tls: true
   udp: true
 - name: 🇺🇸 03
-  server: 104.16.174.143
+  server: 104.18.152.50
   port: 443
   type: trojan
   password: humanity
@@ -42,7 +39,7 @@ proxies:
       Host: www.ignitelimit.com
   udp: true
 - name: 🇺🇸 04
-  server: 104.18.152.97
+  server: 104.17.111.3
   port: 443
   type: trojan
   password: humanity
@@ -54,7 +51,7 @@ proxies:
       Host: www.ignitelimit.com
   udp: true
 - name: 🇺🇸 05
-  server: 104.16.174.185
+  server: 104.18.152.133
   port: 443
   type: trojan
   password: humanity
@@ -66,7 +63,7 @@ proxies:
       Host: www.ignitelimit.com
   udp: true
 - name: 🇺🇸 06
-  server: 104.16.73.213
+  server: 104.18.152.233
   port: 443
   type: trojan
   password: humanity
@@ -77,13 +74,12 @@ proxies:
     headers:
       Host: www.ignitelimit.com
   udp: true
-- name: 🇨🇦 07
-  server: 130.250.137.171
+- name: 🇺🇸 07
+  server: 104.16.174.46
   port: 443
   type: trojan
   password: humanity
   sni: www.ignitelimit.com
-  skip-cert-verify: false
   network: ws
   ws-opts:
     path: /assignment
@@ -91,54 +87,6 @@ proxies:
       Host: www.ignitelimit.com
   udp: true
 - name: 🇺🇸 08
-  server: 104.18.152.152
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.ignitelimit.com
-  udp: true
-- name: 🇺🇸 09
-  server: 104.16.174.37
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.ignitelimit.com
-  udp: true
-- name: 🇺🇸 10
-  server: 104.18.152.155
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.ignitelimit.com
-  udp: true
-- name: 🇺🇸 11
-  server: 104.16.174.117
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.ignitelimit.com
-  udp: true
-- name: 🇺🇸 12
   server: 172.67.74.2
   port: 443
   type: trojan
@@ -150,134 +98,55 @@ proxies:
     headers:
       Host: www.ignitelimit.com
   udp: true
+- name: 🇺🇸 09
+  server: 104.26.14.137
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.ignitelimit.com
+  udp: true
+- name: 🇺🇸 10
+  server: 104.18.152.210
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.ignitelimit.com
+  udp: true
+- name: 🇺🇸 11
+  server: 104.18.152.113
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.ignitelimit.com
+  udp: true
+- name: 🇺🇸 12
+  server: 104.16.7.70
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.ignitelimit.com
+  udp: true
 - name: 🇺🇸 13
-  server: 172.67.221.242
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.ignitelimit.com
-  udp: true
-- name: 🇺🇸 14
-  server: 104.16.174.22
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  network: ws
-  ws-opts:
-    path: //assignment
-    headers:
-      Host: www.ignitelimit.com
-  udp: true
-- name: 🇺🇸 15
-  server: 104.17.111.8
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.ignitelimit.com
-  udp: true
-- name: 🇺🇸 16
-  server: 172.67.149.60
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.ignitelimit.com
-  udp: true
-- name: 🇩🇪 17
-  server: 35.182.226.121
-  port: 443
-  type: ss
-  cipher: aes-256-cfb
-  password: amazonskr05
-  udp: true
-- name: 🇺🇸 18
-  server: www.ignitelimit.com
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.ignitelimit.com
-  udp: true
-- name: 🇺🇸 19
-  server: 192.227.247.27
-  port: 443
-  type: vmess
-  uuid: 6a89a215-22bf-4bd7-9642-b95b2e09583a
-  alterId: 0
-  cipher: auto
-  tls: true
-  udp: true
-- name: 🇺🇸 20
-  server: www.speedtest.net
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.ignitelimit.com
-  udp: true
-- name: 🇮🇪 21
-  server: 108.129.211.17
-  port: 443
-  type: ss
-  cipher: aes-256-cfb
-  password: amazonskr05
-  udp: true
-- name: 🇬🇧 22
-  server: 13.40.94.70
-  port: 443
-  type: ss
-  cipher: aes-256-cfb
-  password: amazonskr05
-  udp: true
-- name: 🇺🇸 23
-  server: p05.rghvf.sbs
-  port: 1233
-  type: vmess
-  uuid: 9b6419f8-8120-442e-a48c-6bf52aef0abf
-  alterId: 0
-  cipher: auto
-  tls: true
-  servername: gb.uniquenames.net
-  udp: true
-- name: 🇮🇪 24
-  server: 63.180.254.10
-  port: 443
-  type: ss
-  cipher: aes-256-cfb
-  password: amazonskr05
-  udp: true
-- name: 🇩🇪 25
-  server: 82.38.31.35
-  port: 443
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: oZIoA69Q8yhcQV8ka3Pa3A
-  udp: true
-- name: 🇺🇸 26
   server: guanwang.awsno.com
   port: 443
   type: vmess
@@ -287,8 +156,95 @@ proxies:
   tls: true
   servername: guanwang.awsno.com
   udp: true
-- name: 🇺🇸 27
-  server: ip.myip2.qzz.io
+- name: 🇩🇪 14
+  server: 35.182.226.121
+  port: 443
+  type: ss
+  cipher: aes-256-cfb
+  password: amazonskr05
+  udp: true
+- name: 🇮🇪 15
+  server: 3.252.205.48
+  port: 443
+  type: ss
+  cipher: aes-256-cfb
+  password: amazonskr05
+  udp: true
+- name: 🇬🇧 16
+  server: 13.40.94.70
+  port: 443
+  type: ss
+  cipher: aes-256-cfb
+  password: amazonskr05
+  udp: true
+- name: 🇮🇪 17
+  server: 63.180.254.10
+  port: 443
+  type: ss
+  cipher: aes-256-cfb
+  password: amazonskr05
+  udp: true
+- name: 🇩🇪 18
+  server: 82.38.31.35
+  port: 443
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  udp: true
+- name: 🇭🇰 19
+  server: hk04.qianmoip.win
+  port: 52224
+  type: trojan
+  password: 302cf77d-6fb7-4ac8-ae61-88e286340d59
+  sni: taobao.com
+  skip-cert-verify: true
+  udp: true
+- name: 🇩🇪 20
+  server: 118.107.222.231
+  port: 65443
+  type: ss
+  cipher: aes-256-cfb
+  password: 7eadc6dbe2ae
+  udp: true
+- name: 🇩🇪 21
+  server: 112.132.215.108
+  port: 50002
+  type: vmess
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+  alterId: 64
+  cipher: auto
+  tls: false
+  udp: true
+- name: 🇬🇧 22
+  server: xn--1ugy405pdua.gayvibe.dpdns.org
+  port: 2174
+  type: trojan
+  password: tripitropa444
+  skip-cert-verify: false
+  udp: true
+- name: 🇺🇸 23
+  server: 121.46.230.233
+  port: 65443
+  type: ss
+  cipher: aes-256-cfb
+  password: 7eadc6dbe2ae
+  udp: true
+- name: 🇺🇸 24
+  server: 121.46.230.232
+  port: 65443
+  type: ss
+  cipher: aes-256-cfb
+  password: 7eadc6dbe2ae
+  udp: true
+- name: 🇰🇷 25
+  server: 121.46.230.138
+  port: 65443
+  type: ss
+  cipher: aes-256-cfb
+  password: 7eadc6dbe2ae
+  udp: true
+- name: 🇬🇧 26
+  server: 176.97.66.175
   port: 443
   type: trojan
   password: humanity
@@ -299,54 +255,31 @@ proxies:
     headers:
       Host: www.ignitelimit.com
   udp: true
+- name: 🇺🇸 27
+  server: p05.rghvf.sbs
+  port: 1233
+  type: vmess
+  uuid: 9b6419f8-8120-442e-a48c-6bf52aef0abf
+  alterId: 0
+  cipher: auto
+  tls: true
+  servername: gb.uniquenames.net
+  udp: true
 - name: 🇭🇰 28
-  server: hk04.qianmoip.win
-  port: 52224
-  type: trojan
-  password: 302cf77d-6fb7-4ac8-ae61-88e286340d59
-  sni: taobao.com
-  skip-cert-verify: true
+  server: planb.mojcn.com.linuxlh.xin
+  port: 16632
+  type: vmess
+  uuid: cefbe234-bcc6-4558-ab7b-1030e331e6a5
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: d052c66d50dcf7c3cfab75ed7f8e8322.mobgslb.tbcache.com
   udp: true
 - name: 🇺🇸 29
-  server: 121.46.230.233
-  port: 65443
-  type: ss
-  cipher: aes-256-cfb
-  password: 7eadc6dbe2ae
-  udp: true
-- name: 🇺🇸 30
-  server: 121.46.230.232
-  port: 65443
-  type: ss
-  cipher: aes-256-cfb
-  password: 7eadc6dbe2ae
-  udp: true
-- name: 🇩🇪 31
-  server: 118.107.222.231
-  port: 65443
-  type: ss
-  cipher: aes-256-cfb
-  password: 7eadc6dbe2ae
-  udp: true
-- name: 🇭🇰 32
-  server: v10.zgtfqs.click
-  port: 30807
-  type: vmess
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 2
-  cipher: auto
-  tls: false
-  udp: true
-- name: 🇭🇰 33
-  server: v10.hdacd.com
-  port: 30807
-  type: vmess
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 2
-  cipher: auto
-  tls: false
-  udp: true
-- name: 🇺🇸 34
   server: v4.hdacd.com
   port: 30804
   type: vmess
@@ -355,7 +288,16 @@ proxies:
   cipher: auto
   tls: false
   udp: true
-- name: 🇩🇪 35
+- name: 🇸🇬 30
+  server: v45.hdacd.com
+  port: 30845
+  type: vmess
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
+  cipher: auto
+  tls: false
+  udp: true
+- name: 🇩🇪 31
   server: v35.hdacd.com
   port: 30835
   type: vmess
@@ -364,7 +306,7 @@ proxies:
   cipher: auto
   tls: false
   udp: true
-- name: 🇯🇵 36
+- name: 🇯🇵 32
   server: v6.hdacd.com
   port: 30806
   type: vmess
@@ -373,25 +315,7 @@ proxies:
   cipher: auto
   tls: false
   udp: true
-- name: 🇺🇸 37
-  server: v29.hdacd.com
-  port: 30829
-  type: vmess
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 2
-  cipher: auto
-  tls: false
-  udp: true
-- name: 🇩🇪 38
-  server: 112.132.215.108
-  port: 50002
-  type: vmess
-  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
-  alterId: 64
-  cipher: auto
-  tls: false
-  udp: true
-- name: 🇩🇪 39
+- name: 🇩🇪 33
   server: 78.31.249.175
   port: 65531
   type: vmess
@@ -403,35 +327,44 @@ proxies:
   ws-opts:
     path: /
   udp: true
-- name: 🇬🇧 40
+- name: 🇬🇧 34
   server: 18.132.203.206
   port: 443
   type: ss
   cipher: aes-256-cfb
   password: amazonskr05
   udp: true
-- name: 🇬🇧 41
+- name: 🇬🇧 35
   server: 18.133.240.229
   port: 443
   type: ss
   cipher: aes-256-cfb
   password: amazonskr05
   udp: true
-- name: 🇩🇪 42
+- name: 🇩🇪 36
   server: 130.61.83.100
   port: 59924
   type: ss
   cipher: 2022-blake3-chacha20-poly1305
   password: EItZd/Xd+cmdmMJ9FLqMrlkRD6D/u/iVR0p1qJZMblQ=
   udp: true
-- name: 🇩🇪 43
+- name: 🇭🇰 37
+  server: v10.zgtfqs.click
+  port: 30807
+  type: vmess
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
+  cipher: auto
+  tls: false
+  udp: true
+- name: 🇩🇪 38
   server: 3.96.124.46
   port: 443
   type: ss
   cipher: aes-256-cfb
   password: amazonskr05
   udp: true
-- name: 🇺🇸 44
+- name: 🇺🇸 39
   server: 38.246.226.240
   port: 52080
   type: vmess
@@ -445,21 +378,30 @@ proxies:
     path:
     - /
   udp: true
-- name: 🇭🇰 45
+- name: 🇭🇰 40
+  server: v10.hdacd.com
+  port: 30807
+  type: vmess
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
+  cipher: auto
+  tls: false
+  udp: true
+- name: 🇭🇰 41
   server: 103.236.66.4
   port: 10001
   type: ss
   cipher: aes-256-gcm
   password: Butterfly123@qwe9527
   udp: true
-- name: 🇭🇰 46
+- name: 🇭🇰 42
   server: 112.28.141.77
   port: 10006
   type: ss
   cipher: aes-256-gcm
   password: Butterfly123@qwe9527
   udp: true
-- name: 🇭🇰 47
+- name: 🇭🇰 43
   server: 18.142.250.141
   port: 7674
   type: trojan
@@ -467,7 +409,7 @@ proxies:
   sni: t.me%2Fripaojiedian
   skip-cert-verify: true
   udp: true
-- name: 🇭🇰 48
+- name: 🇭🇰 44
   server: 35.78.206.14
   port: 2944
   type: trojan
@@ -475,7 +417,7 @@ proxies:
   sni: t.me%2Fripaojiedian
   skip-cert-verify: true
   udp: true
-- name: 🇯🇵 49
+- name: 🇯🇵 45
   server: 18.167.96.176
   port: 9408
   type: trojan
@@ -483,21 +425,21 @@ proxies:
   sni: t.me%252Fripaojiedian
   skip-cert-verify: true
   udp: true
-- name: 🇯🇵 50
+- name: 🇯🇵 46
   server: 103.236.66.4
   port: 40001
   type: ss
   cipher: aes-256-gcm
   password: Butterfly123@qwe9527
   udp: true
-- name: 🇯🇵 51
+- name: 🇯🇵 47
   server: 103.236.66.4
   port: 40002
   type: ss
   cipher: aes-256-gcm
   password: Butterfly123@qwe9527
   udp: true
-- name: 🇸🇬 52
+- name: 🇸🇬 48
   server: 95.40.28.75
   port: 9149
   type: trojan
@@ -505,21 +447,21 @@ proxies:
   sni: t.me%252Fripaojiedian
   skip-cert-verify: true
   udp: true
-- name: 🇺🇸 53
+- name: 🇺🇸 49
   server: 103.236.66.4
   port: 50003
   type: ss
   cipher: aes-256-gcm
   password: Butterfly123@qwe9527
   udp: true
-- name: 🇺🇸 54
+- name: 🇺🇸 50
   server: 103.236.66.4
   port: 50001
   type: ss
   cipher: aes-256-gcm
   password: Butterfly123@qwe9527
   udp: true
-- name: 🇺🇸 55
+- name: 🇺🇸 51
   server: 18.167.96.176
   port: 52770
   type: trojan
@@ -527,21 +469,113 @@ proxies:
   sni: t.me%2Fripaojiedian
   skip-cert-verify: true
   udp: true
-- name: 🇹🇼 56
+- name: 🇹🇼 52
   server: 36.33.35.105
   port: 30001
   type: ss
   cipher: aes-256-gcm
   password: Butterfly123@qwe9527
   udp: true
-- name: 🇰🇷 57
-  server: 121.46.230.138
-  port: 65443
-  type: ss
-  cipher: aes-256-cfb
-  password: 7eadc6dbe2ae
+- name: '53'
+  server: 8.6.112.0
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.ignitelimit.com
+  udp: true
+- name: '54'
+  server: 104.19.229.21
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.ignitelimit.com
+  udp: true
+- name: '55'
+  server: 216.24.57.1
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.ignitelimit.com
+  udp: true
+- name: '56'
+  server: 104.26.14.137
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.ignitelimit.com
+  udp: true
+- name: '57'
+  server: 104.16.174.148
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.ignitelimit.com
   udp: true
 - name: '58'
+  server: 15.223.120.129
+  port: 443
+  type: ss
+  cipher: aes-256-cfb
+  password: amazonskr05
+  udp: true
+- name: '59'
+  server: 3.97.16.160
+  port: 443
+  type: ss
+  cipher: aes-256-cfb
+  password: amazonskr05
+  udp: true
+- name: '60'
+  server: 3.96.144.93
+  port: 443
+  type: ss
+  cipher: aes-256-cfb
+  password: amazonskr05
+  udp: true
+- name: '61'
+  server: ip.myip2.qzz.io
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.ignitelimit.com
+  udp: true
+- name: '62'
   server: www.shopify.com
   port: 443
   type: trojan
@@ -554,30 +588,66 @@ proxies:
     headers:
       Host: swjsb.1f1v.t8t.hh.vavava.kdns.fr
   udp: true
-- name: '59'
-  server: 3.252.205.48
+- name: '63'
+  server: 45.192.242.201
+  port: 8888
+  type: socks5
+  username: hanbaocloud
+  password: hanbaocloud
+  udp: true
+- name: '64'
+  server: littoral.appagent.net
+  port: 443
+  type: trojan
+  password: UQfj7bdfjibTjpUHfg72aew51S7fB32g
+  skip-cert-verify: true
+  udp: true
+- name: '65'
+  server: 13.40.94.70
   port: 443
   type: ss
   cipher: aes-256-cfb
   password: amazonskr05
   udp: true
-- name: 🇧🇷 60
+- name: '66'
+  server: xn--1ugy405pdua.gayvibe.dpdns.org
+  port: 2174
+  type: trojan
+  password: tripitropa444
+  sni: xn--1ugy405pdua.gayvibe.dpdns.org
+  skip-cert-verify: true
+  udp: true
+- name: '67'
+  server: portal.buildtunnel.com
+  port: 443
+  type: trojan
+  password: UQfj7bdfjibTjpUHfg72aew51S7fB32g
+  skip-cert-verify: true
+  udp: true
+- name: 🇧🇷 68
   server: bright.bitgas.org
   port: 443
   type: trojan
   password: UQfj7bdfjibTjpUHfg72aew51S7fB32g
   skip-cert-verify: true
   udp: true
-- name: '61'
-  server: 95.170.13.47
+- name: '69'
+  server: 121.46.230.232
   port: 65443
   type: ss
   cipher: aes-256-cfb
   password: 7eadc6dbe2ae
   udp: true
-- name: 🇮🇳 62
+- name: '70'
+  server: 121.46.230.138
+  port: 65443
+  type: ss
+  cipher: aes-256-cfb
+  password: 7eadc6dbe2ae
+  udp: true
+- name: 🇮🇳 71
   server: planb.mojcn.com.linuxlh.xin
-  port: 16632
+  port: 16626
   type: vmess
   uuid: cefbe234-bcc6-4558-ab7b-1030e331e6a5
   alterId: 0
@@ -590,67 +660,7 @@ proxies:
     headers:
       Host: d052c66d50dcf7c3cfab75ed7f8e8322.mobgslb.tbcache.com
   udp: true
-- name: '63'
-  server: 45.192.242.201
-  port: 8888
-  type: socks5
-  username: hanbaocloud
-  password: hanbaocloud
-  udp: true
-- name: '64'
-  server: xn--1ugy405pdua.gayvibe.dpdns.org
-  port: 2174
-  type: trojan
-  password: tripitropa444
-  sni: xn--1ugy405pdua.gayvibe.dpdns.org
-  skip-cert-verify: true
-  udp: true
-- name: '65'
-  server: littoral.appagent.net
-  port: 443
-  type: trojan
-  password: UQfj7bdfjibTjpUHfg72aew51S7fB32g
-  skip-cert-verify: true
-  udp: true
-- name: '66'
-  server: 103.169.67.34
-  port: 65443
-  type: ss
-  cipher: aes-256-cfb
-  password: 7eadc6dbe2ae
-  udp: true
-- name: '67'
-  server: 121.46.230.233
-  port: 65443
-  type: ss
-  cipher: aes-256-cfb
-  password: 7eadc6dbe2ae
-  udp: true
-- name: '68'
-  server: portal.buildtunnel.com
-  port: 443
-  type: trojan
-  password: UQfj7bdfjibTjpUHfg72aew51S7fB32g
-  skip-cert-verify: true
-  udp: true
-- name: '69'
-  server: 121.46.230.137
-  port: 65443
-  type: ss
-  cipher: aes-256-cfb
-  password: 7eadc6dbe2ae
-  udp: true
-- name: '70'
-  server: v29.hdacd.com
-  port: 30829
-  type: vmess
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 2
-  cipher: auto
-  tls: false
-  skip-cert-verify: true
-  udp: true
-- name: '71'
+- name: '72'
   server: v45.hdacd.com
   port: 30845
   type: vmess
@@ -660,19 +670,12 @@ proxies:
   tls: false
   skip-cert-verify: true
   udp: true
-- name: '72'
+- name: '73'
   server: youxuan.cf.090227.xyz
   port: 80
   type: ss
   cipher: aes-128-gcm
   password: 47fcef29-ab4e-4aa6-932b-d95a18f28a4e
-  udp: true
-- name: '73'
-  server: 121.46.230.138
-  port: 65443
-  type: ss
-  cipher: aes-256-cfb
-  password: 7eadc6dbe2ae
   udp: true
 proxy-groups:
 - name: 🎯 地区选择
@@ -703,71 +706,71 @@ proxy-groups:
   - 🇺🇸 04
   - 🇺🇸 05
   - 🇺🇸 06
-  - 🇨🇦 07
+  - 🇺🇸 07
   - 🇺🇸 08
   - 🇺🇸 09
   - 🇺🇸 10
   - 🇺🇸 11
   - 🇺🇸 12
   - 🇺🇸 13
-  - 🇺🇸 14
-  - 🇺🇸 15
-  - 🇺🇸 16
-  - 🇩🇪 17
-  - 🇺🇸 18
-  - 🇺🇸 19
-  - 🇺🇸 20
-  - 🇮🇪 21
+  - 🇩🇪 14
+  - 🇮🇪 15
+  - 🇬🇧 16
+  - 🇮🇪 17
+  - 🇩🇪 18
+  - 🇭🇰 19
+  - 🇩🇪 20
+  - 🇩🇪 21
   - 🇬🇧 22
   - 🇺🇸 23
-  - 🇮🇪 24
-  - 🇩🇪 25
-  - 🇺🇸 26
+  - 🇺🇸 24
+  - 🇰🇷 25
+  - 🇬🇧 26
   - 🇺🇸 27
   - 🇭🇰 28
   - 🇺🇸 29
-  - 🇺🇸 30
+  - 🇸🇬 30
   - 🇩🇪 31
-  - 🇭🇰 32
-  - 🇭🇰 33
-  - 🇺🇸 34
-  - 🇩🇪 35
-  - 🇯🇵 36
-  - 🇺🇸 37
+  - 🇯🇵 32
+  - 🇩🇪 33
+  - 🇬🇧 34
+  - 🇬🇧 35
+  - 🇩🇪 36
+  - 🇭🇰 37
   - 🇩🇪 38
-  - 🇩🇪 39
-  - 🇬🇧 40
-  - 🇬🇧 41
-  - 🇩🇪 42
-  - 🇩🇪 43
-  - 🇺🇸 44
-  - 🇭🇰 45
-  - 🇭🇰 46
-  - 🇭🇰 47
-  - 🇭🇰 48
-  - 🇯🇵 49
-  - 🇯🇵 50
-  - 🇯🇵 51
-  - 🇸🇬 52
-  - 🇺🇸 53
-  - 🇺🇸 54
-  - 🇺🇸 55
-  - 🇹🇼 56
-  - 🇰🇷 57
+  - 🇺🇸 39
+  - 🇭🇰 40
+  - 🇭🇰 41
+  - 🇭🇰 42
+  - 🇭🇰 43
+  - 🇭🇰 44
+  - 🇯🇵 45
+  - 🇯🇵 46
+  - 🇯🇵 47
+  - 🇸🇬 48
+  - 🇺🇸 49
+  - 🇺🇸 50
+  - 🇺🇸 51
+  - 🇹🇼 52
+  - '53'
+  - '54'
+  - '55'
+  - '56'
+  - '57'
   - '58'
   - '59'
-  - 🇧🇷 60
+  - '60'
   - '61'
-  - 🇮🇳 62
+  - '62'
   - '63'
   - '64'
   - '65'
   - '66'
   - '67'
-  - '68'
+  - 🇧🇷 68
   - '69'
   - '70'
-  - '71'
+  - 🇮🇳 71
   - '72'
   - '73'
 - name: 🇭🇰 香港节点
@@ -776,37 +779,39 @@ proxy-groups:
   interval: 300
   tolerance: 50
   proxies:
+  - 🇭🇰 19
   - 🇭🇰 28
-  - 🇭🇰 32
-  - 🇭🇰 33
-  - 🇭🇰 45
-  - 🇭🇰 46
-  - 🇭🇰 47
-  - 🇭🇰 48
+  - 🇭🇰 37
+  - 🇭🇰 40
+  - 🇭🇰 41
+  - 🇭🇰 42
+  - 🇭🇰 43
+  - 🇭🇰 44
 - name: 🇹🇼 台湾节点
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - 🇹🇼 56
+  - 🇹🇼 52
 - name: 🇯🇵 日本节点
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - 🇯🇵 36
-  - 🇯🇵 49
-  - 🇯🇵 50
-  - 🇯🇵 51
+  - 🇯🇵 32
+  - 🇯🇵 45
+  - 🇯🇵 46
+  - 🇯🇵 47
 - name: 🇸🇬 新加坡节点
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - 🇸🇬 52
+  - 🇸🇬 30
+  - 🇸🇬 48
 - name: 🇺🇸 美国节点
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -819,66 +824,60 @@ proxy-groups:
   - 🇺🇸 04
   - 🇺🇸 05
   - 🇺🇸 06
+  - 🇺🇸 07
   - 🇺🇸 08
   - 🇺🇸 09
   - 🇺🇸 10
   - 🇺🇸 11
   - 🇺🇸 12
   - 🇺🇸 13
-  - 🇺🇸 14
-  - 🇺🇸 15
-  - 🇺🇸 16
-  - 🇺🇸 18
-  - 🇺🇸 19
-  - 🇺🇸 20
   - 🇺🇸 23
-  - 🇺🇸 26
+  - 🇺🇸 24
   - 🇺🇸 27
   - 🇺🇸 29
-  - 🇺🇸 30
-  - 🇺🇸 34
-  - 🇺🇸 37
-  - 🇺🇸 44
-  - 🇺🇸 53
-  - 🇺🇸 54
-  - 🇺🇸 55
+  - 🇺🇸 39
+  - 🇺🇸 49
+  - 🇺🇸 50
+  - 🇺🇸 51
 - name: 🇰🇷 韩国节点
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - 🇰🇷 57
+  - 🇰🇷 25
 - name: 🇬🇧 英国节点
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
+  - 🇬🇧 16
   - 🇬🇧 22
-  - 🇬🇧 40
-  - 🇬🇧 41
+  - 🇬🇧 26
+  - 🇬🇧 34
+  - 🇬🇧 35
 - name: 🇩🇪 德国节点
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - 🇩🇪 17
-  - 🇩🇪 25
+  - 🇩🇪 14
+  - 🇩🇪 18
+  - 🇩🇪 20
+  - 🇩🇪 21
   - 🇩🇪 31
-  - 🇩🇪 35
+  - 🇩🇪 33
+  - 🇩🇪 36
   - 🇩🇪 38
-  - 🇩🇪 39
-  - 🇩🇪 42
-  - 🇩🇪 43
 - name: 🇫🇷 法国节点
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - 🇩🇪 35
+  - 🇩🇪 31
 - name: 🇷🇺 俄罗斯节点
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -892,7 +891,7 @@ proxy-groups:
   interval: 300
   tolerance: 50
   proxies:
-  - 🇨🇦 07
+  - DIRECT
 - name: 🔗 故障转移
   type: fallback
   url: http://www.gstatic.com/generate_204
@@ -904,71 +903,71 @@ proxy-groups:
   - 🇺🇸 04
   - 🇺🇸 05
   - 🇺🇸 06
-  - 🇨🇦 07
+  - 🇺🇸 07
   - 🇺🇸 08
   - 🇺🇸 09
   - 🇺🇸 10
   - 🇺🇸 11
   - 🇺🇸 12
   - 🇺🇸 13
-  - 🇺🇸 14
-  - 🇺🇸 15
-  - 🇺🇸 16
-  - 🇩🇪 17
-  - 🇺🇸 18
-  - 🇺🇸 19
-  - 🇺🇸 20
-  - 🇮🇪 21
+  - 🇩🇪 14
+  - 🇮🇪 15
+  - 🇬🇧 16
+  - 🇮🇪 17
+  - 🇩🇪 18
+  - 🇭🇰 19
+  - 🇩🇪 20
+  - 🇩🇪 21
   - 🇬🇧 22
   - 🇺🇸 23
-  - 🇮🇪 24
-  - 🇩🇪 25
-  - 🇺🇸 26
+  - 🇺🇸 24
+  - 🇰🇷 25
+  - 🇬🇧 26
   - 🇺🇸 27
   - 🇭🇰 28
   - 🇺🇸 29
-  - 🇺🇸 30
+  - 🇸🇬 30
   - 🇩🇪 31
-  - 🇭🇰 32
-  - 🇭🇰 33
-  - 🇺🇸 34
-  - 🇩🇪 35
-  - 🇯🇵 36
-  - 🇺🇸 37
+  - 🇯🇵 32
+  - 🇩🇪 33
+  - 🇬🇧 34
+  - 🇬🇧 35
+  - 🇩🇪 36
+  - 🇭🇰 37
   - 🇩🇪 38
-  - 🇩🇪 39
-  - 🇬🇧 40
-  - 🇬🇧 41
-  - 🇩🇪 42
-  - 🇩🇪 43
-  - 🇺🇸 44
-  - 🇭🇰 45
-  - 🇭🇰 46
-  - 🇭🇰 47
-  - 🇭🇰 48
-  - 🇯🇵 49
-  - 🇯🇵 50
-  - 🇯🇵 51
-  - 🇸🇬 52
-  - 🇺🇸 53
-  - 🇺🇸 54
-  - 🇺🇸 55
-  - 🇹🇼 56
-  - 🇰🇷 57
+  - 🇺🇸 39
+  - 🇭🇰 40
+  - 🇭🇰 41
+  - 🇭🇰 42
+  - 🇭🇰 43
+  - 🇭🇰 44
+  - 🇯🇵 45
+  - 🇯🇵 46
+  - 🇯🇵 47
+  - 🇸🇬 48
+  - 🇺🇸 49
+  - 🇺🇸 50
+  - 🇺🇸 51
+  - 🇹🇼 52
+  - '53'
+  - '54'
+  - '55'
+  - '56'
+  - '57'
   - '58'
   - '59'
-  - 🇧🇷 60
+  - '60'
   - '61'
-  - 🇮🇳 62
+  - '62'
   - '63'
   - '64'
   - '65'
   - '66'
   - '67'
-  - '68'
+  - 🇧🇷 68
   - '69'
   - '70'
-  - '71'
+  - 🇮🇳 71
   - '72'
   - '73'
 - name: ⚖️ 负载均衡
@@ -984,71 +983,71 @@ proxy-groups:
   - 🇺🇸 04
   - 🇺🇸 05
   - 🇺🇸 06
-  - 🇨🇦 07
+  - 🇺🇸 07
   - 🇺🇸 08
   - 🇺🇸 09
   - 🇺🇸 10
   - 🇺🇸 11
   - 🇺🇸 12
   - 🇺🇸 13
-  - 🇺🇸 14
-  - 🇺🇸 15
-  - 🇺🇸 16
-  - 🇩🇪 17
-  - 🇺🇸 18
-  - 🇺🇸 19
-  - 🇺🇸 20
-  - 🇮🇪 21
+  - 🇩🇪 14
+  - 🇮🇪 15
+  - 🇬🇧 16
+  - 🇮🇪 17
+  - 🇩🇪 18
+  - 🇭🇰 19
+  - 🇩🇪 20
+  - 🇩🇪 21
   - 🇬🇧 22
   - 🇺🇸 23
-  - 🇮🇪 24
-  - 🇩🇪 25
-  - 🇺🇸 26
+  - 🇺🇸 24
+  - 🇰🇷 25
+  - 🇬🇧 26
   - 🇺🇸 27
   - 🇭🇰 28
   - 🇺🇸 29
-  - 🇺🇸 30
+  - 🇸🇬 30
   - 🇩🇪 31
-  - 🇭🇰 32
-  - 🇭🇰 33
-  - 🇺🇸 34
-  - 🇩🇪 35
-  - 🇯🇵 36
-  - 🇺🇸 37
+  - 🇯🇵 32
+  - 🇩🇪 33
+  - 🇬🇧 34
+  - 🇬🇧 35
+  - 🇩🇪 36
+  - 🇭🇰 37
   - 🇩🇪 38
-  - 🇩🇪 39
-  - 🇬🇧 40
-  - 🇬🇧 41
-  - 🇩🇪 42
-  - 🇩🇪 43
-  - 🇺🇸 44
-  - 🇭🇰 45
-  - 🇭🇰 46
-  - 🇭🇰 47
-  - 🇭🇰 48
-  - 🇯🇵 49
-  - 🇯🇵 50
-  - 🇯🇵 51
-  - 🇸🇬 52
-  - 🇺🇸 53
-  - 🇺🇸 54
-  - 🇺🇸 55
-  - 🇹🇼 56
-  - 🇰🇷 57
+  - 🇺🇸 39
+  - 🇭🇰 40
+  - 🇭🇰 41
+  - 🇭🇰 42
+  - 🇭🇰 43
+  - 🇭🇰 44
+  - 🇯🇵 45
+  - 🇯🇵 46
+  - 🇯🇵 47
+  - 🇸🇬 48
+  - 🇺🇸 49
+  - 🇺🇸 50
+  - 🇺🇸 51
+  - 🇹🇼 52
+  - '53'
+  - '54'
+  - '55'
+  - '56'
+  - '57'
   - '58'
   - '59'
-  - 🇧🇷 60
+  - '60'
   - '61'
-  - 🇮🇳 62
+  - '62'
   - '63'
   - '64'
   - '65'
   - '66'
   - '67'
-  - '68'
+  - 🇧🇷 68
   - '69'
   - '70'
-  - '71'
+  - 🇮🇳 71
   - '72'
   - '73'
 rules:
