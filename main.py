@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-NodeCollection Pro v2.6.2 - 订阅源采集 + 多格式转换一体化工具
+NodeCollection Pro v2.7.0 - 订阅源采集 + 多格式转换一体化工具
 
 架构:
   config.yaml (TG频道) + airports.yaml (机场列表) + merge.yaml (上游订阅白名单)
@@ -38,7 +38,7 @@ import threading
 import ipaddress
 import datetime
 import http.server
-from urllib.parse import urlparse, quote, unquote
+from urllib.parse import urlparse, quote, unquote, urlencode
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 import yaml
@@ -2104,11 +2104,16 @@ def _rename_and_prepare_subscriptions(all_sub_urls):
             logger.warning('[rename] 过滤后无有效节点, 回退到原始 URL')
             return None, None
 
-        # 4. P12 (v2.6.0): 保留地区 + 序号重命名 (US 01 / JP 02)
-        #    既规避违规词, 又保留地区分组能力
+        # 4. P12 (v2.6.0) + P15 (v2.7.0): 保留地区 emoji + 序号重命名 (🇺🇸 01 / 🇯🇵 02)
+        #    与融合订阅 generate_merged_format 的 _rename_with_region_emoji 保持一致,
+        #    既规避违规词, 又保留地区分组能力, 且 subconverter 地区 filter 可直接匹配 emoji
         renamed_proxies = []
         for i, proxy in enumerate(filtered_proxies, 1):
             new_proxy = dict(proxy)
+            # P15 (v2.7.0) 修订: 用 _rename_with_region (US 01, 无 emoji), 与融合订阅一致。
+            # 若用 _rename_with_region_emoji (🇫🇷 01 含 emoji), subconverter 的
+            # remove_old_emoji 会拆掉 emoji → 纯数字 → 被转成 int (1,2,3...) →
+            # 地区 filter 无法匹配, 地区组无法填充。由 subconverter emoji 规则负责加 emoji。
             new_proxy['name'] = _rename_with_region(proxy.get('name', ''), i)
             renamed_proxies.append(new_proxy)
 
@@ -2202,6 +2207,79 @@ def _filter_and_rename_clash_file(file_path):
         return False
 
 
+def _sub_probe_merge(urls, timeout=SUBCONVERTER_TIMEOUT):
+    """P15 (v2.7.0): 用 subconverter 合并测试一组订阅 URL 是否可转换。"""
+    try:
+        merged = '|'.join(urls)
+        api_url = f'{SUBCONVERTER_URL}/sub?' + urlencode({
+            'target': 'clash', 'url': merged, 'emoji': 'false',
+        })
+        resp = requests.get(api_url, timeout=timeout)
+        return resp.status_code == 200 and bool(resp.text.strip())
+    except Exception:
+        return False
+
+
+def filter_valid_sub_urls(sub_urls, max_workers=4):
+    """
+    P15 (v2.7.0): 过滤 subconverter 无法处理的订阅 URL。
+
+    根因: 主订阅 all_sub_urls 中混入大量空壳订阅 (HTTP 200 但 proxies 为空,
+    如机场模板页) 和失效订阅 (404/不可达), subconverter 合并请求 (| 分隔)
+    时只要一个 URL 无法处理就整体返回 400, 导致主订阅转换持续失败
+    (latest 一直保留旧文件)。实测: 单坏URL → 400; 好+坏合并 → 400。
+
+    修复策略 (合并测试优先):
+    1) 先合并所有 URL 用 subconverter 测试一次 → 成功则全部有效 (正常零开销)
+    2) 失败 (400) → 逐个 URL 用 subconverter 测试, 剔除无效的
+    用 subconverter 判定 (与转换机制一致, 不引入 HTTP 探测与转换间的
+    上游限流竞争), 正常情况不逐个测试。
+
+    Args:
+        sub_urls: 订阅 URL 列表
+        max_workers: 保留参数 (当前串行执行)
+
+    Returns:
+        list: 有效订阅 URL 列表
+    """
+    if not sub_urls:
+        return []
+
+    # 清理 URL: 去掉 # 后的注释/标识, 保留 http(s) 前缀, 同时去重
+    cleaned = []
+    seen = set()
+    for url in sub_urls:
+        u = str(url).strip()
+        u = re.split(r'[#\s]', u, maxsplit=1)[0].strip()
+        if u.startswith(('http://', 'https://')) and u not in seen:
+            seen.add(u)
+            cleaned.append(u)
+    if not cleaned:
+        return []
+
+    # 1) 合并测试优先: 全部 URL 一起测, 成功则直接返回 (零额外开销)
+    if _sub_probe_merge(cleaned):
+        return cleaned
+
+    # 2) 合并失败: 逐个 URL 测试, 剔除导致 400 的无效源
+    logger.warning(f'[filter] 合并转换失败, 逐个定位 {len(cleaned)} 个订阅中的无效源...')
+    valid = []
+    invalid = []
+    for url in cleaned:
+        if _sub_probe_merge([url]):
+            valid.append(url)
+        else:
+            invalid.append(url)
+            logger.debug(f'[filter] 剔除: {url[:90]}')
+
+    if invalid:
+        logger.warning(
+            f'[filter] 剔除 {len(invalid)} 个无效订阅 URL, 剩余 {len(valid)} 个有效 URL'
+        )
+    return valid
+
+
+
 def generate_multi_format(all_sub_urls):
     """
     将所有订阅 URL 通过 subconverter 转换为多格式输出。
@@ -2211,6 +2289,14 @@ def generate_multi_format(all_sub_urls):
     """
     if not check_subconverter():
         logger.warning('subconverter 不可用，仅输出原始 YAML')
+        return
+
+    # P15 (v2.7.0): 过滤失效订阅 URL, 避免单个 400 导致整体转换失败
+    # 主订阅 URL 中混入失效/格式不被支持的 URL 时, subconverter 合并请求
+    # 整体返回 400, 导致主订阅转换持续失败 (latest 一直保留旧文件)
+    all_sub_urls = filter_valid_sub_urls(all_sub_urls)
+    if not all_sub_urls:
+        logger.warning('[filter] 所有订阅 URL 均无效, 跳过主订阅转换')
         return
 
     # P10 (v2.4.0) + P11.1 (v2.5.1): 节点重命名预处理
