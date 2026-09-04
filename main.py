@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-NodeCollection Pro v2.8.1 - 订阅源采集 + 多格式转换一体化工具
+NodeCollection Pro v2.9.0 - 订阅源采集 + 多格式转换一体化工具
 
 架构:
   config.yaml (TG频道) + airports.yaml (机场列表) + merge.yaml (上游订阅白名单)
@@ -23,6 +23,15 @@ NodeCollection Pro v2.8.1 - 订阅源采集 + 多格式转换一体化工具
   - generate_merged_format(): 融合节点独立输出到 output/merged/
   - extract_host_port(): 从分享链接 URI 提取 host/port (协议无关)
   - measure_uri_latencies() / measure_proxy_latencies(): 并发 TCP 测速 (P1 v1.5.0)
+
+P17 (v2.9.0) 主订阅源健康治理 + 综合订阅补充修复:
+  - _LenientYAMLLoader: 忽略未知 YAML tag (如 !<str>), 修复主订阅补充读取失败
+    (线上主订阅 latest.yaml 含 !<str> tag → safe_load 抛错 → _load_main_sub_proxies
+    返回 [] → 综合订阅主订阅补充丢失 main_supplement=0)
+  - classify_subscription 空壳判断: clash 需 proxies 非空, v2 需至少一条有效协议行
+  - SUB_URL_BLACKLIST: 已知失效/低质/违规主订阅源域名黑名单
+  - _purge_stale_sub_urls: 合并前对历史累积 URL 重新验证, 剔除失效/空壳/黑名单源,
+    防止 sub/latest.yaml 只增不减地累积失效源
 """
 
 import re
@@ -67,6 +76,14 @@ AIRPORT_TIMEOUT = 8
 RETRY_TIMES = 2
 USER_AGENT = 'ClashforWindows/0.18.1'
 PROTOCOL_PREFIXES = ('ss://', 'ssr://', 'vmess://', 'trojan://')
+
+# P17 (v2.9.0): 已知失效/低质/违规主订阅源域名黑名单 (主订阅源健康治理)
+# 来源: P15/P16 线上验收确认的失效源 (HTTP 200 但空壳/不可达) + 违规词源
+SUB_URL_BLACKLIST = (
+    'ziyoufly.com', 'youzilite.help', 'xswl-fff.com', 'mtvpn.net',
+    '820010.xyz', 'knjc.cfd', 'xueshanlink.com', 'apit.yun7g.top',
+    'lovebabyforever.workers.dev', 'iuiu.lovebabyforever',
+)
 
 # 上游订阅融合配置 (v1.4.0)
 UPSTREAM_THREADS = 8
@@ -751,7 +768,8 @@ def parse_upstream_text(text, upstream):
     if 'proxies:' in stripped[:2000]:
         # Clash YAML 订阅
         try:
-            data = yaml.safe_load(stripped)
+            # P17 (v2.9.0): 容错加载, 兼容上游含 !<str> tag 的 Clash 配置
+            data = yaml.load(stripped, Loader=_LenientYAMLLoader)
             proxies = (data or {}).get('proxies') or []
             clash_proxies = filter_clash_proxies(proxies, prefix)
             # T5.3: Clash 代理地区识别增强 (为无地区标识节点添加地区前缀)
@@ -1415,7 +1433,9 @@ def _load_main_sub_proxies():
         return []
     try:
         with open(path, encoding='utf-8') as f:
-            data = yaml.safe_load(f)
+            # P17 (v2.9.0): 用容错 Loader 替代 safe_load, 修复 !<str> tag 导致
+            # 主订阅补充丢失 (线上 main_supplement=0) 的问题
+            data = yaml.load(f, Loader=_LenientYAMLLoader)
         return (data or {}).get('proxies') or []
     except Exception as e:
         logger.warning(f'[P16] 读取主订阅补充节点失败: {type(e).__name__}: {e}')
@@ -1901,11 +1921,33 @@ def generate_merged_format(upstream_texts, upstreams):
 # 订阅校验与分类
 # ============================================================
 
+class _LenientYAMLLoader(yaml.SafeLoader):
+    """
+    P17 (v2.9.0): 忽略未知 YAML tag (如 !<str>), 保证订阅文件可解析。
+
+    背景: 某些上游 Clash 配置含 !<str> 等非标准 tag (如 password: !<str> 1),
+    yaml.safe_load 会抛 ConstructorError 导致整个文件解析失败。
+    例如主订阅 output/clash/latest.yaml 出现该 tag 时, _load_main_sub_proxies
+    返回 [] → 综合订阅的主订阅补充丢失 (线上实测 main_supplement=0)。
+    此 Loader 将未知 tag 按其节点类型正常构造, 未知 tag 值降级为普通标量。
+    """
+    def _ignore_unknown(self, node):
+        if isinstance(node, yaml.ScalarNode):
+            return self.construct_scalar(node)
+        if isinstance(node, yaml.SequenceNode):
+            return self.construct_sequence(node)
+        return self.construct_mapping(node)
+
+
+_LenientYAMLLoader.add_constructor(None, _LenientYAMLLoader._ignore_unknown)
+
+
 def classify_subscription(res):
     """
     根据响应内容分类订阅类型。
     返回: (类型字符串, 信息字符串)
       类型: 'sub' | 'clash' | 'v2' | None
+    P17 (v2.9.0): 空壳过滤 - clash 需 proxies 非空, v2 需至少一条有效协议行
     """
     # 1. 检查 subscription-userinfo 流量信息（机场订阅）
     user_info = res.headers.get('subscription-userinfo')
@@ -1920,16 +1962,24 @@ def classify_subscription(res):
             if unused_rounded > 0:
                 return 'sub', f'可用流量: {unused_rounded} GB                    {res.url}'
 
-    # 2. 检查 clash 格式
+    # 2. 检查 clash 格式 (P17: proxies 需非空, 过滤 HTTP 200 空壳)
     if 'proxies:' in res.text:
-        return 'clash', None
+        try:
+            _clash_data = yaml.load(res.text, Loader=_LenientYAMLLoader)
+            if _clash_data and _clash_data.get('proxies'):
+                return 'clash', None
+        except Exception:
+            pass
+        return None, None
 
-    # 3. 检查 v2 格式（base64 解码后含协议头）
+    # 3. 检查 v2 格式 (P17: 全量解码 + 至少一条有效协议行, 过滤空 base64)
     try:
-        decoded = base64.b64decode(res.text[:64])
-        decoded_str = str(decoded)
-        if any(prefix in decoded_str for prefix in PROTOCOL_PREFIXES):
-            return 'v2', None
+        decoded = base64.b64decode(res.text)
+        decoded_str = decoded.decode('utf-8', errors='replace')
+        for _line in decoded_str.splitlines():
+            _line = _line.strip()
+            if _line.startswith(PROTOCOL_PREFIXES):
+                return 'v2', None
     except Exception:
         pass
 
@@ -1981,6 +2031,40 @@ def check_all_urls(session, url_list):
             bar.update(1)
     bar.close()
     return results
+
+
+def _purge_stale_sub_urls(session, url_list):
+    """
+    P17 (v2.9.0): 主订阅源健康维护 - 对历史累积的订阅 URL 重新验证。
+
+    背景: sub/latest.yaml 的合并逻辑是"新结果 ∪ 旧列表", 旧列表中的失效源
+    (HTTP 200 空壳 / 404 / 黑名单源) 只增不减地累积, 污染固定链接。
+    此函数对旧列表逐个重新验证 (过滤黑名单 + sub_check 有效性判断),
+    只保留仍有效的 URL, 防止失效源长期残留。
+
+    Args:
+        session: requests.Session
+        url_list: 历史累积的订阅 URL 列表
+
+    Returns:
+        list: 仍有效的订阅 URL 列表
+    """
+    if not url_list:
+        return []
+
+    def _check(url):
+        if any(b.lower() in url.lower() for b in SUB_URL_BLACKLIST):
+            return None
+        r = sub_check(session, url)
+        return url if r['type'] else None
+
+    with ThreadPoolExecutor(max_workers=MAX_THREADS) as executor:
+        results = list(executor.map(_check, url_list))
+    valid = [u for u in results if u]
+    if len(valid) < len(url_list):
+        logger.info(f'[P17] 主订阅源健康维护: 剔除 {len(url_list) - len(valid)} 个失效/黑名单源, '
+                    f'保留 {len(valid)} 个')
+    return valid
 
 
 # ============================================================
@@ -2131,7 +2215,7 @@ def _rename_and_prepare_subscriptions(all_sub_urls):
 
         # 3. 解析临时文件, 获取所有 proxies
         with open(raw_path, encoding='utf-8') as f:
-            data = yaml.safe_load(f)
+            data = yaml.load(f, Loader=_LenientYAMLLoader)
         proxies = (data or {}).get('proxies') or []
         if not proxies:
             logger.warning('[rename] 解析到 0 个节点, 回退到原始 URL')
@@ -2201,7 +2285,7 @@ def _filter_and_rename_clash_file(file_path):
 
     try:
         with open(file_path, encoding='utf-8') as f:
-            data = yaml.safe_load(f)
+            data = yaml.load(f, Loader=_LenientYAMLLoader)
 
         if not data or 'proxies' not in data:
             return False
@@ -3040,9 +3124,13 @@ def main():
     new_results = check_all_urls(session, all_urls)
 
     # 7. 合并旧数据 + 去重
-    new_sub_list = list(set(new_results['sub'] + dict_url.get('机场订阅', [])))
-    new_clash_list = list(set(new_results['clash'] + dict_url.get('clash订阅', [])))
-    new_v2_list = list(set(new_results['v2'] + dict_url.get('v2订阅', [])))
+    # P17 (v2.9.0): 旧列表重新验证, 剔除失效/空壳/黑名单源, 防止 sub/latest.yaml 累积失效源
+    old_sub_valid = _purge_stale_sub_urls(session, dict_url.get('机场订阅', []))
+    old_clash_valid = _purge_stale_sub_urls(session, dict_url.get('clash订阅', []))
+    old_v2_valid = _purge_stale_sub_urls(session, dict_url.get('v2订阅', []))
+    new_sub_list = list(set(new_results['sub'] + old_sub_valid))
+    new_clash_list = list(set(new_results['clash'] + old_clash_valid))
+    new_v2_list = list(set(new_results['v2'] + old_v2_valid))
     play_list = list(set(new_results['play'] + dict_url.get('开心玩耍', [])))
 
     # 8. 写入原始 YAML (向后兼容)
