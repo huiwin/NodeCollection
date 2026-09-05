@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-NodeCollection Pro v2.9.1 - 订阅源采集 + 多格式转换一体化工具
+NodeCollection Pro v2.10.0 - 订阅源采集 + 多格式转换一体化工具
 
 架构:
   config.yaml (TG频道) + airports.yaml (机场列表) + merge.yaml (上游订阅白名单)
@@ -3135,7 +3135,9 @@ def main():
     new_sub_list = list(set(new_results['sub'] + old_sub_valid))
     new_clash_list = list(set(new_results['clash'] + old_clash_valid))
     new_v2_list = list(set(new_results['v2'] + old_v2_valid))
-    play_list = list(set(new_results['play'] + dict_url.get('开心玩耍', [])))
+    # P18 (v2.10.0): 开心玩耍过滤黑名单源的流量信息 (仅展示信息, 非订阅源)
+    play_list = [p for p in set(new_results['play'] + dict_url.get('开心玩耍', []))
+                 if not any(b.lower() in str(p).lower() for b in SUB_URL_BLACKLIST)]
 
     # 8. 写入原始 YAML (向后兼容)
     dict_url.update({
