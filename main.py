@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-NodeCollection Pro v2.9.0 - 订阅源采集 + 多格式转换一体化工具
+NodeCollection Pro v2.9.1 - 订阅源采集 + 多格式转换一体化工具
 
 架构:
   config.yaml (TG频道) + airports.yaml (机场列表) + merge.yaml (上游订阅白名单)
@@ -1988,6 +1988,10 @@ def classify_subscription(res):
 
 def sub_check(session, url):
     """校验单个 URL 是否为有效订阅链接。"""
+    # P17 (v2.9.0): 黑名单源 (已知失效/低质/违规) 直接拒绝, 不发起请求
+    # 作用: check_all_urls 的新抓取结果 + _purge_stale_sub_urls 的旧列表都自动过滤
+    if any(b.lower() in url.lower() for b in SUB_URL_BLACKLIST):
+        return {'type': None, 'url': url, 'info': None}
     headers = {'User-Agent': USER_AGENT}
 
     @retry(tries=RETRY_TIMES, exceptions=requests.RequestException)
