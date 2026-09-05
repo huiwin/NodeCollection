@@ -40,13 +40,13 @@ a:hover { text-decoration:underline; }
 <body>
 <div class="container">
 <h1>NodeCollection Pro</h1>
-<p class="subtitle">综合订阅 · 融合精选上游为底座 + 主订阅有效节点补充 · 更新时间: 2026-09-05 19:28:26 · v2.8.0</p>
+<p class="subtitle">综合订阅 · 融合精选上游为底座 + 主订阅有效节点补充 · 更新时间: 2026-09-05 22:07:59 · v2.8.0</p>
 
 <div class="cards">
 <div class="card"><div class="num">108</div><div class="label">解析节点总数</div></div>
 <div class="card green"><div class="num">108</div><div class="label">存活节点</div></div>
 <div class="card amber"><div class="num">100.0%</div><div class="label">可用率</div></div>
-<div class="card purple"><div class="num">202ms</div><div class="label">平均延迟</div></div>
+<div class="card purple"><div class="num">324ms</div><div class="label">平均延迟</div></div>
 <div class="card pink"><div class="num">108</div><div class="label">最终输出</div></div>
 <div class="card"><div class="num">102</div><div class="label">主订阅补充</div></div>
 <div class="card"><div class="num">0</div><div class="label">剔除失效</div></div>
@@ -70,19 +70,19 @@ a:hover { text-decoration:underline; }
 <tr><td>连续不可达剔除</td><td>0</td><td>连续失败达到阈值的节点</td></tr>
 <tr><td>总量截断</td><td>0</td><td>超过 MERGED_MAX_NODES 被截断</td></tr>
 <tr><td>主订阅补充</td><td>102</td><td>融合底座外补充的主订阅有效节点</td></tr>
-<tr><td>最小延迟</td><td>2ms</td><td>最快节点延迟</td></tr>
-<tr><td>最大延迟</td><td>2381ms</td><td>最慢节点延迟</td></tr>
+<tr><td>最小延迟</td><td>10ms</td><td>最快节点延迟</td></tr>
+<tr><td>最大延迟</td><td>3374ms</td><td>最慢节点延迟</td></tr>
 </table>
 
 <h2>上游贡献统计</h2>
 <table>
 <tr><th>来源</th><th>解析</th><th>去重后</th><th>可达</th><th>可用率</th><th>平均延迟</th><th>状态</th></tr>
-<tr><td>FreeNodes</td><td>40</td><td>16</td><td>16</td><td>100.0%</td><td>395ms</td><td><span style="color:#10b981">✅ 正常</span></td></tr>
-<tr><td>Jsnzkpg</td><td>43</td><td>5</td><td>5</td><td>100.0%</td><td>175ms</td><td><span style="color:#10b981">✅ 正常</span></td></tr>
-<tr><td>NoMoreWalls</td><td>152</td><td>17</td><td>4</td><td>23.5%</td><td>216ms</td><td><span style="color:#10b981">✅ 正常</span></td></tr>
-<tr><td>Pawdroid</td><td>14</td><td>4</td><td>4</td><td>100.0%</td><td>2ms</td><td><span style="color:#10b981">✅ 正常</span></td></tr>
-<tr><td>maflya</td><td>259</td><td>13</td><td>11</td><td>84.6%</td><td>203ms</td><td><span style="color:#10b981">✅ 正常</span></td></tr>
-<tr><td>主订阅</td><td>0</td><td>53</td><td>27</td><td>50.9%</td><td>120ms</td><td><span style="color:#10b981">✅ 正常</span></td></tr>
+<tr><td>FreeNodes</td><td>40</td><td>16</td><td>16</td><td>100.0%</td><td>712ms</td><td><span style="color:#10b981">✅ 正常</span></td></tr>
+<tr><td>Jsnzkpg</td><td>27</td><td>7</td><td>6</td><td>85.7%</td><td>139ms</td><td><span style="color:#10b981">✅ 正常</span></td></tr>
+<tr><td>NoMoreWalls</td><td>152</td><td>17</td><td>4</td><td>23.5%</td><td>270ms</td><td><span style="color:#10b981">✅ 正常</span></td></tr>
+<tr><td>Pawdroid</td><td>13</td><td>2</td><td>2</td><td>100.0%</td><td>12ms</td><td><span style="color:#10b981">✅ 正常</span></td></tr>
+<tr><td>maflya</td><td>259</td><td>13</td><td>11</td><td>84.6%</td><td>238ms</td><td><span style="color:#10b981">✅ 正常</span></td></tr>
+<tr><td>主订阅</td><td>0</td><td>53</td><td>26</td><td>49.1%</td><td>196ms</td><td><span style="color:#10b981">✅ 正常</span></td></tr>
 
 </table>
 
@@ -99,7 +99,7 @@ new Chart(pieCtx, {
   data: {
     labels: ["FreeNodes", "Jsnzkpg", "NoMoreWalls", "Pawdroid", "maflya", "主订阅"],
     datasets: [{
-      data: [16, 5, 4, 4, 11, 27],
+      data: [16, 6, 4, 2, 11, 26],
       backgroundColor: ["#38bdf8", "#10b981", "#f59e0b", "#a78bfa", "#f472b6", "#fb923c"],
       borderWidth: 2,
       borderColor: '#1e293b'
@@ -122,7 +122,7 @@ new Chart(barCtx, {
     labels: ["FreeNodes", "Jsnzkpg", "NoMoreWalls", "Pawdroid", "maflya", "主订阅"],
     datasets: [{
       label: '平均延迟 (ms)',
-      data: [395, 175, 216, 2, 203, 120],
+      data: [712, 139, 270, 12, 238, 196],
       backgroundColor: 'rgba(56,189,248,0.7)',
       borderColor: '#38bdf8',
       borderWidth: 1,
