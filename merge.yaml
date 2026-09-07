@@ -51,13 +51,5 @@ upstreams:
     enabled: true
     max_nodes: 80
 
-  # P19 (v2.11.0) 新增: 每小时更新聚合源
-  # P19.1 (v2.11.1): clash.yaml 是纯规则文件(无 proxies 段)解析为 0,
-  # 改 v2ray.txt (逐行 base64 编码的 vmess 节点, 需逐行解码支持)
-  - name: getNode
-    url: https://raw.githubusercontent.com/a2470982985/getNode/main/v2ray.txt
-    repo: a2470982985/getNode
-    enabled: true
-    max_nodes: 80
-
-  # P19.1 (v2.11.1): abshare/mksshare 返回 403 (Cloudflare 防护) 已移除
+  # P19.2 (v2.11.2): getNode 仓库 clash.yaml/v2ray.txt 均为 0 字节空文件
+  # (生成脚本未输出), 无法提供节点, 已移除
