@@ -1619,6 +1619,9 @@ def generate_merged_format(upstream_texts, upstreams):
     #     健康记录跨周期持久化, 连续 LATENCY_FAIL_THRESHOLD 次不可达的节点剔除
     health_data = load_node_health()
 
+    # P21 (v2.13.0): 上游历史贡献记录提前加载 (供动态配额与本轮记录使用)
+    upstream_history = load_upstream_history()
+
     # T2.3: 上游拉取健康记录更新 (连续 UPSTREAM_DEGRADE_THRESHOLD 次失败标记 degraded)
     upstream_health = load_upstream_health()
     today_str = datetime.datetime.today().strftime('%Y-%m-%d')
@@ -1743,7 +1746,6 @@ def generate_merged_format(upstream_texts, upstreams):
     #   总量: URI + Clash proxy 合计 ≤ MERGED_MAX_NODES (合并按延迟升序取前 N)
     from collections import defaultdict
     # P21 (v2.13.0): 上游动态配额 — 按最近 3 轮可用率自动调整单源上限
-    upstream_history = load_upstream_history()
     source_max_map = compute_dynamic_caps(upstreams, upstream_history)
     logger.info(
         '[P21] 上游动态配额: '
