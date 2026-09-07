@@ -128,7 +128,10 @@ jobs:
 
     - name: Run collector
       # P7 (v2.1.0) 优化3: 超时设置, 防止采集卡住浪费 Actions 时间
+      # P21 (v2.13.0): 注入告警 Webhook (GitHub Secrets 配置 ALERT_WEBHOOK_URL)
       timeout-minutes: 15
+      env:
+        ALERT_WEBHOOK_URL: ${{ secrets.ALERT_WEBHOOK_URL }}
       run: |
         python ./main.py
 

@@ -1,7 +1,7 @@
 # NodeCollection Pro 参照文档汇总
 
 > **文档用途**：整合项目所有参照文档，供团队统一阅读、查阅和后续维护。
-> **当前版本**：v2.12.0 (P20 完成)
+> **当前版本**：v2.13.0 (P21 完成)
 > **最后更新**：2026-09-07
 > **仓库地址**：https://github.com/huiwin/NodeCollection
 
@@ -113,6 +113,7 @@ config.yaml (TG频道)  +  airports.yaml (机场域名)
 | v2.11.1 | 2026-09-07 | patch | P19.1 订阅源修正：① getNode 上游解析为 0 修复——根因是 getNode clash.yaml 为纯规则文件 (无 proxies 段, 全是 DOMAIN 规则), 改为 v2ray.txt (逐行 base64 编码的 vmess 节点), parse_upstream_text + classify_subscription 增加逐行 base64 解码回退兼容该格式；② 移除无效/不兼容源——abshare/mksshare (403 Cloudflare 防护不可达)、free18 (节点为 vless 被 P11.6 过滤且主订阅协议白名单不含 vless)、aiboboxx (停更 3 年)；③ config.yaml 固定源精简为 getNode v2ray.txt。 |
 | v2.11.2 | 2026-09-07 | patch | P19.2 移除空文件源回到稳定配置：P19.1 验收仍发现 getNode 未进上游统计, 深入验证确认 getNode 仓库 clash.yaml/v2ray.txt 均为 0 字节空文件 (生成脚本未输出), merge.yaml 移除 getNode 回到 5 个稳定上游; config.yaml 移除固定订阅源 (getNode v2ray.txt 为空); 保留逐行 base64 解码能力 (对未来兼容有用); P19 结论——GitHub 免费源全部验证不可用 (getNode 空文件/abshare-mksshare 403/free18 vless 不兼容/aiboboxx 停更), 主订阅可靠来源仍是 TG 频道 + 机场探测。 |
 | v2.12.0 | 2026-09-07 | minor | P20 status.html 展示优化 + README 排版优化 |
+| v2.13.0 | 2026-09-07 | minor | P21 告警通知启用 + 上游动态配额 |
 ## 3. 目录结构
 
 ```
@@ -969,6 +970,7 @@ MSYS_NO_PATHCONV=1 gh api --method DELETE /repos/huiwin/NodeCollection/git/refs/
 | 2026-09-06 | 实施 v2.11.1 P19.1 排查修复：getNode clash.yaml 是纯规则文件 → 改 v2ray.txt + 逐行 base64 解码回退 (parse_upstream_text/classify_subscription); abshare/mksshare 返回 403 (Cloudflare); free18 vless 被协议白名单过滤; aiboboxx 停更 3 年; 全部移除 |
 | 2026-09-06 | 实施 v2.11.2 P19.2 回到稳定配置：jsdelivr API 确认 getNode 仓库 clash.yaml/v2ray.txt 均 0 字节空文件 → merge.yaml 回到 5 稳定上游, config.yaml 移除固定源 (机制保留); 逐行 base64 解码保留; 验收: 150 节点/100% 可用率/133KB/17 组 |
 | 2026-09-07 | 实施 v2.12.0 P20 status.html 展示优化 + README 排版优化：① status.html 新增综合订阅 5 格式订阅链接区块 (一键复制), 版本号动态化 (VERSION 常量) 不再写死 v2.8.0; ② README 节点分组表格同步为 P18 实际 17 组 (4 核心规则组 + 地区选择/自动选择 + 11 地区组), 移除已精简的故障转移/负载均衡, 修正组名 🎯 地区选择; UPSTREAM_REPO_MAP 清理 P19 残留; 版本号 v2.11.2→v2.12.0 |
+| 2026-09-07 | 实施 v2.13.0 P21 告警通知启用 + 上游动态配额：① send_alert 触发点补完 (运行异常/上游全挂/部分失败/融合全挂/可用率<50%/输出<50), main 入口 try/except 异常告警后重新抛出, fetch.yaml 注入 ALERT_WEBHOOK_URL (GitHub Secrets); ② 新增 load_upstream_history + compute_dynamic_caps (最近 3 轮可用率分档: >=80% 放宽 1.5x, <50% 压缩 0.6x, 连续 3 轮 0 可用自动停用), 每轮记录 upstream_history (10 轮), merged_section 新增字段; 版本号 v2.12.0→v2.13.0 |
 | 2026-08-17 | 升级至 v1.4.0：新增上游订阅融合（merge.yaml 白名单 + 拉取重试失败隔离 + 三格式解析 + [ext:] 前缀 + output/merged 独立输出含回退保护 + README 免责声明/来源表）；新增 4.14 节；同步更新第 1/2/3/4/5/7/8 节；本地 10 项单元验证通过 |
 
 <!-- 待补充/更新标记：

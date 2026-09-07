@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-NodeCollection Pro v2.12.0 - 订阅源采集 + 多格式转换一体化工具
+NodeCollection Pro v2.13.0 - 订阅源采集 + 多格式转换一体化工具
 
 架构:
   config.yaml (TG频道) + airports.yaml (机场列表) + merge.yaml (上游订阅白名单)
@@ -34,7 +34,7 @@ P17 (v2.9.0) 主订阅源健康治理 + 综合订阅补充修复:
     防止 sub/latest.yaml 只增不减地累积失效源
 """
 
-VERSION = '2.12.0'
+VERSION = '2.13.0'
 
 import re
 import os
@@ -1685,6 +1685,7 @@ def generate_merged_format(upstream_texts, upstreams):
         )
     if post_health_count == 0:
         logger.warning('所有融合节点均不可达，跳过融合输出')
+        send_alert('❌ 融合订阅异常', '所有融合节点均不可达，综合订阅将保留上次有效数据', 'error')
         return 0
 
     # T3.4 (v1.7.0): 上游贡献统计 (基于剔除后、截断前的数据, 反映上游真实质量)
@@ -1726,14 +1727,28 @@ def generate_merged_format(upstream_texts, upstreams):
             + ', '.join(f'{k}({v["available"]}/{v["after_dedup"]}可达)' for k, v in upstream_stats.items())
         )
 
+    # P21 (v2.13.0): 记录本轮上游贡献到历史 (动态配额依据, 保留最近 10 轮)
+    for _src, _stats in upstream_stats.items():
+        upstream_history.setdefault(_src, []).append({
+            'available': _stats.get('available', 0),
+            'after_dedup': _stats.get('after_dedup', 0),
+            'availability_rate': _stats.get('availability_rate', 0),
+            'date': today_str,
+        })
+    for _src in upstream_history:
+        upstream_history[_src] = upstream_history[_src][-10:]
+
     # 2.8 (T1.4) 单源截断 + 总量截断
     #   单源: 每个上游按 max_nodes 截断 (列表已按延迟升序, 取前 N)
     #   总量: URI + Clash proxy 合计 ≤ MERGED_MAX_NODES (合并按延迟升序取前 N)
     from collections import defaultdict
-    source_max_map = {
-        u.get('name', 'unknown'): int(u.get('max_nodes', 0) or 0)
-        for u in upstreams
-    }
+    # P21 (v2.13.0): 上游动态配额 — 按最近 3 轮可用率自动调整单源上限
+    upstream_history = load_upstream_history()
+    source_max_map = compute_dynamic_caps(upstreams, upstream_history)
+    logger.info(
+        '[P21] 上游动态配额: '
+        + ', '.join(f'{k}={v}' for k, v in source_max_map.items())
+    )
 
     # 单源截断: URI
     uri_groups = defaultdict(list)
@@ -1921,6 +1936,8 @@ def generate_merged_format(upstream_texts, upstreams):
             },
             # T3.4 (v1.7.0): 上游贡献统计 (每上游解析/去重/可达/延迟/可用率)
             'upstream_stats': upstream_stats,
+            # P21 (v2.13.0): 上游历史贡献 (最近 10 轮, 动态配额依据)
+            'upstream_history': upstream_history,
         }
         for target, _, ext in OUTPUT_FORMATS:
             token = target.split('&')[0]
@@ -3130,6 +3147,57 @@ new Chart(barCtx, {{
     logger.info(f'[T5.5] 状态页已增强生成: {status_path}')
 
 
+def load_upstream_history():
+    """
+    P21 (v2.13.0): 从 index.json 的 merged.upstream_history 读取各上游历史贡献记录。
+    返回: {name: [{available, after_dedup, availability_rate, date}, ...]}
+    用于上游动态配额计算。损坏/缺失返回 {}。
+    """
+    index_path = os.path.join(OUTPUT_DIR, 'index.json')
+    if not os.path.isfile(index_path):
+        return {}
+    try:
+        with open(index_path, encoding='utf-8') as f:
+            data = json.load(f)
+        return data.get('merged', {}).get('upstream_history', {}) or {}
+    except Exception:
+        return {}
+
+
+def compute_dynamic_caps(upstreams, history):
+    """
+    P21 (v2.13.0): 上游动态配额 — 基于最近 3 轮可用率自动调整单源节点上限。
+    分档规则:
+      - 无历史 (新源)           → max_nodes (默认)
+      - 最近平均可用率 >= 80%    → max_nodes * 1.5 (放宽, 好源多吃, 封顶 MERGED_MAX_NODES)
+      - 50% <= 可用率 < 80%      → max_nodes (维持)
+      - 可用率 < 50%            → max(10, max_nodes * 0.6) (压缩)
+      - 连续 3 轮 available=0   → 0 (自动停用)
+    返回: {name: cap}
+    """
+    caps = {}
+    for u in upstreams:
+        name = u.get('name', 'unknown')
+        base = int(u.get('max_nodes', 0) or 0)
+        recs = history.get(name) or []
+        recent = recs[-3:]
+        if not recent:
+            caps[name] = base
+            continue
+        if len(recent) >= 3 and all((r.get('available') or 0) == 0 for r in recent):
+            caps[name] = 0
+            continue
+        rates = [(r.get('availability_rate') or 0) for r in recent]
+        avg_rate = sum(rates) / len(rates)
+        if avg_rate >= 80:
+            caps[name] = min(MERGED_MAX_NODES, int(base * 1.5) if base else MERGED_MAX_NODES)
+        elif avg_rate >= 50:
+            caps[name] = base
+        else:
+            caps[name] = max(10, int(base * 0.6)) if base else MERGED_MAX_NODES
+    return caps
+
+
 def send_alert(title, message, level='info'):
     """
     P5 (v1.9.0, T5.6): 告警通知预留接口。
@@ -3171,7 +3239,12 @@ def send_alert(title, message, level='info'):
             # 通用 Webhook (JSON POST)
             payload = {'title': title, 'message': message, 'level': level}
 
-        resp = requests.post(webhook, json=payload, timeout=10)
+        # P21.1 (v2.13.0+): Server酱 API 仅接受表单参数 (application/x-www-form-urlencoded),
+        # 其余平台 (钉钉/飞书/通用) 使用 JSON body
+        if 'sctapi.ftqq.com' in webhook:
+            resp = requests.post(webhook, data=payload, timeout=10)
+        else:
+            resp = requests.post(webhook, json=payload, timeout=10)
         if resp.status_code == 200:
             logger.info(f'[T5.6] 告警发送成功: {title}')
         else:
@@ -3264,6 +3337,16 @@ def main():
     logger.info('=== 上游订阅融合 ===')
     upstreams = load_upstreams()
     upstream_texts = fetch_all_upstreams(session, upstreams)
+    # P21 (v2.13.0): 上游拉取失败告警
+    if upstream_texts and len(upstream_texts) < len(upstreams):
+        _failed = [u.get('name') for u in upstreams if u.get('name') not in upstream_texts]
+        send_alert(
+            '⚠️ 部分上游拉取失败',
+            f'成功 {len(upstream_texts)}/{len(upstreams)} 个, 失败: {", ".join(_failed)}',
+            'warning',
+        )
+    elif not upstream_texts:
+        send_alert('❌ 全部上游拉取失败', '综合订阅本次无法更新，保留上次有效数据', 'error')
     merged_nodes = generate_merged_format(upstream_texts, upstreams)
 
     # 10. 输出运行统计
@@ -3303,6 +3386,20 @@ def main():
             f'  融合质量: 可用率 {_ar}%, 平均延迟 {_avg}ms, '
             f'剔除 {_exc}, 截断 {_trunc}'
         )
+        # P21 (v2.13.0): 质量异常告警 (可用率低 / 输出过少)
+        _oc = merged_quality.get('output_count')
+        if _ar is not None and _ar < 50:
+            send_alert(
+                '⚠️ 综合订阅可用率偏低',
+                f'可用率 {_ar}%, 输出 {_oc} 节点, 平均延迟 {_avg}ms',
+                'warning',
+            )
+        elif _oc is not None and 0 < _oc < 50:
+            send_alert(
+                '⚠️ 综合订阅输出节点偏少',
+                f'仅输出 {_oc} 节点 (可用率 {_ar}%)',
+                'warning',
+            )
 
     # 11. 自动更新 README.md (订阅链接展示)
     generate_readme(upstreams)
@@ -3314,4 +3411,14 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    # P21 (v2.13.0): 运行异常告警 — 发送通知后重新抛出, 让 Actions 标记失败
+    try:
+        main()
+    except Exception as e:
+        import traceback
+        send_alert(
+            '❌ NodeCollection 运行异常',
+            f'{type(e).__name__}: {e}\n\n{traceback.format_exc()[-1200:]}',
+            'error',
+        )
+        raise
