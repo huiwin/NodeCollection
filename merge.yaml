@@ -52,21 +52,12 @@ upstreams:
     max_nodes: 80
 
   # P19 (v2.11.0) 新增: 每小时更新聚合源
+  # P19.1 (v2.11.1): clash.yaml 是纯规则文件(无 proxies 段)解析为 0,
+  # 改 v2ray.txt (逐行 base64 编码的 vmess 节点, 需逐行解码支持)
   - name: getNode
-    url: https://raw.githubusercontent.com/a2470982985/getNode/main/clash.yaml
+    url: https://raw.githubusercontent.com/a2470982985/getNode/main/v2ray.txt
     repo: a2470982985/getNode
     enabled: true
     max_nodes: 80
 
-  # P19 (v2.11.0) 新增: 每日公益流量订阅
-  - name: abshare
-    url: https://Nr5naf.absslk.xyz/e98af01c1d1a5c4506aead30efa93f08
-    repo: abshare/abshare.github.io
-    enabled: true
-    max_nodes: 80
-
-  - name: mksshare
-    url: https://NEsTen.mcsslk.xyz/acf19447ad1d675b1bb9c3cc854abfcc
-    repo: mksshare/mksshare.github.io
-    enabled: true
-    max_nodes: 80
+  # P19.1 (v2.11.1): abshare/mksshare 返回 403 (Cloudflare 防护) 已移除

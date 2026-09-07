@@ -35,10 +35,8 @@ tgchannel:
   - https://t.me/stymei1
 
 # P19 (v2.11.0) 固定订阅源 (并入主订阅校验, 失效自动剔除)
+# P19.1 (v2.11.1): free18 路径修正为 refs/heads/main/v.txt 但节点为 vless
+#   (主订阅 PROTOCOL_PREFIXES 不含 vless, 无法通过校验); aiboboxx 停更 3 年移除
 fixed_subscriptions:
-  # getNode 每小时更新 (v2ray 格式)
+  # getNode 每小时更新 (逐行 base64 编码的 vmess 节点)
   - https://raw.githubusercontent.com/a2470982985/getNode/main/v2ray.txt
-  # free18 免费订阅
-  - https://raw.githubusercontent.com/free18/v2ray/master/c/v2ray
-  # aiboboxx 免费订阅
-  - https://raw.githubusercontent.com/aiboboxx/v2rayfree/main/v2

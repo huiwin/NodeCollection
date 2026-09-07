@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-NodeCollection Pro v2.11.0 - 订阅源采集 + 多格式转换一体化工具
+NodeCollection Pro v2.11.1 - 订阅源采集 + 多格式转换一体化工具
 
 架构:
   config.yaml (TG频道) + airports.yaml (机场列表) + merge.yaml (上游订阅白名单)
@@ -809,6 +809,24 @@ def parse_upstream_text(text, upstream):
                 lines = decoded.splitlines()
         except Exception:
             pass
+        # P19.1 (v2.11.1): 逐行 Base64 解码回退 (兼容每行独立 base64 编码的订阅,
+        # 如 getNode v2ray.txt: 每行 dm1lc3M6Ly9... = base64("vmess://..."))
+        if not any(l.strip().startswith(UPSTREAM_PROTOCOL_PREFIXES) for l in lines):
+            _dec_lines = []
+            for _l in lines:
+                _s = _l.strip()
+                if not _s:
+                    continue
+                try:
+                    _pad = '=' * (-len(_s) % 4)
+                    _dec = base64.b64decode(_s + _pad).decode('utf-8', errors='ignore').strip()
+                    if _dec.startswith(UPSTREAM_PROTOCOL_PREFIXES):
+                        _dec_lines.append(_dec)
+                except Exception:
+                    pass
+            if _dec_lines:
+                logger.info(f'[ext:{name}] 逐行 Base64 解码: 识别 {len(_dec_lines)} 个节点')
+                lines = _dec_lines
         # 明文分享链接列表 (含 Base64 解码结果)
         raw_uris = [
             l.strip() for l in lines
@@ -1998,6 +2016,22 @@ def classify_subscription(res):
             _line = _line.strip()
             if _line.startswith(PROTOCOL_PREFIXES):
                 return 'v2', None
+    except Exception:
+        pass
+
+    # P19.1 (v2.11.1): 逐行 Base64 解码回退 (兼容每行独立 base64 编码的订阅)
+    try:
+        for _l in res.text.splitlines():
+            _s = _l.strip()
+            if not _s:
+                continue
+            try:
+                _pad = '=' * (-len(_s) % 4)
+                _dec = base64.b64decode(_s + _pad).decode('utf-8', errors='replace').strip()
+                if _dec.startswith(PROTOCOL_PREFIXES):
+                    return 'v2', None
+            except Exception:
+                pass
     except Exception:
         pass
 
