@@ -1,6 +1,6 @@
 # NodeCollection
 
-> 自动更新时间: 2026-09-07 20:45:51
+> 自动更新时间: 2026-09-07 21:33:15
 
 > ⚠️ **免责声明**：本项目所有节点均来自互联网公开资源，仅供学习与交流使用，不保证节点的安全性、可用性与合法性。请勿用于任何违反所在地区法律法规的用途，也请勿通过免费节点登录银行、邮箱等敏感账号。使用本项目产生的一切后果由使用者自行承担。
 
@@ -8,11 +8,11 @@
 
 | 指标 | 数值 | 说明 |
 | :--- | ---: | :--- |
-| 解析节点总数 | 163 | 上游订阅解析后节点数 |
-| 可用节点 | 163 | 测速后存活节点数 (剔除前) |
+| 解析节点总数 | 154 | 上游订阅解析后节点数 |
+| 可用节点 | 154 | 测速后存活节点数 (剔除前) |
 | 最终输出 | 150 | 体积截断后实际输出节点数 |
 | 可用率 | 100.0% | 可用节点 / 解析总数 |
-| 平均延迟 | 200ms | 可达节点的平均 TCP 握手延迟 |
+| 平均延迟 | 178ms | 可达节点的平均 TCP 握手延迟 |
 
 > 📊 查看详细状态: [Web 状态页](https://huiwin.github.io/NodeCollection/status.html) （含上游贡献统计、质量指标、实时更新）
 
@@ -134,7 +134,11 @@
 
 | 代理组 | 匹配规则 |
 | :--- | :--- |
-| 🚀 节点选择 | 手动选择，含所有地区组 + 直连 |
+| 🛑 广告拦截 | 广告域名规则 (BanAD)，走 REJECT |
+| 🎯 全球直连 | 国内域名/IP + 局域网 + 苹果/微软/国内媒体，走直连 |
+| 🚀 国外加速 | 国外常用域名 + 电报/谷歌/国外媒体，走自动选择 |
+| 🐟 漏网之鱼 | 未匹配流量，走自动选择 |
+| 🎯 地区选择 | 手动选择，含所有地区组 + 自动选择 + 直连 |
 | ♻️ 自动选择 | 全部节点 URL 测速，自动选最优 |
 | 🇭🇰 香港节点 | 香港 / HK / Hong Kong |
 | 🇹🇼 台湾节点 | 台湾 / TW / Taiwan |
@@ -143,8 +147,10 @@
 | 🇺🇸 美国节点 | 美国 / US / United States |
 | 🇰🇷 韩国节点 | 韩国 / KR / Korea |
 | 🇬🇧 英国节点 | 英国 / UK / United Kingdom |
-| 🔗 故障转移 | 全部节点故障转移 |
-| ⚖️ 负载均衡 | 全部节点负载均衡 |
+| 🇩🇪 德国节点 | 德国 / DE / Germany |
+| 🇫🇷 法国节点 | 法国 / FR / France |
+| 🇷🇺 俄罗斯节点 | 俄罗斯 / RU / Russia |
+| 🇨🇦 加拿大节点 | 加拿大 / CA / Canada |
 
 > 综合订阅节点按地区前缀 (🇺🇸/🇯🇵...) + 序号命名，地区识别基于节点名称关键词。
 
@@ -152,11 +158,11 @@
 
 | 来源 | 项目地址 | 解析 | 去重后 | 可达 | 可用率 | 平均延迟 | 状态 |
 | :--- | :--- | ---: | ---: | ---: | ---: | ---: | :--- |
-| NoMoreWalls | [peasoft/NoMoreWalls](https://github.com/peasoft/NoMoreWalls) | 172 | 18 | 6 | 33.3% | 160ms | ✅ 正常 |
-| FreeNodes | [Barabama/FreeNodes](https://github.com/Barabama/FreeNodes) | 63 | 42 | 36 | 85.7% | 167ms | ✅ 正常 |
-| Pawdroid | [Pawdroid/Free-servers](https://github.com/Pawdroid/Free-servers) | 20 | 11 | 11 | 100.0% | 34ms | ✅ 正常 |
-| Jsnzkpg | [Jsnzkpg/Jsnzkpg](https://github.com/Jsnzkpg/Jsnzkpg) | 41 | 7 | 5 | 71.4% | 357ms | ✅ 正常 |
-| maflya | [maflya](https://sub.maflya.com/) | 199 | 10 | 9 | 90.0% | 149ms | ✅ 正常 |
+| NoMoreWalls | [peasoft/NoMoreWalls](https://github.com/peasoft/NoMoreWalls) | 172 | 18 | 4 | 22.2% | 144ms | ✅ 正常 |
+| FreeNodes | [Barabama/FreeNodes](https://github.com/Barabama/FreeNodes) | 63 | 42 | 37 | 88.1% | 170ms | ✅ 正常 |
+| Pawdroid | [Pawdroid/Free-servers](https://github.com/Pawdroid/Free-servers) | 20 | 2 | 2 | 100.0% | 104ms | ✅ 正常 |
+| Jsnzkpg | [Jsnzkpg/Jsnzkpg](https://github.com/Jsnzkpg/Jsnzkpg) | 41 | 7 | 4 | 57.1% | 136ms | ✅ 正常 |
+| maflya | [maflya](https://sub.maflya.com/) | 199 | 10 | 9 | 90.0% | 135ms | ✅ 正常 |
 
 上游节点遵循各来源项目的许可证与分发要求，如来源项目提出异议将立即移除。
 
@@ -164,7 +170,7 @@
 
 - 每 4 小时自动更新一次 (GitHub Actions)
 - 订阅链接为固定地址，复制一次即可长期使用，内容随自动更新刷新
-- 当前更新时间: `2026-09-07 20:45:51`
+- 当前更新时间: `2026-09-07 21:33:15`
 - 加速方式按实时性排序: kkgithub/ghproxy 实时更新, jsdelivr 有缓存延迟
 - 如某加速节点不可用, 换一个即可
 
