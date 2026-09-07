@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-NodeCollection Pro v2.10.0 - 订阅源采集 + 多格式转换一体化工具
+NodeCollection Pro v2.11.0 - 订阅源采集 + 多格式转换一体化工具
 
 架构:
   config.yaml (TG频道) + airports.yaml (机场列表) + merge.yaml (上游订阅白名单)
@@ -406,6 +406,24 @@ def get_config():
             new_list.append(f'https://t.me/s/{channel_name}')
     logger.info(f'读取 TG 频道配置: {len(new_list)} 个')
     return new_list
+
+
+def load_fixed_subscriptions():
+    """
+    P19 (v2.11.0): 读取 config.yaml 中的固定订阅源列表。
+    固定订阅源与 TG 频道/机场一样, 走 sub_check 校验 (可达+有节点+非黑名单),
+    有效才保留; 失效自动剔除, 不污染输出。
+    """
+    try:
+        with open(CONFIG_PATH, encoding='UTF-8') as f:
+            data = yaml.load(f, Loader=yaml.FullLoader)
+        fixed = data.get('fixed_subscriptions', []) or []
+        fixed = [u.strip() for u in fixed if u and u.strip().startswith(('http://', 'https://'))]
+        logger.info(f'读取固定订阅源: {len(fixed)} 个')
+        return fixed
+    except Exception as e:
+        logger.warning(f'读取固定订阅源失败: {e}')
+        return []
 
 
 def load_airports():
@@ -2592,6 +2610,10 @@ UPSTREAM_REPO_MAP = {
     'FreeNodes': ('Barabama/FreeNodes', 'https://github.com/Barabama/FreeNodes'),
     'Pawdroid': ('Pawdroid/Free-servers', 'https://github.com/Pawdroid/Free-servers'),
     'Jsnzkpg': ('Jsnzkpg/Jsnzkpg', 'https://github.com/Jsnzkpg/Jsnzkpg'),
+    # P19 (v2.11.0) 新增
+    'getNode': ('a2470982985/getNode', 'https://github.com/a2470982985/getNode'),
+    'abshare': ('abshare/abshare.github.io', 'https://github.com/abshare/abshare.github.io'),
+    'mksshare': ('mksshare/mksshare.github.io', 'https://github.com/mksshare/mksshare.github.io'),
 }
 
 
@@ -3122,8 +3144,13 @@ def main():
     logger.info('=== 开始探测机场列表 ===')
     airport_urls = probe_all_airports(session, airports)
 
+    # 5.6 P19 (v2.11.0): 固定订阅源 (config.yaml fixed_subscriptions)
+    fixed_urls = load_fixed_subscriptions()
+    if fixed_urls:
+        logger.info(f'=== 固定订阅源 {len(fixed_urls)} 个并入校验 ===')
+
     # 6. 合并所有 URL 并校验
-    all_urls = list(set(tg_urls + airport_urls))
+    all_urls = list(set(tg_urls + airport_urls + fixed_urls))
     logger.info(f'=== 开始校验订阅 (共 {len(all_urls)} 个 URL) ===')
     new_results = check_all_urls(session, all_urls)
 

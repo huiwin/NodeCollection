@@ -33,3 +33,12 @@ tgchannel:
   - https://t.me/TG_2345
   # P10 (v2.4.0) 新增
   - https://t.me/stymei1
+
+# P19 (v2.11.0) 固定订阅源 (并入主订阅校验, 失效自动剔除)
+fixed_subscriptions:
+  # getNode 每小时更新 (v2ray 格式)
+  - https://raw.githubusercontent.com/a2470982985/getNode/main/v2ray.txt
+  # free18 免费订阅
+  - https://raw.githubusercontent.com/free18/v2ray/master/c/v2ray
+  # aiboboxx 免费订阅
+  - https://raw.githubusercontent.com/aiboboxx/v2rayfree/main/v2
