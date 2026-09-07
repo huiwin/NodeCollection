@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-NodeCollection Pro v2.11.2 - 订阅源采集 + 多格式转换一体化工具
+NodeCollection Pro v2.12.0 - 订阅源采集 + 多格式转换一体化工具
 
 架构:
   config.yaml (TG频道) + airports.yaml (机场列表) + merge.yaml (上游订阅白名单)
@@ -33,6 +33,8 @@ P17 (v2.9.0) 主订阅源健康治理 + 综合订阅补充修复:
   - _purge_stale_sub_urls: 合并前对历史累积 URL 重新验证, 剔除失效/空壳/黑名单源,
     防止 sub/latest.yaml 只增不减地累积失效源
 """
+
+VERSION = '2.12.0'
 
 import re
 import os
@@ -2644,10 +2646,6 @@ UPSTREAM_REPO_MAP = {
     'FreeNodes': ('Barabama/FreeNodes', 'https://github.com/Barabama/FreeNodes'),
     'Pawdroid': ('Pawdroid/Free-servers', 'https://github.com/Pawdroid/Free-servers'),
     'Jsnzkpg': ('Jsnzkpg/Jsnzkpg', 'https://github.com/Jsnzkpg/Jsnzkpg'),
-    # P19 (v2.11.0) 新增
-    'getNode': ('a2470982985/getNode', 'https://github.com/a2470982985/getNode'),
-    'abshare': ('abshare/abshare.github.io', 'https://github.com/abshare/abshare.github.io'),
-    'mksshare': ('mksshare/mksshare.github.io', 'https://github.com/mksshare/mksshare.github.io'),
 }
 
 
@@ -2769,13 +2767,19 @@ def generate_readme(upstreams=None):
         lines.append('')
 
         # T1.3: 融合订阅节点分组说明
+        # P18 (v2.10.0): 代理组精简为 4 核心规则组 + 13 地区组
+        # P20 (v2.12.0): 表格同步为实际 17 组
         lines.append('### 节点分组')
         lines.append('')
         lines.append('综合订阅（Clash 格式）按地区自动分组，支持以下代理组：')
         lines.append('')
         lines.append('| 代理组 | 匹配规则 |')
         lines.append('| :--- | :--- |')
-        lines.append('| 🚀 节点选择 | 手动选择，含所有地区组 + 直连 |')
+        lines.append('| 🛑 广告拦截 | 广告域名规则 (BanAD)，走 REJECT |')
+        lines.append('| 🎯 全球直连 | 国内域名/IP + 局域网 + 苹果/微软/国内媒体，走直连 |')
+        lines.append('| 🚀 国外加速 | 国外常用域名 + 电报/谷歌/国外媒体，走自动选择 |')
+        lines.append('| 🐟 漏网之鱼 | 未匹配流量，走自动选择 |')
+        lines.append('| 🎯 地区选择 | 手动选择，含所有地区组 + 自动选择 + 直连 |')
         lines.append('| ♻️ 自动选择 | 全部节点 URL 测速，自动选最优 |')
         lines.append('| 🇭🇰 香港节点 | 香港 / HK / Hong Kong |')
         lines.append('| 🇹🇼 台湾节点 | 台湾 / TW / Taiwan |')
@@ -2784,8 +2788,10 @@ def generate_readme(upstreams=None):
         lines.append('| 🇺🇸 美国节点 | 美国 / US / United States |')
         lines.append('| 🇰🇷 韩国节点 | 韩国 / KR / Korea |')
         lines.append('| 🇬🇧 英国节点 | 英国 / UK / United Kingdom |')
-        lines.append('| 🔗 故障转移 | 全部节点故障转移 |')
-        lines.append('| ⚖️ 负载均衡 | 全部节点负载均衡 |')
+        lines.append('| 🇩🇪 德国节点 | 德国 / DE / Germany |')
+        lines.append('| 🇫🇷 法国节点 | 法国 / FR / France |')
+        lines.append('| 🇷🇺 俄罗斯节点 | 俄罗斯 / RU / Russia |')
+        lines.append('| 🇨🇦 加拿大节点 | 加拿大 / CA / Canada |')
         lines.append('')
         lines.append('> 综合订阅节点按地区前缀 (🇺🇸/🇯🇵...) + 序号命名，地区识别基于节点名称关键词。')
         lines.append('')
@@ -2940,6 +2946,22 @@ def generate_status_page():
     min_lat_suffix = 'ms' if isinstance(min_lat, int) else ''
     max_lat_suffix = 'ms' if isinstance(max_lat, int) else ''
 
+    # P20 (v2.12.0): 订阅链接区块数据 (综合订阅 5 格式, 复制即用)
+    _sub_links = [
+        ('Clash', 'https://raw.githubusercontent.com/huiwin/NodeCollection/main/output/merged/latest.clash.yaml'),
+        ('V2Ray', 'https://raw.githubusercontent.com/huiwin/NodeCollection/main/output/merged/latest.v2ray.txt'),
+        ('Sing-box', 'https://raw.githubusercontent.com/huiwin/NodeCollection/main/output/merged/latest.singbox.json'),
+        ('Surge', 'https://raw.githubusercontent.com/huiwin/NodeCollection/main/output/merged/latest.surge.conf'),
+        ('Mixed', 'https://raw.githubusercontent.com/huiwin/NodeCollection/main/output/merged/latest.mixed.txt'),
+    ]
+    _sub_links_html = ''
+    for _name, _url in _sub_links:
+        _sub_links_html += (
+            f'<div class="sub-link"><span class="sub-name">{_name}</span>'
+            f'<code class="sub-url">{_url}</code>'
+            f'<button class="copy-btn" onclick="copySub(this)">复制</button></div>\n'
+        )
+
     html = f'''<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -2963,6 +2985,12 @@ h1 {{ font-size:1.8rem; margin-bottom:4px; background:linear-gradient(90deg,#38b
 .card.amber .num {{ color:#f59e0b; }}
 .card.purple .num {{ color:#a78bfa; }}
 .card.pink .num {{ color:#f472b6; }}
+.sub-link {{ display:flex; align-items:center; gap:10px; background:rgba(30,41,59,0.8); border:1px solid rgba(56,189,248,0.2); border-radius:8px; padding:8px 12px; margin-bottom:8px; }}
+.sub-name {{ min-width:70px; font-weight:700; color:#38bdf8; }}
+.sub-url {{ flex:1; font-size:0.78rem; color:#94a3b8; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }}
+.copy-btn {{ background:rgba(56,189,248,0.15); border:1px solid rgba(56,189,248,0.4); color:#38bdf8; border-radius:6px; padding:4px 12px; cursor:pointer; font-size:0.8rem; }}
+.copy-btn:hover {{ background:rgba(56,189,248,0.3); }}
+.copy-btn.copied {{ background:rgba(16,185,129,0.3); border-color:#10b981; color:#10b981; }}
 .charts {{ display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-bottom:32px; }}
 .chart-box {{ background:rgba(30,41,59,0.8); backdrop-filter:blur(10px); border:1px solid rgba(56,189,248,0.2); border-radius:12px; padding:20px; }}
 .chart-box h3 {{ font-size:1rem; margin-bottom:12px; color:#cbd5e1; }}
@@ -2982,7 +3010,7 @@ a:hover {{ text-decoration:underline; }}
 <body>
 <div class="container">
 <h1>NodeCollection Pro</h1>
-<p class="subtitle">综合订阅 · 融合精选上游为底座 + 主订阅有效节点补充 · 更新时间: {update_time} · v2.8.0</p>
+<p class="subtitle">综合订阅 · 融合精选上游为底座 + 主订阅有效节点补充 · 更新时间: {update_time} · v{VERSION}</p>
 
 <div class="cards">
 <div class="card"><div class="num">{total_parsed}</div><div class="label">解析节点总数</div></div>
@@ -2993,6 +3021,10 @@ a:hover {{ text-decoration:underline; }}
 <div class="card"><div class="num">{main_supplement}</div><div class="label">主订阅补充</div></div>
 <div class="card"><div class="num">{excluded}</div><div class="label">剔除失效</div></div>
 </div>
+
+<h2>📥 订阅链接 (综合订阅)</h2>
+<p class="subtitle" style="margin-bottom:12px">复制到客户端订阅地址即可使用，固定地址长期有效，内容随自动更新刷新。</p>
+{_sub_links_html}
 
 <div class="charts">
 <div class="chart-box">
@@ -3023,11 +3055,20 @@ a:hover {{ text-decoration:underline; }}
 </table>
 
 <div class="footer">
-NodeCollection Pro v2.8.0 · 综合订阅 (融合底座 + 主订阅补充) · 基于 GitHub Actions 自动更新 · <a href="https://github.com/huiwin/NodeCollection">GitHub 仓库</a>
+NodeCollection Pro v{VERSION} · 综合订阅 (融合底座 + 主订阅补充) · 基于 GitHub Actions 自动更新 · <a href="https://github.com/huiwin/NodeCollection">GitHub 仓库</a>
 </div>
 </div>
 
 <script>
+function copySub(btn) {{
+  const url = btn.previousElementSibling.textContent.trim();
+  navigator.clipboard.writeText(url).then(() => {{
+    btn.textContent = '已复制';
+    btn.classList.add('copied');
+    setTimeout(() => {{ btn.textContent = '复制'; btn.classList.remove('copied'); }}, 1500);
+  }});
+}}
+
 // 上游贡献饼图
 const pieCtx = document.getElementById('upstreamPie').getContext('2d');
 new Chart(pieCtx, {{
