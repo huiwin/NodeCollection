@@ -971,6 +971,7 @@ MSYS_NO_PATHCONV=1 gh api --method DELETE /repos/huiwin/NodeCollection/git/refs/
 | 2026-09-06 | 实施 v2.11.2 P19.2 回到稳定配置：jsdelivr API 确认 getNode 仓库 clash.yaml/v2ray.txt 均 0 字节空文件 → merge.yaml 回到 5 稳定上游, config.yaml 移除固定源 (机制保留); 逐行 base64 解码保留; 验收: 150 节点/100% 可用率/133KB/17 组 |
 | 2026-09-07 | 实施 v2.12.0 P20 status.html 展示优化 + README 排版优化：① status.html 新增综合订阅 5 格式订阅链接区块 (一键复制), 版本号动态化 (VERSION 常量) 不再写死 v2.8.0; ② README 节点分组表格同步为 P18 实际 17 组 (4 核心规则组 + 地区选择/自动选择 + 11 地区组), 移除已精简的故障转移/负载均衡, 修正组名 🎯 地区选择; UPSTREAM_REPO_MAP 清理 P19 残留; 版本号 v2.11.2→v2.12.0 |
 | 2026-09-07 | 实施 v2.13.0 P21 告警通知启用 + 上游动态配额：① send_alert 触发点补完 (运行异常/上游全挂/部分失败/融合全挂/可用率<50%/输出<50), main 入口 try/except 异常告警后重新抛出, fetch.yaml 注入 ALERT_WEBHOOK_URL (GitHub Secrets); ② 新增 load_upstream_history + compute_dynamic_caps (最近 3 轮可用率分档: >=80% 放宽 1.5x, <50% 压缩 0.6x, 连续 3 轮 0 可用自动停用), 每轮记录 upstream_history (10 轮), merged_section 新增字段; 版本号 v2.12.0→v2.13.0 |
+| 2026-09-09 | 实施 v2.13.0 P21.4 跨周期状态持久化修复（重要）：generate_multi_format 写 index.json 时改为保留已有 merged 段 (此前全新 dict 覆盖), 修复线上 node_health/upstream_health/upstream_history 每轮从零开始的问题 — 连续剔除/上游降级/动态配额历史在线上从未真正累积; 版本号保持 v2.13.0 |
 | 2026-08-17 | 升级至 v1.4.0：新增上游订阅融合（merge.yaml 白名单 + 拉取重试失败隔离 + 三格式解析 + [ext:] 前缀 + output/merged 独立输出含回退保护 + README 免责声明/来源表）；新增 4.14 节；同步更新第 1/2/3/4/5/7/8 节；本地 10 项单元验证通过 |
 
 <!-- 待补充/更新标记：

@@ -2586,14 +2586,29 @@ def generate_multi_format(all_sub_urls):
             logger.info(f'[rename-final] 最终兜底处理完成: {renamed_count} 个 Clash 文件已重命名')
 
     # 额外: 生成一个合并所有格式的 index.json 索引文件
+    # P21.4 (v2.13.0): 保留已有 merged 段 — 修复线上跨周期状态丢失
+    # 此前用全新 dict 覆盖, 导致 merged 下的 node_health / upstream_health /
+    # upstream_history 每轮从零开始 (本地同目录两次运行正常, 但线上每次全新
+    # checkout + 本函数先于 generate_merged_format 执行, 清空 merged 段,
+    # 使健康记录/连续剔除/上游降级/动态配额历史在线上从未真正累积)
     index_path = os.path.join(OUTPUT_DIR, 'index.json')
-    index_data = {
+    _prev_index = {}
+    if os.path.isfile(index_path):
+        try:
+            with open(index_path, encoding='utf-8') as f:
+                _prev = json.load(f)
+            if isinstance(_prev, dict):
+                _prev_index = _prev
+        except Exception:
+            _prev_index = {}
+    index_data = dict(_prev_index)  # 保留 merged 等已有字段
+    index_data.update({
         'update_time': datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
         'date': date_str,
         'formats': {},
         'latest': {},
         'total_urls': len(all_sub_urls),
-    }
+    })
     for target, subdir, ext in OUTPUT_FORMATS:
         date_fname = f'{today.month}-{today.day}.{ext}'
         index_data['formats'][target] = f'{subdir}/{date_fname}'
