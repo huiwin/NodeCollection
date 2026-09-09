@@ -249,80 +249,76 @@ proxies:
   tls: false
   udp: true
 - name: '28'
-  server: 127.0.0.53
-  port: 80
-  type: vmess
-  uuid: 88888888-8888-8888-8888-888888888888
-  alterId: 0
-  cipher: auto
-  tls: false
+  server: 127.0.0.1
+  port: 1080
+  type: socks5
   udp: true
 - name: '29'
-  server: 127.0.0.53
-  port: 81
+  server: 127.0.0.1
+  port: 80
   type: vmess
-  uuid: 88888888-8888-8888-8888-888888888888
+  uuid: 30be4494-0759-4afa-b6bd-0f075f8790b4
   alterId: 0
   cipher: auto
   tls: false
   udp: true
 - name: '30'
-  server: 127.0.0.53
-  port: 82
+  server: 127.0.0.1
+  port: 80
   type: vmess
-  uuid: 88888888-8888-8888-8888-888888888888
+  uuid: 30be4494-0759-4afa-b6bd-0f075f8790b4
   alterId: 0
   cipher: auto
   tls: false
   udp: true
 - name: '31'
-  server: 127.0.0.53
-  port: 83
+  server: 127.0.0.1
+  port: 80
   type: vmess
-  uuid: 88888888-8888-8888-8888-888888888888
+  uuid: 30be4494-0759-4afa-b6bd-0f075f8790b4
   alterId: 0
   cipher: auto
   tls: false
   udp: true
 - name: '32'
-  server: 127.0.0.53
-  port: 84
+  server: 127.0.0.1
+  port: 80
   type: vmess
-  uuid: 88888888-8888-8888-8888-888888888888
+  uuid: 30be4494-0759-4afa-b6bd-0f075f8790b4
   alterId: 0
   cipher: auto
   tls: false
   udp: true
 - name: '33'
-  server: 127.0.0.53
-  port: 85
+  server: 127.0.0.1
+  port: 80
   type: vmess
-  uuid: 88888888-8888-8888-8888-888888888888
+  uuid: 30be4494-0759-4afa-b6bd-0f075f8790b4
   alterId: 0
   cipher: auto
   tls: false
   udp: true
 - name: '34'
-  server: 127.0.0.53
-  port: 86
+  server: 127.0.0.1
+  port: 80
   type: vmess
-  uuid: 88888888-8888-8888-8888-888888888888
+  uuid: 30be4494-0759-4afa-b6bd-0f075f8790b4
   alterId: 0
   cipher: auto
   tls: false
   udp: true
 - name: '35'
-  server: 127.0.0.53
-  port: 87
+  server: 127.0.0.1
+  port: 80
   type: vmess
-  uuid: 88888888-8888-8888-8888-888888888888
+  uuid: 30be4494-0759-4afa-b6bd-0f075f8790b4
   alterId: 0
   cipher: auto
   tls: false
   udp: true
 - name: '36'
   server: 127.0.0.53
-  port: 88
+  port: 80
   type: vmess
   uuid: 88888888-8888-8888-8888-888888888888
   alterId: 0
@@ -331,162 +327,6 @@ proxies:
   udp: true
 - name: '37'
   server: 127.0.0.53
-  port: 89
-  type: vmess
-  uuid: 88888888-8888-8888-8888-888888888888
-  alterId: 0
-  cipher: auto
-  tls: false
-  udp: true
-- name: 🇺🇸 38
-  server: 63.180.254.10
-  port: 443
-  type: ss
-  cipher: aes-256-cfb
-  password: amazonskr05
-  udp: true
-- name: 🇭🇰 39
-  server: v10.hdacd.com
-  port: 30807
-  type: vmess
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 2
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  udp: true
-- name: 🇮🇳 40
-  server: 103.236.66.4
-  port: 10001
-  type: ss
-  cipher: aes-256-gcm
-  password: Butterfly123@qwe9527
-  udp: true
-- name: 🇮🇳 41
-  server: 112.28.141.77
-  port: 10006
-  type: ss
-  cipher: aes-256-gcm
-  password: Butterfly123@qwe9527
-  udp: true
-- name: 🇭🇰 42
-  server: 43.199.146.46
-  port: 2716
-  type: trojan
-  password: BxceQaOe
-  sni: t.me%2Fripaojiedian
-  skip-cert-verify: true
-  udp: true
-- name: 🇸🇬 43
-  server: 13.215.162.132
-  port: 51391
-  type: trojan
-  password: BxceQaOe
-  sni: t.me%2Fripaojiedian
-  skip-cert-verify: true
-  udp: true
-- name: 🇯🇵 44
-  server: 35.73.128.210
-  port: 3893
-  type: trojan
-  password: BxceQaOe
-  sni: t.me%252Fripaojiedian
-  skip-cert-verify: true
-  udp: true
-- name: 🇮🇳 45
-  server: 103.236.66.4
-  port: 40001
-  type: ss
-  cipher: aes-256-gcm
-  password: Butterfly123@qwe9527
-  udp: true
-- name: 🇮🇳 46
-  server: 103.236.66.4
-  port: 40002
-  type: ss
-  cipher: aes-256-gcm
-  password: Butterfly123@qwe9527
-  udp: true
-- name: 🇸🇬 47
-  server: 54.251.190.150
-  port: 41142
-  type: trojan
-  password: BxceQaOe
-  sni: t.me%252Fripaojiedian
-  skip-cert-verify: true
-  udp: true
-- name: 🇮🇳 48
-  server: 103.236.66.4
-  port: 50001
-  type: ss
-  cipher: aes-256-gcm
-  password: Butterfly123@qwe9527
-  udp: true
-- name: 🇮🇳 49
-  server: 103.236.66.4
-  port: 50003
-  type: ss
-  cipher: aes-256-gcm
-  password: Butterfly123@qwe9527
-  udp: true
-- name: 🇺🇸 50
-  server: 100.42.228.109
-  port: 443
-  type: trojan
-  password: BxceQaOe
-  sni: t.me%2Fripaojiedian
-  skip-cert-verify: true
-  udp: true
-- name: 🇮🇳 51
-  server: 36.33.35.105
-  port: 30001
-  type: ss
-  cipher: aes-256-gcm
-  password: Butterfly123@qwe9527
-  udp: true
-- name: 🇭🇰 52
-  server: v10.hdacd.com
-  port: 30807
-  type: vmess
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 2
-  cipher: auto
-  tls: false
-  udp: true
-- name: 🇩🇪 53
-  server: z-sg1.6send.com
-  port: 10045
-  type: trojan
-  password: ultra@kWZdAzt_IH593eGLRjdxnBZ0
-  sni: www.cloudflare.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇯🇵 54
-  server: z-jp2.1card.cc
-  port: 10009
-  type: trojan
-  password: ultra@kWZdAzt_IH593eGLRjdxnBZ0
-  sni: www.cloudflare.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇬🇧 55
-  server: 18.170.35.229
-  port: 443
-  type: ss
-  cipher: aes-256-cfb
-  password: amazonskr05
-  udp: true
-- name: '56'
-  server: 127.0.0.53
-  port: 80
-  type: vmess
-  uuid: 88888888-8888-8888-8888-888888888888
-  alterId: 0
-  cipher: auto
-  tls: false
-  udp: true
-- name: '57'
-  server: 127.0.0.53
   port: 81
   type: vmess
   uuid: 88888888-8888-8888-8888-888888888888
@@ -494,7 +334,7 @@ proxies:
   cipher: auto
   tls: false
   udp: true
-- name: '58'
+- name: '38'
   server: 127.0.0.53
   port: 82
   type: vmess
@@ -503,7 +343,7 @@ proxies:
   cipher: auto
   tls: false
   udp: true
-- name: '59'
+- name: '39'
   server: 127.0.0.53
   port: 83
   type: vmess
@@ -512,7 +352,7 @@ proxies:
   cipher: auto
   tls: false
   udp: true
-- name: '60'
+- name: '40'
   server: 127.0.0.53
   port: 84
   type: vmess
@@ -521,7 +361,7 @@ proxies:
   cipher: auto
   tls: false
   udp: true
-- name: '61'
+- name: '41'
   server: 127.0.0.53
   port: 85
   type: vmess
@@ -530,7 +370,7 @@ proxies:
   cipher: auto
   tls: false
   udp: true
-- name: '62'
+- name: '42'
   server: 127.0.0.53
   port: 86
   type: vmess
@@ -539,7 +379,7 @@ proxies:
   cipher: auto
   tls: false
   udp: true
-- name: '63'
+- name: '43'
   server: 127.0.0.53
   port: 87
   type: vmess
@@ -548,7 +388,7 @@ proxies:
   cipher: auto
   tls: false
   udp: true
-- name: '64'
+- name: '44'
   server: 127.0.0.53
   port: 88
   type: vmess
@@ -557,7 +397,7 @@ proxies:
   cipher: auto
   tls: false
   udp: true
-- name: '65'
+- name: '45'
   server: 127.0.0.53
   port: 89
   type: vmess
@@ -566,14 +406,14 @@ proxies:
   cipher: auto
   tls: false
   udp: true
-- name: 🇺🇸 66
+- name: 🇺🇸 46
   server: 63.180.254.10
   port: 443
   type: ss
   cipher: aes-256-cfb
   password: amazonskr05
   udp: true
-- name: 🇭🇰 67
+- name: 🇭🇰 47
   server: v10.hdacd.com
   port: 30807
   type: vmess
@@ -583,21 +423,21 @@ proxies:
   tls: false
   skip-cert-verify: false
   udp: true
-- name: 🇮🇳 68
+- name: 🇮🇳 48
   server: 103.236.66.4
   port: 10001
   type: ss
   cipher: aes-256-gcm
   password: Butterfly123@qwe9527
   udp: true
-- name: 🇮🇳 69
+- name: 🇮🇳 49
   server: 112.28.141.77
   port: 10006
   type: ss
   cipher: aes-256-gcm
   password: Butterfly123@qwe9527
   udp: true
-- name: 🇭🇰 70
+- name: 🇭🇰 50
   server: 43.199.146.46
   port: 2716
   type: trojan
@@ -605,7 +445,7 @@ proxies:
   sni: t.me%2Fripaojiedian
   skip-cert-verify: true
   udp: true
-- name: 🇸🇬 71
+- name: 🇸🇬 51
   server: 13.215.162.132
   port: 51391
   type: trojan
@@ -613,7 +453,7 @@ proxies:
   sni: t.me%2Fripaojiedian
   skip-cert-verify: true
   udp: true
-- name: 🇯🇵 72
+- name: 🇯🇵 52
   server: 35.73.128.210
   port: 3893
   type: trojan
@@ -621,21 +461,21 @@ proxies:
   sni: t.me%252Fripaojiedian
   skip-cert-verify: true
   udp: true
-- name: 🇮🇳 73
+- name: 🇮🇳 53
   server: 103.236.66.4
   port: 40001
   type: ss
   cipher: aes-256-gcm
   password: Butterfly123@qwe9527
   udp: true
-- name: 🇮🇳 74
+- name: 🇮🇳 54
   server: 103.236.66.4
   port: 40002
   type: ss
   cipher: aes-256-gcm
   password: Butterfly123@qwe9527
   udp: true
-- name: 🇸🇬 75
+- name: 🇸🇬 55
   server: 54.251.190.150
   port: 41142
   type: trojan
@@ -643,21 +483,21 @@ proxies:
   sni: t.me%252Fripaojiedian
   skip-cert-verify: true
   udp: true
-- name: 🇮🇳 76
+- name: 🇮🇳 56
   server: 103.236.66.4
   port: 50001
   type: ss
   cipher: aes-256-gcm
   password: Butterfly123@qwe9527
   udp: true
-- name: 🇮🇳 77
+- name: 🇮🇳 57
   server: 103.236.66.4
   port: 50003
   type: ss
   cipher: aes-256-gcm
   password: Butterfly123@qwe9527
   udp: true
-- name: 🇺🇸 78
+- name: 🇺🇸 58
   server: 100.42.228.109
   port: 443
   type: trojan
@@ -665,14 +505,14 @@ proxies:
   sni: t.me%2Fripaojiedian
   skip-cert-verify: true
   udp: true
-- name: 🇮🇳 79
+- name: 🇮🇳 59
   server: 36.33.35.105
   port: 30001
   type: ss
   cipher: aes-256-gcm
   password: Butterfly123@qwe9527
   udp: true
-- name: 🇭🇰 80
+- name: 🇭🇰 60
   server: v10.hdacd.com
   port: 30807
   type: vmess
@@ -681,141 +521,377 @@ proxies:
   cipher: auto
   tls: false
   udp: true
-- name: 🇺🇸 81
-  server: z-sg1.6send.com
-  port: 10045
-  type: trojan
-  password: ultra@kWZdAzt_IH593eGLRjdxnBZ0
-  sni: www.cloudflare.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇯🇵 82
-  server: z-jp2.1card.cc
-  port: 10009
-  type: trojan
-  password: ultra@kWZdAzt_IH593eGLRjdxnBZ0
-  sni: www.cloudflare.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇬🇧 83
-  server: 18.170.35.229
-  port: 443
-  type: ss
-  cipher: aes-256-cfb
-  password: amazonskr05
-  udp: true
-- name: '84'
-  server: 127.0.0.1
-  port: 1080
-  type: socks5
-  udp: true
-- name: '85'
-  server: 127.0.0.1
-  port: 80
-  type: vmess
-  uuid: 30be4494-0759-4afa-b6bd-0f075f8790b4
-  alterId: 0
-  cipher: auto
-  tls: false
-  udp: true
-- name: '86'
-  server: 127.0.0.1
-  port: 80
-  type: vmess
-  uuid: 30be4494-0759-4afa-b6bd-0f075f8790b4
-  alterId: 0
-  cipher: auto
-  tls: false
-  udp: true
-- name: '87'
-  server: 127.0.0.1
-  port: 80
-  type: vmess
-  uuid: 30be4494-0759-4afa-b6bd-0f075f8790b4
-  alterId: 0
-  cipher: auto
-  tls: false
-  udp: true
-- name: '88'
-  server: 127.0.0.1
-  port: 80
-  type: vmess
-  uuid: 30be4494-0759-4afa-b6bd-0f075f8790b4
-  alterId: 0
-  cipher: auto
-  tls: false
-  udp: true
-- name: '89'
-  server: 127.0.0.1
-  port: 80
-  type: vmess
-  uuid: 30be4494-0759-4afa-b6bd-0f075f8790b4
-  alterId: 0
-  cipher: auto
-  tls: false
-  udp: true
-- name: '90'
-  server: 127.0.0.1
-  port: 80
-  type: vmess
-  uuid: 30be4494-0759-4afa-b6bd-0f075f8790b4
-  alterId: 0
-  cipher: auto
-  tls: false
-  udp: true
-- name: '91'
-  server: 127.0.0.1
-  port: 80
-  type: vmess
-  uuid: 30be4494-0759-4afa-b6bd-0f075f8790b4
-  alterId: 0
-  cipher: auto
-  tls: false
-  udp: true
-- name: '92'
-  server: z-jp2.1card.cc
-  port: 10009
-  type: trojan
-  password: ultra@kWZdAzt_IH593eGLRjdxnBZ0
-  sni: www.cloudflare.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇮🇳 93
-  server: 54.171.218.140
-  port: 443
-  type: ss
-  cipher: aes-256-cfb
-  password: amazonskr05
-  udp: true
-- name: 🇨🇦 94
-  server: 15.223.203.202
-  port: 443
-  type: ss
-  cipher: aes-256-cfb
-  password: amazonskr05
-  udp: true
-- name: 🇺🇸 95
+- name: 🇮🇳 61
   server: 121.46.230.233
   port: 65443
   type: ss
   cipher: aes-256-cfb
   password: 7eadc6dbe2ae
   udp: true
+- name: 🇩🇪 62
+  server: planb.mojcn.com
+  port: 16617
+  type: vmess
+  uuid: 82e6295c-9db7-4601-ab15-054a5e6129f4
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: 0e3b7b2b2adaf5b7929ddd31a8489521.mobgslb.tbcache.com
+  udp: true
+- name: 🇸🇬 63
+  server: z-sg2.6send.com
+  port: 10045
+  type: trojan
+  password: ultra@kWZdAzt_IH593eGLRjdxnBZ0
+  sni: www.cloudflare.com
+  skip-cert-verify: true
+  udp: true
+- name: 🇸🇬 64
+  server: z-sg2.6send.com
+  port: 10046
+  type: trojan
+  password: ultra@kWZdAzt_IH593eGLRjdxnBZ0
+  sni: www.cloudflare.com
+  skip-cert-verify: true
+  udp: true
+- name: 🇺🇸 65
+  server: jp3.998998.best
+  port: 443
+  type: trojan
+  password: 5504eaa8-1395-402f-8e0e-75ecd762e627
+  sni: nat11.outsidemyheart.space
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /w4e5yh0p945y3?ed=2560
+    headers:
+      Host: nat11.outsidemyheart.space
+  udp: true
+- name: 🇩🇪 66
+  server: Forde.arosakforosh.ir
+  port: 5941
+  type: vmess
+  uuid: 26f3dc79-c1a5-40aa-b9dd-6436b5e4188e
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  udp: true
+- name: '67'
+  server: 127.0.0.53
+  port: 80
+  type: vmess
+  uuid: 88888888-8888-8888-8888-888888888888
+  alterId: 0
+  cipher: auto
+  tls: false
+  udp: true
+- name: '68'
+  server: 127.0.0.53
+  port: 81
+  type: vmess
+  uuid: 88888888-8888-8888-8888-888888888888
+  alterId: 0
+  cipher: auto
+  tls: false
+  udp: true
+- name: '69'
+  server: 127.0.0.53
+  port: 82
+  type: vmess
+  uuid: 88888888-8888-8888-8888-888888888888
+  alterId: 0
+  cipher: auto
+  tls: false
+  udp: true
+- name: '70'
+  server: 127.0.0.53
+  port: 83
+  type: vmess
+  uuid: 88888888-8888-8888-8888-888888888888
+  alterId: 0
+  cipher: auto
+  tls: false
+  udp: true
+- name: '71'
+  server: 127.0.0.53
+  port: 84
+  type: vmess
+  uuid: 88888888-8888-8888-8888-888888888888
+  alterId: 0
+  cipher: auto
+  tls: false
+  udp: true
+- name: '72'
+  server: 127.0.0.53
+  port: 85
+  type: vmess
+  uuid: 88888888-8888-8888-8888-888888888888
+  alterId: 0
+  cipher: auto
+  tls: false
+  udp: true
+- name: '73'
+  server: 127.0.0.53
+  port: 86
+  type: vmess
+  uuid: 88888888-8888-8888-8888-888888888888
+  alterId: 0
+  cipher: auto
+  tls: false
+  udp: true
+- name: '74'
+  server: 127.0.0.53
+  port: 87
+  type: vmess
+  uuid: 88888888-8888-8888-8888-888888888888
+  alterId: 0
+  cipher: auto
+  tls: false
+  udp: true
+- name: '75'
+  server: 127.0.0.53
+  port: 88
+  type: vmess
+  uuid: 88888888-8888-8888-8888-888888888888
+  alterId: 0
+  cipher: auto
+  tls: false
+  udp: true
+- name: '76'
+  server: 127.0.0.53
+  port: 89
+  type: vmess
+  uuid: 88888888-8888-8888-8888-888888888888
+  alterId: 0
+  cipher: auto
+  tls: false
+  udp: true
+- name: 🇺🇸 77
+  server: 63.180.254.10
+  port: 443
+  type: ss
+  cipher: aes-256-cfb
+  password: amazonskr05
+  udp: true
+- name: 🇭🇰 78
+  server: v10.hdacd.com
+  port: 30807
+  type: vmess
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  udp: true
+- name: 🇮🇳 79
+  server: 103.236.66.4
+  port: 10001
+  type: ss
+  cipher: aes-256-gcm
+  password: Butterfly123@qwe9527
+  udp: true
+- name: 🇮🇳 80
+  server: 112.28.141.77
+  port: 10006
+  type: ss
+  cipher: aes-256-gcm
+  password: Butterfly123@qwe9527
+  udp: true
+- name: 🇭🇰 81
+  server: 43.199.146.46
+  port: 2716
+  type: trojan
+  password: BxceQaOe
+  sni: t.me%2Fripaojiedian
+  skip-cert-verify: true
+  udp: true
+- name: 🇸🇬 82
+  server: 13.215.162.132
+  port: 51391
+  type: trojan
+  password: BxceQaOe
+  sni: t.me%2Fripaojiedian
+  skip-cert-verify: true
+  udp: true
+- name: 🇯🇵 83
+  server: 35.73.128.210
+  port: 3893
+  type: trojan
+  password: BxceQaOe
+  sni: t.me%252Fripaojiedian
+  skip-cert-verify: true
+  udp: true
+- name: 🇮🇳 84
+  server: 103.236.66.4
+  port: 40001
+  type: ss
+  cipher: aes-256-gcm
+  password: Butterfly123@qwe9527
+  udp: true
+- name: 🇮🇳 85
+  server: 103.236.66.4
+  port: 40002
+  type: ss
+  cipher: aes-256-gcm
+  password: Butterfly123@qwe9527
+  udp: true
+- name: 🇸🇬 86
+  server: 54.251.190.150
+  port: 41142
+  type: trojan
+  password: BxceQaOe
+  sni: t.me%252Fripaojiedian
+  skip-cert-verify: true
+  udp: true
+- name: 🇮🇳 87
+  server: 103.236.66.4
+  port: 50001
+  type: ss
+  cipher: aes-256-gcm
+  password: Butterfly123@qwe9527
+  udp: true
+- name: 🇮🇳 88
+  server: 103.236.66.4
+  port: 50003
+  type: ss
+  cipher: aes-256-gcm
+  password: Butterfly123@qwe9527
+  udp: true
+- name: 🇺🇸 89
+  server: 100.42.228.109
+  port: 443
+  type: trojan
+  password: BxceQaOe
+  sni: t.me%2Fripaojiedian
+  skip-cert-verify: true
+  udp: true
+- name: 🇮🇳 90
+  server: 36.33.35.105
+  port: 30001
+  type: ss
+  cipher: aes-256-gcm
+  password: Butterfly123@qwe9527
+  udp: true
+- name: 🇭🇰 91
+  server: v10.hdacd.com
+  port: 30807
+  type: vmess
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
+  cipher: auto
+  tls: false
+  udp: true
+- name: 🇮🇳 92
+  server: 121.46.230.233
+  port: 65443
+  type: ss
+  cipher: aes-256-cfb
+  password: 7eadc6dbe2ae
+  udp: true
+- name: 🇩🇪 93
+  server: planb.mojcn.com
+  port: 16617
+  type: vmess
+  uuid: 82e6295c-9db7-4601-ab15-054a5e6129f4
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: 0e3b7b2b2adaf5b7929ddd31a8489521.mobgslb.tbcache.com
+  udp: true
+- name: 🇺🇸 94
+  server: z-sg2.6send.com
+  port: 10045
+  type: trojan
+  password: ultra@kWZdAzt_IH593eGLRjdxnBZ0
+  sni: www.cloudflare.com
+  skip-cert-verify: true
+  udp: true
+- name: 🇺🇸 95
+  server: z-sg2.6send.com
+  port: 10046
+  type: trojan
+  password: ultra@kWZdAzt_IH593eGLRjdxnBZ0
+  sni: www.cloudflare.com
+  skip-cert-verify: true
+  udp: true
 - name: 🇺🇸 96
+  server: jp3.998998.best
+  port: 443
+  type: trojan
+  password: 5504eaa8-1395-402f-8e0e-75ecd762e627
+  sni: nat11.outsidemyheart.space
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /w4e5yh0p945y3?ed=2560
+    headers:
+      Host: nat11.outsidemyheart.space
+  udp: true
+- name: 🇩🇪 97
+  server: Forde.arosakforosh.ir
+  port: 5941
+  type: vmess
+  uuid: 26f3dc79-c1a5-40aa-b9dd-6436b5e4188e
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  udp: true
+- name: '98'
+  server: z-jp2.1card.cc
+  port: 10009
+  type: trojan
+  password: ultra@kWZdAzt_IH593eGLRjdxnBZ0
+  sni: www.cloudflare.com
+  skip-cert-verify: true
+  udp: true
+- name: 🇮🇳 99
+  server: 54.171.218.140
+  port: 443
+  type: ss
+  cipher: aes-256-cfb
+  password: amazonskr05
+  udp: true
+- name: 🇨🇦 100
+  server: 15.223.203.202
+  port: 443
+  type: ss
+  cipher: aes-256-cfb
+  password: amazonskr05
+  udp: true
+- name: 🇺🇸 101
+  server: 121.46.230.233
+  port: 65443
+  type: ss
+  cipher: aes-256-cfb
+  password: 7eadc6dbe2ae
+  udp: true
+- name: 🇺🇸 102
   server: 121.46.230.232
   port: 65443
   type: ss
   cipher: aes-256-cfb
   password: 7eadc6dbe2ae
   udp: true
-- name: 🇺🇸 97
+- name: 🇺🇸 103
   server: 104.168.249.36
   port: 1080
   type: socks5
   username: test123
   password: test123
   udp: true
-- name: '98'
+- name: '104'
   server: z-sg1.6send.com
   port: 10046
   type: trojan
@@ -823,7 +899,7 @@ proxies:
   sni: www.cloudflare.com
   skip-cert-verify: true
   udp: true
-- name: 🇯🇵 99
+- name: 🇯🇵 105
   server: v6.hdacd.com
   port: 30806
   type: vmess
@@ -833,14 +909,14 @@ proxies:
   tls: false
   skip-cert-verify: true
   udp: true
-- name: 🇬🇧 100
+- name: 🇬🇧 106
   server: 3.8.209.170
   port: 443
   type: ss
   cipher: aes-256-cfb
   password: amazonskr05
   udp: true
-- name: 🇬🇧 101
+- name: 🇬🇧 107
   server: 154.61.56.215
   port: 3118
   type: http
@@ -848,7 +924,7 @@ proxies:
   tls: false
   skip-cert-verify: true
   udp: true
-- name: '102'
+- name: '108'
   server: 112.132.215.108
   port: 50002
   type: vmess
@@ -859,7 +935,7 @@ proxies:
   skip-cert-verify: true
   servername: 112.132.215.108
   udp: true
-- name: 🇺🇸 103
+- name: 🇺🇸 109
   server: 107.173.254.27
   port: 15311
   type: vmess
@@ -868,7 +944,7 @@ proxies:
   cipher: auto
   tls: false
   udp: true
-- name: 🇫🇷 104
+- name: 🇫🇷 110
   server: www.speedtest.net
   port: 443
   type: trojan
@@ -880,7 +956,7 @@ proxies:
     headers:
       Host: www.ignitelimit.com
   udp: true
-- name: 🇺🇸 105
+- name: 🇺🇸 111
   server: us01.duotg.top
   port: 54657
   type: trojan
@@ -888,7 +964,7 @@ proxies:
   sni: www.microsoft.com
   skip-cert-verify: true
   udp: true
-- name: 🇫🇷 106
+- name: 🇫🇷 112
   server: 176.97.66.175
   port: 443
   type: trojan
@@ -900,14 +976,14 @@ proxies:
     headers:
       Host: www.ignitelimit.com
   udp: true
-- name: 🇹🇼 107
+- name: 🇹🇼 113
   server: r3mrcg001287h3p.cybervena.com
   port: 50099
   type: ss
   cipher: chacha20-ietf-poly1305
   password: b1ae0fce-9340-4f2e-882d-fdb2218e2e2b
   udp: true
-- name: 🇺🇸 108
+- name: 🇺🇸 114
   server: 107.150.105.84
   port: 59385
   type: trojan
@@ -915,7 +991,7 @@ proxies:
   sni: 107.150.105.84
   skip-cert-verify: true
   udp: true
-- name: 🇺🇸 109
+- name: 🇺🇸 115
   server: 107.150.105.84
   port: 20065
   type: trojan
@@ -923,7 +999,7 @@ proxies:
   sni: www.microsoft.com
   skip-cert-verify: true
   udp: true
-- name: 🇸🇬 110
+- name: 🇸🇬 116
   server: ww12.levikogjgfdd.ir
   port: 50573
   type: trojan
@@ -931,7 +1007,7 @@ proxies:
   sni: ww12.levikogjgfdd.ir
   skip-cert-verify: true
   udp: true
-- name: 🇸🇬 111
+- name: 🇸🇬 117
   server: ww11.levikogjgfdd.ir
   port: 18000
   type: vmess
@@ -940,7 +1016,7 @@ proxies:
   cipher: auto
   tls: false
   udp: true
-- name: 🇺🇸 112
+- name: 🇺🇸 118
   server: 82.198.246.97
   port: 180
   type: vmess
@@ -949,7 +1025,7 @@ proxies:
   cipher: auto
   tls: false
   udp: true
-- name: 🇫🇷 113
+- name: 🇫🇷 119
   server: 104.21.4.176
   port: 443
   type: trojan
@@ -961,7 +1037,7 @@ proxies:
     headers:
       Host: 5Er0m2i2eNS2uLpg7SJd45UGqS.87fcvT2k11501YnO2TXm6yw-miPJ2Kr.worKerS.deV
   udp: true
-- name: 🇫🇷 114
+- name: 🇫🇷 120
   server: 104.21.67.113
   port: 443
   type: trojan
@@ -973,7 +1049,7 @@ proxies:
     headers:
       Host: x0C3lq1A15ip-65Kc4-l1A1tx.cv4CGvqS05m-F4Hg5xU07wIAlm0.wOrkerS.DeV
   udp: true
-- name: 🇫🇷 115
+- name: 🇫🇷 121
   server: 172.67.221.159
   port: 443
   type: trojan
@@ -985,7 +1061,7 @@ proxies:
     headers:
       Host: X0c3LQ1a15iP-65kc4-L1A1TX.CV4CgVQS05m-f4HG5xU07wIalM0.workeRs.dEV
   udp: true
-- name: 🇫🇷 116
+- name: 🇫🇷 122
   server: 172.67.205.222
   port: 2087
   type: trojan
@@ -997,7 +1073,7 @@ proxies:
     headers:
       Host: WaYSi.wAYsI6688.WOrkeRS.deV
   udp: true
-- name: 🇫🇷 117
+- name: 🇫🇷 123
   server: 188.114.97.8
   port: 443
   type: trojan
@@ -1009,7 +1085,7 @@ proxies:
     headers:
       Host: y9p34jPJMqjAZaYPF.pIiwdDIlXjcQEHR17aF22U7xK-yU.workers.DEv
   udp: true
-- name: 🇫🇷 118
+- name: 🇫🇷 124
   server: 166.1.36.83
   port: 443
   type: trojan
@@ -1021,7 +1097,7 @@ proxies:
     headers:
       Host: www.calmlunch.com
   udp: true
-- name: 🇳🇱 119
+- name: 🇳🇱 125
   server: 213.182.199.137
   port: 443
   type: trojan
@@ -1034,7 +1110,7 @@ proxies:
     headers:
       Host: www.pleadcourt.org
   udp: true
-- name: 🇺🇸 120
+- name: 🇺🇸 126
   server: 107.150.105.84
   port: 54657
   type: trojan
@@ -1042,7 +1118,7 @@ proxies:
   sni: 107.150.105.84
   skip-cert-verify: true
   udp: true
-- name: 🇺🇸 121
+- name: 🇺🇸 127
   server: us01.duotg.top
   port: 20065
   type: trojan
@@ -1050,7 +1126,7 @@ proxies:
   sni: www.microsoft.com%233%F0%9F%90%B2%40oneclickvpnkeyshysteria2%3A%2F%2Fumndu7jgfyujpvjvm2sw9hl0rryljngzvwru2hzwehyzkkrx%40hold.wwwinternetvideo.click%3A443%2F%3Finsecure%3D1
   skip-cert-verify: true
   udp: true
-- name: 🇫🇷 122
+- name: 🇫🇷 128
   server: 104.21.70.21
   port: 443
   type: trojan
@@ -1062,14 +1138,14 @@ proxies:
     headers:
       Host: 47hr9isj-655383snd63hjap38q6t.k-f3vpqaltfsxbtaxe.workers.dev
   udp: true
-- name: 🇵🇱 123
+- name: 🇵🇱 129
   server: 64.176.73.160
   port: 8388
   type: ss
   cipher: chacha20-ietf-poly1305
   password: VJtsgllDDJfNmaTe
   udp: true
-- name: 🇺🇸 124
+- name: 🇺🇸 130
   server: 82.198.246.250
   port: 180
   type: vmess
@@ -1078,7 +1154,7 @@ proxies:
   cipher: auto
   tls: false
   udp: true
-- name: 🇺🇸 125
+- name: 🇺🇸 131
   server: 107.172.75.141
   port: 10086
   type: vmess
@@ -1087,7 +1163,7 @@ proxies:
   cipher: auto
   tls: false
   udp: true
-- name: 🇯🇵 126
+- name: 🇯🇵 132
   server: 161.34.39.108
   port: 443
   type: trojan
@@ -1095,7 +1171,7 @@ proxies:
   sni: 161.34.39.108
   skip-cert-verify: true
   udp: true
-- name: 🇺🇸 127
+- name: 🇺🇸 133
   server: 107.150.105.84
   port: 46292
   type: trojan
@@ -1103,14 +1179,14 @@ proxies:
   sni: www.microsoft.com%23free%20x114%20%40outline_vpn
   skip-cert-verify: true
   udp: true
-- name: 🇰🇷 128
+- name: 🇰🇷 134
   server: 141.164.45.187
   port: 8091
   type: ss
   cipher: aes-256-gcm
   password: PCnnH6SQSnfoS27
   udp: true
-- name: 🇫🇷 129
+- name: 🇫🇷 135
   server: 5er0m2i2ens2ulpg7sjd45ugqs.87fcvt2k11501yno2txm6yw-mipj2kr.workers.dev
   port: 443
   type: trojan
@@ -1122,7 +1198,7 @@ proxies:
     headers:
       Host: 5Er0m2I2eNS2ULPg7Sjd45UGQs.87FCVt2K11501YnO2txm6yw-MiPJ2KR.worKERs.dEV
   udp: true
-- name: 🇫🇷 130
+- name: 🇫🇷 136
   server: 91.245.225.79
   port: 2053
   type: trojan
@@ -1134,7 +1210,7 @@ proxies:
     headers:
       Host: www.calmlunch.com
   udp: true
-- name: 🇫🇷 131
+- name: 🇫🇷 137
   server: 104.21.8.63
   port: 443
   type: trojan
@@ -1146,7 +1222,7 @@ proxies:
     headers:
       Host: AkbARIan34.j9Z65Ce2uyks.WoRKeRS.DEV
   udp: true
-- name: '132'
+- name: '138'
   server: 109.206.241.10
   port: 449
   type: trojan
@@ -1154,21 +1230,21 @@ proxies:
   sni: 109.206.241.10
   skip-cert-verify: true
   udp: true
-- name: '133'
+- name: '139'
   server: 46.29.142.57
   port: 4443
   type: trojan
   password: C0ldyfh-vpnjantit.com
   sni: hu2.vpnjantit.com
   udp: true
-- name: '134'
+- name: '140'
   server: hu2.vpnjantit.com
   port: 4443
   type: trojan
   password: C0ldyfh-vpnjantit.com
   sni: hu2.vpnjantit.com
   udp: true
-- name: 🇸🇬 135
+- name: 🇸🇬 141
   server: 149.88.23.207
   port: 18000
   type: vmess
@@ -1177,7 +1253,7 @@ proxies:
   cipher: auto
   tls: false
   udp: true
-- name: 🇫🇷 136
+- name: 🇫🇷 142
   server: NE@188.114.97.8
   port: 443
   type: trojan
@@ -1189,7 +1265,7 @@ proxies:
     headers:
       Host: cFOi-2fX16G3-8ry2KDxMcJ.wjESV2IlA3rXBuhpC2NsUgrAChGAWk.wOrKerS.DEv
   udp: true
-- name: 🇫🇷 137
+- name: 🇫🇷 143
   server: NE@cfoi-2fx16g3-8ry2kdxmcj.wjesv2ila3rxbuhpc2nsugrachgawk.workers.dev
   port: 443
   type: trojan
@@ -1201,7 +1277,7 @@ proxies:
     headers:
       Host: cfOI-2FX16g3-8RY2kDXmCj.WJeSV2iLa3rxbUHPc2nsUGRAcHgaWK.WorKerS.DEV
   udp: true
-- name: 🇫🇷 138
+- name: 🇫🇷 144
   server: NE@www.speedtest.net
   port: 443
   type: trojan
@@ -1213,7 +1289,7 @@ proxies:
     headers:
       Host: CfOI-2FX16g3-8rY2kdXmCJ.WJeSv2ILA3rXbUhpC2NSugRAchGaWK.WOrkeRs.DEV
   udp: true
-- name: 🇫🇷 139
+- name: 🇫🇷 145
   server: 172.67.188.109
   port: 443
   type: trojan
@@ -1303,108 +1379,114 @@ proxy-groups:
   - '35'
   - '36'
   - '37'
-  - 🇺🇸 38
-  - 🇭🇰 39
-  - 🇮🇳 40
-  - 🇮🇳 41
-  - 🇭🇰 42
-  - 🇸🇬 43
-  - 🇯🇵 44
-  - 🇮🇳 45
-  - 🇮🇳 46
-  - 🇸🇬 47
+  - '38'
+  - '39'
+  - '40'
+  - '41'
+  - '42'
+  - '43'
+  - '44'
+  - '45'
+  - 🇺🇸 46
+  - 🇭🇰 47
   - 🇮🇳 48
   - 🇮🇳 49
-  - 🇺🇸 50
-  - 🇮🇳 51
-  - 🇭🇰 52
-  - 🇩🇪 53
-  - 🇯🇵 54
-  - 🇬🇧 55
-  - '56'
-  - '57'
-  - '58'
-  - '59'
-  - '60'
-  - '61'
-  - '62'
-  - '63'
-  - '64'
-  - '65'
-  - 🇺🇸 66
-  - 🇭🇰 67
-  - 🇮🇳 68
-  - 🇮🇳 69
-  - 🇭🇰 70
-  - 🇸🇬 71
-  - 🇯🇵 72
-  - 🇮🇳 73
-  - 🇮🇳 74
-  - 🇸🇬 75
-  - 🇮🇳 76
-  - 🇮🇳 77
-  - 🇺🇸 78
+  - 🇭🇰 50
+  - 🇸🇬 51
+  - 🇯🇵 52
+  - 🇮🇳 53
+  - 🇮🇳 54
+  - 🇸🇬 55
+  - 🇮🇳 56
+  - 🇮🇳 57
+  - 🇺🇸 58
+  - 🇮🇳 59
+  - 🇭🇰 60
+  - 🇮🇳 61
+  - 🇩🇪 62
+  - 🇸🇬 63
+  - 🇸🇬 64
+  - 🇺🇸 65
+  - 🇩🇪 66
+  - '67'
+  - '68'
+  - '69'
+  - '70'
+  - '71'
+  - '72'
+  - '73'
+  - '74'
+  - '75'
+  - '76'
+  - 🇺🇸 77
+  - 🇭🇰 78
   - 🇮🇳 79
-  - 🇭🇰 80
-  - 🇺🇸 81
-  - 🇯🇵 82
-  - 🇬🇧 83
-  - '84'
-  - '85'
-  - '86'
-  - '87'
-  - '88'
-  - '89'
-  - '90'
-  - '91'
-  - '92'
-  - 🇮🇳 93
-  - 🇨🇦 94
+  - 🇮🇳 80
+  - 🇭🇰 81
+  - 🇸🇬 82
+  - 🇯🇵 83
+  - 🇮🇳 84
+  - 🇮🇳 85
+  - 🇸🇬 86
+  - 🇮🇳 87
+  - 🇮🇳 88
+  - 🇺🇸 89
+  - 🇮🇳 90
+  - 🇭🇰 91
+  - 🇮🇳 92
+  - 🇩🇪 93
+  - 🇺🇸 94
   - 🇺🇸 95
   - 🇺🇸 96
-  - 🇺🇸 97
+  - 🇩🇪 97
   - '98'
-  - 🇯🇵 99
-  - 🇬🇧 100
-  - 🇬🇧 101
-  - '102'
+  - 🇮🇳 99
+  - 🇨🇦 100
+  - 🇺🇸 101
+  - 🇺🇸 102
   - 🇺🇸 103
-  - 🇫🇷 104
-  - 🇺🇸 105
-  - 🇫🇷 106
-  - 🇹🇼 107
-  - 🇺🇸 108
+  - '104'
+  - 🇯🇵 105
+  - 🇬🇧 106
+  - 🇬🇧 107
+  - '108'
   - 🇺🇸 109
-  - 🇸🇬 110
-  - 🇸🇬 111
-  - 🇺🇸 112
-  - 🇫🇷 113
-  - 🇫🇷 114
-  - 🇫🇷 115
-  - 🇫🇷 116
-  - 🇫🇷 117
-  - 🇫🇷 118
-  - 🇳🇱 119
-  - 🇺🇸 120
-  - 🇺🇸 121
+  - 🇫🇷 110
+  - 🇺🇸 111
+  - 🇫🇷 112
+  - 🇹🇼 113
+  - 🇺🇸 114
+  - 🇺🇸 115
+  - 🇸🇬 116
+  - 🇸🇬 117
+  - 🇺🇸 118
+  - 🇫🇷 119
+  - 🇫🇷 120
+  - 🇫🇷 121
   - 🇫🇷 122
-  - 🇵🇱 123
-  - 🇺🇸 124
-  - 🇺🇸 125
-  - 🇯🇵 126
+  - 🇫🇷 123
+  - 🇫🇷 124
+  - 🇳🇱 125
+  - 🇺🇸 126
   - 🇺🇸 127
-  - 🇰🇷 128
-  - 🇫🇷 129
-  - 🇫🇷 130
-  - 🇫🇷 131
-  - '132'
-  - '133'
-  - '134'
-  - 🇸🇬 135
+  - 🇫🇷 128
+  - 🇵🇱 129
+  - 🇺🇸 130
+  - 🇺🇸 131
+  - 🇯🇵 132
+  - 🇺🇸 133
+  - 🇰🇷 134
+  - 🇫🇷 135
   - 🇫🇷 136
   - 🇫🇷 137
-  - 🇫🇷 138
-  - 🇫🇷 139
+  - '138'
+  - '139'
+  - '140'
+  - 🇸🇬 141
+  - 🇫🇷 142
+  - 🇫🇷 143
+  - 🇫🇷 144
+  - 🇫🇷 145
 - name: 🇭🇰 香港节点
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -1417,12 +1499,12 @@ proxy-groups:
   - 🇭🇰 05
   - 🇭🇰 06
   - 🇭🇰 07
-  - 🇭🇰 39
-  - 🇭🇰 42
-  - 🇭🇰 52
-  - 🇭🇰 67
-  - 🇭🇰 70
-  - 🇭🇰 80
+  - 🇭🇰 47
+  - 🇭🇰 50
+  - 🇭🇰 60
+  - 🇭🇰 78
+  - 🇭🇰 81
+  - 🇭🇰 91
 - name: 🇹🇼 台湾节点
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -1433,7 +1515,7 @@ proxy-groups:
   - 🇹🇼 17
   - 🇹🇼 18
   - 🇹🇼 19
-  - 🇹🇼 107
+  - 🇹🇼 113
 - name: 🇯🇵 日本节点
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -1444,12 +1526,10 @@ proxy-groups:
   - 🇯🇵 09
   - 🇯🇵 10
   - 🇯🇵 11
-  - 🇯🇵 44
-  - 🇯🇵 54
-  - 🇯🇵 72
-  - 🇯🇵 82
-  - 🇯🇵 99
-  - 🇯🇵 126
+  - 🇯🇵 52
+  - 🇯🇵 83
+  - 🇯🇵 105
+  - 🇯🇵 132
 - name: 🇸🇬 新加坡节点
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -1460,13 +1540,15 @@ proxy-groups:
   - 🇸🇬 25
   - 🇸🇬 26
   - 🇸🇬 27
-  - 🇸🇬 43
-  - 🇸🇬 47
-  - 🇸🇬 71
-  - 🇸🇬 75
-  - 🇸🇬 110
-  - 🇸🇬 111
-  - 🇸🇬 135
+  - 🇸🇬 51
+  - 🇸🇬 55
+  - 🇸🇬 63
+  - 🇸🇬 64
+  - 🇸🇬 82
+  - 🇸🇬 86
+  - 🇸🇬 116
+  - 🇸🇬 117
+  - 🇸🇬 141
 - name: 🇺🇸 美国节点
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -1477,24 +1559,27 @@ proxy-groups:
   - 🇺🇸 13
   - 🇺🇸 14
   - 🇺🇸 15
-  - 🇺🇸 38
-  - 🇺🇸 50
-  - 🇺🇸 66
-  - 🇺🇸 78
-  - 🇺🇸 81
+  - 🇺🇸 46
+  - 🇺🇸 58
+  - 🇺🇸 65
+  - 🇺🇸 77
+  - 🇺🇸 89
+  - 🇺🇸 94
   - 🇺🇸 95
   - 🇺🇸 96
-  - 🇺🇸 97
+  - 🇺🇸 101
+  - 🇺🇸 102
   - 🇺🇸 103
-  - 🇺🇸 105
-  - 🇺🇸 108
   - 🇺🇸 109
-  - 🇺🇸 112
-  - 🇺🇸 120
-  - 🇺🇸 121
-  - 🇺🇸 124
-  - 🇺🇸 125
+  - 🇺🇸 111
+  - 🇺🇸 114
+  - 🇺🇸 115
+  - 🇺🇸 118
+  - 🇺🇸 126
   - 🇺🇸 127
+  - 🇺🇸 130
+  - 🇺🇸 131
+  - 🇺🇸 133
 - name: 🇰🇷 韩国节点
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -1505,46 +1590,47 @@ proxy-groups:
   - 🇰🇷 21
   - 🇰🇷 22
   - 🇰🇷 23
-  - 🇰🇷 128
+  - 🇰🇷 134
 - name: 🇬🇧 英国节点
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - 🇬🇧 55
-  - 🇬🇧 83
-  - 🇬🇧 100
-  - 🇬🇧 101
+  - 🇬🇧 106
+  - 🇬🇧 107
 - name: 🇩🇪 德国节点
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - 🇩🇪 53
+  - 🇩🇪 62
+  - 🇩🇪 66
+  - 🇩🇪 93
+  - 🇩🇪 97
 - name: 🇫🇷 法国节点
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - 🇫🇷 104
-  - 🇫🇷 106
-  - 🇫🇷 113
-  - 🇫🇷 114
-  - 🇫🇷 115
-  - 🇫🇷 116
-  - 🇫🇷 117
-  - 🇫🇷 118
+  - 🇫🇷 110
+  - 🇫🇷 112
+  - 🇫🇷 119
+  - 🇫🇷 120
+  - 🇫🇷 121
   - 🇫🇷 122
-  - 🇫🇷 129
-  - 🇫🇷 130
-  - 🇫🇷 131
+  - 🇫🇷 123
+  - 🇫🇷 124
+  - 🇫🇷 128
+  - 🇫🇷 135
   - 🇫🇷 136
   - 🇫🇷 137
-  - 🇫🇷 138
-  - 🇫🇷 139
+  - 🇫🇷 142
+  - 🇫🇷 143
+  - 🇫🇷 144
+  - 🇫🇷 145
 - name: 🇷🇺 俄罗斯节点
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -1558,7 +1644,7 @@ proxy-groups:
   interval: 300
   tolerance: 50
   proxies:
-  - 🇨🇦 94
+  - 🇨🇦 100
 rules:
 - DOMAIN-KEYWORD,admarvel,🛑 广告拦截
 - DOMAIN-KEYWORD,admaster,🛑 广告拦截
