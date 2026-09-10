@@ -112,7 +112,7 @@ LATENCY_MAX_THRESHOLD = 2000  # P11: 延迟阈值 (ms), 超过此值的节点排
 
 # P22 (v2.14.0): 测速抖动检测 (C) — 对排序后候选池二次复测, 过滤"假快"节点
 JITTER_RECHECK_TOP = 180        # 复测候选数 (覆盖 MERGED_MAX_NODES=150 且留余量, 复测剔除后仍充足)
-JITTER_RECHECK_TIMEOUT = 2      # 复测单节点超时 (秒, 比初次 LATENCY_TIMEOUT=4 短, 控制总时长)
+JITTER_RECHECK_TIMEOUT = 3      # 复测单节点超时 (秒, P22.1: 2→3 减少慢速节点误杀; 仍比初次 4s 短)
 JITTER_HISTORY_KEEP = 14        # D: 质量历史保留轮数 (趋势图数据源)
 MERGED_MAX_NODES = 150        # P11: 融合输出每格式总量上限 (200→150, 提升整体质量)
 
