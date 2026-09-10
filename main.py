@@ -34,7 +34,7 @@ P17 (v2.9.0) 主订阅源健康治理 + 综合订阅补充修复:
     防止 sub/latest.yaml 只增不减地累积失效源
 """
 
-VERSION = '2.13.0'
+VERSION = '2.14.0'
 
 import re
 import os
@@ -109,6 +109,11 @@ LATENCY_THREADS = 48          # 并发测速线程数 (P3: 32→48)
 LATENCY_SAMPLE_RATIO = 1.0    # 抽测比例 (1.0 = 全量测速), 可在 merge.yaml 覆盖
 LATENCY_FAIL_THRESHOLD = 3   # 连续 N 个周期不可达则剔除 (P3: 2→3, 与冷却期配合)
 LATENCY_MAX_THRESHOLD = 2000  # P11: 延迟阈值 (ms), 超过此值的节点排到末尾, 总量截断时优先剔除 (P11.5: 800→2000, 保留更多可用节点)
+
+# P22 (v2.14.0): 测速抖动检测 (C) — 对排序后候选池二次复测, 过滤"假快"节点
+JITTER_RECHECK_TOP = 180        # 复测候选数 (覆盖 MERGED_MAX_NODES=150 且留余量, 复测剔除后仍充足)
+JITTER_RECHECK_TIMEOUT = 2      # 复测单节点超时 (秒, 比初次 LATENCY_TIMEOUT=4 短, 控制总时长)
+JITTER_HISTORY_KEEP = 14        # D: 质量历史保留轮数 (趋势图数据源)
 MERGED_MAX_NODES = 150        # P11: 融合输出每格式总量上限 (200→150, 提升整体质量)
 
 # 冷却期跳过测速配置 (P3 v1.7.0, T3.1)
@@ -1201,6 +1206,72 @@ def load_upstream_health():
         return {}
 
 
+def recheck_jitter(items, latencies, health_data, key_of,
+                   top_n=JITTER_RECHECK_TOP, timeout=JITTER_RECHECK_TIMEOUT):
+    """
+    P22 (v2.14.0): 测速抖动检测 (C) — 对存活且按延迟升序的候选池二次复测。
+
+    目的: 过滤"假快"节点 (首次测速快但实际不稳定/临时可达的节点)。
+    策略: 只复测排序后前 top_n 个候选 (控制运行成本), 复测超时用较短 timeout。
+    判定:
+      - 复测可达 → 最终延迟 = max(初次, 复测) (保守化, 防止假快占据优质位)
+      - 复测不可达 → 抖动剔除: 从存活列表移除, 健康记录 fail_count+1
+        (与连续失败机制衔接: 本轮 +1, 后续若持续不可达进入冷却期/剔除)
+    注意: 调用方需在复测后重新排序 (延迟被矫正, 单源截断依赖组内升序)。
+
+    Args:
+        items: 存活且已按延迟升序的节点列表 (uri 字符串 或 proxy dict)
+        latencies: {nid: 初次延迟} (nid 由 key_of 从 item 提取)
+        health_data: 健康记录 dict (复测剔除时更新 fail_count)
+        key_of: item -> nid 的函数
+
+    Returns:
+        (surviving_items, updated_latencies, jitter_excluded_count)
+    """
+    if not items:
+        return items, latencies, 0
+    candidates = items[:top_n]
+    new_lat = dict(latencies)
+    removed = []
+
+    def _host_port(item):
+        if isinstance(item, str):
+            return extract_host_port(item)
+        return str(item.get('server', '')).strip(), int(item.get('port', 0) or 0)
+
+    def _recheck(item):
+        host, port = _host_port(item)
+        if not host or not port:
+            return item, None
+        try:
+            start = time.time()
+            sock = socket.create_connection((host, port), timeout=timeout)
+            elapsed_ms = round((time.time() - start) * 1000)
+            sock.close()
+            return item, elapsed_ms
+        except Exception:
+            return item, None
+
+    with ThreadPoolExecutor(max_workers=LATENCY_THREADS) as executor:
+        futures = {executor.submit(_recheck, it): it for it in candidates}
+        for future in as_completed(futures):
+            item, rlat = future.result()
+            nid = key_of(item)
+            first_lat = latencies.get(nid)
+            if rlat is None:
+                removed.append(item)
+                rec = health_data.get(nid, {})
+                rec['fail_count'] = rec.get('fail_count', 0) + 1
+                rec['last_latency'] = None
+                health_data[nid] = rec
+            else:
+                # 复测可达 → 保守取两轮最大值 (矫正假快)
+                new_lat[nid] = max(first_lat, rlat) if first_lat is not None else rlat
+
+    survivors = [it for it in items if it not in removed]
+    return survivors, new_lat, len(removed)
+
+
 def filter_and_sort_nodes(items, latencies, health_data):
     """
     根据延迟与健康记录对节点排序、剔除。
@@ -1660,6 +1731,26 @@ def generate_merged_format(upstream_texts, upstreams):
     proxy_by_name = {p['name']: p for p in dedup_proxies}
     dedup_proxies = [proxy_by_name[n] for n in proxy_survivors]
 
+    # P22 (v2.14.0): 测速抖动检测 (C) — 对排序后候选池二次复测, 过滤"假快"节点
+    # 复测可达 → 延迟取 max(两轮) 保守化; 复测不可达 → 抖动剔除 (health fail_count+1)
+    # 复测会矫正延迟, 后续 P11 排序 (单源截断后) 会基于矫正后的延迟重新排序, 无需在此重排
+    jitter_excluded = 0
+    if all_uris:
+        all_uris, uri_latencies, _je = recheck_jitter(
+            all_uris, uri_latencies, health_data, key_of=lambda u: u,
+        )
+        jitter_excluded += _je
+    if dedup_proxies:
+        dedup_proxies, proxy_latencies, _je = recheck_jitter(
+            dedup_proxies, proxy_latencies, health_data, key_of=lambda p: p['name'],
+        )
+        jitter_excluded += _je
+    if jitter_excluded:
+        logger.info(
+            f'[jitter] 抖动复测: 剔除 {jitter_excluded} 个不稳定节点 (假快), '
+            f'存活 {len(all_uris) + len(dedup_proxies)}'
+        )
+
     excluded_count = uri_excluded + proxy_excluded
     post_health_count = len(all_uris) + len(dedup_proxies)
 
@@ -1912,6 +2003,25 @@ def generate_merged_format(upstream_texts, upstreams):
         _combined_sources = sorted(upstream_texts.keys())
         if main_supplement_count:
             _combined_sources.append('主订阅')
+
+        # P22 (v2.14.0): 质量历史构建 (D 趋势图数据源) — 从上一轮 merged 继承并追加本轮
+        _prev_merged = index_data.get('merged', {})
+        if not isinstance(_prev_merged, dict):
+            _prev_merged = {}
+        _hist = list(_prev_merged.get('quality_history', []))
+        _hist.append({
+            'date': today_str,
+            'total_parsed': total_nodes,
+            'total_available': post_health_count,
+            'excluded': excluded_count,
+            'jitter_excluded': jitter_excluded,
+            'truncated': truncated_count,
+            'output_count': available_count,
+            'availability_rate': availability_rate,
+            'avg_latency_ms': avg_latency,
+        })
+        quality_history = _hist[-JITTER_HISTORY_KEEP:]
+
         merged_section = {
             'date': f'{today.year}/{today.month}/{today.month}-{today.day}',
             'formats': {},
@@ -1928,6 +2038,7 @@ def generate_merged_format(upstream_texts, upstreams):
                 'total_parsed': total_nodes,
                 'total_available': post_health_count,   # 剔除后存活 (质量指标, 不含体积截断)
                 'excluded': excluded_count,             # 连续不可达剔除
+                'jitter_excluded': jitter_excluded,     # P22 抖动复测剔除 (假快)
                 'truncated': truncated_count,           # T1.4 体积截断
                 'output_count': available_count,        # 最终输出数 (截断后)
                 'availability_rate': availability_rate, # 可用率 %
@@ -1940,6 +2051,8 @@ def generate_merged_format(upstream_texts, upstreams):
             'upstream_stats': upstream_stats,
             # P21 (v2.13.0): 上游历史贡献 (最近 10 轮, 动态配额依据)
             'upstream_history': upstream_history,
+            # P22 (v2.14.0): 质量历史 (D 趋势图数据源, 保留最近 14 轮)
+            'quality_history': quality_history,
         }
         for target, _, ext in OUTPUT_FORMATS:
             token = target.split('&')[0]
@@ -2976,6 +3089,22 @@ def generate_status_page():
     chart_colors_json = json.dumps(chart_colors[:len(chart_labels)])
     latency_labels_json = json.dumps(latency_labels, ensure_ascii=False)
     latency_data_json = json.dumps(latency_data)
+
+    # P22 (v2.14.0): 历史质量趋势 (D) — 可用率/延迟/输出数折线图
+    _qh = merged.get('quality_history', [])
+    if not isinstance(_qh, list):
+        _qh = []
+    trend_labels = [h.get('date', '')[-5:] for h in _qh]  # MM-DD
+    trend_rate = [h.get('availability_rate', 0) for h in _qh]
+    trend_lat = [h.get('avg_latency_ms', 0) for h in _qh]
+    trend_output = [h.get('output_count', 0) for h in _qh]
+    trend_has = len(_qh) >= 2
+    trend_has_len = len(_qh)
+    trend_labels_json = json.dumps(trend_labels, ensure_ascii=False)
+    trend_rate_json = json.dumps(trend_rate)
+    trend_lat_json = json.dumps(trend_lat)
+    trend_output_json = json.dumps(trend_output)
+    jitter_excluded = quality.get('jitter_excluded', 0)
     avg_lat_suffix = 'ms' if isinstance(avg_lat, int) else ''
     min_lat_suffix = 'ms' if isinstance(min_lat, int) else ''
     max_lat_suffix = 'ms' if isinstance(max_lat, int) else ''
@@ -3054,6 +3183,7 @@ a:hover {{ text-decoration:underline; }}
 <div class="card pink"><div class="num">{output_count}</div><div class="label">最终输出</div></div>
 <div class="card"><div class="num">{main_supplement}</div><div class="label">主订阅补充</div></div>
 <div class="card"><div class="num">{excluded}</div><div class="label">剔除失效</div></div>
+<div class="card"><div class="num">{jitter_excluded}</div><div class="label">抖动剔除</div></div>
 </div>
 
 <h2>📥 订阅链接 (综合订阅)</h2>
@@ -3068,6 +3198,10 @@ a:hover {{ text-decoration:underline; }}
 <div class="chart-box">
 <h3>⚡ 各上游平均延迟</h3>
 <canvas id="latencyBar"></canvas>
+</div>
+<div class="chart-box" style="grid-column:1 / -1;">
+<h3>📈 历史质量趋势 (最近 {trend_has_len} 轮)</h3>
+<canvas id="trendLine"></canvas>
 </div>
 </div>
 
@@ -3153,6 +3287,63 @@ new Chart(barCtx, {{
     }}
   }}
 }});
+
+// P22 (v2.14.0): 历史质量趋势折线图 (可用率 + 延迟 + 输出数)
+if ({'true' if trend_has else 'false'}) {{
+  const trendCtx = document.getElementById('trendLine').getContext('2d');
+  new Chart(trendCtx, {{
+    type: 'line',
+    data: {{
+      labels: {trend_labels_json},
+      datasets: [
+        {{
+          label: '可用率 (%)',
+          data: {trend_rate_json},
+          borderColor: '#10b981',
+          backgroundColor: 'rgba(16,185,129,0.15)',
+          yAxisID: 'y',
+          tension: 0.3,
+          fill: true,
+          pointRadius: 4
+        }},
+        {{
+          label: '平均延迟 (ms)',
+          data: {trend_lat_json},
+          borderColor: '#f59e0b',
+          backgroundColor: 'rgba(245,158,11,0.1)',
+          yAxisID: 'y1',
+          tension: 0.3,
+          fill: false,
+          pointRadius: 4
+        }},
+        {{
+          label: '输出节点数',
+          data: {trend_output_json},
+          borderColor: '#38bdf8',
+          backgroundColor: 'rgba(56,189,248,0.1)',
+          yAxisID: 'y1',
+          tension: 0.3,
+          fill: false,
+          pointRadius: 3,
+          borderDash: [5, 3]
+        }}
+      ]
+    }},
+    options: {{
+      responsive: true,
+      interaction: {{ mode: 'index', intersect: false }},
+      plugins: {{
+        legend: {{ labels: {{ color: '#cbd5e1', font: {{ size: 12 }} }} }},
+        tooltip: {{ backgroundColor: '#1e293b', borderColor: '#38bdf8', borderWidth: 1 }}
+      }},
+      scales: {{
+        x: {{ grid: {{ color: 'rgba(148,163,184,0.1)' }}, ticks: {{ color: '#94a3b8' }} }},
+        y: {{ position: 'left', title: {{ display: true, text: '可用率 %', color: '#10b981' }}, grid: {{ color: 'rgba(148,163,184,0.1)' }}, ticks: {{ color: '#94a3b8' }} }},
+        y1: {{ position: 'right', title: {{ display: true, text: '延迟 ms / 节点数', color: '#f59e0b' }}, grid: {{ display: false }}, ticks: {{ color: '#94a3b8' }} }}
+      }}
+    }}
+  }});
+}}
 </script>
 </body>
 </html>'''
