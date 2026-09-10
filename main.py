@@ -73,6 +73,9 @@ MAX_THREADS = 32
 CHANNEL_THREADS = 8
 AIRPORT_THREADS = 8
 REQUEST_TIMEOUT = 10
+CHECK_ALL_TIMEOUT = 150  # P22.3: 订阅校验阶段硬超时 (秒) — 个别 URL DNS 解析/连接挂起不受
+                         # requests timeout 控制 (getaddrinfo 是 OS 级), 曾导致单 URL 挂 11.5 分钟;
+                         # 正常 1431 URL 全量校验约 35s, 150s 为 4 倍护栏
 CHANNEL_TIMEOUT = 15
 AIRPORT_TIMEOUT = 8
 RETRY_TIMES = 2
@@ -2205,9 +2208,15 @@ def check_all_urls(session, url_list):
         return results
 
     bar = tqdm(total=total, desc='订阅筛选')
-    with ThreadPoolExecutor(max_workers=MAX_THREADS) as executor:
-        futures = {executor.submit(sub_check, session, url): url for url in url_list}
-        for future in as_completed(futures):
+    # P22.3: 阶段硬超时护栏 — 个别 URL 的 DNS 解析/连接可能挂起远超 timeout
+    # (getaddrinfo 不受 requests timeout 控制), 曾导致单 URL 卡 11.5 分钟拖垮全程。
+    # as_completed(timeout) 到点抛 TimeoutError, 放弃等待残留线程 (shutdown wait=False)。
+    executor = ThreadPoolExecutor(max_workers=MAX_THREADS)
+    futures = {executor.submit(sub_check, session, url): url for url in url_list}
+    done_count = 0
+    try:
+        for future in as_completed(futures, timeout=CHECK_ALL_TIMEOUT):
+            done_count += 1
             result = future.result()
             sub_type = result['type']
             if sub_type == 'sub':
@@ -2219,7 +2228,15 @@ def check_all_urls(session, url_list):
             elif sub_type == 'v2':
                 results['v2'].append(result['url'])
             bar.update(1)
-    bar.close()
+    except TimeoutError:
+        remaining = total - done_count
+        logger.warning(
+            f'[check] 校验阶段超时 {CHECK_ALL_TIMEOUT}s, '
+            f'已处理 {done_count}/{total}, 放弃剩余 {remaining} 个慢速 URL'
+        )
+    finally:
+        bar.close()
+        executor.shutdown(wait=False, cancel_futures=False)
     return results
 
 
@@ -2248,8 +2265,17 @@ def _purge_stale_sub_urls(session, url_list):
         r = sub_check(session, url)
         return url if r['type'] else None
 
-    with ThreadPoolExecutor(max_workers=MAX_THREADS) as executor:
-        results = list(executor.map(_check, url_list))
+    # P22.3: 旧源重新验证同样加阶段硬超时 (慢 URL DNS 挂起问题)
+    executor = ThreadPoolExecutor(max_workers=MAX_THREADS)
+    try:
+        results = list(executor.map(_check, url_list, timeout=CHECK_ALL_TIMEOUT))
+    except TimeoutError:
+        logger.warning(
+            f'[P17] 旧源验证超时 {CHECK_ALL_TIMEOUT}s, 跳过剩余慢速 URL'
+        )
+        results = []
+    finally:
+        executor.shutdown(wait=False, cancel_futures=False)
     valid = [u for u in results if u]
     if len(valid) < len(url_list):
         logger.info(f'[P17] 主订阅源健康维护: 剔除 {len(url_list) - len(valid)} 个失效/黑名单源, '
@@ -3467,6 +3493,7 @@ def send_alert(title, message, level='info'):
 
 def main():
     start_time = time.time()
+    _t0 = start_time  # P22.2: 阶段计时器
 
     # 1. 初始化目录
     path_yaml = pre_check()
@@ -3495,12 +3522,16 @@ def main():
     # 5. 并发爬取 TG 频道
     logger.info('=== 开始爬取 TG 频道 ===')
     tg_urls = crawl_all_channels(session, channel_urls)
+    logger.info(f'[timer] TG频道爬取: {round(time.time() - _t0, 1)}s')
+    _t0 = time.time()
 
     # 5.5 探测机场公开订阅 (Phase 1)
     logger.info('=== 开始探测机场列表 ===')
     airport_urls = probe_all_airports(session, airports)
 
     # 5.6 P19 (v2.11.0): 固定订阅源 (config.yaml fixed_subscriptions)
+    logger.info(f'[timer] 机场探测: {round(time.time() - _t0, 1)}s')
+    _t0 = time.time()
     fixed_urls = load_fixed_subscriptions()
     if fixed_urls:
         logger.info(f'=== 固定订阅源 {len(fixed_urls)} 个并入校验 ===')
@@ -3509,6 +3540,8 @@ def main():
     all_urls = list(set(tg_urls + airport_urls + fixed_urls))
     logger.info(f'=== 开始校验订阅 (共 {len(all_urls)} 个 URL) ===')
     new_results = check_all_urls(session, all_urls)
+    logger.info(f'[timer] 订阅校验({len(all_urls)} URL): {round(time.time() - _t0, 1)}s')
+    _t0 = time.time()
 
     # 7. 合并旧数据 + 去重
     # P17 (v2.9.0): 旧列表重新验证, 剔除失效/空壳/黑名单源, 防止 sub/latest.yaml 累积失效源
@@ -3530,6 +3563,8 @@ def main():
         '开心玩耍': play_list,
     })
     yaml_save(path_yaml, dict_url)
+    logger.info(f'[timer] 旧源清理+去重: {round(time.time() - _t0, 1)}s')
+    _t0 = time.time()
 
     # 8.5 同时写入固定路径 sub/latest.yaml (URL 永不改变)
     latest_yaml_path = os.path.join(SUB_DIR, 'latest.yaml')
@@ -3540,6 +3575,8 @@ def main():
     logger.info('=== subconverter 多格式转换 ===')
     all_sub_urls = new_sub_list + new_clash_list + new_v2_list
     generate_multi_format(all_sub_urls)
+    logger.info(f'[timer] 主订阅 subconverter 转换: {round(time.time() - _t0, 1)}s')
+    _t0 = time.time()
 
     # 9.5 上游订阅融合 (独立输出到 output/merged/，与主订阅隔离)
     logger.info('=== 上游订阅融合 ===')
@@ -3555,7 +3592,11 @@ def main():
         )
     elif not upstream_texts:
         send_alert('❌ 全部上游拉取失败', '综合订阅本次无法更新，保留上次有效数据', 'error')
+    logger.info(f'[timer] 上游拉取({len(upstreams)} 源): {round(time.time() - _t0, 1)}s')
+    _t0 = time.time()
     merged_nodes = generate_merged_format(upstream_texts, upstreams)
+    logger.info(f'[timer] 融合生成+转换: {round(time.time() - _t0, 1)}s')
+    _t0 = time.time()
 
     # 10. 输出运行统计
     elapsed = round(time.time() - start_time, 2)
@@ -3611,9 +3652,12 @@ def main():
 
     # 11. 自动更新 README.md (订阅链接展示)
     generate_readme(upstreams)
+    logger.info(f'[timer] README: {round(time.time() - _t0, 1)}s')
+    _t0 = time.time()
 
     # 12. (T3.5 v1.7.0) 生成 Web 状态页
     generate_status_page()
+    logger.info(f'[timer] status.html: {round(time.time() - _t0, 1)}s')
 
     logger.info('全部任务完成')
 
