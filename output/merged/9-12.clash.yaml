@@ -5,8 +5,8 @@ mode: Rule
 log-level: info
 external-controller: :9090
 proxies:
-- name: 🇺🇸 01
-  server: 104.18.23.63
+- name: '01'
+  server: 86.38.214.205
   port: 443
   type: trojan
   password: humanity
@@ -18,20 +18,19 @@ proxies:
       Host: www.ignitelimit.com
   udp: true
 - name: 🇺🇸 02
-  server: 151.101.56.7
+  server: 104.16.174.72
   port: 443
   type: trojan
-  password: MiTiVPN
-  sni: ssl.fastly.com
-  skip-cert-verify: false
+  password: humanity
+  sni: www.ignitelimit.com
   network: ws
   ws-opts:
-    path: '@bored_vpn'
+    path: /assignment
     headers:
-      Host: ssl.fastly.com
+      Host: www.ignitelimit.com
   udp: true
 - name: 🇺🇸 03
-  server: 198.41.223.96
+  server: 104.16.174.143
   port: 443
   type: trojan
   password: humanity
@@ -43,552 +42,6 @@ proxies:
       Host: www.ignitelimit.com
   udp: true
 - name: 🇺🇸 04
-  server: 172.67.221.242
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.ignitelimit.com
-  udp: true
-- name: 🇺🇸 05
-  server: 207.246.97.36
-  port: 29739
-  type: trojan
-  password: i99Cef
-  sni: download.windowsupdate.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇺🇸 06
-  server: 100.42.228.109
-  port: 443
-  type: trojan
-  password: BxceQaOe
-  sni: t.me%2Fripaojiedian
-  skip-cert-verify: true
-  udp: true
-- name: 🇩🇪 07
-  server: 95.170.13.47
-  port: 65443
-  type: ss
-  cipher: aes-256-cfb
-  password: 7eadc6dbe2ae
-  udp: true
-- name: 🇮🇪 08
-  server: 63.180.254.10
-  port: 443
-  type: ss
-  cipher: aes-256-cfb
-  password: amazonskr05
-  udp: true
-- name: 🇩🇪 09
-  server: 82.38.31.62
-  port: 8080
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: oZIoA69Q8yhcQV8ka3Pa3A
-  udp: true
-- name: 🇯🇵 10
-  server: 45.32.57.242
-  port: 27242
-  type: trojan
-  password: i99Cef
-  sni: download.windowsupdate.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇯🇵 11
-  server: z-jp2.251313.xyz
-  port: 10012
-  type: trojan
-  password: ultra%40kWZdAzt_IH593eGLRjdxnBZ0
-  sni: www.cloudflare.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇯🇵 12
-  server: z-jp2.251313.xyz
-  port: 10009
-  type: trojan
-  password: ultra%40kWZdAzt_IH593eGLRjdxnBZ0
-  sni: www.cloudflare.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇯🇵 13
-  server: z-jp2.251313.xyz
-  port: 10008
-  type: trojan
-  password: ultra%40kWZdAzt_IH593eGLRjdxnBZ0
-  sni: www.cloudflare.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇯🇵 14
-  server: z-jp1.251313.xyz
-  port: 10009
-  type: trojan
-  password: ultra%40kWZdAzt_IH593eGLRjdxnBZ0
-  sni: www.cloudflare.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇺🇸 15
-  server: join-telegram-channel-tirexnet.trex.kdns.fr
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.ignitelimit.com
-  udp: true
-- name: 🇹🇼 16
-  server: 211.20.156.191
-  port: 28152
-  type: trojan
-  password: i99Cef
-  sni: download.windowsupdate.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇹🇼 17
-  server: 211.20.156.191
-  port: 28161
-  type: trojan
-  password: i99Cef
-  sni: download.windowsupdate.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇹🇼 18
-  server: 211.20.156.191
-  port: 28159
-  type: trojan
-  password: i99Cef
-  sni: download.windowsupdate.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇹🇼 19
-  server: 211.20.156.191
-  port: 28133
-  type: trojan
-  password: i99Cef
-  sni: ctldl.windowsupdate.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇩🇪 20
-  server: 112.132.215.108
-  port: 50002
-  type: vmess
-  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
-  alterId: 64
-  cipher: auto
-  tls: false
-  udp: true
-- name: 🇹🇼 21
-  server: 211.20.156.191
-  port: 28156
-  type: trojan
-  password: i99Cef
-  sni: ctldl.windowsupdate.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇹🇼 22
-  server: 211.20.156.191
-  port: 28122
-  type: trojan
-  password: i99Cef
-  sni: ctldl.windowsupdate.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇹🇼 23
-  server: 211.20.156.191
-  port: 28155
-  type: trojan
-  password: i99Cef
-  sni: download.windowsupdate.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇹🇼 24
-  server: 211.20.156.191
-  port: 28123
-  type: trojan
-  password: i99Cef
-  sni: ctldl.windowsupdate.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇭🇰 25
-  server: 209.248.32.116
-  port: 28125
-  type: trojan
-  password: i99Cef
-  sni: ctldl.windowsupdate.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇭🇰 26
-  server: 209.248.32.116
-  port: 28104
-  type: trojan
-  password: i99Cef
-  sni: ctldl.windowsupdate.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇭🇰 27
-  server: 209.248.32.116
-  port: 28165
-  type: trojan
-  password: i99Cef
-  sni: ctldl.windowsupdate.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇭🇰 28
-  server: 209.248.32.116
-  port: 28166
-  type: trojan
-  password: i99Cef
-  sni: ctldl.windowsupdate.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇭🇰 29
-  server: 209.248.32.116
-  port: 28159
-  type: trojan
-  password: i99Cef
-  sni: download.windowsupdate.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇭🇰 30
-  server: 209.248.32.116
-  port: 28144
-  type: trojan
-  password: i99Cef
-  sni: ctldl.windowsupdate.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇭🇰 31
-  server: 209.248.32.116
-  port: 28105
-  type: trojan
-  password: i99Cef
-  sni: ctldl.windowsupdate.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇭🇰 32
-  server: 209.248.32.116
-  port: 28122
-  type: trojan
-  password: i99Cef
-  sni: ctldl.windowsupdate.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇭🇰 33
-  server: 209.248.32.116
-  port: 28126
-  type: trojan
-  password: i99Cef
-  sni: ctldl.windowsupdate.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇭🇰 34
-  server: 209.248.32.116
-  port: 28121
-  type: trojan
-  password: i99Cef
-  sni: ctldl.windowsupdate.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇭🇰 35
-  server: 209.248.32.116
-  port: 28145
-  type: trojan
-  password: i99Cef
-  sni: ctldl.windowsupdate.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇩🇪 36
-  server: 118.107.222.231
-  port: 65443
-  type: ss
-  cipher: aes-256-cfb
-  password: 7eadc6dbe2ae
-  udp: true
-- name: 🇭🇰 37
-  server: v29.hdacd.com
-  port: 30829
-  type: vmess
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 2
-  cipher: auto
-  tls: false
-  udp: true
-- name: 🇭🇰 38
-  server: v10.zgtfqs.click
-  port: 30807
-  type: vmess
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 2
-  cipher: auto
-  tls: false
-  udp: true
-- name: 🇺🇸 39
-  server: 121.46.230.232
-  port: 65443
-  type: ss
-  cipher: aes-256-cfb
-  password: 7eadc6dbe2ae
-  udp: true
-- name: 🇰🇷 40
-  server: 121.46.230.138
-  port: 65443
-  type: ss
-  cipher: aes-256-cfb
-  password: 7eadc6dbe2ae
-  udp: true
-- name: 🇯🇵 41
-  server: 121.46.230.137
-  port: 65443
-  type: ss
-  cipher: aes-256-cfb
-  password: 7eadc6dbe2ae
-  udp: true
-- name: 🇭🇰 42
-  server: v33.hdacd.com
-  port: 30833
-  type: vmess
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 2
-  cipher: auto
-  tls: false
-  udp: true
-- name: 🇭🇰 43
-  server: v36.hdacd.com
-  port: 30836
-  type: vmess
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 2
-  cipher: auto
-  tls: false
-  udp: true
-- name: 🇭🇰 44
-  server: v10.hdacd.com
-  port: 30807
-  type: vmess
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 2
-  cipher: auto
-  tls: false
-  udp: true
-- name: 🇺🇸 45
-  server: 121.46.230.233
-  port: 65443
-  type: ss
-  cipher: aes-256-cfb
-  password: 7eadc6dbe2ae
-  udp: true
-- name: 🇸🇬 46
-  server: z-sg1.251313.xyz
-  port: 10044
-  type: trojan
-  password: ultra%40kWZdAzt_IH593eGLRjdxnBZ0
-  sni: www.cloudflare.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇩🇪 47
-  server: 103.169.67.34
-  port: 65443
-  type: ss
-  cipher: aes-256-cfb
-  password: 7eadc6dbe2ae
-  udp: true
-- name: 🇩🇪 48
-  server: 35.182.118.89
-  port: 443
-  type: ss
-  cipher: aes-256-cfb
-  password: amazonskr05
-  udp: true
-- name: 🇬🇧 49
-  server: 35.178.200.252
-  port: 443
-  type: ss
-  cipher: aes-256-cfb
-  password: amazonskr05
-  udp: true
-- name: 🇯🇵 50
-  server: 7db5z0h-g04.jp04-1d-vm0.entry.fr0528.art
-  port: 447
-  type: vmess
-  uuid: c2c30cdc-e150-36b4-b611-020e6b2f2cb2
-  alterId: 1
-  cipher: auto
-  tls: false
-  udp: true
-- name: 🇭🇰 51
-  server: 103.236.66.4
-  port: 10001
-  type: ss
-  cipher: aes-256-gcm
-  password: Butterfly123@qwe9527
-  udp: true
-- name: 🇭🇰 52
-  server: 112.28.141.77
-  port: 10006
-  type: ss
-  cipher: aes-256-gcm
-  password: Butterfly123@qwe9527
-  udp: true
-- name: 🇭🇰 53
-  server: 43.199.146.46
-  port: 2716
-  type: trojan
-  password: BxceQaOe
-  sni: t.me%2Fripaojiedian
-  skip-cert-verify: true
-  udp: true
-- name: 🇭🇰 54
-  server: 13.215.162.132
-  port: 51391
-  type: trojan
-  password: BxceQaOe
-  sni: t.me%2Fripaojiedian
-  skip-cert-verify: true
-  udp: true
-- name: 🇯🇵 55
-  server: 35.73.128.210
-  port: 3893
-  type: trojan
-  password: BxceQaOe
-  sni: t.me%252Fripaojiedian
-  skip-cert-verify: true
-  udp: true
-- name: 🇯🇵 56
-  server: 103.236.66.4
-  port: 40001
-  type: ss
-  cipher: aes-256-gcm
-  password: Butterfly123@qwe9527
-  udp: true
-- name: 🇯🇵 57
-  server: 103.236.66.4
-  port: 40002
-  type: ss
-  cipher: aes-256-gcm
-  password: Butterfly123@qwe9527
-  udp: true
-- name: 🇸🇬 58
-  server: 54.251.190.150
-  port: 41142
-  type: trojan
-  password: BxceQaOe
-  sni: t.me%252Fripaojiedian
-  skip-cert-verify: true
-  udp: true
-- name: 🇺🇸 59
-  server: 103.236.66.4
-  port: 50001
-  type: ss
-  cipher: aes-256-gcm
-  password: Butterfly123@qwe9527
-  udp: true
-- name: 🇺🇸 60
-  server: 103.236.66.4
-  port: 50003
-  type: ss
-  cipher: aes-256-gcm
-  password: Butterfly123@qwe9527
-  udp: true
-- name: 🇹🇼 61
-  server: 36.33.35.105
-  port: 30001
-  type: ss
-  cipher: aes-256-gcm
-  password: Butterfly123@qwe9527
-  udp: true
-- name: 🇩🇪 62
-  server: 130.61.179.188
-  port: 59924
-  type: ss
-  cipher: 2022-blake3-chacha20-poly1305
-  password: ILby12dpIbRC+JyGy1Wevfw5i8VL2786URmmlX25BsQ=
-  udp: true
-- name: 🇩🇪 63
-  server: 172.67.149.60
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.ignitelimit.com
-  udp: true
-- name: 🇩🇪 64
-  server: 172.67.188.109
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.ignitelimit.com
-  udp: true
-- name: 🇩🇪 65
-  server: 86.38.214.205
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.ignitelimit.com
-  udp: true
-- name: 🇩🇪 66
-  server: 104.17.111.8
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.ignitelimit.com
-  udp: true
-- name: 🇩🇪 67
-  server: 172.67.221.242
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.ignitelimit.com
-  udp: true
-- name: 🇩🇪 68
-  server: 172.67.74.2
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.ignitelimit.com
-  udp: true
-- name: '69'
   server: 104.18.152.155
   port: 443
   type: trojan
@@ -601,29 +54,377 @@ proxies:
     headers:
       Host: www.ignitelimit.com
   udp: true
-- name: 🇩🇪 70
-  server: 8.6.112.0
+- name: 🇺🇸 05
+  server: 104.18.152.77
   port: 443
   type: trojan
   password: humanity
   sni: www.ignitelimit.com
-  skip-cert-verify: false
   network: ws
   ws-opts:
     path: /assignment
     headers:
       Host: www.ignitelimit.com
   udp: true
-- name: 🇺🇸 71
-  server: 107.173.254.27
-  port: 15311
+- name: 🇺🇸 06
+  server: 216.24.57.1
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.ignitelimit.com
+  udp: true
+- name: 🇺🇸 07
+  server: 104.18.152.143
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.ignitelimit.com
+  udp: true
+- name: 🇺🇸 08
+  server: 104.18.152.207
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.ignitelimit.com
+  udp: true
+- name: 🇺🇸 09
+  server: 8.6.112.0
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.ignitelimit.com
+  udp: true
+- name: 🇺🇸 10
+  server: 100.42.228.109
+  port: 443
+  type: trojan
+  password: BxceQaOe
+  sni: t.me%2Fripaojiedian
+  skip-cert-verify: true
+  udp: true
+- name: 🇩🇪 11
+  server: 63.32.92.226
+  port: 443
+  type: ss
+  cipher: aes-256-cfb
+  password: amazonskr05
+  udp: true
+- name: 🇩🇪 12
+  server: 108.129.176.139
+  port: 443
+  type: ss
+  cipher: aes-256-cfb
+  password: amazonskr05
+  udp: true
+- name: 🇬🇧 13
+  server: 3.8.209.170
+  port: 443
+  type: ss
+  cipher: aes-256-cfb
+  password: amazonskr05
+  udp: true
+- name: 🇬🇧 14
+  server: 35.178.181.116
+  port: 443
+  type: ss
+  cipher: aes-256-cfb
+  password: amazonskr05
+  udp: true
+- name: 🇬🇧 15
+  server: 52.56.143.197
+  port: 443
+  type: ss
+  cipher: aes-256-cfb
+  password: amazonskr05
+  udp: true
+- name: 🇬🇧 16
+  server: 35.179.104.218
+  port: 443
+  type: ss
+  cipher: aes-256-cfb
+  password: amazonskr05
+  udp: true
+- name: 🇮🇪 17
+  server: 63.180.254.10
+  port: 443
+  type: ss
+  cipher: aes-256-cfb
+  password: amazonskr05
+  udp: true
+- name: 🇯🇵 18
+  server: z-jp1.1card.cc
+  port: 10011
+  type: trojan
+  password: ultra%40kWZdAzt_IH593eGLRjdxnBZ0
+  sni: www.cloudflare.com
+  skip-cert-verify: true
+  udp: true
+- name: 🇯🇵 19
+  server: z-jp1.1card.cc
+  port: 10010
+  type: trojan
+  password: ultra%40kWZdAzt_IH593eGLRjdxnBZ0
+  sni: www.cloudflare.com
+  skip-cert-verify: true
+  udp: true
+- name: 🇭🇰 20
+  server: z-jp2.1card.cc
+  port: 10011
+  type: trojan
+  password: ultra%40kWZdAzt_IH593eGLRjdxnBZ0
+  sni: www.cloudflare.com
+  skip-cert-verify: true
+  udp: true
+- name: 🇯🇵 21
+  server: z-jp2.1card.cc
+  port: 10010
+  type: trojan
+  password: ultra%40kWZdAzt_IH593eGLRjdxnBZ0
+  sni: www.cloudflare.com
+  skip-cert-verify: true
+  udp: true
+- name: 🇺🇸 22
+  server: www.speedtest.org
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.ignitelimit.com
+  udp: true
+- name: 🇩🇪 23
+  server: 118.107.222.231
+  port: 65443
+  type: ss
+  cipher: aes-256-cfb
+  password: 7eadc6dbe2ae
+  udp: true
+- name: 🇭🇰 24
+  server: v10.hdacd.com
+  port: 30807
   type: vmess
-  uuid: ad78d02b-873f-4cff-8d4a-673f53d6ce0f
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
+  cipher: auto
+  tls: false
+  udp: true
+- name: 🇭🇰 25
+  server: v24.hdacd.com
+  port: 30824
+  type: vmess
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
+  cipher: auto
+  tls: false
+  udp: true
+- name: 🇭🇰 26
+  server: v4.hdacd.com
+  port: 30804
+  type: vmess
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
+  cipher: auto
+  tls: false
+  udp: true
+- name: 🇭🇰 27
+  server: v6.hdacd.com
+  port: 30806
+  type: vmess
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
+  cipher: auto
+  tls: false
+  udp: true
+- name: 🇳🇱 28
+  server: 213.182.199.137
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.pleadcourt.org
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.pleadcourt.org
+  udp: true
+- name: 🇫🇷 29
+  server: 188.114.97.8
+  port: 443
+  type: trojan
+  password: Telegram_healer_config
+  sni: y9p34jPJMqjAZaYPF.pIiwdDIlXjcQEHR17aF22U7xK-yU.workers.DEv
+  network: ws
+  ws-opts:
+    path: /tr/SniOCmVMzIWOA1FDZDeGODGx2lS1LV?ed=2560
+    headers:
+      Host: y9p34jPJMqjAZaYPF.pIiwdDIlXjcQEHR17aF22U7xK-yU.workers.DEv
+  udp: true
+- name: 🇺🇸 30
+  server: 82.198.246.97
+  port: 180
+  type: vmess
+  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
   alterId: 0
   cipher: auto
   tls: false
   udp: true
-- name: '72'
+- name: 🇺🇸 31
+  server: 82.198.246.250
+  port: 180
+  type: vmess
+  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+  alterId: 0
+  cipher: auto
+  tls: false
+  udp: true
+- name: 🇫🇷 32
+  server: 172.67.205.222
+  port: 2087
+  type: trojan
+  password: eabf1999fefbb7d2
+  sni: WaYSi.wAYsI6688.WOrkeRS.deV
+  network: ws
+  ws-opts:
+    path: /tr/sMpzOZ0eWEt6jbZ1jjN3BaM7LLoQ
+    headers:
+      Host: WaYSi.wAYsI6688.WOrkeRS.deV
+  udp: true
+- name: 🇫🇷 33
+  server: 172.67.221.159
+  port: 443
+  type: trojan
+  password: Telegram_healer_config
+  sni: X0c3LQ1a15iP-65kc4-L1A1TX.CV4CgVQS05m-f4HG5xU07wIalM0.workeRs.dEV
+  network: ws
+  ws-opts:
+    path: /tr/XDSHbKWRTEyuEeUs4isq9LG?ed=2560
+    headers:
+      Host: X0c3LQ1a15iP-65kc4-L1A1TX.CV4CgVQS05m-f4HG5xU07wIalM0.workeRs.dEV
+  udp: true
+- name: 🇺🇸 34
+  server: 107.150.105.84
+  port: 20065
+  type: trojan
+  password: 02cd3bac-2a78-4dbb-82b9-6b64084ddd8e
+  sni: www.microsoft.com
+  skip-cert-verify: true
+  udp: true
+- name: 🇺🇸 35
+  server: 107.150.105.84
+  port: 54657
+  type: trojan
+  password: 02cd3bac-2a78-4dbb-82b9-6b64084ddd8e
+  sni: 107.150.105.84
+  skip-cert-verify: true
+  udp: true
+- name: 🇺🇸 36
+  server: 107.150.105.84
+  port: 46292
+  type: trojan
+  password: 02cd3bac-2a78-4dbb-82b9-6b64084ddd8e
+  sni: www.microsoft.com%23free%20x114%20%40outline_vpn
+  skip-cert-verify: true
+  udp: true
+- name: 🇺🇸 37
+  server: 107.150.105.84
+  port: 59385
+  type: trojan
+  password: 02cd3bac-2a78-4dbb-82b9-6b64084ddd8e
+  sni: 107.150.105.84
+  skip-cert-verify: true
+  udp: true
+- name: 🇫🇷 38
+  server: 104.21.8.63
+  port: 443
+  type: trojan
+  password: 5855d6850594830f
+  sni: AkbARIan34.j9Z65Ce2uyks.WoRKeRS.DEV
+  network: ws
+  ws-opts:
+    path: /tr/w2O3K3xXNYDKIxwOIw7?ed=2560
+    headers:
+      Host: AkbARIan34.j9Z65Ce2uyks.WoRKeRS.DEV
+  udp: true
+- name: 🇫🇷 39
+  server: 104.21.67.113
+  port: 443
+  type: trojan
+  password: Telegram_healer_config
+  sni: x0C3lq1A15ip-65Kc4-l1A1tx.cv4CGvqS05m-F4Hg5xU07wIAlm0.wOrkerS.DeV
+  network: ws
+  ws-opts:
+    path: /tr/rkSn26veCGpvDy162Z?ed=2560
+    headers:
+      Host: x0C3lq1A15ip-65Kc4-l1A1tx.cv4CGvqS05m-F4Hg5xU07wIAlm0.wOrkerS.DeV
+  udp: true
+- name: 🇫🇷 40
+  server: 104.21.70.21
+  port: 443
+  type: trojan
+  password: Telegram_healer_config
+  sni: 47hr9isj-655383snd63hjap38q6t.k-f3vpqaltfsxbtaxe.workers.dev
+  network: ws
+  ws-opts:
+    path: /tr/kp0IOvZwWV0X35ln0vIh?ed=2560
+    headers:
+      Host: 47hr9isj-655383snd63hjap38q6t.k-f3vpqaltfsxbtaxe.workers.dev
+  udp: true
+- name: 🇫🇷 41
+  server: 172.67.188.109
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.ignitelimit.com
+  udp: true
+- name: 🇫🇷 42
+  server: 104.21.4.176
+  port: 443
+  type: trojan
+  password: Telegram_healer_config
+  sni: 5Er0m2i2eNS2uLpg7SJd45UGqS.87fcvT2k11501YnO2TXm6yw-miPJ2Kr.worKerS.deV
+  network: ws
+  ws-opts:
+    path: /tr/5cJhuZZi5ZL6KKmZ5vKVeM?ed=2560
+    headers:
+      Host: 5Er0m2i2eNS2uLpg7SJd45UGqS.87fcvT2k11501YnO2TXm6yw-miPJ2Kr.worKerS.deV
+  udp: true
+- name: '43'
+  server: 38.154.185.97
+  port: 6370
+  type: socks5
+  username: hxvezfcd
+  password: s66je14cquxt
+  udp: true
+- name: '44'
   server: www.shopify.com
   port: 443
   type: trojan
@@ -636,7 +437,7 @@ proxies:
     headers:
       Host: swjsb.1f1v.t8t.hh.vavava.kdns.fr
   udp: true
-- name: 🇺🇸 73
+- name: 🇺🇸 45
   server: 100.42.228.109
   port: 443
   type: trojan
@@ -644,119 +445,144 @@ proxies:
   sni: t.me%2Fripaojiedian
   skip-cert-verify: true
   udp: true
-- name: 🇺🇸 74
-  server: 134.195.101.231
-  port: 2377
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    mode: tls
-    host: 403880e.default.microsoft.is:164892
-  udp: true
-- name: '75'
-  server: 52.214.208.36
-  port: 443
-  type: ss
-  cipher: aes-256-cfb
-  password: amazonskr05
-  udp: true
-- name: '76'
-  server: 95.170.13.47
-  port: 65443
-  type: ss
-  cipher: aes-256-cfb
-  password: 7eadc6dbe2ae
-  udp: true
-- name: 🇺🇸 77
-  server: 63.180.254.10
-  port: 443
-  type: ss
-  cipher: aes-256-cfb
-  password: amazonskr05
-  udp: true
-- name: '78'
-  server: fan.596189.xyz
-  port: 443
-  type: http
-  tls: true
-  skip-cert-verify: true
-  udp: true
-- name: 🇳🇱 79
-  server: 82.38.31.61
-  port: 8080
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: oZIoA69Q8yhcQV8ka3Pa3A
-  udp: true
-- name: 🇳🇱 80
-  server: 82.38.31.69
-  port: 8080
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: oZIoA69Q8yhcQV8ka3Pa3A
-  udp: true
-- name: 🇳🇱 81
-  server: 82.38.31.62
-  port: 8080
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: oZIoA69Q8yhcQV8ka3Pa3A
-  udp: true
-- name: '82'
-  server: fan.226278.xyz
-  port: 443
-  type: http
-  tls: true
-  skip-cert-verify: true
-  udp: true
-- name: '83'
-  server: 45.192.242.16
-  port: 8888
-  type: socks5
-  username: u7596550055
-  password: rPJuaFd6KSODJoXz
-  udp: true
-- name: 🇩🇪 84
-  server: join-telegram-channel.tirexnet.kdns.fr
+- name: 🇫🇷 46
+  server: www.speedtest.net
   port: 443
   type: trojan
   password: humanity
   sni: www.ignitelimit.com
-  skip-cert-verify: false
   network: ws
   ws-opts:
     path: /assignment
     headers:
       Host: www.ignitelimit.com
   udp: true
-- name: '85'
-  server: 112.132.215.108
-  port: 50002
+- name: '47'
+  server: fan.596189.xyz
+  port: 443
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 🇺🇸 48
+  server: us01.duotg.top
+  port: 54657
+  type: trojan
+  password: 02cd3bac-2a78-4dbb-82b9-6b64084ddd8e
+  sni: www.microsoft.com
+  skip-cert-verify: true
+  udp: true
+- name: 🇺🇸 49
+  server: us01.duotg.top
+  port: 20065
+  type: trojan
+  password: 02cd3bac-2a78-4dbb-82b9-6b64084ddd8e
+  sni: www.microsoft.com%233%F0%9F%90%B2%40oneclickvpnkeyshysteria2%3A%2F%2Fumndu7jgfyujpvjvm2sw9hl0rryljngzvwru2hzwehyzkkrx%40hold.wwwinternetvideo.click%3A443%2F%3Finsecure%3D1
+  skip-cert-verify: true
+  udp: true
+- name: 🇫🇷 50
+  server: 5er0m2i2ens2ulpg7sjd45ugqs.87fcvt2k11501yno2txm6yw-mipj2kr.workers.dev
+  port: 443
+  type: trojan
+  password: Telegram_healer_config
+  sni: 5Er0m2I2eNS2ULPg7Sjd45UGQs.87FCVt2K11501YnO2txm6yw-MiPJ2KR.worKERs.dEV
+  network: ws
+  ws-opts:
+    path: /tr/VCf8OF27gyXfyS3GNQ1ejyY7sy4?ed=2560
+    headers:
+      Host: 5Er0m2I2eNS2ULPg7Sjd45UGQs.87FCVt2K11501YnO2txm6yw-MiPJ2KR.worKERs.dEV
+  udp: true
+- name: '51'
+  server: 34.244.71.63
+  port: 443
+  type: ss
+  cipher: aes-256-cfb
+  password: amazonskr05
+  udp: true
+- name: '52'
+  server: 45.192.242.201
+  port: 8888
+  type: socks5
+  username: u7596550055
+  password: rPJuaFd6KSODJoXz
+  udp: true
+- name: '53'
+  server: 52.56.143.197
+  port: 443
+  type: ss
+  cipher: aes-256-cfb
+  password: amazonskr05
+  udp: true
+- name: '54'
+  server: fan.226278.xyz
+  port: 443
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 🇫🇷 55
+  server: 166.1.36.83
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.calmlunch.com
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.calmlunch.com
+  udp: true
+- name: 🇫🇷 56
+  server: 91.245.225.79
+  port: 2053
+  type: trojan
+  password: humanity
+  sni: www.calmlunch.com
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.calmlunch.com
+  udp: true
+- name: 🇺🇸 57
+  server: 63.180.254.10
+  port: 443
+  type: ss
+  cipher: aes-256-cfb
+  password: amazonskr05
+  udp: true
+- name: 🇵🇱 58
+  server: 64.176.73.160
+  port: 8388
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: VJtsgllDDJfNmaTe
+  udp: true
+- name: '59'
+  server: 46.29.142.57
+  port: 4443
+  type: trojan
+  password: C0ldyfh-vpnjantit.com
+  sni: hu2.vpnjantit.com
+  udp: true
+- name: '60'
+  server: 109.206.241.10
+  port: 449
+  type: trojan
+  password: oiiaB38ywjEHCWRs_O_a_1113_Il_KeyyyHop_Bes1
+  sni: 109.206.241.10
+  skip-cert-verify: true
+  udp: true
+- name: 🇸🇬 61
+  server: 149.88.23.207
+  port: 18000
   type: vmess
-  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
-  alterId: 64
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+  alterId: 0
   cipher: auto
   tls: false
-  skip-cert-verify: true
-  servername: 112.132.215.108
   udp: true
-- name: '86'
-  server: fan.571589.xyz
-  port: 443
-  type: http
-  tls: true
-  skip-cert-verify: true
-  udp: true
-- name: 🇮🇳 87
-  server: fan.587475.xyz
-  port: 443
-  type: http
-  tls: true
-  skip-cert-verify: true
-  udp: true
-- name: 🇭🇰 88
+- name: 🇭🇰 62
   server: v10.hdacd.com
   port: 30807
   type: vmess
@@ -766,9 +592,63 @@ proxies:
   tls: false
   skip-cert-verify: false
   udp: true
-- name: 🇬🇧 89
-  server: v36.hdacd.com
-  port: 30836
+- name: '63'
+  server: 103.86.117.202
+  port: 443
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: '64'
+  server: hu2.vpnjantit.com
+  port: 4443
+  type: trojan
+  password: C0ldyfh-vpnjantit.com
+  sni: hu2.vpnjantit.com
+  udp: true
+- name: '65'
+  server: 103.160.107.116
+  port: 443
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 🇹🇼 66
+  server: r3mrcg001287h3p.cybervena.com
+  port: 50099
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: b1ae0fce-9340-4f2e-882d-fdb2218e2e2b
+  udp: true
+- name: 🇫🇷 67
+  server: 176.97.66.175
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.ignitelimit.com
+  udp: true
+- name: '68'
+  server: 118.107.222.231
+  port: 65443
+  type: ss
+  cipher: aes-256-cfb
+  password: 7eadc6dbe2ae
+  udp: true
+- name: '69'
+  server: fan.240104.xyz
+  port: 443
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 🇺🇸 70
+  server: v24.hdacd.com
+  port: 30824
   type: vmess
   uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
   alterId: 2
@@ -776,492 +656,36 @@ proxies:
   tls: false
   skip-cert-verify: true
   udp: true
-- name: 🇮🇳 90
-  server: fan.572609.xyz
+- name: '71'
+  server: 150552-nat-jk.barokah.net.id
   port: 443
   type: http
   tls: true
   skip-cert-verify: true
   udp: true
-- name: '91'
-  server: 118.107.222.231
-  port: 65443
-  type: ss
-  cipher: aes-256-cfb
-  password: 7eadc6dbe2ae
+- name: 🇸🇬 72
+  server: ww11.levikogjgfdd.ir
+  port: 18000
+  type: vmess
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+  alterId: 0
+  cipher: auto
+  tls: false
   udp: true
-- name: '92'
-  server: 121.46.230.137
-  port: 65443
-  type: ss
-  cipher: aes-256-cfb
-  password: 7eadc6dbe2ae
-  udp: true
-- name: '93'
-  server: 121.46.230.232
-  port: 65443
-  type: ss
-  cipher: aes-256-cfb
-  password: 7eadc6dbe2ae
-  udp: true
-- name: '94'
-  server: fan.240104.xyz
-  port: 443
-  type: http
-  tls: true
+- name: 🇸🇬 73
+  server: ww12.levikogjgfdd.ir
+  port: 50573
+  type: trojan
+  password: pvZE3UfT0ziK1omVLlsjINBqeqqwab1M
+  sni: ww12.levikogjgfdd.ir
   skip-cert-verify: true
   udp: true
-- name: 🇰🇷 95
-  server: dog-kr.kunlun01dns.com
-  port: 21005
-  type: vmess
-  uuid: 9464ca40-dd75-3742-a628-d931a9f413b2
-  alterId: 0
-  cipher: auto
-  tls: false
-  udp: true
-- name: 🇰🇷 96
-  server: dog-kr.kunlun01dns.com
-  port: 21006
-  type: vmess
-  uuid: 9464ca40-dd75-3742-a628-d931a9f413b2
-  alterId: 0
-  cipher: auto
-  tls: false
-  udp: true
-- name: 🇰🇷 97
-  server: dog-kr.kunlun01dns.com
-  port: 21004
-  type: vmess
-  uuid: 9464ca40-dd75-3742-a628-d931a9f413b2
-  alterId: 0
-  cipher: auto
-  tls: false
-  udp: true
-- name: 🇰🇷 98
-  server: dog-kr.kunlun01dns.com
-  port: 21003
-  type: vmess
-  uuid: 9464ca40-dd75-3742-a628-d931a9f413b2
-  alterId: 0
-  cipher: auto
-  tls: false
-  udp: true
-- name: 🇸🇬 99
-  server: dog-sg.kunlun01dns.com
-  port: 21027
-  type: vmess
-  uuid: 9464ca40-dd75-3742-a628-d931a9f413b2
-  alterId: 0
-  cipher: auto
-  tls: false
-  udp: true
-- name: 🇸🇬 100
-  server: dog-sg.kunlun01dns.com
-  port: 21026
-  type: vmess
-  uuid: 9464ca40-dd75-3742-a628-d931a9f413b2
-  alterId: 0
-  cipher: auto
-  tls: false
-  udp: true
-- name: 🇸🇬 101
-  server: dog-sg.kunlun01dns.com
-  port: 21028
-  type: vmess
-  uuid: 9464ca40-dd75-3742-a628-d931a9f413b2
-  alterId: 0
-  cipher: auto
-  tls: false
-  udp: true
-- name: 🇸🇬 102
-  server: dog-sg.kunlun01dns.com
-  port: 21029
-  type: vmess
-  uuid: 9464ca40-dd75-3742-a628-d931a9f413b2
-  alterId: 0
-  cipher: auto
-  tls: false
-  udp: true
-- name: 🇹🇼 103
-  server: dog-tw.kunlun01dns.com
-  port: 21036
-  type: vmess
-  uuid: 9464ca40-dd75-3742-a628-d931a9f413b2
-  alterId: 0
-  cipher: auto
-  tls: false
-  udp: true
-- name: 🇹🇼 104
-  server: dog-tw.kunlun01dns.com
-  port: 21037
-  type: vmess
-  uuid: 9464ca40-dd75-3742-a628-d931a9f413b2
-  alterId: 0
-  cipher: auto
-  tls: false
-  udp: true
-- name: 🇯🇵 105
-  server: dog-jp.kunlun01dns.com
-  port: 21017
-  type: vmess
-  uuid: 9464ca40-dd75-3742-a628-d931a9f413b2
-  alterId: 0
-  cipher: auto
-  tls: false
-  udp: true
-- name: 🇭🇰 106
-  server: dog-hk.kunlun01dns.com
-  port: 21022
-  type: vmess
-  uuid: 9464ca40-dd75-3742-a628-d931a9f413b2
-  alterId: 0
-  cipher: auto
-  tls: false
-  udp: true
-- name: 🇯🇵 107
-  server: dog-jp.kunlun01dns.com
-  port: 21014
-  type: vmess
-  uuid: 9464ca40-dd75-3742-a628-d931a9f413b2
-  alterId: 0
-  cipher: auto
-  tls: false
-  udp: true
-- name: 🇯🇵 108
-  server: dog-jp.kunlun01dns.com
-  port: 21016
-  type: vmess
-  uuid: 9464ca40-dd75-3742-a628-d931a9f413b2
-  alterId: 0
-  cipher: auto
-  tls: false
-  udp: true
-- name: 🇹🇼 109
-  server: dog-tw.kunlun01dns.com
-  port: 21034
-  type: vmess
-  uuid: 9464ca40-dd75-3742-a628-d931a9f413b2
-  alterId: 0
-  cipher: auto
-  tls: false
-  udp: true
-- name: 🇹🇼 110
-  server: dog-tw.kunlun01dns.com
-  port: 21035
-  type: vmess
-  uuid: 9464ca40-dd75-3742-a628-d931a9f413b2
-  alterId: 0
-  cipher: auto
-  tls: false
-  udp: true
-- name: 🇭🇰 111
-  server: dog-hk.kunlun01dns.com
-  port: 21041
-  type: vmess
-  uuid: 9464ca40-dd75-3742-a628-d931a9f413b2
-  alterId: 0
-  cipher: auto
-  tls: false
-  udp: true
-- name: 🇭🇰 112
-  server: dog-hk.kunlun01dns.com
-  port: 21018
-  type: vmess
-  uuid: 9464ca40-dd75-3742-a628-d931a9f413b2
-  alterId: 0
-  cipher: auto
-  tls: false
-  udp: true
-- name: 🇭🇰 113
-  server: dog-hk.kunlun01dns.com
-  port: 21021
-  type: vmess
-  uuid: 9464ca40-dd75-3742-a628-d931a9f413b2
-  alterId: 0
-  cipher: auto
-  tls: false
-  udp: true
-- name: 🇯🇵 114
-  server: dog-jp.kunlun01dns.com
-  port: 21015
-  type: vmess
-  uuid: 9464ca40-dd75-3742-a628-d931a9f413b2
-  alterId: 0
-  cipher: auto
-  tls: false
-  udp: true
-- name: 🇭🇰 115
-  server: dog-hk.kunlun01dns.com
-  port: 21019
-  type: vmess
-  uuid: 9464ca40-dd75-3742-a628-d931a9f413b2
-  alterId: 0
-  cipher: auto
-  tls: false
-  udp: true
-- name: 🇭🇰 116
-  server: dog-hk.kunlun01dns.com
-  port: 21020
-  type: vmess
-  uuid: 9464ca40-dd75-3742-a628-d931a9f413b2
-  alterId: 0
-  cipher: auto
-  tls: false
-  udp: true
-- name: 🇺🇸 117
-  server: dog-us.kunlun01dns.com
-  port: 21009
-  type: vmess
-  uuid: 9464ca40-dd75-3742-a628-d931a9f413b2
-  alterId: 0
-  cipher: auto
-  tls: false
-  udp: true
-- name: 🇺🇸 118
-  server: dog-us.kunlun01dns.com
-  port: 21012
-  type: vmess
-  uuid: 9464ca40-dd75-3742-a628-d931a9f413b2
-  alterId: 0
-  cipher: auto
-  tls: false
-  udp: true
-- name: 🇺🇸 119
-  server: dog-us.kunlun01dns.com
-  port: 21011
-  type: vmess
-  uuid: 9464ca40-dd75-3742-a628-d931a9f413b2
-  alterId: 0
-  cipher: auto
-  tls: false
-  udp: true
-- name: 🇺🇸 120
-  server: dog-us.kunlun01dns.com
-  port: 21010
-  type: vmess
-  uuid: 9464ca40-dd75-3742-a628-d931a9f413b2
-  alterId: 0
-  cipher: auto
-  tls: false
-  udp: true
-- name: '121'
+- name: '74'
   server: youxuan.cf.090227.xyz
   port: 80
   type: ss
   cipher: aes-128-gcm
   password: 47fcef29-ab4e-4aa6-932b-d95a18f28a4e
-  udp: true
-- name: 🇭🇰 122
-  server: 47.86.167.194
-  port: 800
-  type: vmess
-  uuid: f2c67cae-c09d-4739-947d-f5302d87a3c0
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  udp: true
-- name: 🇮🇳 123
-  server: 54.229.177.209
-  port: 443
-  type: ss
-  cipher: aes-256-cfb
-  password: amazonskr05
-  udp: true
-- name: '124'
-  server: 127.0.0.1
-  port: 80
-  type: vmess
-  uuid: 9464ca40-dd75-3742-a628-d931a9f413b2
-  alterId: 0
-  cipher: auto
-  tls: false
-  udp: true
-- name: 🇮🇳 125
-  server: 3.250.40.89
-  port: 443
-  type: ss
-  cipher: aes-256-cfb
-  password: amazonskr05
-  udp: true
-- name: 🇮🇳 126
-  server: 52.210.185.41
-  port: 443
-  type: ss
-  cipher: aes-256-cfb
-  password: amazonskr05
-  udp: true
-- name: '127'
-  server: 103.169.67.34
-  port: 65443
-  type: ss
-  cipher: aes-256-cfb
-  password: 7eadc6dbe2ae
-  udp: true
-- name: 🇬🇧 128
-  server: 35.178.200.252
-  port: 443
-  type: ss
-  cipher: aes-256-cfb
-  password: amazonskr05
-  udp: true
-- name: 🇬🇧 129
-  server: 13.40.17.62
-  port: 443
-  type: ss
-  cipher: aes-256-cfb
-  password: amazonskr05
-  udp: true
-- name: '130'
-  server: 127.0.0.53
-  port: 80
-  type: vmess
-  uuid: 88888888-8888-8888-8888-888888888888
-  alterId: 0
-  cipher: auto
-  tls: false
-  udp: true
-- name: '131'
-  server: 127.0.0.53
-  port: 81
-  type: vmess
-  uuid: 88888888-8888-8888-8888-888888888888
-  alterId: 0
-  cipher: auto
-  tls: false
-  udp: true
-- name: '132'
-  server: 127.0.0.53
-  port: 82
-  type: vmess
-  uuid: 88888888-8888-8888-8888-888888888888
-  alterId: 0
-  cipher: auto
-  tls: false
-  udp: true
-- name: '133'
-  server: 127.0.0.53
-  port: 83
-  type: vmess
-  uuid: 88888888-8888-8888-8888-888888888888
-  alterId: 0
-  cipher: auto
-  tls: false
-  udp: true
-- name: '134'
-  server: 127.0.0.53
-  port: 84
-  type: vmess
-  uuid: 88888888-8888-8888-8888-888888888888
-  alterId: 0
-  cipher: auto
-  tls: false
-  udp: true
-- name: '135'
-  server: 127.0.0.53
-  port: 85
-  type: vmess
-  uuid: 88888888-8888-8888-8888-888888888888
-  alterId: 0
-  cipher: auto
-  tls: false
-  udp: true
-- name: '136'
-  server: 127.0.0.53
-  port: 86
-  type: vmess
-  uuid: 88888888-8888-8888-8888-888888888888
-  alterId: 0
-  cipher: auto
-  tls: false
-  udp: true
-- name: '137'
-  server: 127.0.0.53
-  port: 87
-  type: vmess
-  uuid: 88888888-8888-8888-8888-888888888888
-  alterId: 0
-  cipher: auto
-  tls: false
-  udp: true
-- name: '138'
-  server: 127.0.0.53
-  port: 88
-  type: vmess
-  uuid: 88888888-8888-8888-8888-888888888888
-  alterId: 0
-  cipher: auto
-  tls: false
-  udp: true
-- name: '139'
-  server: 127.0.0.53
-  port: 89
-  type: vmess
-  uuid: 88888888-8888-8888-8888-888888888888
-  alterId: 0
-  cipher: auto
-  tls: false
-  udp: true
-- name: 🇮🇳 140
-  server: 103.236.66.4
-  port: 10001
-  type: ss
-  cipher: aes-256-gcm
-  password: Butterfly123@qwe9527
-  udp: true
-- name: 🇮🇳 141
-  server: 112.28.141.77
-  port: 10006
-  type: ss
-  cipher: aes-256-gcm
-  password: Butterfly123@qwe9527
-  udp: true
-- name: 🇭🇰 142
-  server: 43.199.146.46
-  port: 2716
-  type: trojan
-  password: BxceQaOe
-  sni: t.me%2Fripaojiedian
-  skip-cert-verify: true
-  udp: true
-- name: 🇸🇬 143
-  server: 13.215.162.132
-  port: 51391
-  type: trojan
-  password: BxceQaOe
-  sni: t.me%2Fripaojiedian
-  skip-cert-verify: true
-  udp: true
-- name: 🇯🇵 144
-  server: 35.73.128.210
-  port: 3893
-  type: trojan
-  password: BxceQaOe
-  sni: t.me%252Fripaojiedian
-  skip-cert-verify: true
-  udp: true
-- name: 🇮🇳 145
-  server: 103.236.66.4
-  port: 40001
-  type: ss
-  cipher: aes-256-gcm
-  password: Butterfly123@qwe9527
-  udp: true
-- name: 🇮🇳 146
-  server: 103.236.66.4
-  port: 40002
-  type: ss
-  cipher: aes-256-gcm
-  password: Butterfly123@qwe9527
-  udp: true
-- name: 🇸🇬 147
-  server: 54.251.190.150
-  port: 41142
-  type: trojan
-  password: BxceQaOe
-  sni: t.me%252Fripaojiedian
-  skip-cert-verify: true
   udp: true
 proxy-groups:
 - name: 🛑 广告拦截
@@ -1304,319 +728,192 @@ proxy-groups:
   interval: 300
   tolerance: 50
   proxies:
-  - 🇺🇸 01
+  - '01'
   - 🇺🇸 02
   - 🇺🇸 03
   - 🇺🇸 04
   - 🇺🇸 05
   - 🇺🇸 06
-  - 🇩🇪 07
-  - 🇮🇪 08
-  - 🇩🇪 09
-  - 🇯🇵 10
-  - 🇯🇵 11
-  - 🇯🇵 12
-  - 🇯🇵 13
-  - 🇯🇵 14
-  - 🇺🇸 15
-  - 🇹🇼 16
-  - 🇹🇼 17
-  - 🇹🇼 18
-  - 🇹🇼 19
-  - 🇩🇪 20
-  - 🇹🇼 21
-  - 🇹🇼 22
-  - 🇹🇼 23
-  - 🇹🇼 24
+  - 🇺🇸 07
+  - 🇺🇸 08
+  - 🇺🇸 09
+  - 🇺🇸 10
+  - 🇩🇪 11
+  - 🇩🇪 12
+  - 🇬🇧 13
+  - 🇬🇧 14
+  - 🇬🇧 15
+  - 🇬🇧 16
+  - 🇮🇪 17
+  - 🇯🇵 18
+  - 🇯🇵 19
+  - 🇭🇰 20
+  - 🇯🇵 21
+  - 🇺🇸 22
+  - 🇩🇪 23
+  - 🇭🇰 24
   - 🇭🇰 25
   - 🇭🇰 26
   - 🇭🇰 27
-  - 🇭🇰 28
-  - 🇭🇰 29
-  - 🇭🇰 30
-  - 🇭🇰 31
-  - 🇭🇰 32
-  - 🇭🇰 33
-  - 🇭🇰 34
-  - 🇭🇰 35
-  - 🇩🇪 36
-  - 🇭🇰 37
-  - 🇭🇰 38
-  - 🇺🇸 39
-  - 🇰🇷 40
-  - 🇯🇵 41
-  - 🇭🇰 42
-  - 🇭🇰 43
-  - 🇭🇰 44
+  - 🇳🇱 28
+  - 🇫🇷 29
+  - 🇺🇸 30
+  - 🇺🇸 31
+  - 🇫🇷 32
+  - 🇫🇷 33
+  - 🇺🇸 34
+  - 🇺🇸 35
+  - 🇺🇸 36
+  - 🇺🇸 37
+  - 🇫🇷 38
+  - 🇫🇷 39
+  - 🇫🇷 40
+  - 🇫🇷 41
+  - 🇫🇷 42
+  - '43'
+  - '44'
   - 🇺🇸 45
-  - 🇸🇬 46
-  - 🇩🇪 47
-  - 🇩🇪 48
-  - 🇬🇧 49
-  - 🇯🇵 50
-  - 🇭🇰 51
-  - 🇭🇰 52
-  - 🇭🇰 53
-  - 🇭🇰 54
-  - 🇯🇵 55
-  - 🇯🇵 56
-  - 🇯🇵 57
-  - 🇸🇬 58
-  - 🇺🇸 59
-  - 🇺🇸 60
-  - 🇹🇼 61
-  - 🇩🇪 62
-  - 🇩🇪 63
-  - 🇩🇪 64
-  - 🇩🇪 65
-  - 🇩🇪 66
-  - 🇩🇪 67
-  - 🇩🇪 68
+  - 🇫🇷 46
+  - '47'
+  - 🇺🇸 48
+  - 🇺🇸 49
+  - 🇫🇷 50
+  - '51'
+  - '52'
+  - '53'
+  - '54'
+  - 🇫🇷 55
+  - 🇫🇷 56
+  - 🇺🇸 57
+  - 🇵🇱 58
+  - '59'
+  - '60'
+  - 🇸🇬 61
+  - 🇭🇰 62
+  - '63'
+  - '64'
+  - '65'
+  - 🇹🇼 66
+  - 🇫🇷 67
+  - '68'
   - '69'
-  - 🇩🇪 70
-  - 🇺🇸 71
-  - '72'
-  - 🇺🇸 73
-  - 🇺🇸 74
-  - '75'
-  - '76'
-  - 🇺🇸 77
-  - '78'
-  - 🇳🇱 79
-  - 🇳🇱 80
-  - 🇳🇱 81
-  - '82'
-  - '83'
-  - 🇩🇪 84
-  - '85'
-  - '86'
-  - 🇮🇳 87
-  - 🇭🇰 88
-  - 🇬🇧 89
-  - 🇮🇳 90
-  - '91'
-  - '92'
-  - '93'
-  - '94'
-  - 🇰🇷 95
-  - 🇰🇷 96
-  - 🇰🇷 97
-  - 🇰🇷 98
-  - 🇸🇬 99
-  - 🇸🇬 100
-  - 🇸🇬 101
-  - 🇸🇬 102
-  - 🇹🇼 103
-  - 🇹🇼 104
-  - 🇯🇵 105
-  - 🇭🇰 106
-  - 🇯🇵 107
-  - 🇯🇵 108
-  - 🇹🇼 109
-  - 🇹🇼 110
-  - 🇭🇰 111
-  - 🇭🇰 112
-  - 🇭🇰 113
-  - 🇯🇵 114
-  - 🇭🇰 115
-  - 🇭🇰 116
-  - 🇺🇸 117
-  - 🇺🇸 118
-  - 🇺🇸 119
-  - 🇺🇸 120
-  - '121'
-  - 🇭🇰 122
-  - 🇮🇳 123
-  - '124'
-  - 🇮🇳 125
-  - 🇮🇳 126
-  - '127'
-  - 🇬🇧 128
-  - 🇬🇧 129
-  - '130'
-  - '131'
-  - '132'
-  - '133'
-  - '134'
-  - '135'
-  - '136'
-  - '137'
-  - '138'
-  - '139'
-  - 🇮🇳 140
-  - 🇮🇳 141
-  - 🇭🇰 142
-  - 🇸🇬 143
-  - 🇯🇵 144
-  - 🇮🇳 145
-  - 🇮🇳 146
-  - 🇸🇬 147
+  - 🇺🇸 70
+  - '71'
+  - 🇸🇬 72
+  - 🇸🇬 73
+  - '74'
 - name: 🇭🇰 香港节点
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
+  - 🇭🇰 20
+  - 🇭🇰 24
   - 🇭🇰 25
   - 🇭🇰 26
   - 🇭🇰 27
-  - 🇭🇰 28
-  - 🇭🇰 29
-  - 🇭🇰 30
-  - 🇭🇰 31
-  - 🇭🇰 32
-  - 🇭🇰 33
-  - 🇭🇰 34
-  - 🇭🇰 35
-  - 🇭🇰 37
-  - 🇭🇰 38
-  - 🇭🇰 42
-  - 🇭🇰 43
-  - 🇭🇰 44
-  - 🇭🇰 51
-  - 🇭🇰 52
-  - 🇭🇰 53
-  - 🇭🇰 54
-  - 🇭🇰 88
-  - 🇭🇰 106
-  - 🇭🇰 111
-  - 🇭🇰 112
-  - 🇭🇰 113
-  - 🇭🇰 115
-  - 🇭🇰 116
-  - 🇭🇰 122
-  - 🇭🇰 142
+  - 🇭🇰 62
 - name: 🇹🇼 台湾节点
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - 🇹🇼 16
-  - 🇹🇼 17
-  - 🇹🇼 18
-  - 🇹🇼 19
-  - 🇹🇼 21
-  - 🇹🇼 22
-  - 🇹🇼 23
-  - 🇹🇼 24
-  - 🇹🇼 61
-  - 🇹🇼 103
-  - 🇹🇼 104
-  - 🇹🇼 109
-  - 🇹🇼 110
+  - 🇹🇼 66
 - name: 🇯🇵 日本节点
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - 🇯🇵 10
-  - 🇯🇵 11
-  - 🇯🇵 12
-  - 🇯🇵 13
-  - 🇯🇵 14
-  - 🇯🇵 41
-  - 🇯🇵 50
-  - 🇯🇵 55
-  - 🇯🇵 56
-  - 🇯🇵 57
-  - 🇯🇵 105
-  - 🇯🇵 107
-  - 🇯🇵 108
-  - 🇯🇵 114
-  - 🇯🇵 144
+  - 🇯🇵 18
+  - 🇯🇵 19
+  - 🇯🇵 21
+  - 🇭🇰 27
 - name: 🇸🇬 新加坡节点
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - 🇸🇬 46
-  - 🇸🇬 58
-  - 🇸🇬 99
-  - 🇸🇬 100
-  - 🇸🇬 101
-  - 🇸🇬 102
-  - 🇸🇬 143
-  - 🇸🇬 147
+  - 🇸🇬 61
+  - 🇸🇬 72
+  - 🇸🇬 73
 - name: 🇺🇸 美国节点
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - 🇺🇸 01
   - 🇺🇸 02
   - 🇺🇸 03
   - 🇺🇸 04
   - 🇺🇸 05
   - 🇺🇸 06
-  - 🇺🇸 15
-  - 🇭🇰 37
-  - 🇺🇸 39
+  - 🇺🇸 07
+  - 🇺🇸 08
+  - 🇺🇸 09
+  - 🇺🇸 10
+  - 🇺🇸 22
+  - 🇭🇰 25
+  - 🇭🇰 26
+  - 🇺🇸 30
+  - 🇺🇸 31
+  - 🇺🇸 34
+  - 🇺🇸 35
+  - 🇺🇸 36
+  - 🇺🇸 37
   - 🇺🇸 45
-  - 🇺🇸 59
-  - 🇺🇸 60
-  - 🇺🇸 71
-  - 🇺🇸 73
-  - 🇺🇸 74
-  - 🇺🇸 77
-  - 🇺🇸 117
-  - 🇺🇸 118
-  - 🇺🇸 119
-  - 🇺🇸 120
+  - 🇺🇸 48
+  - 🇺🇸 49
+  - 🇺🇸 57
+  - 🇺🇸 70
 - name: 🇰🇷 韩国节点
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - 🇰🇷 40
-  - 🇰🇷 95
-  - 🇰🇷 96
-  - 🇰🇷 97
-  - 🇰🇷 98
+  - DIRECT
 - name: 🇬🇧 英国节点
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - 🇭🇰 43
-  - 🇬🇧 49
-  - 🇬🇧 89
-  - 🇬🇧 128
-  - 🇬🇧 129
+  - 🇬🇧 13
+  - 🇬🇧 14
+  - 🇬🇧 15
+  - 🇬🇧 16
 - name: 🇩🇪 德国节点
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - 🇩🇪 07
-  - 🇩🇪 09
-  - 🇩🇪 20
-  - 🇩🇪 36
-  - 🇭🇰 42
-  - 🇩🇪 47
-  - 🇩🇪 48
-  - 🇩🇪 62
-  - 🇩🇪 63
-  - 🇩🇪 64
-  - 🇩🇪 65
-  - 🇩🇪 66
-  - 🇩🇪 67
-  - 🇩🇪 68
-  - 🇩🇪 70
-  - 🇩🇪 84
+  - 🇩🇪 11
+  - 🇩🇪 12
+  - 🇩🇪 23
 - name: 🇫🇷 法国节点
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - DIRECT
+  - 🇫🇷 29
+  - 🇫🇷 32
+  - 🇫🇷 33
+  - 🇫🇷 38
+  - 🇫🇷 39
+  - 🇫🇷 40
+  - 🇫🇷 41
+  - 🇫🇷 42
+  - 🇫🇷 46
+  - 🇫🇷 50
+  - 🇫🇷 55
+  - 🇫🇷 56
+  - 🇫🇷 67
 - name: 🇷🇺 俄罗斯节点
   type: url-test
   url: http://www.gstatic.com/generate_204
