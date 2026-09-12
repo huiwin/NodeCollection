@@ -46,17 +46,17 @@ a:hover { text-decoration:underline; }
 <body>
 <div class="container">
 <h1>NodeCollection Pro</h1>
-<p class="subtitle">综合订阅 · 融合精选上游为底座 + 主订阅有效节点补充 · 更新时间: 2026-09-12 16:12:47 · v2.14.0</p>
+<p class="subtitle">综合订阅 · 融合精选上游为底座 + 主订阅有效节点补充 · 更新时间: 2026-09-12 22:33:26 · v2.14.0</p>
 
 <div class="cards">
-<div class="card"><div class="num">156</div><div class="label">解析节点总数</div></div>
-<div class="card green"><div class="num">69</div><div class="label">存活节点</div></div>
-<div class="card amber"><div class="num">44.2%</div><div class="label">可用率</div></div>
-<div class="card purple"><div class="num">213ms</div><div class="label">平均延迟</div></div>
-<div class="card pink"><div class="num">69</div><div class="label">最终输出</div></div>
-<div class="card"><div class="num">134</div><div class="label">主订阅补充</div></div>
-<div class="card"><div class="num">28</div><div class="label">剔除失效</div></div>
-<div class="card"><div class="num">59</div><div class="label">抖动剔除</div></div>
+<div class="card"><div class="num">152</div><div class="label">解析节点总数</div></div>
+<div class="card green"><div class="num">75</div><div class="label">存活节点</div></div>
+<div class="card amber"><div class="num">49.3%</div><div class="label">可用率</div></div>
+<div class="card purple"><div class="num">192ms</div><div class="label">平均延迟</div></div>
+<div class="card pink"><div class="num">75</div><div class="label">最终输出</div></div>
+<div class="card"><div class="num">130</div><div class="label">主订阅补充</div></div>
+<div class="card"><div class="num">21</div><div class="label">剔除失效</div></div>
+<div class="card"><div class="num">56</div><div class="label">抖动剔除</div></div>
 </div>
 
 <h2>📥 订阅链接 (综合订阅)</h2>
@@ -78,7 +78,7 @@ a:hover { text-decoration:underline; }
 <canvas id="latencyBar"></canvas>
 </div>
 <div class="chart-box" style="grid-column:1 / -1;">
-<h3>📈 历史质量趋势 (最近 13 轮)</h3>
+<h3>📈 历史质量趋势 (最近 14 轮)</h3>
 <canvas id="trendLine"></canvas>
 </div>
 </div>
@@ -86,23 +86,23 @@ a:hover { text-decoration:underline; }
 <h2>质量指标</h2>
 <table>
 <tr><th>指标</th><th>数值</th><th>说明</th></tr>
-<tr><td>最终输出节点数</td><td>69</td><td>排序截断后实际输出</td></tr>
-<tr><td>连续不可达剔除</td><td>28</td><td>连续失败达到阈值的节点</td></tr>
+<tr><td>最终输出节点数</td><td>75</td><td>排序截断后实际输出</td></tr>
+<tr><td>连续不可达剔除</td><td>21</td><td>连续失败达到阈值的节点</td></tr>
 <tr><td>总量截断</td><td>0</td><td>超过 MERGED_MAX_NODES 被截断</td></tr>
-<tr><td>主订阅补充</td><td>134</td><td>融合底座外补充的主订阅有效节点</td></tr>
-<tr><td>最小延迟</td><td>7ms</td><td>最快节点延迟</td></tr>
-<tr><td>最大延迟</td><td>2265ms</td><td>最慢节点延迟</td></tr>
+<tr><td>主订阅补充</td><td>130</td><td>融合底座外补充的主订阅有效节点</td></tr>
+<tr><td>最小延迟</td><td>6ms</td><td>最快节点延迟</td></tr>
+<tr><td>最大延迟</td><td>702ms</td><td>最慢节点延迟</td></tr>
 </table>
 
 <h2>上游贡献统计</h2>
 <table>
 <tr><th>来源</th><th>解析</th><th>去重后</th><th>可达</th><th>可用率</th><th>平均延迟</th><th>状态</th></tr>
-<tr><td>FreeNodes</td><td>44</td><td>9</td><td>9</td><td>100.0%</td><td>572ms</td><td><span style="color:#10b981">✅ 正常</span></td></tr>
-<tr><td>Jsnzkpg</td><td>36</td><td>1</td><td>1</td><td>100.0%</td><td>111ms</td><td><span style="color:#10b981">✅ 正常</span></td></tr>
-<tr><td>NoMoreWalls</td><td>171</td><td>7</td><td>7</td><td>100.0%</td><td>179ms</td><td><span style="color:#10b981">✅ 正常</span></td></tr>
-<tr><td>Pawdroid</td><td>20</td><td>5</td><td>5</td><td>100.0%</td><td>15ms</td><td><span style="color:#10b981">✅ 正常</span></td></tr>
-<tr><td>maflya</td><td>298</td><td>10</td><td>10</td><td>100.0%</td><td>245ms</td><td><span style="color:#10b981">✅ 正常</span></td></tr>
-<tr><td>主订阅</td><td>0</td><td>37</td><td>37</td><td>100.0%</td><td>153ms</td><td><span style="color:#10b981">✅ 正常</span></td></tr>
+<tr><td>FreeNodes</td><td>56</td><td>12</td><td>12</td><td>100.0%</td><td>320ms</td><td><span style="color:#10b981">✅ 正常</span></td></tr>
+<tr><td>Jsnzkpg</td><td>22</td><td>2</td><td>2</td><td>100.0%</td><td>310ms</td><td><span style="color:#10b981">✅ 正常</span></td></tr>
+<tr><td>NoMoreWalls</td><td>153</td><td>4</td><td>4</td><td>100.0%</td><td>172ms</td><td><span style="color:#10b981">✅ 正常</span></td></tr>
+<tr><td>Pawdroid</td><td>16</td><td>3</td><td>3</td><td>100.0%</td><td>6ms</td><td><span style="color:#10b981">✅ 正常</span></td></tr>
+<tr><td>maflya</td><td>254</td><td>8</td><td>8</td><td>100.0%</td><td>194ms</td><td><span style="color:#10b981">✅ 正常</span></td></tr>
+<tr><td>主订阅</td><td>0</td><td>46</td><td>46</td><td>100.0%</td><td>166ms</td><td><span style="color:#10b981">✅ 正常</span></td></tr>
 
 </table>
 
@@ -128,7 +128,7 @@ new Chart(pieCtx, {
   data: {
     labels: ["FreeNodes", "Jsnzkpg", "NoMoreWalls", "Pawdroid", "maflya", "主订阅"],
     datasets: [{
-      data: [9, 1, 7, 5, 10, 37],
+      data: [12, 2, 4, 3, 8, 46],
       backgroundColor: ["#38bdf8", "#10b981", "#f59e0b", "#a78bfa", "#f472b6", "#fb923c"],
       borderWidth: 2,
       borderColor: '#1e293b'
@@ -151,7 +151,7 @@ new Chart(barCtx, {
     labels: ["FreeNodes", "Jsnzkpg", "NoMoreWalls", "Pawdroid", "maflya", "主订阅"],
     datasets: [{
       label: '平均延迟 (ms)',
-      data: [572, 111, 179, 15, 245, 153],
+      data: [320, 310, 172, 6, 194, 166],
       backgroundColor: 'rgba(56,189,248,0.7)',
       borderColor: '#38bdf8',
       borderWidth: 1,
@@ -178,11 +178,11 @@ if (true) {
   new Chart(trendCtx, {
     type: 'line',
     data: {
-      labels: ["09-10", "09-10", "09-10", "09-10", "09-11", "09-11", "09-11", "09-11", "09-11", "09-12", "09-12", "09-12", "09-12"],
+      labels: ["09-10", "09-10", "09-10", "09-10", "09-11", "09-11", "09-11", "09-11", "09-11", "09-12", "09-12", "09-12", "09-12", "09-12"],
       datasets: [
         {
           label: '可用率 (%)',
-          data: [72.4, 57.1, 54.7, 56.7, 56.2, 76.6, 62.0, 53.2, 53.3, 51.7, 73.1, 69.6, 44.2],
+          data: [72.4, 57.1, 54.7, 56.7, 56.2, 76.6, 62.0, 53.2, 53.3, 51.7, 73.1, 69.6, 44.2, 49.3],
           borderColor: '#10b981',
           backgroundColor: 'rgba(16,185,129,0.15)',
           yAxisID: 'y',
@@ -192,7 +192,7 @@ if (true) {
         },
         {
           label: '平均延迟 (ms)',
-          data: [237, 227, 253, 255, 259, 256, 223, 221, 145, 160, 209, 256, 213],
+          data: [237, 227, 253, 255, 259, 256, 223, 221, 145, 160, 209, 256, 213, 192],
           borderColor: '#f59e0b',
           backgroundColor: 'rgba(245,158,11,0.1)',
           yAxisID: 'y1',
@@ -202,7 +202,7 @@ if (true) {
         },
         {
           label: '输出节点数',
-          data: [118, 93, 88, 89, 86, 150, 119, 84, 81, 76, 117, 110, 69],
+          data: [118, 93, 88, 89, 86, 150, 119, 84, 81, 76, 117, 110, 69, 75],
           borderColor: '#38bdf8',
           backgroundColor: 'rgba(56,189,248,0.1)',
           yAxisID: 'y1',
