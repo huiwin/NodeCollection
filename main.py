@@ -3432,6 +3432,19 @@ def compute_dynamic_caps(upstreams, history):
     return caps
 
 
+# P23 (v2.14.0): 告警冷却去重 — 同类告警限频
+# 背景: 综合订阅可用率持续 <50% 时, 每 4h 一轮 cron 都会触发同一条告警,
+# Server酱免费版每日仅 5 条配额, 刷屏告警会耗尽配额, 真实异常反而发不出去。
+# 设计: warning 6h 冷却 (每天最多 ~2 条同类), error 1h 冷却 (严重问题尽快重报),
+#       info 不冷却 (测试/通知用)。按 (title, level) 去重。
+ALERT_COOLDOWN_SECONDS = {
+    'error': 3600,
+    'warning': 6 * 3600,
+    'info': 0,
+}
+_alert_last_sent = {}
+
+
 def send_alert(title, message, level='info'):
     """
     P5 (v1.9.0, T5.6): 告警通知预留接口。
@@ -3447,6 +3460,19 @@ def send_alert(title, message, level='info'):
     if not ALERT_ENABLED:
         logger.debug(f'[T5.6] 告警未启用, 跳过: {title}')
         return
+
+    # P23: 冷却去重 (同类告警限频)
+    _key = f'{title}|{level}'
+    _cooldown = ALERT_COOLDOWN_SECONDS.get(level, 6 * 3600)
+    _now = time.time()
+    _last = _alert_last_sent.get(_key, 0)
+    if _cooldown > 0 and (_now - _last) < _cooldown:
+        logger.info(
+            f'[T5.6] 告警冷却中, 跳过: {title} '
+            f'(距上次 {int(_now - _last)}s < 冷却 {_cooldown}s)'
+        )
+        return
+    _alert_last_sent[_key] = _now
 
     try:
         webhook = ALERT_WEBHOOK_URL
