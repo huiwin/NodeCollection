@@ -3437,12 +3437,47 @@ def compute_dynamic_caps(upstreams, history):
 # Server酱免费版每日仅 5 条配额, 刷屏告警会耗尽配额, 真实异常反而发不出去。
 # 设计: warning 6h 冷却 (每天最多 ~2 条同类), error 1h 冷却 (严重问题尽快重报),
 #       info 不冷却 (测试/通知用)。按 (title, level) 去重。
+# P23.1: 冷却状态持久化到 index.json 顶层 alert_state 字段 —
+#   初始版用内存 dict, 但 GitHub Actions 每次运行是全新进程, 进程结束
+#   记录即丢失, 下轮 cron 照样重复发送。改为跨周期持久化 (与 P21.4
+#   merged 段持久化同一机制, index.json 跟随 git commit 跨周期保留)。
 ALERT_COOLDOWN_SECONDS = {
     'error': 3600,
     'warning': 6 * 3600,
     'info': 0,
 }
-_alert_last_sent = {}
+
+
+def _load_alert_state():
+    """从 index.json 读取告警冷却状态 {key: timestamp}。"""
+    try:
+        _p = os.path.join(OUTPUT_DIR, 'index.json')
+        if os.path.isfile(_p):
+            with open(_p, encoding='utf-8') as _f:
+                _d = json.load(_f)
+            _st = _d.get('alert_state', {}) if isinstance(_d, dict) else {}
+            return _st if isinstance(_st, dict) else {}
+    except Exception:
+        pass
+    return {}
+
+
+def _save_alert_state(state):
+    """把告警冷却状态写回 index.json 顶层 alert_state (保留其他字段)。"""
+    try:
+        _p = os.path.join(OUTPUT_DIR, 'index.json')
+        if os.path.isfile(_p):
+            with open(_p, encoding='utf-8') as _f:
+                _d = json.load(_f)
+            if not isinstance(_d, dict):
+                _d = {}
+        else:
+            _d = {}
+        _d['alert_state'] = state
+        with open(_p, 'w', encoding='utf-8') as _f:
+            json.dump(_d, _f, ensure_ascii=False, indent=2)
+    except Exception as _e:
+        logger.warning(f'[T5.6] 告警状态保存失败: {_e}')
 
 
 def send_alert(title, message, level='info'):
@@ -3461,18 +3496,19 @@ def send_alert(title, message, level='info'):
         logger.debug(f'[T5.6] 告警未启用, 跳过: {title}')
         return
 
-    # P23: 冷却去重 (同类告警限频)
+    # P23/P23.1: 冷却去重 (持久化状态, 跨 Actions 进程生效)
     _key = f'{title}|{level}'
     _cooldown = ALERT_COOLDOWN_SECONDS.get(level, 6 * 3600)
     _now = time.time()
-    _last = _alert_last_sent.get(_key, 0)
+    _last_sent = _load_alert_state()
+    _last = _last_sent.get(_key, 0)
     if _cooldown > 0 and (_now - _last) < _cooldown:
         logger.info(
             f'[T5.6] 告警冷却中, 跳过: {title} '
             f'(距上次 {int(_now - _last)}s < 冷却 {_cooldown}s)'
         )
         return
-    _alert_last_sent[_key] = _now
+    _last_sent[_key] = _now
 
     try:
         webhook = ALERT_WEBHOOK_URL
@@ -3507,6 +3543,7 @@ def send_alert(title, message, level='info'):
             resp = requests.post(webhook, json=payload, timeout=10)
         if resp.status_code == 200:
             logger.info(f'[T5.6] 告警发送成功: {title}')
+            _save_alert_state(_last_sent)  # P23.1: 仅发送成功才记录冷却
         else:
             logger.warning(f'[T5.6] 告警发送失败: HTTP {resp.status_code}')
     except Exception as e:
