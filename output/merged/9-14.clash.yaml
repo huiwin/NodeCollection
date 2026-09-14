@@ -6,7 +6,7 @@ log-level: info
 external-controller: :9090
 proxies:
 - name: 🇺🇸 01
-  server: 167.82.76.7
+  server: 151.101.56.101
   port: 443
   type: trojan
   password: MiTiVPN
@@ -14,24 +14,25 @@ proxies:
   skip-cert-verify: false
   network: ws
   ws-opts:
-    path: /---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/NLSs---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN
+    path: /---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/des---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN
     headers:
       Host: ssl.fastly.com
   udp: true
-- name: 🇫🇷 02
-  server: 141.101.90.101
+- name: 🇯🇵 02
+  server: 172.64.41.251
   port: 443
   type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
+  password: d83a390c-33c3-4577-9258-e062f8ebdc16
+  sni: oa1.hyas.space
+  skip-cert-verify: false
   network: ws
   ws-opts:
-    path: /assignment
+    path: /x7f9k2m4p8
     headers:
-      Host: www.ignitelimit.com
+      Host: oa1.hyas.space
   udp: true
 - name: 🇺🇸 03
-  server: 104.26.15.137
+  server: 104.21.8.107
   port: 443
   type: trojan
   password: humanity
@@ -42,8 +43,20 @@ proxies:
     headers:
       Host: www.ignitelimit.com
   udp: true
-- name: 🇧🇷 04
-  server: 188.114.97.7
+- name: 🇺🇸 04
+  server: 199.232.78.101
+  port: 443
+  type: trojan
+  password: MiTiVPN
+  sni: ssl.fastly.com
+  network: ws
+  ws-opts:
+    path: '---@bored_vpn'
+    headers:
+      Host: ssl.fastly.com
+  udp: true
+- name: 🇺🇸 05
+  server: www.speedtest.org
   port: 443
   type: trojan
   password: humanity
@@ -54,33 +67,28 @@ proxies:
     headers:
       Host: www.ignitelimit.com
   udp: true
-- name: 🇩🇪 05
+- name: 🇩🇪 06
   server: 64.177.90.30
   port: 8388
   type: ss
   cipher: aes-256-gcm
   password: BWyPPTusFKhGgzKh
   udp: true
-- name: 🇩🇪 06
-  server: 178.105.187.73
-  port: 8557
-  type: ss
-  cipher: 2022-blake3-aes-128-gcm
-  password: CDFvxFTDtN82wcL3jMRNPg==:9hc+aOTa6oOZuBPX9EUxvA==
+- name: 🇯🇵 07
+  server: z-jp1.1card.cc
+  port: 10011
+  type: trojan
+  password: ultra%40kWZdAzt_IH593eGLRjdxnBZ0
+  sni: www.cloudflare.com
+  skip-cert-verify: true
   udp: true
-- name: 🇮🇪 07
-  server: 63.180.254.10
-  port: 443
-  type: ss
-  cipher: aes-256-cfb
-  password: amazonskr05
-  udp: true
-- name: 🇰🇷 08
-  server: 49.254.204.134
-  port: 1774
-  type: ss
-  cipher: aes-256-cfb
-  password: 1234!@#$
+- name: 🇯🇵 08
+  server: z-jp1.1card.cc
+  port: 10010
+  type: trojan
+  password: ultra%40kWZdAzt_IH593eGLRjdxnBZ0
+  sni: www.cloudflare.com
+  skip-cert-verify: true
   udp: true
 - name: 🇯🇵 09
   server: z-jp2.1card.cc
@@ -98,63 +106,28 @@ proxies:
   sni: www.cloudflare.com
   skip-cert-verify: true
   udp: true
-- name: 🇺🇸 11
-  server: join-telegram-channel.tirexnet.kdns.fr
+- name: 🇮🇪 11
+  server: 63.180.254.10
   port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.ignitelimit.com
-  udp: true
-- name: 🇯🇵 12
-  server: z-jp1.1card.cc
-  port: 10010
-  type: trojan
-  password: ultra%40kWZdAzt_IH593eGLRjdxnBZ0
-  sni: www.cloudflare.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇯🇵 13
-  server: z-jp1.1card.cc
-  port: 10011
-  type: trojan
-  password: ultra%40kWZdAzt_IH593eGLRjdxnBZ0
-  sni: www.cloudflare.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇩🇪 14
-  server: 112.132.215.108
-  port: 50002
-  type: vmess
-  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
-  alterId: 64
-  cipher: auto
-  tls: false
-  udp: true
-- name: 🇺🇸 15
-  server: join-telegram-channel-tirexnet.trex.kdns.fr
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.ignitelimit.com
-  udp: true
-- name: 🇩🇪 16
-  server: 118.107.222.231
-  port: 65443
   type: ss
   cipher: aes-256-cfb
-  password: 7eadc6dbe2ae
+  password: amazonskr05
   udp: true
-- name: 🇭🇰 17
+- name: 🇰🇷 12
+  server: 49.254.204.134
+  port: 1774
+  type: ss
+  cipher: aes-256-cfb
+  password: 1234!@#$
+  udp: true
+- name: '13'
+  server: 158.173.221.214
+  port: 11001
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: c58d16e593d44f42
+  udp: true
+- name: 🇭🇰 14
   server: v10.hdacd.com
   port: 30807
   type: vmess
@@ -163,20 +136,14 @@ proxies:
   cipher: auto
   tls: false
   udp: true
-- name: 🇩🇪 18
-  server: de2.x8lab.org
-  port: 9433
-  type: trojan
-  password: TAJhE0BC0_S1JDm9EmQxyLS64uC8ekbr
-  sni: de2.x8lab.org
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /chatbot
-    headers:
-      Host: de2.x8lab.org
+- name: 🇩🇪 15
+  server: 118.107.222.231
+  port: 65443
+  type: ss
+  cipher: aes-256-cfb
+  password: 7eadc6dbe2ae
   udp: true
-- name: 🇭🇰 19
+- name: 🇭🇰 16
   server: v6.hdacd.com
   port: 30806
   type: vmess
@@ -185,16 +152,7 @@ proxies:
   cipher: auto
   tls: false
   udp: true
-- name: 🇭🇰 20
-  server: v4.hdacd.com
-  port: 30804
-  type: vmess
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 2
-  cipher: auto
-  tls: false
-  udp: true
-- name: 🇭🇰 21
+- name: 🇭🇰 17
   server: v24.hdacd.com
   port: 30824
   type: vmess
@@ -203,21 +161,367 @@ proxies:
   cipher: auto
   tls: false
   udp: true
-- name: 🇯🇵 22
-  server: 38.47.121.14
-  port: 49432
+- name: 🇭🇰 18
+  server: v4.hdacd.com
+  port: 30804
   type: vmess
-  uuid: ce94f204-ffa6-4fa8-a1dc-ecfccfd463cb
-  alterId: 0
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
   cipher: auto
   tls: false
-  network: http
-  http-opts:
-    method: GET
-    path:
-    - /
   udp: true
-- name: 🇫🇷 23
+- name: '19'
+  server: 172.67.74.2
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.ignitelimit.com
+  udp: true
+- name: '20'
+  server: 104.16.174.37
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.ignitelimit.com
+  udp: true
+- name: '21'
+  server: 8.6.112.0
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.ignitelimit.com
+  udp: true
+- name: '22'
+  server: 198.41.208.207
+  port: 443
+  type: trojan
+  password: d9f20a29-239e-46ab-82bb-fa0d69e480f9
+  sni: zxcvz.pages.dev
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /proxyip=proxy.seeck.cn/api/nodes?region=JP&limit=10&format=brand
+    headers:
+      Host: zxcvz.pages.dev
+  udp: true
+- name: '23'
+  server: 104.26.15.190
+  port: 443
+  type: trojan
+  password: d9f20a29-239e-46ab-82bb-fa0d69e480f9
+  sni: zxcvz.pages.dev
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /proxyip=proxy.seeck.cn/api/nodes?region=JP&limit=10&format=brand
+    headers:
+      Host: zxcvz.pages.dev
+  udp: true
+- name: '24'
+  server: 108.162.198.122
+  port: 443
+  type: trojan
+  password: d9f20a29-239e-46ab-82bb-fa0d69e480f9
+  sni: zxcvz.pages.dev
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /proxyip=proxy.seeck.cn/api/nodes?region=JP&limit=10&format=brand
+    headers:
+      Host: zxcvz.pages.dev
+  udp: true
+- name: '25'
+  server: 104.17.162.176
+  port: 443
+  type: trojan
+  password: d9f20a29-239e-46ab-82bb-fa0d69e480f9
+  sni: zxcvz.pages.dev
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /proxyip=proxy.seeck.cn/api/nodes?region=JP&limit=10&format=brand
+    headers:
+      Host: zxcvz.pages.dev
+  udp: true
+- name: '26'
+  server: 104.19.48.61
+  port: 443
+  type: trojan
+  password: d9f20a29-239e-46ab-82bb-fa0d69e480f9
+  sni: zxcvz.pages.dev
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /proxyip=proxy.seeck.cn/api/nodes?region=JP&limit=10&format=brand
+    headers:
+      Host: zxcvz.pages.dev
+  udp: true
+- name: '27'
+  server: 104.17.115.157
+  port: 443
+  type: trojan
+  password: d9f20a29-239e-46ab-82bb-fa0d69e480f9
+  sni: zxcvz.pages.dev
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /proxyip=proxy.seeck.cn/api/nodes?region=JP&limit=10&format=brand
+    headers:
+      Host: zxcvz.pages.dev
+  udp: true
+- name: '28'
+  server: 188.164.248.99
+  port: 443
+  type: trojan
+  password: d9f20a29-239e-46ab-82bb-fa0d69e480f9
+  sni: zxcvz.pages.dev
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /proxyip=proxy.seeck.cn/api/nodes?region=JP&limit=10&format=brand
+    headers:
+      Host: zxcvz.pages.dev
+  udp: true
+- name: '29'
+  server: 8.39.125.23
+  port: 443
+  type: trojan
+  password: d9f20a29-239e-46ab-82bb-fa0d69e480f9
+  sni: zxcvz.pages.dev
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /proxyip=proxy.seeck.cn/api/nodes?region=JP&limit=10&format=brand
+    headers:
+      Host: zxcvz.pages.dev
+  udp: true
+- name: '30'
+  server: 104.18.33.172
+  port: 443
+  type: trojan
+  password: d9f20a29-239e-46ab-82bb-fa0d69e480f9
+  sni: zxcvz.pages.dev
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /proxyip=proxy.seeck.cn/api/nodes?region=JP&limit=10&format=brand
+    headers:
+      Host: zxcvz.pages.dev
+  udp: true
+- name: '31'
+  server: 162.159.36.252
+  port: 443
+  type: trojan
+  password: d9f20a29-239e-46ab-82bb-fa0d69e480f9
+  sni: zxcvz.pages.dev
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /proxyip=proxy.seeck.cn/api/nodes?region=JP&limit=10&format=brand
+    headers:
+      Host: zxcvz.pages.dev
+  udp: true
+- name: '32'
+  server: 104.16.174.44
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.ignitelimit.com
+  udp: true
+- name: '33'
+  server: 104.19.34.79
+  port: 443
+  type: trojan
+  password: d9f20a29-239e-46ab-82bb-fa0d69e480f9
+  sni: zxcvz.pages.dev
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /proxyip=proxy.seeck.cn/api/nodes?region=JP&limit=10&format=brand
+    headers:
+      Host: zxcvz.pages.dev
+  udp: true
+- name: '34'
+  server: 198.41.209.76
+  port: 443
+  type: trojan
+  password: d9f20a29-239e-46ab-82bb-fa0d69e480f9
+  sni: zxcvz.pages.dev
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /proxyip=proxy.seeck.cn/api/nodes?region=JP&limit=10&format=brand
+    headers:
+      Host: zxcvz.pages.dev
+  udp: true
+- name: '35'
+  server: 104.19.145.237
+  port: 443
+  type: trojan
+  password: d9f20a29-239e-46ab-82bb-fa0d69e480f9
+  sni: zxcvz.pages.dev
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /proxyip=proxy.seeck.cn/api/nodes?region=JP&limit=10&format=brand
+    headers:
+      Host: zxcvz.pages.dev
+  udp: true
+- name: '36'
+  server: 104.17.189.61
+  port: 443
+  type: trojan
+  password: d9f20a29-239e-46ab-82bb-fa0d69e480f9
+  sni: zxcvz.pages.dev
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /proxyip=proxy.seeck.cn/api/nodes?region=JP&limit=10&format=brand
+    headers:
+      Host: zxcvz.pages.dev
+  udp: true
+- name: '37'
+  server: 188.164.248.161
+  port: 443
+  type: trojan
+  password: d9f20a29-239e-46ab-82bb-fa0d69e480f9
+  sni: zxcvz.pages.dev
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /proxyip=proxy.seeck.cn/api/nodes?region=JP&limit=10&format=brand
+    headers:
+      Host: zxcvz.pages.dev
+  udp: true
+- name: '38'
+  server: 188.164.248.207
+  port: 443
+  type: trojan
+  password: d9f20a29-239e-46ab-82bb-fa0d69e480f9
+  sni: zxcvz.pages.dev
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /proxyip=proxy.seeck.cn/api/nodes?region=JP&limit=10&format=brand
+    headers:
+      Host: zxcvz.pages.dev
+  udp: true
+- name: '39'
+  server: 104.16.148.209
+  port: 443
+  type: trojan
+  password: d9f20a29-239e-46ab-82bb-fa0d69e480f9
+  sni: zxcvz.pages.dev
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /proxyip=proxy.seeck.cn/api/nodes?region=JP&limit=10&format=brand
+    headers:
+      Host: zxcvz.pages.dev
+  udp: true
+- name: '40'
+  server: 188.164.248.227
+  port: 443
+  type: trojan
+  password: d9f20a29-239e-46ab-82bb-fa0d69e480f9
+  sni: zxcvz.pages.dev
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /proxyip=proxy.seeck.cn/api/nodes?region=JP&limit=10&format=brand
+    headers:
+      Host: zxcvz.pages.dev
+  udp: true
+- name: '41'
+  server: 162.159.32.116
+  port: 443
+  type: trojan
+  password: d9f20a29-239e-46ab-82bb-fa0d69e480f9
+  sni: zxcvz.pages.dev
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /proxyip=proxy.seeck.cn/api/nodes?region=JP&limit=10&format=brand
+    headers:
+      Host: zxcvz.pages.dev
+  udp: true
+- name: '42'
+  server: 91.193.59.132
+  port: 443
+  type: trojan
+  password: d9f20a29-239e-46ab-82bb-fa0d69e480f9
+  sni: zxcvz.pages.dev
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /proxyip=proxy.seeck.cn/api/nodes?region=JP&limit=10&format=brand
+    headers:
+      Host: zxcvz.pages.dev
+  udp: true
+- name: '43'
+  server: 104.17.18.14
+  port: 443
+  type: trojan
+  password: d9f20a29-239e-46ab-82bb-fa0d69e480f9
+  sni: zxcvz.pages.dev
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /proxyip=proxy.seeck.cn/api/nodes?region=JP&limit=10&format=brand
+    headers:
+      Host: zxcvz.pages.dev
+  udp: true
+- name: '44'
+  server: 172.67.78.60
+  port: 443
+  type: trojan
+  password: d9f20a29-239e-46ab-82bb-fa0d69e480f9
+  sni: zxcvz.pages.dev
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /proxyip=proxy.seeck.cn/api/nodes?region=JP&limit=10&format=brand
+    headers:
+      Host: zxcvz.pages.dev
+  udp: true
+- name: '45'
+  server: 104.17.124.31
+  port: 443
+  type: trojan
+  password: d9f20a29-239e-46ab-82bb-fa0d69e480f9
+  sni: zxcvz.pages.dev
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /proxyip=proxy.seeck.cn/api/nodes?region=JP&limit=10&format=brand
+    headers:
+      Host: zxcvz.pages.dev
+  udp: true
+- name: 🇫🇷 46
   server: 104.21.4.176
   port: 443
   type: trojan
@@ -229,31 +533,58 @@ proxies:
     headers:
       Host: 5Er0m2i2eNS2uLpg7SJd45UGqS.87fcvT2k11501YnO2TXm6yw-miPJ2Kr.worKerS.deV
   udp: true
-- name: 🇫🇷 24
-  server: 172.67.221.159
-  port: 443
+- name: 🇫🇷 47
+  server: 172.67.205.222
+  port: 2087
   type: trojan
-  password: Telegram_healer_config
-  sni: X0c3LQ1a15iP-65kc4-L1A1TX.CV4CgVQS05m-f4HG5xU07wIalM0.workeRs.dEV
+  password: eabf1999fefbb7d2
+  sni: WaYSi.wAYsI6688.WOrkeRS.deV
   network: ws
   ws-opts:
-    path: /tr/XDSHbKWRTEyuEeUs4isq9LG?ed=2560
+    path: /tr/sMpzOZ0eWEt6jbZ1jjN3BaM7LLoQ
     headers:
-      Host: X0c3LQ1a15iP-65kc4-L1A1TX.CV4CgVQS05m-f4HG5xU07wIalM0.workeRs.dEV
+      Host: WaYSi.wAYsI6688.WOrkeRS.deV
   udp: true
-- name: 🇫🇷 25
-  server: 188.114.97.8
+- name: '48'
+  server: 8.35.211.249
   port: 443
   type: trojan
-  password: Telegram_healer_config
-  sni: y9p34jPJMqjAZaYPF.pIiwdDIlXjcQEHR17aF22U7xK-yU.workers.DEv
+  password: d9f20a29-239e-46ab-82bb-fa0d69e480f9
+  sni: zxcvz.pages.dev
+  skip-cert-verify: true
   network: ws
   ws-opts:
-    path: /tr/SniOCmVMzIWOA1FDZDeGODGx2lS1LV?ed=2560
+    path: /proxyip=proxy.seeck.cn/api/nodes?region=JP&limit=10&format=brand
     headers:
-      Host: y9p34jPJMqjAZaYPF.pIiwdDIlXjcQEHR17aF22U7xK-yU.workers.DEv
+      Host: zxcvz.pages.dev
   udp: true
-- name: 🇫🇷 26
+- name: '49'
+  server: 91.193.58.246
+  port: 443
+  type: trojan
+  password: d9f20a29-239e-46ab-82bb-fa0d69e480f9
+  sni: zxcvz.pages.dev
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /proxyip=proxy.seeck.cn/api/nodes?region=JP&limit=10&format=brand
+    headers:
+      Host: zxcvz.pages.dev
+  udp: true
+- name: '50'
+  server: 198.41.209.107
+  port: 443
+  type: trojan
+  password: d9f20a29-239e-46ab-82bb-fa0d69e480f9
+  sni: zxcvz.pages.dev
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /proxyip=proxy.seeck.cn/api/nodes?region=JP&limit=10&format=brand
+    headers:
+      Host: zxcvz.pages.dev
+  udp: true
+- name: 🇫🇷 51
   server: 104.21.67.113
   port: 443
   type: trojan
@@ -265,7 +596,7 @@ proxies:
     headers:
       Host: x0C3lq1A15ip-65Kc4-l1A1tx.cv4CGvqS05m-F4Hg5xU07wIAlm0.wOrkerS.DeV
   udp: true
-- name: 🇳🇱 27
+- name: 🇳🇱 52
   server: 213.182.199.137
   port: 443
   type: trojan
@@ -278,88 +609,85 @@ proxies:
     headers:
       Host: www.pleadcourt.org
   udp: true
-- name: 🇫🇷 28
-  server: 172.67.205.222
-  port: 2087
-  type: trojan
-  password: eabf1999fefbb7d2
-  sni: WaYSi.wAYsI6688.WOrkeRS.deV
-  network: ws
-  ws-opts:
-    path: /tr/sMpzOZ0eWEt6jbZ1jjN3BaM7LLoQ
-    headers:
-      Host: WaYSi.wAYsI6688.WOrkeRS.deV
-  udp: true
-- name: 🇺🇸 29
-  server: 82.198.246.250
-  port: 180
-  type: vmess
-  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-  alterId: 0
-  cipher: auto
-  tls: false
-  udp: true
-- name: 🇫🇷 30
-  server: 172.67.188.109
+- name: '53'
+  server: 172.66.3.208
   port: 443
   type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.ignitelimit.com
-  udp: true
-- name: 🇫🇷 31
-  server: 104.21.8.63
-  port: 443
-  type: trojan
-  password: 5855d6850594830f
-  sni: AkbARIan34.j9Z65Ce2uyks.WoRKeRS.DEV
-  network: ws
-  ws-opts:
-    path: /tr/w2O3K3xXNYDKIxwOIw7?ed=2560
-    headers:
-      Host: AkbARIan34.j9Z65Ce2uyks.WoRKeRS.DEV
-  udp: true
-- name: '32'
-  server: 192.3.247.109
-  port: 43579
-  type: ss
-  cipher: aes-256-gcm
-  password: 8c009bb6-08b3-4526-a86b-5af7ddfc567a-4c757b72-6eec-4faf-8c2e-09fd1c7fa936
-  udp: true
-- name: 🇺🇸 33
-  server: 82.198.246.97
-  port: 180
-  type: vmess
-  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-  alterId: 0
-  cipher: auto
-  tls: false
-  udp: true
-- name: 🇫🇷 34
-  server: 104.21.70.21
-  port: 443
-  type: trojan
-  password: Telegram_healer_config
-  sni: 47hr9isj-655383snd63hjap38q6t.k-f3vpqaltfsxbtaxe.workers.dev
-  network: ws
-  ws-opts:
-    path: /tr/kp0IOvZwWV0X35ln0vIh?ed=2560
-    headers:
-      Host: 47hr9isj-655383snd63hjap38q6t.k-f3vpqaltfsxbtaxe.workers.dev
-  udp: true
-- name: '35'
-  server: 192.236.151.43
-  port: 443
-  type: trojan
-  password: OnHLrkVqZVtZyulTwC4bHrIbW7GyUDttKVNGEYVR12Y=
-  sni: gpt-tunnel.local
+  password: d9f20a29-239e-46ab-82bb-fa0d69e480f9
+  sni: zxcvz.pages.dev
   skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /proxyip=proxy.seeck.cn/api/nodes?region=JP&limit=10&format=brand
+    headers:
+      Host: zxcvz.pages.dev
   udp: true
-- name: '36'
+- name: '54'
+  server: 104.17.110.159
+  port: 443
+  type: trojan
+  password: d9f20a29-239e-46ab-82bb-fa0d69e480f9
+  sni: zxcvz.pages.dev
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /proxyip=proxy.seeck.cn/api/nodes?region=JP&limit=10&format=brand
+    headers:
+      Host: zxcvz.pages.dev
+  udp: true
+- name: '55'
+  server: 104.16.157.241
+  port: 443
+  type: trojan
+  password: d9f20a29-239e-46ab-82bb-fa0d69e480f9
+  sni: zxcvz.pages.dev
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /proxyip=proxy.seeck.cn/api/nodes?region=JP&limit=10&format=brand
+    headers:
+      Host: zxcvz.pages.dev
+  udp: true
+- name: '56'
+  server: 172.66.3.91
+  port: 443
+  type: trojan
+  password: d9f20a29-239e-46ab-82bb-fa0d69e480f9
+  sni: zxcvz.pages.dev
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /proxyip=proxy.seeck.cn/api/nodes?region=JP&limit=10&format=brand
+    headers:
+      Host: zxcvz.pages.dev
+  udp: true
+- name: '57'
+  server: 188.164.248.104
+  port: 443
+  type: trojan
+  password: d9f20a29-239e-46ab-82bb-fa0d69e480f9
+  sni: zxcvz.pages.dev
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /proxyip=proxy.seeck.cn/api/nodes?region=JP&limit=10&format=brand
+    headers:
+      Host: zxcvz.pages.dev
+  udp: true
+- name: '58'
+  server: 104.17.16.55
+  port: 443
+  type: trojan
+  password: d9f20a29-239e-46ab-82bb-fa0d69e480f9
+  sni: zxcvz.pages.dev
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /proxyip=proxy.seeck.cn/api/nodes?region=JP&limit=10&format=brand
+    headers:
+      Host: zxcvz.pages.dev
+  udp: true
+- name: '59'
   server: www.shopify.com
   port: 443
   type: trojan
@@ -372,7 +700,216 @@ proxies:
     headers:
       Host: swjsb.1f1v.t8t.hh.vavava.kdns.fr
   udp: true
-- name: 🇫🇷 37
+- name: '60'
+  server: 104.16.152.80
+  port: 443
+  type: trojan
+  password: d9f20a29-239e-46ab-82bb-fa0d69e480f9
+  sni: zxcvz.pages.dev
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /proxyip=proxy.seeck.cn/api/nodes?region=JP&limit=10&format=brand
+    headers:
+      Host: zxcvz.pages.dev
+  udp: true
+- name: '61'
+  server: 104.17.223.142
+  port: 443
+  type: trojan
+  password: d9f20a29-239e-46ab-82bb-fa0d69e480f9
+  sni: zxcvz.pages.dev
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /proxyip=proxy.seeck.cn/api/nodes?region=JP&limit=10&format=brand
+    headers:
+      Host: zxcvz.pages.dev
+  udp: true
+- name: '62'
+  server: 192.3.247.109
+  port: 43579
+  type: ss
+  cipher: aes-256-gcm
+  password: 8c009bb6-08b3-4526-a86b-5af7ddfc567a-4c757b72-6eec-4faf-8c2e-09fd1c7fa936
+  udp: true
+- name: '63'
+  server: 104.17.144.7
+  port: 443
+  type: trojan
+  password: d9f20a29-239e-46ab-82bb-fa0d69e480f9
+  sni: zxcvz.pages.dev
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /proxyip=proxy.seeck.cn/api/nodes?region=JP&limit=10&format=brand
+    headers:
+      Host: zxcvz.pages.dev
+  udp: true
+- name: '64'
+  server: 104.16.149.97
+  port: 443
+  type: trojan
+  password: d9f20a29-239e-46ab-82bb-fa0d69e480f9
+  sni: zxcvz.pages.dev
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /proxyip=proxy.seeck.cn/api/nodes?region=JP&limit=10&format=brand
+    headers:
+      Host: zxcvz.pages.dev
+  udp: true
+- name: '65'
+  server: 162.159.38.193
+  port: 443
+  type: trojan
+  password: d9f20a29-239e-46ab-82bb-fa0d69e480f9
+  sni: zxcvz.pages.dev
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /proxyip=proxy.seeck.cn/api/nodes?region=JP&limit=10&format=brand
+    headers:
+      Host: zxcvz.pages.dev
+  udp: true
+- name: '66'
+  server: 104.17.221.253
+  port: 443
+  type: trojan
+  password: d9f20a29-239e-46ab-82bb-fa0d69e480f9
+  sni: zxcvz.pages.dev
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /proxyip=proxy.seeck.cn/api/nodes?region=JP&limit=10&format=brand
+    headers:
+      Host: zxcvz.pages.dev
+  udp: true
+- name: 🇫🇷 67
+  server: 188.114.97.8
+  port: 443
+  type: trojan
+  password: Telegram_healer_config
+  sni: y9p34jPJMqjAZaYPF.pIiwdDIlXjcQEHR17aF22U7xK-yU.workers.DEv
+  network: ws
+  ws-opts:
+    path: /tr/SniOCmVMzIWOA1FDZDeGODGx2lS1LV?ed=2560
+    headers:
+      Host: y9p34jPJMqjAZaYPF.pIiwdDIlXjcQEHR17aF22U7xK-yU.workers.DEv
+  udp: true
+- name: '68'
+  server: 172.67.188.109
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.ignitelimit.com
+  udp: true
+- name: '69'
+  server: 104.17.123.195
+  port: 443
+  type: trojan
+  password: d9f20a29-239e-46ab-82bb-fa0d69e480f9
+  sni: zxcvz.pages.dev
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /proxyip=proxy.seeck.cn/api/nodes?region=JP&limit=10&format=brand
+    headers:
+      Host: zxcvz.pages.dev
+  udp: true
+- name: '70'
+  server: 8.35.211.224
+  port: 443
+  type: trojan
+  password: d9f20a29-239e-46ab-82bb-fa0d69e480f9
+  sni: zxcvz.pages.dev
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /proxyip=proxy.seeck.cn/api/nodes?region=JP&limit=10&format=brand
+    headers:
+      Host: zxcvz.pages.dev
+  udp: true
+- name: '71'
+  server: 104.16.240.248
+  port: 443
+  type: trojan
+  password: d9f20a29-239e-46ab-82bb-fa0d69e480f9
+  sni: zxcvz.pages.dev
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /proxyip=proxy.seeck.cn/api/nodes?region=JP&limit=10&format=brand
+    headers:
+      Host: zxcvz.pages.dev
+  udp: true
+- name: 🇫🇷 72
+  server: 104.21.70.21
+  port: 443
+  type: trojan
+  password: Telegram_healer_config
+  sni: 47hr9isj-655383snd63hjap38q6t.k-f3vpqaltfsxbtaxe.workers.dev
+  network: ws
+  ws-opts:
+    path: /tr/kp0IOvZwWV0X35ln0vIh?ed=2560
+    headers:
+      Host: 47hr9isj-655383snd63hjap38q6t.k-f3vpqaltfsxbtaxe.workers.dev
+  udp: true
+- name: 🇺🇸 73
+  server: 82.198.246.97
+  port: 180
+  type: vmess
+  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+  alterId: 0
+  cipher: auto
+  tls: false
+  udp: true
+- name: '74'
+  server: 104.19.34.100
+  port: 443
+  type: trojan
+  password: d9f20a29-239e-46ab-82bb-fa0d69e480f9
+  sni: zxcvz.pages.dev
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /proxyip=proxy.seeck.cn/api/nodes?region=JP&limit=10&format=brand
+    headers:
+      Host: zxcvz.pages.dev
+  udp: true
+- name: '75'
+  server: 104.17.25.226
+  port: 443
+  type: trojan
+  password: d9f20a29-239e-46ab-82bb-fa0d69e480f9
+  sni: zxcvz.pages.dev
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /proxyip=proxy.seeck.cn/api/nodes?region=JP&limit=10&format=brand
+    headers:
+      Host: zxcvz.pages.dev
+  udp: true
+- name: '76'
+  server: 162.159.38.196
+  port: 443
+  type: trojan
+  password: d9f20a29-239e-46ab-82bb-fa0d69e480f9
+  sni: zxcvz.pages.dev
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /proxyip=proxy.seeck.cn/api/nodes?region=JP&limit=10&format=brand
+    headers:
+      Host: zxcvz.pages.dev
+  udp: true
+- name: 🇫🇷 77
   server: 5er0m2i2ens2ulpg7sjd45ugqs.87fcvt2k11501yno2txm6yw-mipj2kr.workers.dev
   port: 443
   type: trojan
@@ -384,21 +921,153 @@ proxies:
     headers:
       Host: 5Er0m2I2eNS2ULPg7Sjd45UGQs.87FCVt2K11501YnO2txm6yw-MiPJ2KR.worKERs.dEV
   udp: true
-- name: '38'
+- name: '78'
+  server: 162.159.34.92
+  port: 443
+  type: trojan
+  password: d9f20a29-239e-46ab-82bb-fa0d69e480f9
+  sni: zxcvz.pages.dev
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /proxyip=proxy.seeck.cn/api/nodes?region=JP&limit=10&format=brand
+    headers:
+      Host: zxcvz.pages.dev
+  udp: true
+- name: '79'
+  server: 198.41.208.3
+  port: 443
+  type: trojan
+  password: d9f20a29-239e-46ab-82bb-fa0d69e480f9
+  sni: zxcvz.pages.dev
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /proxyip=proxy.seeck.cn/api/nodes?region=JP&limit=10&format=brand
+    headers:
+      Host: zxcvz.pages.dev
+  udp: true
+- name: '80'
+  server: 162.159.39.26
+  port: 443
+  type: trojan
+  password: d9f20a29-239e-46ab-82bb-fa0d69e480f9
+  sni: zxcvz.pages.dev
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /proxyip=proxy.seeck.cn/api/nodes?region=JP&limit=10&format=brand
+    headers:
+      Host: zxcvz.pages.dev
+  udp: true
+- name: '81'
+  server: 104.17.29.183
+  port: 443
+  type: trojan
+  password: d9f20a29-239e-46ab-82bb-fa0d69e480f9
+  sni: zxcvz.pages.dev
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /proxyip=proxy.seeck.cn/api/nodes?region=JP&limit=10&format=brand
+    headers:
+      Host: zxcvz.pages.dev
+  udp: true
+- name: '82'
+  server: 162.159.38.48
+  port: 443
+  type: trojan
+  password: d9f20a29-239e-46ab-82bb-fa0d69e480f9
+  sni: zxcvz.pages.dev
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /proxyip=proxy.seeck.cn/api/nodes?region=JP&limit=10&format=brand
+    headers:
+      Host: zxcvz.pages.dev
+  udp: true
+- name: '83'
+  server: 192.236.151.43
+  port: 443
+  type: trojan
+  password: OnHLrkVqZVtZyulTwC4bHrIbW7GyUDttKVNGEYVR12Y=
+  sni: gpt-tunnel.local
+  skip-cert-verify: true
+  udp: true
+- name: '84'
+  server: 104.17.161.50
+  port: 443
+  type: trojan
+  password: d9f20a29-239e-46ab-82bb-fa0d69e480f9
+  sni: zxcvz.pages.dev
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /proxyip=proxy.seeck.cn/api/nodes?region=JP&limit=10&format=brand
+    headers:
+      Host: zxcvz.pages.dev
+  udp: true
+- name: 🇫🇷 85
+  server: 172.67.221.159
+  port: 443
+  type: trojan
+  password: Telegram_healer_config
+  sni: X0c3LQ1a15iP-65kc4-L1A1TX.CV4CgVQS05m-f4HG5xU07wIalM0.workeRs.dEV
+  network: ws
+  ws-opts:
+    path: /tr/XDSHbKWRTEyuEeUs4isq9LG?ed=2560
+    headers:
+      Host: X0c3LQ1a15iP-65kc4-L1A1TX.CV4CgVQS05m-f4HG5xU07wIalM0.workeRs.dEV
+  udp: true
+- name: 🇫🇷 86
+  server: 104.21.8.63
+  port: 443
+  type: trojan
+  password: 5855d6850594830f
+  sni: AkbARIan34.j9Z65Ce2uyks.WoRKeRS.DEV
+  network: ws
+  ws-opts:
+    path: /tr/w2O3K3xXNYDKIxwOIw7?ed=2560
+    headers:
+      Host: AkbARIan34.j9Z65Ce2uyks.WoRKeRS.DEV
+  udp: true
+- name: 🇺🇸 87
+  server: 82.198.246.250
+  port: 180
+  type: vmess
+  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+  alterId: 0
+  cipher: auto
+  tls: false
+  udp: true
+- name: '88'
+  server: uwu.blueknightnet.qzz.io
+  port: 2087
+  type: trojan
+  password: 51oeqnj11lq5mljn
+  sni: uwu.dianaw.cc.cd
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /@BlueKnight_net--@BlueKnight_net--@BlueKnight_net
+    headers:
+      Host: uwu.dianaw.cc.cd
+  udp: true
+- name: '89'
+  server: fan.226278.xyz
+  port: 443
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: '90'
   server: fan.596189.xyz
   port: 443
   type: http
   tls: true
   skip-cert-verify: true
   udp: true
-- name: '39'
-  server: 38.154.185.97
-  port: 6370
-  type: socks5
-  username: hxvezfcd
-  password: s66je14cquxt
-  udp: true
-- name: 🇫🇷 40
+- name: 🇫🇷 91
   server: www.speedtest.net
   port: 443
   type: trojan
@@ -410,99 +1079,21 @@ proxies:
     headers:
       Host: www.ignitelimit.com
   udp: true
-- name: '41'
-  server: fan.226278.xyz
-  port: 443
-  type: http
-  tls: true
-  skip-cert-verify: true
+- name: '92'
+  server: 38.154.185.97
+  port: 6370
+  type: socks5
+  username: hxvezfcd
+  password: s66je14cquxt
   udp: true
-- name: '42'
+- name: '93'
   server: 45.192.242.201
   port: 8888
   type: socks5
   username: u7596550055
   password: rPJuaFd6KSODJoXz
   udp: true
-- name: '43'
-  server: 158.173.221.214
-  port: 11001
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: c58d16e593d44f42
-  udp: true
-- name: 🇺🇸 44
-  server: 63.180.254.10
-  port: 443
-  type: ss
-  cipher: aes-256-cfb
-  password: amazonskr05
-  udp: true
-- name: '45'
-  server: 49.254.204.134
-  port: 1774
-  type: ss
-  cipher: aes-256-cfb
-  password: 1234!@#$
-  udp: true
-- name: 🇫🇷 46
-  server: 91.245.225.79
-  port: 2053
-  type: trojan
-  password: humanity
-  sni: www.calmlunch.com
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.calmlunch.com
-  udp: true
-- name: '47'
-  server: 46.29.142.57
-  port: 4443
-  type: trojan
-  password: C0ldyfh-vpnjantit.com
-  sni: hu2.vpnjantit.com
-  udp: true
-- name: 🇵🇱 48
-  server: 64.176.73.160
-  port: 8388
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: VJtsgllDDJfNmaTe
-  udp: true
-- name: '49'
-  server: 109.206.241.10
-  port: 449
-  type: trojan
-  password: oiiaB38ywjEHCWRs_O_a_1113_Il_KeyyyHop_Bes1
-  sni: 109.206.241.10
-  skip-cert-verify: true
-  udp: true
-- name: 🇸🇬 50
-  server: 149.88.23.207
-  port: 18000
-  type: vmess
-  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
-  alterId: 0
-  cipher: auto
-  tls: false
-  udp: true
-- name: '51'
-  server: 103.86.117.202
-  port: 443
-  type: http
-  tls: true
-  skip-cert-verify: true
-  udp: true
-- name: '52'
-  server: hu2.vpnjantit.com
-  port: 4443
-  type: trojan
-  password: C0ldyfh-vpnjantit.com
-  sni: hu2.vpnjantit.com
-  udp: true
-- name: 🇫🇷 53
+- name: 🇫🇷 94
   server: 166.1.36.83
   port: 443
   type: trojan
@@ -514,28 +1105,56 @@ proxies:
     headers:
       Host: www.calmlunch.com
   udp: true
-- name: '54'
-  server: fan.240104.xyz
-  port: 443
-  type: http
-  tls: true
-  skip-cert-verify: true
+- name: '95'
+  server: 146.70.23.32
+  port: 8080
+  type: ss
+  cipher: rc4-md5
+  password: 14fFPrbezE3HDZzsMOr6
   udp: true
-- name: '55'
-  server: 118.107.222.231
-  port: 65443
+- name: 🇺🇸 96
+  server: 63.180.254.10
+  port: 443
   type: ss
   cipher: aes-256-cfb
-  password: 7eadc6dbe2ae
+  password: amazonskr05
   udp: true
-- name: 🇹🇼 56
+- name: 🇫🇷 97
+  server: 91.245.225.79
+  port: 2053
+  type: trojan
+  password: humanity
+  sni: www.calmlunch.com
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.calmlunch.com
+  udp: true
+- name: '98'
+  server: 49.254.204.134
+  port: 1774
+  type: ss
+  cipher: aes-256-cfb
+  password: 1234!@#$
+  udp: true
+- name: 🇹🇼 99
   server: r3mrcg001287h3p.cybervena.com
   port: 50099
   type: ss
   cipher: chacha20-ietf-poly1305
   password: b1ae0fce-9340-4f2e-882d-fdb2218e2e2b
   udp: true
-- name: 🇭🇰 57
+- name: 🇸🇬 100
+  server: 149.88.23.207
+  port: 18000
+  type: vmess
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+  alterId: 0
+  cipher: auto
+  tls: false
+  udp: true
+- name: 🇭🇰 101
   server: v10.hdacd.com
   port: 30807
   type: vmess
@@ -545,21 +1164,133 @@ proxies:
   tls: false
   skip-cert-verify: false
   udp: true
-- name: '58'
-  server: 103.160.107.116
-  port: 443
-  type: http
-  tls: true
-  skip-cert-verify: true
+- name: 🇸🇬 102
+  server: 85.149.211.166
+  port: 8443
+  type: ss
+  cipher: 2022-blake3-aes-128-gcm
+  password: YWJhNmUwZDI5NGE4YTZkOA==:NGUzNjViMzctYzk0ZC00YQ==
   udp: true
-- name: 🇰🇷 59
+- name: 🇸🇬 103
+  server: 85.149.211.166
+  port: 443
+  type: ss
+  cipher: 2022-blake3-aes-128-gcm
+  password: YWJhNmUwZDI5NGE4YTZkOA==:NGUzNjViMzctYzk0ZC00YQ==
+  udp: true
+- name: 🇵🇱 104
+  server: 64.176.73.160
+  port: 8388
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: VJtsgllDDJfNmaTe
+  udp: true
+- name: 🇰🇷 105
   server: 141.164.45.187
   port: 8091
   type: ss
   cipher: aes-256-gcm
   password: PCnnH6SQSnfoS27
   udp: true
-- name: 🇫🇷 60
+- name: '106'
+  server: 46.29.142.57
+  port: 4443
+  type: trojan
+  password: C0ldyfh-vpnjantit.com
+  sni: hu2.vpnjantit.com
+  udp: true
+- name: '107'
+  server: 103.86.117.202
+  port: 443
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: '108'
+  server: 109.206.241.10
+  port: 449
+  type: trojan
+  password: oiiaB38ywjEHCWRs_O_a_1113_Il_KeyyyHop_Bes1
+  sni: 109.206.241.10
+  skip-cert-verify: true
+  udp: true
+- name: '109'
+  server: fan.240104.xyz
+  port: 443
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: '110'
+  server: hu2.vpnjantit.com
+  port: 4443
+  type: trojan
+  password: C0ldyfh-vpnjantit.com
+  sni: hu2.vpnjantit.com
+  udp: true
+- name: '111'
+  server: 118.107.222.231
+  port: 65443
+  type: ss
+  cipher: aes-256-cfb
+  password: 7eadc6dbe2ae
+  udp: true
+- name: '112'
+  server: 103.160.107.116
+  port: 443
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: '113'
+  server: 158.173.221.214
+  port: 11001
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: c58d16e593d44f42
+  udp: true
+- name: 🇸🇬 114
+  server: ww11.levikogjgfdd.ir
+  port: 18000
+  type: vmess
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+  alterId: 0
+  cipher: auto
+  tls: false
+  udp: true
+- name: 🇺🇸 115
+  server: v24.hdacd.com
+  port: 30824
+  type: vmess
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
+  cipher: auto
+  tls: false
+  skip-cert-verify: true
+  udp: true
+- name: '116'
+  server: youxuan.cf.090227.xyz
+  port: 80
+  type: ss
+  cipher: aes-128-gcm
+  password: 47fcef29-ab4e-4aa6-932b-d95a18f28a4e
+  udp: true
+- name: 🇸🇬 117
+  server: ww12.levikogjgfdd.ir
+  port: 50573
+  type: trojan
+  password: pvZE3UfT0ziK1omVLlsjINBqeqqwab1M
+  sni: ww12.levikogjgfdd.ir
+  skip-cert-verify: true
+  udp: true
+- name: '118'
+  server: 150552-nat-jk.barokah.net.id
+  port: 443
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 🇫🇷 119
   server: 176.97.66.175
   port: 443
   type: trojan
@@ -570,60 +1301,6 @@ proxies:
     path: /assignment
     headers:
       Host: www.ignitelimit.com
-  udp: true
-- name: 🇩🇪 61
-  server: de2.x8lab.org
-  port: 9433
-  type: trojan
-  password: TAJhE0BC0_S1JDm9EmQxyLS64uC8ekbr
-  sni: de2.x8lab.org
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /chatbot
-    headers:
-      Host: de2.x8lab.org
-  udp: true
-- name: 🇸🇬 62
-  server: ww12.levikogjgfdd.ir
-  port: 50573
-  type: trojan
-  password: pvZE3UfT0ziK1omVLlsjINBqeqqwab1M
-  sni: ww12.levikogjgfdd.ir
-  skip-cert-verify: true
-  udp: true
-- name: 🇸🇬 63
-  server: ww11.levikogjgfdd.ir
-  port: 18000
-  type: vmess
-  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
-  alterId: 0
-  cipher: auto
-  tls: false
-  udp: true
-- name: 🇺🇸 64
-  server: v24.hdacd.com
-  port: 30824
-  type: vmess
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 2
-  cipher: auto
-  tls: false
-  skip-cert-verify: true
-  udp: true
-- name: '65'
-  server: 150552-nat-jk.barokah.net.id
-  port: 443
-  type: http
-  tls: true
-  skip-cert-verify: true
-  udp: true
-- name: '66'
-  server: youxuan.cf.090227.xyz
-  port: 80
-  type: ss
-  cipher: aes-128-gcm
-  password: 47fcef29-ab4e-4aa6-932b-d95a18f28a4e
   udp: true
 proxy-groups:
 - name: 🛑 广告拦截
@@ -667,110 +1344,165 @@ proxy-groups:
   tolerance: 50
   proxies:
   - 🇺🇸 01
-  - 🇫🇷 02
+  - 🇯🇵 02
   - 🇺🇸 03
-  - 🇧🇷 04
-  - 🇩🇪 05
+  - 🇺🇸 04
+  - 🇺🇸 05
   - 🇩🇪 06
-  - 🇮🇪 07
-  - 🇰🇷 08
+  - 🇯🇵 07
+  - 🇯🇵 08
   - 🇯🇵 09
   - 🇯🇵 10
-  - 🇺🇸 11
-  - 🇯🇵 12
-  - 🇯🇵 13
-  - 🇩🇪 14
-  - 🇺🇸 15
-  - 🇩🇪 16
+  - 🇮🇪 11
+  - 🇰🇷 12
+  - '13'
+  - 🇭🇰 14
+  - 🇩🇪 15
+  - 🇭🇰 16
   - 🇭🇰 17
-  - 🇩🇪 18
-  - 🇭🇰 19
-  - 🇭🇰 20
-  - 🇭🇰 21
-  - 🇯🇵 22
-  - 🇫🇷 23
-  - 🇫🇷 24
-  - 🇫🇷 25
-  - 🇫🇷 26
-  - 🇳🇱 27
-  - 🇫🇷 28
-  - 🇺🇸 29
-  - 🇫🇷 30
-  - 🇫🇷 31
+  - 🇭🇰 18
+  - '19'
+  - '20'
+  - '21'
+  - '22'
+  - '23'
+  - '24'
+  - '25'
+  - '26'
+  - '27'
+  - '28'
+  - '29'
+  - '30'
+  - '31'
   - '32'
-  - 🇺🇸 33
-  - 🇫🇷 34
+  - '33'
+  - '34'
   - '35'
   - '36'
-  - 🇫🇷 37
+  - '37'
   - '38'
   - '39'
-  - 🇫🇷 40
+  - '40'
   - '41'
   - '42'
   - '43'
-  - 🇺🇸 44
+  - '44'
   - '45'
   - 🇫🇷 46
-  - '47'
-  - 🇵🇱 48
+  - 🇫🇷 47
+  - '48'
   - '49'
-  - 🇸🇬 50
-  - '51'
-  - '52'
-  - 🇫🇷 53
+  - '50'
+  - 🇫🇷 51
+  - 🇳🇱 52
+  - '53'
   - '54'
   - '55'
-  - 🇹🇼 56
-  - 🇭🇰 57
+  - '56'
+  - '57'
   - '58'
-  - 🇰🇷 59
-  - 🇫🇷 60
-  - 🇩🇪 61
-  - 🇸🇬 62
-  - 🇸🇬 63
-  - 🇺🇸 64
+  - '59'
+  - '60'
+  - '61'
+  - '62'
+  - '63'
+  - '64'
   - '65'
   - '66'
+  - 🇫🇷 67
+  - '68'
+  - '69'
+  - '70'
+  - '71'
+  - 🇫🇷 72
+  - 🇺🇸 73
+  - '74'
+  - '75'
+  - '76'
+  - 🇫🇷 77
+  - '78'
+  - '79'
+  - '80'
+  - '81'
+  - '82'
+  - '83'
+  - '84'
+  - 🇫🇷 85
+  - 🇫🇷 86
+  - 🇺🇸 87
+  - '88'
+  - '89'
+  - '90'
+  - 🇫🇷 91
+  - '92'
+  - '93'
+  - 🇫🇷 94
+  - '95'
+  - 🇺🇸 96
+  - 🇫🇷 97
+  - '98'
+  - 🇹🇼 99
+  - 🇸🇬 100
+  - 🇭🇰 101
+  - 🇸🇬 102
+  - 🇸🇬 103
+  - 🇵🇱 104
+  - 🇰🇷 105
+  - '106'
+  - '107'
+  - '108'
+  - '109'
+  - '110'
+  - '111'
+  - '112'
+  - '113'
+  - 🇸🇬 114
+  - 🇺🇸 115
+  - '116'
+  - 🇸🇬 117
+  - '118'
+  - 🇫🇷 119
 - name: 🇭🇰 香港节点
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
+  - 🇭🇰 14
+  - 🇭🇰 16
   - 🇭🇰 17
-  - 🇭🇰 19
-  - 🇭🇰 20
-  - 🇭🇰 21
-  - 🇭🇰 57
+  - 🇭🇰 18
+  - 🇭🇰 101
 - name: 🇹🇼 台湾节点
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - 🇹🇼 56
+  - 🇹🇼 99
 - name: 🇯🇵 日本节点
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
+  - 🇯🇵 02
+  - 🇯🇵 07
+  - 🇯🇵 08
   - 🇯🇵 09
   - 🇯🇵 10
-  - 🇯🇵 12
-  - 🇯🇵 13
-  - 🇭🇰 19
-  - 🇯🇵 22
+  - 🇭🇰 16
 - name: 🇸🇬 新加坡节点
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - 🇸🇬 50
-  - 🇸🇬 62
-  - 🇸🇬 63
+  - 🇸🇬 100
+  - 🇸🇬 102
+  - 🇸🇬 103
+  - 🇸🇬 114
+  - 🇸🇬 117
 - name: 🇺🇸 美国节点
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -779,22 +1511,22 @@ proxy-groups:
   proxies:
   - 🇺🇸 01
   - 🇺🇸 03
-  - 🇺🇸 11
-  - 🇺🇸 15
-  - 🇭🇰 20
-  - 🇭🇰 21
-  - 🇺🇸 29
-  - 🇺🇸 33
-  - 🇺🇸 44
-  - 🇺🇸 64
+  - 🇺🇸 04
+  - 🇺🇸 05
+  - 🇭🇰 17
+  - 🇭🇰 18
+  - 🇺🇸 73
+  - 🇺🇸 87
+  - 🇺🇸 96
+  - 🇺🇸 115
 - name: 🇰🇷 韩国节点
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - 🇰🇷 08
-  - 🇰🇷 59
+  - 🇰🇷 12
+  - 🇰🇷 105
 - name: 🇬🇧 英国节点
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -808,32 +1540,26 @@ proxy-groups:
   interval: 300
   tolerance: 50
   proxies:
-  - 🇩🇪 05
   - 🇩🇪 06
-  - 🇩🇪 14
-  - 🇩🇪 16
-  - 🇩🇪 18
-  - 🇩🇪 61
+  - 🇩🇪 15
 - name: 🇫🇷 法国节点
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - 🇫🇷 02
-  - 🇫🇷 23
-  - 🇫🇷 24
-  - 🇫🇷 25
-  - 🇫🇷 26
-  - 🇫🇷 28
-  - 🇫🇷 30
-  - 🇫🇷 31
-  - 🇫🇷 34
-  - 🇫🇷 37
-  - 🇫🇷 40
   - 🇫🇷 46
-  - 🇫🇷 53
-  - 🇫🇷 60
+  - 🇫🇷 47
+  - 🇫🇷 51
+  - 🇫🇷 67
+  - 🇫🇷 72
+  - 🇫🇷 77
+  - 🇫🇷 85
+  - 🇫🇷 86
+  - 🇫🇷 91
+  - 🇫🇷 94
+  - 🇫🇷 97
+  - 🇫🇷 119
 - name: 🇷🇺 俄罗斯节点
   type: url-test
   url: http://www.gstatic.com/generate_204
