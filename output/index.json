@@ -1,12 +1,12 @@
 {
-  "update_time": "2026-09-14 17:20:46",
-  "date": "2026/9/9-14",
+  "update_time": "2026-09-15 01:09:48",
+  "date": "2026/9/9-15",
   "formats": {
-    "clash": "clash/9-14.yaml",
-    "v2ray": "v2ray/9-14.txt",
-    "surge&ver=4": "surge/9-14.conf",
-    "mixed": "mixed/9-14.txt",
-    "singbox": "singbox/9-14.json"
+    "clash": "clash/9-15.yaml",
+    "v2ray": "v2ray/9-15.txt",
+    "surge&ver=4": "surge/9-15.conf",
+    "mixed": "mixed/9-15.txt",
+    "singbox": "singbox/9-15.json"
   },
   "latest": {
     "clash": "clash/latest.yaml",
@@ -17,13 +17,13 @@
   },
   "total_urls": 1,
   "merged": {
-    "date": "2026/9/9-14",
+    "date": "2026/9/9-15",
     "formats": {
-      "clash": "merged/9-14.clash.yaml",
-      "v2ray": "merged/9-14.v2ray.txt",
-      "surge": "merged/9-14.surge.conf",
-      "mixed": "merged/9-14.mixed.txt",
-      "singbox": "merged/9-14.singbox.json"
+      "clash": "merged/9-15.clash.yaml",
+      "v2ray": "merged/9-15.v2ray.txt",
+      "surge": "merged/9-15.surge.conf",
+      "mixed": "merged/9-15.mixed.txt",
+      "singbox": "merged/9-15.singbox.json"
     },
     "latest": {
       "clash": "merged/latest.clash.yaml",
@@ -32,9 +32,9 @@
       "mixed": "merged/latest.mixed.txt",
       "singbox": "merged/latest.singbox.json"
     },
-    "total_nodes": 165,
+    "total_nodes": 108,
     "type": "combined",
-    "main_supplement": 135,
+    "main_supplement": 118,
     "sources": [
       "FreeNodes",
       "Jsnzkpg",
@@ -46,54 +46,54 @@
     "upstream_health": {
       "NoMoreWalls": {
         "fail_count": 0,
-        "last_success": "2026-09-14",
+        "last_success": "2026-09-15",
         "degraded": false
       },
       "FreeNodes": {
         "fail_count": 0,
-        "last_success": "2026-09-14",
+        "last_success": "2026-09-15",
         "degraded": false
       },
       "Pawdroid": {
         "fail_count": 0,
-        "last_success": "2026-09-14",
+        "last_success": "2026-09-15",
         "degraded": false
       },
       "Jsnzkpg": {
         "fail_count": 0,
-        "last_success": "2026-09-14",
+        "last_success": "2026-09-15",
         "degraded": false
       },
       "maflya": {
         "fail_count": 0,
-        "last_success": "2026-09-14",
+        "last_success": "2026-09-15",
         "degraded": false
       }
     },
     "quality": {
-      "total_parsed": 165,
-      "total_available": 77,
-      "excluded": 24,
-      "jitter_excluded": 64,
+      "total_parsed": 108,
+      "total_available": 40,
+      "excluded": 20,
+      "jitter_excluded": 48,
       "truncated": 0,
-      "output_count": 77,
-      "availability_rate": 46.7,
-      "avg_latency_ms": 185,
-      "max_latency_ms": 2132,
-      "min_latency_ms": 6,
+      "output_count": 40,
+      "availability_rate": 37.0,
+      "avg_latency_ms": 203,
+      "max_latency_ms": 3652,
+      "min_latency_ms": 2,
       "node_health": {
         "ss://YWVzLTI1Ni1jZmI6YW1hem9uc2tyMDU=@63.180.254.10:443#[ext:NoMoreWalls]%20tg%E9%A2%91%E9%81%93:%40ripaojiedian%20%231": {
           "fail_count": 0,
-          "last_latency": 148,
-          "last_seen": "2026-09-14",
+          "last_latency": 149,
+          "last_seen": "2026-09-15",
           "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
         },
         "vmess://eyJ2IjogIjIiLCAicHMiOiAiW2V4dDpOb01vcmVXYWxsc10g8J+HrfCfh7Ag6aaZ5rivfEByaXBhb2ppZWRpYW4iLCAiYWRkIjogInYxMC5oZGFjZC5jb20iLCAicG9ydCI6IDMwODA3LCAiYWlkIjogMiwgInNjeSI6ICJhdXRvIiwgIm5ldCI6ICJ0Y3AiLCAidHlwZSI6ICJub25lIiwgInRscyI6ICIiLCAiaWQiOiAiY2JiM2Y4NzctZDFmYi0zNDRjLTg3YTktZDE1M2JmZmQ1NDg0In0=": {
           "fail_count": 0,
-          "last_latency": 246,
-          "last_seen": "2026-09-14",
+          "last_latency": 243,
+          "last_seen": "2026-09-15",
           "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
@@ -101,98 +101,98 @@
         "ss://YWVzLTI1Ni1nY206QnV0dGVyZmx5MTIzQHF3ZTk1Mjc=@103.236.66.4:10001#[ext:NoMoreWalls]%20%E9%A6%99%E6%B8%AF2%7C%40ripaojiedian": {
           "fail_count": 19,
           "last_latency": null,
-          "last_seen": "2026-09-14",
+          "last_seen": "2026-09-15",
           "cooling_down": true,
-          "cooldown_cycles": 3,
-          "retry_count": 10
+          "cooldown_cycles": 1,
+          "retry_count": 11
         },
         "ss://YWVzLTI1Ni1nY206QnV0dGVyZmx5MTIzQHF3ZTk1Mjc=@112.28.141.77:10006#[ext:NoMoreWalls]%20%E9%A6%99%E6%B8%AF3%7C%40ripaojiedian": {
           "fail_count": 19,
           "last_latency": null,
-          "last_seen": "2026-09-14",
+          "last_seen": "2026-09-15",
           "cooling_down": true,
-          "cooldown_cycles": 3,
-          "retry_count": 10
+          "cooldown_cycles": 1,
+          "retry_count": 11
         },
         "trojan://BxceQaOe@43.199.146.46:2716?allowInsecure=1&sni=t.me%2Fripaojiedian#[ext:NoMoreWalls]%20%E9%A6%99%E6%B8%AF4%7C%40ripaojiedian": {
           "fail_count": 19,
           "last_latency": null,
-          "last_seen": "2026-09-14",
+          "last_seen": "2026-09-15",
           "cooling_down": true,
-          "cooldown_cycles": 3,
-          "retry_count": 10
+          "cooldown_cycles": 1,
+          "retry_count": 11
         },
         "trojan://BxceQaOe@13.215.162.132:51391?allowInsecure=1&sni=t.me%2Fripaojiedian#[ext:NoMoreWalls]%20%E9%A6%99%E6%B8%AF5%7C%40ripaojiedian": {
           "fail_count": 19,
           "last_latency": null,
-          "last_seen": "2026-09-14",
+          "last_seen": "2026-09-15",
           "cooling_down": true,
-          "cooldown_cycles": 3,
-          "retry_count": 10
+          "cooldown_cycles": 1,
+          "retry_count": 11
         },
         "trojan://BxceQaOe@35.73.128.210:3893?allowInsecure=1&sni=t.me%252Fripaojiedian#[ext:NoMoreWalls]%20%E6%97%A5%E6%9C%AC%7C%40ripaojiedian": {
           "fail_count": 19,
           "last_latency": null,
-          "last_seen": "2026-09-14",
+          "last_seen": "2026-09-15",
           "cooling_down": true,
-          "cooldown_cycles": 3,
-          "retry_count": 10
+          "cooldown_cycles": 1,
+          "retry_count": 11
         },
         "ss://YWVzLTI1Ni1nY206QnV0dGVyZmx5MTIzQHF3ZTk1Mjc=@103.236.66.4:40001#[ext:NoMoreWalls]%20%E6%97%A5%E6%9C%AC2%7C%40ripaojiedian": {
           "fail_count": 19,
           "last_latency": null,
-          "last_seen": "2026-09-14",
+          "last_seen": "2026-09-15",
           "cooling_down": true,
-          "cooldown_cycles": 3,
-          "retry_count": 10
+          "cooldown_cycles": 1,
+          "retry_count": 11
         },
         "ss://YWVzLTI1Ni1nY206QnV0dGVyZmx5MTIzQHF3ZTk1Mjc=@103.236.66.4:40002#[ext:NoMoreWalls]%20%E6%97%A5%E6%9C%AC3%7C%40ripaojiedian": {
           "fail_count": 19,
           "last_latency": null,
-          "last_seen": "2026-09-14",
+          "last_seen": "2026-09-15",
           "cooling_down": true,
-          "cooldown_cycles": 3,
-          "retry_count": 10
+          "cooldown_cycles": 1,
+          "retry_count": 11
         },
         "trojan://BxceQaOe@54.251.190.150:41142?allowInsecure=1&sni=t.me%252Fripaojiedian#[ext:NoMoreWalls]%20%E6%96%B0%E5%8A%A0%E5%9D%A13%7C%40ripaojiedian": {
           "fail_count": 19,
           "last_latency": null,
-          "last_seen": "2026-09-14",
+          "last_seen": "2026-09-15",
           "cooling_down": true,
-          "cooldown_cycles": 3,
-          "retry_count": 10
+          "cooldown_cycles": 1,
+          "retry_count": 11
         },
         "ss://YWVzLTI1Ni1nY206QnV0dGVyZmx5MTIzQHF3ZTk1Mjc=@103.236.66.4:50001#[ext:NoMoreWalls]%20%E7%BE%8E%E5%9B%BD%7C%40ripaojiedian": {
           "fail_count": 19,
           "last_latency": null,
-          "last_seen": "2026-09-14",
+          "last_seen": "2026-09-15",
           "cooling_down": true,
-          "cooldown_cycles": 3,
-          "retry_count": 10
+          "cooldown_cycles": 1,
+          "retry_count": 11
         },
         "ss://YWVzLTI1Ni1nY206QnV0dGVyZmx5MTIzQHF3ZTk1Mjc=@103.236.66.4:50003#[ext:NoMoreWalls]%20%E7%BE%8E%E5%9B%BD2%7C%40ripaojiedian": {
           "fail_count": 19,
           "last_latency": null,
-          "last_seen": "2026-09-14",
+          "last_seen": "2026-09-15",
           "cooling_down": true,
-          "cooldown_cycles": 3,
-          "retry_count": 10
+          "cooldown_cycles": 1,
+          "retry_count": 11
         },
         "trojan://BxceQaOe@100.42.228.109:443?allowInsecure=1&sni=t.me%2Fripaojiedian#[ext:NoMoreWalls]%20%E7%BE%8E%E5%9B%BD3%7C%40ripaojiedian": {
           "fail_count": 4,
           "last_latency": null,
-          "last_seen": "2026-09-14",
+          "last_seen": "2026-09-15",
           "cooling_down": true,
-          "cooldown_cycles": 2,
+          "cooldown_cycles": 3,
           "retry_count": 1
         },
         "ss://YWVzLTI1Ni1nY206QnV0dGVyZmx5MTIzQHF3ZTk1Mjc=@36.33.35.105:30001#[ext:NoMoreWalls]%20%E5%8F%B0%E6%B9%BE%7C%40ripaojiedian": {
           "fail_count": 19,
           "last_latency": null,
-          "last_seen": "2026-09-14",
+          "last_seen": "2026-09-15",
           "cooling_down": true,
-          "cooldown_cycles": 3,
-          "retry_count": 10
+          "cooldown_cycles": 1,
+          "retry_count": 11
         },
         "trojan://ultra%40kWZdAzt_IH593eGLRjdxnBZ0@z-sg1.6send.com:10044?allowInsecure=1&sni=www.cloudflare.com#[SG] [ext:NoMoreWalls] %F0%9F%87%B3%F0%9F%87%B5NP_1%7C2.3MB%2Fs": {
           "fail_count": 0,
@@ -363,10 +363,10 @@
           "retry_count": 6
         },
         "ss://YWVzLTI1Ni1jZmI6N2VhZGM2ZGJlMmFlQDExOC4xMDcuMjIyLjIzMTo2NTQ0Mw==#[ext:FreeNodes]%20%F0%9F%87%B2%F0%9F%87%BE_MY_%E9%A9%AC%E6%9D%A5%E8%A5%BF%E4%BA%9A": {
-          "fail_count": 2,
+          "fail_count": 3,
           "last_latency": null,
-          "last_seen": "2026-09-14",
-          "cooling_down": false,
+          "last_seen": "2026-09-15",
+          "cooling_down": true,
           "cooldown_cycles": 0,
           "retry_count": 0
         },
@@ -540,8 +540,8 @@
         },
         "[ext:maflya] ★ ✈️TG频道@flymaf★": {
           "fail_count": 0,
-          "last_latency": 101,
-          "last_seen": "2026-09-14",
+          "last_latency": 106,
+          "last_seen": "2026-09-15",
           "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
@@ -580,8 +580,8 @@
         },
         "[ext:maflya] ★ https://pay.maflya.com  ★": {
           "fail_count": 0,
-          "last_latency": 83,
-          "last_seen": "2026-09-14",
+          "last_latency": 67,
+          "last_seen": "2026-09-15",
           "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
@@ -629,217 +629,217 @@
         "01": {
           "fail_count": 19,
           "last_latency": null,
-          "last_seen": "2026-09-14",
+          "last_seen": "2026-09-15",
           "cooling_down": true,
-          "cooldown_cycles": 3,
-          "retry_count": 10
+          "cooldown_cycles": 1,
+          "retry_count": 11
         },
         "🇭🇰 02": {
-          "fail_count": 14,
+          "fail_count": 15,
           "last_latency": null,
-          "last_seen": "2026-09-14",
+          "last_seen": "2026-09-15",
           "cooling_down": true,
-          "cooldown_cycles": 2,
+          "cooldown_cycles": 3,
           "retry_count": 7
         },
         "🇭🇰 03": {
-          "fail_count": 14,
+          "fail_count": 15,
           "last_latency": null,
-          "last_seen": "2026-09-14",
+          "last_seen": "2026-09-15",
           "cooling_down": true,
-          "cooldown_cycles": 2,
+          "cooldown_cycles": 3,
           "retry_count": 7
         },
         "🇭🇰 04": {
-          "fail_count": 14,
+          "fail_count": 15,
           "last_latency": null,
-          "last_seen": "2026-09-14",
+          "last_seen": "2026-09-15",
           "cooling_down": true,
-          "cooldown_cycles": 2,
+          "cooldown_cycles": 3,
           "retry_count": 7
         },
         "🇭🇰 05": {
-          "fail_count": 14,
+          "fail_count": 15,
           "last_latency": null,
-          "last_seen": "2026-09-14",
+          "last_seen": "2026-09-15",
           "cooling_down": true,
-          "cooldown_cycles": 2,
+          "cooldown_cycles": 3,
           "retry_count": 7
         },
         "🇭🇰 06": {
-          "fail_count": 14,
+          "fail_count": 15,
           "last_latency": null,
-          "last_seen": "2026-09-14",
+          "last_seen": "2026-09-15",
           "cooling_down": true,
-          "cooldown_cycles": 2,
+          "cooldown_cycles": 3,
           "retry_count": 7
         },
         "🇭🇰 07": {
-          "fail_count": 14,
+          "fail_count": 15,
           "last_latency": null,
-          "last_seen": "2026-09-14",
+          "last_seen": "2026-09-15",
           "cooling_down": true,
-          "cooldown_cycles": 2,
+          "cooldown_cycles": 3,
           "retry_count": 7
         },
         "🇯🇵 08": {
-          "fail_count": 14,
+          "fail_count": 15,
           "last_latency": null,
-          "last_seen": "2026-09-14",
+          "last_seen": "2026-09-15",
           "cooling_down": true,
-          "cooldown_cycles": 2,
+          "cooldown_cycles": 3,
           "retry_count": 7
         },
         "🇯🇵 09": {
-          "fail_count": 14,
+          "fail_count": 15,
           "last_latency": null,
-          "last_seen": "2026-09-14",
+          "last_seen": "2026-09-15",
           "cooling_down": true,
-          "cooldown_cycles": 2,
+          "cooldown_cycles": 3,
           "retry_count": 7
         },
         "🇯🇵 10": {
-          "fail_count": 14,
+          "fail_count": 15,
           "last_latency": null,
-          "last_seen": "2026-09-14",
+          "last_seen": "2026-09-15",
           "cooling_down": true,
-          "cooldown_cycles": 2,
+          "cooldown_cycles": 3,
           "retry_count": 7
         },
         "🇯🇵 11": {
-          "fail_count": 14,
+          "fail_count": 15,
           "last_latency": null,
-          "last_seen": "2026-09-14",
+          "last_seen": "2026-09-15",
           "cooling_down": true,
-          "cooldown_cycles": 2,
+          "cooldown_cycles": 3,
           "retry_count": 7
         },
         "🇺🇸 12": {
-          "fail_count": 13,
+          "fail_count": 14,
           "last_latency": null,
-          "last_seen": "2026-09-14",
+          "last_seen": "2026-09-15",
           "cooling_down": true,
-          "cooldown_cycles": 2,
+          "cooldown_cycles": 3,
           "retry_count": 7
         },
         "🇺🇸 13": {
-          "fail_count": 13,
+          "fail_count": 14,
           "last_latency": null,
-          "last_seen": "2026-09-14",
+          "last_seen": "2026-09-15",
           "cooling_down": true,
-          "cooldown_cycles": 2,
+          "cooldown_cycles": 3,
           "retry_count": 7
         },
         "🇺🇸 14": {
-          "fail_count": 13,
+          "fail_count": 14,
           "last_latency": null,
-          "last_seen": "2026-09-14",
+          "last_seen": "2026-09-15",
           "cooling_down": true,
-          "cooldown_cycles": 2,
+          "cooldown_cycles": 3,
           "retry_count": 7
         },
         "🇺🇸 15": {
-          "fail_count": 13,
+          "fail_count": 14,
           "last_latency": null,
-          "last_seen": "2026-09-14",
+          "last_seen": "2026-09-15",
           "cooling_down": true,
-          "cooldown_cycles": 2,
+          "cooldown_cycles": 3,
           "retry_count": 7
         },
         "🇹🇼 16": {
-          "fail_count": 13,
+          "fail_count": 14,
           "last_latency": null,
-          "last_seen": "2026-09-14",
+          "last_seen": "2026-09-15",
           "cooling_down": true,
-          "cooldown_cycles": 2,
+          "cooldown_cycles": 3,
           "retry_count": 7
         },
         "🇹🇼 17": {
-          "fail_count": 13,
+          "fail_count": 14,
           "last_latency": null,
-          "last_seen": "2026-09-14",
+          "last_seen": "2026-09-15",
           "cooling_down": true,
-          "cooldown_cycles": 2,
+          "cooldown_cycles": 3,
           "retry_count": 7
         },
         "🇹🇼 18": {
-          "fail_count": 13,
+          "fail_count": 14,
           "last_latency": null,
-          "last_seen": "2026-09-14",
+          "last_seen": "2026-09-15",
           "cooling_down": true,
-          "cooldown_cycles": 2,
+          "cooldown_cycles": 3,
           "retry_count": 7
         },
         "🇹🇼 19": {
-          "fail_count": 13,
+          "fail_count": 14,
           "last_latency": null,
-          "last_seen": "2026-09-14",
+          "last_seen": "2026-09-15",
           "cooling_down": true,
-          "cooldown_cycles": 2,
+          "cooldown_cycles": 3,
           "retry_count": 7
         },
         "🇰🇷 20": {
-          "fail_count": 13,
+          "fail_count": 14,
           "last_latency": null,
-          "last_seen": "2026-09-14",
+          "last_seen": "2026-09-15",
           "cooling_down": true,
-          "cooldown_cycles": 2,
+          "cooldown_cycles": 3,
           "retry_count": 7
         },
         "🇰🇷 21": {
-          "fail_count": 13,
+          "fail_count": 14,
           "last_latency": null,
-          "last_seen": "2026-09-14",
+          "last_seen": "2026-09-15",
           "cooling_down": true,
-          "cooldown_cycles": 2,
+          "cooldown_cycles": 3,
           "retry_count": 7
         },
         "🇰🇷 22": {
-          "fail_count": 13,
+          "fail_count": 14,
           "last_latency": null,
-          "last_seen": "2026-09-14",
+          "last_seen": "2026-09-15",
           "cooling_down": true,
-          "cooldown_cycles": 2,
+          "cooldown_cycles": 3,
           "retry_count": 7
         },
         "🇰🇷 23": {
-          "fail_count": 13,
+          "fail_count": 14,
           "last_latency": null,
-          "last_seen": "2026-09-14",
+          "last_seen": "2026-09-15",
           "cooling_down": true,
-          "cooldown_cycles": 2,
+          "cooldown_cycles": 3,
           "retry_count": 7
         },
         "🇸🇬 24": {
-          "fail_count": 14,
+          "fail_count": 15,
           "last_latency": null,
-          "last_seen": "2026-09-14",
+          "last_seen": "2026-09-15",
           "cooling_down": true,
-          "cooldown_cycles": 2,
+          "cooldown_cycles": 3,
           "retry_count": 7
         },
         "🇸🇬 25": {
-          "fail_count": 14,
+          "fail_count": 15,
           "last_latency": null,
-          "last_seen": "2026-09-14",
+          "last_seen": "2026-09-15",
           "cooling_down": true,
-          "cooldown_cycles": 2,
+          "cooldown_cycles": 3,
           "retry_count": 7
         },
         "🇸🇬 26": {
-          "fail_count": 14,
+          "fail_count": 15,
           "last_latency": null,
-          "last_seen": "2026-09-14",
+          "last_seen": "2026-09-15",
           "cooling_down": true,
-          "cooldown_cycles": 2,
+          "cooldown_cycles": 3,
           "retry_count": 7
         },
         "🇸🇬 27": {
-          "fail_count": 14,
+          "fail_count": 15,
           "last_latency": null,
-          "last_seen": "2026-09-14",
+          "last_seen": "2026-09-15",
           "cooling_down": true,
-          "cooldown_cycles": 2,
+          "cooldown_cycles": 3,
           "retry_count": 7
         },
         "29": {
@@ -931,9 +931,9 @@
           "retry_count": 0
         },
         "🇭🇰 40": {
-          "fail_count": 0,
-          "last_latency": 260,
-          "last_seen": "2026-09-13",
+          "fail_count": 2,
+          "last_latency": null,
+          "last_seen": "2026-09-15",
           "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
@@ -1020,8 +1020,8 @@
         },
         "🇺🇸 51": {
           "fail_count": 0,
-          "last_latency": 457,
-          "last_seen": "2026-09-14",
+          "last_latency": 149,
+          "last_seen": "2026-09-15",
           "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
@@ -1165,9 +1165,9 @@
         "🇺🇸 130": {
           "fail_count": 5,
           "last_latency": null,
-          "last_seen": "2026-09-14",
+          "last_seen": "2026-09-15",
           "cooling_down": true,
-          "cooldown_cycles": 2,
+          "cooldown_cycles": 3,
           "retry_count": 1
         },
         "🇸🇬 131": {
@@ -1667,12 +1667,12 @@
           "retry_count": 0
         },
         "46": {
-          "fail_count": 3,
+          "fail_count": 4,
           "last_latency": null,
-          "last_seen": "2026-09-14",
+          "last_seen": "2026-09-15",
           "cooling_down": true,
-          "cooldown_cycles": 0,
-          "retry_count": 0
+          "cooldown_cycles": 1,
+          "retry_count": 1
         },
         "52": {
           "fail_count": 10,
@@ -1764,8 +1764,8 @@
         },
         "🇺🇸 63": {
           "fail_count": 0,
-          "last_latency": 112,
-          "last_seen": "2026-09-13",
+          "last_latency": 9,
+          "last_seen": "2026-09-15",
           "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
@@ -2724,16 +2724,16 @@
         },
         "[ext:maflya] MAFLYA.com节点订阅": {
           "fail_count": 0,
-          "last_latency": 193,
-          "last_seen": "2026-09-14",
+          "last_latency": 168,
+          "last_seen": "2026-09-15",
           "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
         },
         "[ext:maflya] ★节点来自哄哄，热气球，网友提供★": {
           "fail_count": 0,
-          "last_latency": 87,
-          "last_seen": "2026-09-14",
+          "last_latency": 11,
+          "last_seen": "2026-09-15",
           "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
@@ -3283,11 +3283,11 @@
           "retry_count": 0
         },
         "28": {
-          "fail_count": 4,
+          "fail_count": 5,
           "last_latency": null,
-          "last_seen": "2026-09-14",
+          "last_seen": "2026-09-15",
           "cooling_down": true,
-          "cooldown_cycles": 1,
+          "cooldown_cycles": 2,
           "retry_count": 1
         },
         "🇺🇸 38": {
@@ -3299,9 +3299,9 @@
           "retry_count": 0
         },
         "🇭🇰 39": {
-          "fail_count": 0,
-          "last_latency": 180,
-          "last_seen": "2026-09-13",
+          "fail_count": 2,
+          "last_latency": null,
+          "last_seen": "2026-09-15",
           "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
@@ -3867,43 +3867,43 @@
           "retry_count": 0
         },
         "41": {
-          "fail_count": 0,
-          "last_latency": 247,
-          "last_seen": "2026-09-13",
+          "fail_count": 2,
+          "last_latency": null,
+          "last_seen": "2026-09-15",
           "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
         },
         "42": {
-          "fail_count": 0,
-          "last_latency": 32,
-          "last_seen": "2026-09-14",
+          "fail_count": 2,
+          "last_latency": null,
+          "last_seen": "2026-09-15",
           "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
         },
         "43": {
-          "fail_count": 2,
+          "fail_count": 3,
           "last_latency": null,
-          "last_seen": "2026-09-14",
-          "cooling_down": false,
+          "last_seen": "2026-09-15",
+          "cooling_down": true,
           "cooldown_cycles": 0,
           "retry_count": 0
         },
         "44": {
-          "fail_count": 2,
+          "fail_count": 3,
           "last_latency": null,
-          "last_seen": "2026-09-14",
-          "cooling_down": false,
+          "last_seen": "2026-09-15",
+          "cooling_down": true,
           "cooldown_cycles": 0,
           "retry_count": 0
         },
         "45": {
-          "fail_count": 4,
+          "fail_count": 5,
           "last_latency": null,
-          "last_seen": "2026-09-14",
+          "last_seen": "2026-09-15",
           "cooling_down": true,
-          "cooldown_cycles": 1,
+          "cooldown_cycles": 2,
           "retry_count": 1
         },
         "🇺🇸 46": {
@@ -3947,20 +3947,20 @@
           "retry_count": 0
         },
         "🇮🇳 53": {
-          "fail_count": 4,
+          "fail_count": 5,
           "last_latency": null,
-          "last_seen": "2026-09-13",
+          "last_seen": "2026-09-15",
           "cooling_down": true,
-          "cooldown_cycles": 1,
+          "cooldown_cycles": 2,
           "retry_count": 1
         },
         "🇮🇳 54": {
-          "fail_count": 3,
+          "fail_count": 4,
           "last_latency": null,
-          "last_seen": "2026-09-14",
+          "last_seen": "2026-09-15",
           "cooling_down": true,
-          "cooldown_cycles": 0,
-          "retry_count": 0
+          "cooldown_cycles": 1,
+          "retry_count": 1
         },
         "🇮🇳 56": {
           "fail_count": 5,
@@ -3987,11 +3987,11 @@
           "retry_count": 0
         },
         "🇮🇳 59": {
-          "fail_count": 5,
+          "fail_count": 6,
           "last_latency": null,
-          "last_seen": "2026-09-12",
+          "last_seen": "2026-09-15",
           "cooling_down": true,
-          "cooldown_cycles": 2,
+          "cooldown_cycles": 3,
           "retry_count": 1
         },
         "🇩🇪 62": {
@@ -4947,9 +4947,9 @@
           "retry_count": 0
         },
         "🇸🇬 56": {
-          "fail_count": 0,
-          "last_latency": 310,
-          "last_seen": "2026-09-10",
+          "fail_count": 2,
+          "last_latency": null,
+          "last_seen": "2026-09-15",
           "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
@@ -5468,8 +5468,8 @@
         },
         "vmess://eyJhZGQiOiAid3d3LnNob3BpZnkuY29tIiwgImFpZCI6IDAsICJhbGxvd0luc2VjdXJlIjogIjEiLCAiaG9zdCI6ICJndWFud2FuZy5hd3Nuby5jb20iLCAiaWQiOiAiNmE4OWEyMTUtMjJiZi00YmQ3LTk2NDItYjk1YjJlMDk1ODNhIiwgIm5ldCI6ICJ3cyIsICJwYXRoIjogIi9obHMvY2N0djVwaGQubTN1OCIsICJwb3J0IjogNDQzLCAicHMiOiAiW2V4dDpGcmVlTm9kZXNdIPCfh7rwn4e4X1VTX+e+juWbvSIsICJzZWN1cml0eSI6ICJhdXRvIiwgInNuaSI6ICJndWFud2FuZy5hd3Nuby5jb20iLCAidGxzIjogInRscyJ9": {
           "fail_count": 0,
-          "last_latency": 23,
-          "last_seen": "2026-09-14",
+          "last_latency": 9,
+          "last_seen": "2026-09-15",
           "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
@@ -5811,9 +5811,9 @@
           "retry_count": 0
         },
         "129": {
-          "fail_count": 0,
-          "last_latency": 108,
-          "last_seen": "2026-09-12",
+          "fail_count": 2,
+          "last_latency": null,
+          "last_seen": "2026-09-15",
           "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
@@ -5859,34 +5859,34 @@
           "retry_count": 0
         },
         "47": {
-          "fail_count": 6,
+          "fail_count": 7,
           "last_latency": null,
-          "last_seen": "2026-09-14",
+          "last_seen": "2026-09-15",
           "cooling_down": true,
-          "cooldown_cycles": 1,
+          "cooldown_cycles": 2,
           "retry_count": 2
         },
         "48": {
-          "fail_count": 2,
+          "fail_count": 3,
           "last_latency": null,
-          "last_seen": "2026-09-14",
-          "cooling_down": false,
+          "last_seen": "2026-09-15",
+          "cooling_down": true,
           "cooldown_cycles": 0,
           "retry_count": 0
         },
         "49": {
-          "fail_count": 9,
+          "fail_count": 10,
           "last_latency": null,
-          "last_seen": "2026-09-14",
+          "last_seen": "2026-09-15",
           "cooling_down": true,
-          "cooldown_cycles": 1,
+          "cooldown_cycles": 2,
           "retry_count": 3
         },
         "50": {
-          "fail_count": 2,
+          "fail_count": 3,
           "last_latency": null,
-          "last_seen": "2026-09-14",
-          "cooling_down": false,
+          "last_seen": "2026-09-15",
+          "cooling_down": true,
           "cooldown_cycles": 0,
           "retry_count": 0
         },
@@ -5899,9 +5899,9 @@
           "retry_count": 3
         },
         "🇭🇰 55": {
-          "fail_count": 0,
-          "last_latency": 253,
-          "last_seen": "2026-09-10",
+          "fail_count": 2,
+          "last_latency": null,
+          "last_seen": "2026-09-15",
           "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
@@ -5923,27 +5923,27 @@
           "retry_count": 0
         },
         "🇮🇳 61": {
-          "fail_count": 7,
+          "fail_count": 8,
           "last_latency": null,
-          "last_seen": "2026-09-14",
+          "last_seen": "2026-09-15",
           "cooling_down": true,
-          "cooldown_cycles": 1,
+          "cooldown_cycles": 2,
           "retry_count": 2
         },
         "🇮🇳 62": {
-          "fail_count": 3,
+          "fail_count": 4,
           "last_latency": null,
-          "last_seen": "2026-09-14",
+          "last_seen": "2026-09-15",
           "cooling_down": true,
-          "cooldown_cycles": 0,
-          "retry_count": 0
+          "cooldown_cycles": 1,
+          "retry_count": 1
         },
         "🇮🇳 64": {
-          "fail_count": 8,
+          "fail_count": 9,
           "last_latency": null,
-          "last_seen": "2026-09-14",
+          "last_seen": "2026-09-15",
           "cooling_down": true,
-          "cooldown_cycles": 2,
+          "cooldown_cycles": 3,
           "retry_count": 2
         },
         "🇺🇸 66": {
@@ -6572,8 +6572,8 @@
         },
         "🇺🇸 69": {
           "fail_count": 0,
-          "last_latency": 68,
-          "last_seen": "2026-09-12",
+          "last_latency": 2,
+          "last_seen": "2026-09-15",
           "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
@@ -7620,24 +7620,24 @@
         },
         "[ext:maflya] 关注@flymaf TG频道-12-A12-HTTPS-D1": {
           "fail_count": 0,
-          "last_latency": 175,
-          "last_seen": "2026-09-14",
+          "last_latency": 181,
+          "last_seen": "2026-09-15",
           "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
         },
         "[ext:maflya] 关注@flymaf TG频道-13-A13-HTTPS-D1": {
           "fail_count": 0,
-          "last_latency": 364,
-          "last_seen": "2026-09-14",
+          "last_latency": 423,
+          "last_seen": "2026-09-15",
           "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
         },
         "[ext:maflya] 关注@flymaf TG频道-14-A14-HTTPS-D1": {
           "fail_count": 0,
-          "last_latency": 215,
-          "last_seen": "2026-09-14",
+          "last_latency": 222,
+          "last_seen": "2026-09-15",
           "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
@@ -8228,8 +8228,8 @@
         },
         "trojan://humanity@104.26.15.137:443?fp=chrome&path=%2Fassignment&security=tls&sni=www.ignitelimit.com&type=ws#[ext:Pawdroid]%20%E7%BE%8E%E5%9B%BD%2BCloudFlare%E8%8A%82%E7%82%B9": {
           "fail_count": 0,
-          "last_latency": 22,
-          "last_seen": "2026-09-14",
+          "last_latency": 2,
+          "last_seen": "2026-09-15",
           "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
@@ -9067,10 +9067,10 @@
           "retry_count": 0
         },
         "🇯🇵 134": {
-          "fail_count": 2,
+          "fail_count": 3,
           "last_latency": null,
-          "last_seen": "2026-09-13",
-          "cooling_down": false,
+          "last_seen": "2026-09-15",
+          "cooling_down": true,
           "cooldown_cycles": 0,
           "retry_count": 0
         },
@@ -9203,10 +9203,10 @@
           "retry_count": 0
         },
         "🇯🇵 57": {
-          "fail_count": 2,
+          "fail_count": 3,
           "last_latency": null,
-          "last_seen": "2026-09-14",
-          "cooling_down": false,
+          "last_seen": "2026-09-15",
+          "cooling_down": true,
           "cooldown_cycles": 0,
           "retry_count": 0
         },
@@ -9301,7 +9301,7 @@
         "trojan://humanity@104.20.6.134:443?security=tls&sni=www.ignitelimit.com&type=ws&path=%2Fassignment#[ext:Pawdroid]%20%E7%BE%8E%E5%9B%BD%2BCloudFlare%E8%8A%82%E7%82%B9": {
           "fail_count": 0,
           "last_latency": 2,
-          "last_seen": "2026-09-13",
+          "last_seen": "2026-09-15",
           "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
@@ -11059,12 +11059,12 @@
           "retry_count": 0
         },
         "🇸🇬 34": {
-          "fail_count": 3,
+          "fail_count": 4,
           "last_latency": null,
-          "last_seen": "2026-09-14",
+          "last_seen": "2026-09-15",
           "cooling_down": true,
-          "cooldown_cycles": 0,
-          "retry_count": 0
+          "cooldown_cycles": 1,
+          "retry_count": 1
         },
         "🇸🇬 35": {
           "fail_count": 2,
@@ -11115,10 +11115,10 @@
           "retry_count": 0
         },
         "66": {
-          "fail_count": 3,
-          "last_latency": null,
-          "last_seen": "2026-09-14",
-          "cooling_down": true,
+          "fail_count": 0,
+          "last_latency": 2,
+          "last_seen": "2026-09-15",
+          "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
         },
@@ -11131,10 +11131,10 @@
           "retry_count": 0
         },
         "68": {
-          "fail_count": 3,
-          "last_latency": null,
-          "last_seen": "2026-09-14",
-          "cooling_down": true,
+          "fail_count": 0,
+          "last_latency": 2,
+          "last_seen": "2026-09-15",
+          "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
         },
@@ -11436,8 +11436,8 @@
         },
         "🇸🇬 29": {
           "fail_count": 0,
-          "last_latency": 198,
-          "last_seen": "2026-09-14",
+          "last_latency": 11,
+          "last_seen": "2026-09-15",
           "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
@@ -11451,18 +11451,18 @@
           "retry_count": 0
         },
         "🇸🇬 31": {
-          "fail_count": 3,
-          "last_latency": null,
-          "last_seen": "2026-09-14",
-          "cooling_down": true,
+          "fail_count": 0,
+          "last_latency": 171,
+          "last_seen": "2026-09-15",
+          "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
         },
         "🇸🇬 32": {
-          "fail_count": 3,
-          "last_latency": null,
-          "last_seen": "2026-09-14",
-          "cooling_down": true,
+          "fail_count": 0,
+          "last_latency": 171,
+          "last_seen": "2026-09-15",
+          "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
         },
@@ -11691,10 +11691,10 @@
           "retry_count": 0
         },
         "🇸🇬 33": {
-          "fail_count": 2,
+          "fail_count": 3,
           "last_latency": null,
-          "last_seen": "2026-09-14",
-          "cooling_down": false,
+          "last_seen": "2026-09-15",
+          "cooling_down": true,
           "cooldown_cycles": 0,
           "retry_count": 0
         },
@@ -11809,62 +11809,224 @@
           "cooling_down": false,
           "cooldown_cycles": 0,
           "retry_count": 0
+        },
+        "ss://YWVzLTI1Ni1jZmI6YW1hem9uc2tyMDU=@15.237.218.241:443#[ext:NoMoreWalls]%20%F0%9F%87%AB%F0%9F%87%B7FR_1%7C2.7MB%2Fs": {
+          "fail_count": 0,
+          "last_latency": 143,
+          "last_seen": "2026-09-15",
+          "cooling_down": false,
+          "cooldown_cycles": 0,
+          "retry_count": 0
+        },
+        "vmess://eyJhZGQiOiAiMTEyLjEzMi4yMTUuMTA4IiwgImFpZCI6IDY0LCAiYWxsb3dJbnNlY3VyZSI6ICIxIiwgImlkIjogIjQxODA0OGFmLWEyOTMtNGI5OS05YjBjLTk4Y2EzNTgwZGQyNCIsICJwb3J0IjogNTAwMDIsICJwcyI6ICJbZXh0OkZyZWVOb2Rlc10g8J+HqPCfh7NfQ05f5Lit5Zu9IiwgInNlY3VyaXR5IjogImF1dG8ifQ==": {
+          "fail_count": 1,
+          "last_latency": null,
+          "last_seen": "2026-09-15",
+          "cooling_down": false,
+          "cooldown_cycles": 0,
+          "retry_count": 0
+        },
+        "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpjNThkMTZlNTkzZDQ0ZjQyQDE1OC4xNzMuMjIxLjIxNDoxMTAwMQ==#[ext:FreeNodes]%20%F0%9F%87%AC%F0%9F%87%A7_GB_%E8%8B%B1%E5%9B%BD": {
+          "fail_count": 0,
+          "last_latency": 212,
+          "last_seen": "2026-09-15",
+          "cooling_down": false,
+          "cooldown_cycles": 0,
+          "retry_count": 0
+        },
+        "vmess://eyJhZGQiOiAiMzguNDcuMTIxLjE0IiwgImFpZCI6IDAsICJpZCI6ICJjZTk0ZjIwNC1mZmE2LTRmYTgtYTFkYy1lY2ZjY2ZkNDYzY2IiLCAibmV0IjogImh0dHAiLCAicG9ydCI6IDQ5NDMyLCAicHMiOiAiW2V4dDpGcmVlTm9kZXNdIPCfh6/wn4e1X0pQX+aXpeacrCIsICJzZWN1cml0eSI6ICJhdXRvIn0=": {
+          "fail_count": 0,
+          "last_latency": 3652,
+          "last_seen": "2026-09-15",
+          "cooling_down": false,
+          "cooldown_cycles": 0,
+          "retry_count": 0
+        },
+        "vmess://eyJhZGQiOiAiMTg4LjEzMi4xNzQuMjM2IiwgImFpZCI6IDAsICJpZCI6ICJmNjM2MWFmOC1iYjhmLTQ2MDktYmY1ZC0zZmMwZjY4OGY0N2IiLCAibmV0IjogInRjcCIsICJwb3J0IjogMjA4NiwgInBzIjogIltleHQ6RnJlZU5vZGVzXSDwn4e58J+Ht19UUl/lnJ/ogLPlhbYiLCAic2VjdXJpdHkiOiAiYXV0byJ9": {
+          "fail_count": 0,
+          "last_latency": 182,
+          "last_seen": "2026-09-15",
+          "cooling_down": false,
+          "cooldown_cycles": 0,
+          "retry_count": 0
+        },
+        "trojan://M%69TiVPN@167.82.76.7:443?path=%40mehrosaboran&security=tls&alpn=http%2F1.1&insecure=0&host=m%69tivpn---ss--s---m%69tivpn-33.global.ssl.fastly.net&fp=chrome&type=ws&allowInsecure=0&sni=ssl.fastly.com#[ext:Pawdroid]%20%E7%BE%8E%E5%9B%BD%2BV2CROSS.COM": {
+          "fail_count": 0,
+          "last_latency": 1,
+          "last_seen": "2026-09-15",
+          "cooling_down": false,
+          "cooldown_cycles": 0,
+          "retry_count": 0
+        },
+        "trojan://humanity@104.21.33.59:443?path=/assignment&security=tls&alpn=http/1.1&fm={\"tcp\":%20[{\"type\":%20\"fragment\",%20\"settings\":%20{\"packets\":%20\"tlshello\",%20\"lengths\":%20[\"5\",%20\"94\",%20\"1\"],%20\"delays\":%20[\"0\"],%20\"maxSplit\":%20\"0\"}},{\"type\":%20\"fragment\",%20\"settings\":%20{\"packets\":%20\"1-1\",%20\"lengths\":%20[\"109\",%20\"1\"],%20\"delays\":%20[\"1\"],%20\"maxSplit\":%20\"355\"}}]}&insecure=0&host=www.pleadcourt.org&fp=unsafe&type=ws&allowInsecure=0&sni=www.pleadcourt.org#[ext:Pawdroid]%20%E7%BE%8E%E5%9B%BD%2BCloudFlare%E8%8A%82%E7%82%B9": {
+          "fail_count": 0,
+          "last_latency": 2,
+          "last_seen": "2026-09-15",
+          "cooling_down": false,
+          "cooldown_cycles": 0,
+          "retry_count": 0
+        },
+        "trojan://MiTiVPN@199.232.78.101:443?path=---@mehrosaboran&security=tls&alpn=http/1.1&insecure=0&host=mitivpn---ss--s---mitivpn-11.global.ssl.fastly.net&fp=chrome&type=ws&allowInsecure=0&sni=ssl.fastly.com#[ext:Pawdroid]%20%E7%BE%8E%E5%9B%BD%2BV2CROSS.COM": {
+          "fail_count": 0,
+          "last_latency": 1,
+          "last_seen": "2026-09-15",
+          "cooling_down": false,
+          "cooldown_cycles": 0,
+          "retry_count": 0
+        },
+        "trojan://humanity@188.114.97.7:443?security=tls&sni=www.ignitelimit.com&type=ws&path=/assignment&Host=www.ignitelimit.com#[ext:Pawdroid]%20%E5%B7%B4%E8%A5%BF%E5%9C%A3%E4%BF%9D%E7%BD%97%2BCloudFlare%E8%8A%82%E7%82%B9": {
+          "fail_count": 0,
+          "last_latency": 2,
+          "last_seen": "2026-09-15",
+          "cooling_down": false,
+          "cooldown_cycles": 0,
+          "retry_count": 0
+        },
+        "[ext:maflya] 获取时间：2026-09-14 17:09:49 (UTC)": {
+          "fail_count": 0,
+          "last_latency": 40,
+          "last_seen": "2026-09-15",
+          "cooling_down": false,
+          "cooldown_cycles": 0,
+          "retry_count": 0
+        },
+        "[ext:maflya] 关注@flymaf TG频道-2-A89-TROJAN-D7": {
+          "fail_count": 0,
+          "last_latency": 7,
+          "last_seen": "2026-09-15",
+          "cooling_down": false,
+          "cooldown_cycles": 0,
+          "retry_count": 0
+        },
+        "[ext:maflya] 关注@flymaf TG频道-3-A90-SS-D7": {
+          "fail_count": 0,
+          "last_latency": 413,
+          "last_seen": "2026-09-15",
+          "cooling_down": false,
+          "cooldown_cycles": 0,
+          "retry_count": 0
+        },
+        "🇭🇰 35": {
+          "fail_count": 0,
+          "last_latency": 26,
+          "last_seen": "2026-09-15",
+          "cooling_down": false,
+          "cooldown_cycles": 0,
+          "retry_count": 0
+        },
+        "🇭🇰 37": {
+          "fail_count": 0,
+          "last_latency": 155,
+          "last_seen": "2026-09-15",
+          "cooling_down": false,
+          "cooldown_cycles": 0,
+          "retry_count": 0
+        },
+        "🇭🇰 38": {
+          "fail_count": 0,
+          "last_latency": 154,
+          "last_seen": "2026-09-15",
+          "cooling_down": false,
+          "cooldown_cycles": 0,
+          "retry_count": 0
+        },
+        "🇭🇰 52": {
+          "fail_count": 0,
+          "last_latency": 170,
+          "last_seen": "2026-09-15",
+          "cooling_down": false,
+          "cooldown_cycles": 0,
+          "retry_count": 0
+        },
+        "🇮🇳 58": {
+          "fail_count": 2,
+          "last_latency": null,
+          "last_seen": "2026-09-15",
+          "cooling_down": false,
+          "cooldown_cycles": 0,
+          "retry_count": 0
+        },
+        "🇸🇬 60": {
+          "fail_count": 2,
+          "last_latency": null,
+          "last_seen": "2026-09-15",
+          "cooling_down": false,
+          "cooldown_cycles": 0,
+          "retry_count": 0
+        },
+        "🇺🇸 67": {
+          "fail_count": 0,
+          "last_latency": 2,
+          "last_seen": "2026-09-15",
+          "cooling_down": false,
+          "cooldown_cycles": 0,
+          "retry_count": 0
+        },
+        "🇬🇧 70": {
+          "fail_count": 0,
+          "last_latency": 145,
+          "last_seen": "2026-09-15",
+          "cooling_down": false,
+          "cooldown_cycles": 0,
+          "retry_count": 0
+        },
+        "71": {
+          "fail_count": 0,
+          "last_latency": 36,
+          "last_seen": "2026-09-15",
+          "cooling_down": false,
+          "cooldown_cycles": 0,
+          "retry_count": 0
         }
       }
     },
     "upstream_stats": {
       "FreeNodes": {
-        "parsed": 56,
-        "after_dedup": 13,
-        "available": 13,
-        "avg_latency_ms": 533,
+        "parsed": 31,
+        "after_dedup": 4,
+        "available": 4,
+        "avg_latency_ms": 1018,
         "availability_rate": 100.0
       },
       "Jsnzkpg": {
-        "parsed": 80,
-        "after_dedup": 5,
-        "available": 5,
-        "avg_latency_ms": 56,
-        "availability_rate": 100.0
+        "parsed": 18,
+        "after_dedup": 0,
+        "available": 0,
+        "avg_latency_ms": null,
+        "availability_rate": 0.0
       },
       "NoMoreWalls": {
-        "parsed": 163,
-        "after_dedup": 10,
-        "available": 10,
-        "avg_latency_ms": 107,
+        "parsed": 158,
+        "after_dedup": 4,
+        "available": 4,
+        "avg_latency_ms": 136,
         "availability_rate": 100.0
       },
       "Pawdroid": {
-        "parsed": 18,
-        "after_dedup": 5,
-        "available": 5,
-        "avg_latency_ms": 7,
+        "parsed": 15,
+        "after_dedup": 6,
+        "available": 6,
+        "avg_latency_ms": 2,
         "availability_rate": 100.0
       },
       "maflya": {
         "parsed": 229,
         "after_dedup": 10,
         "available": 10,
-        "avg_latency_ms": 192,
+        "avg_latency_ms": 165,
         "availability_rate": 100.0
       },
       "主订阅": {
         "parsed": 0,
-        "after_dedup": 34,
-        "available": 34,
-        "avg_latency_ms": 118,
+        "after_dedup": 16,
+        "available": 16,
+        "avg_latency_ms": 114,
         "availability_rate": 100.0
       }
     },
     "upstream_history": {
       "FreeNodes": [
         {
-          "available": 14,
-          "after_dedup": 14,
-          "availability_rate": 100.0,
-          "date": "2026-09-13"
-        },
-        {
           "available": 13,
           "after_dedup": 13,
           "availability_rate": 100.0,
@@ -11917,15 +12079,15 @@
           "after_dedup": 13,
           "availability_rate": 100.0,
           "date": "2026-09-14"
+        },
+        {
+          "available": 4,
+          "after_dedup": 4,
+          "availability_rate": 100.0,
+          "date": "2026-09-15"
         }
       ],
       "Jsnzkpg": [
-        {
-          "available": 0,
-          "after_dedup": 0,
-          "availability_rate": 0.0,
-          "date": "2026-09-13"
-        },
         {
           "available": 12,
           "after_dedup": 12,
@@ -11979,15 +12141,15 @@
           "after_dedup": 5,
           "availability_rate": 100.0,
           "date": "2026-09-14"
+        },
+        {
+          "available": 0,
+          "after_dedup": 0,
+          "availability_rate": 0.0,
+          "date": "2026-09-15"
         }
       ],
       "NoMoreWalls": [
-        {
-          "available": 5,
-          "after_dedup": 5,
-          "availability_rate": 100.0,
-          "date": "2026-09-13"
-        },
         {
           "available": 5,
           "after_dedup": 5,
@@ -12041,15 +12203,15 @@
           "after_dedup": 10,
           "availability_rate": 100.0,
           "date": "2026-09-14"
-        }
-      ],
-      "Pawdroid": [
+        },
         {
           "available": 4,
           "after_dedup": 4,
           "availability_rate": 100.0,
-          "date": "2026-09-13"
-        },
+          "date": "2026-09-15"
+        }
+      ],
+      "Pawdroid": [
         {
           "available": 4,
           "after_dedup": 4,
@@ -12103,6 +12265,12 @@
           "after_dedup": 5,
           "availability_rate": 100.0,
           "date": "2026-09-14"
+        },
+        {
+          "available": 6,
+          "after_dedup": 6,
+          "availability_rate": 100.0,
+          "date": "2026-09-15"
         }
       ],
       "maflya": [
@@ -12113,12 +12281,6 @@
           "date": "2026-09-13"
         },
         {
-          "available": 8,
-          "after_dedup": 8,
-          "availability_rate": 100.0,
-          "date": "2026-09-13"
-        },
-        {
           "available": 60,
           "after_dedup": 60,
           "availability_rate": 100.0,
@@ -12165,15 +12327,15 @@
           "after_dedup": 10,
           "availability_rate": 100.0,
           "date": "2026-09-14"
+        },
+        {
+          "available": 10,
+          "after_dedup": 10,
+          "availability_rate": 100.0,
+          "date": "2026-09-15"
         }
       ],
       "主订阅": [
-        {
-          "available": 38,
-          "after_dedup": 38,
-          "availability_rate": 100.0,
-          "date": "2026-09-13"
-        },
         {
           "available": 37,
           "after_dedup": 37,
@@ -12227,21 +12389,16 @@
           "after_dedup": 34,
           "availability_rate": 100.0,
           "date": "2026-09-14"
+        },
+        {
+          "available": 16,
+          "after_dedup": 16,
+          "availability_rate": 100.0,
+          "date": "2026-09-15"
         }
       ]
     },
     "quality_history": [
-      {
-        "date": "2026-09-12",
-        "total_parsed": 158,
-        "total_available": 110,
-        "excluded": 5,
-        "jitter_excluded": 43,
-        "truncated": 0,
-        "output_count": 110,
-        "availability_rate": 69.6,
-        "avg_latency_ms": 256
-      },
       {
         "date": "2026-09-12",
         "total_parsed": 156,
@@ -12384,10 +12541,21 @@
         "output_count": 77,
         "availability_rate": 46.7,
         "avg_latency_ms": 185
+      },
+      {
+        "date": "2026-09-15",
+        "total_parsed": 108,
+        "total_available": 40,
+        "excluded": 20,
+        "jitter_excluded": 48,
+        "truncated": 0,
+        "output_count": 40,
+        "availability_rate": 37.0,
+        "avg_latency_ms": 203
       }
     ]
   },
   "alert_state": {
-    "⚠️ 综合订阅可用率偏低|warning": 1789377669.0930798
+    "⚠️ 综合订阅可用率偏低|warning": 1789405810.3866427
   }
 }
