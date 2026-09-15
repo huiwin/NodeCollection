@@ -34,7 +34,7 @@ P17 (v2.9.0) 主订阅源健康治理 + 综合订阅补充修复:
     防止 sub/latest.yaml 只增不减地累积失效源
 """
 
-VERSION = '2.14.0'
+VERSION = '2.14.1'
 
 import re
 import os
@@ -2819,6 +2819,8 @@ UPSTREAM_REPO_MAP = {
     'FreeNodes': ('Barabama/FreeNodes', 'https://github.com/Barabama/FreeNodes'),
     'Pawdroid': ('Pawdroid/Free-servers', 'https://github.com/Pawdroid/Free-servers'),
     'Jsnzkpg': ('Jsnzkpg/Jsnzkpg', 'https://github.com/Jsnzkpg/Jsnzkpg'),
+    'free18': ('free18/v2ray', 'https://github.com/free18/v2ray'),
+    'free-nodes': ('free-nodes/v2rayfree', 'https://github.com/free-nodes/v2rayfree'),
 }
 
 

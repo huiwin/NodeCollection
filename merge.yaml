@@ -51,5 +51,18 @@ upstreams:
     enabled: true
     max_nodes: 80
 
+  # P24 (v2.14.1): 扩充上游源 (内容已验证, 非空且协议兼容)
+  - name: free18
+    url: https://raw.githubusercontent.com/free18/v2ray/main/c.yaml
+    repo: free18/v2ray
+    enabled: true
+    max_nodes: 80
+
+  - name: free-nodes
+    url: https://raw.githubusercontent.com/free-nodes/v2rayfree/main/sub
+    repo: free-nodes/v2rayfree
+    enabled: true
+    max_nodes: 80
+
   # P19.2 (v2.11.2): getNode 仓库 clash.yaml/v2ray.txt 均为 0 字节空文件
   # (生成脚本未输出), 无法提供节点, 已移除
