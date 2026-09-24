@@ -6,21 +6,16 @@ log-level: info
 external-controller: :9090
 proxies:
 - name: 🇩🇪 01
-  server: 69.84.182.49
-  port: 80
+  server: 216.152.152.187
+  port: 22324
   type: vmess
-  uuid: f8975871-a7a0-4906-8835-a23c1258ca1e
+  uuid: 04621bae-ab36-11ec-b909-0242ac120002
   alterId: 0
   cipher: auto
   tls: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: google.whatsapp.snapp.torob.basalam.zula.uplaod-music.ir.
   udp: true
 - name: 🇺🇸 02
-  server: 216.24.57.7
+  server: 104.16.174.143
   port: 443
   type: trojan
   password: humanity
@@ -32,7 +27,7 @@ proxies:
       Host: www.ignitelimit.com
   udp: true
 - name: 🇺🇸 03
-  server: 104.16.174.124
+  server: 104.18.152.208
   port: 443
   type: trojan
   password: humanity
@@ -43,207 +38,14 @@ proxies:
     headers:
       Host: www.ignitelimit.com
   udp: true
-- name: 🇺🇸 04
-  server: 104.26.14.137
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.ignitelimit.com
+- name: 🇩🇪 04
+  server: 192.3.247.109
+  port: 43579
+  type: ss
+  cipher: aes-256-gcm
+  password: 8c009bb6-08b3-4526-a86b-5af7ddfc567a-4c757b72-6eec-4faf-8c2e-09fd1c7fa936
   udp: true
 - name: 🇺🇸 05
-  server: 104.18.152.73
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.ignitelimit.com
-  udp: true
-- name: 🇺🇸 06
-  server: 104.16.174.185
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.ignitelimit.com
-  udp: true
-- name: 🇩🇪 07
-  server: 188.114.97.6
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.pleadcourt.org
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.pleadcourt.org
-  udp: true
-- name: 🇺🇸 08
-  server: 104.26.15.137
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.ignitelimit.com
-  udp: true
-- name: 🇩🇪 09
-  server: 104.21.70.21
-  port: 443
-  type: trojan
-  password: 018b8e7b-7813-4dcb-84a5-3c98f1521e00
-  sni: id1.nathaya.web.id
-  network: ws
-  ws-opts:
-    path: /trojan
-    headers:
-      Host: id1.nathaya.web.id
-  udp: true
-- name: 🇩🇪 10
-  server: 104.16.0.0
-  port: 443
-  type: vmess
-  uuid: 95d2c461-61f5-4dae-bc74-4d10ce1f6236
-  alterId: 0
-  cipher: auto
-  tls: true
-  servername: gongyilm.dpdns.org
-  network: ws
-  ws-opts:
-    path: /ws-gongyi
-    headers:
-      Host: gongyilm.dpdns.org
-  udp: true
-- name: 🇺🇸 11
-  server: 104.16.174.44
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.ignitelimit.com
-  udp: true
-- name: 🇺🇸 12
-  server: 104.16.174.46
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.ignitelimit.com
-  udp: true
-- name: 🇺🇸 13
-  server: 104.16.174.148
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.ignitelimit.com
-  udp: true
-- name: 🇺🇸 14
-  server: 104.21.46.3
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.ignitelimit.com
-  udp: true
-- name: 🇺🇸 15
-  server: 104.18.12.149
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.ignitelimit.com
-  udp: true
-- name: 🇩🇪 16
-  server: 188.114.97.3
-  port: 443
-  type: vmess
-  uuid: a04c5cd0-fef7-4d85-8901-ae3163889c54
-  alterId: 0
-  cipher: auto
-  tls: true
-  servername: sg-new.vpnjatim.eu.cc
-  network: ws
-  ws-opts:
-    path: /vmess
-    headers:
-      Host: sg-new.vpnjatim.eu.cc
-  udp: true
-- name: 🇺🇸 17
-  server: 104.18.152.244
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.ignitelimit.com
-  udp: true
-- name: 🇩🇪 18
-  server: 188.114.96.19
-  port: 80
-  type: vmess
-  uuid: aed88e79-5762-4d2f-86fa-f438f32a7654
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: google.whatsapp.snapp.torob.basalam.hesanid8.ir.
-  udp: true
-- name: 🇺🇸 19
-  server: 104.18.152.179
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.ignitelimit.com
-  udp: true
-- name: 🇺🇸 20
   server: 104.16.174.12
   port: 443
   type: trojan
@@ -256,277 +58,175 @@ proxies:
     headers:
       Host: www.ignitelimit.com
   udp: true
-- name: 🇩🇪 21
-  server: 188.42.145.180
+- name: 🇺🇸 06
+  server: 104.16.174.101
   port: 443
   type: trojan
   password: humanity
-  sni: www.volumeroot.com
+  sni: www.ignitelimit.com
   network: ws
   ws-opts:
     path: /assignment
     headers:
-      Host: www.volumeroot.com
+      Host: www.ignitelimit.com
   udp: true
-- name: 🇩🇪 22
-  server: yg1.ygkkk.dpdns.org
-  port: 443
-  type: vmess
-  uuid: 6a25f9ba-70a0-4d53-a2a9-19d8f1fcad76
-  alterId: 0
-  cipher: auto
-  tls: true
-  servername: attitude-interracial-country-gen.trycloudflare.com
-  network: ws
-  ws-opts:
-    path: /6a25f9ba-70a0-4d53-a2a9-19d8f1fcad76-vm
-    headers:
-      Host: attitude-interracial-country-gen.trycloudflare.com
-  udp: true
-- name: 🇩🇪 23
-  server: 184.75.221.134
-  port: 1080
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: Vr06rU_v1vFPYeXq9zbsAA
-  udp: true
-- name: 🇩🇪 24
-  server: 156.146.38.195
-  port: 1080
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: XF0klw7870vXn3uQIxe19Q
-  udp: true
-- name: 🇩🇪 25
-  server: 72.10.173.91
-  port: 1080
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: XF0klw7870vXn3uQIxe19Q
-  udp: true
-- name: 🇩🇪 26
-  server: 37.120.139.234
-  port: 1080
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: Vr06rU_v1vFPYeXq9zbsAA
-  udp: true
-- name: 🇩🇪 27
-  server: 198.98.53.130
-  port: 443
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: eDfN7SODQceIOmIAbtJJtK
-  udp: true
-- name: 🇩🇪 28
-  server: 51.222.136.236
-  port: 8882
-  type: ss
-  cipher: aes-256-gcm
-  password: kDWvXYZoTBcGkC4
-  udp: true
-- name: 🇩🇪 29
-  server: 68.168.222.210
-  port: 1234
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: zz0dHjDfoaSaZuRFLGH-hNfBALSEJUYD
-  udp: true
-- name: 🇩🇪 30
-  server: 185.247.68.94
-  port: 1080
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: XF0klw7870vXn3uQIxe19Q
-  udp: true
-- name: 🇩🇪 31
-  server: 185.227.252.204
-  port: 8080
-  type: vmess
-  uuid: b3c6fb30-1416-47fc-87a1-784aeb75b526
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: ws
-  ws-opts:
-    path: /
-  udp: true
-- name: 🇩🇪 32
-  server: 38.113.188.118
-  port: 1080
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: XF0klw7870vXn3uQIxe19Q
-  udp: true
-- name: 🇩🇪 33
-  server: 15.204.247.206
-  port: 4444
-  type: ss
-  cipher: aes-256-gcm
-  password: pKEW8JPByTVTLtM
-  udp: true
-- name: 🇩🇪 34
-  server: 51.222.200.165
-  port: 5000
-  type: ss
-  cipher: aes-256-gcm
-  password: Y6R9pAtvxxzmGC
-  udp: true
-- name: 🇩🇪 35
-  server: 51.222.155.32
-  port: 5003
-  type: ss
-  cipher: aes-256-gcm
-  password: g5MeD6Ft3CWlJId
-  udp: true
-- name: 🇩🇪 36
-  server: 217.138.213.38
-  port: 1080
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: XF0klw7870vXn3uQIxe19Q
-  udp: true
-- name: 🇩🇪 37
-  server: 161.129.71.148
-  port: 17913
-  type: ss
-  cipher: aes-128-gcm
-  password: wcjMniCODfhz26P7L2BvpEDQfhogbFTl
-  udp: true
-- name: 🇩🇪 38
-  server: 15.204.233.41
-  port: 8882
-  type: ss
-  cipher: aes-256-gcm
-  password: kDWvXYZoTBcGkC4
-  udp: true
-- name: 🇩🇪 39
-  server: 51.222.141.125
-  port: 445
-  type: ss
-  cipher: aes-256-gcm
-  password: zDNVedRFPQexG9v
-  udp: true
-- name: 🇩🇪 40
-  server: 107.173.254.27
-  port: 15311
-  type: vmess
-  uuid: ad78d02b-873f-4cff-8d4a-673f53d6ce0f
-  alterId: 0
-  cipher: auto
-  tls: false
-  udp: true
-- name: 🇩🇪 41
-  server: 68.168.116.6
-  port: 1080
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: XF0klw7870vXn3uQIxe19Q
-  udp: true
-- name: 🇩🇪 42
-  server: 68.168.114.226
-  port: 1080
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: XF0klw7870vXn3uQIxe19Q
-  udp: true
-- name: 🇩🇪 43
-  server: 107.173.27.219
-  port: 6666
-  type: vmess
-  uuid: f0a2fbe5-29bf-468c-ddc1-b524552d1a23
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: ws
-  ws-opts:
-    path: /youtube
-  udp: true
-- name: 🇩🇪 44
-  server: 185.232.22.18
-  port: 1080
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: XF0klw7870vXn3uQIxe19Q
-  udp: true
-- name: 🇩🇪 45
-  server: 140.82.63.79
-  port: 8388
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: ZoZtfPOyVvmKARUN
-  udp: true
-- name: 🇩🇪 46
-  server: 51.79.64.198
-  port: 8119
-  type: ss
-  cipher: aes-256-gcm
-  password: cdBIDV42DCwnfIN
-  udp: true
-- name: 🇩🇪 47
-  server: 51.79.49.116
-  port: 8882
-  type: ss
-  cipher: aes-256-gcm
-  password: kDWvXYZoTBcGkC4
-  udp: true
-- name: 🇩🇪 48
-  server: 51.79.85.185
-  port: 8118
-  type: ss
-  cipher: aes-256-gcm
-  password: cdBIDV42DCwnfIN
-  udp: true
-- name: 🇩🇪 49
-  server: 185.236.200.210
-  port: 1080
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: XF0klw7870vXn3uQIxe19Q
-  udp: true
-- name: 🇩🇪 50
-  server: 193.42.38.209
-  port: 1080
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: XF0klw7870vXn3uQIxe19Q
-  udp: true
-- name: 🇩🇪 51
-  server: 146.70.34.226
-  port: 1080
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: XF0klw7870vXn3uQIxe19Q
-  udp: true
-- name: 🇩🇪 52
-  server: 34.94.125.227
+- name: 🇺🇸 07
+  server: 104.18.152.187
   port: 443
   type: trojan
-  password: M7v%w11Se*
-  sni: mxlo.wsone.icu
-  udp: true
-- name: 🇩🇪 53
-  server: 38.132.118.30
-  port: 1080
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: XF0klw7870vXn3uQIxe19Q
-  udp: true
-- name: 🇩🇪 54
-  server: zt-ai.cloud
-  port: 443
-  type: vmess
-  uuid: fce3d6a4-0f12-49b5-a810-84bcf0fde202
-  alterId: 0
-  cipher: auto
-  tls: true
+  password: humanity
+  sni: www.ignitelimit.com
   network: ws
   ws-opts:
-    path: /
+    path: /assignment
     headers:
-      Host: zt-ai.cloud
+      Host: www.ignitelimit.com
   udp: true
-- name: 🇺🇸 55
+- name: 🇺🇸 08
+  server: 104.18.152.230
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.ignitelimit.com
+  udp: true
+- name: 🇺🇸 09
+  server: 104.18.15.230
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.ignitelimit.com
+  udp: true
+- name: 🇺🇸 10
+  server: 104.17.111.4
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.ignitelimit.com
+  udp: true
+- name: 🇺🇸 11
+  server: 104.18.152.113
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.ignitelimit.com
+  udp: true
+- name: 🇺🇸 12
+  server: 104.16.174.72
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.ignitelimit.com
+  udp: true
+- name: 🇺🇸 13
+  server: 104.18.152.152
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.ignitelimit.com
+  udp: true
+- name: 🇺🇸 14
+  server: 104.18.152.144
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.ignitelimit.com
+  udp: true
+- name: 🇺🇸 15
+  server: 104.18.152.73
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.ignitelimit.com
+  udp: true
+- name: 🇫🇷 16
+  server: 141.101.90.101
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.ignitelimit.com
+  udp: true
+- name: 🇺🇸 17
+  server: 104.18.152.149
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.ignitelimit.com
+  udp: true
+- name: 🇺🇸 18
+  server: 104.18.152.77
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.ignitelimit.com
+  udp: true
+- name: 🇺🇸 19
+  server: 172.67.74.2
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.ignitelimit.com
+  udp: true
+- name: 🇺🇸 20
   server: 100.42.228.109
   port: 443
   type: trojan
@@ -534,135 +234,179 @@ proxies:
   sni: t.me%2Fripaojiedian
   skip-cert-verify: true
   udp: true
-- name: 🇫🇷 56
-  server: 104.18.152.50
+- name: 🇺🇸 21
+  server: 172.67.149.60
   port: 443
   type: trojan
   password: humanity
   sni: www.ignitelimit.com
-  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.ignitelimit.com
   udp: true
-- name: 🇫🇷 57
-  server: 45.130.125.76
+- name: 🇫🇷 22
+  server: 172.67.221.242
   port: 443
   type: trojan
   password: humanity
   sni: www.ignitelimit.com
-  skip-cert-verify: true
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.ignitelimit.com
   udp: true
-- name: 🇫🇷 58
-  server: 104.16.174.71
+- name: 🇩🇪 23
+  server: 104.21.70.21
+  port: 443
+  type: trojan
+  password: Telegram_healer_config
+  sni: bjsa2ygfitzjtho8ucze29xf2m2q9c.g3fiajpf0erm9k3x6ww-yegzl2.workers.dev
+  network: ws
+  ws-opts:
+    path: /tr/J6IJuAAWkqyiEt8UkeRnVdLlkLIGukLr%3Fed%3D2560
+    headers:
+      Host: bjsa2ygfitzjtho8ucze29xf2m2q9c.g3fiajpf0erm9k3x6ww-yegzl2.workers.dev
+  udp: true
+- name: 🇩🇪 24
+  server: 172.111.38.100
+  port: 22324
+  type: vmess
+  uuid: 04621bae-ab36-11ec-b909-0242ac120002
+  alterId: 0
+  cipher: auto
+  tls: false
+  udp: true
+- name: 🇩🇪 25
+  server: 15.204.246.107
+  port: 8888
+  type: ss
+  cipher: aes-256-gcm
+  password: Y6R9pAtvxxzmGC
+  udp: true
+- name: 🇩🇪 26
+  server: 51.79.85.185
+  port: 8118
+  type: ss
+  cipher: aes-256-gcm
+  password: cdBIDV42DCwnfIN
+  udp: true
+- name: 🇩🇪 27
+  server: 15.204.247.206
+  port: 4444
+  type: ss
+  cipher: aes-256-gcm
+  password: pKEW8JPByTVTLtM
+  udp: true
+- name: 🇩🇪 28
+  server: 51.222.141.125
+  port: 445
+  type: ss
+  cipher: aes-256-gcm
+  password: zDNVedRFPQexG9v
+  udp: true
+- name: 🇩🇪 29
+  server: yyz-ca-01.blncvpn4u.cc
+  port: 9443
+  type: ss
+  cipher: aes-256-gcm
+  password: eveaaTOb8ji8yntw2Z9yWUG0d6Ir8Ld8m3ymH8THdC5egiTH1mXCiBc0Skr7FibH
+  udp: true
+- name: 🇩🇪 30
+  server: 15.204.233.41
+  port: 8882
+  type: ss
+  cipher: aes-256-gcm
+  password: kDWvXYZoTBcGkC4
+  udp: true
+- name: 🇩🇪 31
+  server: 45.32.57.118
+  port: 4433
+  type: vmess
+  uuid: 35b89832-0a7c-48dd-8d1c-a2891b522195
+  alterId: 0
+  cipher: auto
+  tls: false
+  udp: true
+- name: 🇩🇪 32
+  server: 31.77.8.97
+  port: 110
+  type: vmess
+  uuid: e8758bf0-c234-4809-89f7-25fd868316d0
+  alterId: 0
+  cipher: auto
+  tls: false
+  udp: true
+- name: 🇩🇪 33
+  server: 146.190.236.129
+  port: 17000
+  type: ss
+  cipher: aes-256-gcm
+  password: pX0uhU3ZjUcLWYs0Vez55BO3JoQrRlL
+  udp: true
+- name: 🇩🇪 34
+  server: 78.47.146.151
   port: 443
   type: trojan
   password: humanity
-  sni: www.ignitelimit.com
-  skip-cert-verify: true
+  sni: www.pleadcourt.org
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.pleadcourt.org
   udp: true
-- name: 🇫🇷 59
-  server: 104.18.152.133
+- name: 🇩🇪 35
+  server: 139.64.166.25
+  port: 443
+  type: vmess
+  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
+  alterId: 0
+  cipher: auto
+  tls: true
+  servername: pahobac.org
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: pahobac.org
+  udp: true
+- name: 🇺🇸 36
+  server: 167.82.76.27
   port: 443
   type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
+  password: MiTiVPN
+  sni: ssl.fastly.com
   skip-cert-verify: true
   udp: true
-- name: 🇫🇷 60
-  server: 104.17.111.4
+- name: 🇺🇸 37
+  server: 199.232.78.160
   port: 443
   type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
+  password: MiTiVPN
+  sni: ssl.fastly.com
   skip-cert-verify: true
   udp: true
-- name: 🇫🇷 61
-  server: 104.18.152.229
+- name: 🇺🇸 38
+  server: 151.101.56.7
   port: 443
   type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
+  password: MiTiVPN
+  sni: ssl.fastly.com
   skip-cert-verify: true
   udp: true
-- name: 🇫🇷 62
-  server: 104.18.152.175
+- name: 🇺🇸 39
+  server: 151.101.56.6
   port: 443
   type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
+  password: MiTiVPN
+  sni: ssl.fastly.com
   skip-cert-verify: true
   udp: true
-- name: 🇫🇷 63
-  server: 104.16.174.14
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇫🇷 64
-  server: 104.18.152.140
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇫🇷 65
-  server: 198.41.223.96
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇫🇷 66
-  server: 104.16.174.101
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇫🇷 67
-  server: 104.16.174.117
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇺🇸 68
-  server: 130.250.137.171
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇫🇷 69
-  server: 104.17.177.143
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇫🇷 70
-  server: 104.18.152.113
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇫🇷 71
-  server: 104.16.174.22
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇫🇷 72
+- name: 🇫🇷 40
   server: 104.16.174.36
   port: 443
   type: trojan
@@ -670,223 +414,46 @@ proxies:
   sni: www.ignitelimit.com
   skip-cert-verify: true
   udp: true
-- name: 🇫🇷 73
-  server: 104.16.174.37
+- name: 🇫🇷 41
+  server: 172.64.80.1
+  port: 8443
+  type: vmess
+  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /lMnsZUN4/
+    headers:
+      Host: v2ray1.dozapp.xyz
+  udp: true
+- name: 🇫🇷 42
+  server: 104.18.9.83
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.calmlunch.com
+  skip-cert-verify: true
+  udp: true
+- name: 🇫🇷 43
+  server: 104.18.152.143
   port: 443
   type: trojan
   password: humanity
   sni: www.ignitelimit.com
   skip-cert-verify: true
   udp: true
-- name: 🇫🇷 74
-  server: 104.16.174.185
+- name: 🇫🇷 44
+  server: 104.18.15.230
   port: 443
   type: trojan
   password: humanity
   sni: www.ignitelimit.com
   skip-cert-verify: true
   udp: true
-- name: 🇫🇷 75
-  server: 104.16.174.6
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇫🇷 76
-  server: 104.19.229.21
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇫🇷 77
-  server: 104.18.152.159
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇫🇷 78
-  server: 104.16.174.148
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇫🇷 79
-  server: 104.18.152.144
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇫🇷 80
-  server: 104.16.174.143
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇫🇷 81
-  server: 104.18.152.179
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇺🇸 82
-  server: 216.24.57.7
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇫🇷 83
-  server: 45.130.125.158
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇫🇷 84
-  server: 104.16.174.121
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇫🇷 85
-  server: 104.18.152.219
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇫🇷 86
-  server: 104.18.152.152
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇫🇷 87
-  server: 86.38.214.205
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇫🇷 88
-  server: 104.26.14.137
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇫🇷 89
-  server: 104.18.152.103
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇫🇷 90
-  server: 104.18.152.187
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇫🇷 91
-  server: 104.17.111.1
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇫🇷 92
-  server: 104.16.174.44
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇫🇷 93
-  server: 104.18.152.149
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇫🇷 94
-  server: 104.16.73.213
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇫🇷 95
-  server: 104.18.152.73
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇫🇷 96
-  server: 104.16.174.33
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇫🇷 97
-  server: 104.17.111.8
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇺🇸 98
-  server: 165.215.250.14
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇫🇷 99
-  server: 104.18.152.155
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇫🇷 100
+- name: 🇫🇷 45
   server: 104.18.12.149
   port: 443
   type: trojan
@@ -894,55 +461,166 @@ proxies:
   sni: www.ignitelimit.com
   skip-cert-verify: true
   udp: true
-- name: 🇫🇷 101
-  server: 104.18.152.246
+- name: 🇫🇷 46
+  server: 104.16.174.72
   port: 443
   type: trojan
   password: humanity
   sni: www.ignitelimit.com
   skip-cert-verify: true
   udp: true
-- name: 🇫🇷 102
-  server: 172.67.74.2
+- name: 🇫🇷 47
+  server: 104.18.8.83
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.calmlunch.com
+  skip-cert-verify: true
+  udp: true
+- name: 🇫🇷 48
+  server: 104.18.152.108
   port: 443
   type: trojan
   password: humanity
   sni: www.ignitelimit.com
   skip-cert-verify: true
   udp: true
-- name: 🇺🇸 103
-  server: 162.159.136.234
+- name: 🇫🇷 49
+  server: 45.130.125.158
   port: 443
   type: trojan
   password: humanity
   sni: www.ignitelimit.com
   skip-cert-verify: true
   udp: true
-- name: 🇫🇷 104
-  server: 172.67.221.242
+- name: 🇫🇷 50
+  server: 104.16.174.143
   port: 443
   type: trojan
   password: humanity
   sni: www.ignitelimit.com
   skip-cert-verify: true
   udp: true
-- name: 🇫🇷 105
-  server: 104.21.8.107
+- name: 🇫🇷 51
+  server: 104.18.152.161
   port: 443
   type: trojan
   password: humanity
   sni: www.ignitelimit.com
   skip-cert-verify: true
   udp: true
-- name: 🇫🇷 106
-  server: 104.18.152.208
+- name: 🇫🇷 52
+  server: 104.18.152.133
   port: 443
   type: trojan
   password: humanity
   sni: www.ignitelimit.com
   skip-cert-verify: true
   udp: true
-- name: 🇫🇷 107
+- name: 🇺🇸 53
+  server: 165.215.250.14
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  skip-cert-verify: true
+  udp: true
+- name: 🇫🇷 54
+  server: 104.17.148.22
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  skip-cert-verify: true
+  udp: true
+- name: 🇫🇷 55
+  server: 104.17.111.3
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  skip-cert-verify: true
+  udp: true
+- name: 🇫🇷 56
+  server: 104.16.174.33
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  skip-cert-verify: true
+  udp: true
+- name: 🇫🇷 57
+  server: 104.18.152.159
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  skip-cert-verify: true
+  udp: true
+- name: 🇫🇷 58
+  server: 172.67.167.78
+  port: 8443
+  type: vmess
+  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /lMnsZUN4/
+    headers:
+      Host: v2ray1.dozapp.xyz
+  udp: true
+- name: 🇫🇷 59
+  server: 104.18.152.187
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  skip-cert-verify: true
+  udp: true
+- name: 🇫🇷 60
+  server: 104.18.152.204
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  skip-cert-verify: true
+  udp: true
+- name: 🇫🇷 61
+  server: 104.18.152.219
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  skip-cert-verify: true
+  udp: true
+- name: 🇫🇷 62
+  server: 104.16.148.5
+  port: 443
+  type: trojan
+  password: 19877587-ed94-4033-88cd-4ac50a5e8718
+  sni: dimskiee.biz.id
+  skip-cert-verify: true
+  udp: true
+- name: 🇫🇷 63
+  server: 104.18.22.63
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  skip-cert-verify: true
+  udp: true
+- name: 🇫🇷 64
+  server: 104.17.177.143
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  skip-cert-verify: true
+  udp: true
+- name: 🇫🇷 65
   server: 104.18.152.230
   port: 443
   type: trojan
@@ -950,7 +628,31 @@ proxies:
   sni: www.ignitelimit.com
   skip-cert-verify: true
   udp: true
-- name: 🇫🇷 108
+- name: 🇫🇷 66
+  server: 104.18.23.63
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  skip-cert-verify: true
+  udp: true
+- name: 🇫🇷 67
+  server: 104.18.152.77
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  skip-cert-verify: true
+  udp: true
+- name: 🇫🇷 68
+  server: 104.16.174.6
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  skip-cert-verify: true
+  udp: true
+- name: 🇫🇷 69
   server: 104.18.152.97
   port: 443
   type: trojan
@@ -958,15 +660,223 @@ proxies:
   sni: www.ignitelimit.com
   skip-cert-verify: true
   udp: true
-- name: 🇫🇷 109
-  server: 104.16.7.70
+- name: 🇫🇷 70
+  server: 104.18.152.207
   port: 443
   type: trojan
   password: humanity
   sni: www.ignitelimit.com
   skip-cert-verify: true
   udp: true
-- name: 🇫🇷 110
+- name: 🇫🇷 71
+  server: 104.18.152.140
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  skip-cert-verify: true
+  udp: true
+- name: 🇫🇷 72
+  server: 104.16.174.44
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  skip-cert-verify: true
+  udp: true
+- name: 🇫🇷 73
+  server: 104.16.174.148
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  skip-cert-verify: true
+  udp: true
+- name: 🇫🇷 74
+  server: 104.16.174.101
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  skip-cert-verify: true
+  udp: true
+- name: 🇫🇷 75
+  server: 104.18.32.47
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.calmlunch.com
+  skip-cert-verify: true
+  udp: true
+- name: 🇫🇷 76
+  server: 104.18.152.50
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  skip-cert-verify: true
+  udp: true
+- name: 🇫🇷 77
+  server: 104.18.152.155
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  skip-cert-verify: true
+  udp: true
+- name: 🇫🇷 78
+  server: 104.16.174.117
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  skip-cert-verify: true
+  udp: true
+- name: 🇫🇷 79
+  server: 104.16.174.22
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  skip-cert-verify: true
+  udp: true
+- name: 🇫🇷 80
+  server: 104.18.152.113
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  skip-cert-verify: true
+  udp: true
+- name: 🇫🇷 81
+  server: 104.16.174.14
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  skip-cert-verify: true
+  udp: true
+- name: 🇫🇷 82
+  server: 104.16.174.185
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  skip-cert-verify: true
+  udp: true
+- name: 🇫🇷 83
+  server: 104.18.152.229
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  skip-cert-verify: true
+  udp: true
+- name: 🇫🇷 84
+  server: 104.18.152.179
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  skip-cert-verify: true
+  udp: true
+- name: 🇫🇷 85
+  server: 104.18.152.244
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  skip-cert-verify: true
+  udp: true
+- name: 🇫🇷 86
+  server: 198.41.223.96
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  skip-cert-verify: true
+  udp: true
+- name: 🇫🇷 87
+  server: 104.17.121.43
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.calmlunch.com
+  skip-cert-verify: true
+  udp: true
+- name: 🇫🇷 88
+  server: 162.159.254.191
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  skip-cert-verify: true
+  udp: true
+- name: 🇫🇷 89
+  server: 104.18.152.152
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  skip-cert-verify: true
+  udp: true
+- name: 🇫🇷 90
+  server: 104.16.174.37
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  skip-cert-verify: true
+  udp: true
+- name: 🇫🇷 91
+  server: 104.17.111.8
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  skip-cert-verify: true
+  udp: true
+- name: 🇺🇸 92
+  server: 162.159.136.234
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  skip-cert-verify: true
+  udp: true
+- name: 🇫🇷 93
+  server: 104.17.111.1
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  skip-cert-verify: true
+  udp: true
+- name: 🇺🇸 94
+  server: 130.250.137.171
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  skip-cert-verify: true
+  udp: true
+- name: 🇫🇷 95
+  server: 104.18.152.103
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  skip-cert-verify: true
+  udp: true
+- name: 🇫🇷 96
+  server: 86.38.214.205
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  skip-cert-verify: true
+  udp: true
+- name: 🇫🇷 97
   server: 104.18.152.225
   port: 443
   type: trojan
@@ -974,8 +884,112 @@ proxies:
   sni: www.ignitelimit.com
   skip-cert-verify: true
   udp: true
+- name: 🇫🇷 98
+  server: 104.16.73.213
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  skip-cert-verify: true
+  udp: true
+- name: 🇫🇷 99
+  server: 104.18.152.246
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  skip-cert-verify: true
+  udp: true
+- name: 🇫🇷 100
+  server: 104.18.152.210
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  skip-cert-verify: true
+  udp: true
+- name: 🇫🇷 101
+  server: 172.67.74.2
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  skip-cert-verify: true
+  udp: true
+- name: 🇫🇷 102
+  server: 104.18.152.233
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  skip-cert-verify: true
+  udp: true
+- name: 🇫🇷 103
+  server: 104.16.7.70
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  skip-cert-verify: true
+  udp: true
+- name: 🇫🇷 104
+  server: 104.16.174.71
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  skip-cert-verify: true
+  udp: true
+- name: 🇫🇷 105
+  server: 104.18.152.175
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  skip-cert-verify: true
+  udp: true
+- name: 🇫🇷 106
+  server: 104.18.152.149
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  skip-cert-verify: true
+  udp: true
+- name: 🇫🇷 107
+  server: 104.18.152.208
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  skip-cert-verify: true
+  udp: true
+- name: 🇫🇷 108
+  server: 104.16.174.124
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  skip-cert-verify: true
+  udp: true
+- name: 🇫🇷 109
+  server: 104.18.152.73
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  skip-cert-verify: true
+  udp: true
+- name: 🇫🇷 110
+  server: 104.16.174.34
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  skip-cert-verify: true
+  udp: true
 - name: 🇫🇷 111
-  server: 104.18.152.108
+  server: 104.16.174.12
   port: 443
   type: trojan
   password: humanity
@@ -991,14 +1005,27 @@ proxies:
   skip-cert-verify: true
   udp: true
 - name: 🇫🇷 113
-  server: 104.18.152.210
+  server: 104.18.152.144
   port: 443
   type: trojan
   password: humanity
   sni: www.ignitelimit.com
   skip-cert-verify: true
   udp: true
-- name: 🇫🇷 114
+- name: '114'
+  server: 104.17.147.22
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.ignitelimit.com
+  udp: true
+- name: 🇫🇷 115
   server: 8.6.112.0
   port: 443
   type: trojan
@@ -1006,111 +1033,7 @@ proxies:
   sni: www.ignitelimit.com
   skip-cert-verify: true
   udp: true
-- name: 🇫🇷 115
-  server: 104.16.174.124
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  skip-cert-verify: true
-  udp: true
 - name: 🇫🇷 116
-  server: 104.18.23.63
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇫🇷 117
-  server: 104.18.152.77
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇫🇷 118
-  server: 104.18.152.161
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇫🇷 119
-  server: 104.18.152.204
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇫🇷 120
-  server: 104.18.22.63
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇫🇷 121
-  server: 188.114.97.7
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇺🇸 122
-  server: 167.82.76.7
-  port: 443
-  type: trojan
-  password: MiTIVPN
-  sni: ssl.fastly.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇫🇷 123
-  server: 162.159.254.191
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇫🇷 124
-  server: 104.18.152.233
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇫🇷 125
-  server: 104.26.15.137
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇫🇷 126
-  server: 104.16.174.12
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇫🇷 127
-  server: 172.67.188.109
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇫🇷 128
   server: 104.16.174.46
   port: 443
   type: trojan
@@ -1118,95 +1041,31 @@ proxies:
   sni: www.ignitelimit.com
   skip-cert-verify: true
   udp: true
-- name: 🇫🇷 129
-  server: 104.16.174.72
+- name: 🇫🇷 117
+  server: 104.16.174.121
   port: 443
   type: trojan
   password: humanity
   sni: www.ignitelimit.com
   skip-cert-verify: true
   udp: true
-- name: 🇫🇷 130
-  server: 104.17.148.22
+- name: 🇺🇸 118
+  server: 100.42.228.109
+  port: 443
+  type: trojan
+  password: BxceQaOe
+  sni: t.me%2Fripaojiedian
+  skip-cert-verify: true
+  udp: true
+- name: 🇺🇸 119
+  server: render.com
   port: 443
   type: trojan
   password: humanity
   sni: www.ignitelimit.com
   skip-cert-verify: true
   udp: true
-- name: 🇫🇷 131
-  server: 104.16.174.34
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇫🇷 132
-  server: 172.67.149.60
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇫🇷 133
-  server: 104.18.152.244
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇫🇷 134
-  server: 104.18.152.207
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇫🇷 135
-  server: 141.101.90.101
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇫🇷 136
-  server: 104.21.46.3
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇫🇷 137
-  server: 104.20.6.134
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇫🇷 138
-  server: 104.18.15.230
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇫🇷 139
-  server: 104.18.152.143
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  skip-cert-verify: true
-  udp: true
-- name: '140'
+- name: '120'
   server: www.shopify.com
   port: 443
   type: trojan
@@ -1219,28 +1078,256 @@ proxies:
     headers:
       Host: swjsb.1f1v.t8t.hh.vavava.kdns.fr
   udp: true
-- name: 🇫🇷 141
-  server: 104.17.111.3
+- name: 🇫🇷 121
+  server: 104.20.6.134
   port: 443
   type: trojan
   password: humanity
   sni: www.ignitelimit.com
   skip-cert-verify: true
   udp: true
-- name: 🇺🇸 142
-  server: 3.148.195.154
+- name: 🇫🇷 122
+  server: 172.67.149.60
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  skip-cert-verify: true
+  udp: true
+- name: 🇫🇷 123
+  server: www.nextkyc.com
+  port: 8443
+  type: vmess
+  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /lMnsZUN4/
+    headers:
+      Host: v2ray1.dozapp.xyz
+  udp: true
+- name: 🇫🇷 124
+  server: 104.21.46.3
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  skip-cert-verify: true
+  udp: true
+- name: 🇫🇷 125
+  server: 172.67.221.242
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  skip-cert-verify: true
+  udp: true
+- name: 🇫🇷 126
+  server: guanwang.awsno.com
+  port: 443
+  type: vmess
+  uuid: 6a89a215-22bf-4bd7-9642-b95b2e09583a
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: true
+  servername: guanwang.awsno.com
+  network: ws
+  ws-opts:
+    path: /hls/cctv5phd.m3u8
+    headers:
+      Host: guanwang.awsno.com
+  udp: true
+- name: 🇫🇷 127
+  server: 188.114.97.7
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  skip-cert-verify: true
+  udp: true
+- name: 🇺🇸 128
+  server: 54.147.191.121
   port: 443
   type: ss
   cipher: aes-256-cfb
   password: amazonskr05
   udp: true
-- name: 🇫🇷 143
-  server: www.speedtest.org
+- name: 🇺🇸 129
+  server: 54.204.185.38
+  port: 443
+  type: ss
+  cipher: aes-256-cfb
+  password: amazonskr05
+  udp: true
+- name: '130'
+  server: node1.liudonghoe.com
+  port: 443
+  type: vmess
+  uuid: 40ad80bf-eff3-4f2a-a9c2-d69b61e80d97
+  alterId: 0
+  cipher: auto
+  tls: true
+  servername: node1.liudonghoe.com
+  network: ws
+  ws-opts:
+    path: /hoe1
+    headers:
+      Host: node1.liudonghoe.com
+  udp: true
+- name: '131'
+  server: fan.226278.xyz
+  port: 443
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: '132'
+  server: www.ignitelimit.com
   port: 443
   type: trojan
   password: humanity
-  sni: www.ignitelimit.com
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /assignment
+  udp: true
+- name: '133'
+  server: fan.596189.xyz
+  port: 443
+  type: http
+  tls: true
   skip-cert-verify: true
+  udp: true
+- name: 🇯🇵 134
+  server: 13.231.184.186
+  port: 443
+  type: ss
+  cipher: aes-256-cfb
+  password: amazonskr05
+  udp: true
+- name: '135'
+  server: node5.liudonghoe.com
+  port: 443
+  type: vmess
+  uuid: 7880bb48-1830-48d8-84fd-29c911e38870
+  alterId: 0
+  cipher: auto
+  tls: true
+  servername: node5.liudonghoe.com
+  network: ws
+  ws-opts:
+    path: /hoe5
+    headers:
+      Host: node5.liudonghoe.com
+  udp: true
+- name: '136'
+  server: node8.liudonghoe.com
+  port: 443
+  type: vmess
+  uuid: 47050e4e-965d-41ca-976d-73c1f11e6905
+  alterId: 0
+  cipher: auto
+  tls: true
+  servername: node8.liudonghoe.com
+  network: ws
+  ws-opts:
+    path: /hoe8
+    headers:
+      Host: node8.liudonghoe.com
+  udp: true
+- name: '137'
+  server: node7.liudonghoe.com
+  port: 443
+  type: vmess
+  uuid: 79fb5b79-479d-4586-969f-4c97436d1e74
+  alterId: 0
+  cipher: auto
+  tls: true
+  servername: node7.liudonghoe.com
+  network: ws
+  ws-opts:
+    path: /hoe7
+    headers:
+      Host: node7.liudonghoe.com
+  udp: true
+- name: '138'
+  server: node3.liudonghoe.com
+  port: 443
+  type: vmess
+  uuid: 3425986d-7dbf-4a63-9ea3-5b3ca5026ba2
+  alterId: 0
+  cipher: auto
+  tls: true
+  servername: node3.liudonghoe.com
+  network: ws
+  ws-opts:
+    path: /hoe3
+    headers:
+      Host: node3.liudonghoe.com
+  udp: true
+- name: 🇩🇪 139
+  server: 185.220.100.168
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.calmlunch.com
+  skip-cert-verify: true
+  udp: true
+- name: 🇺🇸 140
+  server: 63.180.254.10
+  port: 443
+  type: ss
+  cipher: aes-256-cfb
+  password: amazonskr05
+  udp: true
+- name: 🇩🇪 141
+  server: 89.127.218.61
+  port: 443
+  type: vmess
+  uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /api/v1/gpu-stream/socket
+    headers:
+      Host: renderer-stream-2-62.mirra.now
+  udp: true
+- name: 🇩🇪 142
+  server: 13.140.28.46
+  port: 443
+  type: vmess
+  uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /api/v1/gpu-stream/socket
+    headers:
+      Host: renderer-stream-2-62.mirra.now
+  udp: true
+- name: 🇩🇪 143
+  server: 85.215.41.19
+  port: 443
+  type: vmess
+  uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /api/v1/gpu-stream/socket
+    headers:
+      Host: renderer-stream-2-62.mirra.now
   udp: true
 proxy-groups:
 - name: 🛑 广告拦截
@@ -1286,25 +1373,25 @@ proxy-groups:
   - 🇩🇪 01
   - 🇺🇸 02
   - 🇺🇸 03
-  - 🇺🇸 04
+  - 🇩🇪 04
   - 🇺🇸 05
   - 🇺🇸 06
-  - 🇩🇪 07
+  - 🇺🇸 07
   - 🇺🇸 08
-  - 🇩🇪 09
-  - 🇩🇪 10
+  - 🇺🇸 09
+  - 🇺🇸 10
   - 🇺🇸 11
   - 🇺🇸 12
   - 🇺🇸 13
   - 🇺🇸 14
   - 🇺🇸 15
-  - 🇩🇪 16
+  - 🇫🇷 16
   - 🇺🇸 17
-  - 🇩🇪 18
+  - 🇺🇸 18
   - 🇺🇸 19
   - 🇺🇸 20
-  - 🇩🇪 21
-  - 🇩🇪 22
+  - 🇺🇸 21
+  - 🇫🇷 22
   - 🇩🇪 23
   - 🇩🇪 24
   - 🇩🇪 25
@@ -1318,26 +1405,26 @@ proxy-groups:
   - 🇩🇪 33
   - 🇩🇪 34
   - 🇩🇪 35
-  - 🇩🇪 36
-  - 🇩🇪 37
-  - 🇩🇪 38
-  - 🇩🇪 39
-  - 🇩🇪 40
-  - 🇩🇪 41
-  - 🇩🇪 42
-  - 🇩🇪 43
-  - 🇩🇪 44
-  - 🇩🇪 45
-  - 🇩🇪 46
-  - 🇩🇪 47
-  - 🇩🇪 48
-  - 🇩🇪 49
-  - 🇩🇪 50
-  - 🇩🇪 51
-  - 🇩🇪 52
-  - 🇩🇪 53
-  - 🇩🇪 54
-  - 🇺🇸 55
+  - 🇺🇸 36
+  - 🇺🇸 37
+  - 🇺🇸 38
+  - 🇺🇸 39
+  - 🇫🇷 40
+  - 🇫🇷 41
+  - 🇫🇷 42
+  - 🇫🇷 43
+  - 🇫🇷 44
+  - 🇫🇷 45
+  - 🇫🇷 46
+  - 🇫🇷 47
+  - 🇫🇷 48
+  - 🇫🇷 49
+  - 🇫🇷 50
+  - 🇫🇷 51
+  - 🇫🇷 52
+  - 🇺🇸 53
+  - 🇫🇷 54
+  - 🇫🇷 55
   - 🇫🇷 56
   - 🇫🇷 57
   - 🇫🇷 58
@@ -1350,7 +1437,7 @@ proxy-groups:
   - 🇫🇷 65
   - 🇫🇷 66
   - 🇫🇷 67
-  - 🇺🇸 68
+  - 🇫🇷 68
   - 🇫🇷 69
   - 🇫🇷 70
   - 🇫🇷 71
@@ -1364,7 +1451,7 @@ proxy-groups:
   - 🇫🇷 79
   - 🇫🇷 80
   - 🇫🇷 81
-  - 🇺🇸 82
+  - 🇫🇷 82
   - 🇫🇷 83
   - 🇫🇷 84
   - 🇫🇷 85
@@ -1374,18 +1461,18 @@ proxy-groups:
   - 🇫🇷 89
   - 🇫🇷 90
   - 🇫🇷 91
-  - 🇫🇷 92
+  - 🇺🇸 92
   - 🇫🇷 93
-  - 🇫🇷 94
+  - 🇺🇸 94
   - 🇫🇷 95
   - 🇫🇷 96
   - 🇫🇷 97
-  - 🇺🇸 98
+  - 🇫🇷 98
   - 🇫🇷 99
   - 🇫🇷 100
   - 🇫🇷 101
   - 🇫🇷 102
-  - 🇺🇸 103
+  - 🇫🇷 103
   - 🇫🇷 104
   - 🇫🇷 105
   - 🇫🇷 106
@@ -1396,36 +1483,36 @@ proxy-groups:
   - 🇫🇷 111
   - 🇫🇷 112
   - 🇫🇷 113
-  - 🇫🇷 114
+  - '114'
   - 🇫🇷 115
   - 🇫🇷 116
   - 🇫🇷 117
-  - 🇫🇷 118
-  - 🇫🇷 119
-  - 🇫🇷 120
+  - 🇺🇸 118
+  - 🇺🇸 119
+  - '120'
   - 🇫🇷 121
-  - 🇺🇸 122
+  - 🇫🇷 122
   - 🇫🇷 123
   - 🇫🇷 124
   - 🇫🇷 125
   - 🇫🇷 126
   - 🇫🇷 127
-  - 🇫🇷 128
-  - 🇫🇷 129
-  - 🇫🇷 130
-  - 🇫🇷 131
-  - 🇫🇷 132
-  - 🇫🇷 133
-  - 🇫🇷 134
-  - 🇫🇷 135
-  - 🇫🇷 136
-  - 🇫🇷 137
-  - 🇫🇷 138
-  - 🇫🇷 139
-  - '140'
-  - 🇫🇷 141
-  - 🇺🇸 142
-  - 🇫🇷 143
+  - 🇺🇸 128
+  - 🇺🇸 129
+  - '130'
+  - '131'
+  - '132'
+  - '133'
+  - 🇯🇵 134
+  - '135'
+  - '136'
+  - '137'
+  - '138'
+  - 🇩🇪 139
+  - 🇺🇸 140
+  - 🇩🇪 141
+  - 🇩🇪 142
+  - 🇩🇪 143
 - name: 🇭🇰 香港节点
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -1446,7 +1533,7 @@ proxy-groups:
   interval: 300
   tolerance: 50
   proxies:
-  - DIRECT
+  - 🇯🇵 134
 - name: 🇸🇬 新加坡节点
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -1462,25 +1549,34 @@ proxy-groups:
   proxies:
   - 🇺🇸 02
   - 🇺🇸 03
-  - 🇺🇸 04
   - 🇺🇸 05
   - 🇺🇸 06
+  - 🇺🇸 07
   - 🇺🇸 08
+  - 🇺🇸 09
+  - 🇺🇸 10
   - 🇺🇸 11
   - 🇺🇸 12
   - 🇺🇸 13
   - 🇺🇸 14
   - 🇺🇸 15
   - 🇺🇸 17
+  - 🇺🇸 18
   - 🇺🇸 19
   - 🇺🇸 20
-  - 🇺🇸 55
-  - 🇺🇸 68
-  - 🇺🇸 82
-  - 🇺🇸 98
-  - 🇺🇸 103
-  - 🇺🇸 122
-  - 🇺🇸 142
+  - 🇺🇸 21
+  - 🇺🇸 36
+  - 🇺🇸 37
+  - 🇺🇸 38
+  - 🇺🇸 39
+  - 🇺🇸 53
+  - 🇺🇸 92
+  - 🇺🇸 94
+  - 🇺🇸 118
+  - 🇺🇸 119
+  - 🇺🇸 128
+  - 🇺🇸 129
+  - 🇺🇸 140
 - name: 🇰🇷 韩国节点
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -1502,13 +1598,7 @@ proxy-groups:
   tolerance: 50
   proxies:
   - 🇩🇪 01
-  - 🇩🇪 07
-  - 🇩🇪 09
-  - 🇩🇪 10
-  - 🇩🇪 16
-  - 🇩🇪 18
-  - 🇩🇪 21
-  - 🇩🇪 22
+  - 🇩🇪 04
   - 🇩🇪 23
   - 🇩🇪 24
   - 🇩🇪 25
@@ -1522,31 +1612,33 @@ proxy-groups:
   - 🇩🇪 33
   - 🇩🇪 34
   - 🇩🇪 35
-  - 🇩🇪 36
-  - 🇩🇪 37
-  - 🇩🇪 38
-  - 🇩🇪 39
-  - 🇩🇪 40
-  - 🇩🇪 41
-  - 🇩🇪 42
-  - 🇩🇪 43
-  - 🇩🇪 44
-  - 🇩🇪 45
-  - 🇩🇪 46
-  - 🇩🇪 47
-  - 🇩🇪 48
-  - 🇩🇪 49
-  - 🇩🇪 50
-  - 🇩🇪 51
-  - 🇩🇪 52
-  - 🇩🇪 53
-  - 🇩🇪 54
+  - 🇩🇪 139
+  - 🇩🇪 141
+  - 🇩🇪 142
+  - 🇩🇪 143
 - name: 🇫🇷 法国节点
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
+  - 🇫🇷 16
+  - 🇫🇷 22
+  - 🇫🇷 40
+  - 🇫🇷 41
+  - 🇫🇷 42
+  - 🇫🇷 43
+  - 🇫🇷 44
+  - 🇫🇷 45
+  - 🇫🇷 46
+  - 🇫🇷 47
+  - 🇫🇷 48
+  - 🇫🇷 49
+  - 🇫🇷 50
+  - 🇫🇷 51
+  - 🇫🇷 52
+  - 🇫🇷 54
+  - 🇫🇷 55
   - 🇫🇷 56
   - 🇫🇷 57
   - 🇫🇷 58
@@ -1559,6 +1651,7 @@ proxy-groups:
   - 🇫🇷 65
   - 🇫🇷 66
   - 🇫🇷 67
+  - 🇫🇷 68
   - 🇫🇷 69
   - 🇫🇷 70
   - 🇫🇷 71
@@ -1572,6 +1665,7 @@ proxy-groups:
   - 🇫🇷 79
   - 🇫🇷 80
   - 🇫🇷 81
+  - 🇫🇷 82
   - 🇫🇷 83
   - 🇫🇷 84
   - 🇫🇷 85
@@ -1581,16 +1675,16 @@ proxy-groups:
   - 🇫🇷 89
   - 🇫🇷 90
   - 🇫🇷 91
-  - 🇫🇷 92
   - 🇫🇷 93
-  - 🇫🇷 94
   - 🇫🇷 95
   - 🇫🇷 96
   - 🇫🇷 97
+  - 🇫🇷 98
   - 🇫🇷 99
   - 🇫🇷 100
   - 🇫🇷 101
   - 🇫🇷 102
+  - 🇫🇷 103
   - 🇫🇷 104
   - 🇫🇷 105
   - 🇫🇷 106
@@ -1601,33 +1695,16 @@ proxy-groups:
   - 🇫🇷 111
   - 🇫🇷 112
   - 🇫🇷 113
-  - 🇫🇷 114
   - 🇫🇷 115
   - 🇫🇷 116
   - 🇫🇷 117
-  - 🇫🇷 118
-  - 🇫🇷 119
-  - 🇫🇷 120
   - 🇫🇷 121
+  - 🇫🇷 122
   - 🇫🇷 123
   - 🇫🇷 124
   - 🇫🇷 125
   - 🇫🇷 126
   - 🇫🇷 127
-  - 🇫🇷 128
-  - 🇫🇷 129
-  - 🇫🇷 130
-  - 🇫🇷 131
-  - 🇫🇷 132
-  - 🇫🇷 133
-  - 🇫🇷 134
-  - 🇫🇷 135
-  - 🇫🇷 136
-  - 🇫🇷 137
-  - 🇫🇷 138
-  - 🇫🇷 139
-  - 🇫🇷 141
-  - 🇫🇷 143
 - name: 🇷🇺 俄罗斯节点
   type: url-test
   url: http://www.gstatic.com/generate_204
