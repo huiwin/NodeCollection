@@ -248,10 +248,12 @@ proxies:
   cipher: auto
   tls: false
   udp: true
-- name: '28'
-  server: 127.0.0.1
-  port: 1080
-  type: socks5
+- name: 🇸🇬 28
+  server: sg-3.gsafevpnapi.com
+  port: 44370
+  type: trojan
+  password: 5416ef6f-b8e5-48e9-87e4-3d5649b2e3e0
+  sni: www.yahoo.com
   udp: true
 - name: 🇺🇸 29
   server: 54.90.169.61
@@ -468,7 +470,7 @@ proxies:
     headers:
       Host: 24864168545164.oylfmxz.cn
   udp: true
-- name: 🇩🇪 55
+- name: 🇭🇰 55
   server: gd.bjnet2.com
   port: 36602
   type: ss
@@ -554,27 +556,7 @@ proxies:
   cipher: auto
   tls: false
   udp: true
-- name: 🇺🇸 63
-  server: 3.85.21.125
-  port: 443
-  type: ss
-  cipher: aes-256-cfb
-  password: amazonskr05
-  udp: true
-- name: 🇹🇼 64
-  server: zhilegelian1.bpca2026.top
-  port: 443
-  type: trojan
-  password: f15900b5-f86b-432d-a67c-45325dc66a2d
-  sni: zhilegelian1.bpca2026.top
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /images
-    headers:
-      Host: zhilegelian1.bpca2026.top
-  udp: true
-- name: '65'
+- name: '63'
   server: 127.0.0.53
   port: 80
   type: vmess
@@ -583,7 +565,7 @@ proxies:
   cipher: auto
   tls: false
   udp: true
-- name: '66'
+- name: '64'
   server: 127.0.0.53
   port: 81
   type: vmess
@@ -592,7 +574,7 @@ proxies:
   cipher: auto
   tls: false
   udp: true
-- name: '67'
+- name: '65'
   server: 127.0.0.53
   port: 82
   type: vmess
@@ -601,7 +583,7 @@ proxies:
   cipher: auto
   tls: false
   udp: true
-- name: '68'
+- name: '66'
   server: 127.0.0.53
   port: 83
   type: vmess
@@ -610,7 +592,7 @@ proxies:
   cipher: auto
   tls: false
   udp: true
-- name: '69'
+- name: '67'
   server: 127.0.0.53
   port: 84
   type: vmess
@@ -619,7 +601,7 @@ proxies:
   cipher: auto
   tls: false
   udp: true
-- name: '70'
+- name: '68'
   server: 127.0.0.53
   port: 85
   type: vmess
@@ -628,7 +610,7 @@ proxies:
   cipher: auto
   tls: false
   udp: true
-- name: '71'
+- name: '69'
   server: 127.0.0.53
   port: 86
   type: vmess
@@ -637,7 +619,7 @@ proxies:
   cipher: auto
   tls: false
   udp: true
-- name: '72'
+- name: '70'
   server: 127.0.0.53
   port: 87
   type: vmess
@@ -646,7 +628,7 @@ proxies:
   cipher: auto
   tls: false
   udp: true
-- name: '73'
+- name: '71'
   server: 127.0.0.53
   port: 88
   type: vmess
@@ -655,7 +637,7 @@ proxies:
   cipher: auto
   tls: false
   udp: true
-- name: '74'
+- name: '72'
   server: 127.0.0.53
   port: 89
   type: vmess
@@ -664,14 +646,14 @@ proxies:
   cipher: auto
   tls: false
   udp: true
-- name: 🇺🇸 75
+- name: 🇺🇸 73
   server: 63.180.254.10
   port: 443
   type: ss
   cipher: aes-256-cfb
   password: amazonskr05
   udp: true
-- name: 🇭🇰 76
+- name: 🇭🇰 74
   server: v10.hdacd.com
   port: 30807
   type: vmess
@@ -681,7 +663,7 @@ proxies:
   tls: false
   skip-cert-verify: false
   udp: true
-- name: 🇺🇸 77
+- name: 🇺🇸 75
   server: 100.42.228.109
   port: 443
   type: trojan
@@ -689,7 +671,7 @@ proxies:
   sni: t.me%2Fripaojiedian
   skip-cert-verify: true
   udp: true
-- name: 🇹🇼 78
+- name: 🇹🇼 76
   server: 24864168545164.oylfmxz.cn
   port: 443
   type: vmess
@@ -705,7 +687,7 @@ proxies:
     headers:
       Host: 24864168545164.oylfmxz.cn
   udp: true
-- name: 🇭🇰 79
+- name: 🇭🇰 77
   server: gd.bjnet2.com
   port: 36602
   type: ss
@@ -716,7 +698,7 @@ proxies:
     mode: http
     host: 3c183f1f4eae079d708e817ae656417a.baidu.com
   udp: true
-- name: 🇭🇰 80
+- name: 🇭🇰 78
   server: gd2.bjnet2.com
   port: 36602
   type: ss
@@ -727,7 +709,7 @@ proxies:
     mode: http
     host: 3c183f1f4eae079d708e817ae656417a.baidu.com
   udp: true
-- name: 🇩🇪 81
+- name: 🇭🇰 79
   server: gd.bjnet2.com
   port: 36603
   type: ss
@@ -738,7 +720,7 @@ proxies:
     mode: http
     host: 3c183f1f4eae079d708e817ae656417a.baidu.com
   udp: true
-- name: 🇭🇰 82
+- name: 🇭🇰 80
   server: gd.bjnet2.com
   port: 36604
   type: ss
@@ -749,7 +731,7 @@ proxies:
     mode: http
     host: 3c183f1f4eae079d708e817ae656417a.baidu.com
   udp: true
-- name: 🇭🇰 83
+- name: 🇭🇰 81
   server: gd.bjnet2.com
   port: 36609
   type: ss
@@ -760,7 +742,7 @@ proxies:
     mode: http
     host: 3c183f1f4eae079d708e817ae656417a.baidu.com
   udp: true
-- name: 🇭🇰 84
+- name: 🇭🇰 82
   server: gd2.bjnet2.com
   port: 36608
   type: ss
@@ -771,7 +753,7 @@ proxies:
     mode: http
     host: 3c183f1f4eae079d708e817ae656417a.baidu.com
   udp: true
-- name: 🇭🇰 85
+- name: 🇩🇪 83
   server: gd.bjnet2.com
   port: 36608
   type: ss
@@ -782,7 +764,7 @@ proxies:
     mode: http
     host: 3c183f1f4eae079d708e817ae656417a.baidu.com
   udp: true
-- name: 🇭🇰 86
+- name: 🇭🇰 84
   server: v10.hdacd.com
   port: 30807
   type: vmess
@@ -791,34 +773,133 @@ proxies:
   cipher: auto
   tls: false
   udp: true
-- name: 🇺🇸 87
-  server: 3.85.21.125
-  port: 443
-  type: ss
-  cipher: aes-256-cfb
-  password: amazonskr05
+- name: 🇭🇰 85
+  server: 36.133.78.37
+  port: 50011
+  type: vmess
+  uuid: e1be6941-0667-469c-9224-6f34adb549ba
+  alterId: 0
+  cipher: auto
+  tls: false
   udp: true
-- name: 🇹🇼 88
-  server: zhilegelian1.bpca2026.top
-  port: 443
-  type: trojan
-  password: f15900b5-f86b-432d-a67c-45325dc66a2d
-  sni: zhilegelian1.bpca2026.top
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /images
-    headers:
-      Host: zhilegelian1.bpca2026.top
+- name: 🇭🇰 86
+  server: 157.148.7.136
+  port: 50011
+  type: vmess
+  uuid: e1be6941-0667-469c-9224-6f34adb549ba
+  alterId: 0
+  cipher: auto
+  tls: false
   udp: true
-- name: 🇸🇬 89
-  server: sg-3.gsafevpnapi.com
-  port: 44370
-  type: trojan
-  password: 5416ef6f-b8e5-48e9-87e4-3d5649b2e3e0
-  sni: www.yahoo.com
+- name: 🇭🇰 87
+  server: 157.148.7.55
+  port: 50011
+  type: vmess
+  uuid: e1be6941-0667-469c-9224-6f34adb549ba
+  alterId: 0
+  cipher: auto
+  tls: false
+  udp: true
+- name: 🇭🇰 88
+  server: 36.133.74.15
+  port: 50011
+  type: vmess
+  uuid: e1be6941-0667-469c-9224-6f34adb549ba
+  alterId: 0
+  cipher: auto
+  tls: false
+  udp: true
+- name: 🇭🇰 89
+  server: 36.134.35.36
+  port: 50011
+  type: vmess
+  uuid: e1be6941-0667-469c-9224-6f34adb549ba
+  alterId: 0
+  cipher: auto
+  tls: false
   udp: true
 - name: 🇭🇰 90
+  server: 36.139.117.41
+  port: 50011
+  type: vmess
+  uuid: e1be6941-0667-469c-9224-6f34adb549ba
+  alterId: 0
+  cipher: auto
+  tls: false
+  udp: true
+- name: 🇭🇰 91
+  server: 36.133.79.17
+  port: 50011
+  type: vmess
+  uuid: e1be6941-0667-469c-9224-6f34adb549ba
+  alterId: 0
+  cipher: auto
+  tls: false
+  udp: true
+- name: 🇰🇷 92
+  server: 36.133.78.37
+  port: 50016
+  type: vmess
+  uuid: e1be6941-0667-469c-9224-6f34adb549ba
+  alterId: 0
+  cipher: auto
+  tls: false
+  udp: true
+- name: '93'
+  server: 36.133.78.37
+  port: 50017
+  type: vmess
+  uuid: e1be6941-0667-469c-9224-6f34adb549ba
+  alterId: 0
+  cipher: auto
+  tls: false
+  udp: true
+- name: 🇺🇸 94
+  server: 36.133.78.37
+  port: 50012
+  type: vmess
+  uuid: e1be6941-0667-469c-9224-6f34adb549ba
+  alterId: 0
+  cipher: auto
+  tls: false
+  udp: true
+- name: 🇺🇸 95
+  server: 36.133.78.37
+  port: 50018
+  type: vmess
+  uuid: e1be6941-0667-469c-9224-6f34adb549ba
+  alterId: 0
+  cipher: auto
+  tls: false
+  udp: true
+- name: 🇩🇪 96
+  server: 36.133.78.37
+  port: 50013
+  type: vmess
+  uuid: e1be6941-0667-469c-9224-6f34adb549ba
+  alterId: 0
+  cipher: auto
+  tls: false
+  udp: true
+- name: 🇸🇬 97
+  server: 36.133.78.37
+  port: 50014
+  type: vmess
+  uuid: e1be6941-0667-469c-9224-6f34adb549ba
+  alterId: 0
+  cipher: auto
+  tls: false
+  udp: true
+- name: 🇯🇵 98
+  server: 36.133.78.37
+  port: 50015
+  type: vmess
+  uuid: e1be6941-0667-469c-9224-6f34adb549ba
+  alterId: 0
+  cipher: auto
+  tls: false
+  udp: true
+- name: 🇭🇰 99
   server: 36.133.78.37
   port: 50011
   type: vmess
@@ -827,7 +908,7 @@ proxies:
   cipher: auto
   tls: false
   udp: true
-- name: 🇭🇰 91
+- name: 🇭🇰 100
   server: 157.148.7.136
   port: 50011
   type: vmess
@@ -836,7 +917,7 @@ proxies:
   cipher: auto
   tls: false
   udp: true
-- name: 🇭🇰 92
+- name: 🇭🇰 101
   server: 157.148.7.55
   port: 50011
   type: vmess
@@ -845,7 +926,7 @@ proxies:
   cipher: auto
   tls: false
   udp: true
-- name: 🇭🇰 93
+- name: 🇭🇰 102
   server: 36.133.74.15
   port: 50011
   type: vmess
@@ -854,90 +935,9 @@ proxies:
   cipher: auto
   tls: false
   udp: true
-- name: 🇭🇰 94
+- name: 🇭🇰 103
   server: 36.134.35.36
   port: 50011
-  type: vmess
-  uuid: 1b30f413-2865-4d40-9146-4207778718cd
-  alterId: 0
-  cipher: auto
-  tls: false
-  udp: true
-- name: 🇭🇰 95
-  server: 36.139.117.41
-  port: 50011
-  type: vmess
-  uuid: 1b30f413-2865-4d40-9146-4207778718cd
-  alterId: 0
-  cipher: auto
-  tls: false
-  udp: true
-- name: 🇭🇰 96
-  server: 36.133.79.17
-  port: 50011
-  type: vmess
-  uuid: 1b30f413-2865-4d40-9146-4207778718cd
-  alterId: 0
-  cipher: auto
-  tls: false
-  udp: true
-- name: 🇰🇷 97
-  server: 36.133.78.37
-  port: 50016
-  type: vmess
-  uuid: 1b30f413-2865-4d40-9146-4207778718cd
-  alterId: 0
-  cipher: auto
-  tls: false
-  udp: true
-- name: '98'
-  server: 36.133.78.37
-  port: 50017
-  type: vmess
-  uuid: 1b30f413-2865-4d40-9146-4207778718cd
-  alterId: 0
-  cipher: auto
-  tls: false
-  udp: true
-- name: 🇺🇸 99
-  server: 36.133.78.37
-  port: 50012
-  type: vmess
-  uuid: 1b30f413-2865-4d40-9146-4207778718cd
-  alterId: 0
-  cipher: auto
-  tls: false
-  udp: true
-- name: 🇺🇸 100
-  server: 36.133.78.37
-  port: 50018
-  type: vmess
-  uuid: 1b30f413-2865-4d40-9146-4207778718cd
-  alterId: 0
-  cipher: auto
-  tls: false
-  udp: true
-- name: 🇩🇪 101
-  server: 36.133.78.37
-  port: 50013
-  type: vmess
-  uuid: 1b30f413-2865-4d40-9146-4207778718cd
-  alterId: 0
-  cipher: auto
-  tls: false
-  udp: true
-- name: 🇸🇬 102
-  server: 36.133.78.37
-  port: 50014
-  type: vmess
-  uuid: 1b30f413-2865-4d40-9146-4207778718cd
-  alterId: 0
-  cipher: auto
-  tls: false
-  udp: true
-- name: 🇯🇵 103
-  server: 36.133.78.37
-  port: 50015
   type: vmess
   uuid: 1b30f413-2865-4d40-9146-4207778718cd
   alterId: 0
@@ -945,6 +945,87 @@ proxies:
   tls: false
   udp: true
 - name: 🇭🇰 104
+  server: 36.139.117.41
+  port: 50011
+  type: vmess
+  uuid: 1b30f413-2865-4d40-9146-4207778718cd
+  alterId: 0
+  cipher: auto
+  tls: false
+  udp: true
+- name: 🇭🇰 105
+  server: 36.133.79.17
+  port: 50011
+  type: vmess
+  uuid: 1b30f413-2865-4d40-9146-4207778718cd
+  alterId: 0
+  cipher: auto
+  tls: false
+  udp: true
+- name: 🇰🇷 106
+  server: 36.133.78.37
+  port: 50016
+  type: vmess
+  uuid: 1b30f413-2865-4d40-9146-4207778718cd
+  alterId: 0
+  cipher: auto
+  tls: false
+  udp: true
+- name: '107'
+  server: 36.133.78.37
+  port: 50017
+  type: vmess
+  uuid: 1b30f413-2865-4d40-9146-4207778718cd
+  alterId: 0
+  cipher: auto
+  tls: false
+  udp: true
+- name: 🇺🇸 108
+  server: 36.133.78.37
+  port: 50012
+  type: vmess
+  uuid: 1b30f413-2865-4d40-9146-4207778718cd
+  alterId: 0
+  cipher: auto
+  tls: false
+  udp: true
+- name: 🇺🇸 109
+  server: 36.133.78.37
+  port: 50018
+  type: vmess
+  uuid: 1b30f413-2865-4d40-9146-4207778718cd
+  alterId: 0
+  cipher: auto
+  tls: false
+  udp: true
+- name: 🇩🇪 110
+  server: 36.133.78.37
+  port: 50013
+  type: vmess
+  uuid: 1b30f413-2865-4d40-9146-4207778718cd
+  alterId: 0
+  cipher: auto
+  tls: false
+  udp: true
+- name: 🇸🇬 111
+  server: 36.133.78.37
+  port: 50014
+  type: vmess
+  uuid: 1b30f413-2865-4d40-9146-4207778718cd
+  alterId: 0
+  cipher: auto
+  tls: false
+  udp: true
+- name: 🇯🇵 112
+  server: 36.133.78.37
+  port: 50015
+  type: vmess
+  uuid: 1b30f413-2865-4d40-9146-4207778718cd
+  alterId: 0
+  cipher: auto
+  tls: false
+  udp: true
+- name: 🇭🇰 113
   server: 36.133.78.37
   port: 50011
   type: vmess
@@ -953,7 +1034,7 @@ proxies:
   cipher: auto
   tls: false
   udp: true
-- name: 🇭🇰 105
+- name: 🇭🇰 114
   server: 157.148.7.136
   port: 50011
   type: vmess
@@ -962,7 +1043,7 @@ proxies:
   cipher: auto
   tls: false
   udp: true
-- name: 🇭🇰 106
+- name: 🇭🇰 115
   server: 157.148.7.55
   port: 50011
   type: vmess
@@ -971,7 +1052,7 @@ proxies:
   cipher: auto
   tls: false
   udp: true
-- name: 🇭🇰 107
+- name: 🇭🇰 116
   server: 36.133.74.15
   port: 50011
   type: vmess
@@ -980,90 +1061,9 @@ proxies:
   cipher: auto
   tls: false
   udp: true
-- name: 🇭🇰 108
+- name: 🇭🇰 117
   server: 36.134.35.36
   port: 50011
-  type: vmess
-  uuid: 7bfb0c9a-7439-41c8-ad1c-cd922b60c958
-  alterId: 0
-  cipher: auto
-  tls: false
-  udp: true
-- name: 🇭🇰 109
-  server: 36.139.117.41
-  port: 50011
-  type: vmess
-  uuid: 7bfb0c9a-7439-41c8-ad1c-cd922b60c958
-  alterId: 0
-  cipher: auto
-  tls: false
-  udp: true
-- name: 🇭🇰 110
-  server: 36.133.79.17
-  port: 50011
-  type: vmess
-  uuid: 7bfb0c9a-7439-41c8-ad1c-cd922b60c958
-  alterId: 0
-  cipher: auto
-  tls: false
-  udp: true
-- name: 🇰🇷 111
-  server: 36.133.78.37
-  port: 50016
-  type: vmess
-  uuid: 7bfb0c9a-7439-41c8-ad1c-cd922b60c958
-  alterId: 0
-  cipher: auto
-  tls: false
-  udp: true
-- name: '112'
-  server: 36.133.78.37
-  port: 50017
-  type: vmess
-  uuid: 7bfb0c9a-7439-41c8-ad1c-cd922b60c958
-  alterId: 0
-  cipher: auto
-  tls: false
-  udp: true
-- name: 🇺🇸 113
-  server: 36.133.78.37
-  port: 50012
-  type: vmess
-  uuid: 7bfb0c9a-7439-41c8-ad1c-cd922b60c958
-  alterId: 0
-  cipher: auto
-  tls: false
-  udp: true
-- name: 🇺🇸 114
-  server: 36.133.78.37
-  port: 50018
-  type: vmess
-  uuid: 7bfb0c9a-7439-41c8-ad1c-cd922b60c958
-  alterId: 0
-  cipher: auto
-  tls: false
-  udp: true
-- name: 🇩🇪 115
-  server: 36.133.78.37
-  port: 50013
-  type: vmess
-  uuid: 7bfb0c9a-7439-41c8-ad1c-cd922b60c958
-  alterId: 0
-  cipher: auto
-  tls: false
-  udp: true
-- name: 🇸🇬 116
-  server: 36.133.78.37
-  port: 50014
-  type: vmess
-  uuid: 7bfb0c9a-7439-41c8-ad1c-cd922b60c958
-  alterId: 0
-  cipher: auto
-  tls: false
-  udp: true
-- name: 🇯🇵 117
-  server: 36.133.78.37
-  port: 50015
   type: vmess
   uuid: 7bfb0c9a-7439-41c8-ad1c-cd922b60c958
   alterId: 0
@@ -1071,130 +1071,90 @@ proxies:
   tls: false
   udp: true
 - name: 🇭🇰 118
-  server: 36.133.78.37
+  server: 36.139.117.41
   port: 50011
   type: vmess
-  uuid: e1be6941-0667-469c-9224-6f34adb549ba
+  uuid: 7bfb0c9a-7439-41c8-ad1c-cd922b60c958
   alterId: 0
   cipher: auto
   tls: false
   udp: true
 - name: 🇭🇰 119
-  server: 157.148.7.136
-  port: 50011
-  type: vmess
-  uuid: e1be6941-0667-469c-9224-6f34adb549ba
-  alterId: 0
-  cipher: auto
-  tls: false
-  udp: true
-- name: 🇭🇰 120
-  server: 157.148.7.55
-  port: 50011
-  type: vmess
-  uuid: e1be6941-0667-469c-9224-6f34adb549ba
-  alterId: 0
-  cipher: auto
-  tls: false
-  udp: true
-- name: 🇭🇰 121
-  server: 36.133.74.15
-  port: 50011
-  type: vmess
-  uuid: e1be6941-0667-469c-9224-6f34adb549ba
-  alterId: 0
-  cipher: auto
-  tls: false
-  udp: true
-- name: 🇭🇰 122
-  server: 36.134.35.36
-  port: 50011
-  type: vmess
-  uuid: e1be6941-0667-469c-9224-6f34adb549ba
-  alterId: 0
-  cipher: auto
-  tls: false
-  udp: true
-- name: 🇭🇰 123
-  server: 36.139.117.41
-  port: 50011
-  type: vmess
-  uuid: e1be6941-0667-469c-9224-6f34adb549ba
-  alterId: 0
-  cipher: auto
-  tls: false
-  udp: true
-- name: 🇭🇰 124
   server: 36.133.79.17
   port: 50011
   type: vmess
-  uuid: e1be6941-0667-469c-9224-6f34adb549ba
+  uuid: 7bfb0c9a-7439-41c8-ad1c-cd922b60c958
   alterId: 0
   cipher: auto
   tls: false
   udp: true
-- name: 🇰🇷 125
+- name: 🇰🇷 120
   server: 36.133.78.37
   port: 50016
   type: vmess
-  uuid: e1be6941-0667-469c-9224-6f34adb549ba
+  uuid: 7bfb0c9a-7439-41c8-ad1c-cd922b60c958
   alterId: 0
   cipher: auto
   tls: false
   udp: true
-- name: '126'
+- name: '121'
   server: 36.133.78.37
   port: 50017
   type: vmess
-  uuid: e1be6941-0667-469c-9224-6f34adb549ba
+  uuid: 7bfb0c9a-7439-41c8-ad1c-cd922b60c958
   alterId: 0
   cipher: auto
   tls: false
   udp: true
-- name: 🇺🇸 127
+- name: 🇺🇸 122
   server: 36.133.78.37
   port: 50012
   type: vmess
-  uuid: e1be6941-0667-469c-9224-6f34adb549ba
+  uuid: 7bfb0c9a-7439-41c8-ad1c-cd922b60c958
   alterId: 0
   cipher: auto
   tls: false
   udp: true
-- name: 🇺🇸 128
+- name: 🇺🇸 123
   server: 36.133.78.37
   port: 50018
   type: vmess
-  uuid: e1be6941-0667-469c-9224-6f34adb549ba
+  uuid: 7bfb0c9a-7439-41c8-ad1c-cd922b60c958
   alterId: 0
   cipher: auto
   tls: false
   udp: true
-- name: 🇩🇪 129
+- name: 🇩🇪 124
   server: 36.133.78.37
   port: 50013
   type: vmess
-  uuid: e1be6941-0667-469c-9224-6f34adb549ba
+  uuid: 7bfb0c9a-7439-41c8-ad1c-cd922b60c958
   alterId: 0
   cipher: auto
   tls: false
   udp: true
-- name: 🇸🇬 130
+- name: 🇸🇬 125
   server: 36.133.78.37
   port: 50014
   type: vmess
-  uuid: e1be6941-0667-469c-9224-6f34adb549ba
+  uuid: 7bfb0c9a-7439-41c8-ad1c-cd922b60c958
   alterId: 0
   cipher: auto
   tls: false
   udp: true
-- name: 🇯🇵 131
+- name: 🇯🇵 126
   server: 36.133.78.37
   port: 50015
   type: vmess
-  uuid: e1be6941-0667-469c-9224-6f34adb549ba
+  uuid: 7bfb0c9a-7439-41c8-ad1c-cd922b60c958
   alterId: 0
   cipher: auto
   tls: false
+  udp: true
+- name: '127'
+  server: 127.0.0.1
+  port: 1080
+  type: socks5
   udp: true
 proxy-groups:
 - name: 🛑 广告拦截
@@ -1264,7 +1224,7 @@ proxy-groups:
   - 🇸🇬 25
   - 🇸🇬 26
   - 🇸🇬 27
-  - '28'
+  - 🇸🇬 28
   - 🇺🇸 29
   - 🇯🇵 30
   - 🇯🇵 31
@@ -1291,7 +1251,7 @@ proxy-groups:
   - 🇭🇰 52
   - 🇺🇸 53
   - 🇹🇼 54
-  - 🇩🇪 55
+  - 🇭🇰 55
   - 🇭🇰 56
   - 🇭🇰 57
   - 🇭🇰 58
@@ -1299,8 +1259,8 @@ proxy-groups:
   - 🇭🇰 60
   - 🇭🇰 61
   - 🇭🇰 62
-  - 🇺🇸 63
-  - 🇹🇼 64
+  - '63'
+  - '64'
   - '65'
   - '66'
   - '67'
@@ -1309,65 +1269,61 @@ proxy-groups:
   - '70'
   - '71'
   - '72'
-  - '73'
-  - '74'
+  - 🇺🇸 73
+  - 🇭🇰 74
   - 🇺🇸 75
-  - 🇭🇰 76
-  - 🇺🇸 77
-  - 🇹🇼 78
+  - 🇹🇼 76
+  - 🇭🇰 77
+  - 🇭🇰 78
   - 🇭🇰 79
   - 🇭🇰 80
-  - 🇩🇪 81
+  - 🇭🇰 81
   - 🇭🇰 82
-  - 🇭🇰 83
+  - 🇩🇪 83
   - 🇭🇰 84
   - 🇭🇰 85
   - 🇭🇰 86
-  - 🇺🇸 87
-  - 🇹🇼 88
-  - 🇸🇬 89
+  - 🇭🇰 87
+  - 🇭🇰 88
+  - 🇭🇰 89
   - 🇭🇰 90
   - 🇭🇰 91
-  - 🇭🇰 92
-  - 🇭🇰 93
-  - 🇭🇰 94
-  - 🇭🇰 95
-  - 🇭🇰 96
-  - 🇰🇷 97
-  - '98'
-  - 🇺🇸 99
-  - 🇺🇸 100
-  - 🇩🇪 101
-  - 🇸🇬 102
-  - 🇯🇵 103
+  - 🇰🇷 92
+  - '93'
+  - 🇺🇸 94
+  - 🇺🇸 95
+  - 🇩🇪 96
+  - 🇸🇬 97
+  - 🇯🇵 98
+  - 🇭🇰 99
+  - 🇭🇰 100
+  - 🇭🇰 101
+  - 🇭🇰 102
+  - 🇭🇰 103
   - 🇭🇰 104
   - 🇭🇰 105
-  - 🇭🇰 106
-  - 🇭🇰 107
-  - 🇭🇰 108
-  - 🇭🇰 109
-  - 🇭🇰 110
-  - 🇰🇷 111
-  - '112'
-  - 🇺🇸 113
-  - 🇺🇸 114
-  - 🇩🇪 115
-  - 🇸🇬 116
-  - 🇯🇵 117
+  - 🇰🇷 106
+  - '107'
+  - 🇺🇸 108
+  - 🇺🇸 109
+  - 🇩🇪 110
+  - 🇸🇬 111
+  - 🇯🇵 112
+  - 🇭🇰 113
+  - 🇭🇰 114
+  - 🇭🇰 115
+  - 🇭🇰 116
+  - 🇭🇰 117
   - 🇭🇰 118
   - 🇭🇰 119
-  - 🇭🇰 120
-  - 🇭🇰 121
-  - 🇭🇰 122
-  - 🇭🇰 123
-  - 🇭🇰 124
-  - 🇰🇷 125
-  - '126'
-  - 🇺🇸 127
-  - 🇺🇸 128
-  - 🇩🇪 129
-  - 🇸🇬 130
-  - 🇯🇵 131
+  - 🇰🇷 120
+  - '121'
+  - 🇺🇸 122
+  - 🇺🇸 123
+  - 🇩🇪 124
+  - 🇸🇬 125
+  - 🇯🇵 126
+  - '127'
 - name: 🇭🇰 香港节点
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -1381,41 +1337,42 @@ proxy-groups:
   - 🇭🇰 06
   - 🇭🇰 07
   - 🇭🇰 52
+  - 🇭🇰 55
   - 🇭🇰 56
   - 🇭🇰 57
   - 🇭🇰 58
   - 🇭🇰 60
   - 🇭🇰 61
   - 🇭🇰 62
-  - 🇭🇰 76
+  - 🇭🇰 74
+  - 🇭🇰 77
+  - 🇭🇰 78
   - 🇭🇰 79
   - 🇭🇰 80
+  - 🇭🇰 81
   - 🇭🇰 82
-  - 🇭🇰 83
   - 🇭🇰 84
   - 🇭🇰 85
   - 🇭🇰 86
+  - 🇭🇰 87
+  - 🇭🇰 88
+  - 🇭🇰 89
   - 🇭🇰 90
   - 🇭🇰 91
-  - 🇭🇰 92
-  - 🇭🇰 93
-  - 🇭🇰 94
-  - 🇭🇰 95
-  - 🇭🇰 96
+  - 🇭🇰 99
+  - 🇭🇰 100
+  - 🇭🇰 101
+  - 🇭🇰 102
+  - 🇭🇰 103
   - 🇭🇰 104
   - 🇭🇰 105
-  - 🇭🇰 106
-  - 🇭🇰 107
-  - 🇭🇰 108
-  - 🇭🇰 109
-  - 🇭🇰 110
+  - 🇭🇰 113
+  - 🇭🇰 114
+  - 🇭🇰 115
+  - 🇭🇰 116
+  - 🇭🇰 117
   - 🇭🇰 118
   - 🇭🇰 119
-  - 🇭🇰 120
-  - 🇭🇰 121
-  - 🇭🇰 122
-  - 🇭🇰 123
-  - 🇭🇰 124
 - name: 🇹🇼 台湾节点
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -1427,9 +1384,7 @@ proxy-groups:
   - 🇹🇼 18
   - 🇹🇼 19
   - 🇹🇼 54
-  - 🇹🇼 64
-  - 🇹🇼 78
-  - 🇹🇼 88
+  - 🇹🇼 76
 - name: 🇯🇵 日本节点
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -1446,9 +1401,9 @@ proxy-groups:
   - 🇯🇵 33
   - 🇯🇵 34
   - 🇯🇵 35
-  - 🇯🇵 103
-  - 🇯🇵 117
-  - 🇯🇵 131
+  - 🇯🇵 98
+  - 🇯🇵 112
+  - 🇯🇵 126
 - name: 🇸🇬 新加坡节点
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -1459,10 +1414,10 @@ proxy-groups:
   - 🇸🇬 25
   - 🇸🇬 26
   - 🇸🇬 27
-  - 🇸🇬 89
-  - 🇸🇬 102
-  - 🇸🇬 116
-  - 🇸🇬 130
+  - 🇸🇬 28
+  - 🇸🇬 97
+  - 🇸🇬 111
+  - 🇸🇬 125
 - name: 🇺🇸 美国节点
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -1476,16 +1431,14 @@ proxy-groups:
   - 🇺🇸 29
   - 🇺🇸 51
   - 🇺🇸 53
-  - 🇺🇸 63
+  - 🇺🇸 73
   - 🇺🇸 75
-  - 🇺🇸 77
-  - 🇺🇸 87
-  - 🇺🇸 99
-  - 🇺🇸 100
-  - 🇺🇸 113
-  - 🇺🇸 114
-  - 🇺🇸 127
-  - 🇺🇸 128
+  - 🇺🇸 94
+  - 🇺🇸 95
+  - 🇺🇸 108
+  - 🇺🇸 109
+  - 🇺🇸 122
+  - 🇺🇸 123
 - name: 🇰🇷 韩国节点
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -1496,9 +1449,9 @@ proxy-groups:
   - 🇰🇷 21
   - 🇰🇷 22
   - 🇰🇷 23
-  - 🇰🇷 97
-  - 🇰🇷 111
-  - 🇰🇷 125
+  - 🇰🇷 92
+  - 🇰🇷 106
+  - 🇰🇷 120
 - name: 🇬🇧 英国节点
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -1512,12 +1465,11 @@ proxy-groups:
   interval: 300
   tolerance: 50
   proxies:
-  - 🇩🇪 55
   - 🇩🇪 59
-  - 🇩🇪 81
-  - 🇩🇪 101
-  - 🇩🇪 115
-  - 🇩🇪 129
+  - 🇩🇪 83
+  - 🇩🇪 96
+  - 🇩🇪 110
+  - 🇩🇪 124
 - name: 🇫🇷 法国节点
   type: url-test
   url: http://www.gstatic.com/generate_204
