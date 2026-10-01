@@ -1,6 +1,6 @@
 # NodeCollection
 
-> 自动更新时间: 2026-10-01 18:33:30
+> 自动更新时间: 2026-10-02 01:38:54
 
 > ⚠️ **免责声明**：本项目所有节点均来自互联网公开资源，仅供学习与交流使用，不保证节点的安全性、可用性与合法性。请勿用于任何违反所在地区法律法规的用途，也请勿通过免费节点登录银行、邮箱等敏感账号。使用本项目产生的一切后果由使用者自行承担。
 
@@ -8,12 +8,12 @@
 
 | 指标 | 数值 | 说明 |
 | :--- | ---: | :--- |
-| 解析节点总数 | 551 | 上游订阅解析后节点数 |
-| 可用节点 | 422 | 测速后存活节点数 (剔除前) |
+| 解析节点总数 | 471 | 上游订阅解析后节点数 |
+| 可用节点 | 421 | 测速后存活节点数 (剔除前) |
 | 最终输出 | 150 | 体积截断后实际输出节点数 |
-| 可用率 | 76.6% | 可用节点 / 解析总数 |
-| 平均延迟 | 275ms | 可达节点的平均 TCP 握手延迟 |
-| 已剔除 | 28 | 连续不可达被剔除的节点数 |
+| 可用率 | 89.4% | 可用节点 / 解析总数 |
+| 平均延迟 | 264ms | 可达节点的平均 TCP 握手延迟 |
+| 已剔除 | 19 | 连续不可达被剔除的节点数 |
 
 > 📊 查看详细状态: [Web 状态页](https://huiwin.github.io/NodeCollection/status.html) （含上游贡献统计、质量指标、实时更新）
 
@@ -159,13 +159,13 @@
 
 | 来源 | 项目地址 | 解析 | 去重后 | 可达 | 可用率 | 平均延迟 | 状态 |
 | :--- | :--- | ---: | ---: | ---: | ---: | ---: | :--- |
-| NoMoreWalls | [peasoft/NoMoreWalls](https://github.com/peasoft/NoMoreWalls) | 408 | 79 | 68 | 86.1% | 306ms | ✅ 正常 |
-| FreeNodes | [Barabama/FreeNodes](https://github.com/Barabama/FreeNodes) | 24 | 9 | 9 | 100.0% | 590ms | ✅ 正常 |
-| Pawdroid | [Pawdroid/Free-servers](https://github.com/Pawdroid/Free-servers) | 15 | 1 | 1 | 100.0% | 3ms | ✅ 正常 |
-| Jsnzkpg | [Jsnzkpg/Jsnzkpg](https://github.com/Jsnzkpg/Jsnzkpg) | 15 | 1 | 0 | 0.0% | - | ✅ 正常 |
-| maflya | [maflya](https://sub.maflya.com/) | 71 | 9 | 9 | 100.0% | 225ms | ✅ 正常 |
-| free18 | [free18/v2ray](https://github.com/free18/v2ray) | 166 | 26 | 23 | 88.5% | 470ms | ✅ 正常 |
-| free-nodes | [free-nodes/v2rayfree](https://github.com/free-nodes/v2rayfree) | 398 | 64 | 55 | 85.9% | 238ms | ✅ 正常 |
+| NoMoreWalls | [peasoft/NoMoreWalls](https://github.com/peasoft/NoMoreWalls) | 394 | 81 | 71 | 87.7% | 329ms | ✅ 正常 |
+| FreeNodes | [Barabama/FreeNodes](https://github.com/Barabama/FreeNodes) | 19 | 9 | 9 | 100.0% | 498ms | ✅ 正常 |
+| Pawdroid | [Pawdroid/Free-servers](https://github.com/Pawdroid/Free-servers) | 11 | 3 | 3 | 100.0% | 35ms | ✅ 正常 |
+| Jsnzkpg | [Jsnzkpg/Jsnzkpg](https://github.com/Jsnzkpg/Jsnzkpg) | 17 | 3 | 0 | 0.0% | - | ✅ 正常 |
+| maflya | [maflya](https://sub.maflya.com/) | 182 | 12 | 10 | 83.3% | 583ms | ✅ 正常 |
+| free18 | [free18/v2ray](https://github.com/free18/v2ray) | 166 | 26 | 24 | 92.3% | 307ms | ✅ 正常 |
+| free-nodes | [free-nodes/v2rayfree](https://github.com/free-nodes/v2rayfree) | 404 | 110 | 66 | 60.0% | 389ms | ✅ 正常 |
 
 上游节点遵循各来源项目的许可证与分发要求，如来源项目提出异议将立即移除。
 
@@ -173,7 +173,7 @@
 
 - 每 4 小时自动更新一次 (GitHub Actions)
 - 订阅链接为固定地址，复制一次即可长期使用，内容随自动更新刷新
-- 当前更新时间: `2026-10-01 18:33:30`
+- 当前更新时间: `2026-10-02 01:38:54`
 - 加速方式按实时性排序: kkgithub/ghproxy 实时更新, jsdelivr 有缓存延迟
 - 如某加速节点不可用, 换一个即可
 
