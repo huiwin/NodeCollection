@@ -248,88 +248,124 @@ proxies:
   cipher: auto
   tls: false
   udp: true
-- name: '28'
-  server: 127.0.0.1
-  port: 1080
-  type: socks5
-  udp: true
-- name: 🇯🇵 29
-  server: jpv6.xxnqwq.xyz
-  port: 29562
-  type: trojan
-  password: 45938515-0eb8-4aa7-8f0d-4b63a55e5228
-  sni: www.amazon.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇸🇬 30
-  server: aws-my-ipv6.xnncl.com
-  port: 23594
-  type: trojan
-  password: 45938515-0eb8-4aa7-8f0d-4b63a55e5228
-  sni: www.amazon.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇸🇬 31
-  server: aws-my-ipv6.xnncl.com
-  port: 21313
-  type: trojan
-  password: 45938515-0eb8-4aa7-8f0d-4b63a55e5228
-  sni: www.amazon.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇮🇪 32
-  server: v4.hdacd.com
-  port: 30804
+- name: 🇬🇧 28
+  server: 172.67.137.209
+  port: 443
   type: vmess
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 2
+  uuid: 235e318a-8bcb-4480-b256-7b65cc5d0b0a
+  alterId: 0
   cipher: auto
-  tls: false
+  tls: true
+  network: ws
+  ws-opts:
+    path: /London31
+    headers:
+      Host: ukl.lovehk.xyz
+  udp: true
+- name: 🇬🇧 29
+  server: 172.67.142.142
+  port: 443
+  type: vmess
+  uuid: 235e318a-8bcb-4480-b256-7b65cc5d0b0a
+  alterId: 0
+  cipher: auto
+  tls: true
+  network: ws
+  ws-opts:
+    path: /London31
+    headers:
+      Host: ukl.lovehk.xyz
+  udp: true
+- name: 🇺🇸 30
+  server: 172.67.197.71
+  port: 443
+  type: vmess
+  uuid: 235e318a-8bcb-4480-b256-7b65cc5d0b0a
+  alterId: 0
+  cipher: auto
+  tls: true
+  network: ws
+  ws-opts:
+    path: /Sydney3
+    headers:
+      Host: aus.lovehk.xyz
+  udp: true
+- name: 🇺🇸 31
+  server: 172.67.195.146
+  port: 443
+  type: vmess
+  uuid: 235e318a-8bcb-4480-b256-7b65cc5d0b0a
+  alterId: 0
+  cipher: auto
+  tls: true
+  network: ws
+  ws-opts:
+    path: /Sydney3
+    headers:
+      Host: aus.lovehk.xyz
+  udp: true
+- name: '32'
+  server: 172.67.205.213
+  port: 443
+  type: vmess
+  uuid: 235e318a-8bcb-4480-b256-7b65cc5d0b0a
+  alterId: 0
+  cipher: auto
+  tls: true
+  network: ws
+  ws-opts:
+    path: /KualaLumpur1
+    headers:
+      Host: my.lovehk.xyz
+  udp: true
+- name: '33'
+  server: 104.21.23.80
+  port: 443
+  type: vmess
+  uuid: 235e318a-8bcb-4480-b256-7b65cc5d0b0a
+  alterId: 0
+  cipher: auto
+  tls: true
+  network: ws
+  ws-opts:
+    path: /KualaLumpur1
+    headers:
+      Host: my.lovehk.xyz
+  udp: true
+- name: 🇵🇱 34
+  server: 54.36.174.140
+  port: 443
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: e5c65ph
+  udp: true
+- name: 🇳🇱 35
+  server: 84.17.47.125
+  port: 9002
+  type: http
+  tls: true
   skip-cert-verify: true
   udp: true
-- name: 🇩🇪 33
-  server: 3.66.88.253
-  port: 443
-  type: ss
-  cipher: aes-256-cfb
-  password: amazonskr05
+- name: 🇳🇱 36
+  server: 84.17.47.125
+  port: 9002
+  type: http
+  password: None
+  tls: true
+  skip-cert-verify: true
   udp: true
-- name: 🇩🇪 34
-  server: 3.75.231.76
-  port: 443
-  type: ss
-  cipher: aes-256-cfb
-  password: amazonskr05
+- name: 🇳🇱 37
+  server: 84.17.47.150
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
   udp: true
-- name: 🇩🇪 35
-  server: 3.77.34.196
-  port: 443
-  type: ss
-  cipher: aes-256-cfb
-  password: amazonskr05
-  udp: true
-- name: 🇫🇷 36
-  server: 35.180.75.226
-  port: 443
-  type: ss
-  cipher: aes-256-cfb
-  password: amazonskr05
-  udp: true
-- name: 🇫🇷 37
-  server: 13.36.178.160
-  port: 443
-  type: ss
-  cipher: aes-256-cfb
-  password: amazonskr05
-  udp: true
-- name: '38'
-  server: silversbgfgov.vip44.wogbcnmnagfwgov.com
-  port: 11244
-  type: vmess
-  uuid: 605956ee-544d-308e-8b90-51e67c6ea8da
-  alterId: 2
-  cipher: auto
-  tls: false
+- name: 🇳🇱 38
+  server: 84.17.47.148
+  port: 9002
+  type: http
+  tls: true
   skip-cert-verify: true
   udp: true
 - name: 🇳🇱 39
@@ -340,71 +376,124 @@ proxies:
   tls: true
   skip-cert-verify: true
   udp: true
-- name: '40'
+- name: 🇳🇱 40
+  server: 84.17.47.146
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: '41'
+  server: 193.176.84.33
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: '42'
+  server: 193.176.84.39
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: '43'
+  server: 193.176.84.30
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: '44'
+  server: 193.176.84.35
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: '45'
+  server: 193.176.84.17
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: '46'
   server: 193.176.84.20
   port: 9002
   type: http
   tls: true
   skip-cert-verify: true
   udp: true
-- name: 🇺🇸 41
+- name: '47'
+  server: 193.176.84.31
+  port: 9002
+  type: http
+  password: None
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: '48'
+  server: 193.176.84.23
+  port: 9002
+  type: http
+  password: None
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: '49'
+  server: 193.176.84.27
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: '50'
+  server: 193.176.84.32
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 🇺🇸 51
   server: 38.28.193.188
   port: 443
   type: http
   tls: true
   skip-cert-verify: true
   udp: true
-- name: 🇺🇸 42
-  server: goldcnmltyljgfwgov.vip67.wogcnmnnagfwgov.com
-  port: 11267
-  type: vmess
-  uuid: 605956ee-544d-308e-8b90-51e67c6ea8da
-  alterId: 2
-  cipher: auto
-  tls: false
-  udp: true
-- name: 🇺🇸 43
-  server: 3.80.84.187
-  port: 443
-  type: ss
-  cipher: aes-256-cfb
-  password: amazonskr05
-  udp: true
-- name: 🇯🇵 44
-  server: sbgfgov.vip6.wogacnmnagfwgov.com
-  port: 11206
-  type: vmess
-  uuid: 605956ee-544d-308e-8b90-51e67c6ea8da
-  alterId: 2
-  cipher: auto
-  tls: false
+- name: 🇺🇸 52
+  server: 138.199.35.198
+  port: 9002
+  type: http
+  tls: true
   skip-cert-verify: true
   udp: true
-- name: '45'
+- name: 🇺🇸 53
+  server: fan.365747.xyz
+  port: 443
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 🇮🇳 54
+  server: in.tronsg.com
+  port: 443
+  type: trojan
+  password: Trojan@82164024
+  sni: in.tronsg.com
+  skip-cert-verify: true
+  udp: true
+- name: '55'
   server: 112.132.215.108
   port: 50002
   type: vmess
   uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
-  alterId: 64
-  cipher: auto
-  tls: false
-  skip-cert-verify: true
-  servername: 112.132.215.108
-  udp: true
-- name: '46'
-  server: 39.108.113.127
-  port: 10086
-  type: vmess
-  uuid: fde10e39-48bb-4dcf-b3ba-71d711323a54
   alterId: 0
   cipher: auto
   tls: false
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /
   udp: true
-- name: '47'
+- name: '56'
   server: 127.0.0.53
   port: 80
   type: vmess
@@ -413,7 +502,7 @@ proxies:
   cipher: auto
   tls: false
   udp: true
-- name: '48'
+- name: '57'
   server: 127.0.0.53
   port: 81
   type: vmess
@@ -422,7 +511,7 @@ proxies:
   cipher: auto
   tls: false
   udp: true
-- name: '49'
+- name: '58'
   server: 127.0.0.53
   port: 82
   type: vmess
@@ -431,7 +520,7 @@ proxies:
   cipher: auto
   tls: false
   udp: true
-- name: '50'
+- name: '59'
   server: 127.0.0.53
   port: 83
   type: vmess
@@ -440,7 +529,7 @@ proxies:
   cipher: auto
   tls: false
   udp: true
-- name: '51'
+- name: '60'
   server: 127.0.0.53
   port: 84
   type: vmess
@@ -449,7 +538,7 @@ proxies:
   cipher: auto
   tls: false
   udp: true
-- name: '52'
+- name: '61'
   server: 127.0.0.53
   port: 85
   type: vmess
@@ -458,7 +547,7 @@ proxies:
   cipher: auto
   tls: false
   udp: true
-- name: '53'
+- name: '62'
   server: 127.0.0.53
   port: 86
   type: vmess
@@ -467,7 +556,7 @@ proxies:
   cipher: auto
   tls: false
   udp: true
-- name: '54'
+- name: '63'
   server: 127.0.0.53
   port: 87
   type: vmess
@@ -476,7 +565,7 @@ proxies:
   cipher: auto
   tls: false
   udp: true
-- name: '55'
+- name: '64'
   server: 127.0.0.53
   port: 88
   type: vmess
@@ -485,7 +574,7 @@ proxies:
   cipher: auto
   tls: false
   udp: true
-- name: '56'
+- name: '65'
   server: 127.0.0.53
   port: 89
   type: vmess
@@ -494,344 +583,348 @@ proxies:
   cipher: auto
   tls: false
   udp: true
-- name: 🇺🇸 57
+- name: 🇬🇧 66
+  server: 82.110.60.9
+  port: 19999
+  type: ss
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  udp: true
+- name: 🇺🇸 67
+  server: 216.128.168.190
+  port: 8388
+  type: ss
+  cipher: aes-256-gcm
+  password: owVdNnQcdPgthSyX
+  udp: true
+- name: 🇺🇸 68
   server: 64.74.163.69
   port: 18766
   type: ss
   cipher: aes-128-gcm
   password: 4efe1af272e7292139b889f6a63ee071
   udp: true
-- name: 🇨🇦 58
-  server: yyz-ca-01.blncvpn4u.cc
-  port: 9443
+- name: 🇺🇸 69
+  server: 64.74.161.147
+  port: 17200
   type: ss
-  cipher: aes-256-gcm
-  password: eveaaTOb8ji8yntw2Z9yWUG0d6Ir8Ld8m3ymH8THdC5egiTH1mXCiBc0Skr7FibH
+  cipher: aes-128-gcm
+  password: 1cbb3e347ee86e1980a7c731e9dd00a0
   udp: true
-- name: 🇨🇦 59
-  server: 185.156.47.97
-  port: 9443
-  type: ss
-  cipher: aes-256-gcm
-  password: eveaaTOb8ji8yntw2Z9yWUG0d6Ir8Ld8m3ymH8THdC5egiTH1mXCiBc0Skr7FibH
-  udp: true
-- name: 🇨🇦 60
+- name: 🇨🇦 70
   server: 51.222.141.125
   port: 445
   type: ss
   cipher: aes-256-gcm
   password: zDNVedRFPQexG9v
   udp: true
-- name: 🇨🇦 61
+- name: 🇨🇦 71
   server: 51.79.85.185
   port: 8118
   type: ss
   cipher: aes-256-gcm
   password: cdBIDV42DCwnfIN
   udp: true
-- name: 🇨🇦 62
+- name: 🇨🇦 72
   server: 51.222.200.165
   port: 5000
   type: ss
   cipher: aes-256-gcm
   password: Y6R9pAtvxxzmGC
   udp: true
-- name: 🇨🇦 63
+- name: 🇨🇦 73
   server: 51.222.136.236
   port: 8882
   type: ss
   cipher: aes-256-gcm
   password: kDWvXYZoTBcGkC4
   udp: true
-- name: 🇨🇦 64
+- name: 🇨🇦 74
   server: 51.222.155.113
   port: 5601
   type: ss
   cipher: aes-256-gcm
   password: Y6R9pAtvxxzmGC
   udp: true
-- name: 🇨🇦 65
+- name: 🇨🇦 75
   server: 51.222.155.32
   port: 5003
   type: ss
   cipher: aes-256-gcm
   password: g5MeD6Ft3CWlJId
   udp: true
-- name: 🇨🇦 66
+- name: 🇨🇦 76
   server: 51.79.64.198
   port: 8119
   type: ss
   cipher: aes-256-gcm
   password: cdBIDV42DCwnfIN
   udp: true
-- name: 🇨🇦 67
+- name: 🇨🇦 77
   server: 51.79.49.116
   port: 8882
   type: ss
   cipher: aes-256-gcm
   password: kDWvXYZoTBcGkC4
   udp: true
-- name: 🇨🇦 68
+- name: 🇨🇦 78
   server: 51.222.12.127
   port: 445
   type: ss
   cipher: aes-256-gcm
   password: zDNVedRFPQexG9v
   udp: true
-- name: 🇺🇸 69
+- name: 🇺🇸 79
   server: 132.243.175.144
   port: 8388
   type: ss
   cipher: chacha20-ietf-poly1305
   password: e8KgS8fD0yDqYFpgN4G5piCOt9aFyqA3
   udp: true
-- name: 🇩🇪 70
+- name: '80'
+  server: 64.176.2.21
+  port: 8388
+  type: ss
+  cipher: aes-256-gcm
+  password: xBStBEVqvGwHPocc
+  udp: true
+- name: 🇺🇸 81
+  server: www.asamping.ir
+  port: 1468
+  type: ss
+  cipher: aes-128-gcm
+  password: l2NidZbckMu4PnIHsJTYJg
+  udp: true
+- name: 🇩🇪 82
   server: 57.129.113.16
   port: 8388
   type: ss
   cipher: chacha20-ietf-poly1305
   password: NcAXc0UZI6yQJE1p8QmOv8
   udp: true
-- name: 🇮🇳 71
-  server: 108.181.121.226
+- name: 🇸🇬 83
+  server: feow.nomush.ir
   port: 8388
   type: ss
   cipher: chacha20-ietf-poly1305
-  password: WSyL4XTwNsdv
+  password: K63q-WhHdJoC_AIxT6E4r_IIuGIb6CuV
   udp: true
-- name: 🇸🇬 72
+- name: 🇸🇬 84
   server: 185.103.110.68
   port: 18283
   type: ss
   cipher: aes-128-gcm
   password: f9300a9bf39ae0347c3a3bfbc4dd7754
   udp: true
-- name: 🇩🇪 73
+- name: 🇩🇪 85
   server: 51.255.13.232
   port: 8388
   type: ss
   cipher: chacha20-ietf-poly1305
   password: BqnqToih0PbU
   udp: true
-- name: 🇩🇪 74
+- name: 🇩🇪 86
   server: 158.173.24.73
   port: 443
   type: ss
   cipher: aes-128-gcm
   password: shadowsocks
   udp: true
-- name: 🇬🇧 75
+- name: 🇬🇧 87
   server: 149.102.132.184
   port: 80
   type: ss
   cipher: aes-256-gcm
   password: g5h5jleTRSyO3Rk4
   udp: true
-- name: 🇬🇧 76
+- name: 🇬🇧 88
   server: 149.102.149.207
   port: 80
   type: ss
   cipher: aes-256-gcm
   password: LXchLsIwtCeUAUgu
   udp: true
-- name: '77'
+- name: '89'
   server: 94.156.250.148
   port: 7001
   type: ss
   cipher: aes-256-gcm
   password: RexnBgU7EV5ADxG
   udp: true
-- name: 🇭🇰 78
-  server: telegram.khp25.com
-  port: 1080
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: pno0e2keji2gsfea
-  udp: true
-- name: 🇭🇰 79
-  server: telegramx.khp25.com
-  port: 1080
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: m5nsedvdczx6x06e
-  udp: true
-- name: 🇮🇳 80
-  server: 103.160.63.199
-  port: 31348
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: 8C5valhOd8vfwaTXUSZ6Zyb0Ip34lRR5z7P8az
-  udp: true
-- name: 🇺🇸 81
+- name: 🇺🇸 90
   server: 45.149.114.171
   port: 777
   type: ss
   cipher: chacha20-ietf-poly1305
   password: Jeoq8ujfkqZKKvACQhoqBQ1PA3uq4242
   udp: true
-- name: 🇩🇪 82
+- name: 🇮🇳 91
+  server: 139.84.166.47
+  port: 8388
+  type: ss
+  cipher: aes-256-gcm
+  password: GEdoeeqLZtkJRgSa
+  udp: true
+- name: 🇩🇪 92
   server: 57.131.48.45
   port: 8388
   type: ss
   cipher: aes-256-gcm
   password: itzvpn@321
   udp: true
-- name: 🇰🇷 83
-  server: ce1fc2d8.krkt.hkssip.com
-  port: 49642
+- name: 🇺🇸 93
+  server: ruot.ayucloudservices.nl
+  port: 22073
   type: ss
   cipher: aes-256-gcm
-  password: ac9c0a7b
+  password: bd962c9a-d6f2-4561-bd80-34206c4d5279
   udp: true
-- name: 🇰🇷 84
-  server: 141.164.45.187
-  port: 9101
+- name: 🇺🇸 94
+  server: ruot.ayucloudservices.nl
+  port: 22069
   type: ss
   cipher: aes-256-gcm
-  password: e4FCWrgpkji3QY
+  password: bd962c9a-d6f2-4561-bd80-34206c4d5279
   udp: true
-- name: 🇬🇧 85
-  server: 82.38.31.159
+- name: 🇺🇸 95
+  server: 64.177.90.30
+  port: 8388
+  type: ss
+  cipher: aes-256-gcm
+  password: BWyPPTusFKhGgzKh
+  udp: true
+- name: 🇳🇱 96
+  server: c3.nastuh.link
   port: 443
   type: ss
   cipher: chacha20-ietf-poly1305
-  password: oZIoA69Q8yhcQV8ka3Pa3A
+  password: y7KeRTzmH0vXT2kp
   udp: true
-- name: 🇬🇧 86
-  server: 82.38.31.42
-  port: 8080
+- name: '97'
+  server: 185.213.23.63
+  port: 990
   type: ss
   cipher: chacha20-ietf-poly1305
-  password: oZIoA69Q8yhcQV8ka3Pa3A
+  password: ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=
   udp: true
-- name: 🇬🇧 87
-  server: 82.38.31.46
-  port: 8080
+- name: '98'
+  server: 194.68.44.42
+  port: 64546
   type: ss
   cipher: chacha20-ietf-poly1305
-  password: oZIoA69Q8yhcQV8ka3Pa3A
+  password: U83u9OGpvSatIUW7LsWffr
   udp: true
-- name: 🇬🇧 88
-  server: 82.38.31.82
-  port: 8080
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: oZIoA69Q8yhcQV8ka3Pa3A
-  udp: true
-- name: 🇺🇸 89
-  server: 154.46.31.106
+- name: 🇺🇸 99
+  server: bogging-eyeteeth-fly.freesocks.work
   port: 443
   type: ss
   cipher: chacha20-ietf-poly1305
   password: QFWzCw2uX9B9i6qAYeFBIE
   udp: true
-- name: 🇺🇸 90
-  server: 90.156.203.62
-  port: 5112
+- name: 🇺🇸 100
+  server: ruot.ayucloudservices.nl
+  port: 22037
   type: ss
-  cipher: chacha20-ietf-poly1305
-  password: VVlAff77CnAU43Aoc5j15Y
+  cipher: aes-256-gcm
+  password: c2fe9024-d253-401a-b868-97421f6eb9e0
   udp: true
-- name: 🇬🇧 91
+- name: 🇩🇪 101
+  server: 70.34.212.124
+  port: 8388
+  type: ss
+  cipher: aes-256-gcm
+  password: AxIYWtskJWIIaefW
+  udp: true
+- name: 🇬🇧 102
   server: 45.128.12.20
   port: 14249
   type: ss
   cipher: chacha20-ietf-poly1305
   password: 9epp3o9ng8ej59uv
   udp: true
-- name: 🇮🇳 92
+- name: 🇮🇳 103
   server: pphfree2.mvpnpvpn.de5.net
   port: 52351
   type: ss
   cipher: aes-256-gcm
   password: sxajCTwrlK0zl+zmHpX0p0jXIfatnzlLzWlSQ950L1c=
   udp: true
-- name: 🇺🇸 93
+- name: 🇺🇸 104
+  server: 66.23.206.124
+  port: 16619
+  type: ss
+  cipher: aes-128-gcm
+  password: 2607008ac896b3443be9419d73d544d9
+  udp: true
+- name: 🇺🇸 105
+  server: 205.209.126.205
+  port: 19049
+  type: ss
+  cipher: aes-128-gcm
+  password: e72a793d634d99748cf908d21fd935c3
+  udp: true
+- name: 🇺🇸 106
   server: ss.042.node-for-bigairport.win
   port: 20006
   type: ss
   cipher: chacha20-ietf-poly1305
   password: 792e0bdb-01db-450c-94c4-925151eb396e
   udp: true
-- name: 🇺🇸 94
-  server: 45.76.9.57
-  port: 8393
+- name: 🇫🇷 107
+  server: 139.84.247.164
+  port: 8388
   type: ss
-  cipher: aes-256-gcm
-  password: 618a13eda4b4d208a4bcdc85fcb8996df812d59dd48419f75ae3f5f5b46a94fb
+  cipher: chacha20-ietf-poly1305
+  password: tfAcRikawhNoZAhu
   udp: true
-- name: 🇫🇷 95
+- name: 🇫🇷 108
   server: 102.37.156.224
   port: 443
   type: ss
   cipher: chacha20-ietf-poly1305
   password: aduB9HGxQHjA2SBMRjkHX6
   udp: true
-- name: 🇫🇷 96
+- name: 🇫🇷 109
   server: 102.133.165.160
   port: 16233
   type: ss
   cipher: chacha20-ietf-poly1305
   password: Xsy8Ox4yOV3xLlpxtjzs3X
   udp: true
-- name: 🇭🇰 97
-  server: nl.zhabulik.ru
+- name: '110'
+  server: 104.18.153.182
   port: 443
   type: trojan
-  password: WFer-5gN21nfHbVB2N8s71Z74EPUfzVj
-  sni: nl.zhabulik.ru
-  skip-cert-verify: false
+  password: 19877587-ed94-4033-88cd-4ac50a5e8718
+  sni: dimskiee.biz.id
+  network: ws
+  ws-opts:
+    path: /WangCai-8
+    headers:
+      Host: dimskiee.biz.id
   udp: true
-- name: 🇬🇧 98
-  server: cz-musicc.moritech.net
-  port: 443
-  type: trojan
-  password: f8b-U5TxjNRYKLvU0Js_6YeMCdj_82km
-  skip-cert-verify: true
-  network: grpc
-  grpc-opts:
-    grpc-service-name: grpcbeast
-  udp: true
-- name: 🇩🇪 99
-  server: meet-goshawk.rooster465.autos
+- name: 🇩🇪 111
+  server: cuddly-sheepdog.rooster465.autos
   port: 443
   type: trojan
   password: UX82473651
-  sni: meet-goshawk.rooster465.autos
+  sni: cuddly-sheepdog.rooster465.autos
   udp: true
-- name: 🇬🇧 100
-  server: 31.77.168.21
+- name: 🇺🇸 112
+  server: ger2.fytpn.com
   port: 443
   type: trojan
-  password: MDYVt6HgSqB7d537GPQXjk6Rk0E4RxWo
-  sni: d3-de2.cloud-cdn.xyz
-  skip-cert-verify: true
-  network: grpc
-  grpc-opts:
-    grpc-service-name: ajv
+  password: gHncxmRjWEJ7apX5XuXsHw4kGexMH_gU
+  skip-cert-verify: false
   udp: true
-- name: '101'
+- name: '113'
   server: 109.206.241.10
   port: 449
   type: trojan
   password: oiiaB38ywjEHCWRs_O_a_1113_Il_KeyyyHop_Bes1
   sni: russiapower.accesscam.org
   udp: true
-- name: 🇺🇸 102
-  server: 199.232.78.160
-  port: 443
-  type: trojan
-  password: mitivpn
-  udp: true
-- name: 🇬🇧 103
-  server: fi.zhabulik.ru
-  port: 443
-  type: trojan
-  password: WFer-5gN21nfHbVB2N8s71Z74EPUfzVj
-  sni: fi.zhabulik.ru
-  skip-cert-verify: false
-  udp: true
-- name: '104'
+- name: '114'
   server: 185.255.179.166
   port: 443
   type: trojan
@@ -844,7 +937,7 @@ proxies:
     headers:
       Host: www.calmlunch.com
   udp: true
-- name: 🇩🇪 105
+- name: 🇩🇪 115
   server: 185.220.100.168
   port: 443
   type: trojan
@@ -857,7 +950,7 @@ proxies:
     headers:
       Host: www.calmlunch.com
   udp: true
-- name: 🇳🇱 106
+- name: 🇳🇱 116
   server: 45.87.41.18
   port: 443
   type: trojan
@@ -870,7 +963,7 @@ proxies:
     headers:
       Host: www.calmlunch.com
   udp: true
-- name: '107'
+- name: '117'
   server: www.calmlunch.com
   port: 443
   type: trojan
@@ -882,7 +975,7 @@ proxies:
     headers:
       Host: www.calmlunch.com
   udp: true
-- name: '108'
+- name: '118'
   server: 185.114.72.31
   port: 2053
   type: trojan
@@ -895,7 +988,7 @@ proxies:
     headers:
       Host: www.calmlunch.com
   udp: true
-- name: '109'
+- name: '119'
   server: 45.130.125.160
   port: 443
   type: trojan
@@ -908,58 +1001,13 @@ proxies:
     headers:
       Host: www.calmlunch.com
   udp: true
-- name: 🇺🇸 110
+- name: 🇺🇸 120
   server: 165.215.250.14
   port: 443
   type: trojan
   password: humanity
   udp: true
-- name: '111'
-  server: 104.19.229.21
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.calmlunch.com
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: '%2Fassignment'
-    headers:
-      Host: www.calmlunch.com
-  udp: true
-- name: 🇺🇸 112
-  server: 165.215.250.14
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.calmlunch.com
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: '%2Fassignment'
-    headers:
-      Host: www.calmlunch.com
-  udp: true
-- name: 🇺🇸 113
-  server: 212.183.88.136
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.calmlunch.com
-  network: ws
-  ws-opts:
-    path: '%2Fassignment'
-    headers:
-      Host: www.calmlunch.com
-  udp: true
-- name: 🇭🇰 114
-  server: strong-haddock.rooster465.autos
-  port: 443
-  type: trojan
-  password: UX82473651
-  sni: strong-haddock.rooster465.autos
-  udp: true
-- name: '115'
+- name: '121'
   server: 104.21.70.21
   port: 443
   type: trojan
@@ -971,329 +1019,471 @@ proxies:
     headers:
       Host: id1.nathaya.web.id
   udp: true
-- name: 🇮🇳 116
+- name: 🇮🇳 122
+  server: adapting-basilisk.rooster465.autos
+  port: 443
+  type: trojan
+  password: UX82473651
+  sni: adapting-basilisk.rooster465.autos
+  udp: true
+- name: 🇮🇳 123
   server: sacred-anemone.rooster465.autos
   port: 443
   type: trojan
   password: UX82473651
   sni: sacred-anemone.rooster465.autos
   udp: true
-- name: 🇮🇳 117
-  server: loved-shark.rooster465.autos
+- name: 🇮🇳 124
+  server: 3.253.106.233
   port: 443
   type: trojan
   password: UX82473651
   sni: loved-shark.rooster465.autos
+  skip-cert-verify: false
   udp: true
-- name: 🇯🇵 118
+- name: 🇯🇵 125
+  server: jp005.421421.xyz
+  port: 20230
+  type: trojan
+  password: 0400697c-b581-4575-9d2f-0bbd4659312d
+  sni: www.alibaba.com
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: www.alibaba.com
+  udp: true
+- name: 🇯🇵 126
+  server: evident-ant.rooster465.autos
+  port: 443
+  type: trojan
+  password: UX82473651
+  sni: evident-ant.rooster465.autos
+  udp: true
+- name: 🇯🇵 127
+  server: allowed-poodle.rooster465.autos
+  port: 443
+  type: trojan
+  password: UX82473651
+  sni: allowed-poodle.rooster465.autos
+  udp: true
+- name: 🇯🇵 128
+  server: legible-ram.rooster465.autos
+  port: 443
+  type: trojan
+  password: UX82473651
+  sni: legible-ram.rooster465.autos
+  udp: true
+- name: 🇯🇵 129
+  server: live-stallion.rooster465.autos
+  port: 443
+  type: trojan
+  password: UX82473651
+  sni: live-stallion.rooster465.autos
+  udp: true
+- name: 🇺🇸 130
+  server: stable-python.rooster465.autos
+  port: 443
+  type: trojan
+  password: UX82473651
+  sni: stable-python.rooster465.autos
+  udp: true
+- name: 🇯🇵 131
+  server: warm-krill.rooster465.autos
+  port: 443
+  type: trojan
+  password: UX82473651
+  sni: warm-krill.rooster465.autos
+  udp: true
+- name: 🇯🇵 132
+  server: normal-macaque.rooster465.autos
+  port: 443
+  type: trojan
+  password: UX82473651
+  sni: normal-macaque.rooster465.autos
+  udp: true
+- name: 🇯🇵 133
+  server: optimal-penguin.rooster465.autos
+  port: 443
+  type: trojan
+  password: UX82473651
+  sni: optimal-penguin.rooster465.autos
+  udp: true
+- name: 🇯🇵 134
+  server: amazed-mako.rooster465.autos
+  port: 443
+  type: trojan
+  password: UX82473651
+  sni: amazed-mako.rooster465.autos
+  udp: true
+- name: 🇯🇵 135
+  server: equipped-stingray.rooster465.autos
+  port: 443
+  type: trojan
+  password: UX82473651
+  sni: equipped-stingray.rooster465.autos
+  udp: true
+- name: 🇯🇵 136
   server: 45.32.52.173
   port: 8886
   type: trojan
   password: e26a229d-e8f2-4ff9-8c7d-58a9d83ee437
   sni: 45.32.52.173
   udp: true
-- name: 🇯🇵 119
+- name: 🇯🇵 137
   server: prime-corgi.rooster465.autos
   port: 443
   type: trojan
   password: UX82473651
   sni: prime-corgi.rooster465.autos
   udp: true
-- name: 🇯🇵 120
+- name: 🇯🇵 138
   server: accurate-frog.rooster465.autos
   port: 443
   type: trojan
   password: UX82473651
   sni: accurate-frog.rooster465.autos
   udp: true
-- name: 🇯🇵 121
-  server: dynamic-imp.rooster465.autos
-  port: 443
-  type: trojan
-  password: UX82473651
-  sni: dynamic-imp.rooster465.autos
-  udp: true
-- name: 🇯🇵 122
+- name: 🇯🇵 139
   server: musical-terrier.rooster465.autos
   port: 443
   type: trojan
   password: UX82473651
   sni: musical-terrier.rooster465.autos
   udp: true
-- name: 🇯🇵 123
+- name: 🇯🇵 140
   server: obliging-louse.rooster465.autos
   port: 443
   type: trojan
   password: UX82473651
   sni: obliging-louse.rooster465.autos
   udp: true
-- name: 🇯🇵 124
-  server: winning-marten.rooster465.autos
+- name: 🇰🇷 141
+  server: cunning-grub.rooster465.autos
   port: 443
   type: trojan
   password: UX82473651
-  sni: winning-marten.rooster465.autos
+  sni: cunning-grub.rooster465.autos
   udp: true
-- name: 🇯🇵 125
-  server: concrete-aardvark.rooster465.autos
+- name: 🇰🇷 142
+  server: fancy-skink.rooster465.autos
   port: 443
   type: trojan
   password: UX82473651
-  sni: concrete-aardvark.rooster465.autos
+  sni: fancy-skink.rooster465.autos
   udp: true
-- name: 🇯🇵 126
-  server: organic-caribou.rooster465.autos
+- name: 🇰🇷 143
+  server: glorious-lark.rooster465.autos
   port: 443
   type: trojan
   password: UX82473651
-  sni: organic-caribou.rooster465.autos
+  sni: glorious-lark.rooster465.autos
   udp: true
-- name: 🇯🇵 127
-  server: intense-sole.rooster465.autos
+- name: 🇰🇷 144
+  server: inviting-rabbit.rooster465.autos
   port: 443
   type: trojan
   password: UX82473651
-  sni: intense-sole.rooster465.autos
+  sni: inviting-rabbit.rooster465.autos
   udp: true
-- name: 🇯🇵 128
-  server: fancy-javelin.rooster465.autos
+- name: 🇰🇷 145
+  server: pure-kodiak.rooster465.autos
   port: 443
   type: trojan
   password: UX82473651
-  sni: fancy-javelin.rooster465.autos
+  sni: pure-kodiak.rooster465.autos
+  skip-cert-verify: false
   udp: true
-- name: 🇯🇵 129
-  server: comic-poodle.rooster465.autos
+- name: 🇰🇷 146
+  server: central-jawfish.rooster465.autos
   port: 443
   type: trojan
   password: UX82473651
-  sni: comic-poodle.rooster465.autos
+  sni: central-jawfish.rooster465.autos
   udp: true
-- name: 🇯🇵 130
-  server: promoted-rattler.rooster465.autos
+- name: 🇰🇷 147
+  server: working-tomcat.rooster465.autos
   port: 443
   type: trojan
   password: UX82473651
-  sni: promoted-rattler.rooster465.autos
+  sni: working-tomcat.rooster465.autos
   udp: true
-- name: 🇯🇵 131
-  server: integral-rodent.rooster465.autos
-  port: 443
-  type: trojan
-  password: UX82473651
-  sni: integral-rodent.rooster465.autos
-  udp: true
-- name: 🇯🇵 132
-  server: assuring-skink.rooster465.autos
-  port: 443
-  type: trojan
-  password: UX82473651
-  sni: assuring-skink.rooster465.autos
-  udp: true
-- name: 🇯🇵 133
-  server: evolving-platypus.rooster465.autos
-  port: 443
-  type: trojan
-  password: UX82473651
-  sni: evolving-platypus.rooster465.autos
-  udp: true
-- name: 🇯🇵 134
-  server: brief-glider.rooster465.autos
-  port: 443
-  type: trojan
-  password: UX82473651
-  sni: brief-glider.rooster465.autos
-  udp: true
-- name: 🇰🇷 135
-  server: neutral-quail.rooster465.autos
-  port: 443
-  type: trojan
-  password: UX82473651
-  sni: neutral-quail.rooster465.autos
-  udp: true
-- name: 🇰🇷 136
+- name: 🇰🇷 148
   server: delicate-buck.rooster465.autos
   port: 443
   type: trojan
   password: UX82473651
   sni: delicate-buck.rooster465.autos
   udp: true
-- name: 🇰🇷 137
-  server: amazing-peacock.rooster465.autos
-  port: 443
-  type: trojan
-  password: UX82473651
-  sni: amazing-peacock.rooster465.autos
-  udp: true
-- name: 🇰🇷 138
+- name: 🇰🇷 149
   server: kind-stork.rooster465.autos
   port: 443
   type: trojan
   password: UX82473651
   sni: kind-stork.rooster465.autos
   udp: true
-- name: 🇰🇷 139
+- name: 🇰🇷 150
   server: noted-cougar.rooster465.autos
   port: 443
   type: trojan
   password: UX82473651
   sni: noted-cougar.rooster465.autos
   udp: true
-- name: 🇰🇷 140
+- name: 🇰🇷 151
   server: optimum-snapper.rooster465.autos
   port: 443
   type: trojan
   password: UX82473651
   sni: optimum-snapper.rooster465.autos
   udp: true
-- name: 🇰🇷 141
-  server: liked-eft.rooster465.autos
-  port: 443
-  type: trojan
-  password: UX82473651
-  sni: liked-eft.rooster465.autos
-  udp: true
-- name: 🇰🇷 142
+- name: 🇰🇷 152
   server: engaging-toucan.rooster465.autos
   port: 443
   type: trojan
   password: UX82473651
   sni: engaging-toucan.rooster465.autos
   udp: true
-- name: 🇰🇷 143
-  server: pretty-rat.rooster465.autos
+- name: 🇰🇷 153
+  server: 3.34.131.153
   port: 443
   type: trojan
   password: UX82473651
   sni: pretty-rat.rooster465.autos
   udp: true
-- name: 🇰🇷 144
+- name: 🇰🇷 154
   server: main-fawn.rooster465.autos
   port: 443
   type: trojan
   password: UX82473651
   sni: main-fawn.rooster465.autos
   udp: true
-- name: 🇰🇷 145
-  server: balanced-stag.rooster465.autos
-  port: 443
-  type: trojan
-  password: UX82473651
-  sni: balanced-stag.rooster465.autos
-  udp: true
-- name: '146'
-  server: 77.74.123.106
-  port: 4443
-  type: trojan
-  password: s0_sdK93x9wer_D02Lz9cvK3_Sa014Oakl_C2z
-  sni: grape-test-italy.dynuddns.net
-  skip-cert-verify: true
-  udp: true
-- name: '147'
+- name: '155'
   server: 47.250.84.25
   port: 443
   type: trojan
   password: 5931134d1cde66bf83a54acdfebe7ab2
+  sni: moltbot.doctoroyy.net
   udp: true
-- name: '148'
-  server: 104.18.35.86
+- name: 🇭🇰 156
+  server: 219.76.13.177
   port: 443
   type: trojan
   password: humanity
-  sni: www.volumerOot.coM.
+  udp: true
+- name: 🇺🇸 157
+  server: 144.31.182.130
+  port: 443
+  type: trojan
+  password: humanity
+  udp: true
+- name: 🇺🇸 158
+  server: 45.38.3.25
+  port: 443
+  type: trojan
+  password: humanity
+  udp: true
+- name: 🇺🇸 159
+  server: 185.22.172.249
+  port: 443
+  type: trojan
+  password: humanity
+  udp: true
+- name: 🇩🇪 160
+  server: 46.62.204.134
+  port: 443
+  type: trojan
+  password: humanity
+  udp: true
+- name: 🇬🇧 161
+  server: 148.253.212.42
+  port: 443
+  type: trojan
+  password: humanity
+  udp: true
+- name: 🇮🇷 162
+  server: 31.57.190.34
+  port: 443
+  type: trojan
+  password: humanity
+  udp: true
+- name: 🇩🇪 163
+  server: 193.23.202.65
+  port: 443
+  type: trojan
+  password: humanity
+  udp: true
+- name: 🇺🇸 164
+  server: 144.31.205.106
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.volumeroot.com
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.volumeroot.com
+  udp: true
+- name: 🇺🇸 165
+  server: 144.31.205.106
+  port: 443
+  type: trojan
+  password: humanity
+  udp: true
+- name: 🇭🇰 166
+  server: pol2.fytpn.com
+  port: 2097
+  type: trojan
+  password: gHncxmRjWEJ7apX5XuXsHw4kGexMH_gU
+  sni: pol2.fytpn.com
+  udp: true
+- name: 🇸🇬 167
+  server: simple-molly.rooster465.autos
+  port: 443
+  type: trojan
+  password: UX82473651
+  sni: simple-molly.rooster465.autos
+  udp: true
+- name: 🇸🇬 168
+  server: inspired-hound.rooster465.autos
+  port: 443
+  type: trojan
+  password: UX82473651
+  sni: inspired-hound.rooster465.autos
+  udp: true
+- name: 🇸🇬 169
+  server: intense-wildcat.rooster465.autos
+  port: 443
+  type: trojan
+  password: UX82473651
+  sni: intense-wildcat.rooster465.autos
+  udp: true
+- name: 🇸🇬 170
+  server: joint-ewe.rooster465.autos
+  port: 443
+  type: trojan
+  password: UX82473651
+  sni: joint-ewe.rooster465.autos
+  udp: true
+- name: 🇸🇬 171
+  server: moral-basilisk.rooster465.autos
+  port: 443
+  type: trojan
+  password: UX82473651
+  sni: moral-basilisk.rooster465.autos
+  udp: true
+- name: 🇸🇬 172
+  server: brave-tomcat.rooster465.autos
+  port: 443
+  type: trojan
+  password: UX82473651
+  sni: brave-tomcat.rooster465.autos
+  udp: true
+- name: 🇸🇬 173
+  server: fond-mammoth.rooster465.autos
+  port: 443
+  type: trojan
+  password: UX82473651
+  sni: fond-mammoth.rooster465.autos
+  udp: true
+- name: 🇸🇬 174
+  server: rested-seahorse.rooster465.autos
+  port: 443
+  type: trojan
+  password: UX82473651
+  sni: rested-seahorse.rooster465.autos
+  udp: true
+- name: 🇸🇬 175
+  server: ace-liger.rooster465.autos
+  port: 443
+  type: trojan
+  password: UX82473651
+  sni: ace-liger.rooster465.autos
+  udp: true
+- name: 🇸🇬 176
+  server: musical-mouse.rooster465.autos
+  port: 443
+  type: trojan
+  password: UX82473651
+  sni: musical-mouse.rooster465.autos
+  udp: true
+- name: 🇸🇬 177
+  server: present-ram.rooster465.autos
+  port: 443
+  type: trojan
+  password: UX82473651
+  sni: present-ram.rooster465.autos
   skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.volumerOot.coM.
   udp: true
-- name: 🇩🇪 149
-  server: 78.47.146.151
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.pleadcourt.org
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.pleadcourt.org
-  udp: true
-- name: 🇺🇸 150
-  server: pl.zhabulik.ru
-  port: 443
-  type: trojan
-  password: WFer-5gN21nfHbVB2N8s71Z74EPUfzVj
-  sni: pl.zhabulik.ru
-  skip-cert-verify: false
-  udp: true
-- name: 🇸🇬 151
+- name: 🇸🇬 178
   server: 139.180.146.200
   port: 8886
   type: trojan
   password: e26a229d-e8f2-4ff9-8c7d-58a9d83ee437
   sni: 139.180.146.200
-  skip-cert-verify: true
   udp: true
-- name: 🇺🇸 152
+- name: 🇺🇸 179
   server: inviting-ferret.rooster465.autos
   port: 443
   type: trojan
   password: UX82473651
   sni: inviting-ferret.rooster465.autos
   udp: true
-- name: 🇸🇬 153
+- name: 🇸🇬 180
   server: holy-lamb.rooster465.autos
   port: 443
   type: trojan
   password: UX82473651
   sni: holy-lamb.rooster465.autos
   udp: true
-- name: 🇸🇬 154
+- name: 🇸🇬 181
   server: pet-antelope.rooster465.autos
   port: 443
   type: trojan
   password: UX82473651
   sni: pet-antelope.rooster465.autos
   udp: true
-- name: 🇸🇬 155
-  server: desired-boxer.rooster465.autos
-  port: 443
-  type: trojan
-  password: UX82473651
-  sni: desired-boxer.rooster465.autos
-  udp: true
-- name: 🇸🇬 156
+- name: 🇸🇬 182
   server: real-cardinal.rooster465.autos
   port: 443
   type: trojan
   password: UX82473651
   sni: real-cardinal.rooster465.autos
   udp: true
-- name: 🇸🇬 157
-  server: 18.143.92.167
+- name: 🇺🇸 183
+  server: nimm.mpd.cc.cd
+  port: 2053
+  type: trojan
+  password: e309e031-991e-4656-9934-44d10deb8fd8
+  sni: nimm.mpd.cc.cd
+  network: ws
+  ws-opts:
+    path: /0962
+    headers:
+      Host: nimm.mpd.cc.cd
+  udp: true
+- name: '184'
+  server: us3-2.998998.best
   port: 443
   type: trojan
-  password: UX82473651
-  sni: glowing-marmoset.rooster465.autos
-  skip-cert-verify: false
+  password: 5504eaa8-1395-402f-8e0e-75ecd762e627
+  sni: nat3.xxai.dpdns.org
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: '%2Fanyway'
+    headers:
+      Host: nat3.xxai.dpdns.org
   udp: true
-- name: 🇺🇸 158
-  server: 209.248.32.116
-  port: 28101
-  type: trojan
-  password: i99Cef
-  udp: true
-- name: 🇺🇸 159
+- name: 🇺🇸 185
   server: 63.180.254.10
   port: 443
   type: ss
   cipher: aes-256-cfb
   password: amazonskr05
   udp: true
-- name: 🇭🇰 160
+- name: 🇭🇰 186
   server: v10.hdacd.com
   port: 30807
   type: vmess
@@ -1303,7 +1493,7 @@ proxies:
   tls: false
   skip-cert-verify: false
   udp: true
-- name: 🇭🇰 161
+- name: 🇭🇰 187
   server: ADncdOvLHR4M1P36.v.3dns.vip
   port: 443
   type: vmess
@@ -1319,7 +1509,7 @@ proxies:
     headers:
       Host: ADncdOvLHR4M1P36.v.3dns.vip
   udp: true
-- name: 🇭🇰 162
+- name: 🇭🇰 188
   server: kBONDXW9liFCi4h4.v.3dns.vip
   port: 443
   type: vmess
@@ -1335,7 +1525,7 @@ proxies:
     headers:
       Host: kBONDXW9liFCi4h4.v.3dns.vip
   udp: true
-- name: 🇭🇰 163
+- name: 🇭🇰 189
   server: aZW0eunYVdvRe73k.v.3dns.vip
   port: 443
   type: vmess
@@ -1351,7 +1541,7 @@ proxies:
     headers:
       Host: aZW0eunYVdvRe73k.v.3dns.vip
   udp: true
-- name: 🇭🇰 164
+- name: 🇭🇰 190
   server: syJ2gGUgMwBwQwQx.v.3dns.vip
   port: 443
   type: vmess
@@ -1367,7 +1557,7 @@ proxies:
     headers:
       Host: syJ2gGUgMwBwQwQx.v.3dns.vip
   udp: true
-- name: 🇯🇵 165
+- name: 🇯🇵 191
   server: Z9FfBx3zs2q5O0BG.v.3dns.vip
   port: 443
   type: vmess
@@ -1383,7 +1573,7 @@ proxies:
     headers:
       Host: Z9FfBx3zs2q5O0BG.v.3dns.vip
   udp: true
-- name: 🇯🇵 166
+- name: 🇯🇵 192
   server: kQov7UKaDknXb8a3.v.3dns.vip
   port: 443
   type: vmess
@@ -1399,7 +1589,7 @@ proxies:
     headers:
       Host: kQov7UKaDknXb8a3.v.3dns.vip
   udp: true
-- name: 🇸🇬 167
+- name: 🇸🇬 193
   server: kneNaKHeSXnZH259.v.3dns.vip
   port: 443
   type: vmess
@@ -1415,7 +1605,7 @@ proxies:
     headers:
       Host: kneNaKHeSXnZH259.v.3dns.vip
   udp: true
-- name: 🇸🇬 168
+- name: 🇸🇬 194
   server: ASaqYIDZa9WDQ9Kq.v.3dns.vip
   port: 443
   type: vmess
@@ -1431,7 +1621,7 @@ proxies:
     headers:
       Host: ASaqYIDZa9WDQ9Kq.v.3dns.vip
   udp: true
-- name: 🇸🇬 169
+- name: 🇸🇬 195
   server: 6JiziO8PxQAXBAtZ.v.3dns.vip
   port: 443
   type: vmess
@@ -1447,7 +1637,7 @@ proxies:
     headers:
       Host: 6JiziO8PxQAXBAtZ.v.3dns.vip
   udp: true
-- name: 🇸🇬 170
+- name: 🇸🇬 196
   server: 8nTzyR5KNivfabaT.v.3dns.vip
   port: 443
   type: vmess
@@ -1463,7 +1653,7 @@ proxies:
     headers:
       Host: 8nTzyR5KNivfabaT.v.3dns.vip
   udp: true
-- name: 🇺🇸 171
+- name: 🇺🇸 197
   server: 53vXOVarmgcreAsv.v.3dns.vip
   port: 443
   type: vmess
@@ -1479,7 +1669,7 @@ proxies:
     headers:
       Host: 53vXOVarmgcreAsv.v.3dns.vip
   udp: true
-- name: 🇸🇬 172
+- name: 🇸🇬 198
   server: bJ1Aa2ZyJxYamYuK.v.3dns.vip
   port: 443
   type: vmess
@@ -1495,7 +1685,7 @@ proxies:
     headers:
       Host: bJ1Aa2ZyJxYamYuK.v.3dns.vip
   udp: true
-- name: 🇭🇰 173
+- name: 🇭🇰 199
   server: v10.hdacd.com
   port: 30807
   type: vmess
@@ -1504,7 +1694,7 @@ proxies:
   cipher: auto
   tls: false
   udp: true
-- name: 🇺🇸 174
+- name: 🇺🇸 200
   server: 7d0a2gz0-7a0c.aws-agent.net
   port: 12103
   type: trojan
@@ -1512,7 +1702,7 @@ proxies:
   sni: m.ctrip.com
   skip-cert-verify: true
   udp: true
-- name: 🇺🇸 175
+- name: 🇺🇸 201
   server: 7d0a2gz0-7a0c.aws-agent.net
   port: 10115
   type: trojan
@@ -1520,7 +1710,7 @@ proxies:
   sni: m.ctrip.com
   skip-cert-verify: true
   udp: true
-- name: 🇺🇸 176
+- name: 🇺🇸 202
   server: 7d0a2gz0-7a0c.aws-agent.net
   port: 12107
   type: trojan
@@ -1528,7 +1718,7 @@ proxies:
   sni: m.ctrip.com
   skip-cert-verify: true
   udp: true
-- name: 🇺🇸 177
+- name: 🇺🇸 203
   server: 7d0a2gz0-7a0c.aws-agent.net
   port: 12102
   type: trojan
@@ -1536,7 +1726,7 @@ proxies:
   sni: m.ctrip.com
   skip-cert-verify: true
   udp: true
-- name: 🇺🇸 178
+- name: 🇺🇸 204
   server: 63182sh8-4d7b.aws-agent.net
   port: 10125
   type: trojan
@@ -1544,7 +1734,7 @@ proxies:
   sni: m.ctrip.com
   skip-cert-verify: true
   udp: true
-- name: 🇺🇸 179
+- name: 🇺🇸 205
   server: 7d0a2gz0-7a0c.aws-agent.net
   port: 10135
   type: trojan
@@ -1552,7 +1742,7 @@ proxies:
   sni: m.ctrip.com
   skip-cert-verify: true
   udp: true
-- name: 🇺🇸 180
+- name: 🇺🇸 206
   server: 63182sh8-4d7b.aws-agent.net
   port: 10155
   type: trojan
@@ -1560,7 +1750,7 @@ proxies:
   sni: m.ctrip.com
   skip-cert-verify: true
   udp: true
-- name: 🇺🇸 181
+- name: 🇺🇸 207
   server: 63182sh8-4d7b.aws-agent.net
   port: 12122
   type: trojan
@@ -1568,7 +1758,7 @@ proxies:
   sni: m.ctrip.com
   skip-cert-verify: true
   udp: true
-- name: 🇺🇸 182
+- name: 🇺🇸 208
   server: 7d0a2gz0-7a0c.aws-agent.net
   port: 12142
   type: trojan
@@ -1576,7 +1766,7 @@ proxies:
   sni: m.ctrip.com
   skip-cert-verify: true
   udp: true
-- name: 🇺🇸 183
+- name: 🇺🇸 209
   server: 63182sh8-4d7b.aws-agent.net
   port: 11171
   type: trojan
@@ -1584,48 +1774,44 @@ proxies:
   sni: m.ctrip.com
   skip-cert-verify: true
   udp: true
-- name: '184'
-  server: www.wto.org
-  port: 8443
-  type: trojan
-  password: ec1fa47d-4eac-4b3f-8cae-4a2982d43e2f
-  sni: jiangjc.pages.dev
+- name: 🇺🇸 210
+  server: 142.171.48.179
+  port: 28167
+  type: vmess
+  uuid: f949f286-b709-4617-8f26-2e0dfdd7ca6a
+  alterId: 0
+  cipher: auto
+  tls: false
   skip-cert-verify: false
   network: ws
   ws-opts:
     path: /
     headers:
-      Host: jiangjc.pages.dev
+      Host: gw.alicdn.com
   udp: true
-- name: 🇩🇪 185
-  server: 18.184.136.175
-  port: 443
-  type: ss
-  cipher: aes-256-cfb
-  password: amazonskr05
-  udp: true
-- name: 🇬🇧 186
-  server: gb.tronsg.com
+- name: 🇨🇦 211
+  server: ca.tronsg.com
   port: 443
   type: trojan
   password: Trojan@82164024
-  sni: gb.tronsg.com
-  skip-cert-verify: true
+  skip-cert-verify: false
   udp: true
-- name: 🇭🇰 187
-  server: 47.244.120.197
-  port: 23026
+- name: 🇺🇸 212
+  server: 142.171.48.179
+  port: 28167
   type: vmess
-  uuid: b9de1bc9-baa7-41ac-86f7-ccd59695cb21
+  uuid: eeb623e4-b27c-4031-bab6-51e068c7dc6a
   alterId: 0
   cipher: auto
   tls: false
-  skip-cert-verify: true
+  skip-cert-verify: false
   network: ws
   ws-opts:
-    path: /arki
+    path: /
+    headers:
+      Host: gw.alicdn.com
   udp: true
-- name: 🇭🇰 188
+- name: 🇭🇰 213
   server: 47.244.120.197
   port: 36703
   type: vmess
@@ -1638,257 +1824,64 @@ proxies:
   ws-opts:
     path: /arki
   udp: true
-- name: 🇭🇰 189
-  server: 47.244.120.197
-  port: 44867
+- name: 🇭🇰 214
+  server: 47.243.194.125
+  port: 443
   type: vmess
-  uuid: 845e6b08-2919-4290-ade0-5dc7dcea59ca
+  uuid: f23bb427-c1f9-4373-876c-2f43e9f790f3
   alterId: 0
   cipher: auto
-  tls: false
+  tls: true
   skip-cert-verify: true
   network: ws
   ws-opts:
-    path: /arki
-  udp: true
-- name: 🇺🇸 190
-  server: internal-krill.rooster465.autos
-  port: 443
-  type: trojan
-  password: UX82473651
-  sni: internal-krill.rooster465.autos
-  skip-cert-verify: true
-  udp: true
-- name: 🇯🇵 191
-  server: equipped-stingray.rooster465.autos
-  port: 443
-  type: trojan
-  password: UX82473651
-  sni: equipped-stingray.rooster465.autos
-  skip-cert-verify: true
-  udp: true
-- name: 🇯🇵 192
-  server: amazed-mako.rooster465.autos
-  port: 443
-  type: trojan
-  password: UX82473651
-  sni: amazed-mako.rooster465.autos
-  skip-cert-verify: true
-  udp: true
-- name: 🇯🇵 193
-  server: optimal-penguin.rooster465.autos
-  port: 443
-  type: trojan
-  password: UX82473651
-  sni: optimal-penguin.rooster465.autos
-  skip-cert-verify: true
-  udp: true
-- name: 🇯🇵 194
-  server: normal-macaque.rooster465.autos
-  port: 443
-  type: trojan
-  password: UX82473651
-  sni: normal-macaque.rooster465.autos
-  skip-cert-verify: true
-  udp: true
-- name: 🇯🇵 195
-  server: warm-krill.rooster465.autos
-  port: 443
-  type: trojan
-  password: UX82473651
-  sni: warm-krill.rooster465.autos
-  skip-cert-verify: true
-  udp: true
-- name: 🇰🇷 196
-  server: full-egret.rooster465.autos
-  port: 443
-  type: trojan
-  password: UX82473651
-  sni: full-egret.rooster465.autos
-  skip-cert-verify: true
-  udp: true
-- name: 🇰🇷 197
-  server: working-tomcat.rooster465.autos
-  port: 443
-  type: trojan
-  password: UX82473651
-  sni: working-tomcat.rooster465.autos
-  skip-cert-verify: true
-  udp: true
-- name: 🇰🇷 198
-  server: central-jawfish.rooster465.autos
-  port: 443
-  type: trojan
-  password: UX82473651
-  sni: central-jawfish.rooster465.autos
-  skip-cert-verify: true
-  udp: true
-- name: 🇰🇷 199
-  server: 3.35.131.135
-  port: 8443
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: 7e68e32f-8015-4f37-9082-70e8b0b58043
-  udp: true
-- name: 🇺🇸 200
-  server: 46.17.41.166
-  port: 50660
-  type: ss
-  cipher: aes-256-gcm
-  password: 895b4b796a357570
-  udp: true
-- name: 🇸🇬 201
-  server: real-werewolf.rooster465.autos
-  port: 443
-  type: trojan
-  password: UX82473651
-  sni: real-werewolf.rooster465.autos
-  skip-cert-verify: true
-  udp: true
-- name: 🇸🇬 202
-  server: present-ram.rooster465.autos
-  port: 443
-  type: trojan
-  password: UX82473651
-  sni: present-ram.rooster465.autos
-  skip-cert-verify: true
-  udp: true
-- name: 🇸🇬 203
-  server: 13.212.141.33
-  port: 8443
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: 7e68e32f-8015-4f37-9082-70e8b0b58043
-  udp: true
-- name: 🇺🇸 204
-  server: 3.80.84.187
-  port: 443
-  type: ss
-  cipher: aes-256-cfb
-  password: amazonskr05
-  udp: true
-- name: 🇺🇸 205
-  server: 54.83.117.150
-  port: 443
-  type: ss
-  cipher: aes-256-cfb
-  password: amazonskr05
-  udp: true
-- name: 🇺🇸 206
-  server: 54.221.120.243
-  port: 443
-  type: ss
-  cipher: aes-256-cfb
-  password: amazonskr05
-  udp: true
-- name: '207'
-  server: us3-2.998998.best
-  port: 443
-  type: trojan
-  password: 5504eaa8-1395-402f-8e0e-75ecd762e627
-  sni: nat3.xxai.dpdns.org
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /anyway
+    path: /ws-vmess
     headers:
-      Host: nat3.xxai.dpdns.org
+      Host: nycqg19zkwacpm1b.v.3dns.vip
   udp: true
-- name: 🇺🇸 208
-  server: x.com
-  port: 8443
-  type: trojan
-  password: b792ffa6-7007-43a9-ae9f-46f68da52a6a
-  sni: avengers1.yang-1989.xyz
+- name: 🇭🇰 215
+  server: 8.217.13.103
+  port: 443
+  type: vmess
+  uuid: f23bb427-c1f9-4373-876c-2f43e9f790f3
+  alterId: 0
+  cipher: auto
+  tls: true
   skip-cert-verify: true
+  servername: qtkdr8jxe3wefxjm.v.3dns.vip
   network: ws
   ws-opts:
-    path: /hm4m
+    path: /ws-vmess
     headers:
-      Host: avengers1.yang-1989.xyz
+      Host: qtkdr8jxe3wefxjm.v.3dns.vip
   udp: true
-- name: 🇮🇳 209
-  server: goldcnmltyljgfwgov.vip67.wogcnmnnagfwgov.com
-  port: 11267
+- name: 🇭🇰 216
+  server: 93ucrn4i0pffuabk.v.3dns.vip
+  port: 443
   type: vmess
-  uuid: 605956ee-544d-308e-8b90-51e67c6ea8da
-  alterId: 2
+  uuid: f23bb427-c1f9-4373-876c-2f43e9f790f3
+  alterId: 0
   cipher: auto
-  tls: false
+  tls: true
   skip-cert-verify: true
+  servername: 93ucrn4i0pffuabk.v.3dns.vip
+  network: ws
+  ws-opts:
+    path: /ws-vmess
+    headers:
+      Host: 93ucrn4i0pffuabk.v.3dns.vip
   udp: true
-- name: '210'
-  server: 104.18.35.86
+- name: 🇷🇺 217
+  server: in.tronsg.com
   port: 443
   type: trojan
-  password: humanity
-  sni: www.volumerOot.coM.
+  password: Trojan@82164024
+  sni: in.tronsg.com
   skip-cert-verify: true
-  udp: true
-- name: '211'
-  server: us3-2.998998.best
-  port: 443
-  type: trojan
-  password: 5504eaa8-1395-402f-8e0e-75ecd762e627
-  sni: nat3.xxai.dpdns.org
-  skip-cert-verify: true
-  udp: true
-- name: 🇺🇸 212
-  server: x.com
-  port: 8443
-  type: trojan
-  password: b792ffa6-7007-43a9-ae9f-46f68da52a6a
-  sni: avengers1.yang-1989.xyz
-  skip-cert-verify: true
-  udp: true
-- name: 🇮🇳 213
-  server: goldcnmltyljgfwgov.vip67.wogcnmnnagfwgov.com
-  port: 11267
-  type: vmess
-  uuid: 605956ee-544d-308e-8b90-51e67c6ea8da
-  alterId: 2
-  cipher: auto
-  tls: false
-  udp: true
-- name: '214'
-  server: 127.0.0.53
-  port: 80
-  type: vmess
-  uuid: 88888888-8888-8888-8888-888888888888
-  alterId: 0
-  cipher: auto
-  tls: false
-  udp: true
-- name: '215'
-  server: 127.0.0.53
-  port: 81
-  type: vmess
-  uuid: 88888888-8888-8888-8888-888888888888
-  alterId: 0
-  cipher: auto
-  tls: false
-  udp: true
-- name: '216'
-  server: 127.0.0.53
-  port: 82
-  type: vmess
-  uuid: 88888888-8888-8888-8888-888888888888
-  alterId: 0
-  cipher: auto
-  tls: false
-  udp: true
-- name: '217'
-  server: 127.0.0.53
-  port: 83
-  type: vmess
-  uuid: 88888888-8888-8888-8888-888888888888
-  alterId: 0
-  cipher: auto
-  tls: false
   udp: true
 - name: '218'
   server: 127.0.0.53
-  port: 84
+  port: 80
   type: vmess
   uuid: 88888888-8888-8888-8888-888888888888
   alterId: 0
@@ -1897,7 +1890,7 @@ proxies:
   udp: true
 - name: '219'
   server: 127.0.0.53
-  port: 85
+  port: 81
   type: vmess
   uuid: 88888888-8888-8888-8888-888888888888
   alterId: 0
@@ -1906,7 +1899,7 @@ proxies:
   udp: true
 - name: '220'
   server: 127.0.0.53
-  port: 86
+  port: 82
   type: vmess
   uuid: 88888888-8888-8888-8888-888888888888
   alterId: 0
@@ -1915,7 +1908,7 @@ proxies:
   udp: true
 - name: '221'
   server: 127.0.0.53
-  port: 87
+  port: 83
   type: vmess
   uuid: 88888888-8888-8888-8888-888888888888
   alterId: 0
@@ -1924,7 +1917,7 @@ proxies:
   udp: true
 - name: '222'
   server: 127.0.0.53
-  port: 88
+  port: 84
   type: vmess
   uuid: 88888888-8888-8888-8888-888888888888
   alterId: 0
@@ -1933,6 +1926,42 @@ proxies:
   udp: true
 - name: '223'
   server: 127.0.0.53
+  port: 85
+  type: vmess
+  uuid: 88888888-8888-8888-8888-888888888888
+  alterId: 0
+  cipher: auto
+  tls: false
+  udp: true
+- name: '224'
+  server: 127.0.0.53
+  port: 86
+  type: vmess
+  uuid: 88888888-8888-8888-8888-888888888888
+  alterId: 0
+  cipher: auto
+  tls: false
+  udp: true
+- name: '225'
+  server: 127.0.0.53
+  port: 87
+  type: vmess
+  uuid: 88888888-8888-8888-8888-888888888888
+  alterId: 0
+  cipher: auto
+  tls: false
+  udp: true
+- name: '226'
+  server: 127.0.0.53
+  port: 88
+  type: vmess
+  uuid: 88888888-8888-8888-8888-888888888888
+  alterId: 0
+  cipher: auto
+  tls: false
+  udp: true
+- name: '227'
+  server: 127.0.0.53
   port: 89
   type: vmess
   uuid: 88888888-8888-8888-8888-888888888888
@@ -1940,344 +1969,301 @@ proxies:
   cipher: auto
   tls: false
   udp: true
-- name: 🇺🇸 224
+- name: 🇬🇧 228
+  server: 82.110.60.9
+  port: 19999
+  type: ss
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  udp: true
+- name: 🇺🇸 229
+  server: 216.128.168.190
+  port: 8388
+  type: ss
+  cipher: aes-256-gcm
+  password: owVdNnQcdPgthSyX
+  udp: true
+- name: 🇺🇸 230
   server: 64.74.163.69
   port: 18766
   type: ss
   cipher: aes-128-gcm
   password: 4efe1af272e7292139b889f6a63ee071
   udp: true
-- name: 🇨🇦 225
-  server: yyz-ca-01.blncvpn4u.cc
-  port: 9443
-  type: ss
-  cipher: aes-256-gcm
-  password: eveaaTOb8ji8yntw2Z9yWUG0d6Ir8Ld8m3ymH8THdC5egiTH1mXCiBc0Skr7FibH
-  udp: true
-- name: 🇨🇦 226
-  server: 185.156.47.97
-  port: 9443
-  type: ss
-  cipher: aes-256-gcm
-  password: eveaaTOb8ji8yntw2Z9yWUG0d6Ir8Ld8m3ymH8THdC5egiTH1mXCiBc0Skr7FibH
-  udp: true
-- name: 🇨🇦 227
+- name: 🇨🇦 231
   server: 51.222.141.125
   port: 445
   type: ss
   cipher: aes-256-gcm
   password: zDNVedRFPQexG9v
   udp: true
-- name: 🇨🇦 228
+- name: 🇨🇦 232
   server: 51.79.85.185
   port: 8118
   type: ss
   cipher: aes-256-gcm
   password: cdBIDV42DCwnfIN
   udp: true
-- name: 🇨🇦 229
+- name: 🇨🇦 233
   server: 51.222.200.165
   port: 5000
   type: ss
   cipher: aes-256-gcm
   password: Y6R9pAtvxxzmGC
   udp: true
-- name: 🇨🇦 230
+- name: 🇨🇦 234
   server: 51.222.136.236
   port: 8882
   type: ss
   cipher: aes-256-gcm
   password: kDWvXYZoTBcGkC4
   udp: true
-- name: 🇨🇦 231
+- name: 🇨🇦 235
   server: 51.222.155.113
   port: 5601
   type: ss
   cipher: aes-256-gcm
   password: Y6R9pAtvxxzmGC
   udp: true
-- name: 🇨🇦 232
+- name: 🇨🇦 236
   server: 51.222.155.32
   port: 5003
   type: ss
   cipher: aes-256-gcm
   password: g5MeD6Ft3CWlJId
   udp: true
-- name: 🇨🇦 233
+- name: 🇨🇦 237
   server: 51.79.64.198
   port: 8119
   type: ss
   cipher: aes-256-gcm
   password: cdBIDV42DCwnfIN
   udp: true
-- name: 🇨🇦 234
+- name: 🇨🇦 238
   server: 51.79.49.116
   port: 8882
   type: ss
   cipher: aes-256-gcm
   password: kDWvXYZoTBcGkC4
   udp: true
-- name: 🇨🇦 235
+- name: 🇨🇦 239
   server: 51.222.12.127
   port: 445
   type: ss
   cipher: aes-256-gcm
   password: zDNVedRFPQexG9v
   udp: true
-- name: 🇺🇸 236
+- name: 🇺🇸 240
   server: 132.243.175.144
   port: 8388
   type: ss
   cipher: chacha20-ietf-poly1305
   password: e8KgS8fD0yDqYFpgN4G5piCOt9aFyqA3
   udp: true
-- name: 🇩🇪 237
+- name: '241'
+  server: 64.176.2.21
+  port: 8388
+  type: ss
+  cipher: aes-256-gcm
+  password: xBStBEVqvGwHPocc
+  udp: true
+- name: 🇩🇪 242
   server: 57.129.113.16
   port: 8388
   type: ss
   cipher: chacha20-ietf-poly1305
   password: NcAXc0UZI6yQJE1p8QmOv8
   udp: true
-- name: 🇮🇳 238
-  server: 108.181.121.226
+- name: 🇸🇬 243
+  server: feow.nomush.ir
   port: 8388
   type: ss
   cipher: chacha20-ietf-poly1305
-  password: WSyL4XTwNsdv
+  password: K63q-WhHdJoC_AIxT6E4r_IIuGIb6CuV
   udp: true
-- name: 🇸🇬 239
+- name: 🇸🇬 244
   server: 185.103.110.68
   port: 18283
   type: ss
   cipher: aes-128-gcm
   password: f9300a9bf39ae0347c3a3bfbc4dd7754
   udp: true
-- name: 🇩🇪 240
+- name: 🇩🇪 245
   server: 51.255.13.232
   port: 8388
   type: ss
   cipher: chacha20-ietf-poly1305
   password: BqnqToih0PbU
   udp: true
-- name: 🇩🇪 241
+- name: 🇩🇪 246
   server: 158.173.24.73
   port: 443
   type: ss
   cipher: aes-128-gcm
   password: shadowsocks
   udp: true
-- name: 🇬🇧 242
+- name: 🇬🇧 247
   server: 149.102.132.184
   port: 80
   type: ss
   cipher: aes-256-gcm
   password: g5h5jleTRSyO3Rk4
   udp: true
-- name: 🇬🇧 243
+- name: 🇬🇧 248
   server: 149.102.149.207
   port: 80
   type: ss
   cipher: aes-256-gcm
   password: LXchLsIwtCeUAUgu
   udp: true
-- name: '244'
+- name: '249'
   server: 94.156.250.148
   port: 7001
   type: ss
   cipher: aes-256-gcm
   password: RexnBgU7EV5ADxG
   udp: true
-- name: 🇭🇰 245
-  server: telegram.khp25.com
-  port: 1080
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: pno0e2keji2gsfea
-  udp: true
-- name: 🇭🇰 246
-  server: telegramx.khp25.com
-  port: 1080
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: m5nsedvdczx6x06e
-  udp: true
-- name: 🇮🇳 247
-  server: 103.160.63.199
-  port: 31348
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: 8C5valhOd8vfwaTXUSZ6Zyb0Ip34lRR5z7P8az
-  udp: true
-- name: 🇺🇸 248
-  server: 45.149.114.171
-  port: 777
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: Jeoq8ujfkqZKKvACQhoqBQ1PA3uq4242
-  udp: true
-- name: 🇩🇪 249
+- name: 🇩🇪 250
   server: 57.131.48.45
   port: 8388
   type: ss
   cipher: aes-256-gcm
   password: itzvpn@321
   udp: true
-- name: 🇰🇷 250
-  server: ce1fc2d8.krkt.hkssip.com
-  port: 49642
+- name: 🇺🇸 251
+  server: ruot.ayucloudservices.nl
+  port: 22073
   type: ss
   cipher: aes-256-gcm
-  password: ac9c0a7b
+  password: bd962c9a-d6f2-4561-bd80-34206c4d5279
   udp: true
-- name: 🇰🇷 251
-  server: 141.164.45.187
-  port: 9101
+- name: 🇺🇸 252
+  server: ruot.ayucloudservices.nl
+  port: 22069
   type: ss
   cipher: aes-256-gcm
-  password: e4FCWrgpkji3QY
+  password: bd962c9a-d6f2-4561-bd80-34206c4d5279
   udp: true
-- name: 🇬🇧 252
-  server: 82.38.31.159
+- name: 🇳🇱 253
+  server: c3.nastuh.link
   port: 443
   type: ss
   cipher: chacha20-ietf-poly1305
-  password: oZIoA69Q8yhcQV8ka3Pa3A
+  password: y7KeRTzmH0vXT2kp
   udp: true
-- name: 🇬🇧 253
-  server: 82.38.31.42
-  port: 8080
+- name: '254'
+  server: 185.213.23.63
+  port: 990
   type: ss
   cipher: chacha20-ietf-poly1305
-  password: oZIoA69Q8yhcQV8ka3Pa3A
+  password: ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=
   udp: true
-- name: 🇬🇧 254
-  server: 82.38.31.46
-  port: 8080
+- name: '255'
+  server: 194.68.44.42
+  port: 64546
   type: ss
   cipher: chacha20-ietf-poly1305
-  password: oZIoA69Q8yhcQV8ka3Pa3A
-  udp: true
-- name: 🇬🇧 255
-  server: 82.38.31.82
-  port: 8080
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: oZIoA69Q8yhcQV8ka3Pa3A
+  password: U83u9OGpvSatIUW7LsWffr
   udp: true
 - name: 🇺🇸 256
-  server: 154.46.31.106
+  server: bogging-eyeteeth-fly.freesocks.work
   port: 443
   type: ss
   cipher: chacha20-ietf-poly1305
   password: QFWzCw2uX9B9i6qAYeFBIE
   udp: true
 - name: 🇺🇸 257
-  server: 90.156.203.62
-  port: 5112
+  server: ruot.ayucloudservices.nl
+  port: 22037
   type: ss
-  cipher: chacha20-ietf-poly1305
-  password: VVlAff77CnAU43Aoc5j15Y
+  cipher: aes-256-gcm
+  password: c2fe9024-d253-401a-b868-97421f6eb9e0
   udp: true
-- name: 🇬🇧 258
+- name: 🇩🇪 258
+  server: 70.34.212.124
+  port: 8388
+  type: ss
+  cipher: aes-256-gcm
+  password: AxIYWtskJWIIaefW
+  udp: true
+- name: 🇬🇧 259
   server: 45.128.12.20
   port: 14249
   type: ss
   cipher: chacha20-ietf-poly1305
   password: 9epp3o9ng8ej59uv
   udp: true
-- name: 🇮🇳 259
+- name: 🇮🇳 260
   server: pphfree2.mvpnpvpn.de5.net
   port: 52351
   type: ss
   cipher: aes-256-gcm
   password: sxajCTwrlK0zl+zmHpX0p0jXIfatnzlLzWlSQ950L1c=
   udp: true
-- name: 🇺🇸 260
+- name: 🇺🇸 261
+  server: ss.043.node-for-bigairport.win
+  port: 20006
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: 792e0bdb-01db-450c-94c4-925151eb396e
+  udp: true
+- name: 🇺🇸 262
+  server: 66.23.206.124
+  port: 16619
+  type: ss
+  cipher: aes-128-gcm
+  password: 2607008ac896b3443be9419d73d544d9
+  udp: true
+- name: 🇺🇸 263
+  server: 205.209.126.205
+  port: 19049
+  type: ss
+  cipher: aes-128-gcm
+  password: e72a793d634d99748cf908d21fd935c3
+  udp: true
+- name: 🇺🇸 264
   server: ss.042.node-for-bigairport.win
   port: 20006
   type: ss
   cipher: chacha20-ietf-poly1305
   password: 792e0bdb-01db-450c-94c4-925151eb396e
   udp: true
-- name: 🇺🇸 261
-  server: 45.76.9.57
-  port: 8393
+- name: 🇫🇷 265
+  server: 139.84.247.164
+  port: 8388
   type: ss
-  cipher: aes-256-gcm
-  password: 618a13eda4b4d208a4bcdc85fcb8996df812d59dd48419f75ae3f5f5b46a94fb
+  cipher: chacha20-ietf-poly1305
+  password: tfAcRikawhNoZAhu
   udp: true
-- name: 🇫🇷 262
+- name: 🇫🇷 266
   server: 102.37.156.224
   port: 443
   type: ss
   cipher: chacha20-ietf-poly1305
   password: aduB9HGxQHjA2SBMRjkHX6
   udp: true
-- name: 🇫🇷 263
+- name: 🇫🇷 267
   server: 102.133.165.160
   port: 16233
   type: ss
   cipher: chacha20-ietf-poly1305
   password: Xsy8Ox4yOV3xLlpxtjzs3X
   udp: true
-- name: 🇭🇰 264
-  server: nl.zhabulik.ru
-  port: 443
-  type: trojan
-  password: WFer-5gN21nfHbVB2N8s71Z74EPUfzVj
-  sni: nl.zhabulik.ru
-  skip-cert-verify: false
-  udp: true
-- name: 🇬🇧 265
-  server: cz-musicc.moritech.net
-  port: 443
-  type: trojan
-  password: f8b-U5TxjNRYKLvU0Js_6YeMCdj_82km
-  skip-cert-verify: true
-  network: grpc
-  grpc-opts:
-    grpc-service-name: grpcbeast
-  udp: true
-- name: 🇩🇪 266
-  server: meet-goshawk.rooster465.autos
+- name: 🇩🇪 268
+  server: cuddly-sheepdog.rooster465.autos
   port: 443
   type: trojan
   password: UX82473651
-  sni: meet-goshawk.rooster465.autos
+  sni: cuddly-sheepdog.rooster465.autos
   udp: true
-- name: 🇬🇧 267
-  server: 31.77.168.21
-  port: 443
-  type: trojan
-  password: MDYVt6HgSqB7d537GPQXjk6Rk0E4RxWo
-  sni: d3-de2.cloud-cdn.xyz
-  skip-cert-verify: true
-  network: grpc
-  grpc-opts:
-    grpc-service-name: ajv
-  udp: true
-- name: '268'
+- name: '269'
   server: 109.206.241.10
   port: 449
   type: trojan
   password: oiiaB38ywjEHCWRs_O_a_1113_Il_KeyyyHop_Bes1
   sni: russiapower.accesscam.org
   udp: true
-- name: 🇺🇸 269
-  server: 199.232.78.160
-  port: 443
-  type: trojan
-  password: mitivpn
-  udp: true
-- name: 🇬🇧 270
-  server: fi.zhabulik.ru
-  port: 443
-  type: trojan
-  password: WFer-5gN21nfHbVB2N8s71Z74EPUfzVj
-  sni: fi.zhabulik.ru
-  skip-cert-verify: false
-  udp: true
-- name: '271'
+- name: '270'
   server: 185.255.179.166
   port: 443
   type: trojan
@@ -2290,9 +2276,9 @@ proxies:
     headers:
       Host: www.calmlunch.com
   udp: true
-- name: 🇩🇪 272
-  server: 185.220.100.168
-  port: 443
+- name: 🇩🇪 271
+  server: 212.227.144.37
+  port: 8443
   type: trojan
   password: humanity
   sni: www.calmlunch.com
@@ -2303,7 +2289,7 @@ proxies:
     headers:
       Host: www.calmlunch.com
   udp: true
-- name: 🇳🇱 273
+- name: 🇳🇱 272
   server: 45.87.41.18
   port: 443
   type: trojan
@@ -2316,7 +2302,7 @@ proxies:
     headers:
       Host: www.calmlunch.com
   udp: true
-- name: '274'
+- name: '273'
   server: www.calmlunch.com
   port: 443
   type: trojan
@@ -2328,7 +2314,7 @@ proxies:
     headers:
       Host: www.calmlunch.com
   udp: true
-- name: '275'
+- name: '274'
   server: 185.114.72.31
   port: 2053
   type: trojan
@@ -2341,7 +2327,7 @@ proxies:
     headers:
       Host: www.calmlunch.com
   udp: true
-- name: '276'
+- name: '275'
   server: 45.130.125.160
   port: 443
   type: trojan
@@ -2354,229 +2340,228 @@ proxies:
     headers:
       Host: www.calmlunch.com
   udp: true
-- name: 🇺🇸 277
+- name: 🇺🇸 276
   server: 165.215.250.14
   port: 443
   type: trojan
   password: humanity
   udp: true
-- name: '278'
-  server: 104.19.229.21
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.calmlunch.com
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: '%2Fassignment'
-    headers:
-      Host: www.calmlunch.com
-  udp: true
-- name: 🇺🇸 279
-  server: 165.215.250.14
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.calmlunch.com
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: '%2Fassignment'
-    headers:
-      Host: www.calmlunch.com
-  udp: true
-- name: 🇺🇸 280
-  server: 212.183.88.136
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.calmlunch.com
-  network: ws
-  ws-opts:
-    path: '%2Fassignment'
-    headers:
-      Host: www.calmlunch.com
-  udp: true
-- name: 🇭🇰 281
-  server: strong-haddock.rooster465.autos
-  port: 443
-  type: trojan
-  password: UX82473651
-  sni: strong-haddock.rooster465.autos
-  udp: true
-- name: '282'
-  server: 104.21.70.21
+- name: '277'
+  server: 104.18.32.87
   port: 443
   type: trojan
   password: 018b8e7b-7813-4dcb-84a5-3c98f1521e00
   sni: id1.nathaya.web.id
+  skip-cert-verify: false
   network: ws
   ws-opts:
     path: /trojan
     headers:
       Host: id1.nathaya.web.id
   udp: true
-- name: 🇮🇳 283
+- name: 🇮🇳 278
+  server: adapting-basilisk.rooster465.autos
+  port: 443
+  type: trojan
+  password: UX82473651
+  sni: adapting-basilisk.rooster465.autos
+  udp: true
+- name: 🇮🇳 279
   server: sacred-anemone.rooster465.autos
   port: 443
   type: trojan
   password: UX82473651
   sni: sacred-anemone.rooster465.autos
   udp: true
-- name: 🇮🇳 284
+- name: 🇮🇳 280
   server: loved-shark.rooster465.autos
   port: 443
   type: trojan
   password: UX82473651
   sni: loved-shark.rooster465.autos
   udp: true
+- name: 🇯🇵 281
+  server: jp005.421421.xyz
+  port: 20230
+  type: trojan
+  password: 0400697c-b581-4575-9d2f-0bbd4659312d
+  sni: www.alibaba.com
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: www.alibaba.com
+  udp: true
+- name: 🇯🇵 282
+  server: evident-ant.rooster465.autos
+  port: 443
+  type: trojan
+  password: UX82473651
+  sni: evident-ant.rooster465.autos
+  udp: true
+- name: 🇯🇵 283
+  server: allowed-poodle.rooster465.autos
+  port: 443
+  type: trojan
+  password: UX82473651
+  sni: allowed-poodle.rooster465.autos
+  udp: true
+- name: 🇯🇵 284
+  server: legible-ram.rooster465.autos
+  port: 443
+  type: trojan
+  password: UX82473651
+  sni: legible-ram.rooster465.autos
+  udp: true
 - name: 🇯🇵 285
+  server: live-stallion.rooster465.autos
+  port: 443
+  type: trojan
+  password: UX82473651
+  sni: live-stallion.rooster465.autos
+  udp: true
+- name: 🇺🇸 286
+  server: stable-python.rooster465.autos
+  port: 443
+  type: trojan
+  password: UX82473651
+  sni: stable-python.rooster465.autos
+  udp: true
+- name: 🇯🇵 287
+  server: warm-krill.rooster465.autos
+  port: 443
+  type: trojan
+  password: UX82473651
+  sni: warm-krill.rooster465.autos
+  udp: true
+- name: 🇯🇵 288
+  server: normal-macaque.rooster465.autos
+  port: 443
+  type: trojan
+  password: UX82473651
+  sni: normal-macaque.rooster465.autos
+  udp: true
+- name: 🇯🇵 289
+  server: optimal-penguin.rooster465.autos
+  port: 443
+  type: trojan
+  password: UX82473651
+  sni: optimal-penguin.rooster465.autos
+  udp: true
+- name: 🇯🇵 290
+  server: amazed-mako.rooster465.autos
+  port: 443
+  type: trojan
+  password: UX82473651
+  sni: amazed-mako.rooster465.autos
+  udp: true
+- name: 🇯🇵 291
+  server: equipped-stingray.rooster465.autos
+  port: 443
+  type: trojan
+  password: UX82473651
+  sni: equipped-stingray.rooster465.autos
+  skip-cert-verify: false
+  udp: true
+- name: 🇯🇵 292
   server: 45.32.52.173
   port: 8886
   type: trojan
   password: e26a229d-e8f2-4ff9-8c7d-58a9d83ee437
   sni: 45.32.52.173
   udp: true
-- name: 🇯🇵 286
+- name: 🇯🇵 293
   server: prime-corgi.rooster465.autos
   port: 443
   type: trojan
   password: UX82473651
   sni: prime-corgi.rooster465.autos
   udp: true
-- name: 🇯🇵 287
-  server: accurate-frog.rooster465.autos
+- name: 🇯🇵 294
+  server: 54.250.237.143
   port: 443
   type: trojan
   password: UX82473651
-  sni: accurate-frog.rooster465.autos
   udp: true
-- name: 🇯🇵 288
-  server: dynamic-imp.rooster465.autos
-  port: 443
-  type: trojan
-  password: UX82473651
-  sni: dynamic-imp.rooster465.autos
-  udp: true
-- name: 🇯🇵 289
+- name: 🇯🇵 295
   server: musical-terrier.rooster465.autos
   port: 443
   type: trojan
   password: UX82473651
   sni: musical-terrier.rooster465.autos
   udp: true
-- name: 🇯🇵 290
+- name: 🇯🇵 296
   server: obliging-louse.rooster465.autos
   port: 443
   type: trojan
   password: UX82473651
   sni: obliging-louse.rooster465.autos
   udp: true
-- name: 🇯🇵 291
-  server: winning-marten.rooster465.autos
+- name: 🇰🇷 297
+  server: cunning-grub.rooster465.autos
   port: 443
   type: trojan
   password: UX82473651
-  sni: winning-marten.rooster465.autos
+  sni: cunning-grub.rooster465.autos
   udp: true
-- name: 🇯🇵 292
-  server: concrete-aardvark.rooster465.autos
+- name: 🇰🇷 298
+  server: fancy-skink.rooster465.autos
   port: 443
   type: trojan
   password: UX82473651
-  sni: concrete-aardvark.rooster465.autos
+  sni: fancy-skink.rooster465.autos
   udp: true
-- name: 🇯🇵 293
-  server: organic-caribou.rooster465.autos
+- name: 🇰🇷 299
+  server: glorious-lark.rooster465.autos
   port: 443
   type: trojan
   password: UX82473651
-  sni: organic-caribou.rooster465.autos
+  sni: glorious-lark.rooster465.autos
+  skip-cert-verify: false
   udp: true
-- name: 🇯🇵 294
-  server: intense-sole.rooster465.autos
+- name: 🇰🇷 300
+  server: inviting-rabbit.rooster465.autos
   port: 443
   type: trojan
   password: UX82473651
-  sni: intense-sole.rooster465.autos
+  sni: inviting-rabbit.rooster465.autos
   udp: true
-- name: 🇯🇵 295
-  server: fancy-javelin.rooster465.autos
+- name: 🇰🇷 301
+  server: pure-kodiak.rooster465.autos
   port: 443
   type: trojan
   password: UX82473651
-  sni: fancy-javelin.rooster465.autos
-  udp: true
-- name: 🇯🇵 296
-  server: comic-poodle.rooster465.autos
-  port: 443
-  type: trojan
-  password: UX82473651
-  sni: comic-poodle.rooster465.autos
-  udp: true
-- name: 🇯🇵 297
-  server: promoted-rattler.rooster465.autos
-  port: 443
-  type: trojan
-  password: UX82473651
-  sni: promoted-rattler.rooster465.autos
-  udp: true
-- name: 🇯🇵 298
-  server: integral-rodent.rooster465.autos
-  port: 443
-  type: trojan
-  password: UX82473651
-  sni: integral-rodent.rooster465.autos
-  udp: true
-- name: 🇯🇵 299
-  server: assuring-skink.rooster465.autos
-  port: 443
-  type: trojan
-  password: UX82473651
-  sni: assuring-skink.rooster465.autos
-  udp: true
-- name: 🇯🇵 300
-  server: evolving-platypus.rooster465.autos
-  port: 443
-  type: trojan
-  password: UX82473651
-  sni: evolving-platypus.rooster465.autos
-  udp: true
-- name: 🇯🇵 301
-  server: brief-glider.rooster465.autos
-  port: 443
-  type: trojan
-  password: UX82473651
-  sni: brief-glider.rooster465.autos
+  sni: pure-kodiak.rooster465.autos
+  skip-cert-verify: false
   udp: true
 - name: 🇰🇷 302
-  server: neutral-quail.rooster465.autos
+  server: central-jawfish.rooster465.autos
   port: 443
   type: trojan
   password: UX82473651
-  sni: neutral-quail.rooster465.autos
+  sni: central-jawfish.rooster465.autos
   udp: true
 - name: 🇰🇷 303
+  server: working-tomcat.rooster465.autos
+  port: 443
+  type: trojan
+  password: UX82473651
+  sni: working-tomcat.rooster465.autos
+  udp: true
+- name: 🇰🇷 304
   server: delicate-buck.rooster465.autos
   port: 443
   type: trojan
   password: UX82473651
   sni: delicate-buck.rooster465.autos
   udp: true
-- name: 🇰🇷 304
-  server: amazing-peacock.rooster465.autos
-  port: 443
-  type: trojan
-  password: UX82473651
-  sni: amazing-peacock.rooster465.autos
-  udp: true
 - name: 🇰🇷 305
-  server: kind-stork.rooster465.autos
+  server: 3.39.225.215
   port: 443
   type: trojan
   password: UX82473651
   sni: kind-stork.rooster465.autos
+  skip-cert-verify: false
   udp: true
 - name: 🇰🇷 306
   server: noted-cougar.rooster465.autos
@@ -2593,153 +2578,223 @@ proxies:
   sni: optimum-snapper.rooster465.autos
   udp: true
 - name: 🇰🇷 308
-  server: liked-eft.rooster465.autos
-  port: 443
-  type: trojan
-  password: UX82473651
-  sni: liked-eft.rooster465.autos
-  udp: true
-- name: 🇰🇷 309
   server: engaging-toucan.rooster465.autos
   port: 443
   type: trojan
   password: UX82473651
   sni: engaging-toucan.rooster465.autos
   udp: true
-- name: 🇰🇷 310
-  server: pretty-rat.rooster465.autos
-  port: 443
-  type: trojan
-  password: UX82473651
-  sni: pretty-rat.rooster465.autos
-  udp: true
-- name: 🇰🇷 311
-  server: main-fawn.rooster465.autos
-  port: 443
-  type: trojan
-  password: UX82473651
-  sni: main-fawn.rooster465.autos
-  udp: true
-- name: 🇰🇷 312
-  server: balanced-stag.rooster465.autos
-  port: 443
-  type: trojan
-  password: UX82473651
-  sni: balanced-stag.rooster465.autos
-  udp: true
-- name: '313'
-  server: 77.74.123.106
-  port: 4443
-  type: trojan
-  password: s0_sdK93x9wer_D02Lz9cvK3_Sa014Oakl_C2z
-  sni: grape-test-italy.dynuddns.net
-  skip-cert-verify: true
-  udp: true
-- name: '314'
+- name: '309'
   server: 47.250.84.25
   port: 443
   type: trojan
   password: 5931134d1cde66bf83a54acdfebe7ab2
   udp: true
-- name: '315'
-  server: 104.18.35.86
+- name: 🇭🇰 310
+  server: 219.76.13.177
   port: 443
   type: trojan
   password: humanity
-  sni: www.volumerOot.coM.
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.volumerOot.coM.
   udp: true
-- name: 🇩🇪 316
-  server: 78.47.146.151
+- name: 🇺🇸 311
+  server: 144.31.182.130
   port: 443
   type: trojan
   password: humanity
-  sni: www.pleadcourt.org
+  udp: true
+- name: 🇺🇸 312
+  server: 45.38.3.25
+  port: 443
+  type: trojan
+  password: humanity
+  udp: true
+- name: 🇺🇸 313
+  server: 185.22.172.249
+  port: 443
+  type: trojan
+  password: humanity
+  udp: true
+- name: 🇩🇪 314
+  server: 46.62.204.134
+  port: 443
+  type: trojan
+  password: humanity
+  udp: true
+- name: 🇩🇪 315
+  server: 193.23.202.65
+  port: 443
+  type: trojan
+  password: humanity
+  udp: true
+- name: 🇮🇷 316
+  server: 31.57.190.34
+  port: 443
+  type: trojan
+  password: humanity
+  udp: true
+- name: '317'
+  server: 138.226.220.205
+  port: 443
+  type: trojan
+  password: humanity
+  udp: true
+- name: 🇺🇸 318
+  server: 144.31.205.106
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.volumeroot.com
   skip-cert-verify: false
   network: ws
   ws-opts:
     path: /assignment
     headers:
-      Host: www.pleadcourt.org
+      Host: www.volumeroot.com
   udp: true
-- name: 🇺🇸 317
-  server: pl.zhabulik.ru
+- name: 🇺🇸 319
+  server: 83.217.222.170
   port: 443
   type: trojan
-  password: WFer-5gN21nfHbVB2N8s71Z74EPUfzVj
-  sni: pl.zhabulik.ru
-  skip-cert-verify: false
+  password: humanity
   udp: true
-- name: 🇸🇬 318
+- name: 🇸🇬 320
+  server: simple-molly.rooster465.autos
+  port: 443
+  type: trojan
+  password: UX82473651
+  sni: simple-molly.rooster465.autos
+  udp: true
+- name: 🇸🇬 321
+  server: inspired-hound.rooster465.autos
+  port: 443
+  type: trojan
+  password: UX82473651
+  sni: inspired-hound.rooster465.autos
+  udp: true
+- name: 🇸🇬 322
+  server: intense-wildcat.rooster465.autos
+  port: 443
+  type: trojan
+  password: UX82473651
+  sni: intense-wildcat.rooster465.autos
+  udp: true
+- name: 🇸🇬 323
+  server: joint-ewe.rooster465.autos
+  port: 443
+  type: trojan
+  password: UX82473651
+  sni: joint-ewe.rooster465.autos
+  udp: true
+- name: 🇸🇬 324
+  server: moral-basilisk.rooster465.autos
+  port: 443
+  type: trojan
+  password: UX82473651
+  sni: moral-basilisk.rooster465.autos
+  udp: true
+- name: 🇸🇬 325
+  server: brave-tomcat.rooster465.autos
+  port: 443
+  type: trojan
+  password: UX82473651
+  sni: brave-tomcat.rooster465.autos
+  udp: true
+- name: 🇸🇬 326
+  server: fond-mammoth.rooster465.autos
+  port: 443
+  type: trojan
+  password: UX82473651
+  sni: fond-mammoth.rooster465.autos
+  udp: true
+- name: 🇸🇬 327
+  server: rested-seahorse.rooster465.autos
+  port: 443
+  type: trojan
+  password: UX82473651
+  sni: rested-seahorse.rooster465.autos
+  udp: true
+- name: 🇸🇬 328
+  server: ace-liger.rooster465.autos
+  port: 443
+  type: trojan
+  password: UX82473651
+  sni: ace-liger.rooster465.autos
+  udp: true
+- name: 🇸🇬 329
+  server: musical-mouse.rooster465.autos
+  port: 443
+  type: trojan
+  password: UX82473651
+  sni: musical-mouse.rooster465.autos
+  udp: true
+- name: 🇸🇬 330
   server: 139.180.146.200
   port: 8886
   type: trojan
   password: e26a229d-e8f2-4ff9-8c7d-58a9d83ee437
   sni: 139.180.146.200
-  skip-cert-verify: true
   udp: true
-- name: 🇺🇸 319
+- name: 🇺🇸 331
   server: inviting-ferret.rooster465.autos
   port: 443
   type: trojan
   password: UX82473651
   sni: inviting-ferret.rooster465.autos
   udp: true
-- name: 🇸🇬 320
+- name: 🇸🇬 332
   server: holy-lamb.rooster465.autos
   port: 443
   type: trojan
   password: UX82473651
   sni: holy-lamb.rooster465.autos
   udp: true
-- name: 🇸🇬 321
+- name: 🇸🇬 333
   server: pet-antelope.rooster465.autos
   port: 443
   type: trojan
   password: UX82473651
   sni: pet-antelope.rooster465.autos
   udp: true
-- name: 🇸🇬 322
-  server: desired-boxer.rooster465.autos
-  port: 443
-  type: trojan
-  password: UX82473651
-  sni: desired-boxer.rooster465.autos
-  udp: true
-- name: 🇸🇬 323
+- name: 🇸🇬 334
   server: real-cardinal.rooster465.autos
   port: 443
   type: trojan
   password: UX82473651
   sni: real-cardinal.rooster465.autos
   udp: true
-- name: 🇸🇬 324
-  server: 18.143.92.167
+- name: '335'
+  server: nimm.mpd.cc.cd
+  port: 2053
+  type: trojan
+  password: e309e031-991e-4656-9934-44d10deb8fd8
+  sni: nimm.mpd.cc.cd
+  network: ws
+  ws-opts:
+    path: /0962
+    headers:
+      Host: nimm.mpd.cc.cd
+  udp: true
+- name: '336'
+  server: us3-2.998998.best
   port: 443
   type: trojan
-  password: UX82473651
-  sni: glowing-marmoset.rooster465.autos
-  skip-cert-verify: false
+  password: 5504eaa8-1395-402f-8e0e-75ecd762e627
+  sni: nat3.xxai.dpdns.org
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: '%2Fanyway'
+    headers:
+      Host: nat3.xxai.dpdns.org
   udp: true
-- name: 🇺🇸 325
-  server: 209.248.32.116
-  port: 28101
-  type: trojan
-  password: i99Cef
-  udp: true
-- name: 🇺🇸 326
+- name: 🇺🇸 337
   server: 63.180.254.10
   port: 443
   type: ss
   cipher: aes-256-cfb
   password: amazonskr05
   udp: true
-- name: 🇭🇰 327
+- name: 🇭🇰 338
   server: v10.hdacd.com
   port: 30807
   type: vmess
@@ -2749,7 +2804,7 @@ proxies:
   tls: false
   skip-cert-verify: false
   udp: true
-- name: 🇭🇰 328
+- name: 🇭🇰 339
   server: ADncdOvLHR4M1P36.v.3dns.vip
   port: 443
   type: vmess
@@ -2765,7 +2820,7 @@ proxies:
     headers:
       Host: ADncdOvLHR4M1P36.v.3dns.vip
   udp: true
-- name: 🇭🇰 329
+- name: 🇭🇰 340
   server: kBONDXW9liFCi4h4.v.3dns.vip
   port: 443
   type: vmess
@@ -2781,7 +2836,7 @@ proxies:
     headers:
       Host: kBONDXW9liFCi4h4.v.3dns.vip
   udp: true
-- name: 🇭🇰 330
+- name: 🇭🇰 341
   server: aZW0eunYVdvRe73k.v.3dns.vip
   port: 443
   type: vmess
@@ -2797,7 +2852,7 @@ proxies:
     headers:
       Host: aZW0eunYVdvRe73k.v.3dns.vip
   udp: true
-- name: 🇭🇰 331
+- name: 🇭🇰 342
   server: syJ2gGUgMwBwQwQx.v.3dns.vip
   port: 443
   type: vmess
@@ -2813,7 +2868,7 @@ proxies:
     headers:
       Host: syJ2gGUgMwBwQwQx.v.3dns.vip
   udp: true
-- name: 🇯🇵 332
+- name: 🇯🇵 343
   server: Z9FfBx3zs2q5O0BG.v.3dns.vip
   port: 443
   type: vmess
@@ -2829,7 +2884,7 @@ proxies:
     headers:
       Host: Z9FfBx3zs2q5O0BG.v.3dns.vip
   udp: true
-- name: 🇯🇵 333
+- name: 🇯🇵 344
   server: kQov7UKaDknXb8a3.v.3dns.vip
   port: 443
   type: vmess
@@ -2845,7 +2900,7 @@ proxies:
     headers:
       Host: kQov7UKaDknXb8a3.v.3dns.vip
   udp: true
-- name: 🇸🇬 334
+- name: 🇸🇬 345
   server: kneNaKHeSXnZH259.v.3dns.vip
   port: 443
   type: vmess
@@ -2861,7 +2916,7 @@ proxies:
     headers:
       Host: kneNaKHeSXnZH259.v.3dns.vip
   udp: true
-- name: 🇸🇬 335
+- name: 🇸🇬 346
   server: ASaqYIDZa9WDQ9Kq.v.3dns.vip
   port: 443
   type: vmess
@@ -2877,7 +2932,7 @@ proxies:
     headers:
       Host: ASaqYIDZa9WDQ9Kq.v.3dns.vip
   udp: true
-- name: 🇸🇬 336
+- name: 🇸🇬 347
   server: 6JiziO8PxQAXBAtZ.v.3dns.vip
   port: 443
   type: vmess
@@ -2893,7 +2948,7 @@ proxies:
     headers:
       Host: 6JiziO8PxQAXBAtZ.v.3dns.vip
   udp: true
-- name: 🇸🇬 337
+- name: 🇸🇬 348
   server: 8nTzyR5KNivfabaT.v.3dns.vip
   port: 443
   type: vmess
@@ -2909,7 +2964,7 @@ proxies:
     headers:
       Host: 8nTzyR5KNivfabaT.v.3dns.vip
   udp: true
-- name: 🇺🇸 338
+- name: 🇺🇸 349
   server: 53vXOVarmgcreAsv.v.3dns.vip
   port: 443
   type: vmess
@@ -2925,7 +2980,7 @@ proxies:
     headers:
       Host: 53vXOVarmgcreAsv.v.3dns.vip
   udp: true
-- name: 🇸🇬 339
+- name: 🇸🇬 350
   server: bJ1Aa2ZyJxYamYuK.v.3dns.vip
   port: 443
   type: vmess
@@ -2941,7 +2996,7 @@ proxies:
     headers:
       Host: bJ1Aa2ZyJxYamYuK.v.3dns.vip
   udp: true
-- name: 🇭🇰 340
+- name: 🇭🇰 351
   server: v10.hdacd.com
   port: 30807
   type: vmess
@@ -2950,7 +3005,7 @@ proxies:
   cipher: auto
   tls: false
   udp: true
-- name: 🇺🇸 341
+- name: 🇺🇸 352
   server: 7d0a2gz0-7a0c.aws-agent.net
   port: 12103
   type: trojan
@@ -2958,7 +3013,7 @@ proxies:
   sni: m.ctrip.com
   skip-cert-verify: true
   udp: true
-- name: 🇺🇸 342
+- name: 🇺🇸 353
   server: 7d0a2gz0-7a0c.aws-agent.net
   port: 10115
   type: trojan
@@ -2966,7 +3021,7 @@ proxies:
   sni: m.ctrip.com
   skip-cert-verify: true
   udp: true
-- name: 🇺🇸 343
+- name: 🇺🇸 354
   server: 7d0a2gz0-7a0c.aws-agent.net
   port: 12107
   type: trojan
@@ -2974,7 +3029,7 @@ proxies:
   sni: m.ctrip.com
   skip-cert-verify: true
   udp: true
-- name: 🇺🇸 344
+- name: 🇺🇸 355
   server: 7d0a2gz0-7a0c.aws-agent.net
   port: 12102
   type: trojan
@@ -2982,7 +3037,7 @@ proxies:
   sni: m.ctrip.com
   skip-cert-verify: true
   udp: true
-- name: 🇺🇸 345
+- name: 🇺🇸 356
   server: 63182sh8-4d7b.aws-agent.net
   port: 10125
   type: trojan
@@ -2990,7 +3045,7 @@ proxies:
   sni: m.ctrip.com
   skip-cert-verify: true
   udp: true
-- name: 🇺🇸 346
+- name: 🇺🇸 357
   server: 7d0a2gz0-7a0c.aws-agent.net
   port: 10135
   type: trojan
@@ -2998,7 +3053,7 @@ proxies:
   sni: m.ctrip.com
   skip-cert-verify: true
   udp: true
-- name: 🇺🇸 347
+- name: 🇺🇸 358
   server: 63182sh8-4d7b.aws-agent.net
   port: 10155
   type: trojan
@@ -3006,7 +3061,7 @@ proxies:
   sni: m.ctrip.com
   skip-cert-verify: true
   udp: true
-- name: 🇺🇸 348
+- name: 🇺🇸 359
   server: 63182sh8-4d7b.aws-agent.net
   port: 12122
   type: trojan
@@ -3014,7 +3069,7 @@ proxies:
   sni: m.ctrip.com
   skip-cert-verify: true
   udp: true
-- name: 🇺🇸 349
+- name: 🇺🇸 360
   server: 7d0a2gz0-7a0c.aws-agent.net
   port: 12142
   type: trojan
@@ -3022,7 +3077,7 @@ proxies:
   sni: m.ctrip.com
   skip-cert-verify: true
   udp: true
-- name: 🇺🇸 350
+- name: 🇺🇸 361
   server: 63182sh8-4d7b.aws-agent.net
   port: 11171
   type: trojan
@@ -3030,73 +3085,7 @@ proxies:
   sni: m.ctrip.com
   skip-cert-verify: true
   udp: true
-- name: 🇩🇪 351
-  server: 18.196.88.40
-  port: 443
-  type: ss
-  cipher: aes-256-cfb
-  password: amazonskr05
-  udp: true
-- name: 🇩🇪 352
-  server: 3.79.59.187
-  port: 443
-  type: ss
-  cipher: aes-256-cfb
-  password: amazonskr05
-  udp: true
-- name: 🇺🇸 353
-  server: ger2.fytpn.com
-  port: 443
-  type: trojan
-  password: gHncxmRjWEJ7apX5XuXsHw4kGexMH_gU
-  skip-cert-verify: false
-  udp: true
-- name: 🇳🇱 354
-  server: ger6.fytpn.com
-  port: 2097
-  type: trojan
-  password: gHncxmRjWEJ7apX5XuXsHw4kGexMH_gU
-  skip-cert-verify: false
-  udp: true
-- name: 🇺🇸 355
-  server: 188.130.154.174
-  port: 2083
-  type: vmess
-  uuid: 74c17cae-bf8b-4cda-8cdd-cf7983bf0a49
-  alterId: 0
-  cipher: auto
-  tls: true
-  skip-cert-verify: false
-  udp: true
-- name: 🇩🇪 356
-  server: 18.184.136.175
-  port: 443
-  type: ss
-  cipher: aes-256-cfb
-  password: amazonskr05
-  udp: true
-- name: 🇬🇧 357
-  server: gb.tronsg.com
-  port: 443
-  type: trojan
-  password: Trojan@82164024
-  sni: gb.tronsg.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇭🇰 358
-  server: 47.244.120.197
-  port: 23026
-  type: vmess
-  uuid: b9de1bc9-baa7-41ac-86f7-ccd59695cb21
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /arki
-  udp: true
-- name: 🇭🇰 359
+- name: 🇭🇰 362
   server: 47.244.120.197
   port: 36703
   type: vmess
@@ -3109,150 +3098,593 @@ proxies:
   ws-opts:
     path: /arki
   udp: true
-- name: 🇭🇰 360
-  server: 47.244.120.197
-  port: 44867
+- name: 🇭🇰 363
+  server: 47.243.194.125
+  port: 443
   type: vmess
-  uuid: 845e6b08-2919-4290-ade0-5dc7dcea59ca
+  uuid: f23bb427-c1f9-4373-876c-2f43e9f790f3
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /ws-vmess
+    headers:
+      Host: nycqg19zkwacpm1b.v.3dns.vip
+  udp: true
+- name: 🇭🇰 364
+  server: 8.217.13.103
+  port: 443
+  type: vmess
+  uuid: f23bb427-c1f9-4373-876c-2f43e9f790f3
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: true
+  servername: qtkdr8jxe3wefxjm.v.3dns.vip
+  network: ws
+  ws-opts:
+    path: /ws-vmess
+    headers:
+      Host: qtkdr8jxe3wefxjm.v.3dns.vip
+  udp: true
+- name: 🇭🇰 365
+  server: 93ucrn4i0pffuabk.v.3dns.vip
+  port: 443
+  type: vmess
+  uuid: f23bb427-c1f9-4373-876c-2f43e9f790f3
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: true
+  servername: 93ucrn4i0pffuabk.v.3dns.vip
+  network: ws
+  ws-opts:
+    path: /ws-vmess
+    headers:
+      Host: 93ucrn4i0pffuabk.v.3dns.vip
+  udp: true
+- name: 🇷🇺 366
+  server: in.tronsg.com
+  port: 443
+  type: trojan
+  password: Trojan@82164024
+  sni: in.tronsg.com
+  skip-cert-verify: true
+  udp: true
+- name: '367'
+  server: 86.38.214.205
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.ignitelimit.com
+  udp: true
+- name: 🇸🇬 368
+  server: sg-3.gsafevpnapi.com
+  port: 44370
+  type: trojan
+  password: 5416ef6f-b8e5-48e9-87e4-3d5649b2e3e0
+  sni: www.yahoo.com
+  udp: true
+- name: 🇳🇱 369
+  server: 82.38.31.35
+  port: 8080
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  udp: true
+- name: 🇨🇦 370
+  server: 15.223.120.64
+  port: 443
+  type: ss
+  cipher: aes-256-cfb
+  password: amazonskr05
+  udp: true
+- name: '371'
+  server: 13.40.25.145
+  port: 443
+  type: ss
+  cipher: aes-256-cfb
+  password: amazonskr05
+  udp: true
+- name: 🇸🇬 372
+  server: ruot.ayucloudservices.nl
+  port: 40022
+  type: ss
+  cipher: aes-128-gcm
+  password: 49b07b98-6b76-4c70-b046-39be88e75abf
+  udp: true
+- name: 🇯🇵 373
+  server: ruot.ayucloudservices.nl
+  port: 22034
+  type: ss
+  cipher: aes-256-gcm
+  password: 9c51ca33-a332-4de5-8677-5624e940097c
+  udp: true
+- name: 🇨🇦 374
+  server: 15.175.220.220
+  port: 443
+  type: ss
+  cipher: aes-256-cfb
+  password: amazonskr05
+  udp: true
+- name: 🇵🇱 375
+  server: 54.36.174.140
+  port: 443
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: e5c65ph
+  udp: true
+- name: '376'
+  server: ruot.ayucloudservices.nl
+  port: 35016
+  type: ss
+  cipher: aes-128-gcm
+  password: 9c51ca33-a332-4de5-8677-5624e940097c
+  udp: true
+- name: 🇭🇰 377
+  server: 47.243.65.243
+  port: 443
+  type: vmess
+  uuid: f23bb427-c1f9-4373-876c-2f43e9f790f3
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: true
+  servername: lcv8v9l7oyamxxfz.v.3dns.vip
+  network: ws
+  ws-opts:
+    path: /ws-vmess
+    headers:
+      Host: lcv8v9l7oyamxxfz.v.3dns.vip
+  udp: true
+- name: 🇭🇰 378
+  server: 8.218.195.61
+  port: 443
+  type: vmess
+  uuid: f23bb427-c1f9-4373-876c-2f43e9f790f3
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /ws-vmess
+    headers:
+      Host: EX1oGt73NzPQKAc2.v.3dns.vip
+  udp: true
+- name: 🇸🇬 379
+  server: baBfGGlhjs86aTxZ.v.3dns.vip
+  port: 443
+  type: vmess
+  uuid: b89b702b-31ef-4f6a-85df-c264795a987b
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /ws-vmess
+    headers:
+      Host: baBfGGlhjs86aTxZ.v.3dns.vip
+  udp: true
+- name: 🇭🇰 380
+  server: 8.217.254.88
+  port: 443
+  type: vmess
+  uuid: f23bb427-c1f9-4373-876c-2f43e9f790f3
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: true
+  servername: 2b9hwy8ocx7q74nm.v.3dns.vip
+  network: ws
+  ws-opts:
+    path: /ws-vmess
+    headers:
+      Host: 2b9hwy8ocx7q74nm.v.3dns.vip
+  udp: true
+- name: 🇺🇸 381
+  server: goldcnmltyljgfwgov.vip68.wogcnmnnagfwgov.com
+  port: 11268
+  type: vmess
+  uuid: 605956ee-544d-308e-8b90-51e67c6ea8da
+  alterId: 2
+  cipher: auto
+  tls: false
+  udp: true
+- name: 🇩🇪 382
+  server: 5.45.97.147
+  port: 10803
+  type: vmess
+  uuid: 018fbfb7-721a-49a9-b9f5-fb55d92592b6
   alterId: 0
   cipher: auto
   tls: false
   skip-cert-verify: true
+  network: http
+  http-opts:
+    method: GET
+    path:
+    - /
+  udp: true
+- name: 🇺🇸 383
+  server: v29.hdacd.com
+  port: 30829
+  type: vmess
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
+  cipher: auto
+  tls: false
+  skip-cert-verify: true
+  udp: true
+- name: 🇭🇰 384
+  server: 47.243.194.125
+  port: 443
+  type: vmess
+  uuid: f23bb427-c1f9-4373-876c-2f43e9f790f3
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: true
+  servername: nycqg19zkwacpm1b.v.3dns.vip
   network: ws
   ws-opts:
-    path: /arki
+    path: /ws-vmess
+    headers:
+      Host: nycqg19zkwacpm1b.v.3dns.vip
   udp: true
-- name: 🇺🇸 361
-  server: internal-krill.rooster465.autos
+- name: 🇭🇰 385
+  server: lcv8v9l7oyamxxfz.v.3dns.vip
+  port: 443
+  type: vmess
+  uuid: f23bb427-c1f9-4373-876c-2f43e9f790f3
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: true
+  servername: lcv8v9l7oyamxxfz.v.3dns.vip
+  network: ws
+  ws-opts:
+    path: /ws-vmess
+    headers:
+      Host: lcv8v9l7oyamxxfz.v.3dns.vip
+  udp: true
+- name: 🇸🇬 386
+  server: K5DYRTmkNsLnAj8V.v.3dns.vip
+  port: 443
+  type: vmess
+  uuid: b89b702b-31ef-4f6a-85df-c264795a987b
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: true
+  servername: K5DYRTmkNsLnAj8V.v.3dns.vip
+  network: ws
+  ws-opts:
+    path: /ws-vmess
+    headers:
+      Host: K5DYRTmkNsLnAj8V.v.3dns.vip
+  udp: true
+- name: 🇭🇰 387
+  server: ex1ogt73nzpqkac2.v.3dns.vip
+  port: 443
+  type: vmess
+  uuid: f23bb427-c1f9-4373-876c-2f43e9f790f3
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /ws-vmess
+    headers:
+      Host: ex1ogt73nzpqkac2.v.3dns.vip
+  udp: true
+- name: '388'
+  server: 185.212.149.7
+  port: 2053
+  type: vmess
+  uuid: aeb3c019-ae83-4677-af97-846baa787ad5
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: true
+  network: http
+  http-opts:
+    method: GET
+    path:
+    - /3x
+    headers:
+      Host:
+      - down-cdn.dingtalk.com
+  udp: true
+- name: '389'
+  server: 185.212.149.7
+  port: 52080
+  type: vmess
+  uuid: ec3c8b97-f308-4fee-aa16-95e2c7595acd
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: true
+  network: http
+  http-opts:
+    method: GET
+    path:
+    - /3x
+    headers:
+      Host:
+      - down-cdn.dingtalk.com
+  udp: true
+- name: 🇭🇰 390
+  server: nycqg19zkwacpm1b.v.3dns.vip
+  port: 443
+  type: vmess
+  uuid: f23bb427-c1f9-4373-876c-2f43e9f790f3
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /ws-vmess
+    headers:
+      Host: NYcQg19zkwaCPM1B.v.3dns.vip
+  udp: true
+- name: 🇭🇰 391
+  server: yg1.ygkkk.dpdns.org
+  port: 443
+  type: vmess
+  uuid: b2ba4a73-3123-479e-aa96-5973a9ecd0c0
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: true
+  servername: jmp1.907737.xyz
+  network: ws
+  ws-opts:
+    path: /b2ba4a73-3123-479e-aa96-5973a9ecd0c0-vm
+    headers:
+      Host: jmp1.907737.xyz
+  udp: true
+- name: 🇺🇸 392
+  server: v35.hdacd.com
+  port: 30835
+  type: vmess
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
+  cipher: auto
+  tls: false
+  skip-cert-verify: true
+  udp: true
+- name: 🇺🇸 393
+  server: v36.hdacd.com
+  port: 30836
+  type: vmess
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
+  cipher: auto
+  tls: false
+  skip-cert-verify: true
+  udp: true
+- name: 🇯🇵 394
+  server: cdn.sfacg.uk
+  port: 2083
+  type: vmess
+  uuid: ac251237-576f-40c8-a543-554960c958b1
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /or3
+    headers:
+      Host: or3.sfacg.uk
+  udp: true
+- name: 🇸🇬 395
+  server: moral-basilisk.rooster465.autos
   port: 443
   type: trojan
   password: UX82473651
-  sni: internal-krill.rooster465.autos
+  sni: moral-basilisk.rooster465.autos
   skip-cert-verify: true
   udp: true
-- name: 🇯🇵 362
-  server: equipped-stingray.rooster465.autos
+- name: 🇰🇷 396
+  server: optimum-snapper.rooster465.autos
   port: 443
   type: trojan
   password: UX82473651
-  sni: equipped-stingray.rooster465.autos
+  sni: optimum-snapper.rooster465.autos
   skip-cert-verify: true
   udp: true
-- name: 🇯🇵 363
-  server: amazed-mako.rooster465.autos
+- name: 🇺🇸 397
+  server: stable-python.rooster465.autos
   port: 443
   type: trojan
   password: UX82473651
-  sni: amazed-mako.rooster465.autos
+  sni: stable-python.rooster465.autos
   skip-cert-verify: true
   udp: true
-- name: 🇯🇵 364
-  server: optimal-penguin.rooster465.autos
+- name: 🇫🇷 398
+  server: 185.18.250.252
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.calmlunch.com
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.calmlunch.com
+  udp: true
+- name: 🇫🇷 399
+  server: 172.64.152.23
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.calmlunch.com
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.calmlunch.com
+  udp: true
+- name: 🇯🇵 400
+  server: jp3.998998.best
+  port: 443
+  type: trojan
+  password: 5504eaa8-1395-402f-8e0e-75ecd762e627
+  sni: nat11.outsidemyheart.space
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /w4e5yh0p945y3?ed=2560
+    headers:
+      Host: nat11.outsidemyheart.space
+  udp: true
+- name: 🇳🇱 401
+  server: 104.19.157.30
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.volumeroot.com
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.volumeroot.com
+  udp: true
+- name: 🇫🇷 402
+  server: 82.117.245.125
+  port: 2053
+  type: trojan
+  password: humanity
+  sni: www.calmlunch.com
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.calmlunch.com
+  udp: true
+- name: 🇯🇵 403
+  server: fancy-javelin.rooster465.autos
   port: 443
   type: trojan
   password: UX82473651
-  sni: optimal-penguin.rooster465.autos
+  sni: fancy-javelin.rooster465.autos
   skip-cert-verify: true
   udp: true
-- name: 🇯🇵 365
-  server: normal-macaque.rooster465.autos
+- name: 🇮🇳 404
+  server: in.tronsg.com
+  port: 443
+  type: trojan
+  password: Trojan@82164024
+  sni: in.tronsg.com
+  skip-cert-verify: true
+  udp: true
+- name: 🇩🇪 405
+  server: pleased-albacore.rooster465.autos
   port: 443
   type: trojan
   password: UX82473651
-  sni: normal-macaque.rooster465.autos
+  sni: pleased-albacore.rooster465.autos
   skip-cert-verify: true
   udp: true
-- name: 🇯🇵 366
-  server: warm-krill.rooster465.autos
+- name: 🇫🇷 406
+  server: 188.114.96.3
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.calmlunch.com
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.calmlunch.com
+  udp: true
+- name: 🇯🇵 407
+  server: winning-marten.rooster465.autos
   port: 443
   type: trojan
   password: UX82473651
-  sni: warm-krill.rooster465.autos
+  sni: winning-marten.rooster465.autos
   skip-cert-verify: true
   udp: true
-- name: 🇰🇷 367
-  server: full-egret.rooster465.autos
+- name: 🇯🇵 408
+  server: brief-glider.rooster465.autos
   port: 443
   type: trojan
   password: UX82473651
-  sni: full-egret.rooster465.autos
+  sni: brief-glider.rooster465.autos
   skip-cert-verify: true
   udp: true
-- name: 🇰🇷 368
-  server: working-tomcat.rooster465.autos
+- name: 🇯🇵 409
+  server: allowed-poodle.rooster465.autos
   port: 443
   type: trojan
   password: UX82473651
-  sni: working-tomcat.rooster465.autos
+  sni: allowed-poodle.rooster465.autos
   skip-cert-verify: true
   udp: true
-- name: 🇰🇷 369
-  server: central-jawfish.rooster465.autos
+- name: 🇯🇵 410
+  server: evident-ant.rooster465.autos
   port: 443
   type: trojan
   password: UX82473651
-  sni: central-jawfish.rooster465.autos
+  sni: evident-ant.rooster465.autos
   skip-cert-verify: true
   udp: true
-- name: 🇰🇷 370
-  server: 3.35.131.135
-  port: 8443
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: 7e68e32f-8015-4f37-9082-70e8b0b58043
-  udp: true
-- name: 🇺🇸 371
-  server: 46.17.41.166
-  port: 50660
-  type: ss
-  cipher: aes-256-gcm
-  password: 895b4b796a357570
-  udp: true
-- name: 🇸🇬 372
-  server: real-werewolf.rooster465.autos
+- name: 🇺🇸 411
+  server: alert-titmouse.rooster465.autos
   port: 443
   type: trojan
   password: UX82473651
-  sni: real-werewolf.rooster465.autos
+  sni: alert-titmouse.rooster465.autos
   skip-cert-verify: true
   udp: true
-- name: 🇸🇬 373
-  server: present-ram.rooster465.autos
+- name: 🇸🇬 412
+  server: simple-molly.rooster465.autos
   port: 443
   type: trojan
   password: UX82473651
-  sni: present-ram.rooster465.autos
+  sni: simple-molly.rooster465.autos
   skip-cert-verify: true
   udp: true
-- name: 🇸🇬 374
-  server: 13.212.141.33
-  port: 8443
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: 7e68e32f-8015-4f37-9082-70e8b0b58043
-  udp: true
-- name: 🇺🇸 375
-  server: 3.80.84.187
+- name: 🇯🇵 413
+  server: obliging-louse.rooster465.autos
   port: 443
-  type: ss
-  cipher: aes-256-cfb
-  password: amazonskr05
+  type: trojan
+  password: UX82473651
+  sni: obliging-louse.rooster465.autos
+  skip-cert-verify: true
   udp: true
-- name: 🇺🇸 376
-  server: 54.83.117.150
+- name: 🇫🇷 414
+  server: 104.21.13.204
   port: 443
-  type: ss
-  cipher: aes-256-cfb
-  password: amazonskr05
+  type: trojan
+  password: humanity
+  sni: www.calmlunch.com
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.calmlunch.com
   udp: true
-- name: 🇺🇸 377
-  server: 54.221.120.243
-  port: 443
-  type: ss
-  cipher: aes-256-cfb
-  password: amazonskr05
-  udp: true
-- name: '378'
+- name: 🇺🇸 415
   server: us3-2.998998.best
   port: 443
   type: trojan
@@ -3265,68 +3697,1456 @@ proxies:
     headers:
       Host: nat3.xxai.dpdns.org
   udp: true
-- name: 🇺🇸 379
-  server: x.com
-  port: 8443
+- name: 🇰🇷 416
+  server: pure-kodiak.rooster465.autos
+  port: 443
   type: trojan
-  password: b792ffa6-7007-43a9-ae9f-46f68da52a6a
-  sni: avengers1.yang-1989.xyz
+  password: UX82473651
+  sni: pure-kodiak.rooster465.autos
+  skip-cert-verify: true
+  udp: true
+- name: 🇯🇵 417
+  server: live-stallion.rooster465.autos
+  port: 443
+  type: trojan
+  password: UX82473651
+  sni: live-stallion.rooster465.autos
+  skip-cert-verify: true
+  udp: true
+- name: 🇸🇬 418
+  server: glorious-glider.rooster465.autos
+  port: 443
+  type: trojan
+  password: UX82473651
+  sni: glorious-glider.rooster465.autos
+  skip-cert-verify: true
+  udp: true
+- name: 🇰🇷 419
+  server: central-jawfish.rooster465.autos
+  port: 443
+  type: trojan
+  password: UX82473651
+  sni: central-jawfish.rooster465.autos
+  skip-cert-verify: true
+  udp: true
+- name: 🇸🇬 420
+  server: musical-mouse.rooster465.autos
+  port: 443
+  type: trojan
+  password: UX82473651
+  sni: musical-mouse.rooster465.autos
+  skip-cert-verify: true
+  udp: true
+- name: 🇺🇸 421
+  server: pro-mako.rooster465.autos
+  port: 443
+  type: trojan
+  password: UX82473651
+  sni: pro-mako.rooster465.autos
+  skip-cert-verify: true
+  udp: true
+- name: 🇯🇵 422
+  server: amazed-mako.rooster465.autos
+  port: 443
+  type: trojan
+  password: UX82473651
+  sni: amazed-mako.rooster465.autos
+  skip-cert-verify: true
+  udp: true
+- name: 🇯🇵 423
+  server: normal-macaque.rooster465.autos
+  port: 443
+  type: trojan
+  password: UX82473651
+  sni: normal-macaque.rooster465.autos
+  skip-cert-verify: true
+  udp: true
+- name: 🇯🇵 424
+  server: warm-krill.rooster465.autos
+  port: 443
+  type: trojan
+  password: UX82473651
+  sni: warm-krill.rooster465.autos
+  skip-cert-verify: true
+  udp: true
+- name: 🇰🇷 425
+  server: engaging-toucan.rooster465.autos
+  port: 443
+  type: trojan
+  password: UX82473651
+  sni: engaging-toucan.rooster465.autos
+  skip-cert-verify: true
+  udp: true
+- name: 🇮🇪 426
+  server: adapting-basilisk.rooster465.autos
+  port: 443
+  type: trojan
+  password: UX82473651
+  sni: adapting-basilisk.rooster465.autos
+  skip-cert-verify: true
+  udp: true
+- name: 🇫🇷 427
+  server: 45.130.125.190
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.calmlunch.com
   skip-cert-verify: true
   network: ws
   ws-opts:
-    path: /hm4m
+    path: /assignment
     headers:
-      Host: avengers1.yang-1989.xyz
+      Host: www.calmlunch.com
   udp: true
-- name: 🇮🇳 380
-  server: goldcnmltyljgfwgov.vip67.wogcnmnnagfwgov.com
-  port: 11267
-  type: vmess
-  uuid: 605956ee-544d-308e-8b90-51e67c6ea8da
-  alterId: 2
-  cipher: auto
-  tls: false
+- name: 🇮🇪 428
+  server: master-possum.rooster465.autos
+  port: 443
+  type: trojan
+  password: UX82473651
+  sni: master-possum.rooster465.autos
   skip-cert-verify: true
   udp: true
-- name: '381'
+- name: 🇫🇷 429
+  server: 213.1.145.50
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.calmlunch.com
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.calmlunch.com
+  udp: true
+- name: 🇯🇵 430
+  server: comic-poodle.rooster465.autos
+  port: 443
+  type: trojan
+  password: UX82473651
+  sni: comic-poodle.rooster465.autos
+  skip-cert-verify: true
+  udp: true
+- name: 🇰🇷 431
+  server: kr.tronsg.com
+  port: 443
+  type: trojan
+  password: Trojan@82164024
+  sni: kr.tronsg.com
+  skip-cert-verify: true
+  udp: true
+- name: 🇯🇵 432
+  server: promoted-rattler.rooster465.autos
+  port: 443
+  type: trojan
+  password: UX82473651
+  sni: promoted-rattler.rooster465.autos
+  skip-cert-verify: true
+  udp: true
+- name: 🇯🇵 433
+  server: musical-terrier.rooster465.autos
+  port: 443
+  type: trojan
+  password: UX82473651
+  sni: musical-terrier.rooster465.autos
+  skip-cert-verify: true
+  udp: true
+- name: 🇩🇪 434
+  server: meet-goshawk.rooster465.autos
+  port: 443
+  type: trojan
+  password: UX82473651
+  sni: meet-goshawk.rooster465.autos
+  skip-cert-verify: true
+  udp: true
+- name: 🇵🇱 435
+  server: pl.tronsg.com
+  port: 443
+  type: trojan
+  password: Trojan@82164024
+  sni: pl.tronsg.com
+  skip-cert-verify: true
+  udp: true
+- name: 🇮🇪 436
+  server: loved-shark.rooster465.autos
+  port: 443
+  type: trojan
+  password: UX82473651
+  sni: loved-shark.rooster465.autos
+  skip-cert-verify: true
+  udp: true
+- name: 🇳🇱 437
   server: 104.18.35.86
   port: 443
   type: trojan
   password: humanity
   sni: www.volumerOot.coM.
   skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.volumerOot.coM.
   udp: true
-- name: '382'
-  server: us3-2.998998.best
+- name: 🇯🇵 438
+  server: jp.tronsg.com
   port: 443
   type: trojan
-  password: 5504eaa8-1395-402f-8e0e-75ecd762e627
-  sni: nat3.xxai.dpdns.org
+  password: Trojan@82164024
+  sni: jp.tronsg.com
   skip-cert-verify: true
   udp: true
-- name: 🇺🇸 383
-  server: x.com
-  port: 8443
+- name: 🇰🇷 439
+  server: noted-cougar.rooster465.autos
+  port: 443
   type: trojan
-  password: b792ffa6-7007-43a9-ae9f-46f68da52a6a
-  sni: avengers1.yang-1989.xyz
+  password: UX82473651
+  sni: noted-cougar.rooster465.autos
   skip-cert-verify: true
   udp: true
-- name: 🇮🇳 384
-  server: goldcnmltyljgfwgov.vip67.wogcnmnnagfwgov.com
-  port: 11267
+- name: 🇰🇷 440
+  server: pretty-rat.rooster465.autos
+  port: 443
+  type: trojan
+  password: UX82473651
+  sni: pretty-rat.rooster465.autos
+  skip-cert-verify: true
+  udp: true
+- name: 🇺🇸 441
+  server: inviting-ferret.rooster465.autos
+  port: 443
+  type: trojan
+  password: UX82473651
+  sni: inviting-ferret.rooster465.autos
+  skip-cert-verify: true
+  udp: true
+- name: 🇯🇵 442
+  server: 45.32.52.173
+  port: 8886
+  type: trojan
+  password: e26a229d-e8f2-4ff9-8c7d-58a9d83ee437
+  sni: 45.32.52.173
+  skip-cert-verify: true
+  udp: true
+- name: 🇫🇷 443
+  server: 212.183.88.136
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.calmlunch.com
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.calmlunch.com
+  udp: true
+- name: 🇯🇵 444
+  server: assuring-skink.rooster465.autos
+  port: 443
+  type: trojan
+  password: UX82473651
+  sni: assuring-skink.rooster465.autos
+  skip-cert-verify: true
+  udp: true
+- name: 🇫🇷 445
+  server: 162.159.91.211
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.calmlunch.com
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.calmlunch.com
+  udp: true
+- name: 🇰🇷 446
+  server: main-fawn.rooster465.autos
+  port: 443
+  type: trojan
+  password: UX82473651
+  sni: main-fawn.rooster465.autos
+  skip-cert-verify: true
+  udp: true
+- name: 🇸🇬 447
+  server: brave-tomcat.rooster465.autos
+  port: 443
+  type: trojan
+  password: UX82473651
+  sni: brave-tomcat.rooster465.autos
+  skip-cert-verify: true
+  udp: true
+- name: '448'
+  server: nimm.mpd.cc.cd
+  port: 2053
+  type: trojan
+  password: e309e031-991e-4656-9934-44d10deb8fd8
+  sni: nimm.mpd.cc.cd
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /0962
+    headers:
+      Host: nimm.mpd.cc.cd
+  udp: true
+- name: '449'
+  server: 139.180.146.200
+  port: 8886
+  type: trojan
+  password: e26a229d-e8f2-4ff9-8c7d-58a9d83ee437
+  sni: 139.180.146.200
+  skip-cert-verify: true
+  udp: true
+- name: 🇫🇷 450
+  server: 45.80.111.7
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.calmlunch.com
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.calmlunch.com
+  udp: true
+- name: '451'
+  server: 213.183.63.60
+  port: 9061
+  type: ss
+  cipher: aes-256-cfb
+  password: 4R3hUfZ2FHhDmNcP
+  udp: true
+- name: '452'
+  server: 213.183.63.60
+  port: 9054
+  type: ss
+  cipher: aes-256-cfb
+  password: VcFuyXvND2yQWSFY
+  udp: true
+- name: '453'
+  server: 213.183.63.60
+  port: 9028
+  type: ss
+  cipher: aes-256-cfb
+  password: 9eeJ2fwnZA5Fxgz8
+  udp: true
+- name: '454'
+  server: 213.183.63.60
+  port: 9049
+  type: ss
+  cipher: aes-256-cfb
+  password: PRBf4BS2HvJqtWxY
+  udp: true
+- name: '455'
+  server: 213.183.63.60
+  port: 9064
+  type: ss
+  cipher: aes-256-cfb
+  password: cp8pRSUAyLhTfVWH
+  udp: true
+- name: '456'
+  server: 213.183.63.60
+  port: 9066
+  type: ss
+  cipher: aes-256-cfb
+  password: 2KUaE2a8NWTvuCZ3
+  udp: true
+- name: '457'
+  server: 213.183.63.60
+  port: 9085
+  type: ss
+  cipher: aes-256-cfb
+  password: 9ej82EKe2gq7gLAM
+  udp: true
+- name: '458'
+  server: 213.183.63.60
+  port: 9098
+  type: ss
+  cipher: aes-256-cfb
+  password: aLpQtfEZe445QyHk
+  udp: true
+- name: 🇨🇦 459
+  server: 51.79.49.116
+  port: 8882
+  type: ss
+  cipher: aes-256-gcm
+  password: kDWvXYZoTBcGkC4
+  udp: true
+- name: 🇨🇦 460
+  server: 51.222.12.127
+  port: 445
+  type: ss
+  cipher: aes-256-gcm
+  password: zDNVedRFPQexG9v
+  udp: true
+- name: 🇨🇦 461
+  server: 51.222.155.32
+  port: 5003
+  type: ss
+  cipher: aes-256-gcm
+  password: g5MeD6Ft3CWlJId
+  udp: true
+- name: 🇨🇦 462
+  server: 138.197.141.58
+  port: 8080
+  type: ss
+  cipher: rc4-md5
+  password: 14fFPrbezE3HDZzsMOr6
+  udp: true
+- name: 🇨🇦 463
+  server: 137.184.174.93
+  port: 8080
+  type: ss
+  cipher: rc4-md5
+  password: 14fFPrbezE3HDZzsMOr6
+  udp: true
+- name: 🇨🇦 464
+  server: 174.88.155.213
+  port: 35443
+  type: ss
+  cipher: aes-128-gcm
+  password: 235e318a-8bcb-4480-b256-7b65cc5d0b0a
+  udp: true
+- name: 🇨🇦 465
+  server: 51.222.200.165
+  port: 5000
+  type: ss
+  cipher: aes-256-gcm
+  password: Y6R9pAtvxxzmGC
+  udp: true
+- name: 🇨🇦 466
+  server: 51.222.136.236
+  port: 8882
+  type: ss
+  cipher: aes-256-gcm
+  password: kDWvXYZoTBcGkC4
+  udp: true
+- name: 🇨🇦 467
+  server: 51.222.141.125
+  port: 445
+  type: ss
+  cipher: aes-256-gcm
+  password: zDNVedRFPQexG9v
+  udp: true
+- name: 🇨🇦 468
+  server: 134.195.196.211
+  port: 18000
   type: vmess
-  uuid: 605956ee-544d-308e-8b90-51e67c6ea8da
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: true
+  udp: true
+- name: 🇨🇦 469
+  server: 23.162.200.198
+  port: 18000
+  type: vmess
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: true
+  udp: true
+- name: 🇫🇷 470
+  server: 91.245.225.79
+  port: 2053
+  type: trojan
+  password: humanity
+  sni: www.calmlunch.com
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.calmlunch.com
+  udp: true
+- name: '471'
+  server: 112.132.215.108
+  port: 50002
+  type: vmess
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+  alterId: 64
+  cipher: auto
+  tls: false
+  skip-cert-verify: true
+  udp: true
+- name: 🇩🇪 472
+  server: 213.202.208.199
+  port: 7001
+  type: ss
+  cipher: aes-256-gcm
+  password: RexnBgU7EV5ADxG
+  udp: true
+- name: 🇩🇪 473
+  server: 209.46.102.22
+  port: 8388
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: 1hhrqrokj3ag
+  udp: true
+- name: '474'
+  server: 51.77.225.200
+  port: 8388
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: zRZNBszYyWo5
+  udp: true
+- name: '475'
+  server: 57.131.48.45
+  port: 8388
+  type: ss
+  cipher: aes-256-gcm
+  password: itzvpn@321
+  udp: true
+- name: 🇳🇱 476
+  server: 82.38.31.217
+  port: 8080
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: k1dBOmOB4oqi7Ump37a1bQ
+  udp: true
+- name: 🇳🇱 477
+  server: 82.38.31.9
+  port: 8080
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  udp: true
+- name: 🇳🇱 478
+  server: 82.38.31.175
+  port: 8080
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  udp: true
+- name: 🇳🇱 479
+  server: 82.38.31.182
+  port: 8080
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: k1dBOmOB4oqi7Ump37a1bQ
+  udp: true
+- name: 🇳🇱 480
+  server: 82.38.31.47
+  port: 8080
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  udp: true
+- name: 🇳🇱 481
+  server: 82.38.31.192
+  port: 8080
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: k1dBOmOB4oqi7Ump37a1bQ
+  udp: true
+- name: 🇳🇱 482
+  server: 82.38.31.214
+  port: 8080
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: k1dBOmOB4oqi7Ump37a1bQ
+  udp: true
+- name: 🇳🇱 483
+  server: 82.38.31.42
+  port: 8080
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  udp: true
+- name: 🇳🇱 484
+  server: 82.38.31.69
+  port: 8080
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  udp: true
+- name: 🇳🇱 485
+  server: 82.38.31.202
+  port: 8080
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: k1dBOmOB4oqi7Ump37a1bQ
+  udp: true
+- name: 🇳🇱 486
+  server: 82.38.31.184
+  port: 8080
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: k1dBOmOB4oqi7Ump37a1bQ
+  udp: true
+- name: '487'
+  server: 82.110.60.9
+  port: 19999
+  type: ss
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  udp: true
+- name: 🇳🇱 488
+  server: 82.38.31.39
+  port: 8080
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  udp: true
+- name: 🇳🇱 489
+  server: 82.38.31.149
+  port: 443
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  udp: true
+- name: '490'
+  server: 146.70.23.32
+  port: 8080
+  type: ss
+  cipher: rc4-md5
+  password: 14fFPrbezE3HDZzsMOr6
+  udp: true
+- name: 🇳🇱 491
+  server: 82.38.31.203
+  port: 8080
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: k1dBOmOB4oqi7Ump37a1bQ
+  udp: true
+- name: 🇳🇱 492
+  server: 82.38.31.3
+  port: 8080
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  udp: true
+- name: 🇳🇱 493
+  server: 82.38.31.198
+  port: 8080
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: k1dBOmOB4oqi7Ump37a1bQ
+  udp: true
+- name: '494'
+  server: 141.98.101.181
+  port: 443
+  type: ss
+  cipher: aes-128-gcm
+  password: shadowsocks
+  udp: true
+- name: 🇳🇱 495
+  server: 82.38.31.219
+  port: 8080
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: k1dBOmOB4oqi7Ump37a1bQ
+  udp: true
+- name: 🇳🇱 496
+  server: 82.38.31.36
+  port: 8080
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  udp: true
+- name: 🇳🇱 497
+  server: 82.38.31.49
+  port: 8080
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  udp: true
+- name: 🇳🇱 498
+  server: 82.38.31.218
+  port: 8080
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: k1dBOmOB4oqi7Ump37a1bQ
+  udp: true
+- name: 🇳🇱 499
+  server: 82.38.31.18
+  port: 8080
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  udp: true
+- name: '500'
+  server: 146.70.61.37
+  port: 8080
+  type: ss
+  cipher: rc4-md5
+  password: 14fFPrbezE3HDZzsMOr6
+  udp: true
+- name: 🇳🇱 501
+  server: 82.38.31.46
+  port: 8080
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  udp: true
+- name: 🇳🇱 502
+  server: 82.38.31.180
+  port: 8080
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: k1dBOmOB4oqi7Ump37a1bQ
+  udp: true
+- name: 🇳🇱 503
+  server: 82.38.31.174
+  port: 443
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  udp: true
+- name: 🇳🇱 504
+  server: 82.38.31.61
+  port: 8080
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  udp: true
+- name: 🇳🇱 505
+  server: 82.38.31.174
+  port: 8080
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  udp: true
+- name: 🇳🇱 506
+  server: 82.38.31.156
+  port: 8080
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  udp: true
+- name: 🇳🇱 507
+  server: 82.38.31.205
+  port: 8080
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: k1dBOmOB4oqi7Ump37a1bQ
+  udp: true
+- name: 🇳🇱 508
+  server: 82.38.31.17
+  port: 8080
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  udp: true
+- name: '509'
+  server: 146.70.61.18
+  port: 8080
+  type: ss
+  cipher: rc4-md5
+  password: 14fFPrbezE3HDZzsMOr6
+  udp: true
+- name: 🇳🇱 510
+  server: 82.38.31.48
+  port: 8080
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  udp: true
+- name: 🇳🇱 511
+  server: 82.38.31.10
+  port: 8080
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  udp: true
+- name: 🇳🇱 512
+  server: 82.38.31.34
+  port: 8080
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  udp: true
+- name: 🇺🇸 513
+  server: v24.hdacd.com
+  port: 30824
+  type: vmess
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
   alterId: 2
   cipher: auto
   tls: false
+  skip-cert-verify: true
   udp: true
-- name: 🇸🇬 385
-  server: sg-3.gsafevpnapi.com
-  port: 44370
+- name: '514'
+  server: 91.201.65.122
+  port: 9092
+  type: ss
+  cipher: aes-256-cfb
+  password: TyNkGmp9hs6eGpDK
+  udp: true
+- name: '515'
+  server: 91.201.65.122
+  port: 9053
+  type: ss
+  cipher: aes-256-cfb
+  password: SBM7R883jBmnqe6C
+  udp: true
+- name: '516'
+  server: 91.201.65.122
+  port: 9002
+  type: ss
+  cipher: aes-256-cfb
+  password: b8KkNDjEd5QqFyRm
+  udp: true
+- name: '517'
+  server: 91.201.65.122
+  port: 9059
+  type: ss
+  cipher: aes-256-cfb
+  password: 9XwYyZsK8SNzQDtY
+  udp: true
+- name: '518'
+  server: 91.201.65.122
+  port: 9039
+  type: ss
+  cipher: aes-256-cfb
+  password: qYEN5HX4JKeVCdEC
+  udp: true
+- name: '519'
+  server: 91.201.65.122
+  port: 9065
+  type: ss
+  cipher: aes-256-cfb
+  password: PeHSHm5SqEjBuEXE
+  udp: true
+- name: '520'
+  server: 91.201.65.122
+  port: 9070
+  type: ss
+  cipher: aes-256-cfb
+  password: bf7v334KKDV3YDhH
+  udp: true
+- name: 🇯🇵 521
+  server: 84.247.155.196
+  port: 80
+  type: ss
+  cipher: aes-256-gcm
+  password: 3eOFeNssde7PYYMv
+  udp: true
+- name: 🇯🇵 522
+  server: 84.247.155.196
+  port: 443
+  type: ss
+  cipher: aes-256-gcm
+  password: 3eOFeNssde7PYYMv
+  udp: true
+- name: 🇯🇵 523
+  server: 168.138.43.75
+  port: 80
+  type: vmess
+  uuid: 11c3627f-31e8-4695-dfbd-34076e2f1f5d
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: true
+  servername: None
+  network: ws
+  ws-opts:
+    path: /cctv13.m3u8
+  udp: true
+- name: 🇰🇷 524
+  server: 211.178.105.134
+  port: 6123
+  type: ss
+  cipher: aes-256-cfb
+  password: qwerREWQ@@
+  udp: true
+- name: 🇰🇷 525
+  server: 140.238.2.250
+  port: 443
+  type: vmess
+  uuid: 41a7089a-040b-4538-8b8d-010902405bde
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: true
+  udp: true
+- name: 🇰🇷 526
+  server: 132.145.80.230
+  port: 80
+  type: vmess
+  uuid: 5155860e-d07d-46c3-9128-3afbd84626c7
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: true
+  servername: kr02.a0a.xyz
+  network: ws
+  ws-opts:
+    path: /cctv13.m3u8
+  udp: true
+- name: 🇰🇷 527
+  server: 217.142.138.61
+  port: 80
+  type: vmess
+  uuid: ac1b933d-afff-4487-93ef-f57130a55dff
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: true
+  network: http
+  http-opts:
+    method: GET
+    path:
+    - /
+  udp: true
+- name: '528'
+  server: 195.238.126.20
+  port: 9078
+  type: ss
+  cipher: aes-256-cfb
+  password: JCJpbRbQZNw9XFZG
+  udp: true
+- name: '529'
+  server: 195.238.126.84
+  port: 9039
+  type: ss
+  cipher: aes-256-cfb
+  password: qYEN5HX4JKeVCdEC
+  udp: true
+- name: '530'
+  server: 195.238.126.20
+  port: 9002
+  type: ss
+  cipher: aes-256-cfb
+  password: b8KkNDjEd5QqFyRm
+  udp: true
+- name: '531'
+  server: 195.238.126.20
+  port: 9012
+  type: ss
+  cipher: aes-256-cfb
+  password: xaupMUvhptwxdDUg
+  udp: true
+- name: '532'
+  server: 195.238.126.20
+  port: 9008
+  type: ss
+  cipher: aes-256-cfb
+  password: y9VURyNzJWNRYEGQ
+  udp: true
+- name: '533'
+  server: 195.238.126.20
+  port: 9068
+  type: ss
+  cipher: aes-256-cfb
+  password: mwgRg9hRq3b4Qnwb
+  udp: true
+- name: '534'
+  server: 195.238.126.20
+  port: 9011
+  type: ss
+  cipher: aes-256-cfb
+  password: M3t2ZEQcMGRWBjRa
+  udp: true
+- name: '535'
+  server: 195.238.126.20
+  port: 9045
+  type: ss
+  cipher: aes-256-cfb
+  password: Lp27rqyJq72bZsqX
+  udp: true
+- name: '536'
+  server: 195.238.126.20
+  port: 9086
+  type: ss
+  cipher: aes-256-cfb
+  password: 37Z4TFCYhfxcpc9Q
+  udp: true
+- name: '537'
+  server: 185.135.86.175
+  port: 9086
+  type: ss
+  cipher: aes-256-cfb
+  password: 37Z4TFCYhfxcpc9Q
+  udp: true
+- name: '538'
+  server: 185.135.86.175
+  port: 9017
+  type: ss
+  cipher: aes-256-cfb
+  password: HAVAdE3nXhqA5nHp
+  udp: true
+- name: '539'
+  server: 185.135.86.175
+  port: 9036
+  type: ss
+  cipher: aes-256-cfb
+  password: hbtvgUz5uNYyB3Rf
+  udp: true
+- name: '540'
+  server: 185.135.86.175
+  port: 9007
+  type: ss
+  cipher: aes-256-cfb
+  password: kSPmvwdFzGMMW5pY
+  udp: true
+- name: '541'
+  server: 185.135.86.175
+  port: 9068
+  type: ss
+  cipher: aes-256-cfb
+  password: mwgRg9hRq3b4Qnwb
+  udp: true
+- name: '542'
+  server: 185.135.86.175
+  port: 9034
+  type: ss
+  cipher: aes-256-cfb
+  password: Yg4MbdXFQ9HFFVY6
+  udp: true
+- name: '543'
+  server: 185.135.86.175
+  port: 9082
+  type: ss
+  cipher: aes-256-cfb
+  password: 45xgMgm386pjWjTx
+  udp: true
+- name: 🇳🇱 544
+  server: 193.29.139.147
+  port: 8080
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: k1dBOmOB4oqi7Ump37a1bQ
+  udp: true
+- name: 🇳🇱 545
+  server: 193.29.139.225
+  port: 8080
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  udp: true
+- name: 🇳🇱 546
+  server: 193.29.139.132
+  port: 8080
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: k1dBOmOB4oqi7Ump37a1bQ
+  udp: true
+- name: 🇳🇱 547
+  server: 193.29.139.198
+  port: 8080
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: k1dBOmOB4oqi7Ump37a1bQ
+  udp: true
+- name: 🇳🇱 548
+  server: 193.29.139.188
+  port: 8080
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  udp: true
+- name: 🇳🇱 549
+  server: 193.29.139.179
+  port: 8080
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  udp: true
+- name: 🇳🇱 550
+  server: 193.29.139.204
+  port: 8080
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  udp: true
+- name: 🇳🇱 551
+  server: 193.29.139.151
+  port: 8080
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  udp: true
+- name: 🇳🇱 552
+  server: 193.29.139.168
+  port: 8080
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: QCXDxuDlTTMD7jtgHUjIoj
+  udp: true
+- name: 🇳🇱 553
+  server: 193.29.139.212
+  port: 8080
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: QCXDxuDlTTMD7jtgHUjIoj
+  udp: true
+- name: 🇳🇱 554
+  server: 193.29.139.235
+  port: 8080
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  udp: true
+- name: 🇳🇱 555
+  server: 193.29.139.197
+  port: 8080
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  udp: true
+- name: 🇳🇱 556
+  server: 193.29.139.235
+  port: 443
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  udp: true
+- name: 🇳🇱 557
+  server: 193.29.139.202
+  port: 8080
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  udp: true
+- name: '558'
+  server: 185.213.23.63
+  port: 990
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=
+  udp: true
+- name: 🇵🇱 559
+  server: 217.30.10.44
+  port: 9076
+  type: ss
+  cipher: aes-256-cfb
+  password: S2zDyyPcmZN2h8EC
+  udp: true
+- name: 🇵🇱 560
+  server: 217.30.10.44
+  port: 9099
+  type: ss
+  cipher: aes-256-cfb
+  password: 7heRqkPG3hg4UnRm
+  udp: true
+- name: 🇵🇱 561
+  server: 217.30.10.44
+  port: 9095
+  type: ss
+  cipher: aes-256-cfb
+  password: N7j3pdTYkKmsy8CR
+  udp: true
+- name: 🇵🇱 562
+  server: 217.30.10.44
+  port: 9071
+  type: ss
+  cipher: aes-256-cfb
+  password: mENfxTFQpRKKh4As
+  udp: true
+- name: 🇵🇱 563
+  server: 217.30.10.44
+  port: 9063
+  type: ss
+  cipher: aes-256-cfb
+  password: aQqJbtwFGcCCaeL3
+  udp: true
+- name: 🇵🇱 564
+  server: 217.30.10.44
+  port: 9052
+  type: ss
+  cipher: aes-256-cfb
+  password: jt2ekBNc9HuVtm2a
+  udp: true
+- name: 🇵🇱 565
+  server: 217.30.10.44
+  port: 9042
+  type: ss
+  cipher: aes-256-cfb
+  password: S7KwUu7yBy58S3Ga
+  udp: true
+- name: 🇵🇱 566
+  server: 217.30.10.44
+  port: 9006
+  type: ss
+  cipher: aes-256-cfb
+  password: FAdUvMJUq5vDgKEq
+  udp: true
+- name: 🇳🇱 567
+  server: 188.42.145.180
+  port: 443
   type: trojan
-  password: 5416ef6f-b8e5-48e9-87e4-3d5649b2e3e0
-  sni: www.yahoo.com
+  password: humanity
+  sni: www.volumeroot.com
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /assignment?ed#Telegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NET
+    headers:
+      Host: www.volumeroot.com
+  udp: true
+- name: 🇫🇷 568
+  server: 185.114.72.31
+  port: 2053
+  type: trojan
+  password: humanity
+  sni: www.calmlunch.com
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.calmlunch.com
+  udp: true
+- name: '569'
+  server: 70.34.212.124
+  port: 8388
+  type: ss
+  cipher: aes-256-gcm
+  password: AxIYWtskJWIIaefW
+  udp: true
+- name: '570'
+  server: 119.46.51.45
+  port: 37515
+  type: vmess
+  uuid: 9b76bc31-17a5-4454-934a-8d5fb602cd70
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: true
+  udp: true
+- name: 🇨🇦 571
+  server: 149.22.95.183
+  port: 443
+  type: ss
+  cipher: aes-128-gcm
+  password: shadowsocks
+  udp: true
+- name: 🇺🇸 572
+  server: 107.151.182.197
+  port: 8080
+  type: ss
+  cipher: rc4-md5
+  password: 14fFPrbezE3HDZzsMOr6
+  udp: true
+- name: 🇯🇵 573
+  server: 149.22.87.240
+  port: 443
+  type: ss
+  cipher: aes-128-gcm
+  password: shadowsocks
+  udp: true
+- name: '574'
+  server: 185.164.175.81
+  port: 19999
+  type: ss
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  udp: true
+- name: '575'
+  server: 132.243.175.144
+  port: 8388
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: e8KgS8fD0yDqYFpgN4G5piCOt9aFyqA3
+  udp: true
+- name: 🇯🇵 576
+  server: 149.22.87.241
+  port: 443
+  type: ss
+  cipher: aes-128-gcm
+  password: shadowsocks
+  udp: true
+- name: 🇯🇵 577
+  server: 149.22.87.204
+  port: 443
+  type: ss
+  cipher: aes-128-gcm
+  password: shadowsocks
+  udp: true
+- name: 🇺🇸 578
+  server: 173.244.56.6
+  port: 443
+  type: ss
+  cipher: aes-128-gcm
+  password: shadowsocks
+  udp: true
+- name: 🇺🇸 579
+  server: 79.110.53.169
+  port: 8080
+  type: ss
+  cipher: rc4-md5
+  password: 14fFPrbezE3HDZzsMOr6
+  udp: true
+- name: 🇺🇸 580
+  server: 173.244.56.9
+  port: 443
+  type: ss
+  cipher: aes-128-gcm
+  password: shadowsocks
+  udp: true
+- name: '581'
+  server: 172.67.205.213
+  port: 443
+  type: vmess
+  uuid: 235e318a-8bcb-4480-b256-7b65cc5d0b0a
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: true
+  servername: my.lovehk.xyz
+  network: ws
+  ws-opts:
+    path: /KualaLumpur1
+  udp: true
+- name: '582'
+  server: 172.67.137.209
+  port: 443
+  type: vmess
+  uuid: 235e318a-8bcb-4480-b256-7b65cc5d0b0a
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: true
+  servername: ukl.lovehk.xyz
+  network: ws
+  ws-opts:
+    path: /London31
+  udp: true
+- name: 🇺🇸 583
+  server: 172.67.203.59
+  port: 443
+  type: vmess
+  uuid: 235e318a-8bcb-4480-b256-7b65cc5d0b0a
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: true
+  servername: aus.lovehk.xyz
+  network: ws
+  ws-opts:
+    path: /Sydney3
+  udp: true
+- name: '584'
+  server: 172.67.142.142
+  port: 443
+  type: vmess
+  uuid: 235e318a-8bcb-4480-b256-7b65cc5d0b0a
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: true
+  servername: ukl.lovehk.xyz
+  network: ws
+  ws-opts:
+    path: /London31
+  udp: true
+- name: 🇺🇸 585
+  server: 172.67.197.71
+  port: 443
+  type: vmess
+  uuid: 235e318a-8bcb-4480-b256-7b65cc5d0b0a
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: true
+  servername: aus.lovehk.xyz
+  network: ws
+  ws-opts:
+    path: /Sydney3
+  udp: true
+- name: 🇺🇸 586
+  server: 129.146.77.248
+  port: 39495
+  type: vmess
+  uuid: f836c736-87fc-4fde-aabc-00857ecdff3e
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /cctv13.m3u8
+  udp: true
+- name: 🇺🇸 587
+  server: www.shopify.com
+  port: 443
+  type: vmess
+  uuid: 6a89a215-22bf-4bd7-9642-b95b2e09583a
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: true
+  servername: guanwang.awsno.com
+  network: ws
+  ws-opts:
+    path: /hls/cctv5phd.m3u8
+    headers:
+      Host: www.shopify.com
+  udp: true
+- name: 🇺🇸 588
+  server: 107.149.159.190
+  port: 10443
+  type: trojan
+  password: 8bdfa4e8dac99c57decdd8bf55d2da4c
+  sni: cf.shiranyu.xyz
+  skip-cert-verify: true
+  udp: true
+- name: '589'
+  server: 102.133.165.160
+  port: 16233
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: Xsy8Ox4yOV3xLlpxtjzs3X
+  udp: true
+- name: 🇦🇺 590
+  server: 104.21.13.137
+  port: 443
+  type: vmess
+  uuid: 235e318a-8bcb-4480-b256-7b65cc5d0b0a
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: true
+  servername: aus.lovehk.xyz
+  network: ws
+  ws-opts:
+    path: /Sydney3
+  udp: true
+- name: '591'
+  server: 127.0.0.1
+  port: 1080
+  type: socks5
+  udp: true
+- name: 🇳🇱 592
+  server: 95.181.189.42
+  port: 8993
+  type: trojan
+  password: b78b3b0c-8b89-4a95-94f4-42a3edf9f1b3
+  udp: true
+- name: '593'
+  server: 104.36.86.93
+  port: 9993
+  type: trojan
+  password: 57ad54a0-59ca-4553-bdad-35aab6bd3aa5
+  udp: true
+- name: 🇰🇷 594
+  server: 82164024@kr.tronsg.com
+  port: 443
+  type: trojan
+  password: Trojan
+  sni: kr.tronsg.com
+  skip-cert-verify: true
+  udp: true
+- name: 🇭🇰 595
+  server: QxANkY4HDfzQfLyp.v.3dns.vip
+  port: 443
+  type: vmess
+  uuid: b89b702b-31ef-4f6a-85df-c264795a987b
+  alterId: 0
+  cipher: auto
+  tls: true
+  servername: QxANkY4HDfzQfLyp.v.3dns.vip
+  network: ws
+  ws-opts:
+    path: /ws-vmess
+    headers:
+      Host: QxANkY4HDfzQfLyp.v.3dns.vip
   udp: true
 proxy-groups:
 - name: 🛑 广告拦截
@@ -3396,265 +5216,265 @@ proxy-groups:
   - 🇸🇬 25
   - 🇸🇬 26
   - 🇸🇬 27
-  - '28'
-  - 🇯🇵 29
-  - 🇸🇬 30
-  - 🇸🇬 31
-  - 🇮🇪 32
-  - 🇩🇪 33
-  - 🇩🇪 34
-  - 🇩🇪 35
-  - 🇫🇷 36
-  - 🇫🇷 37
-  - '38'
+  - 🇬🇧 28
+  - 🇬🇧 29
+  - 🇺🇸 30
+  - 🇺🇸 31
+  - '32'
+  - '33'
+  - 🇵🇱 34
+  - 🇳🇱 35
+  - 🇳🇱 36
+  - 🇳🇱 37
+  - 🇳🇱 38
   - 🇳🇱 39
-  - '40'
-  - 🇺🇸 41
-  - 🇺🇸 42
-  - 🇺🇸 43
-  - 🇯🇵 44
+  - 🇳🇱 40
+  - '41'
+  - '42'
+  - '43'
+  - '44'
   - '45'
   - '46'
   - '47'
   - '48'
   - '49'
   - '50'
-  - '51'
-  - '52'
-  - '53'
-  - '54'
+  - 🇺🇸 51
+  - 🇺🇸 52
+  - 🇺🇸 53
+  - 🇮🇳 54
   - '55'
   - '56'
-  - 🇺🇸 57
-  - 🇨🇦 58
-  - 🇨🇦 59
-  - 🇨🇦 60
-  - 🇨🇦 61
-  - 🇨🇦 62
-  - 🇨🇦 63
-  - 🇨🇦 64
-  - 🇨🇦 65
-  - 🇨🇦 66
-  - 🇨🇦 67
-  - 🇨🇦 68
+  - '57'
+  - '58'
+  - '59'
+  - '60'
+  - '61'
+  - '62'
+  - '63'
+  - '64'
+  - '65'
+  - 🇬🇧 66
+  - 🇺🇸 67
+  - 🇺🇸 68
   - 🇺🇸 69
-  - 🇩🇪 70
-  - 🇮🇳 71
-  - 🇸🇬 72
-  - 🇩🇪 73
-  - 🇩🇪 74
-  - 🇬🇧 75
-  - 🇬🇧 76
-  - '77'
-  - 🇭🇰 78
-  - 🇭🇰 79
-  - 🇮🇳 80
+  - 🇨🇦 70
+  - 🇨🇦 71
+  - 🇨🇦 72
+  - 🇨🇦 73
+  - 🇨🇦 74
+  - 🇨🇦 75
+  - 🇨🇦 76
+  - 🇨🇦 77
+  - 🇨🇦 78
+  - 🇺🇸 79
+  - '80'
   - 🇺🇸 81
   - 🇩🇪 82
-  - 🇰🇷 83
-  - 🇰🇷 84
-  - 🇬🇧 85
-  - 🇬🇧 86
+  - 🇸🇬 83
+  - 🇸🇬 84
+  - 🇩🇪 85
+  - 🇩🇪 86
   - 🇬🇧 87
   - 🇬🇧 88
-  - 🇺🇸 89
+  - '89'
   - 🇺🇸 90
-  - 🇬🇧 91
-  - 🇮🇳 92
+  - 🇮🇳 91
+  - 🇩🇪 92
   - 🇺🇸 93
   - 🇺🇸 94
-  - 🇫🇷 95
-  - 🇫🇷 96
-  - 🇭🇰 97
-  - 🇬🇧 98
-  - 🇩🇪 99
-  - 🇬🇧 100
-  - '101'
-  - 🇺🇸 102
-  - 🇬🇧 103
-  - '104'
-  - 🇩🇪 105
-  - 🇳🇱 106
-  - '107'
-  - '108'
-  - '109'
-  - 🇺🇸 110
-  - '111'
+  - 🇺🇸 95
+  - 🇳🇱 96
+  - '97'
+  - '98'
+  - 🇺🇸 99
+  - 🇺🇸 100
+  - 🇩🇪 101
+  - 🇬🇧 102
+  - 🇮🇳 103
+  - 🇺🇸 104
+  - 🇺🇸 105
+  - 🇺🇸 106
+  - 🇫🇷 107
+  - 🇫🇷 108
+  - 🇫🇷 109
+  - '110'
+  - 🇩🇪 111
   - 🇺🇸 112
-  - 🇺🇸 113
-  - 🇭🇰 114
-  - '115'
-  - 🇮🇳 116
-  - 🇮🇳 117
-  - 🇯🇵 118
-  - 🇯🇵 119
-  - 🇯🇵 120
-  - 🇯🇵 121
-  - 🇯🇵 122
-  - 🇯🇵 123
-  - 🇯🇵 124
+  - '113'
+  - '114'
+  - 🇩🇪 115
+  - 🇳🇱 116
+  - '117'
+  - '118'
+  - '119'
+  - 🇺🇸 120
+  - '121'
+  - 🇮🇳 122
+  - 🇮🇳 123
+  - 🇮🇳 124
   - 🇯🇵 125
   - 🇯🇵 126
   - 🇯🇵 127
   - 🇯🇵 128
   - 🇯🇵 129
-  - 🇯🇵 130
+  - 🇺🇸 130
   - 🇯🇵 131
   - 🇯🇵 132
   - 🇯🇵 133
   - 🇯🇵 134
-  - 🇰🇷 135
-  - 🇰🇷 136
-  - 🇰🇷 137
-  - 🇰🇷 138
-  - 🇰🇷 139
-  - 🇰🇷 140
+  - 🇯🇵 135
+  - 🇯🇵 136
+  - 🇯🇵 137
+  - 🇯🇵 138
+  - 🇯🇵 139
+  - 🇯🇵 140
   - 🇰🇷 141
   - 🇰🇷 142
   - 🇰🇷 143
   - 🇰🇷 144
   - 🇰🇷 145
-  - '146'
-  - '147'
-  - '148'
-  - 🇩🇪 149
-  - 🇺🇸 150
-  - 🇸🇬 151
-  - 🇺🇸 152
-  - 🇸🇬 153
-  - 🇸🇬 154
-  - 🇸🇬 155
-  - 🇸🇬 156
-  - 🇸🇬 157
+  - 🇰🇷 146
+  - 🇰🇷 147
+  - 🇰🇷 148
+  - 🇰🇷 149
+  - 🇰🇷 150
+  - 🇰🇷 151
+  - 🇰🇷 152
+  - 🇰🇷 153
+  - 🇰🇷 154
+  - '155'
+  - 🇭🇰 156
+  - 🇺🇸 157
   - 🇺🇸 158
   - 🇺🇸 159
-  - 🇭🇰 160
-  - 🇭🇰 161
-  - 🇭🇰 162
-  - 🇭🇰 163
-  - 🇭🇰 164
-  - 🇯🇵 165
-  - 🇯🇵 166
+  - 🇩🇪 160
+  - 🇬🇧 161
+  - 🇮🇷 162
+  - 🇩🇪 163
+  - 🇺🇸 164
+  - 🇺🇸 165
+  - 🇭🇰 166
   - 🇸🇬 167
   - 🇸🇬 168
   - 🇸🇬 169
   - 🇸🇬 170
-  - 🇺🇸 171
+  - 🇸🇬 171
   - 🇸🇬 172
-  - 🇭🇰 173
-  - 🇺🇸 174
-  - 🇺🇸 175
-  - 🇺🇸 176
-  - 🇺🇸 177
-  - 🇺🇸 178
+  - 🇸🇬 173
+  - 🇸🇬 174
+  - 🇸🇬 175
+  - 🇸🇬 176
+  - 🇸🇬 177
+  - 🇸🇬 178
   - 🇺🇸 179
-  - 🇺🇸 180
-  - 🇺🇸 181
-  - 🇺🇸 182
+  - 🇸🇬 180
+  - 🇸🇬 181
+  - 🇸🇬 182
   - 🇺🇸 183
   - '184'
-  - 🇩🇪 185
-  - 🇬🇧 186
+  - 🇺🇸 185
+  - 🇭🇰 186
   - 🇭🇰 187
   - 🇭🇰 188
   - 🇭🇰 189
-  - 🇺🇸 190
+  - 🇭🇰 190
   - 🇯🇵 191
   - 🇯🇵 192
-  - 🇯🇵 193
-  - 🇯🇵 194
-  - 🇯🇵 195
-  - 🇰🇷 196
-  - 🇰🇷 197
-  - 🇰🇷 198
-  - 🇰🇷 199
+  - 🇸🇬 193
+  - 🇸🇬 194
+  - 🇸🇬 195
+  - 🇸🇬 196
+  - 🇺🇸 197
+  - 🇸🇬 198
+  - 🇭🇰 199
   - 🇺🇸 200
-  - 🇸🇬 201
-  - 🇸🇬 202
-  - 🇸🇬 203
+  - 🇺🇸 201
+  - 🇺🇸 202
+  - 🇺🇸 203
   - 🇺🇸 204
   - 🇺🇸 205
   - 🇺🇸 206
-  - '207'
+  - 🇺🇸 207
   - 🇺🇸 208
-  - 🇮🇳 209
-  - '210'
-  - '211'
+  - 🇺🇸 209
+  - 🇺🇸 210
+  - 🇨🇦 211
   - 🇺🇸 212
-  - 🇮🇳 213
-  - '214'
-  - '215'
-  - '216'
-  - '217'
+  - 🇭🇰 213
+  - 🇭🇰 214
+  - 🇭🇰 215
+  - 🇭🇰 216
+  - 🇷🇺 217
   - '218'
   - '219'
   - '220'
   - '221'
   - '222'
   - '223'
-  - 🇺🇸 224
-  - 🇨🇦 225
-  - 🇨🇦 226
-  - 🇨🇦 227
-  - 🇨🇦 228
-  - 🇨🇦 229
-  - 🇨🇦 230
+  - '224'
+  - '225'
+  - '226'
+  - '227'
+  - 🇬🇧 228
+  - 🇺🇸 229
+  - 🇺🇸 230
   - 🇨🇦 231
   - 🇨🇦 232
   - 🇨🇦 233
   - 🇨🇦 234
   - 🇨🇦 235
-  - 🇺🇸 236
-  - 🇩🇪 237
-  - 🇮🇳 238
-  - 🇸🇬 239
-  - 🇩🇪 240
-  - 🇩🇪 241
-  - 🇬🇧 242
-  - 🇬🇧 243
-  - '244'
-  - 🇭🇰 245
-  - 🇭🇰 246
-  - 🇮🇳 247
-  - 🇺🇸 248
-  - 🇩🇪 249
-  - 🇰🇷 250
-  - 🇰🇷 251
-  - 🇬🇧 252
-  - 🇬🇧 253
-  - 🇬🇧 254
-  - 🇬🇧 255
+  - 🇨🇦 236
+  - 🇨🇦 237
+  - 🇨🇦 238
+  - 🇨🇦 239
+  - 🇺🇸 240
+  - '241'
+  - 🇩🇪 242
+  - 🇸🇬 243
+  - 🇸🇬 244
+  - 🇩🇪 245
+  - 🇩🇪 246
+  - 🇬🇧 247
+  - 🇬🇧 248
+  - '249'
+  - 🇩🇪 250
+  - 🇺🇸 251
+  - 🇺🇸 252
+  - 🇳🇱 253
+  - '254'
+  - '255'
   - 🇺🇸 256
   - 🇺🇸 257
-  - 🇬🇧 258
-  - 🇮🇳 259
-  - 🇺🇸 260
+  - 🇩🇪 258
+  - 🇬🇧 259
+  - 🇮🇳 260
   - 🇺🇸 261
-  - 🇫🇷 262
-  - 🇫🇷 263
-  - 🇭🇰 264
-  - 🇬🇧 265
-  - 🇩🇪 266
-  - 🇬🇧 267
-  - '268'
-  - 🇺🇸 269
-  - 🇬🇧 270
-  - '271'
-  - 🇩🇪 272
-  - 🇳🇱 273
+  - 🇺🇸 262
+  - 🇺🇸 263
+  - 🇺🇸 264
+  - 🇫🇷 265
+  - 🇫🇷 266
+  - 🇫🇷 267
+  - 🇩🇪 268
+  - '269'
+  - '270'
+  - 🇩🇪 271
+  - 🇳🇱 272
+  - '273'
   - '274'
   - '275'
-  - '276'
-  - 🇺🇸 277
-  - '278'
-  - 🇺🇸 279
-  - 🇺🇸 280
-  - 🇭🇰 281
-  - '282'
-  - 🇮🇳 283
-  - 🇮🇳 284
+  - 🇺🇸 276
+  - '277'
+  - 🇮🇳 278
+  - 🇮🇳 279
+  - 🇮🇳 280
+  - 🇯🇵 281
+  - 🇯🇵 282
+  - 🇯🇵 283
+  - 🇯🇵 284
   - 🇯🇵 285
-  - 🇯🇵 286
+  - 🇺🇸 286
   - 🇯🇵 287
   - 🇯🇵 288
   - 🇯🇵 289
@@ -3665,11 +5485,11 @@ proxy-groups:
   - 🇯🇵 294
   - 🇯🇵 295
   - 🇯🇵 296
-  - 🇯🇵 297
-  - 🇯🇵 298
-  - 🇯🇵 299
-  - 🇯🇵 300
-  - 🇯🇵 301
+  - 🇰🇷 297
+  - 🇰🇷 298
+  - 🇰🇷 299
+  - 🇰🇷 300
+  - 🇰🇷 301
   - 🇰🇷 302
   - 🇰🇷 303
   - 🇰🇷 304
@@ -3677,83 +5497,293 @@ proxy-groups:
   - 🇰🇷 306
   - 🇰🇷 307
   - 🇰🇷 308
-  - 🇰🇷 309
-  - 🇰🇷 310
-  - 🇰🇷 311
-  - 🇰🇷 312
-  - '313'
-  - '314'
-  - '315'
-  - 🇩🇪 316
-  - 🇺🇸 317
-  - 🇸🇬 318
+  - '309'
+  - 🇭🇰 310
+  - 🇺🇸 311
+  - 🇺🇸 312
+  - 🇺🇸 313
+  - 🇩🇪 314
+  - 🇩🇪 315
+  - 🇮🇷 316
+  - '317'
+  - 🇺🇸 318
   - 🇺🇸 319
   - 🇸🇬 320
   - 🇸🇬 321
   - 🇸🇬 322
   - 🇸🇬 323
   - 🇸🇬 324
-  - 🇺🇸 325
-  - 🇺🇸 326
-  - 🇭🇰 327
-  - 🇭🇰 328
-  - 🇭🇰 329
-  - 🇭🇰 330
-  - 🇭🇰 331
-  - 🇯🇵 332
-  - 🇯🇵 333
+  - 🇸🇬 325
+  - 🇸🇬 326
+  - 🇸🇬 327
+  - 🇸🇬 328
+  - 🇸🇬 329
+  - 🇸🇬 330
+  - 🇺🇸 331
+  - 🇸🇬 332
+  - 🇸🇬 333
   - 🇸🇬 334
-  - 🇸🇬 335
-  - 🇸🇬 336
-  - 🇸🇬 337
-  - 🇺🇸 338
-  - 🇸🇬 339
+  - '335'
+  - '336'
+  - 🇺🇸 337
+  - 🇭🇰 338
+  - 🇭🇰 339
   - 🇭🇰 340
-  - 🇺🇸 341
-  - 🇺🇸 342
-  - 🇺🇸 343
-  - 🇺🇸 344
-  - 🇺🇸 345
-  - 🇺🇸 346
-  - 🇺🇸 347
-  - 🇺🇸 348
+  - 🇭🇰 341
+  - 🇭🇰 342
+  - 🇯🇵 343
+  - 🇯🇵 344
+  - 🇸🇬 345
+  - 🇸🇬 346
+  - 🇸🇬 347
+  - 🇸🇬 348
   - 🇺🇸 349
-  - 🇺🇸 350
-  - 🇩🇪 351
-  - 🇩🇪 352
+  - 🇸🇬 350
+  - 🇭🇰 351
+  - 🇺🇸 352
   - 🇺🇸 353
-  - 🇳🇱 354
+  - 🇺🇸 354
   - 🇺🇸 355
-  - 🇩🇪 356
-  - 🇬🇧 357
-  - 🇭🇰 358
-  - 🇭🇰 359
-  - 🇭🇰 360
+  - 🇺🇸 356
+  - 🇺🇸 357
+  - 🇺🇸 358
+  - 🇺🇸 359
+  - 🇺🇸 360
   - 🇺🇸 361
-  - 🇯🇵 362
-  - 🇯🇵 363
-  - 🇯🇵 364
-  - 🇯🇵 365
-  - 🇯🇵 366
-  - 🇰🇷 367
-  - 🇰🇷 368
-  - 🇰🇷 369
-  - 🇰🇷 370
-  - 🇺🇸 371
+  - 🇭🇰 362
+  - 🇭🇰 363
+  - 🇭🇰 364
+  - 🇭🇰 365
+  - 🇷🇺 366
+  - '367'
+  - 🇸🇬 368
+  - 🇳🇱 369
+  - 🇨🇦 370
+  - '371'
   - 🇸🇬 372
-  - 🇸🇬 373
-  - 🇸🇬 374
-  - 🇺🇸 375
-  - 🇺🇸 376
-  - 🇺🇸 377
-  - '378'
-  - 🇺🇸 379
-  - 🇮🇳 380
-  - '381'
-  - '382'
+  - 🇯🇵 373
+  - 🇨🇦 374
+  - 🇵🇱 375
+  - '376'
+  - 🇭🇰 377
+  - 🇭🇰 378
+  - 🇸🇬 379
+  - 🇭🇰 380
+  - 🇺🇸 381
+  - 🇩🇪 382
   - 🇺🇸 383
-  - 🇮🇳 384
-  - 🇸🇬 385
+  - 🇭🇰 384
+  - 🇭🇰 385
+  - 🇸🇬 386
+  - 🇭🇰 387
+  - '388'
+  - '389'
+  - 🇭🇰 390
+  - 🇭🇰 391
+  - 🇺🇸 392
+  - 🇺🇸 393
+  - 🇯🇵 394
+  - 🇸🇬 395
+  - 🇰🇷 396
+  - 🇺🇸 397
+  - 🇫🇷 398
+  - 🇫🇷 399
+  - 🇯🇵 400
+  - 🇳🇱 401
+  - 🇫🇷 402
+  - 🇯🇵 403
+  - 🇮🇳 404
+  - 🇩🇪 405
+  - 🇫🇷 406
+  - 🇯🇵 407
+  - 🇯🇵 408
+  - 🇯🇵 409
+  - 🇯🇵 410
+  - 🇺🇸 411
+  - 🇸🇬 412
+  - 🇯🇵 413
+  - 🇫🇷 414
+  - 🇺🇸 415
+  - 🇰🇷 416
+  - 🇯🇵 417
+  - 🇸🇬 418
+  - 🇰🇷 419
+  - 🇸🇬 420
+  - 🇺🇸 421
+  - 🇯🇵 422
+  - 🇯🇵 423
+  - 🇯🇵 424
+  - 🇰🇷 425
+  - 🇮🇪 426
+  - 🇫🇷 427
+  - 🇮🇪 428
+  - 🇫🇷 429
+  - 🇯🇵 430
+  - 🇰🇷 431
+  - 🇯🇵 432
+  - 🇯🇵 433
+  - 🇩🇪 434
+  - 🇵🇱 435
+  - 🇮🇪 436
+  - 🇳🇱 437
+  - 🇯🇵 438
+  - 🇰🇷 439
+  - 🇰🇷 440
+  - 🇺🇸 441
+  - 🇯🇵 442
+  - 🇫🇷 443
+  - 🇯🇵 444
+  - 🇫🇷 445
+  - 🇰🇷 446
+  - 🇸🇬 447
+  - '448'
+  - '449'
+  - 🇫🇷 450
+  - '451'
+  - '452'
+  - '453'
+  - '454'
+  - '455'
+  - '456'
+  - '457'
+  - '458'
+  - 🇨🇦 459
+  - 🇨🇦 460
+  - 🇨🇦 461
+  - 🇨🇦 462
+  - 🇨🇦 463
+  - 🇨🇦 464
+  - 🇨🇦 465
+  - 🇨🇦 466
+  - 🇨🇦 467
+  - 🇨🇦 468
+  - 🇨🇦 469
+  - 🇫🇷 470
+  - '471'
+  - 🇩🇪 472
+  - 🇩🇪 473
+  - '474'
+  - '475'
+  - 🇳🇱 476
+  - 🇳🇱 477
+  - 🇳🇱 478
+  - 🇳🇱 479
+  - 🇳🇱 480
+  - 🇳🇱 481
+  - 🇳🇱 482
+  - 🇳🇱 483
+  - 🇳🇱 484
+  - 🇳🇱 485
+  - 🇳🇱 486
+  - '487'
+  - 🇳🇱 488
+  - 🇳🇱 489
+  - '490'
+  - 🇳🇱 491
+  - 🇳🇱 492
+  - 🇳🇱 493
+  - '494'
+  - 🇳🇱 495
+  - 🇳🇱 496
+  - 🇳🇱 497
+  - 🇳🇱 498
+  - 🇳🇱 499
+  - '500'
+  - 🇳🇱 501
+  - 🇳🇱 502
+  - 🇳🇱 503
+  - 🇳🇱 504
+  - 🇳🇱 505
+  - 🇳🇱 506
+  - 🇳🇱 507
+  - 🇳🇱 508
+  - '509'
+  - 🇳🇱 510
+  - 🇳🇱 511
+  - 🇳🇱 512
+  - 🇺🇸 513
+  - '514'
+  - '515'
+  - '516'
+  - '517'
+  - '518'
+  - '519'
+  - '520'
+  - 🇯🇵 521
+  - 🇯🇵 522
+  - 🇯🇵 523
+  - 🇰🇷 524
+  - 🇰🇷 525
+  - 🇰🇷 526
+  - 🇰🇷 527
+  - '528'
+  - '529'
+  - '530'
+  - '531'
+  - '532'
+  - '533'
+  - '534'
+  - '535'
+  - '536'
+  - '537'
+  - '538'
+  - '539'
+  - '540'
+  - '541'
+  - '542'
+  - '543'
+  - 🇳🇱 544
+  - 🇳🇱 545
+  - 🇳🇱 546
+  - 🇳🇱 547
+  - 🇳🇱 548
+  - 🇳🇱 549
+  - 🇳🇱 550
+  - 🇳🇱 551
+  - 🇳🇱 552
+  - 🇳🇱 553
+  - 🇳🇱 554
+  - 🇳🇱 555
+  - 🇳🇱 556
+  - 🇳🇱 557
+  - '558'
+  - 🇵🇱 559
+  - 🇵🇱 560
+  - 🇵🇱 561
+  - 🇵🇱 562
+  - 🇵🇱 563
+  - 🇵🇱 564
+  - 🇵🇱 565
+  - 🇵🇱 566
+  - 🇳🇱 567
+  - 🇫🇷 568
+  - '569'
+  - '570'
+  - 🇨🇦 571
+  - 🇺🇸 572
+  - 🇯🇵 573
+  - '574'
+  - '575'
+  - 🇯🇵 576
+  - 🇯🇵 577
+  - 🇺🇸 578
+  - 🇺🇸 579
+  - 🇺🇸 580
+  - '581'
+  - '582'
+  - 🇺🇸 583
+  - '584'
+  - 🇺🇸 585
+  - 🇺🇸 586
+  - 🇺🇸 587
+  - 🇺🇸 588
+  - '589'
+  - 🇦🇺 590
+  - '591'
+  - 🇳🇱 592
+  - '593'
+  - 🇰🇷 594
+  - 🇭🇰 595
 - name: 🇭🇰 香港节点
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -3766,32 +5796,38 @@ proxy-groups:
   - 🇭🇰 05
   - 🇭🇰 06
   - 🇭🇰 07
-  - 🇭🇰 78
-  - 🇭🇰 79
-  - 🇭🇰 97
-  - 🇭🇰 114
-  - 🇭🇰 160
-  - 🇭🇰 161
-  - 🇭🇰 162
-  - 🇭🇰 163
-  - 🇭🇰 164
-  - 🇭🇰 173
+  - 🇭🇰 156
+  - 🇭🇰 166
+  - 🇭🇰 186
   - 🇭🇰 187
   - 🇭🇰 188
   - 🇭🇰 189
-  - 🇭🇰 245
-  - 🇭🇰 246
-  - 🇭🇰 264
-  - 🇭🇰 281
-  - 🇭🇰 327
-  - 🇭🇰 328
-  - 🇭🇰 329
-  - 🇭🇰 330
-  - 🇭🇰 331
+  - 🇭🇰 190
+  - 🇭🇰 199
+  - 🇭🇰 213
+  - 🇭🇰 214
+  - 🇭🇰 215
+  - 🇭🇰 216
+  - 🇭🇰 310
+  - 🇭🇰 338
+  - 🇭🇰 339
   - 🇭🇰 340
-  - 🇭🇰 358
-  - 🇭🇰 359
-  - 🇭🇰 360
+  - 🇭🇰 341
+  - 🇭🇰 342
+  - 🇭🇰 351
+  - 🇭🇰 362
+  - 🇭🇰 363
+  - 🇭🇰 364
+  - 🇭🇰 365
+  - 🇭🇰 377
+  - 🇭🇰 378
+  - 🇭🇰 380
+  - 🇭🇰 384
+  - 🇭🇰 385
+  - 🇭🇰 387
+  - 🇭🇰 390
+  - 🇭🇰 391
+  - 🇭🇰 595
 - name: 🇹🇼 台湾节点
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -3812,34 +5848,28 @@ proxy-groups:
   - 🇯🇵 09
   - 🇯🇵 10
   - 🇯🇵 11
-  - 🇯🇵 29
-  - 🇯🇵 44
-  - 🇯🇵 118
-  - 🇯🇵 119
-  - 🇯🇵 120
-  - 🇯🇵 121
-  - 🇯🇵 122
-  - 🇯🇵 123
-  - 🇯🇵 124
   - 🇯🇵 125
   - 🇯🇵 126
   - 🇯🇵 127
   - 🇯🇵 128
   - 🇯🇵 129
-  - 🇯🇵 130
   - 🇯🇵 131
   - 🇯🇵 132
   - 🇯🇵 133
   - 🇯🇵 134
-  - 🇯🇵 165
-  - 🇯🇵 166
+  - 🇯🇵 135
+  - 🇯🇵 136
+  - 🇯🇵 137
+  - 🇯🇵 138
+  - 🇯🇵 139
+  - 🇯🇵 140
   - 🇯🇵 191
   - 🇯🇵 192
-  - 🇯🇵 193
-  - 🇯🇵 194
-  - 🇯🇵 195
+  - 🇯🇵 281
+  - 🇯🇵 282
+  - 🇯🇵 283
+  - 🇯🇵 284
   - 🇯🇵 285
-  - 🇯🇵 286
   - 🇯🇵 287
   - 🇯🇵 288
   - 🇯🇵 289
@@ -3850,18 +5880,33 @@ proxy-groups:
   - 🇯🇵 294
   - 🇯🇵 295
   - 🇯🇵 296
-  - 🇯🇵 297
-  - 🇯🇵 298
-  - 🇯🇵 299
-  - 🇯🇵 300
-  - 🇯🇵 301
-  - 🇯🇵 332
-  - 🇯🇵 333
-  - 🇯🇵 362
-  - 🇯🇵 363
-  - 🇯🇵 364
-  - 🇯🇵 365
-  - 🇯🇵 366
+  - 🇯🇵 343
+  - 🇯🇵 344
+  - 🇯🇵 373
+  - 🇯🇵 394
+  - 🇯🇵 400
+  - 🇯🇵 403
+  - 🇯🇵 407
+  - 🇯🇵 408
+  - 🇯🇵 409
+  - 🇯🇵 410
+  - 🇯🇵 413
+  - 🇯🇵 417
+  - 🇯🇵 422
+  - 🇯🇵 423
+  - 🇯🇵 424
+  - 🇯🇵 430
+  - 🇯🇵 432
+  - 🇯🇵 433
+  - 🇯🇵 438
+  - 🇯🇵 442
+  - 🇯🇵 444
+  - 🇯🇵 521
+  - 🇯🇵 522
+  - 🇯🇵 523
+  - 🇯🇵 573
+  - 🇯🇵 576
+  - 🇯🇵 577
 - name: 🇸🇬 新加坡节点
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -3872,39 +5917,58 @@ proxy-groups:
   - 🇸🇬 25
   - 🇸🇬 26
   - 🇸🇬 27
-  - 🇸🇬 30
-  - 🇸🇬 31
-  - 🇸🇬 72
-  - 🇸🇬 151
-  - 🇸🇬 153
-  - 🇸🇬 154
-  - 🇸🇬 155
-  - 🇸🇬 156
-  - 🇸🇬 157
+  - 🇸🇬 83
+  - 🇸🇬 84
   - 🇸🇬 167
   - 🇸🇬 168
   - 🇸🇬 169
   - 🇸🇬 170
+  - 🇸🇬 171
   - 🇸🇬 172
-  - 🇸🇬 201
-  - 🇸🇬 202
-  - 🇸🇬 203
-  - 🇸🇬 239
-  - 🇸🇬 318
+  - 🇸🇬 173
+  - 🇸🇬 174
+  - 🇸🇬 175
+  - 🇸🇬 176
+  - 🇸🇬 177
+  - 🇸🇬 178
+  - 🇸🇬 180
+  - 🇸🇬 181
+  - 🇸🇬 182
+  - 🇸🇬 193
+  - 🇸🇬 194
+  - 🇸🇬 195
+  - 🇸🇬 196
+  - 🇸🇬 198
+  - 🇸🇬 243
+  - 🇸🇬 244
   - 🇸🇬 320
   - 🇸🇬 321
   - 🇸🇬 322
   - 🇸🇬 323
   - 🇸🇬 324
+  - 🇸🇬 325
+  - 🇸🇬 326
+  - 🇸🇬 327
+  - 🇸🇬 328
+  - 🇸🇬 329
+  - 🇸🇬 330
+  - 🇸🇬 332
+  - 🇸🇬 333
   - 🇸🇬 334
-  - 🇸🇬 335
-  - 🇸🇬 336
-  - 🇸🇬 337
-  - 🇸🇬 339
+  - 🇸🇬 345
+  - 🇸🇬 346
+  - 🇸🇬 347
+  - 🇸🇬 348
+  - 🇸🇬 350
+  - 🇸🇬 368
   - 🇸🇬 372
-  - 🇸🇬 373
-  - 🇸🇬 374
-  - 🇸🇬 385
+  - 🇸🇬 379
+  - 🇸🇬 386
+  - 🇸🇬 395
+  - 🇸🇬 412
+  - 🇸🇬 418
+  - 🇸🇬 420
+  - 🇸🇬 447
 - name: 🇺🇸 美国节点
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -3915,77 +5979,99 @@ proxy-groups:
   - 🇺🇸 13
   - 🇺🇸 14
   - 🇺🇸 15
-  - 🇺🇸 41
-  - 🇺🇸 42
-  - 🇺🇸 43
-  - 🇺🇸 57
+  - 🇺🇸 30
+  - 🇺🇸 31
+  - 🇺🇸 51
+  - 🇺🇸 52
+  - 🇺🇸 53
+  - 🇺🇸 67
+  - 🇺🇸 68
   - 🇺🇸 69
+  - 🇺🇸 79
   - 🇺🇸 81
-  - 🇺🇸 89
   - 🇺🇸 90
   - 🇺🇸 93
   - 🇺🇸 94
-  - 🇺🇸 102
-  - 🇺🇸 110
+  - 🇺🇸 95
+  - 🇺🇸 99
+  - 🇺🇸 100
+  - 🇺🇸 104
+  - 🇺🇸 105
+  - 🇺🇸 106
   - 🇺🇸 112
-  - 🇺🇸 113
-  - 🇺🇸 150
-  - 🇺🇸 152
+  - 🇺🇸 120
+  - 🇺🇸 130
+  - 🇺🇸 157
   - 🇺🇸 158
   - 🇺🇸 159
-  - 🇺🇸 171
-  - 🇺🇸 174
-  - 🇺🇸 175
-  - 🇺🇸 176
-  - 🇺🇸 177
-  - 🇺🇸 178
+  - 🇺🇸 164
+  - 🇺🇸 165
   - 🇺🇸 179
-  - 🇺🇸 180
-  - 🇺🇸 181
-  - 🇺🇸 182
   - 🇺🇸 183
-  - 🇺🇸 190
+  - 🇺🇸 185
+  - 🇺🇸 197
   - 🇺🇸 200
+  - 🇺🇸 201
+  - 🇺🇸 202
+  - 🇺🇸 203
   - 🇺🇸 204
   - 🇺🇸 205
   - 🇺🇸 206
+  - 🇺🇸 207
   - 🇺🇸 208
+  - 🇺🇸 209
+  - 🇺🇸 210
   - 🇺🇸 212
-  - 🇺🇸 224
-  - 🇺🇸 236
-  - 🇺🇸 248
+  - 🇺🇸 229
+  - 🇺🇸 230
+  - 🇺🇸 240
+  - 🇺🇸 251
+  - 🇺🇸 252
   - 🇺🇸 256
   - 🇺🇸 257
-  - 🇺🇸 260
   - 🇺🇸 261
-  - 🇺🇸 269
-  - 🇺🇸 277
-  - 🇺🇸 279
-  - 🇺🇸 280
-  - 🇺🇸 317
+  - 🇺🇸 262
+  - 🇺🇸 263
+  - 🇺🇸 264
+  - 🇺🇸 276
+  - 🇺🇸 286
+  - 🇺🇸 311
+  - 🇺🇸 312
+  - 🇺🇸 313
+  - 🇺🇸 318
   - 🇺🇸 319
-  - 🇺🇸 325
-  - 🇺🇸 326
-  - 🇺🇸 338
-  - 🇺🇸 341
-  - 🇺🇸 342
-  - 🇺🇸 343
-  - 🇺🇸 344
-  - 🇺🇸 345
-  - 🇺🇸 346
-  - 🇺🇸 347
-  - 🇺🇸 348
+  - 🇺🇸 331
+  - 🇺🇸 337
   - 🇺🇸 349
-  - 🇺🇸 350
+  - 🇺🇸 352
   - 🇺🇸 353
+  - 🇺🇸 354
   - 🇺🇸 355
+  - 🇺🇸 356
+  - 🇺🇸 357
+  - 🇺🇸 358
+  - 🇺🇸 359
+  - 🇺🇸 360
   - 🇺🇸 361
-  - 🇺🇸 371
-  - 🇺🇸 375
-  - 🇺🇸 376
-  - 🇺🇸 377
-  - 🇺🇸 379
+  - 🇺🇸 381
   - 🇺🇸 383
+  - 🇺🇸 392
+  - 🇺🇸 393
+  - 🇺🇸 397
+  - 🇺🇸 411
+  - 🇺🇸 415
+  - 🇺🇸 421
+  - 🇺🇸 441
+  - 🇺🇸 513
+  - 🇺🇸 572
+  - 🇺🇸 578
+  - 🇺🇸 579
+  - 🇺🇸 580
+  - 🇺🇸 583
+  - 🇺🇸 585
+  - 🇺🇸 586
+  - 🇺🇸 587
+  - 🇺🇸 588
 - name: 🇰🇷 韩国节点
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -3996,25 +6082,25 @@ proxy-groups:
   - 🇰🇷 21
   - 🇰🇷 22
   - 🇰🇷 23
-  - 🇰🇷 83
-  - 🇰🇷 84
-  - 🇰🇷 135
-  - 🇰🇷 136
-  - 🇰🇷 137
-  - 🇰🇷 138
-  - 🇰🇷 139
-  - 🇰🇷 140
   - 🇰🇷 141
   - 🇰🇷 142
   - 🇰🇷 143
   - 🇰🇷 144
   - 🇰🇷 145
-  - 🇰🇷 196
-  - 🇰🇷 197
-  - 🇰🇷 198
-  - 🇰🇷 199
-  - 🇰🇷 250
-  - 🇰🇷 251
+  - 🇰🇷 146
+  - 🇰🇷 147
+  - 🇰🇷 148
+  - 🇰🇷 149
+  - 🇰🇷 150
+  - 🇰🇷 151
+  - 🇰🇷 152
+  - 🇰🇷 153
+  - 🇰🇷 154
+  - 🇰🇷 297
+  - 🇰🇷 298
+  - 🇰🇷 299
+  - 🇰🇷 300
+  - 🇰🇷 301
   - 🇰🇷 302
   - 🇰🇷 303
   - 🇰🇷 304
@@ -4022,116 +6108,136 @@ proxy-groups:
   - 🇰🇷 306
   - 🇰🇷 307
   - 🇰🇷 308
-  - 🇰🇷 309
-  - 🇰🇷 310
-  - 🇰🇷 311
-  - 🇰🇷 312
-  - 🇰🇷 367
-  - 🇰🇷 368
-  - 🇰🇷 369
-  - 🇰🇷 370
+  - 🇰🇷 396
+  - 🇰🇷 416
+  - 🇰🇷 419
+  - 🇰🇷 425
+  - 🇰🇷 431
+  - 🇰🇷 439
+  - 🇰🇷 440
+  - 🇰🇷 446
+  - 🇰🇷 524
+  - 🇰🇷 525
+  - 🇰🇷 526
+  - 🇰🇷 527
+  - 🇰🇷 594
 - name: 🇬🇧 英国节点
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - 🇬🇧 75
-  - 🇬🇧 76
-  - 🇬🇧 85
-  - 🇬🇧 86
+  - 🇬🇧 28
+  - 🇬🇧 29
+  - 🇬🇧 66
   - 🇬🇧 87
   - 🇬🇧 88
-  - 🇬🇧 91
-  - 🇬🇧 98
-  - 🇬🇧 100
-  - 🇬🇧 103
-  - 🇬🇧 186
-  - 🇬🇧 242
-  - 🇬🇧 243
-  - 🇬🇧 252
-  - 🇬🇧 253
-  - 🇬🇧 254
-  - 🇬🇧 255
-  - 🇬🇧 258
-  - 🇬🇧 265
-  - 🇬🇧 267
-  - 🇬🇧 270
-  - 🇬🇧 357
+  - 🇬🇧 102
+  - 🇬🇧 161
+  - 🇬🇧 228
+  - 🇬🇧 247
+  - 🇬🇧 248
+  - 🇬🇧 259
 - name: 🇩🇪 德国节点
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - 🇩🇪 33
-  - 🇩🇪 34
-  - 🇩🇪 35
-  - 🇩🇪 70
-  - 🇩🇪 73
-  - 🇩🇪 74
   - 🇩🇪 82
-  - 🇩🇪 99
-  - 🇩🇪 105
-  - 🇩🇪 149
-  - 🇩🇪 185
-  - 🇩🇪 237
-  - 🇩🇪 240
-  - 🇩🇪 241
-  - 🇩🇪 249
-  - 🇩🇪 266
-  - 🇩🇪 272
-  - 🇩🇪 316
-  - 🇩🇪 351
-  - 🇩🇪 352
-  - 🇩🇪 356
+  - 🇩🇪 85
+  - 🇩🇪 86
+  - 🇩🇪 92
+  - 🇩🇪 101
+  - 🇩🇪 111
+  - 🇩🇪 115
+  - 🇩🇪 160
+  - 🇩🇪 163
+  - 🇩🇪 242
+  - 🇩🇪 245
+  - 🇩🇪 246
+  - 🇩🇪 250
+  - 🇩🇪 258
+  - 🇩🇪 268
+  - 🇩🇪 271
+  - 🇩🇪 314
+  - 🇩🇪 315
+  - 🇩🇪 382
+  - 🇩🇪 405
+  - 🇩🇪 434
+  - 🇩🇪 472
+  - 🇩🇪 473
 - name: 🇫🇷 法国节点
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - 🇫🇷 36
-  - 🇫🇷 37
-  - 🇫🇷 95
-  - 🇫🇷 96
-  - 🇫🇷 262
-  - 🇫🇷 263
+  - 🇫🇷 107
+  - 🇫🇷 108
+  - 🇫🇷 109
+  - 🇫🇷 265
+  - 🇫🇷 266
+  - 🇫🇷 267
+  - 🇫🇷 398
+  - 🇫🇷 399
+  - 🇫🇷 402
+  - 🇫🇷 406
+  - 🇫🇷 414
+  - 🇫🇷 427
+  - 🇫🇷 429
+  - 🇫🇷 443
+  - 🇫🇷 445
+  - 🇫🇷 450
+  - 🇫🇷 470
+  - 🇫🇷 568
 - name: 🇷🇺 俄罗斯节点
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - DIRECT
+  - 🇷🇺 217
+  - 🇷🇺 366
 - name: 🇨🇦 加拿大节点
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - 🇨🇦 58
-  - 🇨🇦 59
-  - 🇨🇦 60
-  - 🇨🇦 61
-  - 🇨🇦 62
-  - 🇨🇦 63
-  - 🇨🇦 64
-  - 🇨🇦 65
-  - 🇨🇦 66
-  - 🇨🇦 67
-  - 🇨🇦 68
-  - 🇨🇦 225
-  - 🇨🇦 226
-  - 🇨🇦 227
-  - 🇨🇦 228
-  - 🇨🇦 229
-  - 🇨🇦 230
+  - 🇨🇦 70
+  - 🇨🇦 71
+  - 🇨🇦 72
+  - 🇨🇦 73
+  - 🇨🇦 74
+  - 🇨🇦 75
+  - 🇨🇦 76
+  - 🇨🇦 77
+  - 🇨🇦 78
+  - 🇨🇦 211
   - 🇨🇦 231
   - 🇨🇦 232
   - 🇨🇦 233
   - 🇨🇦 234
   - 🇨🇦 235
+  - 🇨🇦 236
+  - 🇨🇦 237
+  - 🇨🇦 238
+  - 🇨🇦 239
+  - 🇨🇦 370
+  - 🇨🇦 374
+  - 🇨🇦 459
+  - 🇨🇦 460
+  - 🇨🇦 461
+  - 🇨🇦 462
+  - 🇨🇦 463
+  - 🇨🇦 464
+  - 🇨🇦 465
+  - 🇨🇦 466
+  - 🇨🇦 467
+  - 🇨🇦 468
+  - 🇨🇦 469
+  - 🇨🇦 571
 rules:
 - DOMAIN-KEYWORD,admarvel,🛑 广告拦截
 - DOMAIN-KEYWORD,admaster,🛑 广告拦截
