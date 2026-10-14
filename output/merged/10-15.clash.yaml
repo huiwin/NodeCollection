@@ -6,654 +6,19 @@ log-level: info
 external-controller: :9090
 proxies:
 - name: 🇩🇪 01
-  server: 165.215.250.14
+  server: 45.130.125.160
   port: 443
   type: trojan
   password: humanity
+  sni: www.calmlunch.com
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.calmlunch.com
   udp: true
 - name: 🇩🇪 02
-  server: 212.183.88.136
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.calmlunch.com
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.calmlunch.com
-  udp: true
-- name: 🇳🇱 03
-  server: 104.18.35.86
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.volumerOot.coM.
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.volumerOot.coM.
-  udp: true
-- name: 🇩🇪 04
-  server: 74.201.177.54
-  port: 14680
-  type: ss
-  cipher: aes-128-gcm
-  password: 1377d5cfafc9279a904deb3bfa4f3de2
-  udp: true
-- name: 🇩🇪 05
-  server: 173.234.25.90
-  port: 15240
-  type: ss
-  cipher: aes-128-gcm
-  password: 62dd75ba944947d4ca983cf1679b3797
-  udp: true
-- name: '06'
-  server: 140.248.185.253
-  port: 443
-  type: trojan
-  password: MiTiVPN
-  sni: ssl.fastly.com
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/s-w@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN
-    headers:
-      Host: ssl.fastly.com
-  udp: true
-- name: '07'
-  server: 199.232.78.170
-  port: 443
-  type: trojan
-  password: mitivpn
-  sni: ssl.fastly.com
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: '@mehrosabiran'
-    headers:
-      Host: ssl.fastly.com
-  udp: true
-- name: 08
-  server: 199.232.78.158
-  port: 443
-  type: trojan
-  password: mitivpn
-  sni: global.fastly.com
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /720f09dba195249b423f771661162528/workers/services/view/mitivpn/production/settings
-    headers:
-      Host: global.fastly.com
-  udp: true
-- name: 09
-  server: 199.232.78.140
-  port: 443
-  type: trojan
-  password: MiTiVPN
-  sni: global.ssl.fastly.com
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /---@MiTiVPN---@MiTiVPN---@MiTiVPN---@MiTiVPN---@MiTiVPN---@MiTiVPN---@MiTiVPN---@MiTiVPN---@MiTiVPN---@MiTiVPN---@MiTiVPN---@MiTiVPN---@MiTiVPN---@MiTiVPN---@MiTiVPN---@MiTiVPN=nls
-    headers:
-      Host: global.ssl.fastly.com
-  udp: true
-- name: '10'
-  server: 167.82.101.159
-  port: 443
-  type: trojan
-  password: 2223970e6a0b8ad289d3c43dd85dd2c9
-  sni: ssl.fastly.com
-  skip-cert-verify: false
-  udp: true
-- name: '11'
-  server: 199.232.78.160
-  port: 443
-  type: trojan
-  password: MITIVPN
-  sni: ssl.fastly.com
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /---@TARKSHODEH---@TARKSHODEH/---@TARKSHODEH---@TARKSHODEH/---@TARKSHODEH---@TARKSHODEH/D-e2@TARKSHODEH---@TARKSHODEH/---@TARKSHODEH---@TARKSHODEH/---@TARKSHODEH---@TARKSHODEH
-    headers:
-      Host: ssl.fastly.com
-  udp: true
-- name: '12'
-  server: 151.101.56.90
-  port: 443
-  type: trojan
-  password: MITIVpN
-  sni: ssl.fastly.com
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /---@Tarkshodeh---@Tarkshodeh/---@Tarkshodeh---@Tarkshodeh/---@Tarkshodeh---@Tarkshodeh/NLSus---@Tarkshodeh---@Tarkshodeh/---@Tarkshodeh---@Tarkshodeh/---@Tarkshodeh---@Tarkshodeh
-    headers:
-      Host: ssl.fastly.com
-  udp: true
-- name: '13'
-  server: 151.101.56.56
-  port: 443
-  type: trojan
-  password: MiTIVPN
-  sni: ssl.fastly.com
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /---@Tarkshodeh---@Tarkshodeh/---@Tarkshodeh---@Tarkshodeh/---@Tarkshodeh---@Tarkshodeh/D-e2@Tarkshodeh---@Tarkshodeh/---@Tarkshodeh---@Tarkshodeh/---@Tarkshodeh---@Tarkshodeh
-    headers:
-      Host: ssl.fastly.com
-  udp: true
-- name: '14'
-  server: 151.101.56.230
-  port: 443
-  type: trojan
-  password: MiTiVPN
-  sni: ssl.fastly.com
-  network: ws
-  ws-opts:
-    path: /---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/D-e2@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN
-    headers:
-      Host: ssl.fastly.com
-  udp: true
-- name: '15'
-  server: 151.101.56.6
-  port: 443
-  type: trojan
-  password: mitivpn
-  sni: ssl.fastly.com
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/NLSus---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN
-    headers:
-      Host: ssl.fastly.com
-  udp: true
-- name: '16'
-  server: 167.82.76.27
-  port: 443
-  type: trojan
-  password: mitivpn
-  sni: ssl.fastly.com
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /---@MetiVIP---@MetiVIP/---@MetiVIP---@MetiVIP/---@MetiVIP---@MetiVIP/des---@MetiVIP---@MetiVIP/---@MetiVIP---@@MetiVIP/---@@MetiVIP---@MetiVIP
-    headers:
-      Host: ssl.fastly.com
-  udp: true
-- name: '17'
-  server: 199.232.78.20
-  port: 443
-  type: trojan
-  password: MiTiVPN
-  sni: ssl.fastly.com
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/D-ei@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN
-    headers:
-      Host: ssl.fastly.com
-  udp: true
-- name: '18'
-  server: 199.232.78.150
-  port: 443
-  type: trojan
-  password: MiTiVPN
-  sni: ssl.fastly.com
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/SG---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN
-    headers:
-      Host: ssl.fastly.com
-  udp: true
-- name: '19'
-  server: 199.232.237.245
-  port: 443
-  type: trojan
-  password: MiTiVPN
-  sni: ssl.fastly.com
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/JP---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN
-    headers:
-      Host: ssl.fastly.com
-  udp: true
-- name: '20'
-  server: 199.232.222.178
-  port: 443
-  type: trojan
-  password: MiTiVPN
-  sni: default.ssl.fastly.com
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /---@MiTiVPN---@MiTiVPN---@MiTiVPN---@MiTiVPN---@MiTiVPN---@MiTiVPN---@MiTiVPN---@MiTiVPN---@MiTiVPN---@MiTiVPN---@MiTiVPN---@MiTiVPN---@MiTiVPN---@MiTiVPN---@MiTiVPN---@MiTiVPN=fls
-    headers:
-      Host: default.ssl.fastly.com
-  udp: true
-- name: '21'
-  server: 199.232.1.2
-  port: 80
-  type: trojan
-  password: MiTiVPN
-  network: ws
-  ws-opts:
-    path: /---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/SG---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN
-  udp: true
-- name: '22'
-  server: 167.82.79.164
-  port: 443
-  type: trojan
-  password: MiTiVPN
-  sni: ssl.fastly.com
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/D-e1i@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN
-    headers:
-      Host: ssl.fastly.com
-  udp: true
-- name: '23'
-  server: 151.101.56.242
-  port: 443
-  type: trojan
-  password: MiTiVPN
-  sni: ssl.fastly.com
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/sw---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN
-    headers:
-      Host: ssl.fastly.com
-  udp: true
-- name: '24'
-  server: 151.101.56.101
-  port: 443
-  type: trojan
-  password: MiTiVPN
-  sni: ssl.fastly.com
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: '%40mehrosaboran'
-    headers:
-      Host: ssl.fastly.com
-  udp: true
-- name: '25'
-  server: 151.101.193.242
-  port: 443
-  type: trojan
-  password: MiTiVPN
-  sni: f6r.ir
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /usa=mitivpn
-    headers:
-      Host: f6r.ir
-  udp: true
-- name: '26'
-  server: 151.101.56.9
-  port: 443
-  type: trojan
-  password: MiTiVPN
-  sni: ssl.fastly.com
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /---@GHOFLSHCAN---@GHOFLSHCAN/---@GHOFLSHCAN---@GHOFLSHCAN/---@GHOFLSHCAN---@GHOFLSHCAN/NLSus---@GHOFLSHCAN---@GHOFLSHCAN/---@GHOFLSHCAN---@GHOFLSHCAN/---@GHOFLSHCAN---@GHOFLSHCAN
-    headers:
-      Host: ssl.fastly.com
-  udp: true
-- name: '27'
-  server: 199.232.78.188
-  port: 443
-  type: trojan
-  password: MiTiVPN
-  sni: ssl.fastly.com
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: ''
-    headers:
-      Host: ssl.fastly.com
-  udp: true
-- name: '28'
-  server: 199.232.28.205
-  port: 443
-  type: trojan
-  password: mitivpn
-  sni: gmail.google.com
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/D-e1i@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN
-    headers:
-      Host: gmail.google.com
-  udp: true
-- name: '29'
-  server: 151.101.56.8
-  port: 443
-  type: trojan
-  password: MiTiVPN
-  sni: ssl.fastly.com
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/sw---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN
-    headers:
-      Host: ssl.fastly.com
-  udp: true
-- name: '30'
-  server: 151.101.194.172
-  port: 80
-  type: trojan
-  password: MiTiVPN
-  network: ws
-  ws-opts:
-    path: /---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/gb---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN
-  udp: true
-- name: '31'
-  server: 151.101.56.7
-  port: 443
-  type: trojan
-  password: MITIVPN
-  sni: ssl.fastly.com
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /---@TARKSHODEH---@TARKSHODEH/---@TARKSHODEH---@TARKSHODEH/---@TARKSHODEH---@TARKSHODEH/D-e2@TARKSHODEH---@TARKSHODEH/---@TARKSHODEH---@TARKSHODEH/---@TARKSHODEH---@TARKSHODEH
-    headers:
-      Host: ssl.fastly.com
-  udp: true
-- name: '32'
-  server: 167.82.76.7
-  port: 443
-  type: trojan
-  password: MITIVPN
-  sni: ssl.fastly.com
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/NLSs---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN
-    headers:
-      Host: ssl.fastly.com
-  udp: true
-- name: '33'
-  server: 199.232.78.101
-  port: 443
-  type: trojan
-  password: MITIVPN
-  sni: ssl.fastly.com
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /---@TARKSHODEH---@TARKSHODEH/---@TARKSHODEH---@TARKSHODEH/---@TARKSHODEH---@TARKSHODEH/D-e2@TARKSHODEH---@TARKSHODEH/---@TARKSHODEH---@TARKSHODEH/---@TARKSHODEH---@TARKSHODEH
-    headers:
-      Host: ssl.fastly.com
-  udp: true
-- name: '34'
-  server: 146.75.57.238
-  port: 443
-  type: trojan
-  password: mitivpn
-  sni: ssl-mitivpn.fastly.com
-  network: ws
-  ws-opts:
-    path: /---@GHOFLSHCAN---@GHOFLSHCAN/---@GHOFLSHCAN---@GHOFLSHCAN/---@GHOFLSHCAN---@GHOFLSHCAN/NLSs---@GHOFLSHCAN---@GHOFLSHCAN/---@GHOFLSHCAN---@GHOFLSHCAN/---@GHOFLSHCAN---@GHOFLSHCAN
-    headers:
-      Host: ssl-mitivpn.fastly.com
-  udp: true
-- name: '35'
-  server: 167.82.64.46
-  port: 443
-  type: trojan
-  password: mitivpn
-  sni: play.google.com
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/NLSs---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN
-    headers:
-      Host: play.google.com
-  udp: true
-- name: '36'
-  server: 199.232.78.21
-  port: 443
-  type: trojan
-  password: MiTiVPN
-  sni: ssl.fastly.com
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/NL---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN
-    headers:
-      Host: ssl.fastly.com
-  udp: true
-- name: '37'
-  server: 151.101.130.172
-  port: 80
-  type: trojan
-  password: MiTiVPN
-  network: ws
-  ws-opts:
-    path: /---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/NL---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN
-  udp: true
-- name: '38'
-  server: 199.232.22.39
-  port: 443
-  type: trojan
-  password: MITIVPN
-  sni: ssl.fastly.com
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /---@MiTiVPN---@MiTiVPN---@MiTiVPN---@MiTiVPN---@MiTiVPN---@MiTiVPN---@MiTiVPN---@MiTiVPN---@MiTiVPN---@MiTiVPN---@MiTiVPN---@MiTiVPN---@MiTiVPN---@MiTiVPN---@MiTiVPN---@MiTiVPN=uss
-    headers:
-      Host: ssl.fastly.com
-  udp: true
-- name: '39'
-  server: 151.101.38.7
-  port: 443
-  type: trojan
-  password: mitivpn
-  sni: jjl.fastly.com
-  network: ws
-  ws-opts:
-    path: '@V2ray_AM'
-    headers:
-      Host: jjl.fastly.com
-  udp: true
-- name: '40'
-  server: 129.146.77.248
-  port: 39495
-  type: vmess
-  uuid: f836c736-87fc-4fde-aabc-00857ecdff3e
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: ws
-  ws-opts:
-    path: /cctv13.m3u8
-    headers:
-      Host: 129.146.77.248
-  udp: true
-- name: '41'
-  server: 151.101.110.219
-  port: 443
-  type: trojan
-  password: Mitivpn
-  sni: ssl.fastly.com
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /de
-    headers:
-      Host: ssl.fastly.com
-  udp: true
-- name: '42'
-  server: 167.82.96.58
-  port: 443
-  type: trojan
-  password: MiTiVPN
-  sni: ssl.fastly.com
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/NLSs---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN
-    headers:
-      Host: ssl.fastly.com
-  udp: true
-- name: '43'
-  server: 167.82.101.75
-  port: 443
-  type: trojan
-  password: MiTiVPN
-  sni: ssl.fastly.com
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/NLS4s---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN
-    headers:
-      Host: ssl.fastly.com
-  udp: true
-- name: '44'
-  server: 151.101.56.0
-  port: 443
-  type: trojan
-  password: MITIVPN
-  sni: ssl.fastly.com
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/dde2---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN
-    headers:
-      Host: ssl.fastly.com
-  udp: true
-- name: '45'
-  server: 151.101.56.255
-  port: 443
-  type: trojan
-  password: MiTiVPN
-  sni: ssl.fastly.com
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: ''
-    headers:
-      Host: ssl.fastly.com
-  udp: true
-- name: '46'
-  server: 167.82.101.250
-  port: 443
-  type: trojan
-  password: MiTiVPN
-  sni: ssl.fastly.com
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/HK---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN
-    headers:
-      Host: ssl.fastly.com
-  udp: true
-- name: '47'
-  server: 129.146.143.80
-  port: 48111
-  type: vmess
-  uuid: d4603cc2-e0ee-4651-83f5-1db5b7168177
-  alterId: 0
-  cipher: auto
-  tls: false
-  servername: 129.146.143.80
-  udp: true
-- name: '48'
-  server: 104.18.35.86
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.volumerOot.coM.
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.volumerOot.coM.
-  udp: true
-- name: '49'
-  server: 104.21.7.101
-  port: 80
-  type: vmess
-  uuid: 4e45c1b4-9107-45dd-9995-cdf7cbb44d9d
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: gbnh.0nn.ccwu.cc
-  udp: true
-- name: '50'
-  server: 104.17.148.22
-  port: 443
-  type: trojan
-  password: MITIVPN
-  sni: Duss-a-MiTiVPN--MiTiVPN--MiTiVPN---MiTiVPN--MiTiVPN--MiTiVPN.S-s-S.iR
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/usa---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN
-    headers:
-      Host: Duss-a-MiTiVPN--MiTiVPN--MiTiVPN---MiTiVPN--MiTiVPN--MiTiVPN.S-s-S.iR
-  udp: true
-- name: '51'
-  server: 104.19.45.90
-  port: 2086
-  type: vmess
-  uuid: e9e3cc13-db48-4cc1-8c24-7626439a5339
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: ws
-  ws-opts:
-    path: github.com/Alvin9999
-    headers:
-      Host: ip14.freegradely.xyz
-  udp: true
-- name: '52'
-  server: 104.19.229.21
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.calmlunch.com
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: '%2Fassignment'
-    headers:
-      Host: www.calmlunch.com
-  udp: true
-- name: 🇺🇸 53
-  server: 212.183.88.136
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.calmlunch.com
-  network: ws
-  ws-opts:
-    path: '%2Fassignment'
-    headers:
-      Host: www.calmlunch.com
-  udp: true
-- name: '54'
   server: 104.18.32.87
   port: 443
   type: trojan
@@ -666,522 +31,52 @@ proxies:
     headers:
       Host: id1.nathaya.web.id
   udp: true
-- name: '55'
-  server: 172.67.217.240
-  port: 443
-  type: trojan
-  password: 018b8e7b-7813-4dcb-84a5-3c98f1521e00
-  sni: id1.nathaya.web.id
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /trojan
-    headers:
-      Host: id1.nathaya.web.id
-  udp: true
-- name: '56'
-  server: 188.114.97.6
-  port: 443
-  type: trojan
-  password: 018b8e7b-7813-4dcb-84a5-3c98f1521e00
-  sni: id1.nathaya.web.id
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /trojan
-    headers:
-      Host: id1.nathaya.web.id
-  udp: true
-- name: '57'
-  server: 104.16.159.6
-  port: 443
-  type: trojan
-  password: 669d0ac7b5b64ebbb1abb75d5d540a5c
-  sni: bangladeshipatri.com
-  network: ws
-  ws-opts:
-    path: /6b777a91
-    headers:
-      Host: bangladeshipatri.com
-  udp: true
-- name: '58'
-  server: 104.16.72.101
-  port: 443
-  type: trojan
-  password: 6c862415-30d2-4813-8e49-42e99a0bd415
-  sni: space.byu.id.yxls.eu.cc
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /us-gllc@soskeynets
-    headers:
-      Host: space.byu.id.yxls.eu.cc
-  udp: true
-- name: '59'
-  server: 104.21.41.49
-  port: 2083
-  type: trojan
-  password: 8JHppSLSIBA0PK,Nx
-  sni: 8tsmm6NspoCZ3HA9.KHr2DZ0OLa61yDPZE6ZVU7Jhcd4.WORKErS.dEV
-  network: ws
-  ws-opts:
-    path: /tr/fsvjN2wOC2fuDFrdawJtWADScC
-    headers:
-      Host: 8tsmm6NspoCZ3HA9.KHr2DZ0OLa61yDPZE6ZVU7Jhcd4.WORKErS.dEV
-  udp: true
-- name: '60'
-  server: 104.16.7.70
-  port: 443
-  type: trojan
-  password: 8r<[9'l6hAO#8ZQi
-  sni: Koma-YT.PAGeS.Dev
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /tr
-    headers:
-      Host: Koma-YT.PAGeS.Dev
-  udp: true
-- name: '61'
-  server: 104.18.109.147
-  port: 443
-  type: trojan
-  password: 8r<[9'l6hAO#8ZQi
-  sni: Koma-YT.PAGeS.Dev
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /tr
-    headers:
-      Host: Koma-YT.PAGeS.Dev
-  udp: true
-- name: '62'
-  server: 172.64.149.54
-  port: 2096
-  type: trojan
-  password: 8r<[9'l6hAO#8ZQi
-  sni: Koma-YT.PAGeS.Dev
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /tr
-    headers:
-      Host: Koma-YT.PAGeS.Dev
-  udp: true
-- name: '63'
-  server: 151.101.0.0
-  port: 80
-  type: trojan
-  password: Mitivpn
-  network: ws
-  ws-opts:
-    path: '@SylphNet'
-  udp: true
-- name: '64'
-  server: 104.21.4.124
-  port: 443
-  type: trojan
-  password: Telegram_healer_config
-  sni: vre6r9qrbqi0t25tg.srtb0m3hdbwr2cjz8fjur.workers.dev
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /tr/W3Ei3SdcW9sRVMLIbEd8sB1lm?ed=2560
-    headers:
-      Host: vre6r9qrbqi0t25tg.srtb0m3hdbwr2cjz8fjur.workers.dev
-  udp: true
-- name: '65'
-  server: 104.21.70.21
-  port: 443
-  type: trojan
-  password: Telegram_healer_config
-  sni: bjsa2ygfitzjtho8ucze29xf2m2q9c.g3fiajpf0erm9k3x6ww-yegzl2.workers.dev
-  network: ws
-  ws-opts:
-    path: /tr/J6IJuAAWkqyiEt8UkeRnVdLlkLIGukLr?ed=2560
-    headers:
-      Host: bjsa2ygfitzjtho8ucze29xf2m2q9c.g3fiajpf0erm9k3x6ww-yegzl2.workers.dev
-  udp: true
-- name: '66'
-  server: 104.21.76.194
-  port: 443
-  type: trojan
-  password: Telegram_healer_config
-  sni: X8xus4X7UTZMDozv2.bZuH25LZINNeTwTOcXYIcx.WORkERs.deV
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /tr/nDuppKYyUqsEcG0rcQEg5sghG0?ed
-    headers:
-      Host: X8xus4X7UTZMDozv2.bZuH25LZINNeTwTOcXYIcx.WORkERs.deV
-  udp: true
-- name: '67'
-  server: 188.114.96.3
-  port: 443
-  type: trojan
-  password: Telegram_healer_config
-  sni: cdtfrgmtcsbaarmz-9owpz7g4.f9w96pzky6un-covzx6b-hzlm80woj2.workers.dev
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /tr/3F3fUAGJks9doKvjt8AREH4QR?ed=2560
-    headers:
-      Host: cdtfrgmtcsbaarmz-9owpz7g4.f9w96pzky6un-covzx6b-hzlm80woj2.workers.dev
-  udp: true
-- name: '68'
-  server: 188.114.96.8
-  port: 443
-  type: trojan
-  password: Telegram_healer_config
-  sni: y9p34jpjmqjazaypf.piiwddilxjcqehr17af22u7xk-yu.workers.dev
-  network: ws
-  ws-opts:
-    path: /tr/1nWXnOaq1ajP7PKxbRS7Sdck48oy?ed=2560
-    headers:
-      Host: y9p34jpjmqjazaypf.piiwddilxjcqehr17af22u7xk-yu.workers.dev
-  udp: true
-- name: '69'
-  server: 172.67.140.126
-  port: 2087
-  type: trojan
-  password: av7fquzvuc99xcs9
-  sni: uwu.dianaw.cc.cd
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /@BlueKnight_net--@BlueKnight_net--@BlueKnight_net
-    headers:
-      Host: uwu.dianaw.cc.cd
-  udp: true
-- name: '70'
-  server: 89.116.46.68
-  port: 443
-  type: trojan
-  password: de4dbc41-fe13-4498-b5b4-083e451270f6
-  sni: zaintest.vuclip.com.cyylr.eu.cc
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /my-wbv
-    headers:
-      Host: zaintest.vuclip.com.cyylr.eu.cc
-  udp: true
-- name: '71'
-  server: 172.67.182.229
-  port: 2083
-  type: trojan
-  password: h3ilje76tkhrajug
-  sni: nl1.xnetaro.ir
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: nl1.xnetaro.ir
-  udp: true
-- name: '72'
-  server: 104.16.174.12
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.ignitelimit.com
-  udp: true
-- name: '73'
-  server: 104.16.174.36
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.ignitelimit.com
-  udp: true
-- name: '74'
-  server: 104.16.174.44
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.ignitelimit.com
-  udp: true
-- name: '75'
-  server: 104.17.121.71
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.calmlunch.com
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.calmlunch.com
-  udp: true
-- name: '76'
-  server: 104.17.44.17
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.pleadcourt.org
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.pleadcourt.org
-  udp: true
-- name: '77'
-  server: 104.18.152.233
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.ignitelimit.com
-  udp: true
-- name: '78'
-  server: 104.18.4.5
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.volumeroot.com
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.volumeroot.com
-  udp: true
-- name: '79'
-  server: 104.18.9.83
-  port: 443
-  type: trojan
-  password: humanity
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /assignment
-  udp: true
-- name: '80'
-  server: 104.21.37.56
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.volumeroot.com
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.volumeroot.com
-  udp: true
-- name: '81'
-  server: 104.21.46.3
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.ignitelimit.com
-  udp: true
-- name: '82'
-  server: 104.21.57.25
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.volumeroot.com
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.volumeroot.com
-  udp: true
-- name: '83'
-  server: 141.193.213.172
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.calmlunch.com
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.calmlunch.com
-  udp: true
-- name: '84'
-  server: 172.64.145.133
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.pleadcourt.org
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.pleadcourt.org
-  udp: true
-- name: '85'
-  server: 172.64.72.171
-  port: 443
-  type: trojan
-  password: humanity
-  udp: true
-- name: '86'
-  server: 172.67.139.14
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.volumeroot.com
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.volumeroot.com
-  udp: true
-- name: '87'
-  server: 188.114.98.0
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.calmlunch.com
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.calmlunch.com
-  udp: true
-- name: '88'
-  server: 198.202.211.1
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.creationlong.org
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.creationlong.org
-  udp: true
-- name: '89'
-  server: 198.62.62.23
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.calmlunch.com
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.calmlunch.com
-  udp: true
-- name: '90'
-  server: 27.50.48.49
-  port: 443
-  type: trojan
-  password: mitivpn
-  sni: gamingdll.ir
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /index.html/ed=mitivpn
-    headers:
-      Host: gamingdll.ir
-  udp: true
-- name: '91'
-  server: 104.18.154.96
-  port: 2083
-  type: trojan
-  password: nzrc4ma4087c1ukr
-  sni: dl2.rahetejarat.com
-  skip-cert-verify: false
-  udp: true
-- name: '92'
-  server: 188.114.96.4
-  port: 2083
-  type: trojan
-  password: nzrc4ma4087c1ukr
-  sni: dl2.rahetejarat.com
-  skip-cert-verify: false
-  udp: true
-- name: '93'
-  server: 188.114.96.5
-  port: 2083
-  type: trojan
-  password: nzrc4ma4087c1ukr
-  sni: dl2.rahetejarat.com
-  skip-cert-verify: false
-  udp: true
-- name: '94'
-  server: 172.67.71.160
+- name: 🇩🇪 03
+  server: 172.66.203.67
   port: 443
   type: vmess
-  uuid: 05641cf5-58d2-4ba4-a9f1-b3cda0b1fb1d
+  uuid: 0cf6d970-3f1d-4aae-a989-92a8f76ae3db
   alterId: 0
   cipher: auto
   tls: true
-  servername: obdii.cfd
+  servername: vmess.lbw666.dpdns.org
   network: ws
   ws-opts:
-    path: /linkws
+    path: /ws?ed=2048
     headers:
-      Host: obdii.cfd
+      Host: vmess.lbw666.dpdns.org
   udp: true
-- name: '95'
-  server: 173.245.59.8
-  port: 443
+- name: 🇩🇪 04
+  server: 172.111.38.100
+  port: 22324
   type: vmess
-  uuid: 1052f24e-7b09-45eb-b0c5-d858eb124192
-  alterId: 0
-  cipher: auto
-  tls: true
-  servername: 77h2quiet-dream-5c34.foratay741.workers.dev
-  network: ws
-  ws-opts:
-    path: /glweidf.cfd/linkws
-    headers:
-      Host: 77h2quiet-dream-5c34.foratay741.workers.dev
-  udp: true
-- name: '96'
-  server: 104.16.61.8
-  port: 80
-  type: vmess
-  uuid: 05641cf5-58d2-4ba4-a9f1-b3cda0b1fb1d
+  uuid: 04621bae-ab36-11ec-b909-0242ac120002
   alterId: 0
   cipher: auto
   tls: false
-  network: ws
-  ws-opts:
-    path: /
   udp: true
-- name: '97'
+- name: 🇺🇸 05
+  server: 66.23.206.124
+  port: 16619
+  type: ss
+  cipher: aes-128-gcm
+  password: 2607008ac896b3443be9419d73d544d9
+  udp: true
+- name: 🇩🇪 06
+  server: 66.23.202.54
+  port: 13627
+  type: ss
+  cipher: aes-128-gcm
+  password: 50ce2ac177d8d8cdad6b4a68739e2ea0
+  udp: true
+- name: 🇺🇸 07
+  server: 205.209.126.205
+  port: 19049
+  type: ss
+  cipher: aes-128-gcm
+  password: e72a793d634d99748cf908d21fd935c3
+  udp: true
+- name: 🇩🇪 08
   server: uk2-2.998998.best
   port: 443
   type: vmess
@@ -1196,97 +91,1053 @@ proxies:
     headers:
       Host: server3.9966338.xyz
   udp: true
-- name: '98'
-  server: 167.68.4.199
-  port: 2053
-  type: trojan
-  password: Aimer
-  sni: epge.muarua.filegear-sg.me
+- name: 🇩🇪 09
+  server: 51.222.200.165
+  port: 5000
+  type: ss
+  cipher: aes-256-gcm
+  password: Y6R9pAtvxxzmGC
+  udp: true
+- name: 🇩🇪 10
+  server: 51.79.64.198
+  port: 8119
+  type: ss
+  cipher: aes-256-gcm
+  password: cdBIDV42DCwnfIN
+  udp: true
+- name: 🇩🇪 11
+  server: 51.79.85.185
+  port: 8118
+  type: ss
+  cipher: aes-256-gcm
+  password: cdBIDV42DCwnfIN
+  udp: true
+- name: 🇩🇪 12
+  server: 51.222.136.236
+  port: 8882
+  type: ss
+  cipher: aes-256-gcm
+  password: kDWvXYZoTBcGkC4
+  udp: true
+- name: 🇩🇪 13
+  server: 51.222.155.113
+  port: 5601
+  type: ss
+  cipher: aes-256-gcm
+  password: Y6R9pAtvxxzmGC
+  udp: true
+- name: 🇩🇪 14
+  server: 51.222.155.32
+  port: 5003
+  type: ss
+  cipher: aes-256-gcm
+  password: g5MeD6Ft3CWlJId
+  udp: true
+- name: 🇩🇪 15
+  server: 51.79.49.116
+  port: 8882
+  type: ss
+  cipher: aes-256-gcm
+  password: kDWvXYZoTBcGkC4
+  udp: true
+- name: 🇩🇪 16
+  server: 51.222.12.127
+  port: 445
+  type: ss
+  cipher: aes-256-gcm
+  password: zDNVedRFPQexG9v
+  udp: true
+- name: 🇩🇪 17
+  server: 51.222.141.125
+  port: 445
+  type: ss
+  cipher: aes-256-gcm
+  password: zDNVedRFPQexG9v
+  udp: true
+- name: 🇩🇪 18
+  server: 66.163.113.176
+  port: 22324
+  type: vmess
+  uuid: 04621bae-ab36-11ec-b909-0242ac120002
+  alterId: 0
+  cipher: auto
+  tls: false
+  udp: true
+- name: 🇩🇪 19
+  server: 64.74.163.69
+  port: 18766
+  type: ss
+  cipher: aes-128-gcm
+  password: 4efe1af272e7292139b889f6a63ee071
+  udp: true
+- name: 🇩🇪 20
+  server: 66.23.204.214
+  port: 16999
+  type: ss
+  cipher: aes-128-gcm
+  password: 89d3a0375a279f6e743fea76e72952a8
+  udp: true
+- name: 🇩🇪 21
+  server: 66.23.204.219
+  port: 10676
+  type: ss
+  cipher: aes-128-gcm
+  password: 2591a42af498878e47d881cd1ed1fa9d
+  udp: true
+- name: 🇩🇪 22
+  server: 103.214.111.162
+  port: 16469
+  type: ss
+  cipher: aes-128-gcm
+  password: 87e9cb62706b5cd08da95b8b423cb673
+  udp: true
+- name: 🇩🇪 23
+  server: 66.23.204.210
+  port: 16995
+  type: ss
+  cipher: aes-128-gcm
+  password: 89d3a0375a279f6e743fea76e72952a8
+  udp: true
+- name: 🇩🇪 24
+  server: 66.163.115.23
+  port: 443
+  type: vmess
+  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
+  alterId: 0
+  cipher: auto
+  tls: true
+  servername: aidrivercat.org
   network: ws
   ws-opts:
-    path: /?proxyip=ts.hpc.tw
+    path: /linkvws
     headers:
-      Host: epge.muarua.filegear-sg.me
+      Host: aidrivercat.org
   udp: true
-- name: '99'
+- name: 🇩🇪 25
+  server: 185.156.47.97
+  port: 9443
+  type: ss
+  cipher: aes-256-gcm
+  password: eveaaTOb8ji8yntw2Z9yWUG0d6Ir8Ld8m3ymH8THdC5egiTH1mXCiBc0Skr7FibH
+  udp: true
+- name: 🇩🇪 26
+  server: mygptagent.org
+  port: 443
+  type: vmess
+  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
+  alterId: 0
+  cipher: auto
+  tls: true
+  servername: mygptagent.org
+  network: ws
+  ws-opts:
+    path: /linkvws
+    headers:
+      Host: mygptagent.org
+  udp: true
+- name: 🇩🇪 27
+  server: 198.57.27.190
+  port: 22324
+  type: vmess
+  uuid: 04621bae-ab36-11ec-b909-0242ac120002
+  alterId: 0
+  cipher: auto
+  tls: false
+  udp: true
+- name: 🇺🇸 28
+  server: 66.23.203.21
+  port: 59689
+  type: trojan
+  password: ae7eb4dwyaz25pxwgq59
+  skip-cert-verify: true
+  udp: true
+- name: 🇩🇪 29
+  server: 167.88.62.124
+  port: 22324
+  type: vmess
+  uuid: 04621bae-ab36-11ec-b909-0242ac120002
+  alterId: 0
+  cipher: auto
+  tls: false
+  udp: true
+- name: 🇩🇪 30
+  server: 173.234.25.90
+  port: 15240
+  type: ss
+  cipher: aes-128-gcm
+  password: 62dd75ba944947d4ca983cf1679b3797
+  udp: true
+- name: 🇩🇪 31
+  server: 74.201.177.54
+  port: 14680
+  type: ss
+  cipher: aes-128-gcm
+  password: 1377d5cfafc9279a904deb3bfa4f3de2
+  udp: true
+- name: 🇩🇪 32
+  server: 216.152.152.187
+  port: 22324
+  type: vmess
+  uuid: 04621bae-ab36-11ec-b909-0242ac120002
+  alterId: 0
+  cipher: auto
+  tls: false
+  udp: true
+- name: 🇩🇪 33
+  server: 103.11.76.248
+  port: 28679
+  type: ss
+  cipher: 2022-blake3-aes-128-gcm
+  password: NzJlOTQ5NWYtM2ZkYi00Cg==
+  udp: true
+- name: 🇩🇪 34
+  server: 167.17.68.89
+  port: 443
+  type: vmess
+  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
+  alterId: 0
+  cipher: auto
+  tls: true
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: vspeedfast.org
+  udp: true
+- name: 🇩🇪 35
+  server: 131.196.254.151
+  port: 443
+  type: trojan
+  password: humanity
+  udp: true
+- name: 🇩🇪 36
+  server: 147.78.1.234
+  port: 16673
+  type: ss
+  cipher: aes-128-gcm
+  password: 67c57ae584eecd70396fcd7ca7521130
+  udp: true
+- name: 🇬🇧 37
+  server: 94.156.250.148
+  port: 7001
+  type: ss
+  cipher: aes-256-gcm
+  password: RexnBgU7EV5ADxG
+  udp: true
+- name: 🇩🇪 38
+  server: 185.114.72.31
+  port: 2053
+  type: trojan
+  password: humanity
+  sni: www.calmlunch.com
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.calmlunch.com
+  udp: true
+- name: 🇩🇪 39
+  server: 83.217.222.170
+  port: 443
+  type: trojan
+  password: humanity
+  udp: true
+- name: 🇩🇪 40
+  server: ss.042.node-for-bigairport.win
+  port: 20006
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: 792e0bdb-01db-450c-94c4-925151eb396e
+  udp: true
+- name: 🇩🇪 41
+  server: 45.80.215.8
+  port: 22324
+  type: vmess
+  uuid: 04621bae-ab36-11ec-b909-0242ac120002
+  alterId: 0
+  cipher: auto
+  tls: false
+  udp: true
+- name: 🇬🇧 42
+  server: 158.173.24.73
+  port: 443
+  type: ss
+  cipher: aes-128-gcm
+  password: shadowsocks
+  udp: true
+- name: 🇺🇸 43
+  server: ss.043.node-for-bigairport.win
+  port: 20006
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: 792e0bdb-01db-450c-94c4-925151eb396e
+  udp: true
+- name: 🇩🇪 44
+  server: 45.87.41.18
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.calmlunch.com
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.calmlunch.com
+  udp: true
+- name: 🇩🇪 45
+  server: 216.106.187.60
+  port: 22324
+  type: vmess
+  uuid: 04621bae-ab36-11ec-b909-0242ac120002
+  alterId: 0
+  cipher: auto
+  tls: false
+  udp: true
+- name: 🇩🇪 46
+  server: 216.106.187.60
+  port: 443
+  type: vmess
+  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
+  alterId: 0
+  cipher: auto
+  tls: true
+  servername: kentspark.org
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: kentspark.org
+  udp: true
+- name: 🇩🇪 47
+  server: 193.108.117.54
+  port: 443
+  type: vmess
+  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
+  alterId: 0
+  cipher: auto
+  tls: true
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: aidrivercat.org
+  udp: true
+- name: 🇩🇪 48
+  server: 31.57.190.34
+  port: 443
+  type: trojan
+  password: humanity
+  udp: true
+- name: 🇩🇪 49
+  server: 57.131.48.45
+  port: 8388
+  type: ss
+  cipher: aes-256-gcm
+  password: itzvpn@321
+  udp: true
+- name: 🇮🇪 50
+  server: 63.180.254.10
+  port: 443
+  type: ss
+  cipher: aes-256-cfb
+  password: amazonskr05
+  udp: true
+- name: 🇩🇪 51
+  server: 82.38.31.170
+  port: 443
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  udp: true
+- name: 🇩🇪 52
+  server: 31.77.8.97
+  port: 110
+  type: vmess
+  uuid: e8758bf0-c234-4809-89f7-25fd868316d0
+  alterId: 0
+  cipher: auto
+  tls: false
+  udp: true
+- name: 🇩🇪 53
+  server: 31.76.11.83
+  port: 22266
+  type: vmess
+  uuid: 2d8f57bd-12b5-41ad-a806-6501753c264c
+  alterId: 0
+  cipher: auto
+  tls: false
+  udp: true
+- name: 🇩🇪 54
+  server: loved-shark.rooster465.autos
+  port: 443
+  type: trojan
+  password: UX82473651
+  sni: loved-shark.rooster465.autos
+  udp: true
+- name: 🇩🇪 55
+  server: 82.38.31.82
+  port: 8080
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  udp: true
+- name: 🇩🇪 56
+  server: 178.105.168.171
+  port: 2110
+  type: vmess
+  uuid: 06d4d001-4168-4876-9416-7caecf578f40
+  alterId: 0
+  cipher: auto
+  tls: false
+  udp: true
+- name: 🇩🇪 57
+  server: 89.41.172.85
+  port: 22324
+  type: vmess
+  uuid: 04621bae-ab36-11ec-b909-0242ac120002
+  alterId: 0
+  cipher: auto
+  tls: false
+  udp: true
+- name: 🇩🇪 58
+  server: 82.38.31.42
+  port: 8080
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  udp: true
+- name: 🇩🇪 59
+  server: 185.213.23.63
+  port: 990
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=
+  udp: true
+- name: 🇫🇷 60
+  server: 162.159.91.211
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.calmlunch.com
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.calmlunch.com
+  udp: true
+- name: '61'
   server: 104.18.35.86
   port: 8443
   type: trojan
   password: trojan
   sni: longwanghen.pages.dev
   skip-cert-verify: true
-  udp: true
-- name: '100'
-  server: 14.1.28.76
-  port: 50740
-  type: trojan
-  password: r49gssuondznyu2eex83
-  skip-cert-verify: true
-  udp: true
-- name: '101'
-  server: 188.114.96.3
-  port: 8080
-  type: trojan
-  password: kHnTqWA%2B02w%3AqkJvu_%21
   network: ws
   ws-opts:
-    path: /tr/bEUjQ9W2F2uBfupxE?ed=2560
+    path: /
+    headers:
+      Host: longwanghen.pages.dev
+  udp: true
+- name: 🇫🇷 62
+  server: 104.18.35.86
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.volumerOot.coM.
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.volumerOot.coM.
+  udp: true
+- name: 🇳🇱 63
+  server: 188.42.145.180
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.volumeroot.com
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /assignment?ed#Telegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NET
+    headers:
+      Host: www.volumeroot.com
+  udp: true
+- name: 🇫🇷 64
+  server: 104.18.32.47
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.calmlunch.com
+  skip-cert-verify: true
+  udp: true
+- name: 🇫🇷 65
+  server: 212.183.88.136
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.calmlunch.com
+  skip-cert-verify: true
+  udp: true
+- name: 🇩🇪 66
+  server: 45.80.111.7
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.calmlunch.com
+  skip-cert-verify: true
+  udp: true
+- name: '67'
+  server: 104.18.32.87
+  port: 443
+  type: trojan
+  password: 018b8e7b-7813-4dcb-84a5-3c98f1521e00
+  sni: id1.nathaya.web.id
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /trojan
+    headers:
+      Host: id1.nathaya.web.id
+  udp: true
+- name: '68'
+  server: us3-2.998998.best
+  port: 443
+  type: trojan
+  password: 5504eaa8-1395-402f-8e0e-75ecd762e627
+  sni: nat3.xxai.dpdns.org
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: '%2Fanyway'
+    headers:
+      Host: nat3.xxai.dpdns.org
+  udp: true
+- name: '69'
+  server: 162.159.36.20
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.calmlunch.com
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.calmlunch.com
+  udp: true
+- name: '70'
+  server: 86.38.214.205
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.ignitelimit.com
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.ignitelimit.com
+  udp: true
+- name: '71'
+  server: 45.130.125.160
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.calmlunch.com
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: '%2Fassignment'
+    headers:
+      Host: www.calmlunch.com
+  udp: true
+- name: 🇺🇸 72
+  server: 172.66.203.67
+  port: 443
+  type: vmess
+  uuid: 0cf6d970-3f1d-4aae-a989-92a8f76ae3db
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: true
+  servername: vmess.lbw666.dpdns.org
+  network: ws
+  ws-opts:
+    path: /ws
+    headers:
+      Host: vmess.lbw666.dpdns.org
+  udp: true
+- name: '73'
+  server: nimm.mpd.cc.cd
+  port: 2053
+  type: trojan
+  password: e309e031-991e-4656-9934-44d10deb8fd8
+  sni: nimm.mpd.cc.cd
+  network: ws
+  ws-opts:
+    path: /0962
+    headers:
+      Host: nimm.mpd.cc.cd
+  udp: true
+- name: '74'
+  server: 104.18.35.86
+  port: 2096
+  type: trojan
+  password: '123456'
+  sni: 321dfbc6.uir-9i6.pages.dev
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: 321dfbc6.uir-9i6.pages.dev
+  udp: true
+- name: 🇺🇸 75
+  server: cf.0sm.com
+  port: 80
+  type: vmess
+  uuid: 0cf6d970-3f1d-4aae-a989-92a8f76ae3db
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /ws
+    headers:
+      Host: vmess.lbw666.dpdns.org
+  udp: true
+- name: 🇺🇸 76
+  server: 66.23.206.124
+  port: 16619
+  type: ss
+  cipher: aes-128-gcm
+  password: 2607008ac896b3443be9419d73d544d9
+  udp: true
+- name: '77'
+  server: www.calmlunch.com
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.calmlunch.com
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.calmlunch.com
+  udp: true
+- name: 🇭🇰 78
+  server: yg1.ygkkk.dpdns.org
+  port: 443
+  type: vmess
+  uuid: b2ba4a73-3123-479e-aa96-5973a9ecd0c0
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: true
+  servername: jmp1.907737.xyz
+  network: ws
+  ws-opts:
+    path: /b2ba4a73-3123-479e-aa96-5973a9ecd0c0-vm
+    headers:
+      Host: jmp1.907737.xyz
+  udp: true
+- name: 🇨🇦 79
+  server: 51.222.155.113
+  port: 5601
+  type: ss
+  cipher: aes-256-gcm
+  password: Y6R9pAtvxxzmGC
+  udp: true
+- name: 🇨🇦 80
+  server: 51.222.136.236
+  port: 8882
+  type: ss
+  cipher: aes-256-gcm
+  password: kDWvXYZoTBcGkC4
+  udp: true
+- name: 🇨🇦 81
+  server: 51.79.64.198
+  port: 8119
+  type: ss
+  cipher: aes-256-gcm
+  password: cdBIDV42DCwnfIN
+  udp: true
+- name: 🇨🇦 82
+  server: 51.79.49.116
+  port: 8882
+  type: ss
+  cipher: aes-256-gcm
+  password: kDWvXYZoTBcGkC4
+  udp: true
+- name: 🇺🇸 83
+  server: 205.209.126.205
+  port: 19049
+  type: ss
+  cipher: aes-128-gcm
+  password: e72a793d634d99748cf908d21fd935c3
+  udp: true
+- name: 🇨🇦 84
+  server: 51.79.85.185
+  port: 8118
+  type: ss
+  cipher: aes-256-gcm
+  password: cdBIDV42DCwnfIN
+  udp: true
+- name: 🇨🇦 85
+  server: 51.222.155.32
+  port: 5003
+  type: ss
+  cipher: aes-256-gcm
+  password: g5MeD6Ft3CWlJId
+  udp: true
+- name: '86'
+  server: 35.183.131.26
+  port: 443
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 🇺🇸 87
+  server: www.shopify.com
+  port: 443
+  type: vmess
+  uuid: 6a89a215-22bf-4bd7-9642-b95b2e09583a
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: true
+  servername: guanwang.awsno.com
+  network: ws
+  ws-opts:
+    path: /hls/cctv5phd.m3u8
+    headers:
+      Host: www.shopify.com
+  udp: true
+- name: 🇺🇸 88
+  server: 64.74.163.69
+  port: 18766
+  type: ss
+  cipher: aes-128-gcm
+  password: 4efe1af272e7292139b889f6a63ee071
+  udp: true
+- name: 🇨🇦 89
+  server: 51.222.12.127
+  port: 445
+  type: ss
+  cipher: aes-256-gcm
+  password: zDNVedRFPQexG9v
+  udp: true
+- name: 🇨🇦 90
+  server: 51.222.200.165
+  port: 5000
+  type: ss
+  cipher: aes-256-gcm
+  password: Y6R9pAtvxxzmGC
+  udp: true
+- name: 🇨🇦 91
+  server: 137.184.174.93
+  port: 8080
+  type: ss
+  cipher: rc4-md5
+  password: 14fFPrbezE3HDZzsMOr6
+  udp: true
+- name: 🇨🇦 92
+  server: 134.195.196.211
+  port: 18000
+  type: vmess
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: true
+  udp: true
+- name: 🇨🇦 93
+  server: 138.197.141.58
+  port: 8080
+  type: ss
+  cipher: rc4-md5
+  password: 14fFPrbezE3HDZzsMOr6
+  udp: true
+- name: 🇺🇸 94
+  server: 66.23.203.21
+  port: 59689
+  type: trojan
+  password: ae7eb4dwyaz25pxwgq59
+  skip-cert-verify: true
+  udp: true
+- name: 🇨🇦 95
+  server: 51.222.141.125
+  port: 445
+  type: ss
+  cipher: aes-256-gcm
+  password: zDNVedRFPQexG9v
+  udp: true
+- name: 🇨🇦 96
+  server: ca.tronsg.com
+  port: 443
+  type: trojan
+  password: Trojan@82164024
+  skip-cert-verify: true
+  udp: true
+- name: 🇺🇸 97
+  server: 129.146.77.248
+  port: 39495
+  type: vmess
+  uuid: f836c736-87fc-4fde-aabc-00857ecdff3e
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /cctv13.m3u8
+  udp: true
+- name: 🇺🇸 98
+  server: 173.244.56.6
+  port: 443
+  type: ss
+  cipher: aes-128-gcm
+  password: shadowsocks
+  udp: true
+- name: 🇺🇸 99
+  server: 173.244.56.9
+  port: 443
+  type: ss
+  cipher: aes-128-gcm
+  password: shadowsocks
+  udp: true
+- name: 🇺🇸 100
+  server: 79.110.53.169
+  port: 8080
+  type: ss
+  cipher: rc4-md5
+  password: 14fFPrbezE3HDZzsMOr6
+  udp: true
+- name: 🇺🇸 101
+  server: 107.151.182.197
+  port: 8080
+  type: ss
+  cipher: rc4-md5
+  password: 14fFPrbezE3HDZzsMOr6
   udp: true
 - name: '102'
-  server: 8.6.112.6
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.calmloud.com
+  server: 138.199.35.211
+  port: 9002
+  type: http
+  tls: true
   skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.calmloud.com
   udp: true
 - name: '103'
-  server: 45.130.125.32
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.calmloud.com
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: ''
-    headers:
-      Host: www.calmloud.com
+  server: 138.199.35.210
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
   udp: true
 - name: '104'
-  server: 216.24.57.6
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.creationlong.org
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.creationlong.org
+  server: 138.199.35.200
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
   udp: true
 - name: '105'
-  server: 208.103.161.101
+  server: 138.199.35.206
+  port: 9002
+  type: http
+  username: 'null'
+  password: None
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: '106'
+  server: 138.199.35.212
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 🇺🇸 107
+  server: 107.149.159.190
+  port: 10443
+  type: trojan
+  password: 8bdfa4e8dac99c57decdd8bf55d2da4c
+  sni: cf.shiranyu.xyz
+  skip-cert-verify: true
+  udp: true
+- name: 🇨🇦 108
+  server: 149.22.95.183
+  port: 443
+  type: ss
+  cipher: aes-128-gcm
+  password: shadowsocks
+  udp: true
+- name: '109'
+  server: 137.175.22.88
+  port: 443
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 🇺🇸 110
+  server: 3kCf86Ufi0U5xBDA.v.3dns.vip
+  port: 443
+  type: vmess
+  uuid: ad8685f2-5d17-411e-855c-1cc2ed5144a9
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: true
+  servername: 3kCf86Ufi0U5xBDA.v.3dns.vip
+  network: ws
+  ws-opts:
+    path: /ws-vmess
+    headers:
+      Host: 3kCf86Ufi0U5xBDA.v.3dns.vip
+  udp: true
+- name: 🇮🇳 111
+  server: 3.253.106.233
   port: 443
   type: trojan
+  password: UX82473651
+  sni: loved-shark.rooster465.autos
+  skip-cert-verify: false
+  udp: true
+- name: '112'
+  server: 146.70.61.37
+  port: 8080
+  type: ss
+  cipher: rc4-md5
+  password: 14fFPrbezE3HDZzsMOr6
+  udp: true
+- name: '113'
+  server: 185.114.72.31
+  port: 2053
+  type: trojan
   password: humanity
-  sni: www.creationlong.org
+  sni: www.calmlunch.com
   skip-cert-verify: false
   network: ws
   ws-opts:
     path: /assignment
     headers:
-      Host: www.creationlong.org
+      Host: www.calmlunch.com
   udp: true
-- name: '106'
-  server: 185.18.250.245
+- name: 🇩🇪 114
+  server: 158.173.24.73
   port: 443
+  type: ss
+  cipher: aes-128-gcm
+  password: shadowsocks
+  udp: true
+- name: '115'
+  server: 96.5.129.85
+  port: 443
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: '116'
+  server: 141.98.101.181
+  port: 443
+  type: ss
+  cipher: aes-128-gcm
+  password: shadowsocks
+  udp: true
+- name: '117'
+  server: 146.70.23.32
+  port: 8080
+  type: ss
+  cipher: rc4-md5
+  password: 14fFPrbezE3HDZzsMOr6
+  udp: true
+- name: 🇺🇸 118
+  server: 83.217.222.170
+  port: 443
+  type: trojan
+  password: humanity
+  udp: true
+- name: 🇮🇳 119
+  server: sacred-anemone.rooster465.autos
+  port: 443
+  type: trojan
+  password: UX82473651
+  sni: sacred-anemone.rooster465.autos
+  udp: true
+- name: '120'
+  server: 94.156.250.148
+  port: 7001
+  type: ss
+  cipher: aes-256-gcm
+  password: RexnBgU7EV5ADxG
+  udp: true
+- name: '121'
+  server: 103.97.88.154
+  port: 443
+  type: http
+  username: 'null'
+  password: 'null'
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: '122'
+  server: 157.22.183.72
+  port: 443
+  type: http
+  username: 'null'
+  password: 'null'
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: '123'
+  server: 84.17.47.125
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 🇳🇱 124
+  server: 45.87.41.18
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.calmlunch.com
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.calmlunch.com
+  udp: true
+- name: 🇮🇳 125
+  server: adapting-basilisk.rooster465.autos
+  port: 443
+  type: trojan
+  password: UX82473651
+  sni: adapting-basilisk.rooster465.autos
+  udp: true
+- name: '126'
+  server: 149.88.96.1
+  port: 443
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 🇩🇪 127
+  server: 209.46.102.22
+  port: 8388
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: 1hhrqrokj3ag
+  udp: true
+- name: 🇫🇷 128
+  server: 82.117.245.125
+  port: 2053
   type: trojan
   password: humanity
   sni: www.calmlunch.com
@@ -1297,536 +1148,111 @@ proxies:
     headers:
       Host: www.calmlunch.com
   udp: true
-- name: '107'
-  server: 130.250.137.171
+- name: 🇺🇸 129
+  server: 63.180.254.10
   port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.ignitelimit.com
+  type: ss
+  cipher: aes-256-cfb
+  password: amazonskr05
   udp: true
-- name: '108'
-  server: 104.21.40.34
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.gossipglove.com
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.gossipglove.com
+- name: 🇳🇱 130
+  server: 82.38.31.35
+  port: 8080
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
   udp: true
-- name: '109'
-  server: 104.21.33.59
+- name: 🇳🇱 131
+  server: 82.38.31.184
+  port: 8080
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: k1dBOmOB4oqi7Ump37a1bQ
+  udp: true
+- name: 🇳🇱 132
+  server: 82.38.31.214
+  port: 8080
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: k1dBOmOB4oqi7Ump37a1bQ
+  udp: true
+- name: 🇳🇱 133
+  server: 82.38.31.156
+  port: 8080
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  udp: true
+- name: 🇳🇱 134
+  server: 193.29.139.198
+  port: 8080
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: k1dBOmOB4oqi7Ump37a1bQ
+  udp: true
+- name: 🇳🇱 135
+  server: 193.29.139.212
+  port: 8080
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: QCXDxuDlTTMD7jtgHUjIoj
+  udp: true
+- name: 🇫🇷 136
+  server: 31.57.190.34
   port: 443
   type: trojan
   password: humanity
   sni: www.pleadcourt.org
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.pleadcourt.org
-  udp: true
-- name: '110'
-  server: 104.18.152.246
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.calmloud.com
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.calmloud.com
-  udp: true
-- name: '111'
-  server: 104.18.152.207
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.ignitelimit.com
-  udp: true
-- name: '112'
-  server: 104.18.12.149
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.ignitelimit.com
-  udp: true
-- name: '113'
-  server: 104.17.111.8
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.ignitelimit.com
-  udp: true
-- name: '114'
-  server: 104.16.71.213
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.calmlunch.com
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.calmlunch.com
-  udp: true
-- name: '115'
-  server: 104.16.174.121
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.ignitelimit.com
-  udp: true
-- name: '116'
-  server: 86.38.214.132
-  port: 443
-  type: trojan
-  password: bpb-trojan
-  sni: bpb.my79801.com
-  network: ws
-  ws-opts:
-    path: /tr?ed
-    headers:
-      Host: bpb.my79801.com
-  udp: true
-- name: '117'
-  server: 104.19.172.92
-  port: 443
-  type: trojan
-  password: blue2024
-  sni: td.promote.icu
   skip-cert-verify: true
-  udp: true
-- name: '118'
-  server: 104.21.79.54
-  port: 443
-  type: trojan
-  password: _3H5wdNuPWCoXCKN
-  sni: core-391492-501aAa.tHaTSmes-7B13.wORKeRs.deV
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /tr/O70owyyz157U5RIQQe?ed=2560
-    headers:
-      Host: core-391492-501aAa.tHaTSmes-7B13.wORKeRs.deV
-  udp: true
-- name: '119'
-  server: 104.18.16.56
-  port: 443
-  type: trojan
-  password: VPNCUSTOMIZE
-  sni: ww.gameserver.de5.net
-  skip-cert-verify: false
-  udp: true
-- name: '120'
-  server: 198.202.211.2
-  port: 443
-  type: trojan
-  password: SiNAVM
-  sni: sinavm4.soft10.ir
-  skip-cert-verify: true
-  udp: true
-- name: '121'
-  server: 172.67.222.51
-  port: 2053
-  type: trojan
-  password: SSorg
-  sni: ssjj.esslh.filegear-sg.me
-  skip-cert-verify: true
-  udp: true
-- name: '122'
-  server: 104.17.244.30
-  port: 443
-  type: trojan
-  password: NISHIKUITAN111
-  skip-cert-verify: true
-  udp: true
-- name: '123'
-  server: 66.81.247.155
-  port: 443
-  type: trojan
-  password: MiTiVPN
-  sni: ib-bbg--MiTiVPN---MiTiVPN-u.aPp-cLoud.IR
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/fl
-    headers:
-      Host: ib-bbg--MiTiVPN---MiTiVPN-u.aPp-cLoud.IR
-  udp: true
-- name: '124'
-  server: 45.131.4.118
-  port: 443
-  type: trojan
-  password: MiTiVPN
-  sni: linkkon-w.ir
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /ed=mitivpn
-    headers:
-      Host: linkkon-w.ir
-  udp: true
-- name: '125'
-  server: 202.37.33.80
-  port: 443
-  type: trojan
-  password: MiTiVPN
-  sni: ib-bbg--MiTiVPN---MiTiVPN-.Maqror.ir
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/fl
-    headers:
-      Host: ib-bbg--MiTiVPN---MiTiVPN-.Maqror.ir
-  udp: true
-- name: '126'
-  server: 172.66.174.41
-  port: 443
-  type: trojan
-  password: MiTiVPN
-  sni: Nl1-MiTiVPN--MiTiVPN--MiTiVPN---MiTiVPN--MiTiVPN--MiTiVPN.KinGNetWork.iR
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/NL---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN
-    headers:
-      Host: Nl1-MiTiVPN--MiTiVPN--MiTiVPN---MiTiVPN--MiTiVPN--MiTiVPN.KinGNetWork.iR
-  udp: true
-- name: '127'
-  server: 151.101.74.172
-  port: 80
-  type: trojan
-  password: MiTiVPN
-  network: ws
-  ws-opts:
-    path: /---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/sw---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN
-  udp: true
-- name: '128'
-  server: 151.101.66.172
-  port: 80
-  type: trojan
-  password: MiTiVPN
-  network: ws
-  ws-opts:
-    path: /---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/de---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN
-  udp: true
-- name: '129'
-  server: 151.101.1.242
-  port: 443
-  type: trojan
-  password: MiTiVPN
-  sni: www.f6r.ir
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /de=mitivpn
-    headers:
-      Host: www.f6r.ir
-  udp: true
-- name: '130'
-  server: 151.101.1.194
-  port: 443
-  type: trojan
-  password: MiTiVPN
-  sni: ssl.fastly.com
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /---@MiTiVPN---@MiTiVPN---@MiTiVPN---@MiTiVPN---@MiTiVPN---@MiTiVPN---@MiTiVPN---@MiTiVPN---@MiTiVPN---@MiTiVPN---@MiTiVPN---@MiTiVPN---@MiTiVPN---@MiTiVPN---@MiTiVPN---@MiTiVPN=sws
-    headers:
-      Host: ssl.fastly.com
-  udp: true
-- name: '131'
-  server: 151.101.0.194
-  port: 80
-  type: trojan
-  password: MiTiVPN
-  network: ws
-  ws-opts:
-    path: /---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/JP---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN
-  udp: true
-- name: '132'
-  server: 104.26.2.173
-  port: 443
-  type: trojan
-  password: MiTiVPN
-  sni: S-G-MiTiVPN--MiTiVPN--MiTiVPN---MiTiVPN--MiTiVPN--MiTiVPN.S88R.iR
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/SG---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN
-    headers:
-      Host: S-G-MiTiVPN--MiTiVPN--MiTiVPN---MiTiVPN--MiTiVPN--MiTiVPN.S88R.iR
-  udp: true
-- name: '133'
-  server: 104.26.15.137
-  port: 443
-  type: trojan
-  password: MiTiVPN
-  sni: h---MiTiVPN---MiTiVPN-u.Maqror.IR
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /---@MiTiVPN---@MiTiVPN---@MiTiVPN---@MiTiVPN---@MiTiVPN---@MiTiVPN---@MiTiVPN---@MiTiVPN---@MiTiVPN---@MiTiVPN---@MiTiVPN---@MiTiVPN---@MiTiVPN---@MiTiVPN---@MiTiVPN---@MiTiVPN=finland
-    headers:
-      Host: h---MiTiVPN---MiTiVPN-u.Maqror.IR
-  udp: true
-- name: '134'
-  server: 104.26.12.41
-  port: 443
-  type: trojan
-  password: MiTiVPN
-  sni: sws-MiTiVPN--MiTiVPN--MiTiVPN---MiTiVPN--MiTiVPN--MiTiVPN.KinGNetWork.iR
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/sw---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN
-    headers:
-      Host: sws-MiTiVPN--MiTiVPN--MiTiVPN---MiTiVPN--MiTiVPN--MiTiVPN.KinGNetWork.iR
-  udp: true
-- name: '135'
-  server: 104.21.40.208
-  port: 443
-  type: trojan
-  password: MiTiVPN
-  sni: dde1-MiTiVPN--MiTiVPN--MiTiVPN---MiTiVPN--MiTiVPN--MiTiVPN.KinGNetWork.iR
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/de---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN
-    headers:
-      Host: dde1-MiTiVPN--MiTiVPN--MiTiVPN---MiTiVPN--MiTiVPN--MiTiVPN.KinGNetWork.iR
-  udp: true
-- name: '136'
-  server: 104.18.7.178
-  port: 2083
-  type: trojan
-  password: MiTiVPN
-  sni: swsjh--MiTiVPN---MiTiVPN-ao.kingnetwork.ir
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/sw
-    headers:
-      Host: swsjh--MiTiVPN---MiTiVPN-ao.kingnetwork.ir
   udp: true
 - name: '137'
-  server: 104.18.6.178
+  server: 185.238.170.10
   port: 443
-  type: trojan
-  password: MiTiVPN
-  sni: g-o-MiTiVPN---MiTiVPNj.Maqror.ir
+  type: http
+  tls: true
   skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/nl
-    headers:
-      Host: g-o-MiTiVPN---MiTiVPNj.Maqror.ir
   udp: true
-- name: '138'
-  server: 104.18.36.192
-  port: 443
-  type: trojan
-  password: MiTiVPN
-  sni: hk1-MiTiVPN--MiTiVPN--MiTiVPN---MiTiVPN--MiTiVPN--MiTiVPN.S88R.iR
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/HK---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN
-    headers:
-      Host: hk1-MiTiVPN--MiTiVPN--MiTiVPN---MiTiVPN--MiTiVPN--MiTiVPN.S88R.iR
+- name: 🇳🇱 138
+  server: 82.38.31.18
+  port: 8080
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
   udp: true
-- name: '139'
-  server: 104.18.34.13
-  port: 443
-  type: trojan
-  password: MiTiVPN
-  sni: b-bbg--MiTiVPN---MiTiVPN-u.aPp-cLoud.IR
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /---@MiTiVPN---@MiTiVPN---@MiTiVPN---@MiTiVPN---@MiTiVPN---@MiTiVPN---@MiTiVPN---@MiTiVPN---@MiTiVPN---@MiTiVPN---@MiTiVPN---@MiTiVPN---@MiTiVPN---@MiTiVPN---@MiTiVPN---@MiTiVPN=Fll
-    headers:
-      Host: b-bbg--MiTiVPN---MiTiVPN-u.aPp-cLoud.IR
+- name: 🇳🇱 139
+  server: 82.38.31.198
+  port: 8080
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: k1dBOmOB4oqi7Ump37a1bQ
   udp: true
-- name: '140'
-  server: 104.17.112.113
-  port: 443
-  type: trojan
-  password: MiTiVPN
-  sni: sws-MiTiVPN--MiTiVPN--MiTiVPN---MiTiVPN--MiTiVPN--MiTiVPN.S88R.iR
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/sw---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN
-    headers:
-      Host: sws-MiTiVPN--MiTiVPN--MiTiVPN---MiTiVPN--MiTiVPN--MiTiVPN.S88R.iR
+- name: 🇳🇱 140
+  server: 82.38.31.175
+  port: 8080
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
   udp: true
 - name: '141'
-  server: 104.17.100.120
+  server: 92.42.99.143
   port: 443
   type: trojan
-  password: MiTiVPN
-  sni: swo-jjh--MiTiVPN---MiTiVPN-ao.aPp-cLoud.IR
+  password: humanity
+  udp: true
+- name: 🇯🇵 142
+  server: cdn.sfacg.uk
+  port: 2083
+  type: vmess
+  uuid: ac251237-576f-40c8-a543-554960c958b1
+  alterId: 0
+  cipher: auto
+  tls: true
   skip-cert-verify: true
   network: ws
   ws-opts:
-    path: '---%40MiTiVPN---%40MiTiVPN---%40MiTiVPN---%40MiTiVPN---%40MiTiVPN---%40MiTiVPN---%40MiTiVPN---%40MiTiVPN---%40MiTiVPN---%40MiTiVPN---%40MiTiVPN---%40MiTiVPN---%40MiTiVPN---%40MiTiVPN---%40MiTiVPN---%40MiTiVPN%3DSw'
+    path: /or3
     headers:
-      Host: swo-jjh--MiTiVPN---MiTiVPN-ao.aPp-cLoud.IR
-  udp: true
-- name: '142'
-  server: 104.16.98.215
-  port: 443
-  type: trojan
-  password: MiTiVPN
-  sni: Nl1-MiTiVPN--MiTiVPN--MiTiVPN---MiTiVPN--MiTiVPN--MiTiVPN.S88R.iR
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/NL---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN
-    headers:
-      Host: Nl1-MiTiVPN--MiTiVPN--MiTiVPN---MiTiVPN--MiTiVPN--MiTiVPN.S88R.iR
-  udp: true
-- name: '143'
-  server: 104.16.72.251
-  port: 443
-  type: trojan
-  password: MiTiVPN
-  sni: Gb21-MiTiVPN--MiTiVPN--MiTiVPN---MiTiVPN--MiTiVPN--MiTiVPN.S88R.iR
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/gb---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN
-    headers:
-      Host: Gb21-MiTiVPN--MiTiVPN--MiTiVPN---MiTiVPN--MiTiVPN--MiTiVPN.S88R.iR
-  udp: true
-- name: '144'
-  server: 104.16.6.189
-  port: 443
-  type: trojan
-  password: MiTiVPN
-  sni: J--P-MiTiVPN--MiTiVPN--MiTiVPN---MiTiVPN--MiTiVPN--MiTiVPN.S88R.iR
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/JP---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN
-    headers:
-      Host: J--P-MiTiVPN--MiTiVPN--MiTiVPN---MiTiVPN--MiTiVPN--MiTiVPN.S88R.iR
-  udp: true
-- name: '145'
-  server: 104.16.26.90
-  port: 443
-  type: trojan
-  password: MiTiVPN
-  sni: VPNCUSTOMIZE-----VPNCUSTOMIZE.aPp-cLoud.IR
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/N-l
-    headers:
-      Host: VPNCUSTOMIZE-----VPNCUSTOMIZE.aPp-cLoud.IR
-  udp: true
-- name: '146'
-  server: 164.38.155.135
-  port: 443
-  type: trojan
-  password: MITIVPN
-  sni: 95r.ir
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /MiTiVPN=De
-    headers:
-      Host: 95r.ir
-  udp: true
-- name: '147'
-  server: 104.18.42.68
-  port: 443
-  type: trojan
-  password: MITIVPN
-  sni: Ussa1-MiTiVPN--MiTiVPN--MiTiVPN---MiTiVPN--MiTiVPN--MiTiVPN.KinGNetWork.iR
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/usa---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN
-    headers:
-      Host: Ussa1-MiTiVPN--MiTiVPN--MiTiVPN---MiTiVPN--MiTiVPN--MiTiVPN.KinGNetWork.iR
-  udp: true
-- name: '148'
-  server: 104.18.39.172
-  port: 443
-  type: trojan
-  password: MITIVPN
-  sni: 7ub-i--MiTiVPN---MiTiVPN-7.aPp-cLoud.IR
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /---@MiTiVPN---@MiTiVPN---@MiTiVPN---@MiTiVPN---@MiTiVPN---@MiTiVPN---@MiTiVPN---@MiTiVPN---@MiTiVPN---@MiTiVPN---@MiTiVPN---@MiTiVPN---@MiTiVPN---@MiTiVPN---@MiTiVPN---@MiTiVPN=Usa
-    headers:
-      Host: 7ub-i--MiTiVPN---MiTiVPN-7.aPp-cLoud.IR
-  udp: true
-- name: '149'
-  server: 104.17.148.22
-  port: 8443
-  type: trojan
-  password: MITIVPN
-  sni: MiTiVPN---MiTiVPN-7.kingnetwork.ir
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/usa
-    headers:
-      Host: MiTiVPN---MiTiVPN-7.kingnetwork.ir
-  udp: true
-- name: '150'
-  server: 104.17.147.22
-  port: 2053
-  type: trojan
-  password: MITIVPN
-  sni: ikk---7-MiTiVPN----o.kingnetwork.ir
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/de
-    headers:
-      Host: ikk---7-MiTiVPN----o.kingnetwork.ir
+      Host: or3.sfacg.uk
   udp: true
 proxy-groups:
 - name: 🛑 广告拦截
@@ -1871,161 +1297,153 @@ proxy-groups:
   proxies:
   - 🇩🇪 01
   - 🇩🇪 02
-  - 🇳🇱 03
+  - 🇩🇪 03
   - 🇩🇪 04
-  - 🇩🇪 05
-  - '06'
-  - '07'
-  - 08
-  - 09
-  - '10'
-  - '11'
-  - '12'
-  - '13'
-  - '14'
-  - '15'
-  - '16'
-  - '17'
-  - '18'
-  - '19'
-  - '20'
-  - '21'
-  - '22'
-  - '23'
-  - '24'
-  - '25'
-  - '26'
-  - '27'
-  - '28'
-  - '29'
-  - '30'
-  - '31'
-  - '32'
-  - '33'
-  - '34'
-  - '35'
-  - '36'
-  - '37'
-  - '38'
-  - '39'
-  - '40'
-  - '41'
-  - '42'
-  - '43'
-  - '44'
-  - '45'
-  - '46'
-  - '47'
-  - '48'
-  - '49'
-  - '50'
-  - '51'
-  - '52'
-  - 🇺🇸 53
-  - '54'
-  - '55'
-  - '56'
-  - '57'
-  - '58'
-  - '59'
-  - '60'
+  - 🇺🇸 05
+  - 🇩🇪 06
+  - 🇺🇸 07
+  - 🇩🇪 08
+  - 🇩🇪 09
+  - 🇩🇪 10
+  - 🇩🇪 11
+  - 🇩🇪 12
+  - 🇩🇪 13
+  - 🇩🇪 14
+  - 🇩🇪 15
+  - 🇩🇪 16
+  - 🇩🇪 17
+  - 🇩🇪 18
+  - 🇩🇪 19
+  - 🇩🇪 20
+  - 🇩🇪 21
+  - 🇩🇪 22
+  - 🇩🇪 23
+  - 🇩🇪 24
+  - 🇩🇪 25
+  - 🇩🇪 26
+  - 🇩🇪 27
+  - 🇺🇸 28
+  - 🇩🇪 29
+  - 🇩🇪 30
+  - 🇩🇪 31
+  - 🇩🇪 32
+  - 🇩🇪 33
+  - 🇩🇪 34
+  - 🇩🇪 35
+  - 🇩🇪 36
+  - 🇬🇧 37
+  - 🇩🇪 38
+  - 🇩🇪 39
+  - 🇩🇪 40
+  - 🇩🇪 41
+  - 🇬🇧 42
+  - 🇺🇸 43
+  - 🇩🇪 44
+  - 🇩🇪 45
+  - 🇩🇪 46
+  - 🇩🇪 47
+  - 🇩🇪 48
+  - 🇩🇪 49
+  - 🇮🇪 50
+  - 🇩🇪 51
+  - 🇩🇪 52
+  - 🇩🇪 53
+  - 🇩🇪 54
+  - 🇩🇪 55
+  - 🇩🇪 56
+  - 🇩🇪 57
+  - 🇩🇪 58
+  - 🇩🇪 59
+  - 🇫🇷 60
   - '61'
-  - '62'
-  - '63'
-  - '64'
-  - '65'
-  - '66'
+  - 🇫🇷 62
+  - 🇳🇱 63
+  - 🇫🇷 64
+  - 🇫🇷 65
+  - 🇩🇪 66
   - '67'
   - '68'
   - '69'
   - '70'
   - '71'
-  - '72'
+  - 🇺🇸 72
   - '73'
   - '74'
-  - '75'
-  - '76'
+  - 🇺🇸 75
+  - 🇺🇸 76
   - '77'
-  - '78'
-  - '79'
-  - '80'
-  - '81'
-  - '82'
-  - '83'
-  - '84'
-  - '85'
+  - 🇭🇰 78
+  - 🇨🇦 79
+  - 🇨🇦 80
+  - 🇨🇦 81
+  - 🇨🇦 82
+  - 🇺🇸 83
+  - 🇨🇦 84
+  - 🇨🇦 85
   - '86'
-  - '87'
-  - '88'
-  - '89'
-  - '90'
-  - '91'
-  - '92'
-  - '93'
-  - '94'
-  - '95'
-  - '96'
-  - '97'
-  - '98'
-  - '99'
-  - '100'
-  - '101'
+  - 🇺🇸 87
+  - 🇺🇸 88
+  - 🇨🇦 89
+  - 🇨🇦 90
+  - 🇨🇦 91
+  - 🇨🇦 92
+  - 🇨🇦 93
+  - 🇺🇸 94
+  - 🇨🇦 95
+  - 🇨🇦 96
+  - 🇺🇸 97
+  - 🇺🇸 98
+  - 🇺🇸 99
+  - 🇺🇸 100
+  - 🇺🇸 101
   - '102'
   - '103'
   - '104'
   - '105'
   - '106'
-  - '107'
-  - '108'
+  - 🇺🇸 107
+  - 🇨🇦 108
   - '109'
-  - '110'
-  - '111'
+  - 🇺🇸 110
+  - 🇮🇳 111
   - '112'
   - '113'
-  - '114'
+  - 🇩🇪 114
   - '115'
   - '116'
   - '117'
-  - '118'
-  - '119'
+  - 🇺🇸 118
+  - 🇮🇳 119
   - '120'
   - '121'
   - '122'
   - '123'
-  - '124'
-  - '125'
+  - 🇳🇱 124
+  - 🇮🇳 125
   - '126'
-  - '127'
-  - '128'
-  - '129'
-  - '130'
-  - '131'
-  - '132'
-  - '133'
-  - '134'
-  - '135'
-  - '136'
+  - 🇩🇪 127
+  - 🇫🇷 128
+  - 🇺🇸 129
+  - 🇳🇱 130
+  - 🇳🇱 131
+  - 🇳🇱 132
+  - 🇳🇱 133
+  - 🇳🇱 134
+  - 🇳🇱 135
+  - 🇫🇷 136
   - '137'
-  - '138'
-  - '139'
-  - '140'
+  - 🇳🇱 138
+  - 🇳🇱 139
+  - 🇳🇱 140
   - '141'
-  - '142'
-  - '143'
-  - '144'
-  - '145'
-  - '146'
-  - '147'
-  - '148'
-  - '149'
-  - '150'
+  - 🇯🇵 142
 - name: 🇭🇰 香港节点
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - DIRECT
+  - 🇭🇰 78
 - name: 🇹🇼 台湾节点
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -2039,7 +1457,7 @@ proxy-groups:
   interval: 300
   tolerance: 50
   proxies:
-  - DIRECT
+  - 🇯🇵 142
 - name: 🇸🇬 新加坡节点
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -2053,7 +1471,26 @@ proxy-groups:
   interval: 300
   tolerance: 50
   proxies:
-  - 🇺🇸 53
+  - 🇺🇸 05
+  - 🇺🇸 07
+  - 🇺🇸 28
+  - 🇺🇸 43
+  - 🇺🇸 72
+  - 🇺🇸 75
+  - 🇺🇸 76
+  - 🇺🇸 83
+  - 🇺🇸 87
+  - 🇺🇸 88
+  - 🇺🇸 94
+  - 🇺🇸 97
+  - 🇺🇸 98
+  - 🇺🇸 99
+  - 🇺🇸 100
+  - 🇺🇸 101
+  - 🇺🇸 107
+  - 🇺🇸 110
+  - 🇺🇸 118
+  - 🇺🇸 129
 - name: 🇰🇷 韩国节点
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -2067,7 +1504,8 @@ proxy-groups:
   interval: 300
   tolerance: 50
   proxies:
-  - DIRECT
+  - 🇬🇧 37
+  - 🇬🇧 42
 - name: 🇩🇪 德国节点
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -2076,15 +1514,71 @@ proxy-groups:
   proxies:
   - 🇩🇪 01
   - 🇩🇪 02
+  - 🇩🇪 03
   - 🇩🇪 04
-  - 🇩🇪 05
+  - 🇩🇪 06
+  - 🇩🇪 08
+  - 🇩🇪 09
+  - 🇩🇪 10
+  - 🇩🇪 11
+  - 🇩🇪 12
+  - 🇩🇪 13
+  - 🇩🇪 14
+  - 🇩🇪 15
+  - 🇩🇪 16
+  - 🇩🇪 17
+  - 🇩🇪 18
+  - 🇩🇪 19
+  - 🇩🇪 20
+  - 🇩🇪 21
+  - 🇩🇪 22
+  - 🇩🇪 23
+  - 🇩🇪 24
+  - 🇩🇪 25
+  - 🇩🇪 26
+  - 🇩🇪 27
+  - 🇩🇪 29
+  - 🇩🇪 30
+  - 🇩🇪 31
+  - 🇩🇪 32
+  - 🇩🇪 33
+  - 🇩🇪 34
+  - 🇩🇪 35
+  - 🇩🇪 36
+  - 🇩🇪 38
+  - 🇩🇪 39
+  - 🇩🇪 40
+  - 🇩🇪 41
+  - 🇩🇪 44
+  - 🇩🇪 45
+  - 🇩🇪 46
+  - 🇩🇪 47
+  - 🇩🇪 48
+  - 🇩🇪 49
+  - 🇩🇪 51
+  - 🇩🇪 52
+  - 🇩🇪 53
+  - 🇩🇪 54
+  - 🇩🇪 55
+  - 🇩🇪 56
+  - 🇩🇪 57
+  - 🇩🇪 58
+  - 🇩🇪 59
+  - 🇩🇪 66
+  - 🇩🇪 114
+  - 🇩🇪 127
 - name: 🇫🇷 法国节点
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - DIRECT
+  - 🇫🇷 60
+  - 🇫🇷 62
+  - 🇫🇷 64
+  - 🇫🇷 65
+  - 🇫🇷 128
+  - 🇫🇷 136
 - name: 🇷🇺 俄罗斯节点
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -2098,7 +1592,20 @@ proxy-groups:
   interval: 300
   tolerance: 50
   proxies:
-  - DIRECT
+  - 🇨🇦 79
+  - 🇨🇦 80
+  - 🇨🇦 81
+  - 🇨🇦 82
+  - 🇨🇦 84
+  - 🇨🇦 85
+  - 🇨🇦 89
+  - 🇨🇦 90
+  - 🇨🇦 91
+  - 🇨🇦 92
+  - 🇨🇦 93
+  - 🇨🇦 95
+  - 🇨🇦 96
+  - 🇨🇦 108
 rules:
 - DOMAIN-KEYWORD,admarvel,🛑 广告拦截
 - DOMAIN-KEYWORD,admaster,🛑 广告拦截
