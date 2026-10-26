@@ -34,7 +34,7 @@ P17 (v2.9.0) 主订阅源健康治理 + 综合订阅补充修复:
     防止 sub/latest.yaml 只增不减地累积失效源
 """
 
-VERSION = '2.14.1'
+VERSION = '2.15.0'
 
 import re
 import os
@@ -92,8 +92,11 @@ SUB_URL_BLACKLIST = (
 
 # 上游订阅融合配置 (v1.4.0)
 UPSTREAM_THREADS = 8
-UPSTREAM_TIMEOUT = 60
-UPSTREAM_RETRIES = 3
+# P25 (v2.15.0): 超时优化 — 免费源响应慢时 60s×3 重试(最坏190s/源)拖垮整体,
+# 多源同时慢会导致上游拉取 2-5 分钟 + 转换超时被 workflow 15min kill(3 次失败)。
+# 降为 30s×2(最坏 60s/源), 快速失败走镜像/跳过, 镜像回退已有兜底。
+UPSTREAM_TIMEOUT = 30
+UPSTREAM_RETRIES = 2
 UPSTREAM_RETRY_DELAY = 5
 # 上游节点允许的协议前缀 (比自采管道宽: 兼容 vless / hysteria2 / tuic 等新协议)
 UPSTREAM_PROTOCOL_PREFIXES = (

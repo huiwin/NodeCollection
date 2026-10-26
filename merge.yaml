@@ -26,8 +26,8 @@ upstreams:
     enabled: true
     max_nodes: 80
 
-  - name: FreeNodes
-    url: https://raw.githubusercontent.com/Barabama/FreeNodes/feat/ai-crawler-v2/nodes/cfmem.txt
+  - name: FreeNodes  # P25 (v2.15.0): 原 feat/ai-crawler-v2 分支已删, 改为 main
+    url: https://raw.githubusercontent.com/Barabama/FreeNodes/main/nodes/cfmem.txt  # P25: 分支 feat/ai-crawler-v2 已删除, 迁移到 main
     repo: Barabama/FreeNodes
     enabled: true
     max_nodes: 80
