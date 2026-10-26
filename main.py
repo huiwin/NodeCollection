@@ -34,7 +34,7 @@ P17 (v2.9.0) 主订阅源健康治理 + 综合订阅补充修复:
     防止 sub/latest.yaml 只增不减地累积失效源
 """
 
-VERSION = '2.15.0'
+VERSION = '2.15.1'
 
 import re
 import os
@@ -3728,6 +3728,21 @@ def main():
     logger.info(f'[timer] status.html: {round(time.time() - _t0, 1)}s')
 
     logger.info('全部任务完成')
+
+    # P25.1 (v2.15.1): 强制退出, 跳过残留线程等待
+    # 根因: P22.3 校验阶段 executor.shutdown(wait=False) 放弃等待后,
+    # 慢 URL 的 DNS/连接线程仍在后台执行 (getaddrinfo 不受 requests timeout 控制,
+    # 可挂数分钟); main() 返回后 Python 解释器必须等待所有非守护线程,
+    # 导致 Actions 中 Run collector 阶段 main.py 实际 234s 却占用 756s (hang 8.7 分钟)。
+    # 产物 (index.json/订阅文件/README/status.html) 均已写入完成, 直接 os._exit
+    # 跳过解释器线程清理, 使 step 时间回到真实耗时。
+    import os as _os
+    import sys as _sys
+    try:
+        _sys.stdout.flush()
+    except Exception:
+        pass
+    _os._exit(0)
 
 
 if __name__ == '__main__':
