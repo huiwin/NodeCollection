@@ -1,8 +1,8 @@
 # NodeCollection Pro 参照文档汇总
 
 > **文档用途**：整合项目所有参照文档，供团队统一阅读、查阅和后续维护。
-> **当前版本**：v2.13.0 (P21 完成)
-> **最后更新**：2026-09-07
+> **当前版本**：v2.15.2 (P25.2 畸形 URL 崩溃修复)
+> **最后更新**：2026-11-10
 > **仓库地址**：https://github.com/huiwin/NodeCollection
 
 ---
@@ -114,6 +114,7 @@ config.yaml (TG频道)  +  airports.yaml (机场域名)
 | v2.11.2 | 2026-09-07 | patch | P19.2 移除空文件源回到稳定配置：P19.1 验收仍发现 getNode 未进上游统计, 深入验证确认 getNode 仓库 clash.yaml/v2ray.txt 均为 0 字节空文件 (生成脚本未输出), merge.yaml 移除 getNode 回到 5 个稳定上游; config.yaml 移除固定订阅源 (getNode v2ray.txt 为空); 保留逐行 base64 解码能力 (对未来兼容有用); P19 结论——GitHub 免费源全部验证不可用 (getNode 空文件/abshare-mksshare 403/free18 vless 不兼容/aiboboxx 停更), 主订阅可靠来源仍是 TG 频道 + 机场探测。 |
 | v2.12.0 | 2026-09-07 | minor | P20 status.html 展示优化 + README 排版优化 |
 | v2.13.0 | 2026-09-07 | minor | P21 告警通知启用 + 上游动态配额 |
+| v2.15.2 | 2026-11-10 | patch | P25.2 修复畸形 URL 崩溃：TG 消息长 token 被正则提取为 https://<72 字符随机 host>，is_safe_url 未校验 DNS label 长度，sub_check 发请求时 urllib3 抛 LocationParseError（ValueError 子类，非 requests.RequestException）被现有捕获漏抓，冒泡导致 #464-#468 连续 5 轮整轮失败；新增 _valid_host（label≤63/整体≤253/字符合法）接入 is_safe_url，sub_check 预检 + except Exception 兜底，check_all_urls future.result 加异常保护，单 URL 异常只剔除不拖垮全程 |
 ## 3. 目录结构
 
 ```

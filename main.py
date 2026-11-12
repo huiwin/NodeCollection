@@ -34,7 +34,7 @@ P17 (v2.9.0) 主订阅源健康治理 + 综合订阅补充修复:
     防止 sub/latest.yaml 只增不减地累积失效源
 """
 
-VERSION = '2.15.1'
+VERSION = '2.15.2'
 
 import re
 import os
@@ -460,6 +460,34 @@ def load_airports():
 # 安全工具
 # ============================================================
 
+def _valid_host(host):
+    """
+    P25.2 (v2.15.2): 校验 host 是否为合法 DNS 名/IP。
+    畸形链接的 host 可能是超长随机串 (单 label >63 字符, 无点号),
+    requests 发请求前 urllib3 抛 LocationParseError (ValueError 子类,
+    不属于 requests.RequestException), 现有网络异常捕获抓不到 → 整轮崩溃。
+    规则: IP 直接放行; 域名整体 ≤253, 每个 label ≤63 且字符合法。
+    """
+    if not host:
+        return False
+    try:
+        ipaddress.ip_address(host)
+        return True
+    except ValueError:
+        pass
+    host = host.lower()
+    if len(host) > 253:
+        return False
+    for lbl in host.split('.'):
+        if not lbl or len(lbl) > 63:
+            return False
+        if not re.fullmatch(r'[a-z0-9_-]+', lbl):
+            return False
+        if lbl.startswith('-') or lbl.endswith('-'):
+            return False
+    return True
+
+
 def is_safe_url(url):
     """URL 安全校验，阻止内网地址（SSRF 防护）。"""
     try:
@@ -469,7 +497,7 @@ def is_safe_url(url):
     if parsed.scheme not in ('http', 'https'):
         return False
     host = parsed.hostname
-    if not host:
+    if not host or not _valid_host(host):
         return False
     try:
         ip = ipaddress.ip_address(host)
@@ -2184,6 +2212,10 @@ def sub_check(session, url):
     # 作用: check_all_urls 的新抓取结果 + _purge_stale_sub_urls 的旧列表都自动过滤
     if any(b.lower() in url.lower() for b in SUB_URL_BLACKLIST):
         return {'type': None, 'url': url, 'info': None}
+    # P25.2: 畸形/非法 URL 预检 (超长随机 host 等), 不发起请求, 直接剔除
+    if not is_safe_url(url):
+        logger.debug(f'[check] 剔除非法/畸形 URL: {str(url)[:80]}')
+        return {'type': None, 'url': url, 'info': None}
     headers = {'User-Agent': USER_AGENT}
 
     @retry(tries=RETRY_TIMES, exceptions=requests.RequestException)
@@ -2192,7 +2224,9 @@ def sub_check(session, url):
 
     try:
         res = _do_check()
-    except (requests.Timeout, requests.ConnectionError, requests.RequestException):
+    except Exception:
+        # P25.2: 兜底所有未预见异常 — 含裸 urllib3 LocationParseError (ValueError 子类,
+        # 非 requests.RequestException)。单 URL 校验失败只剔除该源, 不拖垮全程。
         return {'type': None, 'url': url, 'info': None}
 
     if res.status_code != 200:
@@ -2220,7 +2254,13 @@ def check_all_urls(session, url_list):
     try:
         for future in as_completed(futures, timeout=CHECK_ALL_TIMEOUT):
             done_count += 1
-            result = future.result()
+            try:
+                result = future.result()
+            except Exception as e:
+                # P25.2: 单 URL 校验抛异常不中断并发校验, 跳过该 URL
+                logger.warning(f'[check] 单 URL 校验异常, 跳过: {type(e).__name__}: {str(e)[:80]}')
+                bar.update(1)
+                continue
             sub_type = result['type']
             if sub_type == 'sub':
                 results['sub'].append(result['url'])
