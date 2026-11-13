@@ -34,7 +34,7 @@ P17 (v2.9.0) 主订阅源健康治理 + 综合订阅补充修复:
     防止 sub/latest.yaml 只增不减地累积失效源
 """
 
-VERSION = '2.15.2'
+VERSION = '2.15.3'
 
 import re
 import os

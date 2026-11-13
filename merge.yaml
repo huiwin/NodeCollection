@@ -38,8 +38,9 @@ upstreams:
     enabled: true
     max_nodes: 80
 
+  # P26 (v2.15.3) sub.445569.xyz 已 NXDOMAIN (本机与 8.8.8.8 均无解析), 改用作者 README 公布的 stymei.445569.xyz
   - name: Jsnzkpg
-    url: https://sub.445569.xyz/
+    url: https://stymei.445569.xyz
     repo: Jsnzkpg/Jsnzkpg
     enabled: true
     max_nodes: 80

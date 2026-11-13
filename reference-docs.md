@@ -1,8 +1,8 @@
 # NodeCollection Pro 参照文档汇总
 
 > **文档用途**：整合项目所有参照文档，供团队统一阅读、查阅和后续维护。
-> **当前版本**：v2.15.2 (P25.2 畸形 URL 崩溃修复)
-> **最后更新**：2026-11-10
+> **当前版本**：v2.15.3 (P26 失效上游替换)
+> **最后更新**：2026-11-13
 > **仓库地址**：https://github.com/huiwin/NodeCollection
 
 ---
@@ -115,6 +115,7 @@ config.yaml (TG频道)  +  airports.yaml (机场域名)
 | v2.12.0 | 2026-09-07 | minor | P20 status.html 展示优化 + README 排版优化 |
 | v2.13.0 | 2026-09-07 | minor | P21 告警通知启用 + 上游动态配额 |
 | v2.15.2 | 2026-11-10 | patch | P25.2 修复畸形 URL 崩溃：TG 消息长 token 被正则提取为 https://<72 字符随机 host>，is_safe_url 未校验 DNS label 长度，sub_check 发请求时 urllib3 抛 LocationParseError（ValueError 子类，非 requests.RequestException）被现有捕获漏抓，冒泡导致 #464-#468 连续 5 轮整轮失败；新增 _valid_host（label≤63/整体≤253/字符合法）接入 is_safe_url，sub_check 预检 + except Exception 兜底，check_all_urls future.result 加异常保护，单 URL 异常只剔除不拖垮全程 |
+| v2.15.3 | 2026-11-13 | patch | P26 替换失效上游 Jsnzkpg：订阅域名 sub.445569.xyz 已 NXDOMAIN（本机 DNS 与公共 8.8.8.8 均无解析记录，根域仅剩 SOA），方糖持续告警"部分上游拉取失败 成功 6/7 个, 失败: Jsnzkpg"；作者仓库 Jsnzkpg/Jsnzkpg 仍在更新，README 公布新地址 stymei.445569.xyz（实测 HTTPS 200 / 24400 字节 base64 订阅，解码 120 节点：vless 41、ss 72、vmess 4、hysteria2 3），merge.yaml 更新为新地址并保留 max_nodes=80 |
 ## 3. 目录结构
 
 ```
@@ -975,6 +976,7 @@ MSYS_NO_PATHCONV=1 gh api --method DELETE /repos/huiwin/NodeCollection/git/refs/
 | 2026-09-09 | 实施 v2.13.0 P21.4 跨周期状态持久化修复（重要）：generate_multi_format 写 index.json 时改为保留已有 merged 段 (此前全新 dict 覆盖), 修复线上 node_health/upstream_health/upstream_history 每轮从零开始的问题 — 连续剔除/上游降级/动态配额历史在线上从未真正累积; 版本号保持 v2.13.0 |
 | 2026-10-26 | 实施 v2.15.1 P25.1 修复进程 hang：用户提供 #411 日志后 [timer] 显示 main.py 实际仅 234s（3.9 分钟）但 Run collector step 占 756s——根因是 P22.3 校验阶段 executor.shutdown(wait=False) 放弃等待后慢 URL 的 DNS/连接线程仍在后台执行（getaddrinfo 不受 requests timeout 控制，可挂数分钟），main() 返回后解释器等待所有非守护线程导致 hang 8.7 分钟；产物均写入完成后 os._exit(0) 强制退出，step 时间回到真实耗时；版本升至 v2.15.1 |
 | 2026-10-26 | 实施 v2.15.0 P25 修复近期运行问题：10/21 起耗时从 ~3 分钟涨至 5-15 分钟（#402/#406/#407 三次 15.5 分钟超时失败，用户持续收到方糖告警）；本地复现诊断（[timer] 上游拉取 161s）定位根因——FreeNodes 源分支 feat/ai-crawler-v2 被删除导致每轮 3 镜像 404 重试并触发"部分上游失败"告警，Jsnzkpg/maflya 响应慢触发 60s×3 重试（最坏 190s/源）；修复：FreeNodes URL 迁移至 main/nodes/cfmem.txt（已验证 30 节点 ss/vmess 有效），UPSTREAM_TIMEOUT 60→30s、UPSTREAM_RETRIES 3→2（慢源最坏 60s/源），版本升至 v2.15.0 |
+| 2026-11-13 | 实施 v2.15.3 P26 替换失效上游 Jsnzkpg：方糖持续告警"[1/5]⚠️ 部分上游拉取失败 成功 6/7 个, 失败: Jsnzkpg"；排查确认 sub.445569.xyz 在公共 DNS 8.8.8.8 亦为 NXDOMAIN（非本机网络问题），根域 445569.xyz 仅剩 SOA；作者仓库 pushed_at 2026-11-11 仍活跃，README 公布新地址 stymei.445569.xyz，实测 DNS 解析 Cloudflare IP、HTTPS 200 / 24400 字节、base64 解码 120 节点（vless 41/ss 72/vmess 4/hysteria2 3），merge.yaml 由 sub.445569.xyz 切换至 stymei.445569.xyz，max_nodes=80 不变；版本升至 v2.15.3 |
 | 2026-09-15 | 实施 v2.14.1 P24 扩充上游源：源质量持续退化（9/15 可用率 37-45%、输出仅 40-54 节点）；逐个验证候选源内容后整合 free18/v2ray（c.yaml 385 节点，trojan 300+vmess 5，可输出 ~305）与 free-nodes/v2rayfree（base64 1637 行，ss 556+vmess 517+trojan 15，可输出 ~1088），vless 自动过滤；abshare/OpenRunner 无订阅文件、mksshare/dongyubin 404、vxiaov 内容少均未采用；版本升至 v2.14.1 |
 | 2026-09-14 | 实施 v2.14.0 P23.1 修复：告警冷却状态持久化到 index.json 顶层 alert_state（初始版用内存 dict，Actions 每轮全新进程导致冷却从未生效、持续刷屏；改为跨周期持久化，发送成功才记录，warning 6h / error 1h / info 不冷却）；版本号保持 v2.14.0 |
 | 2026-09-13 | 实施 v2.14.0 P23 告警冷却去重：同类告警限频（可用率持续 <50% 时每轮 cron 重复触发刷屏，Server酱每日 5 条配额被耗尽）；按 (title, level) 去重，warning 6h / error 1h / info 不冷却；版本号保持 v2.14.0 |
