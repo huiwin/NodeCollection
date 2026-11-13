@@ -5,71 +5,46 @@ mode: Rule
 log-level: info
 external-controller: :9090
 proxies:
-- name: 🇩🇪 01
-  server: www.speedtest.org
+- name: 🇭🇰 01
+  server: 104.18.39.55
   port: 443
   type: trojan
   password: humanity
-  sni: www.ignitelimit.com
+  sni: www.cordweave.com
   skip-cert-verify: false
   network: ws
   ws-opts:
     path: /assignment
     headers:
-      Host: www.ignitelimit.com
+      Host: www.cordweave.com
   udp: true
-- name: 🇩🇪 02
-  server: 64.177.90.30
-  port: 8388
-  type: ss
-  cipher: aes-256-gcm
-  password: BWyPPTusFKhGgzKh
-  udp: true
-- name: 🇩🇪 03
-  server: 216.152.147.74
+- name: 🇺🇸 02
+  server: 172.64.154.144
   port: 443
   type: trojan
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  udp: true
-- name: 🇩🇪 04
-  server: 216.152.147.93
-  port: 443
-  type: trojan
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: connectingpeoplewithgreatjobs.com
-  udp: true
-- name: 🇩🇪 05
-  server: 216.152.147.201
-  port: 443
-  type: trojan
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: resources.connectingpeoplewithgreatjobs.com
-  udp: true
-- name: 🇩🇪 06
-  server: 216.152.147.79
-  port: 443
-  type: trojan
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: blog.connectingpeoplewithgreatjobs.com
+  password: humanity
+  sni: www.cordweave.com
   skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.cordweave.com
   udp: true
-- name: 🇺🇸 07
-  server: 216.106.186.46
+- name: 🇭🇰 03
+  server: 162.159.61.183
   port: 443
   type: trojan
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: cdn.findlocaljobnetworkandbuildcommunityconnections.com
-  skip-cert-verify: true
+  password: humanity
+  sni: www.cordweave.com
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.cordweave.com
   udp: true
-- name: 🇺🇸 08
-  server: 216.106.186.82
-  port: 443
-  type: trojan
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: courses.findlocaljobnetworkandbuildcommunityconnections.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇭🇰 09
+- name: 🇭🇰 04
   server: 104.18.41.167
   port: 443
   type: trojan
@@ -82,7 +57,7 @@ proxies:
     headers:
       Host: www.cordweave.com
   udp: true
-- name: 🇭🇰 10
+- name: 🇭🇰 05
   server: 172.64.154.219
   port: 443
   type: trojan
@@ -95,7 +70,33 @@ proxies:
     headers:
       Host: www.cordweave.com
   udp: true
-- name: 🇭🇰 11
+- name: 🇭🇰 06
+  server: 172.64.151.20
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.cordweave.com
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.cordweave.com
+  udp: true
+- name: 🇭🇰 07
+  server: 104.18.35.31
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.cordweave.com
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.cordweave.com
+  udp: true
+- name: 🇭🇰 08
   server: 104.18.47.138
   port: 443
   type: trojan
@@ -108,7 +109,20 @@ proxies:
     headers:
       Host: www.cordweave.com
   udp: true
-- name: 🇭🇰 12
+- name: 🇭🇰 09
+  server: 172.64.155.36
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.cordweave.com
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.cordweave.com
+  udp: true
+- name: 🇭🇰 10
   server: 172.64.151.23
   port: 443
   type: trojan
@@ -121,7 +135,7 @@ proxies:
     headers:
       Host: www.cordweave.com
   udp: true
-- name: 🇭🇰 13
+- name: 🇭🇰 11
   server: 104.18.33.121
   port: 443
   type: trojan
@@ -134,7 +148,7 @@ proxies:
     headers:
       Host: www.cordweave.com
   udp: true
-- name: 🇭🇰 14
+- name: 🇭🇰 12
   server: 172.64.149.78
   port: 443
   type: trojan
@@ -147,7 +161,7 @@ proxies:
     headers:
       Host: www.cordweave.com
   udp: true
-- name: 🇯🇵 15
+- name: 🇯🇵 13
   server: 172.66.47.18
   port: 443
   type: trojan
@@ -160,20 +174,20 @@ proxies:
     headers:
       Host: APkD964o1oghlTghHt0L0Of.pAgeS.Dev
   udp: true
-- name: 🇷🇺 16
-  server: 104.19.64.105
+- name: 🇳🇱 14
+  server: 188.164.248.143
   port: 443
   type: trojan
   password: humanity
-  sni: www.calmlunch.com
+  sni: www.cordweave.com
   skip-cert-verify: false
   network: ws
   ws-opts:
     path: /assignment
     headers:
-      Host: www.calmlunch.com
+      Host: www.cordweave.com
   udp: true
-- name: 🇺🇸 17
+- name: 🇺🇸 15
   server: 104.17.17.238
   port: 443
   type: trojan
@@ -186,7 +200,20 @@ proxies:
     headers:
       Host: www.cordweave.com
   udp: true
-- name: 🇺🇸 18
+- name: 🇺🇸 16
+  server: 104.19.46.152
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.cordweave.com
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.cordweave.com
+  udp: true
+- name: 🇺🇸 17
   server: 172.66.0.172
   port: 443
   type: trojan
@@ -199,7 +226,7 @@ proxies:
     headers:
       Host: www.cordweave.com
   udp: true
-- name: 🇺🇸 19
+- name: 🇺🇸 18
   server: 104.18.72.213
   port: 443
   type: trojan
@@ -212,7 +239,7 @@ proxies:
     headers:
       Host: www.cordweave.com
   udp: true
-- name: 🇺🇸 20
+- name: 🇺🇸 19
   server: 104.16.65.1
   port: 443
   type: trojan
@@ -225,7 +252,7 @@ proxies:
     headers:
       Host: www.cordweave.com
   udp: true
-- name: 🇺🇸 21
+- name: 🇺🇸 20
   server: 172.64.150.181
   port: 443
   type: trojan
@@ -238,7 +265,7 @@ proxies:
     headers:
       Host: www.cordweave.com
   udp: true
-- name: 🇺🇸 22
+- name: 🇺🇸 21
   server: 172.64.229.7
   port: 443
   type: trojan
@@ -251,8 +278,21 @@ proxies:
     headers:
       Host: www.cordweave.com
   udp: true
-- name: 🇺🇸 23
+- name: 🇺🇸 22
   server: 104.17.191.193
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.cordweave.com
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.cordweave.com
+  udp: true
+- name: 🇺🇸 23
+  server: 104.19.212.207
   port: 443
   type: trojan
   password: humanity
@@ -278,7 +318,7 @@ proxies:
       Host: www.cordweave.com
   udp: true
 - name: 🇺🇸 25
-  server: 104.19.48.73
+  server: 104.17.167.134
   port: 443
   type: trojan
   password: humanity
@@ -291,7 +331,7 @@ proxies:
       Host: www.cordweave.com
   udp: true
 - name: 🇺🇸 26
-  server: 104.16.144.215
+  server: 104.19.48.73
   port: 443
   type: trojan
   password: humanity
@@ -304,7 +344,7 @@ proxies:
       Host: www.cordweave.com
   udp: true
 - name: 🇺🇸 27
-  server: 104.19.34.37
+  server: 104.16.144.215
   port: 443
   type: trojan
   password: humanity
@@ -343,7 +383,7 @@ proxies:
       Host: www.cordweave.com
   udp: true
 - name: 🇺🇸 30
-  server: 172.64.154.144
+  server: 104.18.38.127
   port: 443
   type: trojan
   password: humanity
@@ -356,7 +396,7 @@ proxies:
       Host: www.cordweave.com
   udp: true
 - name: 🇺🇸 31
-  server: 104.18.223.253
+  server: 104.17.159.71
   port: 443
   type: trojan
   password: humanity
@@ -369,7 +409,7 @@ proxies:
       Host: www.cordweave.com
   udp: true
 - name: 🇺🇸 32
-  server: 104.16.251.219
+  server: 104.18.223.253
   port: 443
   type: trojan
   password: humanity
@@ -408,7 +448,7 @@ proxies:
       Host: www.cordweave.com
   udp: true
 - name: 🇺🇸 35
-  server: 162.159.128.253
+  server: 162.159.150.241
   port: 443
   type: trojan
   password: humanity
@@ -434,7 +474,7 @@ proxies:
       Host: www.cordweave.com
   udp: true
 - name: 🇺🇸 37
-  server: 104.17.221.194
+  server: 162.159.149.157
   port: 443
   type: trojan
   password: humanity
@@ -447,20 +487,20 @@ proxies:
       Host: www.cordweave.com
   udp: true
 - name: 🇺🇸 38
-  server: 104.17.145.145
+  server: 165.215.250.14
   port: 443
   type: trojan
   password: humanity
-  sni: www.cordweave.com
+  sni: www.calmlunch.com
   skip-cert-verify: false
   network: ws
   ws-opts:
     path: /assignment
     headers:
-      Host: www.cordweave.com
+      Host: www.calmlunch.com
   udp: true
 - name: 🇺🇸 39
-  server: 104.17.49.122
+  server: 104.17.221.194
   port: 443
   type: trojan
   password: humanity
@@ -473,7 +513,7 @@ proxies:
       Host: www.cordweave.com
   udp: true
 - name: 🇺🇸 40
-  server: 104.17.117.104
+  server: 104.17.145.145
   port: 443
   type: trojan
   password: humanity
@@ -486,7 +526,7 @@ proxies:
       Host: www.cordweave.com
   udp: true
 - name: 🇺🇸 41
-  server: 172.67.74.177
+  server: 104.17.49.122
   port: 443
   type: trojan
   password: humanity
@@ -499,7 +539,7 @@ proxies:
       Host: www.cordweave.com
   udp: true
 - name: 🇺🇸 42
-  server: 172.67.89.103
+  server: 104.17.117.104
   port: 443
   type: trojan
   password: humanity
@@ -512,7 +552,7 @@ proxies:
       Host: www.cordweave.com
   udp: true
 - name: 🇺🇸 43
-  server: 104.17.148.111
+  server: 104.17.135.68
   port: 443
   type: trojan
   password: humanity
@@ -564,32 +604,6 @@ proxies:
       Host: www.cordweave.com
   udp: true
 - name: 🇺🇸 47
-  server: 104.19.0.1
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.cordweave.com
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.cordweave.com
-  udp: true
-- name: 🇺🇸 48
-  server: 104.16.244.188
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.cordweave.com
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.cordweave.com
-  udp: true
-- name: 🇺🇸 49
   server: 104.17.145.43
   port: 443
   type: trojan
@@ -602,7 +616,7 @@ proxies:
     headers:
       Host: www.cordweave.com
   udp: true
-- name: 🇺🇸 50
+- name: 🇺🇸 48
   server: 104.18.0.1
   port: 443
   type: trojan
@@ -615,7 +629,7 @@ proxies:
     headers:
       Host: www.cordweave.com
   udp: true
-- name: 🇺🇸 51
+- name: 🇺🇸 49
   server: 104.17.28.10
   port: 443
   type: trojan
@@ -628,7 +642,7 @@ proxies:
     headers:
       Host: www.cordweave.com
   udp: true
-- name: 🇺🇸 52
+- name: 🇺🇸 50
   server: 104.19.53.114
   port: 443
   type: trojan
@@ -641,8 +655,8 @@ proxies:
     headers:
       Host: www.cordweave.com
   udp: true
-- name: 🇺🇸 53
-  server: 162.159.45.1
+- name: 🇺🇸 51
+  server: 104.16.245.194
   port: 443
   type: trojan
   password: humanity
@@ -654,7 +668,7 @@ proxies:
     headers:
       Host: www.cordweave.com
   udp: true
-- name: 🇺🇸 54
+- name: 🇺🇸 52
   server: 104.17.119.105
   port: 443
   type: trojan
@@ -667,20 +681,7 @@ proxies:
     headers:
       Host: www.cordweave.com
   udp: true
-- name: 🇺🇸 55
-  server: 104.17.155.44
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.cordweave.com
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.cordweave.com
-  udp: true
-- name: 🇺🇸 56
+- name: 🇺🇸 53
   server: 104.19.56.198
   port: 443
   type: trojan
@@ -693,7 +694,7 @@ proxies:
     headers:
       Host: www.cordweave.com
   udp: true
-- name: 🇺🇸 57
+- name: 🇺🇸 54
   server: 104.16.240.177
   port: 443
   type: trojan
@@ -706,40 +707,85 @@ proxies:
     headers:
       Host: www.cordweave.com
   udp: true
-- name: 🇺🇸 58
-  server: 216.106.186.66
+- name: 🇺🇸 55
+  server: 167.82.76.27
   port: 443
   type: trojan
-  password: 242a3d8eee5e4ed1a6bfa4141d549a25
-  sni: www.findlocaljobnetworkandbuildcommunityconnections.com
+  password: MiTiVPN
+  sni: ssl.fastly.com
   skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/NLSs---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN
+    headers:
+      Host: ssl.fastly.com
+  udp: true
+- name: 🇺🇸 56
+  server: 162.159.130.234
+  port: 2083
+  type: vmess
+  uuid: ac251237-576f-40c8-a543-554960c958b1
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: true
+  servername: or3.sfacg.uk
+  network: ws
+  ws-opts:
+    path: /or3
+    headers:
+      Host: or3.sfacg.uk
+  udp: true
+- name: 🇺🇸 57
+  server: 172.66.0.1
+  port: 443
+  type: vmess
+  uuid: 0cf6d970-3f1d-4aae-a989-92a8f76ae3db
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: true
+  servername: vmess.lbw666.dpdns.org
+  network: ws
+  ws-opts:
+    path: /ws
+    headers:
+      Host: vmess.lbw666.dpdns.org
+  udp: true
+- name: 🇺🇸 58
+  server: 162.159.128.17
+  port: 443
+  type: vmess
+  uuid: c8b455ad-fff1-43e9-9af9-d97585c4534a
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: true
+  servername: ny-v2ray.ryin.vip
+  network: ws
+  ws-opts:
+    path: /ryinsocksv2board
+    headers:
+      Host: ny-v2ray.ryin.vip
   udp: true
 - name: 🇺🇸 59
-  server: 216.106.186.155
+  server: 216.106.186.46
   port: 443
   type: trojan
   password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: api.findlocaljobnetworkandbuildcommunityconnections.com
+  sni: cdn.findlocaljobnetworkandbuildcommunityconnections.com
   skip-cert-verify: true
   udp: true
 - name: 🇺🇸 60
-  server: 216.106.186.33
-  port: 443
-  type: trojan
-  password: f0eb8c92ce8946aaba856569cff1a16b
-  sni: resources.findlocaljobnetworkandbuildcommunityconnections.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇺🇸 61
-  server: 216.106.186.32
+  server: 216.106.186.82
   port: 443
   type: trojan
   password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: blog.findlocaljobnetworkandbuildcommunityconnections.com
+  sni: courses.findlocaljobnetworkandbuildcommunityconnections.com
   skip-cert-verify: true
   udp: true
-- name: 🇭🇰 62
-  server: 162.159.61.183
+- name: 🇺🇸 61
+  server: 104.19.34.37
   port: 443
   type: trojan
   password: humanity
@@ -751,8 +797,8 @@ proxies:
     headers:
       Host: www.cordweave.com
   udp: true
-- name: 🇭🇰 63
-  server: 172.64.151.20
+- name: 🇺🇸 62
+  server: 104.16.251.219
   port: 443
   type: trojan
   password: humanity
@@ -764,8 +810,8 @@ proxies:
     headers:
       Host: www.cordweave.com
   udp: true
-- name: 🇭🇰 64
-  server: 172.64.155.36
+- name: 🇺🇸 63
+  server: 198.41.216.1
   port: 443
   type: trojan
   password: humanity
@@ -777,8 +823,21 @@ proxies:
     headers:
       Host: www.cordweave.com
   udp: true
-- name: 🇭🇰 65
-  server: 104.18.39.55
+- name: 🇺🇸 64
+  server: 162.159.128.253
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.cordweave.com
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.cordweave.com
+  udp: true
+- name: 🇺🇸 65
+  server: 104.19.0.1
   port: 443
   type: trojan
   password: humanity
@@ -791,7 +850,7 @@ proxies:
       Host: www.cordweave.com
   udp: true
 - name: 🇺🇸 66
-  server: 104.19.46.152
+  server: 104.16.244.188
   port: 443
   type: trojan
   password: humanity
@@ -804,7 +863,7 @@ proxies:
       Host: www.cordweave.com
   udp: true
 - name: 🇺🇸 67
-  server: 104.17.167.134
+  server: 162.159.45.1
   port: 443
   type: trojan
   password: humanity
@@ -816,8 +875,8 @@ proxies:
     headers:
       Host: www.cordweave.com
   udp: true
-- name: 🇺🇸 68
-  server: 104.17.159.71
+- name: 🇭🇰 68
+  server: 104.18.46.59
   port: 443
   type: trojan
   password: humanity
@@ -829,8 +888,8 @@ proxies:
     headers:
       Host: www.cordweave.com
   udp: true
-- name: 🇺🇸 69
-  server: 162.159.149.157
+- name: 🇭🇰 69
+  server: 172.64.153.224
   port: 443
   type: trojan
   password: humanity
@@ -842,8 +901,8 @@ proxies:
     headers:
       Host: www.cordweave.com
   udp: true
-- name: 🇺🇸 70
-  server: 165.215.250.14
+- name: 🇷🇺 70
+  server: 104.19.64.105
   port: 443
   type: trojan
   password: humanity
@@ -869,7 +928,7 @@ proxies:
       Host: www.cordweave.com
   udp: true
 - name: 🇺🇸 72
-  server: 104.26.3.162
+  server: 104.17.148.111
   port: 443
   type: trojan
   password: humanity
@@ -882,45 +941,6 @@ proxies:
       Host: www.cordweave.com
   udp: true
 - name: 🇺🇸 73
-  server: 172.67.67.89
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.cordweave.com
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.cordweave.com
-  udp: true
-- name: 🇺🇸 74
-  server: 104.25.60.205
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.cordweave.com
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.cordweave.com
-  udp: true
-- name: 🇺🇸 75
-  server: 172.67.94.180
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.cordweave.com
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.cordweave.com
-  udp: true
-- name: 🇺🇸 76
   server: 104.19.43.102
   port: 443
   type: trojan
@@ -933,8 +953,8 @@ proxies:
     headers:
       Host: www.cordweave.com
   udp: true
-- name: 🇺🇸 77
-  server: 104.24.144.224
+- name: 🇺🇸 74
+  server: 104.17.155.44
   port: 443
   type: trojan
   password: humanity
@@ -946,213 +966,34 @@ proxies:
     headers:
       Host: www.cordweave.com
   udp: true
-- name: 🇺🇸 78
-  server: 104.17.61.37
-  port: 443
+- name: 🇺🇸 75
+  server: 162.159.140.116
+  port: 2083
   type: trojan
-  password: humanity
-  sni: www.cordweave.com
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.cordweave.com
-  udp: true
-- name: 🇺🇸 79
-  server: 104.16.245.194
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.cordweave.com
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.cordweave.com
-  udp: true
-- name: '80'
-  server: www.speedtest.org
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.ignitelimit.com
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: '%2Fassignment'
-    headers:
-      Host: www.ignitelimit.com
-  udp: true
-- name: 🇨🇦 81
-  server: 172.67.203.46
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.cordweave.com
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.cordweave.com
-  udp: true
-- name: 🇭🇰 82
-  server: 104.18.35.31
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.cordweave.com
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.cordweave.com
-  udp: true
-- name: 🇭🇰 83
-  server: 104.18.46.59
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.cordweave.com
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.cordweave.com
-  udp: true
-- name: 🇭🇰 84
-  server: 172.64.153.224
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.cordweave.com
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.cordweave.com
-  udp: true
-- name: 🇳🇱 85
-  server: 188.164.248.143
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.cordweave.com
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.cordweave.com
-  udp: true
-- name: 🇺🇸 86
-  server: 104.19.212.207
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.cordweave.com
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.cordweave.com
-  udp: true
-- name: 🇺🇸 87
-  server: 104.18.38.127
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.cordweave.com
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.cordweave.com
-  udp: true
-- name: 🇺🇸 88
-  server: 172.64.52.127
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.cordweave.com
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.cordweave.com
-  udp: true
-- name: 🇺🇸 89
-  server: 198.41.216.1
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.cordweave.com
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.cordweave.com
-  udp: true
-- name: 🇺🇸 90
-  server: 162.159.150.241
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.cordweave.com
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.cordweave.com
-  udp: true
-- name: 🇺🇸 91
-  server: 104.17.135.68
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.cordweave.com
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.cordweave.com
-  udp: true
-- name: '92'
-  server: 167.82.64.120
-  port: 443
-  type: trojan
-  password: MiTiVPN
-  sni: firefox.com
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: firefox.com
-  udp: true
-- name: 🇺🇸 93
-  server: 84.17.41.2
-  port: 18000
-  type: vmess
-  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
-  alterId: 0
-  cipher: auto
-  tls: true
+  password: 6ec2838a-d183-4a73-9463-01ccb0993b46
+  sni: 17944877184907.206353.xyz
   skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /agrbniuh
+    headers:
+      Host: 17944877184907.206353.xyz
   udp: true
-- name: 🇺🇸 94
-  server: 162.159.130.234
+- name: 🇺🇸 76
+  server: 162.159.140.116
+  port: 2053
+  type: trojan
+  password: 6ec2838a-d183-4a73-9463-01ccb0993b46
+  sni: 17944877183289.206355.xyz
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /videomuaawe
+    headers:
+      Host: 17944877183289.206355.xyz
+  udp: true
+- name: 🇺🇸 77
+  server: 162.159.135.234
   port: 2083
   type: vmess
   uuid: ac251237-576f-40c8-a543-554960c958b1
@@ -1167,7 +1008,192 @@ proxies:
     headers:
       Host: or3.sfacg.uk
   udp: true
-- name: '95'
+- name: 🇺🇸 78
+  server: 141.193.213.21
+  port: 8443
+  type: vmess
+  uuid: bd67fcd2-ec34-40a6-aac6-67731f2d7011
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: true
+  servername: matrix.phonicsindia.mobi
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: matrix.phonicsindia.mobi
+  udp: true
+- name: 🇺🇸 79
+  server: 216.106.186.155
+  port: 443
+  type: trojan
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: api.findlocaljobnetworkandbuildcommunityconnections.com
+  skip-cert-verify: true
+  udp: true
+- name: 🇺🇸 80
+  server: 216.106.186.66
+  port: 443
+  type: trojan
+  password: 242a3d8eee5e4ed1a6bfa4141d549a25
+  sni: www.findlocaljobnetworkandbuildcommunityconnections.com
+  skip-cert-verify: true
+  udp: true
+- name: 🇺🇸 81
+  server: 172.64.52.127
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.cordweave.com
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.cordweave.com
+  udp: true
+- name: 🇺🇸 82
+  server: 172.67.74.177
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.cordweave.com
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.cordweave.com
+  udp: true
+- name: 🇺🇸 83
+  server: 172.67.67.89
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.cordweave.com
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.cordweave.com
+  udp: true
+- name: 🇺🇸 84
+  server: 104.24.144.224
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.cordweave.com
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.cordweave.com
+  udp: true
+- name: 🇺🇸 85
+  server: 162.159.140.116
+  port: 2087
+  type: trojan
+  password: 6ec2838a-d183-4a73-9463-01ccb0993b46
+  sni: 17944877189106.206352.xyz
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /agraeabtegrrh
+    headers:
+      Host: 17944877189106.206352.xyz
+  udp: true
+- name: 🇺🇸 86
+  server: 172.67.94.180
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.cordweave.com
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.cordweave.com
+  udp: true
+- name: 🇺🇸 87
+  server: 172.67.89.103
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.cordweave.com
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.cordweave.com
+  udp: true
+- name: 🇨🇦 88
+  server: 172.67.203.46
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.cordweave.com
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.cordweave.com
+  udp: true
+- name: 🇺🇸 89
+  server: 104.26.3.162
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.cordweave.com
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.cordweave.com
+  udp: true
+- name: 🇺🇸 90
+  server: 104.25.60.205
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.cordweave.com
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.cordweave.com
+  udp: true
+- name: 🇺🇸 91
+  server: 84.17.41.2
+  port: 18000
+  type: vmess
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: true
+  udp: true
+- name: 🇺🇸 92
+  server: 104.17.61.37
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.cordweave.com
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.cordweave.com
+  udp: true
+- name: '93'
   server: 172.67.190.164
   port: 443
   type: vmess
@@ -1183,94 +1209,183 @@ proxies:
     headers:
       Host: guanwang.awsno.com
   udp: true
-- name: 🇺🇸 96
-  server: blog.findlocaljobnetworkandbuildcommunityconnections.com
+- name: 🇺🇸 94
+  server: 199.232.78.160
   port: 443
   type: trojan
-  password: dba20dcb635e430fa4d3bfc303a149d2
-  sni: blog.findlocaljobnetworkandbuildcommunityconnections.com
+  password: MiTiVPN
+  sni: ssl.fastly.com
   skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/NLSs---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN
+    headers:
+      Host: ssl.fastly.com
   udp: true
-- name: 🇺🇸 97
-  server: 66.163.114.132
+- name: 🇯🇵 95
+  server: JP032008.ssgreen.org
   port: 443
-  type: trojan
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: courses.findconnectwithemployersandbuildprofessionalnetwork.com
-  skip-cert-verify: true
+  type: vmess
+  uuid: 994b172b-957d-4fa1-a921-22fb9c27f616
+  alterId: 0
+  cipher: auto
+  tls: true
+  network: ws
+  ws-opts:
+    path: /wes
+    headers:
+      Host: JP032008.ssgreen.org
+  udp: true
+- name: 🇺🇸 96
+  server: US032014.ssgreen.org
+  port: 443
+  type: vmess
+  uuid: 93652d5d-39cb-4a4a-ad4b-d1d5a36a567f
+  alterId: 0
+  cipher: auto
+  tls: true
+  network: ws
+  ws-opts:
+    path: /wes
+    headers:
+      Host: US032014.ssgreen.org
+  udp: true
+- name: 🇯🇵 97
+  server: JP032012.ssgreen.org
+  port: 443
+  type: vmess
+  uuid: 1ef0c11c-4e06-43b8-ad0f-9082ac2f1635
+  alterId: 0
+  cipher: auto
+  tls: true
+  network: ws
+  ws-opts:
+    path: /wes
+    headers:
+      Host: JP032012.ssgreen.org
   udp: true
 - name: 🇺🇸 98
-  server: 66.163.114.45
-  port: 443
-  type: trojan
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: cdn.findconnectwithemployersandbuildprofessionalnetwork.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇺🇸 99
-  server: 66.163.114.106
-  port: 443
-  type: trojan
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: www.findconnectwithemployersandbuildprofessionalnetwork.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇺🇸 100
-  server: 66.163.114.166
-  port: 443
-  type: trojan
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: blog.findconnectwithemployersandbuildprofessionalnetwork.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇺🇸 101
-  server: 66.163.114.126
-  port: 443
-  type: trojan
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: resources.findconnectwithemployersandbuildprofessionalnetwork.com
-  skip-cert-verify: true
-  udp: true
-- name: '102'
-  server: guanwang.awsno.com
+  server: US032020.ssgreen.org
   port: 443
   type: vmess
-  uuid: 6a89a215-22bf-4bd7-9642-b95b2e09583a
+  uuid: 6999efb7-15f1-4e40-97ca-1bcf534b993a
   alterId: 0
   cipher: auto
   tls: true
-  skip-cert-verify: true
-  servername: guanwang.awsno.com
   network: ws
   ws-opts:
-    path: /hls/cctv5phd.m3u8
+    path: /wes
     headers:
-      Host: guanwang.awsno.com
+      Host: US032020.ssgreen.org
+  udp: true
+- name: 🇯🇵 99
+  server: JP032009.ssgreen.org
+  port: 443
+  type: vmess
+  uuid: fef154e7-b5e1-4955-9552-473a5b143807
+  alterId: 0
+  cipher: auto
+  tls: true
+  network: ws
+  ws-opts:
+    path: /wes
+    headers:
+      Host: JP032009.ssgreen.org
+  udp: true
+- name: 🇯🇵 100
+  server: JP032010.ssgreen.org
+  port: 443
+  type: vmess
+  uuid: 859e2261-0883-4f1a-8e14-cbae7ea834d5
+  alterId: 0
+  cipher: auto
+  tls: true
+  network: ws
+  ws-opts:
+    path: /wes
+    headers:
+      Host: JP032010.ssgreen.org
+  udp: true
+- name: 🇯🇵 101
+  server: JP032001.ssgreen.org
+  port: 443
+  type: vmess
+  uuid: 717ef13b-26cc-4869-a149-09a9aecfc925
+  alterId: 0
+  cipher: auto
+  tls: true
+  network: ws
+  ws-opts:
+    path: /wes
+    headers:
+      Host: JP032001.ssgreen.org
+  udp: true
+- name: 🇺🇸 102
+  server: US032017.ssgreen.org
+  port: 443
+  type: vmess
+  uuid: 2118dc9c-7327-4427-ac9e-bd9643390fab
+  alterId: 0
+  cipher: auto
+  tls: true
+  network: ws
+  ws-opts:
+    path: /wes
+    headers:
+      Host: US032017.ssgreen.org
   udp: true
 - name: 🇺🇸 103
-  server: 23.150.152.65
-  port: 1270
+  server: US032019.ssgreen.org
+  port: 443
   type: vmess
-  uuid: 5c040f1d-45db-43bd-8d46-e4950e433735
+  uuid: eade6e31-39ef-48df-8dfe-d237042629de
+  alterId: 0
+  cipher: auto
+  tls: true
+  network: ws
+  ws-opts:
+    path: /wes
+    headers:
+      Host: US032019.ssgreen.org
+  udp: true
+- name: 🇺🇸 104
+  server: US032023.ssgreen.org
+  port: 443
+  type: vmess
+  uuid: b69a0a3c-8ae8-4815-a129-acaf22500788
+  alterId: 0
+  cipher: auto
+  tls: true
+  network: ws
+  ws-opts:
+    path: /wes
+    headers:
+      Host: US032023.ssgreen.org
+  udp: true
+- name: 🇺🇸 105
+  server: news.zoom.us
+  port: 8443
+  type: vmess
+  uuid: bd67fcd2-ec34-40a6-aac6-67731f2d7011
   alterId: 0
   cipher: auto
   tls: true
   skip-cert-verify: true
-  udp: true
-- name: 🇺🇸 104
-  server: 179.255.157.247
-  port: 8443
-  type: trojan
-  password: humanity
-  sni: www.cordweave.com
-  skip-cert-verify: false
+  servername: matrix.phonicsindia.mobi
   network: ws
   ws-opts:
-    path: /assignment
+    path: /
     headers:
-      Host: www.cordweave.com
+      Host: matrix.phonicsindia.mobi
   udp: true
-- name: '105'
+- name: 🇺🇸 106
+  server: 137.175.22.88
+  port: 443
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: '107'
   server: 46.174.142.238
   port: 443
   type: trojan
@@ -1283,31 +1398,162 @@ proxies:
     headers:
       Host: www.cordweave.com
   udp: true
-- name: 🇺🇸 106
-  server: 167.88.61.52
-  port: 443
-  type: trojan
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: courses.browseseniorrolesandenhanceyourcareertoday.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇺🇸 107
-  server: 167.88.61.175
-  port: 443
-  type: trojan
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: blog.browseseniorrolesandenhanceyourcareertoday.com
-  skip-cert-verify: true
-  udp: true
 - name: 🇺🇸 108
-  server: 167.88.61.85
+  server: US032024.ssgreen.org
   port: 443
-  type: trojan
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: resources.browseseniorrolesandenhanceyourcareertoday.com
-  skip-cert-verify: true
+  type: vmess
+  uuid: 1acc42f7-9368-45c0-af6c-2d2d3e9612a7
+  alterId: 0
+  cipher: auto
+  tls: true
+  network: ws
+  ws-opts:
+    path: /wes
+    headers:
+      Host: US032024.ssgreen.org
   udp: true
 - name: 🇺🇸 109
+  server: 66.163.114.106
+  port: 443
+  type: trojan
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: www.findconnectwithemployersandbuildprofessionalnetwork.com
+  skip-cert-verify: true
+  udp: true
+- name: 🇺🇸 110
+  server: 66.163.114.126
+  port: 443
+  type: trojan
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: resources.findconnectwithemployersandbuildprofessionalnetwork.com
+  skip-cert-verify: true
+  udp: true
+- name: 🇺🇸 111
+  server: 66.163.114.114
+  port: 443
+  type: trojan
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: learn.findconnectwithemployersandbuildprofessionalnetwork.com
+  skip-cert-verify: true
+  udp: true
+- name: 🇺🇸 112
+  server: 66.163.114.245
+  port: 443
+  type: trojan
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: findconnectwithemployersandbuildprofessionalnetwork.com
+  skip-cert-verify: true
+  udp: true
+- name: 🇮🇳 113
+  server: 96.5.129.85
+  port: 443
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 🇺🇸 114
+  server: US032010.westmgreen.com
+  port: 443
+  type: vmess
+  uuid: dcddf318-d5eb-42aa-8c10-f05382202c68
+  alterId: 0
+  cipher: auto
+  tls: true
+  network: ws
+  ws-opts:
+    path: /wes
+    headers:
+      Host: US032010.westmgreen.com
+  udp: true
+- name: 🇯🇵 115
+  server: JP032011.ssgreen.org
+  port: 443
+  type: vmess
+  uuid: a97f7aaa-8843-48fa-ae4b-73eed243faea
+  alterId: 0
+  cipher: auto
+  tls: true
+  network: ws
+  ws-opts:
+    path: /wes
+    headers:
+      Host: JP032011.ssgreen.org
+  udp: true
+- name: 🇺🇸 116
+  server: 179.255.157.247
+  port: 8443
+  type: trojan
+  password: humanity
+  sni: www.cordweave.com
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.cordweave.com
+  udp: true
+- name: 🇺🇸 117
+  server: US032018.ssgreen.org
+  port: 443
+  type: vmess
+  uuid: 153b0236-9575-46ea-9fce-d59ed436e67d
+  alterId: 0
+  cipher: auto
+  tls: true
+  network: ws
+  ws-opts:
+    path: /wes
+    headers:
+      Host: US032018.ssgreen.org
+  udp: true
+- name: '118'
+  server: 138.199.35.212
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 🇺🇸 119
+  server: 138.199.35.200
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: '120'
+  server: 138.199.35.211
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 🇺🇸 121
+  server: 138.199.35.206
+  port: 9002
+  type: http
+  username: 'null'
+  password: None
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 🇺🇸 122
+  server: 138.199.35.218
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 🇺🇸 123
+  server: 169.197.142.22
+  port: 18000
+  type: vmess
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: true
+  udp: true
+- name: 🇺🇸 124
   server: 167.88.61.198
   port: 443
   type: trojan
@@ -1315,7 +1561,7 @@ proxies:
   sni: cdn.browseseniorrolesandenhanceyourcareertoday.com
   skip-cert-verify: true
   udp: true
-- name: 🇺🇸 110
+- name: 🇺🇸 125
   server: 167.88.61.193
   port: 443
   type: trojan
@@ -1323,17 +1569,7 @@ proxies:
   sni: browseseniorrolesandenhanceyourcareertoday.com
   skip-cert-verify: true
   udp: true
-- name: 🇺🇸 111
-  server: 169.197.142.22
-  port: 18000
-  type: vmess
-  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
-  alterId: 0
-  cipher: auto
-  tls: true
-  skip-cert-verify: true
-  udp: true
-- name: 🇺🇸 112
+- name: 🇺🇸 126
   server: 167.88.61.20
   port: 443
   type: trojan
@@ -1341,63 +1577,50 @@ proxies:
   sni: api.browseseniorrolesandenhanceyourcareertoday.com
   skip-cert-verify: true
   udp: true
-- name: 🇺🇸 113
-  server: 66.163.112.142
+- name: 🇺🇸 127
+  server: 167.88.61.52
   port: 443
   type: trojan
   password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: cdn.unlockyourfuturefindyourperfectcareer.com
+  sni: courses.browseseniorrolesandenhanceyourcareertoday.com
   skip-cert-verify: true
   udp: true
-- name: 🇺🇸 114
-  server: 66.163.112.31
+- name: 🇺🇸 128
+  server: 167.88.61.175
   port: 443
   type: trojan
   password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: unlockyourfuturefindyourperfectcareer.com
+  sni: blog.browseseniorrolesandenhanceyourcareertoday.com
   skip-cert-verify: true
   udp: true
-- name: 🇺🇸 115
-  server: 66.163.112.121
+- name: '129'
+  server: www.speedtest.org
   port: 443
   type: trojan
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: www.unlockyourfuturefindyourperfectcareer.com
-  skip-cert-verify: true
+  password: humanity
+  sni: www.ignitelimit.com
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: '%2Fassignment'
+    headers:
+      Host: www.ignitelimit.com
   udp: true
-- name: 🇺🇸 116
-  server: 66.163.112.242
+- name: 🇯🇵 130
+  server: JP032006.ssgreen.org
   port: 443
-  type: trojan
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: resources.unlockyourfuturefindyourperfectcareer.com
-  skip-cert-verify: true
+  type: vmess
+  uuid: 0bac0299-4537-49fe-b754-07ed2eaaa44e
+  alterId: 0
+  cipher: auto
+  tls: true
+  network: ws
+  ws-opts:
+    path: /wes
+    headers:
+      Host: JP032006.ssgreen.org
   udp: true
-- name: 🇺🇸 117
-  server: 66.163.112.147
-  port: 443
-  type: trojan
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: courses.unlockyourfuturefindyourperfectcareer.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇺🇸 118
-  server: 66.163.112.171
-  port: 443
-  type: trojan
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: learn.unlockyourfuturefindyourperfectcareer.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇺🇸 119
-  server: 66.163.112.76
-  port: 443
-  type: trojan
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: api.unlockyourfuturefindyourperfectcareer.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇺🇸 120
+- name: 🇺🇸 131
   server: 66.163.112.13
   port: 443
   type: trojan
@@ -1405,23 +1628,103 @@ proxies:
   sni: blog.unlockyourfuturefindyourperfectcareer.com
   skip-cert-verify: true
   udp: true
-- name: 🇺🇸 121
-  server: www.findlocaljobnetworkandbuildcommunityconnections.com
+- name: 🇺🇸 132
+  server: 66.163.112.142
   port: 443
   type: trojan
-  password: 242a3d8eee5e4ed1a6bfa4141d549a25
-  sni: www.findlocaljobnetworkandbuildcommunityconnections.com
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: cdn.unlockyourfuturefindyourperfectcareer.com
   skip-cert-verify: true
   udp: true
-- name: 🇺🇸 122
-  server: resources.findlocaljobnetworkandbuildcommunityconnections.com
+- name: 🇺🇸 133
+  server: 66.163.112.121
   port: 443
   type: trojan
-  password: f0eb8c92ce8946aaba856569cff1a16b
-  sni: resources.findlocaljobnetworkandbuildcommunityconnections.com
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: www.unlockyourfuturefindyourperfectcareer.com
   skip-cert-verify: true
   udp: true
-- name: 🇺🇸 123
+- name: 🇺🇸 134
+  server: 66.163.112.31
+  port: 443
+  type: trojan
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: unlockyourfuturefindyourperfectcareer.com
+  skip-cert-verify: true
+  udp: true
+- name: 🇯🇵 135
+  server: JP032005.ssgreen.org
+  port: 443
+  type: vmess
+  uuid: 9d39e091-5e93-4dca-9b44-a7b78677479c
+  alterId: 0
+  cipher: auto
+  tls: true
+  network: ws
+  ws-opts:
+    path: /wes
+    headers:
+      Host: JP032005.ssgreen.org
+  udp: true
+- name: 🇺🇸 136
+  server: 66.163.112.171
+  port: 443
+  type: trojan
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: learn.unlockyourfuturefindyourperfectcareer.com
+  skip-cert-verify: true
+  udp: true
+- name: 🇺🇸 137
+  server: 66.163.112.242
+  port: 443
+  type: trojan
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: resources.unlockyourfuturefindyourperfectcareer.com
+  skip-cert-verify: true
+  udp: true
+- name: 🇺🇸 138
+  server: 66.163.112.147
+  port: 443
+  type: trojan
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: courses.unlockyourfuturefindyourperfectcareer.com
+  skip-cert-verify: true
+  udp: true
+- name: 🇺🇸 139
+  server: 129.146.143.80
+  port: 48111
+  type: vmess
+  uuid: d4603cc2-e0ee-4651-83f5-1db5b7168177
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: true
+  udp: true
+- name: 🇺🇸 140
+  server: 129.146.77.248
+  port: 39495
+  type: vmess
+  uuid: f836c736-87fc-4fde-aabc-00857ecdff3e
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: true
+  servername: 129.146.77.248
+  network: ws
+  ws-opts:
+    path: /cctv13.m3u8
+    headers:
+      Host: 129.146.77.248
+  udp: true
+- name: 🇺🇸 141
+  server: blog.findlocaljobnetworkandbuildcommunityconnections.com
+  port: 443
+  type: trojan
+  password: dba20dcb635e430fa4d3bfc303a149d2
+  sni: blog.findlocaljobnetworkandbuildcommunityconnections.com
+  skip-cert-verify: true
+  udp: true
+- name: 🇺🇸 142
   server: sclass-b1.catcat321.com
   port: 20027
   type: trojan
@@ -1429,7 +1732,7 @@ proxies:
   sni: hk.catxstar.com
   skip-cert-verify: true
   udp: true
-- name: 🇺🇸 124
+- name: 🇺🇸 143
   server: sclass-b1.catcat321.com
   port: 20028
   type: trojan
@@ -1437,7 +1740,29 @@ proxies:
   sni: hk.catxstar.com
   skip-cert-verify: true
   udp: true
-- name: 🇺🇸 125
+- name: 🇺🇸 144
+  server: resources.findlocaljobnetworkandbuildcommunityconnections.com
+  port: 443
+  type: trojan
+  password: f0eb8c92ce8946aaba856569cff1a16b
+  sni: resources.findlocaljobnetworkandbuildcommunityconnections.com
+  skip-cert-verify: true
+  udp: true
+- name: 🇺🇸 145
+  server: US122206.ssgreen.org
+  port: 443
+  type: vmess
+  uuid: 0276b730-25ce-48f0-bdc6-c4e65da1dbdc
+  alterId: 0
+  cipher: auto
+  tls: true
+  network: ws
+  ws-opts:
+    path: /wes
+    headers:
+      Host: US122206.ssgreen.org
+  udp: true
+- name: 🇺🇸 146
   server: sclass-01.catcat321.com
   port: 20103
   type: trojan
@@ -1445,39 +1770,37 @@ proxies:
   sni: hk.catxstar.com
   skip-cert-verify: true
   udp: true
-- name: 🇺🇸 126
-  server: 170.101.101.237
+- name: 🇺🇸 147
+  server: US122208.ssgreen.org
   port: 443
-  type: trojan
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: cdn.explorecreativejobsandenhanceyourcareerportfolio.com
-  skip-cert-verify: true
+  type: vmess
+  uuid: d75268bd-643b-4c56-a739-4dd872bd71f0
+  alterId: 0
+  cipher: auto
+  tls: true
+  network: ws
+  ws-opts:
+    path: /wes
+    headers:
+      Host: US122208.ssgreen.org
   udp: true
-- name: 🇺🇸 127
-  server: 170.101.101.131
-  port: 443
-  type: trojan
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: blog.explorecreativejobsandenhanceyourcareerportfolio.com
+- name: 🇺🇸 148
+  server: cdn.sfacg.uk
+  port: 2083
+  type: vmess
+  uuid: ac251237-576f-40c8-a543-554960c958b1
+  alterId: 0
+  cipher: auto
+  tls: true
   skip-cert-verify: true
+  servername: or3.sfacg.uk
+  network: ws
+  ws-opts:
+    path: /or3
+    headers:
+      Host: or3.sfacg.uk
   udp: true
-- name: 🇺🇸 128
-  server: 170.101.101.112
-  port: 443
-  type: trojan
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: resources.explorecreativejobsandenhanceyourcareerportfolio.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇺🇸 129
-  server: 170.101.101.53
-  port: 443
-  type: trojan
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: www.explorecreativejobsandenhanceyourcareerportfolio.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇺🇸 130
+- name: 🇺🇸 149
   server: 170.101.101.67
   port: 443
   type: trojan
@@ -1485,167 +1808,12 @@ proxies:
   sni: courses.explorecreativejobsandenhanceyourcareerportfolio.com
   skip-cert-verify: true
   udp: true
-- name: 🇺🇸 131
-  server: 170.101.101.211
+- name: 🇺🇸 150
+  server: 170.101.101.112
   port: 443
   type: trojan
   password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: api.explorecreativejobsandenhanceyourcareerportfolio.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇺🇸 132
-  server: 216.152.155.176
-  port: 443
-  type: trojan
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: blog.nextjobopportunityandclaimyouridealrole.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇺🇸 133
-  server: 162.251.60.97
-  port: 1270
-  type: vmess
-  uuid: 5c040f1d-45db-43bd-8d46-e4950e433735
-  alterId: 0
-  cipher: auto
-  tls: true
-  skip-cert-verify: true
-  udp: true
-- name: 🇫🇷 134
-  server: 134.195.196.211
-  port: 18000
-  type: vmess
-  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: true
-  udp: true
-- name: 🇫🇷 135
-  server: 134.195.196.154
-  port: 1270
-  type: vmess
-  uuid: 5c040f1d-45db-43bd-8d46-e4950e433735
-  alterId: 0
-  cipher: auto
-  tls: true
-  skip-cert-verify: true
-  udp: true
-- name: 🇺🇸 136
-  server: 216.152.155.131
-  port: 443
-  type: trojan
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: www.nextjobopportunityandclaimyouridealrole.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇺🇸 137
-  server: 64.177.90.30
-  port: 8388
-  type: ss
-  cipher: aes-256-gcm
-  password: BWyPPTusFKhGgzKh
-  udp: true
-- name: 🇺🇸 138
-  server: 216.152.155.23
-  port: 443
-  type: trojan
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: courses.nextjobopportunityandclaimyouridealrole.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇺🇸 139
-  server: 38.64.138.135
-  port: 1270
-  type: vmess
-  uuid: 5c040f1d-45db-43bd-8d46-e4950e433735
-  alterId: 0
-  cipher: auto
-  tls: true
-  skip-cert-verify: true
-  udp: true
-- name: 🇺🇸 140
-  server: 167.88.62.56
-  port: 1270
-  type: vmess
-  uuid: 5c040f1d-45db-43bd-8d46-e4950e433735
-  alterId: 0
-  cipher: auto
-  tls: true
-  skip-cert-verify: true
-  udp: true
-- name: 🇫🇷 141
-  server: 23.162.200.198
-  port: 18000
-  type: vmess
-  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: true
-  udp: true
-- name: 🇺🇸 142
-  server: 216.152.155.54
-  port: 443
-  type: trojan
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: learn.nextjobopportunityandclaimyouridealrole.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇫🇷 143
-  server: 216.152.147.152
-  port: 443
-  type: trojan
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: learn.connectingpeoplewithgreatjobs.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇫🇷 144
-  server: 216.152.147.85
-  port: 443
-  type: trojan
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: cdn.connectingpeoplewithgreatjobs.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇫🇷 145
-  server: 216.152.147.89
-  port: 443
-  type: trojan
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: www.connectingpeoplewithgreatjobs.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇫🇷 146
-  server: 216.152.147.93
-  port: 443
-  type: trojan
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: connectingpeoplewithgreatjobs.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇫🇷 147
-  server: 216.152.147.74
-  port: 443
-  type: trojan
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: api.connectingpeoplewithgreatjobs.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇫🇷 148
-  server: 216.152.147.79
-  port: 443
-  type: trojan
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: blog.connectingpeoplewithgreatjobs.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇫🇷 149
-  server: 216.152.147.48
-  port: 443
-  type: trojan
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: courses.connectingpeoplewithgreatjobs.com
+  sni: resources.explorecreativejobsandenhanceyourcareerportfolio.com
   skip-cert-verify: true
   udp: true
 proxy-groups:
@@ -1689,22 +1857,22 @@ proxy-groups:
   interval: 300
   tolerance: 50
   proxies:
-  - 🇩🇪 01
-  - 🇩🇪 02
-  - 🇩🇪 03
-  - 🇩🇪 04
-  - 🇩🇪 05
-  - 🇩🇪 06
-  - 🇺🇸 07
-  - 🇺🇸 08
+  - 🇭🇰 01
+  - 🇺🇸 02
+  - 🇭🇰 03
+  - 🇭🇰 04
+  - 🇭🇰 05
+  - 🇭🇰 06
+  - 🇭🇰 07
+  - 🇭🇰 08
   - 🇭🇰 09
   - 🇭🇰 10
   - 🇭🇰 11
   - 🇭🇰 12
-  - 🇭🇰 13
-  - 🇭🇰 14
-  - 🇯🇵 15
-  - 🇷🇺 16
+  - 🇯🇵 13
+  - 🇳🇱 14
+  - 🇺🇸 15
+  - 🇺🇸 16
   - 🇺🇸 17
   - 🇺🇸 18
   - 🇺🇸 19
@@ -1750,15 +1918,15 @@ proxy-groups:
   - 🇺🇸 59
   - 🇺🇸 60
   - 🇺🇸 61
-  - 🇭🇰 62
-  - 🇭🇰 63
-  - 🇭🇰 64
-  - 🇭🇰 65
+  - 🇺🇸 62
+  - 🇺🇸 63
+  - 🇺🇸 64
+  - 🇺🇸 65
   - 🇺🇸 66
   - 🇺🇸 67
-  - 🇺🇸 68
-  - 🇺🇸 69
-  - 🇺🇸 70
+  - 🇭🇰 68
+  - 🇭🇰 69
+  - 🇷🇺 70
   - 🇺🇸 71
   - 🇺🇸 72
   - 🇺🇸 73
@@ -1768,47 +1936,47 @@ proxy-groups:
   - 🇺🇸 77
   - 🇺🇸 78
   - 🇺🇸 79
-  - '80'
-  - 🇨🇦 81
-  - 🇭🇰 82
-  - 🇭🇰 83
-  - 🇭🇰 84
-  - 🇳🇱 85
+  - 🇺🇸 80
+  - 🇺🇸 81
+  - 🇺🇸 82
+  - 🇺🇸 83
+  - 🇺🇸 84
+  - 🇺🇸 85
   - 🇺🇸 86
   - 🇺🇸 87
-  - 🇺🇸 88
+  - 🇨🇦 88
   - 🇺🇸 89
   - 🇺🇸 90
   - 🇺🇸 91
-  - '92'
-  - 🇺🇸 93
+  - 🇺🇸 92
+  - '93'
   - 🇺🇸 94
-  - '95'
+  - 🇯🇵 95
   - 🇺🇸 96
-  - 🇺🇸 97
+  - 🇯🇵 97
   - 🇺🇸 98
-  - 🇺🇸 99
-  - 🇺🇸 100
-  - 🇺🇸 101
-  - '102'
+  - 🇯🇵 99
+  - 🇯🇵 100
+  - 🇯🇵 101
+  - 🇺🇸 102
   - 🇺🇸 103
   - 🇺🇸 104
-  - '105'
+  - 🇺🇸 105
   - 🇺🇸 106
-  - 🇺🇸 107
+  - '107'
   - 🇺🇸 108
   - 🇺🇸 109
   - 🇺🇸 110
   - 🇺🇸 111
   - 🇺🇸 112
-  - 🇺🇸 113
+  - 🇮🇳 113
   - 🇺🇸 114
-  - 🇺🇸 115
+  - 🇯🇵 115
   - 🇺🇸 116
   - 🇺🇸 117
-  - 🇺🇸 118
+  - '118'
   - 🇺🇸 119
-  - 🇺🇸 120
+  - '120'
   - 🇺🇸 121
   - 🇺🇸 122
   - 🇺🇸 123
@@ -1817,46 +1985,47 @@ proxy-groups:
   - 🇺🇸 126
   - 🇺🇸 127
   - 🇺🇸 128
-  - 🇺🇸 129
-  - 🇺🇸 130
+  - '129'
+  - 🇯🇵 130
   - 🇺🇸 131
   - 🇺🇸 132
   - 🇺🇸 133
-  - 🇫🇷 134
-  - 🇫🇷 135
+  - 🇺🇸 134
+  - 🇯🇵 135
   - 🇺🇸 136
   - 🇺🇸 137
   - 🇺🇸 138
   - 🇺🇸 139
   - 🇺🇸 140
-  - 🇫🇷 141
+  - 🇺🇸 141
   - 🇺🇸 142
-  - 🇫🇷 143
-  - 🇫🇷 144
-  - 🇫🇷 145
-  - 🇫🇷 146
-  - 🇫🇷 147
-  - 🇫🇷 148
-  - 🇫🇷 149
+  - 🇺🇸 143
+  - 🇺🇸 144
+  - 🇺🇸 145
+  - 🇺🇸 146
+  - 🇺🇸 147
+  - 🇺🇸 148
+  - 🇺🇸 149
+  - 🇺🇸 150
 - name: 🇭🇰 香港节点
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
+  - 🇭🇰 01
+  - 🇭🇰 03
+  - 🇭🇰 04
+  - 🇭🇰 05
+  - 🇭🇰 06
+  - 🇭🇰 07
+  - 🇭🇰 08
   - 🇭🇰 09
   - 🇭🇰 10
   - 🇭🇰 11
   - 🇭🇰 12
-  - 🇭🇰 13
-  - 🇭🇰 14
-  - 🇭🇰 62
-  - 🇭🇰 63
-  - 🇭🇰 64
-  - 🇭🇰 65
-  - 🇭🇰 82
-  - 🇭🇰 83
-  - 🇭🇰 84
+  - 🇭🇰 68
+  - 🇭🇰 69
 - name: 🇹🇼 台湾节点
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -1870,7 +2039,15 @@ proxy-groups:
   interval: 300
   tolerance: 50
   proxies:
-  - 🇯🇵 15
+  - 🇯🇵 13
+  - 🇯🇵 95
+  - 🇯🇵 97
+  - 🇯🇵 99
+  - 🇯🇵 100
+  - 🇯🇵 101
+  - 🇯🇵 115
+  - 🇯🇵 130
+  - 🇯🇵 135
 - name: 🇸🇬 新加坡节点
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -1884,8 +2061,9 @@ proxy-groups:
   interval: 300
   tolerance: 50
   proxies:
-  - 🇺🇸 07
-  - 🇺🇸 08
+  - 🇺🇸 02
+  - 🇺🇸 15
+  - 🇺🇸 16
   - 🇺🇸 17
   - 🇺🇸 18
   - 🇺🇸 19
@@ -1931,11 +2109,12 @@ proxy-groups:
   - 🇺🇸 59
   - 🇺🇸 60
   - 🇺🇸 61
+  - 🇺🇸 62
+  - 🇺🇸 63
+  - 🇺🇸 64
+  - 🇺🇸 65
   - 🇺🇸 66
   - 🇺🇸 67
-  - 🇺🇸 68
-  - 🇺🇸 69
-  - 🇺🇸 70
   - 🇺🇸 71
   - 🇺🇸 72
   - 🇺🇸 73
@@ -1945,37 +2124,35 @@ proxy-groups:
   - 🇺🇸 77
   - 🇺🇸 78
   - 🇺🇸 79
+  - 🇺🇸 80
+  - 🇺🇸 81
+  - 🇺🇸 82
+  - 🇺🇸 83
+  - 🇺🇸 84
+  - 🇺🇸 85
   - 🇺🇸 86
   - 🇺🇸 87
-  - 🇺🇸 88
   - 🇺🇸 89
   - 🇺🇸 90
   - 🇺🇸 91
-  - 🇺🇸 93
+  - 🇺🇸 92
   - 🇺🇸 94
   - 🇺🇸 96
-  - 🇺🇸 97
   - 🇺🇸 98
-  - 🇺🇸 99
-  - 🇺🇸 100
-  - 🇺🇸 101
+  - 🇺🇸 102
   - 🇺🇸 103
   - 🇺🇸 104
+  - 🇺🇸 105
   - 🇺🇸 106
-  - 🇺🇸 107
   - 🇺🇸 108
   - 🇺🇸 109
   - 🇺🇸 110
   - 🇺🇸 111
   - 🇺🇸 112
-  - 🇺🇸 113
   - 🇺🇸 114
-  - 🇺🇸 115
   - 🇺🇸 116
   - 🇺🇸 117
-  - 🇺🇸 118
   - 🇺🇸 119
-  - 🇺🇸 120
   - 🇺🇸 121
   - 🇺🇸 122
   - 🇺🇸 123
@@ -1984,17 +2161,25 @@ proxy-groups:
   - 🇺🇸 126
   - 🇺🇸 127
   - 🇺🇸 128
-  - 🇺🇸 129
-  - 🇺🇸 130
   - 🇺🇸 131
   - 🇺🇸 132
   - 🇺🇸 133
+  - 🇺🇸 134
   - 🇺🇸 136
   - 🇺🇸 137
   - 🇺🇸 138
   - 🇺🇸 139
   - 🇺🇸 140
+  - 🇺🇸 141
   - 🇺🇸 142
+  - 🇺🇸 143
+  - 🇺🇸 144
+  - 🇺🇸 145
+  - 🇺🇸 146
+  - 🇺🇸 147
+  - 🇺🇸 148
+  - 🇺🇸 149
+  - 🇺🇸 150
 - name: 🇰🇷 韩国节点
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -2015,42 +2200,28 @@ proxy-groups:
   interval: 300
   tolerance: 50
   proxies:
-  - 🇩🇪 01
-  - 🇩🇪 02
-  - 🇩🇪 03
-  - 🇩🇪 04
-  - 🇩🇪 05
-  - 🇩🇪 06
+  - DIRECT
 - name: 🇫🇷 法国节点
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - 🇫🇷 134
-  - 🇫🇷 135
-  - 🇫🇷 141
-  - 🇫🇷 143
-  - 🇫🇷 144
-  - 🇫🇷 145
-  - 🇫🇷 146
-  - 🇫🇷 147
-  - 🇫🇷 148
-  - 🇫🇷 149
+  - DIRECT
 - name: 🇷🇺 俄罗斯节点
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - 🇷🇺 16
+  - 🇷🇺 70
 - name: 🇨🇦 加拿大节点
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - 🇨🇦 81
+  - 🇨🇦 88
 rules:
 - DOMAIN-KEYWORD,admarvel,🛑 广告拦截
 - DOMAIN-KEYWORD,admaster,🛑 广告拦截
